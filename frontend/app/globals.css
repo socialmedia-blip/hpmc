@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* =========================================
+   ROOT COLOR SYSTEM
+========================================= */
+
+:root {
+  /* Backgrounds */
+  --background: #ffffff;
+  --foreground: #0b1220;
+
+  /* Primary Brand */
+  --primary: #84cc16;
+  --primary-dark: #65a30d;
+
+  /* Secondary */
+  --secondary: #0f172a;
+  --secondary-light: #1e293b;
+
+  /* Accent */
+  --accent: #22c55e;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-light: #9ca3af;
+
+  /* Border */
+  --border: #e5e7eb;
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #111827;
+
+  /* Muted */
+  --muted: #f3f4f6;
+
+  /* Industrial Gradient */
+  --gradient-dark: linear-gradient(135deg, #03111f 0%, #07203a 100%);
+
+  /* Shadow */
+  --shadow-primary: 0 20px 60px rgba(0, 0, 0, 0.08);
+
+  /* Radius */
+  --radius: 16px;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+.dark {
+  --background: #020817;
+  --foreground: #ffffff;
+
+  --primary: #84cc16;
+  --primary-dark: #65a30d;
+
+  --secondary: #0f172a;
+  --secondary-light: #1e293b;
+
+  --accent: #22c55e;
+
+  /* IMPROVED TEXT */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-light: #94a3b8;
+
+  /* IMPROVED BORDER */
+  --border: rgba(255, 255, 255, 0.12);
+
+  /* BETTER CARD */
+  --card: #0b1727;
+  --card-foreground: #f8fafc;
+
+  /* DARK MUTED */
+  --muted: #111827;
+
+  --gradient-dark: linear-gradient(135deg, #020817 0%, #071a2f 100%);
+
+  --shadow-primary: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0 !important;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container-custom {
+  max-width: 1280px;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* =========================================
+   COMMON CLASSES
+========================================= */
+
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-primary);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================================
+   GOOGLE TRANSLATE FIX
+========================================= */
+
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+iframe.goog-te-menu-frame {
+  display: none !important;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+.language-selector {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none !important;
+}
