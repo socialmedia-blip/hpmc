@@ -729,7 +729,7 @@ export default function Home() {
 function Counter({ end, suffix = "" }: CounterProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0,
   });
 
   return (
