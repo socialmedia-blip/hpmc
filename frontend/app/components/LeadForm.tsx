@@ -24,6 +24,12 @@ type FormDataType = {
 
 export default function LeadForm() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [otpLoading, setOtpLoading] = useState(false);
+  const [showOtpBox, setShowOtpBox] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [serverError, setServerError] = useState("");
 
   const [formData, setFormData] = useState<FormDataType>({
     name: "",
@@ -103,30 +109,100 @@ export default function LeadForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validate()) return;
 
-    const payload = {
-      ...formData,
-      services: selectedServices,
-    };
+    try {
+      setLoading(true);
+      setServerError("");
 
-    console.log(payload);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/lead/send-otp`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            companyName: formData.company,
+            products: selectedServices,
+            message: formData.message,
+          }),
+        },
+      );
 
-    alert("Lead submitted successfully!");
+      const data = await response.json();
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      city: "",
-      message: "",
-    });
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send OTP");
+      }
 
-    setSelectedServices([]);
+      setShowOtpBox(true);
+      setSuccessMessage("OTP sent successfully to your email.");
+    } catch (error: any) {
+      setServerError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (!otp.trim()) {
+      setServerError("Please enter OTP");
+      return;
+    }
+
+    try {
+      setOtpLoading(true);
+      setServerError("");
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/lead/verify-otp`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            otp,
+          }),
+        },
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "OTP verification failed");
+      }
+
+      setSuccessMessage(
+        "Thank you! Your inquiry has been submitted successfully.",
+      );
+
+      setShowOtpBox(false);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        city: "",
+        message: "",
+      });
+
+      setSelectedServices([]);
+      setOtp("");
+    } catch (error: any) {
+      setServerError(error.message);
+    } finally {
+      setOtpLoading(false);
+    }
   };
 
   return (
@@ -321,15 +397,60 @@ export default function LeadForm() {
         )}
       </div>
 
+      {successMessage && (
+        <div className="mb-4 rounded-xl border border-green-500 bg-green-50 p-3 text-green-700">
+          {successMessage}
+        </div>
+      )}
+
+      {serverError && (
+        <div className="mb-4 rounded-xl border border-red-500 bg-red-50 p-3 text-red-700">
+          {serverError}
+        </div>
+      )}
+
+      {showOtpBox && (
+        <div className="mt-6 rounded-xl border p-4">
+          <label className="mb-2 block font-medium">Enter OTP</label>
+
+          <input
+            type="text"
+            value={otp}
+            maxLength={6}
+            onChange={(e) => setOtp(e.target.value)}
+            placeholder="Enter 6 digit OTP"
+            className="w-full rounded-xl border px-4 py-3 outline-none"
+            style={inputStyle}
+          />
+
+          <button
+            type="button"
+            onClick={handleVerifyOtp}
+            disabled={otpLoading}
+            className="mt-3 w-full rounded-xl bg-green-600 px-4 py-3 font-semibold text-white"
+          >
+            {otpLoading ? "Verifying..." : "Verify OTP"}
+          </button>
+        </div>
+      )}
+
       {/* Submit */}
       <button
         type="submit"
-        className="mt-8 w-full rounded-xl px-6 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+        disabled={loading || showOtpBox}
+        className="mt-8 w-full rounded-xl px-6 py-4 font-semibold text-white transition-all duration-300 disabled:opacity-70"
         style={{
           background: "var(--primary)",
         }}
       >
-        Submit Inquiry
+        {loading ? (
+          <div className="flex items-center justify-center gap-2">
+            <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+            Sending OTP...
+          </div>
+        ) : (
+          "Submit Inquiry"
+        )}
       </button>
     </form>
   );

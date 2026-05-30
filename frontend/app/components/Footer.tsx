@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import {
@@ -10,6 +12,55 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState<"success" | "error" | "">("");
+
+  const handleSubscribe = async () => {
+    if (!email) {
+      setMessage("Please enter your email");
+      setMessageType("error");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setMessage("");
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/subscribers`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        },
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage(data.message || "Subscribed successfully");
+        setMessageType("success");
+        setEmail("");
+      } else {
+        setMessage(data.message || "Email already subscribed");
+        setMessageType("error");
+      }
+    } catch (error) {
+      setMessage("Something went wrong. Please try again.");
+      setMessageType("error");
+    } finally {
+      setLoading(false);
+
+      setTimeout(() => {
+        setMessage("");
+        setMessageType("");
+      }, 5000);
+    }
+  };
   return (
     <footer className="relative bg-[#03111F] overflow-hidden">
       {/* GRADIENT OVERLAY */}
@@ -42,17 +93,47 @@ export default function Footer() {
 
                 {/* RIGHT */}
                 <div className="w-full lg:w-auto">
-                  <div className="flex flex-col sm:flex-row items-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-2 gap-2">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="w-full sm:w-[320px] h-[55px] px-5 outline-none bg-transparent text-white placeholder:text-white/40 rounded-xl"
-                    />
+                  <div className="flex flex-col">
+                    <div className="flex flex-col sm:flex-row items-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-2 gap-2">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        className="w-full sm:w-[320px] h-[55px] px-5 outline-none bg-transparent text-white placeholder:text-white/40 rounded-xl"
+                      />
 
-                    <button className="w-full sm:w-auto h-[55px] px-8 rounded-xl bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition flex items-center justify-center gap-3 text-white font-semibold whitespace-nowrap">
-                      Subscribe
-                      <Send size={18} className="rotate-[45deg]" />
-                    </button>
+                      <button
+                        onClick={handleSubscribe}
+                        disabled={loading}
+                        className="w-full sm:w-auto h-[55px] px-8 rounded-xl bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition flex items-center justify-center gap-3 text-white font-semibold whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {loading ? (
+                          <>
+                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            Subscribing...
+                          </>
+                        ) : (
+                          <>
+                            Subscribe
+                            <Send size={18} className="rotate-[45deg]" />
+                          </>
+                        )}
+                      </button>
+                    </div>
+
+                    {/* Message */}
+                    {message && (
+                      <p
+                        className={`mt-2 ml-2 text-sm font-medium ${
+                          messageType === "success"
+                            ? "text-green-400"
+                            : "text-red-400"
+                        }`}
+                      >
+                        {message}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
