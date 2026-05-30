@@ -1,4 +1,4 @@
-const Lead = require("../models/Lead.model");
+const Lead = require("../models/lead.model");
 const sendEmail = require("../utils/sendEmail");
 
 const otpStore = new Map(); // temporary in-memory storage
