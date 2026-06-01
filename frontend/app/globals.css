@@ -202,3 +202,91 @@ iframe.goog-te-menu-frame {
   appearance: none;
   background-image: none !important;
 }
+
+.blog-content {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.blog-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+  font-size: 14px;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content a {
+  color: #ede96e;
+  text-decoration: none;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #d1d5db; /* gray-300 */
+  padding-left: 1rem;
+  color: #6b7280; /* gray-500 */
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.blog-content ul {
+  list-style-type: disc; /* bullets */
+}
+
+.blog-content ol {
+  list-style-type: decimal; /* numbers */
+}
+
+.blog-popup-cta {
+  margin: 30px 0;
+}
+
+/* Fixed height + scrollable editor */
+.newsletter-editor .ql-container {
+  min-height: 180px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+/* Keep text readable */
+.newsletter-editor .ql-editor {
+  min-height: 180px;
+}
+
+/* Optional: toolbar styling for dark UI */
+.newsletter-editor .ql-toolbar {
+  background: #0f0f0f;
+  border-color: #374151;
+}
