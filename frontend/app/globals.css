@@ -43,6 +43,14 @@
 
   /* Radius */
   --radius: 16px;
+
+  --sidebar-bg: linear-gradient(
+    135deg,
+    rgba(101, 188, 79, 0.08),
+    rgba(101, 188, 79, 0.02)
+  );
+
+  --sidebar-card: #ffffff;
 }
 
 /* =========================================
@@ -79,6 +87,10 @@
   --gradient-dark: linear-gradient(135deg, #020817 0%, #071a2f 100%);
 
   --shadow-primary: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  --sidebar-bg: linear-gradient(135deg, #071a2f 0%, #0b1727 100%);
+
+  --sidebar-card: rgba(255, 255, 255, 0.04);
 }
 
 /* =========================================

@@ -62,69 +62,7 @@ export default function PopupForm({ open, onClose }: PopupFormProps) {
           ✕
         </button>
 
-        <div className="grid max-h-[90vh] grid-cols-1 overflow-y-auto lg:grid-cols-2">
-          {/* Left Side */}
-          <div className="relative hidden min-h-[650px] lg:flex">
-            <Image
-              src="/product.jpg"
-              alt="Event Management"
-              fill
-              className="object-cover"
-              priority
-            />
-
-            {/* Overlay */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(2,8,23,.85) 0%, rgba(2,8,23,.45) 100%)",
-              }}
-            />
-
-            {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center p-12 text-white">
-              <span
-                className="mb-4 w-fit rounded-full px-4 py-2 text-sm font-medium backdrop-blur-md"
-                style={{
-                  background: "rgba(255,255,255,.15)",
-                  border: "1px solid rgba(255,255,255,.2)",
-                }}
-              >
-                Free Consultation
-              </span>
-
-              <h2 className="text-4xl font-bold leading-tight xl:text-5xl">
-                Let's Create
-                <br />
-                Something Extraordinary
-              </h2>
-
-              <p className="mt-5 max-w-md text-lg text-white/90">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus, eius!
-              </p>
-
-              <div className="mt-10 flex gap-10">
-                <div>
-                  <h3 className="text-3xl font-bold text-[var(--primary)]">
-                    240+
-                  </h3>
-                  <p className="mt-1 text-sm text-white/80">
-                    Special Expert Teams
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-3xl font-bold text-[var(--primary)]">
-                    12000+
-                  </h3>
-                  <p className="mt-1 text-sm text-white/80">Happy Clients</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div className="grid max-h-[90vh] grid-cols-1 overflow-y-auto">
           {/* Right Side */}
           <div
             className="p-3 md:p-5"

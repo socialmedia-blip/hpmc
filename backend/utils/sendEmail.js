@@ -9,7 +9,7 @@ const sendEmail = async ({ to, subject, html, attachments }) => {
 
     const sendSmtpEmail = {
       sender: {
-        name: "Bigwig Media Digital",
+        name: "HPMC",
         email: "devashish@bigwigmedia.in",
       },
       to: [{ email: to }],

@@ -30,6 +30,9 @@ export default function LeadForm() {
   const [otp, setOtp] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [serverError, setServerError] = useState("");
+  const [currentStep, setCurrentStep] = useState<"form" | "otp" | "success">(
+    "form",
+  );
 
   const [formData, setFormData] = useState<FormDataType>({
     name: "",
@@ -142,8 +145,7 @@ export default function LeadForm() {
         throw new Error(data.message || "Failed to send OTP");
       }
 
-      setShowOtpBox(true);
-      setSuccessMessage("OTP sent successfully to your email.");
+      setCurrentStep("otp");
     } catch (error: any) {
       setServerError(error.message);
     } finally {
@@ -181,11 +183,11 @@ export default function LeadForm() {
         throw new Error(data.message || "OTP verification failed");
       }
 
-      setSuccessMessage(
-        "Thank you! Your inquiry has been submitted successfully.",
-      );
+      setCurrentStep("success");
 
-      setShowOtpBox(false);
+      setTimeout(() => {
+        setCurrentStep("form");
+      }, 2500);
 
       setFormData({
         name: "",
@@ -206,252 +208,378 @@ export default function LeadForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-[32px] border p-6 md:p-8"
-      style={{
-        background: "var(--card)",
-        borderColor: "var(--border)",
-        color: "var(--text-primary)",
-      }}
-    >
-      {/* Header */}
-      <div className="mb-8 text-center">
-        <span className="rounded-full bg-[var(--primary)]/10 px-4 py-2 text-sm font-medium text-[var(--primary)]">
-          Quick Inquiry
-        </span>
+    <section className="relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-[var(--primary)]/10 blur-3xl" />
+      <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
-        <h2 className="mt-4 text-3xl font-bold text-[var(--text-primary)]">
-          Let's Plan Something Amazing
-        </h2>
-
-        <p className="mt-3 text-[var(--text-secondary)]">
-          Share your requirements and our team will get back to you shortly.
-        </p>
-      </div>
-
-      <div className="grid gap-5 md:grid-cols-2">
-        {/* Name */}
-        <div>
-          <label
-            className="mb-2 block font-medium"
-            style={{ color: "var(--text-primary)" }}
-          >
-            Full Name <span className="text-red-500">*</span>
-          </label>
-
-          <input
-            type="text"
-            value={formData.name}
-            onChange={(e) => handleChange("name", e.target.value)}
-            placeholder="Enter your name"
-            className={`w-full rounded-xl border px-4 py-3 outline-none transition-all placeholder:text-[var(--text-light)]
-            ${
-              errors.name ? "border-red-500" : "focus:border-[var(--primary)]"
-            }`}
-            style={inputStyle}
-          />
-
-          {errors.name && (
-            <p className="mt-1 text-sm text-red-500">{errors.name}</p>
-          )}
-        </div>
-
-        {/* Email */}
-        <div>
-          <label
-            className="mb-2 block font-medium"
-            style={{ color: "var(--text-primary)" }}
-          >
-            Email Address <span className="text-red-500">*</span>
-          </label>
-
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) => handleChange("email", e.target.value)}
-            placeholder="Enter your email"
-            className={`w-full rounded-xl border px-4 py-3 outline-none transition-all placeholder:text-[var(--text-light)]
-            ${
-              errors.email ? "border-red-500" : "focus:border-[var(--primary)]"
-            }`}
-            style={inputStyle}
-          />
-
-          {errors.email && (
-            <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-          )}
-        </div>
-
-        {/* Phone */}
-        <div>
-          <label
-            className="mb-2 block font-medium"
-            style={{ color: "var(--text-primary)" }}
-          >
-            Phone Number <span className="text-red-500">*</span>
-          </label>
-
-          <div
-            className="rounded-xl border px-4 py-3"
-            style={{
-              background: "var(--background)",
-              borderColor: errors.phone ? "#ef4444" : "var(--border)",
-              color: "var(--text-primary)",
-            }}
-          >
-            <PhoneInput
-              international
-              defaultCountry="IN"
-              value={formData.phone}
-              onChange={(value) => handleChange("phone", value || "")}
-            />
-          </div>
-
-          {errors.phone && (
-            <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
-          )}
-        </div>
-
-        {/* Company */}
-        <div>
-          <label
-            className="mb-2 block font-medium"
-            style={{ color: "var(--text-primary)" }}
-          >
-            Company Name
-          </label>
-
-          <input
-            type="text"
-            value={formData.company}
-            onChange={(e) => handleChange("company", e.target.value)}
-            placeholder="Your company"
-            className="w-full rounded-xl border px-4 py-3 outline-none focus:border-[var(--primary)] placeholder:text-[var(--text-light)]"
-            style={inputStyle}
-          />
-        </div>
-      </div>
-
-      {/* Services */}
-      <div className="mt-6">
-        <label
-          className="mb-3 block font-medium"
-          style={{ color: "var(--text-primary)" }}
+      <div className="relative grid gap-5 xl:grid-cols-[320px_1fr]">
+        {/* LEFT PANEL */}
+        <div
+          className="hidden xl:block overflow-hidden rounded-[28px] border p-6 relative"
+          style={{
+            background: "var(--sidebar-bg)",
+            borderColor: "var(--border)",
+          }}
         >
-          Interested Services <span className="text-red-500">*</span>
-        </label>
+          {/* Glow */}
+          <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[var(--primary)]/10 blur-3xl" />
+          <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-          {services.map((service) => (
-            <button
-              type="button"
-              key={service}
-              onClick={() => toggleService(service)}
-              className="rounded-xl border p-3 text-sm font-medium transition-all hover:border-[var(--primary)]"
+          <div className="relative z-10">
+            <span
+              className="rounded-full px-4 py-2 text-sm font-medium"
               style={{
-                borderColor: selectedServices.includes(service)
-                  ? "var(--primary)"
-                  : "var(--border)",
-                background: selectedServices.includes(service)
-                  ? "var(--primary)"
-                  : "var(--background)",
-                color: selectedServices.includes(service)
-                  ? "#fff"
-                  : "var(--text-primary)",
+                background: "rgba(101,188,79,0.12)",
+                color: "var(--primary)",
               }}
             >
-              {service}
-            </button>
-          ))}
-        </div>
+              Why Choose HPMC
+            </span>
 
-        {errors.services && (
-          <p className="mt-2 text-sm text-red-500">{errors.services}</p>
-        )}
-      </div>
+            <h2
+              className="mt-5 text-3xl font-bold leading-tight"
+              style={{
+                color: "var(--text-primary)",
+              }}
+            >
+              Industrial Solutions
+              <span className="block text-[var(--primary)]">You Can Trust</span>
+            </h2>
 
-      {/* Message */}
-      <div className="mt-6">
-        <label
-          className="mb-2 block font-medium"
-          style={{ color: "var(--text-primary)" }}
-        >
-          Message <span className="text-red-500">*</span>
-        </label>
+            <p
+              className="mt-4 leading-7"
+              style={{
+                color: "var(--text-secondary)",
+              }}
+            >
+              Share your requirements and our specialists will connect with you
+              within 24 hours.
+            </p>
 
-        <textarea
-          rows={5}
-          value={formData.message}
-          onChange={(e) => handleChange("message", e.target.value)}
-          placeholder="Tell us about your requirements..."
-          className={`w-full resize-none rounded-xl border px-4 py-3 outline-none placeholder:text-[var(--text-light)]
-          ${
-            errors.message ? "border-red-500" : "focus:border-[var(--primary)]"
-          }`}
-          style={inputStyle}
-        />
+            <div className="mt-8 space-y-3">
+              {[
+                "Premium Quality Products",
+                "Fast Response & Support",
+                "Trusted Industry Expertise",
+                "Reliable Manufacturing Solutions",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-2xl p-3"
+                  style={{
+                    background: "var(--sidebar-card)",
+                    border: "1px solid var(--border)",
+                  }}
+                >
+                  <div
+                    className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white"
+                    style={{
+                      background: "var(--primary)",
+                    }}
+                  >
+                    ✓
+                  </div>
 
-        {errors.message && (
-          <p className="mt-1 text-sm text-red-500">{errors.message}</p>
-        )}
-      </div>
+                  <span
+                    className="font-medium"
+                    style={{
+                      color: "var(--text-primary)",
+                    }}
+                  >
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
 
-      {successMessage && (
-        <div className="mb-4 rounded-xl border border-green-500 bg-green-50 p-3 text-green-700">
-          {successMessage}
-        </div>
-      )}
+            <div
+              className="mt-8 rounded-2xl p-4"
+              style={{
+                background: "var(--sidebar-card)",
+                border: "1px solid var(--border)",
+              }}
+            >
+              <p
+                className="text-sm"
+                style={{
+                  color: "var(--text-secondary)",
+                }}
+              >
+                Average Response Time
+              </p>
 
-      {serverError && (
-        <div className="mb-4 rounded-xl border border-red-500 bg-red-50 p-3 text-red-700">
-          {serverError}
-        </div>
-      )}
-
-      {showOtpBox && (
-        <div className="mt-6 rounded-xl border p-4">
-          <label className="mb-2 block font-medium">Enter OTP</label>
-
-          <input
-            type="text"
-            value={otp}
-            maxLength={6}
-            onChange={(e) => setOtp(e.target.value)}
-            placeholder="Enter 6 digit OTP"
-            className="w-full rounded-xl border px-4 py-3 outline-none"
-            style={inputStyle}
-          />
-
-          <button
-            type="button"
-            onClick={handleVerifyOtp}
-            disabled={otpLoading}
-            className="mt-3 w-full rounded-xl bg-green-600 px-4 py-3 font-semibold text-white"
-          >
-            {otpLoading ? "Verifying..." : "Verify OTP"}
-          </button>
-        </div>
-      )}
-
-      {/* Submit */}
-      <button
-        type="submit"
-        disabled={loading || showOtpBox}
-        className="mt-8 w-full rounded-xl px-6 py-4 font-semibold text-white transition-all duration-300 disabled:opacity-70"
-        style={{
-          background: "var(--primary)",
-        }}
-      >
-        {loading ? (
-          <div className="flex items-center justify-center gap-2">
-            <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-            Sending OTP...
+              <h3
+                className="mt-1 text-2xl font-bold"
+                style={{
+                  color: "var(--primary)",
+                }}
+              >
+                Within 24 Hours
+              </h3>
+            </div>
           </div>
-        ) : (
-          "Submit Inquiry"
+        </div>
+
+        {/* FORM */}
+        {currentStep === "form" && (
+          <>
+            <form
+              onSubmit={handleSubmit}
+              className="relative overflow-hidden rounded-[28px] border p-4 md:p-6"
+              style={{
+                background: "var(--card)",
+                borderColor: "var(--border)",
+              }}
+            >
+              {/* Progress */}
+              <div className="mb-6 flex justify-center">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] text-white">
+                    1
+                  </div>
+
+                  <div className="h-[2px] w-12 bg-[var(--border)]" />
+
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full ${
+                      showOtpBox
+                        ? "bg-[var(--primary)] text-white"
+                        : "bg-[var(--background)]"
+                    }`}
+                  >
+                    2
+                  </div>
+
+                  <div className="h-[2px] w-12 bg-[var(--border)]" />
+
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--background)]">
+                    ✓
+                  </div>
+                </div>
+              </div>
+
+              {/* Header */}
+              <div className="mb-6 text-center">
+                <span className="rounded-full bg-[var(--primary)]/10 px-4 py-2 text-sm font-medium text-[var(--primary)]">
+                  Quick Inquiry
+                </span>
+
+                <h2 className="mt-3 text-2xl md:text-3xl font-bold text-[var(--text-primary)]">
+                  Request a Consultation
+                </h2>
+
+                <p className="mt-2 text-sm md:text-base text-[var(--text-secondary)]">
+                  Fill out the form and our experts will contact you shortly.
+                </p>
+              </div>
+
+              {/* Success */}
+              {successMessage && (
+                <div className="mb-6 rounded-2xl border border-green-500/30 bg-green-500/10 p-4 text-green-600">
+                  {successMessage}
+                </div>
+              )}
+
+              {/* Error */}
+              {serverError && (
+                <div className="mb-6 rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-red-500">
+                  {serverError}
+                </div>
+              )}
+
+              {/* Inputs */}
+              <div className="grid gap-5 md:grid-cols-2">
+                <input
+                  type="text"
+                  placeholder="Full Name *"
+                  value={formData.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                  className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                  style={inputStyle}
+                />
+
+                <input
+                  type="email"
+                  placeholder="Email Address *"
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                  className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                  style={inputStyle}
+                />
+
+                <div
+                  className="rounded-2xl border px-4 py-4"
+                  style={{
+                    background: "var(--background)",
+                    borderColor: "var(--border)",
+                  }}
+                >
+                  <PhoneInput
+                    international
+                    defaultCountry="IN"
+                    value={formData.phone}
+                    onChange={(value) => handleChange("phone", value || "")}
+                  />
+                </div>
+
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  value={formData.company}
+                  onChange={(e) => handleChange("company", e.target.value)}
+                  className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                  style={inputStyle}
+                />
+              </div>
+
+              {/* Services */}
+              <div className="mt-8">
+                <label className="mb-4 block font-semibold text-[var(--text-primary)]">
+                  Select Products
+                </label>
+
+                <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+                  {services.map((service) => (
+                    <button
+                      key={service}
+                      type="button"
+                      onClick={() => toggleService(service)}
+                      className={`group rounded-xl border p-3 text-xs md:text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                        selectedServices.includes(service)
+                          ? "border-[var(--primary)] bg-[var(--primary)] text-white"
+                          : ""
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span>{service}</span>
+                        {selectedServices.includes(service) && <span>✓</span>}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="mt-8">
+                <textarea
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e) => handleChange("message", e.target.value)}
+                  placeholder="Tell us about your requirements..."
+                  className="w-full resize-none rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                  style={inputStyle}
+                />
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={loading || showOtpBox}
+                className="mt-5 w-full rounded-2xl bg-[var(--primary)] px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl disabled:opacity-60"
+              >
+                {loading ? (
+                  <div className="flex items-center justify-center gap-3">
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                    Sending OTP...
+                  </div>
+                ) : (
+                  "Request Consultation"
+                )}
+              </button>
+            </form>
+          </>
         )}
-      </button>
-    </form>
+
+        {/* STEP 2 */}
+        {currentStep === "otp" && (
+          <div className="flex min-h-[500px] flex-col items-center justify-center text-center">
+            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[var(--primary)]/10">
+              📧
+            </div>
+
+            <span className="rounded-full bg-[var(--primary)]/10 px-4 py-2 text-sm font-medium text-[var(--primary)]">
+              Step 2 of 2
+            </span>
+
+            <h2 className="mt-6 text-3xl font-bold text-[var(--text-primary)]">
+              Verify Your Email
+            </h2>
+
+            <p className="mt-3 max-w-md text-[var(--text-secondary)]">
+              We have sent a verification code to
+            </p>
+
+            <p className="mt-1 font-semibold text-[var(--primary)]">
+              {formData.email}
+            </p>
+
+            <input
+              type="text"
+              maxLength={6}
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+              placeholder="000000"
+              className="
+      mt-8
+      w-full
+      max-w-md
+      rounded-2xl
+      border
+      p-5
+      text-center
+      text-4xl
+      font-bold
+      tracking-[12px]
+      outline-none
+      "
+              style={inputStyle}
+            />
+
+            <button
+              type="button"
+              onClick={handleVerifyOtp}
+              disabled={otpLoading}
+              className="
+      mt-6
+      w-full
+      max-w-md
+      rounded-2xl
+      bg-green-600
+      py-4
+      font-semibold
+      text-white
+      "
+            >
+              {otpLoading ? "Verifying..." : "Verify OTP"}
+            </button>
+          </div>
+        )}
+
+        {currentStep === "success" && (
+          <div className="flex min-h-[500px] flex-col items-center justify-center text-center">
+            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-green-500 text-5xl text-white animate-bounce">
+              ✓
+            </div>
+
+            <h2 className="mt-8 text-3xl font-bold text-green-600">
+              Inquiry Submitted Successfully
+            </h2>
+
+            <p className="mt-4 text-[var(--text-secondary)]">
+              Thank you for contacting HPMC.
+            </p>
+
+            <p className="text-[var(--text-secondary)]">
+              Our team will connect with you shortly.
+            </p>
+
+            <div className="mt-6 text-sm text-[var(--text-secondary)]">
+              Closing...
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
