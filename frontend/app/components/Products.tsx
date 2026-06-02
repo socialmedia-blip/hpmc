@@ -6,6 +6,7 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import PopupForm from "./Popup";
+import Link from "next/link";
 
 export default function ProductCarousel() {
   const [selectedCatalogue, setSelectedCatalogue] = useState("");
@@ -64,6 +65,27 @@ export default function ProductCarousel() {
 
   return (
     <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+        {/* LEFT SIDE */}
+        <div className="max-w-3xl">
+          <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
+            Our Products
+          </p>
+
+          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+            Engineered For Every Need
+          </h2>
+
+          {/* LINE */}
+          <div className="w-16 h-[3px] bg-[var(--primary)] mt-4 rounded-full" />
+
+          <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            architecto cupiditate modi nostrum accusamus reprehenderit possimus,
+            voluptas magni pariatur necessitatibus.
+          </p>
+        </div>
+      </div>
       <Swiper
         modules={[Autoplay]}
         slidesPerView={1.2}
