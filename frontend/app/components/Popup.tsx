@@ -7,9 +7,14 @@ import LeadForm from "./LeadForm";
 interface PopupFormProps {
   open: boolean;
   onClose: () => void;
+  onSuccess?: () => void;
 }
 
-export default function PopupForm({ open, onClose }: PopupFormProps) {
+export default function PopupForm({
+  open,
+  onClose,
+  onSuccess,
+}: PopupFormProps) {
   useEffect(() => {
     if (!open) return;
 
@@ -71,7 +76,7 @@ export default function PopupForm({ open, onClose }: PopupFormProps) {
               color: "var(--card-foreground)",
             }}
           >
-            <LeadForm />
+            <LeadForm onSuccess={onSuccess} />
           </div>
         </div>
       </div>

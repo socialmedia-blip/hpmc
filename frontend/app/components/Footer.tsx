@@ -11,6 +11,89 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
+const footerProducts = [
+  {
+    name: "Single Screw Extruder",
+    link: "/single-screw-extruder",
+  },
+  {
+    name: "Twin Screw Extruder",
+    link: "/twin-screw-extruder",
+  },
+  {
+    name: "PVC Conduit Pipe Plant (Four Pipes)",
+    link: "/pvc-conduit-pipe-plant-four-pipes",
+  },
+  {
+    name: "PVC Conduit Pipe Plant (Two Pipes)",
+    link: "/pvc-conduit-pipe-plant-two-pipes",
+  },
+  {
+    name: "High Speed HDPE Pipe Plant",
+    link: "/high-speed-hdpe-pipe-plant",
+  },
+  {
+    name: "Twin Screw Plant for PVC Compounding",
+    link: "/pvc-compounding",
+  },
+  {
+    name: "Single Screw Plant for PPR Pipe",
+    link: "/ppr-pipe-extruder",
+  },
+  {
+    name: "Two Stage Recycling Plant",
+    link: "/two-stage-recycling-plant",
+  },
+  {
+    name: "Vented Recycling Plant",
+    link: "/vented-recycling-plant",
+  },
+  {
+    name: "Recycling Plant With Compactor",
+    link: "/recycling-plant-with-compactor",
+  },
+  {
+    name: "Soft Cable Grade PVC Compounding Plant",
+    link: "/soft-cable-grade-pvc-compounding-plant",
+  },
+  {
+    name: "Corotating Twin Screw Extruder",
+    link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "Corotating Triple Screw Extruder",
+    link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "High Speed Two Layer Cable Plant",
+    link: "/high-speed-two-layer-cable-plant",
+  },
+  {
+    name: "Twin Screw Plant for PVC Trunking",
+    link: "/twin-screw-plant-for-pvc-trunking",
+  },
+  {
+    name: "Single Screw Plant for PVC Profile",
+    link: "/single-screw-plant-for-pvc-profile",
+  },
+  {
+    name: "Twin Screw Plant for PVC Profile",
+    link: "/twin-screw-plant-for-pvc-profile",
+  },
+  {
+    name: "Single Screw Plant for Garden Pipe",
+    link: "/single-screw-plant-for-garden-pipe",
+  },
+  {
+    name: "LLDPE Pipe Plant",
+    link: "/lldpe-pipe-plant",
+  },
+  {
+    name: "Twin Screw Plant for CPVC Pipe",
+    link: "/twin-screw-plant-for-cpvc-pipe",
+  },
+];
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -153,6 +236,30 @@ export default function Footer() {
                 machinery since 1971, trusted by customers worldwide.
               </p>
 
+              <div className="flex flex-col gap-5 mt-7">
+                <div className="flex gap-4">
+                  <MapPin className="text-lime-400 mt-1" size={18} />
+
+                  <p className="text-gray-400 text-sm leading-[28px]">
+                    Lorem ipsum dolor sit amet consectetur , India
+                  </p>
+                </div>
+
+                <div className="flex gap-4">
+                  <Phone className="text-lime-400" size={18} />
+
+                  <p className="text-gray-400 text-sm">+91 98765 43210</p>
+                </div>
+
+                <div className="flex gap-4">
+                  <Mail className="text-lime-400" size={18} />
+
+                  <p className="text-gray-400 text-sm break-all">
+                    info@company.com
+                  </p>
+                </div>
+              </div>
+
               {/* SOCIAL */}
               <div className="flex items-center gap-4 mt-8">
                 <Link
@@ -188,164 +295,158 @@ export default function Footer() {
             {/* QUICK LINKS */}
             <div>
               <h3 className="text-white text-lg font-semibold mb-6">
-                Quick Links
+                The Company
               </h3>
 
               <div className="flex flex-col gap-4">
                 <Link
-                  href="/"
-                  className="text-gray-400 hover:text-lime-400 transition text-sm"
-                >
-                  Home
-                </Link>
-
-                <Link
-                  href="/"
+                  href="/about"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
                   About Us
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/vision-mission"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
-                  Gallery
-                </Link>
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-lime-400 transition text-sm"
-                >
-                  Blogs
+                  vision & Mission
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/our-journey"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
-                  Contact
+                  Our Journey
+                </Link>
+                <Link
+                  href="/leadership-teams"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Leadership Teams
+                </Link>
+
+                <Link
+                  href="/manufacturing-facility"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Manufacturing Facility
+                </Link>
+                <Link
+                  href="/global-reach"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Global Reach
+                </Link>
+                <Link
+                  href="/memberships"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Memberships
+                </Link>
+                <Link
+                  href="/code-of-conduct"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Code of Conduct
+                </Link>
+                <Link
+                  href="/milestones"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Milestones
+                </Link>
+                <Link
+                  href="/awards-recognition"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Awards & Recognition
+                </Link>
+                <Link
+                  href="/csr"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  CSR Activities
                 </Link>
               </div>
             </div>
 
             {/* PRODUCTS */}
-            <div>
+            <div className="md:col-span-2">
               <h3 className="text-white text-lg font-semibold mb-6">
                 Products
               </h3>
 
-              <div className="flex flex-col gap-4">
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-lime-400 transition text-sm"
-                >
-                  Pipe Extrusion Lines
-                </Link>
-
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-lime-400 transition text-sm"
-                >
-                  Profile Extrusion
-                </Link>
-
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-lime-400 transition text-sm"
-                >
-                  Recycling Machines
-                </Link>
-
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-lime-400 transition text-sm"
-                >
-                  Sheet & Board Lines
-                </Link>
-
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-lime-400 transition text-sm"
-                >
-                  Compounding Systems
-                </Link>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {footerProducts.map((product) => (
+                  <Link
+                    key={product.link}
+                    href={product.link}
+                    className="text-gray-400 hover:text-lime-400 transition text-sm"
+                  >
+                    {product.name}
+                  </Link>
+                ))}
               </div>
             </div>
 
             {/* SERVICES */}
             <div>
               <h3 className="text-white text-lg font-semibold mb-6">
-                Services
+                Service & Support
               </h3>
 
               <div className="flex flex-col gap-4">
                 <Link
-                  href="/"
+                  href="/technical-assistance"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
-                  Installation
+                  Technical Assistance
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/field-services"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Field Services
+                </Link>
+
+                <Link
+                  href="/spare-parts"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Spare Parts
+                </Link>
+
+                <Link
+                  href="/training"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
                   Training
                 </Link>
 
                 <Link
-                  href="/"
+                  href="/manuals"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
-                  Maintenance
+                  Manuals
                 </Link>
-
                 <Link
-                  href="/"
+                  href="/extrusion-hints"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
-                  Annual Maintenance
+                  Extrusion Hints
                 </Link>
-
                 <Link
-                  href="/"
+                  href="/trouble-shooting"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
-                  Upgrades & Retrofits
+                  Trouble Shooting
                 </Link>
               </div>
             </div>
 
             {/* CONTACT */}
-            <div>
-              <h3 className="text-white text-lg font-semibold mb-6">
-                Contact Us
-              </h3>
-
-              <div className="flex flex-col gap-5">
-                <div className="flex gap-4">
-                  <MapPin className="text-lime-400 mt-1" size={18} />
-
-                  <p className="text-gray-400 text-sm leading-[28px]">
-                    Lorem ipsum dolor sit amet consectetur , India
-                  </p>
-                </div>
-
-                <div className="flex gap-4">
-                  <Phone className="text-lime-400" size={18} />
-
-                  <p className="text-gray-400 text-sm">+91 98765 43210</p>
-                </div>
-
-                <div className="flex gap-4">
-                  <Mail className="text-lime-400" size={18} />
-
-                  <p className="text-gray-400 text-sm break-all">
-                    info@company.com
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

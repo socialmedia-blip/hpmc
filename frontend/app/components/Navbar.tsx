@@ -10,68 +10,229 @@ import { useEffect, useState } from "react";
 import LanguageSelector from "./LanguageSelector";
 import ThemeToggle from "./Theme-toggle";
 import PopupForm from "./Popup";
+import { usePathname } from "next/navigation";
 
 const productsData = [
   {
-    title: "Pipe Extrusion",
+    title: "PVC Pipe Plant",
     children: [
       {
-        name: "HDPE Pipe Plant",
-        link: "/hdpe-pipe-plant",
+        name: "Single Screw Extruder",
+        link: "/single-screw-extruder",
       },
       {
-        name: "PVC Pipe Plant",
-        link: "/pvc-pipe-plant",
+        name: "Twin Screw Extruder",
+        link: "/twin-screw-extruder",
       },
       {
-        name: "Drip Irrigation Plant",
-        link: "/drip-irrigation-plant",
+        name: "PVC conduit Pipe Plant (Four Pipes)",
+        link: "/pvc-conduit-pipe-plant-four-pipes",
+      },
+      {
+        name: "PVC conduit Pipe Plant (Two Pipes)",
+        link: "/pvc-conduit-pipe-plant-two-pipes",
       },
     ],
   },
 
   {
-    title: "Profile Extrusion",
+    title: "HDPE Pipe Plant",
     children: [
       {
-        name: "WPC Profile",
-        link: "/wpc-profile",
-      },
-      {
-        name: "PVC Profile",
-        link: "/pvc-profile",
-      },
-      {
-        name: "Door Frame",
-        link: "/door-frame",
-      },
-      {
-        name: "Ceiling Panel",
-        link: "/ceiling-panel",
+        name: "High Speed HDPE Pipe Plant",
+        link: "/high-speed-hdpe-pipe-plant",
       },
     ],
   },
 
   {
-    title: "Recycling Machine",
+    title: "PVC Compounding Extruder",
     children: [
       {
-        name: "Plastic Recycling",
-        link: "/plastic-recycling",
-      },
-      {
-        name: "Agglomerator",
-        link: "/agglomerator",
-      },
-      {
-        name: "Grinder",
-        link: "/grinder",
-      },
-      {
-        name: "Crusher",
-        link: "/crusher",
+        name: "Twin Screw Plant for PVC Compounding",
+        link: "/pvc-compounding",
       },
     ],
+  },
+  {
+    title: "PPR Pipe Extruder",
+    children: [
+      {
+        name: "Single Screw Plant for PPR Pipe",
+        link: "/ppr-pipe-extruder",
+      },
+    ],
+  },
+  {
+    title: "Plastic Pelletizing Plant",
+    children: [
+      {
+        name: "Two Stage Recycling Plant",
+        link: "/two-stage-recycling-plant",
+      },
+      {
+        name: "Vented Recycling Plant",
+        link: "/vented-recycling-plant",
+      },
+      {
+        name: "Recycling Plant With Compactor",
+        link: "/recycling-plant-with-compactor",
+      },
+    ],
+  },
+  {
+    title: "Co-Rotating Twin Screw Extruder",
+    children: [
+      {
+        name: "Soft Cable Grade PVC Compounding Plant",
+        link: "/soft-cable-grade-pvc-compounding-plant",
+      },
+      {
+        name: "Corotating Twin Screw Extruder for Compounding & Recycling",
+        link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+      },
+      {
+        name: "Corotating Triple Screw Extruder for Compounding & Recycling (Engineering Plastic)",
+        link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+      },
+    ],
+  },
+  {
+    title: "Cable Extruder",
+    children: [
+      {
+        name: "High Speed Two Layer Cable Plant",
+        link: "/high-speed-two-layer-cable-plant",
+      },
+    ],
+  },
+  {
+    title: "PVC Trunking Extruder",
+    children: [
+      {
+        name: "Twin Screw Plant for PVC Trunking",
+        link: "/twin-screw-plant-for-pvc-trunking",
+      },
+    ],
+  },
+  {
+    title: "PVC Profile Extruder",
+    children: [
+      {
+        name: "Single Screw Plant for PVC Profile",
+        link: "/single-screw-plant-for-pvc-profile",
+      },
+      {
+        name: "Twin Screw Plant for PVC Profile",
+        link: "/twin-screw-plant-for-pvc-profile",
+      },
+    ],
+  },
+  {
+    title: "Garden Pipe Extruder",
+    children: [
+      {
+        name: "Single Screw Plant for Garden Pipe",
+        link: "/single-screw-plant-for-garden-pipe",
+      },
+    ],
+  },
+  {
+    title: "LLDPE Pipe Extruder",
+    children: [
+      {
+        name: "LLDPE Pipe Plant",
+        link: "/lldpe-pipe-plant",
+      },
+    ],
+  },
+  {
+    title: "CPVC Pipe Extruder",
+    children: [
+      {
+        name: "Twin Screw Plant for CPVC Pipe",
+        link: "/twin-screw-plant-for-cpvc-pipe",
+      },
+    ],
+  },
+];
+
+const companyMenu = [
+  {
+    name: "About Us",
+    link: "/about",
+  },
+  {
+    name: "Vision & Mission",
+    link: "/vision-mission",
+  },
+  {
+    name: "Our Journey",
+    link: "/our-journey",
+  },
+  {
+    name: "Leadership Team",
+    link: "/leadership-team",
+  },
+  {
+    name: "Manufacturing Facility",
+    link: "/manufacturing-facility",
+  },
+  {
+    name: "Global Reach",
+    link: "/global-reach",
+  },
+  {
+    name: "Memberships",
+    link: "/memberships",
+  },
+  {
+    name: "Code of Conduct",
+    link: "/code-of-conduct",
+  },
+  {
+    name: "Milestones",
+    link: "/milestones",
+  },
+  {
+    name: "Awards & Recognition",
+    link: "/awards-recognition",
+  },
+  {
+    name: "CSR Activities",
+    link: "/csr",
+  },
+];
+
+const serviceSupportMenu = [
+  {
+    name: "Technical Assistance",
+    link: "/technical-assistance",
+  },
+  {
+    name: "Field Services",
+    link: "/field-services",
+  },
+
+  {
+    name: "Spare Parts",
+    link: "/spare-parts",
+  },
+  {
+    name: "Training",
+    link: "/training",
+  },
+  {
+    name: "Manuals",
+    link: "/manuals",
+  },
+  {
+    name: "Extrusion Hints",
+    link: "/extrusion-hints",
+  },
+  {
+    name: "Trouble Shooting",
+    link: "/trouble-shooting",
   },
 ];
 
@@ -103,6 +264,18 @@ export default function Navbar() {
     null,
   );
   const [openPopup, setOpenPopup] = useState(false);
+
+  const [mobileCompany, setMobileCompany] = useState(false);
+  const [mobileService, setMobileService] = useState(false);
+  const pathname = usePathname();
+
+  const [submenuTop, setSubmenuTop] = useState(0);
+
+  const isCompanyActive = companyMenu.some((item) => pathname === item.link);
+
+  const isServiceActive = serviceSupportMenu.some(
+    (item) => pathname === item.link,
+  );
 
   useEffect(() => {
     const googleTranslateElementInit = () => {
@@ -151,23 +324,57 @@ export default function Navbar() {
             </Link>
 
             {/* DESKTOP MENU */}
-            <nav className="hidden lg:flex items-center gap-7 h-full">
+            <nav className="hidden lg:flex items-center gap-4 h-full">
               {/* HOME */}
               <Link
                 href="/"
-                className="relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide text-[var(--primary)]"
+                className={`relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide transition ${
+                  pathname === "/"
+                    ? "text-[var(--primary)]"
+                    : "text-[var(--text-primary)] hover:text-[var(--primary)]"
+                }`}
               >
                 Home
-                <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--primary)] rounded-full" />
+                {pathname === "/" && (
+                  <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--primary)] rounded-full" />
+                )}
               </Link>
 
               {/* ABOUT */}
-              <Link
-                href="/about"
-                className="relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide text-[var(--text-primary)] hover:text-[var(--primary)] transition"
-              >
-                About Us
-              </Link>
+              <div className="relative group h-full flex items-center">
+                <button
+                  className={`flex items-center gap-1 text-[14px] uppercase font-semibold tracking-wide transition h-full ${
+                    isCompanyActive
+                      ? "text-[var(--primary)]"
+                      : "text-[var(--text-primary)] hover:text-[var(--primary)]"
+                  }`}
+                >
+                  The Company
+                  <ChevronDown size={16} />
+                </button>
+
+                {isCompanyActive && (
+                  <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--primary)] rounded-full" />
+                )}
+
+                <div className="absolute top-full left-0 w-[280px] bg-[var(--card)] shadow-[var(--shadow-primary)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-[var(--border)]">
+                  <div className="max-h-[480px] overflow-y-auto">
+                    {companyMenu.map((item) => (
+                      <Link
+                        key={item.link}
+                        href={item.link}
+                        className={`block px-4 py-2 transition ${
+                          pathname === item.link
+                            ? "bg-[var(--muted)] text-[var(--primary)]"
+                            : "hover:bg-[var(--muted)] text-[var(--text-secondary)]"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               {/* PRODUCTS */}
               <div
@@ -180,7 +387,7 @@ export default function Navbar() {
                 </button>
 
                 {/* DROPDOWN */}
-                <div className="absolute top-full left-0 mt-0 w-[220px] bg-[var(--card)] shadow-[var(--shadow-primary)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-[var(--border)]">
+                <div className="absolute top-full left-0 mt-0 w-[340px] bg-[var(--card)] shadow-[var(--shadow-primary)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-[var(--border)]">
                   {productsData.map((item, index) => (
                     <div
                       key={index}
@@ -188,7 +395,7 @@ export default function Navbar() {
                       onMouseEnter={() => setActiveDropdown(index)}
                     >
                       {/* LEFT */}
-                      <div className="flex items-center justify-between px-4 py-3 hover:bg-[var(--muted)] cursor-pointer transition">
+                      <div className="flex items-center justify-between px-4 py-2 hover:bg-[var(--muted)] cursor-pointer transition">
                         <span className="text-[var(--text-primary)] font-medium">
                           {item.title}
                         </span>
@@ -219,17 +426,47 @@ export default function Navbar() {
               </div>
 
               {/* SERVICES */}
-              <Link
-                href="/services"
-                className="relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide text-[var(--text-primary)] hover:text-[var(--primary)] transition"
-              >
-                Services
-              </Link>
+              <div className="relative group h-full flex items-center">
+                <button
+                  className={`flex items-center gap-1 text-[14px] uppercase font-semibold tracking-wide transition h-full ${
+                    isServiceActive
+                      ? "text-[var(--primary)]"
+                      : "text-[var(--text-primary)] hover:text-[var(--primary)]"
+                  }`}
+                >
+                  Service & Support
+                  <ChevronDown size={16} />
+                </button>
+
+                {isServiceActive && (
+                  <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--primary)] rounded-full" />
+                )}
+
+                <div className="absolute top-full left-0 w-[240px] bg-[var(--card)] shadow-[var(--shadow-primary)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-[var(--border)]">
+                  {serviceSupportMenu.map((item) => (
+                    <Link
+                      key={item.link}
+                      href={item.link}
+                      className={`block px-4 py-2 transition ${
+                        pathname === item.link
+                          ? "bg-[var(--muted)] text-[var(--primary)]"
+                          : "hover:bg-[var(--muted)] text-[var(--text-secondary)]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
               {/* GALLERY */}
               <Link
                 href="/gallery"
-                className="relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide text-[var(--text-primary)] hover:text-[var(--primary)] transition"
+                className={`relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide transition ${
+                  pathname === "/gallery"
+                    ? "text-[var(--primary)]"
+                    : "text-[var(--text-primary)] hover:text-[var(--primary)]"
+                }`}
               >
                 Gallery
               </Link>
@@ -237,7 +474,11 @@ export default function Navbar() {
               {/* BLOG */}
               <Link
                 href="/blog"
-                className="relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide text-[var(--text-primary)] hover:text-[var(--primary)] transition"
+                className={`relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide transition ${
+                  pathname === "/blog"
+                    ? "text-[var(--primary)]"
+                    : "text-[var(--text-primary)] hover:text-[var(--primary)]"
+                }`}
               >
                 Blog
               </Link>
@@ -245,7 +486,11 @@ export default function Navbar() {
               {/* CONTACT */}
               <Link
                 href="/contact"
-                className="relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide text-[var(--text-primary)] hover:text-[var(--primary)] transition"
+                className={`relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide transition ${
+                  pathname === "/contact"
+                    ? "text-[var(--primary)]"
+                    : "text-[var(--text-primary)] hover:text-[var(--primary)]"
+                }`}
               >
                 Contact Us
               </Link>
@@ -312,12 +557,36 @@ export default function Navbar() {
               Home
             </Link>
 
-            <Link
-              href="/about"
-              className="py-4 text-[var(--text-primary)] font-semibold uppercase text-sm"
-            >
-              About Us
-            </Link>
+            {/* THE COMPANY */}
+            <div>
+              <button
+                onClick={() => setMobileCompany(!mobileCompany)}
+                className="w-full flex items-center justify-between py-4 text-[var(--text-primary)] font-semibold uppercase text-sm"
+              >
+                The Company
+                <div className="w-6 h-6 flex items-center justify-center">
+                  {mobileCompany ? "-" : "+"}
+                </div>
+              </button>
+
+              {mobileCompany && (
+                <div className="pl-4 pb-4 flex flex-col gap-3">
+                  {companyMenu.map((item) => (
+                    <Link
+                      key={item.link}
+                      href={item.link}
+                      className={`text-sm transition ${
+                        pathname === item.link
+                          ? "text-[var(--primary)] font-semibold"
+                          : "text-[var(--text-secondary)]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* PRODUCTS */}
             <div>
@@ -372,12 +641,36 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link
-              href="/services"
-              className="py-4 text-[var(--text-primary)] font-semibold uppercase text-sm"
-            >
-              Services
-            </Link>
+            {/* SERVICE & SUPPORT */}
+            <div>
+              <button
+                onClick={() => setMobileService(!mobileService)}
+                className="w-full flex items-center justify-between py-4 text-[var(--text-primary)] font-semibold uppercase text-sm"
+              >
+                Service & Support
+                <div className="w-6 h-6 flex items-center justify-center">
+                  {mobileService ? "-" : "+"}
+                </div>
+              </button>
+
+              {mobileService && (
+                <div className="pl-4 pb-4 flex flex-col gap-3">
+                  {serviceSupportMenu.map((item) => (
+                    <Link
+                      key={item.link}
+                      href={item.link}
+                      className={`text-sm transition ${
+                        pathname === item.link
+                          ? "text-[var(--primary)] font-semibold"
+                          : "text-[var(--text-secondary)]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <Link
               href="/gallery"

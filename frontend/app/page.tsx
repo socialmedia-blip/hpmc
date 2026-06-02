@@ -9,10 +9,18 @@ import PopupForm from "./components/Popup";
 import { useEffect, useState } from "react";
 import FloatingContact from "./components/FloatingButton";
 import { Quote, Star } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import ScrollToTopButton from "./components/ScrollToTop";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import ProductCarousel from "./components/Products";
 
 const testimonials = [
   {
@@ -41,6 +49,21 @@ const testimonials = [
   },
 ];
 
+const heroSlides = [
+  {
+    image: "/home-hero.png",
+    tag: "Extrusion Redefined",
+    title: ["Precision.", "Performance.", "Possibilities."],
+    desc: "Advanced plastic extrusion machinery engineered for superior output and reliability.",
+  },
+  {
+    image: "/home-hero2.png",
+    tag: "Global Manufacturing Excellence",
+    title: ["Manufacturer", "& Exporter", "Worldwide."],
+    desc: "Leading manufacturer and exporter of plastic extrusion machineries serving customers globally.",
+  },
+];
+
 interface CounterProps {
   end: number;
   suffix?: string;
@@ -65,76 +88,105 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <section className="relative w-full h-[50vh] lg:h-[100vh] overflow-hidden">
-        {/* BACKGROUND IMAGE */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/home-hero.png')",
+      <section className="mt-10 relative w-full h-[60vh] lg:h-screen overflow-hidden">
+        <Swiper
+          modules={[Navigation, Autoplay, EffectFade]}
+          effect="fade"
+          loop
+          speed={800}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
           }}
-        />
+          navigation={{
+            prevEl: ".hero-prev",
+            nextEl: ".hero-next",
+          }}
+          className="h-full"
+        >
+          {heroSlides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative w-full h-[60vh] lg:h-[100vh] overflow-hidden">
+                {/* BACKGROUND IMAGE */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                  }}
+                />
 
-        {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/10" />
+                {/* CONTENT */}
+                <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full flex items-center">
+                  <div className="max-w-[580px] w-full mt-16 sm:mt-20 md:mt-24 lg:mt-0">
+                    <p className="text-[#65BC4F] font-semibold uppercase tracking-[2px] mb-2 text-[10px] sm:text-xs md:text-sm">
+                      {slide.tag}
+                    </p>
 
-        {/* CONTENT */}
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full flex items-center">
-          {/* CONTENT BOX */}
-          <div className="max-w-[620px] w-full mt-16 sm:mt-20 md:mt-24 lg:mt-0">
-            {/* SMALL TEXT */}
-            <p className="text-[#65BC4F] font-semibold uppercase tracking-[2px] mb-2 text-[10px] sm:text-xs md:text-sm">
-              Extrusion Redefined
-            </p>
+                    <h1 className="text-[22px] sm:text-[34px] md:text-[46px] lg:text-[60px] leading-[1.05] font-bold text-[#0B1220]">
+                      {slide.title[0]}
+                      <br />
+                      {slide.title[1]}
+                      <br />
+                      <span className="text-[#65BC4F]">{slide.title[2]}</span>
+                    </h1>
 
-            {/* HEADING */}
-            <h1 className="text-[22px] sm:text-[34px] md:text-[46px] lg:text-[68px] leading-[1.05] font-bold text-[#0B1220]">
-              Precision.
-              <br />
-              Performance.
-              <br />
-              <span className="text-[#65BC4F]">Possibilities.</span>
-            </h1>
+                    <p className="mt-3 sm:mt-4 text-[12px] sm:text-[14px] md:text-[16px] leading-[22px] md:leading-[28px] text-gray-700 max-w-[520px]">
+                      {slide.desc}
+                    </p>
 
-            {/* DESCRIPTION */}
-            <p className="mt-3 sm:mt-4 text-[12px] sm:text-[14px] md:text-[16px] leading-[22px] md:leading-[28px] text-gray-700 max-w-[520px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              voluptatibus.
-            </p>
+                    <div className="flex flex-row gap-3 mt-5">
+                      <Link href="/products">
+                        <button className="flex items-center justify-center gap-3 bg-[#65BC4F] hover:bg-lime-600 transition px-5 py-2.5 rounded-lg group w-full sm:w-auto">
+                          <span className="uppercase text-white font-semibold text-xs sm:text-sm">
+                            Explore Products
+                          </span>
 
-            {/* BUTTONS */}
-            <div className="flex flex-row gap-3 mt-5">
-              {/* BUTTON 1 */}
-              <Link href="/products">
-                {" "}
-                <button className="flex items-center justify-center gap-3 bg-[#65BC4F] hover:bg-lime-600 transition px-5 py-2.5 rounded-lg group w-full sm:w-auto">
-                  <span className="uppercase text-white font-semibold text-xs sm:text-sm">
-                    Explore Products
-                  </span>
+                          <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
+                            <span className="text-white text-sm">→</span>
+                          </div>
+                        </button>
+                      </Link>
 
-                  <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-                    <span className="text-white text-sm">→</span>
+                      <button
+                        onClick={() => setOpenVideo(true)}
+                        className="flex items-center justify-center gap-3 border border-gray-300 hover:border-[#65BC4F] transition px-5 py-2.5 rounded-lg group bg-white/70 backdrop-blur-sm w-full sm:w-auto"
+                      >
+                        {" "}
+                        <span className="uppercase font-semibold text-xs sm:text-sm text-black group-hover:text-lime-600">
+                          {" "}
+                          Watch Video{" "}
+                        </span>{" "}
+                        <div className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-[#65BC4F]">
+                          {" "}
+                          <span className="text-xs text-black group-hover:text-lime-600">
+                            {" "}
+                            ▶{" "}
+                          </span>{" "}
+                        </div>{" "}
+                      </button>
+                    </div>
+
+                    <div className="flex items-center gap-4 mt-8">
+                      <button className="hero-prev w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
+                        ←
+                      </button>
+
+                      <button className="hero-next w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
+                        →
+                      </button>
+
+                      <div className="h-[1px] w-20 bg-gray-300"></div>
+
+                      <span className="text-xs uppercase tracking-wider text-gray-500">
+                        Slide Navigation
+                      </span>
+                    </div>
                   </div>
-                </button>
-              </Link>
-
-              {/* BUTTON 2 */}
-              <button
-                onClick={() => setOpenVideo(true)}
-                className="flex items-center justify-center gap-3 border border-gray-300 hover:border-[#65BC4F] transition px-5 py-2.5 rounded-lg group bg-white/70 backdrop-blur-sm w-full sm:w-auto"
-              >
-                <span className="uppercase font-semibold text-xs sm:text-sm text-black group-hover:text-lime-600">
-                  Watch Video
-                </span>
-
-                <div className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-[#65BC4F]">
-                  <span className="text-xs text-black group-hover:text-lime-600">
-                    ▶
-                  </span>
                 </div>
-              </button>
-            </div>
-          </div>
-        </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
       <section className="relative">
@@ -227,252 +279,78 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-16  overflow-hidden bg-[var(--background)]">
-        {/* DARK GRADIENT ONLY FOR DARK MODE */}
+      <section className="relative py-16 overflow-hidden bg-[var(--background)]">
         <div className="absolute inset-0 dark:bg-[var(--gradient-dark)]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* LEFT CONTENT */}
-            <div>
-              <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
-                About HPMC
-              </p>
+          {/* TOP LABEL */}
+          <div className="flex items-center gap-4 mb-8">
+            <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
+              About HPMC
+            </p>
 
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight text-[var(--foreground)]">
-                Redefining Extrusion
-                <br />
-                Since <span className="text-[var(--primary)]">1971</span>
-              </h2>
+            <div className="flex items-center">
+              <div className="w-10 h-[1px] bg-[var(--primary)]" />
+            </div>
+          </div>
 
-              <p className="mt-4 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-[620px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-                ratione illum eaque architecto doloremque, dignissimos
-                voluptatem beatae autem molestiae.
-              </p>
+          {/* HEADING */}
+          <h2 className="max-w-5xl text-4xl md:text-5xl font-bold leading-tight text-[var(--foreground)]">
+            We are a leading
+            <br />
+            manufacturer and exporter of
+            <br />
+            Plastic Extrusion Machineries.
+          </h2>
 
-              {/* FEATURES */}
-              <div className="mt-4 space-y-2">
-                {[
-                  "Lorem ipsum dolor sit amet consectetur",
-                  "Lorem ipsum dolor sit amet adipisicing elit",
-                  "Lorem ipsum dolor sit amet consectetur elit",
-                  "Lorem ipsum dolor sit amet consectetur",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-[var(--primary)] flex items-center justify-center text-white text-sm">
-                      ✓
-                    </div>
+          {/* BOTTOM CONTENT */}
+          <div className="mt-16 grid lg:grid-cols-[180px_1fr_220px] gap-10 items-start">
+            {/* PLAY BUTTON */}
+            <div className="hidden md:flex justify-center">
+              <button
+                onClick={() => setOpenVideo(true)}
+                className="w-28 h-28 rounded-full border-2 border-[var(--primary)] flex items-center justify-center group hover:bg-[var(--primary)] transition-all"
+              >
+                <span className="text-3xl text-[var(--primary)] group-hover:text-white ml-1">
+                  ▶
+                </span>
+              </button>
+            </div>
 
-                    <p className="text-[var(--text-primary)]">{item}</p>
-                  </div>
-                ))}
+            {/* DESCRIPTION */}
+            <div className="relative">
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[var(--border)]" />
+
+              <div className="pl-8">
+                <p className="text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-[750px]">
+                  HPMC is a leading plastic extrusion machinery manufacturer and
+                  exporter, delivering innovative and high-performance extrusion
+                  solutions across global markets. With decades of engineering
+                  expertise, advanced manufacturing capabilities, and a strong
+                  customer-centric approach, we continue to help industries
+                  achieve higher productivity, reliability, and sustainable
+                  growth.
+                </p>
               </div>
+            </div>
 
-              {/* BUTTON */}
+            {/* ROUND CTA */}
+            <div className="hidden lg:flex justify-center">
               <Link href="/about">
-                <button className="mt-5 bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-8 py-4 rounded-xl text-white font-semibold uppercase tracking-wide flex items-center gap-3">
-                  Know More About Us
-                  <span>→</span>
-                </button>
+                <div className="w-40 h-40 rounded-full border border-[var(--border)] flex items-center justify-center text-center cursor-pointer hover:border-[var(--primary)] transition-all duration-300">
+                  <span className="text-sm uppercase tracking-wider text-[var(--foreground)]">
+                    Know More
+                    <br />
+                    About Us ↗
+                  </span>
+                </div>
               </Link>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="relative hidden md:block">
-              <div className="relative overflow-hidden rounded-[30px] border border-[var(--border)]">
-                <img
-                  src="/product.jpg"
-                  alt="about"
-                  className="w-full h-[400px] md:h-[480px] object-cover"
-                />
-
-                {/* LIGHT OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent dark:from-black/50" />
-              </div>
-
-              {/* FLOATING CARD */}
-              <div className="absolute bottom-6 left-6 right-6 md:w-[320px] bg-[var(--card)]/90 backdrop-blur-xl border border-[var(--border)] rounded-2xl p-6 shadow-[var(--shadow-primary)]">
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  50+ Years
-                </h3>
-
-                <p className="mt-3 text-[15px] leading-7 text-[var(--text-secondary)]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                  molestiae dolores eaque.
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative py-16 bg-[var(--background)] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* TOP CONTENT */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
-            {/* LEFT SIDE */}
-            <div className="max-w-3xl">
-              <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
-                Our Products
-              </p>
-
-              <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                Engineered For Every Need
-              </h2>
-
-              {/* LINE */}
-              <div className="w-16 h-[3px] bg-[var(--primary)] mt-4 rounded-full" />
-
-              <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-                architecto cupiditate modi nostrum accusamus reprehenderit
-                possimus, voluptas magni pariatur necessitatibus.
-              </p>
-            </div>
-
-            {/* RIGHT SIDE BUTTON */}
-            <div className="flex lg:justify-end">
-              <Link href="/products">
-                <button className="bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-8 py-4 rounded-xl text-white font-semibold uppercase tracking-wide flex items-center gap-3 whitespace-nowrap">
-                  View All Products
-                  <span>→</span>
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          {/* PRODUCTS GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* CARD */}
-            <div className="bg-[var(--card)] rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-[var(--shadow-primary)] transition duration-300 group">
-              {/* IMAGE */}
-              <div className="overflow-hidden">
-                <img
-                  src="/product.jpg"
-                  alt="product"
-                  className="w-full h-[220px] object-cover group-hover:scale-105 transition duration-500"
-                />
-              </div>
-
-              {/* CONTENT */}
-              <div className="relative px-5 pt-10 pb-6">
-                {/* ICON */}
-                <div className="absolute -top-8 left-5 w-14 h-14 rounded-full bg-[var(--primary)] flex items-center justify-center shadow-lg">
-                  <span className="text-white text-2xl">⚙️</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-[var(--text-primary)]">
-                  Pipe Extrusion Lines
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tempore, exercitationem.
-                </p>
-
-                <button className="mt-5 text-[var(--primary)] font-semibold text-sm uppercase flex items-center gap-2 hover:gap-3 transition-all">
-                  View Details
-                  <span>→</span>
-                </button>
-              </div>
-            </div>
-
-            {/* CARD */}
-            <div className="bg-[var(--card)] rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-[var(--shadow-primary)] transition duration-300 group">
-              <div className="overflow-hidden">
-                <img
-                  src="/product.jpg"
-                  alt="product"
-                  className="w-full h-[220px] object-cover group-hover:scale-105 transition duration-500"
-                />
-              </div>
-
-              <div className="relative px-5 pt-10 pb-6">
-                <div className="absolute -top-8 left-5 w-14 h-14 rounded-full bg-[var(--primary)] flex items-center justify-center shadow-lg">
-                  <span className="text-white text-2xl">🏭</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-[var(--text-primary)]">
-                  Profile Extrusion
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tempore, exercitationem.
-                </p>
-
-                <button className="mt-5 text-[var(--primary)] font-semibold text-sm uppercase flex items-center gap-2 hover:gap-3 transition-all">
-                  View Details
-                  <span>→</span>
-                </button>
-              </div>
-            </div>
-
-            {/* CARD */}
-            <div className="bg-[var(--card)] rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-[var(--shadow-primary)] transition duration-300 group">
-              <div className="overflow-hidden">
-                <img
-                  src="/product.jpg"
-                  alt="product"
-                  className="w-full h-[220px] object-cover group-hover:scale-105 transition duration-500"
-                />
-              </div>
-
-              <div className="relative px-5 pt-10 pb-6">
-                <div className="absolute -top-8 left-5 w-14 h-14 rounded-full bg-[var(--primary)] flex items-center justify-center shadow-lg">
-                  <span className="text-white text-2xl">♻️</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-[var(--text-primary)]">
-                  Recycling Machines
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tempore, exercitationem.
-                </p>
-
-                <button className="mt-5 text-[var(--primary)] font-semibold text-sm uppercase flex items-center gap-2 hover:gap-3 transition-all">
-                  View Details
-                  <span>→</span>
-                </button>
-              </div>
-            </div>
-
-            {/* CARD */}
-            <div className="bg-[var(--card)] rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-[var(--shadow-primary)] transition duration-300 group">
-              <div className="overflow-hidden">
-                <img
-                  src="/product.jpg"
-                  alt="product"
-                  className="w-full h-[220px] object-cover group-hover:scale-105 transition duration-500"
-                />
-              </div>
-
-              <div className="relative px-5 pt-10 pb-6">
-                <div className="absolute -top-8 left-5 w-14 h-14 rounded-full bg-[var(--primary)] flex items-center justify-center shadow-lg">
-                  <span className="text-white text-2xl">📦</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-[var(--text-primary)]">
-                  Sheet & Board Lines
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tempore, exercitationem.
-                </p>
-
-                <button className="mt-5 text-[var(--primary)] font-semibold text-sm uppercase flex items-center gap-2 hover:gap-3 transition-all">
-                  View Details
-                  <span>→</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProductCarousel />
 
       <Clients />
 
@@ -693,6 +571,7 @@ export default function Home() {
       <CTA />
       <Footer />
       <FloatingContact />
+      <ScrollToTopButton />
       <PopupForm open={openPopup} onClose={() => setOpenPopup(false)} />
 
       {openVideo && (

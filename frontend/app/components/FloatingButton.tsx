@@ -14,7 +14,7 @@ export default function FloatingContact() {
       <div className="hidden md:block">
         {open && (
           <div
-            className="fixed bottom-32 right-6 z-[9999] w-[340px] overflow-hidden rounded-2xl border shadow-2xl"
+            className="fixed bottom-32 right-6 z-[9999] w-[320px] overflow-hidden rounded-2xl border shadow-2xl"
             style={{
               background: "var(--card)",
               borderColor: "var(--border)",
@@ -110,7 +110,7 @@ export default function FloatingContact() {
                     color: "var(--text-secondary)",
                   }}
                 >
-                  +91 88008 18156
+                  +91 1231231213
                 </p>
               </div>
             </a>
@@ -159,7 +159,7 @@ export default function FloatingContact() {
         {/* Floating Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="fixed bottom-6 right-6 z-[9999] flex h-16 w-16 items-center justify-center rounded-full text-white transition-all duration-300 hover:scale-110"
+          className="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full text-white transition-all duration-300 hover:scale-110"
           style={{
             background: "var(--primary)",
             boxShadow: "var(--shadow-primary)",

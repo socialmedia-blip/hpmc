@@ -22,7 +22,11 @@ type FormDataType = {
   message: string;
 };
 
-export default function LeadForm() {
+interface LeadFormProps {
+  onSuccess?: () => void;
+}
+
+export default function LeadForm({ onSuccess }: LeadFormProps) {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [otpLoading, setOtpLoading] = useState(false);
@@ -141,11 +145,27 @@ export default function LeadForm() {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send OTP");
+      if (data.alreadyRegistered) {
+        onSuccess?.();
+        return;
       }
 
-      setCurrentStep("otp");
+      if (!response.ok) {
+        throw new Error(data.message || "OTP verification failed");
+      }
+
+      // save user verification
+      localStorage.setItem(
+        "catalogue_access",
+        JSON.stringify({
+          email: formData.email,
+          verified: true,
+        }),
+      );
+
+      setCurrentStep("success");
+
+      onSuccess?.();
     } catch (error: any) {
       setServerError(error.message);
     } finally {
@@ -184,6 +204,8 @@ export default function LeadForm() {
       }
 
       setCurrentStep("success");
+
+      onSuccess?.();
 
       setTimeout(() => {
         setCurrentStep("form");
