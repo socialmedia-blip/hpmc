@@ -20,8 +20,10 @@ exports.sendOTP = async (req, res) => {
     // Check duplicate email
     const existingLead = await Lead.findOne({ email });
     if (existingLead) {
-      return res.status(400).json({
-        message: "Email already exists.",
+      return res.status(200).json({
+        success: true,
+        alreadyRegistered: true,
+        message: "Email already registered.",
       });
     }
 
