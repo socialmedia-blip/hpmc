@@ -41,32 +41,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+    <div className="min-h-screen  text-[var(--foreground)]">
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative h-[18vh] overflow-hidden">
-        <div className="absolute inset-0 bg-[var(--background)]" />
-
-        <div
-          className="
-            absolute left-1/2 top-1/2
-            h-[520px] w-[520px]
-            -translate-x-1/2 -translate-y-1/2
-            rounded-full
-            bg-[var(--primary)]/10
-            blur-[220px]
-          "
-        />
-      </section>
-
       {/* LOGIN SECTION */}
-      <section className="relative overflow-hidden pb-20">
-        {/* Decorative Glows */}
-        <div className="absolute -top-40 -left-40 h-[420px] w-[420px] rounded-full bg-[var(--primary)]/10 blur-3xl" />
-
-        <div className="absolute bottom-0 right-0 h-[360px] w-[360px] rounded-full bg-[var(--primary)]/10 blur-3xl" />
-
+      <section className="mt-24 relative overflow-hidden pb-10">
         <div className="relative z-10 px-4">
           <div
             className="

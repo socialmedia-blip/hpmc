@@ -229,11 +229,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
             {/* LOGO */}
             <div>
-              <Image src="/hp-logo.png" alt="logo" width={170} height={60} />
+              <Image src="/hp-logo.png" alt="logo" width={200} height={80} />
 
               <p className="text-gray-400 leading-[30px] mt-6 text-sm">
                 HPMC is a leading manufacturer of extrusion and recycling
-                machinery since 1971, trusted by customers worldwide.
+                machinery since 1971. Trusted by customers worldwide.
               </p>
 
               <div className="flex flex-col gap-5 mt-7">
@@ -310,7 +310,7 @@ export default function Footer() {
                   href="/vision-mission"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
-                  vision & Mission
+                  Vision & Mission
                 </Link>
 
                 <Link
@@ -452,25 +452,37 @@ export default function Footer() {
 
         {/* BOTTOM */}
         <div className="border-t border-white/10 pb-12 md:pb-0">
-          <div className="max-w-7xl mx-auto px-4 lg:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">
-              © 2026 HPMC. All Rights Reserved.
-            </p>
+          <div className="max-w-7xl mx-auto px-4 lg:px-6 py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              {/* Left */}
+              <p className="text-gray-500 text-sm">
+                © 2026 HPMC. All Rights Reserved.
+              </p>
 
-            <div className="flex items-center gap-8">
-              <Link
-                href="/"
-                className="text-gray-500 hover:text-lime-400 text-sm transition"
-              >
-                Privacy Policy
-              </Link>
+              {/* Center */}
+              <p className="text-sm text-gray-400 text-center">
+                Crafted with <span className="text-red-500">❤</span> by{" "}
+                <span className="font-semibold text-lime-400">
+                  Bigwig Media
+                </span>
+              </p>
 
-              <Link
-                href="/"
-                className="text-gray-500 hover:text-lime-400 text-sm transition"
-              >
-                Terms & Conditions
-              </Link>
+              {/* Right */}
+              <div className="flex items-center gap-8">
+                <Link
+                  href="/privacy-policy"
+                  className="text-gray-500 hover:text-lime-400 text-sm transition"
+                >
+                  Privacy Policy
+                </Link>
+
+                <Link
+                  href="/terms-and-conditions"
+                  className="text-gray-500 hover:text-lime-400 text-sm transition"
+                >
+                  Terms & Conditions
+                </Link>
+              </div>
             </div>
           </div>
         </div>

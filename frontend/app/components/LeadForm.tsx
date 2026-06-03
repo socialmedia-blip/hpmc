@@ -3,14 +3,83 @@
 import { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import Select from "react-select";
 
-const services = [
-  "Product 1",
-  "Product 2",
-  "Product 3",
-  "Product 4",
-  "Product 5",
-  "Product 6",
+const productOptions = [
+  { value: "Single Screw Extruder", label: "Single Screw Extruder" },
+  { value: "Twin Screw Extruder", label: "Twin Screw Extruder" },
+  {
+    value: "PVC Conduit Pipe Plant (Four Pipes)",
+    label: "PVC Conduit Pipe Plant (Four Pipes)",
+  },
+  {
+    value: "PVC Conduit Pipe Plant (Two Pipes)",
+    label: "PVC Conduit Pipe Plant (Two Pipes)",
+  },
+  {
+    value: "High Speed HDPE Pipe Plant",
+    label: "High Speed HDPE Pipe Plant",
+  },
+  {
+    value: "Twin Screw Plant for PVC Compounding",
+    label: "Twin Screw Plant for PVC Compounding",
+  },
+  {
+    value: "Single Screw Plant for PPR Pipe",
+    label: "Single Screw Plant for PPR Pipe",
+  },
+  {
+    value: "Two Stage Recycling Plant",
+    label: "Two Stage Recycling Plant",
+  },
+  {
+    value: "Vented Recycling Plant",
+    label: "Vented Recycling Plant",
+  },
+  {
+    value: "Recycling Plant With Compactor",
+    label: "Recycling Plant With Compactor",
+  },
+  {
+    value: "Soft Cable Grade PVC Compounding Plant",
+    label: "Soft Cable Grade PVC Compounding Plant",
+  },
+  {
+    value: "Corotating Twin Screw Extruder",
+    label: "Corotating Twin Screw Extruder",
+  },
+  {
+    value: "Corotating Triple Screw Extruder",
+    label: "Corotating Triple Screw Extruder",
+  },
+  {
+    value: "High Speed Two Layer Cable Plant",
+    label: "High Speed Two Layer Cable Plant",
+  },
+  {
+    value: "Twin Screw Plant for PVC Trunking",
+    label: "Twin Screw Plant for PVC Trunking",
+  },
+  {
+    value: "Single Screw Plant for PVC Profile",
+    label: "Single Screw Plant for PVC Profile",
+  },
+  {
+    value: "Twin Screw Plant for PVC Profile",
+    label: "Twin Screw Plant for PVC Profile",
+  },
+  {
+    value: "Single Screw Plant for Garden Pipe",
+    label: "Single Screw Plant for Garden Pipe",
+  },
+  {
+    value: "LLDPE Pipe Plant",
+    label: "LLDPE Pipe Plant",
+  },
+  {
+    value: "Twin Screw Plant for CPVC Pipe",
+    label: "Twin Screw Plant for CPVC Pipe",
+  },
 ];
 
 type FormDataType = {
@@ -163,7 +232,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         }),
       );
 
-      setCurrentStep("success");
+      setCurrentStep("otp");
 
       onSuccess?.();
     } catch (error: any) {
@@ -461,25 +530,88 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                   Select Products
                 </label>
 
-                <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-                  {services.map((service) => (
-                    <button
-                      key={service}
-                      type="button"
-                      onClick={() => toggleService(service)}
-                      className={`group rounded-xl border p-3 text-xs md:text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-                        selectedServices.includes(service)
-                          ? "border-[var(--primary)] bg-[var(--primary)] text-white"
-                          : ""
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span>{service}</span>
-                        {selectedServices.includes(service) && <span>✓</span>}
-                      </div>
-                    </button>
-                  ))}
-                </div>
+                <Select
+                  isMulti
+                  options={productOptions}
+                  placeholder="Search and select products..."
+                  value={productOptions.filter((option) =>
+                    selectedServices.includes(option.value),
+                  )}
+                  onChange={(selected) =>
+                    setSelectedServices(
+                      selected ? selected.map((item) => item.value) : [],
+                    )
+                  }
+                  styles={{
+                    control: (base, state) => ({
+                      ...base,
+                      minHeight: "56px",
+                      borderRadius: "16px",
+                      borderColor: state.isFocused
+                        ? "var(--primary)"
+                        : "var(--border)",
+                      backgroundColor: "var(--background)",
+                      boxShadow: "none",
+                      padding: "4px",
+                    }),
+
+                    menu: (base) => ({
+                      ...base,
+                      borderRadius: "16px",
+                      overflow: "hidden",
+                      backgroundColor: "var(--card)",
+                      zIndex: 9999,
+                    }),
+
+                    option: (base, state) => ({
+                      ...base,
+                      backgroundColor: state.isSelected
+                        ? "var(--primary)"
+                        : state.isFocused
+                          ? "rgba(101,188,79,0.1)"
+                          : "transparent",
+                      color: state.isSelected ? "#fff" : "var(--text-primary)",
+                      cursor: "pointer",
+                    }),
+
+                    multiValue: (base) => ({
+                      ...base,
+                      backgroundColor: "rgba(101,188,79,0.12)",
+                      borderRadius: "999px",
+                      padding: "2px 4px",
+                    }),
+
+                    multiValueLabel: (base) => ({
+                      ...base,
+                      color: "var(--primary)",
+                      fontWeight: 600,
+                    }),
+
+                    multiValueRemove: (base) => ({
+                      ...base,
+                      color: "var(--primary)",
+                      ":hover": {
+                        backgroundColor: "var(--primary)",
+                        color: "#fff",
+                      },
+                    }),
+
+                    placeholder: (base) => ({
+                      ...base,
+                      color: "var(--text-secondary)",
+                    }),
+
+                    input: (base) => ({
+                      ...base,
+                      color: "var(--text-primary)",
+                    }),
+
+                    singleValue: (base) => ({
+                      ...base,
+                      color: "var(--text-primary)",
+                    }),
+                  }}
+                />
               </div>
 
               {/* Message */}

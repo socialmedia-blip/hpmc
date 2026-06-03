@@ -9,6 +9,7 @@ import FloatingContact from "../components/FloatingButton";
 import PopupForm from "../components/Popup";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function About() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -320,7 +321,7 @@ export default function About() {
       </section>
 
       <CTA />
-
+      <ScrollToTop />
       <FloatingContact />
       <Footer />
       <PopupForm open={openPopup} onClose={() => setOpenPopup(false)} />

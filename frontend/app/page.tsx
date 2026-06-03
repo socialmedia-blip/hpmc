@@ -352,8 +352,6 @@ export default function Home() {
 
       <ProductCarousel />
 
-      <Clients />
-
       <section className="relative py-16  bg-[var(--background)] overflow-hidden">
         {/* BACKGROUND EFFECT */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--primary)]/5 blur-[120px]" />
@@ -461,6 +459,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Clients />
 
       <section className="relative overflow-hidden py-16 bg-[var(--background)]">
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

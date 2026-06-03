@@ -25,12 +25,12 @@ const productsData = [
         link: "/twin-screw-extruder",
       },
       {
-        name: "PVC conduit Pipe Plant (Four Pipes)",
-        link: "/pvc-conduit-pipe-plant-four-pipes",
+        name: "PVC Conduit Pipe Plant (Two Pipes)",
+        link: "/pvc-conduit-pipe-plant-two-pipes",
       },
       {
-        name: "PVC conduit Pipe Plant (Two Pipes)",
-        link: "/pvc-conduit-pipe-plant-two-pipes",
+        name: "PVC Conduit Pipe Plant (Four Pipes)",
+        link: "/pvc-conduit-pipe-plant-four-pipes",
       },
     ],
   },
@@ -317,14 +317,14 @@ export default function Navbar() {
               <Image
                 src="/hp-logo.png"
                 alt="HPMC Logo"
-                width={120}
-                height={40}
+                width={170}
+                height={80}
                 priority
               />
             </Link>
 
             {/* DESKTOP MENU */}
-            <nav className="hidden lg:flex items-center gap-4 h-full">
+            <nav className="hidden lg:flex items-center gap-7 h-full">
               {/* HOME */}
               <Link
                 href="/"
@@ -349,7 +349,7 @@ export default function Navbar() {
                       : "text-[var(--text-primary)] hover:text-[var(--primary)]"
                   }`}
                 >
-                  The Company
+                  Company
                   <ChevronDown size={16} />
                 </button>
 
@@ -396,7 +396,7 @@ export default function Navbar() {
                     >
                       {/* LEFT */}
                       <div className="flex items-center justify-between px-4 py-2 hover:bg-[var(--muted)] cursor-pointer transition">
-                        <span className="text-[var(--text-primary)] font-medium">
+                        <span className="text-[var(--text-secondary)] font-medium">
                           {item.title}
                         </span>
 
@@ -434,7 +434,7 @@ export default function Navbar() {
                       : "text-[var(--text-primary)] hover:text-[var(--primary)]"
                   }`}
                 >
-                  Service & Support
+                  Support
                   <ChevronDown size={16} />
                 </button>
 
@@ -492,7 +492,7 @@ export default function Navbar() {
                     : "text-[var(--text-primary)] hover:text-[var(--primary)]"
                 }`}
               >
-                Contact Us
+                Contact
               </Link>
             </nav>
 

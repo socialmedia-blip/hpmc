@@ -14,7 +14,6 @@ const clients = [
   "/clients/client (4).jpg",
   "/clients/client (5).jpg",
   "/clients/client (6).jpg",
-  "/clients/client (7).jpg",
   "/clients/client (8).jpg",
 ];
 
@@ -68,14 +67,30 @@ export default function Clients() {
         >
           {clients.map((logo, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[120px] flex items-center justify-center  hover:shadow-[var(--shadow-primary)] transition-all duration-300">
-                <Image
-                  src={logo}
-                  alt="client"
-                  width={160}
-                  height={100}
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
-                />
+              <div
+                className="
+    h-[120px] w-full rounded-2xl border
+    border-[var(--border)] bg-[var(--card)]
+    p-4 flex items-center
+    justify-center transition-all
+    duration-300
+    hover:shadow-[var(--shadow-primary)]
+  "
+              >
+                <div className="relative w-[200px] h-[100px]">
+                  <Image
+                    src={logo}
+                    alt="client"
+                    fill
+                    className="
+        object-contain
+        grayscale
+        hover:grayscale-0
+        transition-all
+        duration-300
+      "
+                  />
+                </div>
               </div>
             </SwiperSlide>
           ))}
