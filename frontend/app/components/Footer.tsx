@@ -233,7 +233,7 @@ export default function Footer() {
 
               <p className="text-gray-400 leading-[30px] mt-6 text-sm">
                 HPMC is a leading manufacturer of extrusion and recycling
-                machinery since 1971. Trusted by customers worldwide.
+                machinery since 1972. Trusted by customers worldwide.
               </p>
 
               <div className="flex flex-col gap-5 mt-7">

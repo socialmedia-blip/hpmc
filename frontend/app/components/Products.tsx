@@ -15,32 +15,36 @@ export default function ProductCarousel() {
   const products = [
     {
       id: 1,
-      title: "Pipe Extrusion Lines",
+      title: "Single Screw Extruder",
       image: "/product.jpg",
+      link: "/single-screw-extruder",
       description:
         "High-performance industrial extrusion solutions designed for reliability, efficiency and long-term productivity.",
       catalogue: "/catalogue.pdf",
     },
     {
       id: 2,
-      title: "Profile Extrusion",
+      title: "Twin Screw Extruder",
       image: "/product.jpg",
+      link: "/twin-screw-extruder",
       description:
         "High-performance industrial extrusion solutions designed for reliability, efficiency and long-term productivity.",
       catalogue: "/catalogue.pdf",
     },
     {
       id: 3,
-      title: "Recycling Machines",
+      title: "PVC Conduit Pipe Plant (Two Pipes)",
       image: "/product.jpg",
+      link: "/pvc-conduit-pipe-plant-two-pipes",
       description:
         "High-performance industrial extrusion solutions designed for reliability, efficiency and long-term productivity.",
       catalogue: "/catalogue.pdf",
     },
     {
       id: 4,
-      title: "Sheet & Board Lines",
+      title: "PVC Conduit Pipe Plant (Four Pipes)",
       image: "/product.jpg",
+      link: "/pvc-conduit-pipe-plant-four-pipes",
       description:
         "High-performance industrial extrusion solutions designed for reliability, efficiency and long-term productivity.",
       catalogue: "/catalogue.pdf",
@@ -76,13 +80,9 @@ export default function ProductCarousel() {
             Engineered For Every Need
           </h2>
 
-          {/* LINE */}
-          <div className="w-16 h-[3px] bg-[var(--primary)] mt-4 rounded-full" />
-
           <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-            architecto cupiditate modi nostrum accusamus reprehenderit possimus,
-            voluptas magni pariatur necessitatibus.
+            Complete plastic extrusion solutions for pipes, profiles, recycling,
+            compounding, and custom industrial applications.
           </p>
         </div>
       </div>
@@ -125,7 +125,8 @@ export default function ProductCarousel() {
                 </h3>
 
                 <div className="mt-3 flex gap-2">
-                  <button
+                  <Link
+                    href={product.link}
                     className="
                       flex-1
                       rounded-xl
@@ -140,7 +141,7 @@ export default function ProductCarousel() {
                     "
                   >
                     View More
-                  </button>
+                  </Link>
 
                   <button
                     onClick={() => handleDownload(product.catalogue)}
@@ -160,8 +161,8 @@ export default function ProductCarousel() {
               </div>
 
               {/* Desktop Title */}
-              <div className="absolute bottom-0 left-0 right-0 z-10 hidden p-6 md:block">
-                <h3 className="text-2xl font-bold text-white">
+              <div className="absolute bottom-0 left-0 right-0 hidden p-6 md:block">
+                <h3 className="text-lg font-semibold text-white">
                   {product.title}
                 </h3>
               </div>
@@ -169,7 +170,7 @@ export default function ProductCarousel() {
               {/* Desktop Hover Overlay */}
               <div
                 className="
-                  absolute inset-0
+                  absolute inset-0 z-10
                   hidden md:flex
                   flex-col items-center justify-center
                   bg-black/70

@@ -6,7 +6,7 @@ import Link from "next/link";
 import CTA from "./components/CTA";
 import Clients from "./components/Client";
 import PopupForm from "./components/Popup";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FloatingContact from "./components/FloatingButton";
 import { Quote, Star } from "lucide-react";
 import CountUp from "react-countup";
@@ -21,6 +21,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import ProductCarousel from "./components/Products";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -51,17 +52,31 @@ const testimonials = [
 
 const heroSlides = [
   {
+    image: "/home-hero3.png",
+    tag: "India's Trusted Manufacturer Since 1972",
+    title: ["50+ Years", "of Plastic Extrusion", "Excellence."],
+    desc: "Delivering complete turnkey solutions for PVC, HDPE, PPR, Recycling, Compounding & Profile Extrusion industries with 1000+ successful installations, global exports, and end-to-end technical support.",
+  },
+  {
     image: "/home-hero.png",
     tag: "Extrusion Redefined",
     title: ["Precision.", "Performance.", "Possibilities."],
     desc: "Advanced plastic extrusion machinery engineered for superior output and reliability.",
   },
   {
-    image: "/home-hero2.png",
+    image: "/home-hero4.png",
     tag: "Global Manufacturing Excellence",
     title: ["Manufacturer", "& Exporter", "Worldwide."],
     desc: "Leading manufacturer and exporter of plastic extrusion machineries serving customers globally.",
   },
+];
+
+const stats = [
+  { icon: "🏆", value: 50, suffix: "+", label: "Years of Experience" },
+  { icon: "⚙️", value: 12000, suffix: "+", label: "Machines Installed" },
+  { icon: "🌍", value: 80, suffix: "+", label: "Countries Worldwide" },
+  { icon: "👨‍🔧", value: 100, suffix: "+", label: "Expert Engineers" },
+  { icon: "🎯", value: 100, suffix: "%", label: "Customer Satisfaction" },
 ];
 
 interface CounterProps {
@@ -72,6 +87,8 @@ interface CounterProps {
 export default function Home() {
   const [openPopup, setOpenPopup] = useState(false);
   const [openVideo, setOpenVideo] = useState(false);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem("popupShown");
@@ -193,87 +210,26 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="bg-[var(--card)] shadow-[var(--shadow-primary)] border border-[var(--border)] overflow-hidden ">
             {/* GRID */}
-            <div className="grid grid-cols-4 md:grid-cols-5">
-              {/* ITEM */}
-              <div className="flex flex-col items-center text-center p-5 border-b lg:border-b-0 lg:border-r border-[var(--border)]">
-                {/* ICON */}
-                <div className="relative w-[58px] h-[58px] rounded-full border-2 border-[var(--border)] flex items-center justify-center mb-4">
-                  <div className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[62px] h-[31px] border-t-[3px] border-[var(--primary)] rounded-t-full" />
-                  <span className="text-2xl">🏆</span>
+            <div className="grid grid-cols-2 md:grid-cols-5">
+              {stats.map((item, index) => (
+                <div
+                  key={index}
+                  className="group flex flex-col items-center text-center p-6 border border-[var(--border)] transition-all duration-300 hover:bg-[var(--primary)] hover:-translate-y-1"
+                >
+                  <div className="relative w-[60px] h-[60px] rounded-full border-2 border-[var(--border)] flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-white">
+                    <div className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[64px] h-[32px] border-t-[3px] border-[var(--primary)] rounded-t-full transition-all duration-300 group-hover:border-white" />
+                    <span className="text-2xl">{item.icon}</span>
+                  </div>
+
+                  <h3 className="text-3xl font-bold text-[var(--text-primary)] transition-colors duration-300 group-hover:text-white">
+                    <Counter end={item.value} suffix={item.suffix} />
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)] transition-colors duration-300 group-hover:text-white/90">
+                    {item.label}
+                  </p>
                 </div>
-
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  <Counter end={50} suffix="+" />
-                </h3>
-
-                <p className="text-sm text-[var(--text-secondary)] mt-1 leading-6">
-                  Years of Experience
-                </p>
-              </div>
-
-              {/* ITEM */}
-              <div className="flex flex-col items-center text-center p-5 border-b lg:border-b-0 lg:border-r border-[var(--border)]">
-                <div className="relative w-[58px] h-[58px] rounded-full border-2 border-[var(--border)] flex items-center justify-center mb-4">
-                  <div className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[62px] h-[31px] border-t-[3px] border-[var(--primary)] rounded-t-full" />
-                  <span className="text-2xl">⚙️</span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  <Counter end={12000} suffix="+" />
-                </h3>
-
-                <p className="text-sm text-[var(--text-secondary)] mt-1 leading-6">
-                  Machines Installed
-                </p>
-              </div>
-
-              {/* ITEM */}
-              <div className="flex flex-col items-center text-center p-5 border-b lg:border-b-0 lg:border-r border-[var(--border)]">
-                <div className="relative w-[58px] h-[58px] rounded-full border-2 border-[var(--border)] flex items-center justify-center mb-4">
-                  <div className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[62px] h-[31px] border-t-[3px] border-[var(--primary)] rounded-t-full" />
-                  <span className="text-2xl">🌍</span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  <Counter end={80} suffix="+" />
-                </h3>
-
-                <p className="text-sm text-[var(--text-secondary)] mt-1 leading-6">
-                  Countries Worldwide
-                </p>
-              </div>
-
-              {/* ITEM */}
-              <div className="hidden md:flex flex-col items-center text-center p-5 border-b lg:border-b-0 lg:border-r border-[var(--border)]">
-                <div className="relative w-[58px] h-[58px] rounded-full border-2 border-[var(--border)] flex items-center justify-center mb-4">
-                  <div className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[62px] h-[31px] border-t-[3px] border-[var(--primary)] rounded-t-full" />
-                  <span className="text-2xl">👨‍🔧</span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  <Counter end={100} suffix="+" />
-                </h3>
-
-                <p className="text-sm text-[var(--text-secondary)] mt-1 leading-6">
-                  Expert Engineers
-                </p>
-              </div>
-
-              {/* ITEM */}
-              <div className="flex flex-col items-center text-center p-5 border-b lg:border-b-0 lg:border-r border-[var(--border)]">
-                <div className="relative w-[58px] h-[58px] rounded-full border-2 border-[var(--border)] flex items-center justify-center mb-4">
-                  <div className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[62px] h-[31px] border-t-[3px] border-[var(--primary)] rounded-t-full" />
-                  <span className="text-2xl">🎯</span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                  <Counter end={100} suffix="%" />
-                </h3>
-
-                <p className="text-sm text-[var(--text-secondary)] mt-1 leading-6">
-                  Customer Satisfaction
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -284,27 +240,23 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* TOP LABEL */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4 mb-4">
             <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
               About HPMC
             </p>
-
-            <div className="flex items-center">
-              <div className="w-10 h-[1px] bg-[var(--primary)]" />
-            </div>
           </div>
 
           {/* HEADING */}
           <h2 className="max-w-5xl text-4xl md:text-5xl font-bold leading-tight text-[var(--foreground)]">
-            We are a leading
+            Engineering Excellence
             <br />
-            manufacturer and exporter of
+            in Plastic Extrusion
             <br />
-            Plastic Extrusion Machineries.
+            Since 1972.
           </h2>
 
           {/* BOTTOM CONTENT */}
-          <div className="mt-16 grid lg:grid-cols-[180px_1fr_220px] gap-10 items-start">
+          <div className="mt-10 grid lg:grid-cols-[180px_1fr_220px] gap-10 items-start">
             {/* PLAY BUTTON */}
             <div className="hidden md:flex justify-center">
               <button
@@ -323,13 +275,15 @@ export default function Home() {
 
               <div className="pl-8">
                 <p className="text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-[750px]">
-                  HPMC is a leading plastic extrusion machinery manufacturer and
-                  exporter, delivering innovative and high-performance extrusion
-                  solutions across global markets. With decades of engineering
-                  expertise, advanced manufacturing capabilities, and a strong
-                  customer-centric approach, we continue to help industries
-                  achieve higher productivity, reliability, and sustainable
-                  growth.
+                  For more than five decades, Hindustan Plastics & Machine
+                  Corporation has been a trusted leader in India's plastic
+                  processing and extrusion machinery industry. Since 1972, we
+                  have delivered innovative, reliable, and high-performance
+                  manufacturing solutions built on engineering precision,
+                  uncompromising quality, and customer-focused innovation.
+                  Today, HPMC proudly serves manufacturers across India and
+                  global markets with advanced extrusion technologies and
+                  complete turnkey solutions.
                 </p>
               </div>
             </div>
@@ -337,8 +291,8 @@ export default function Home() {
             {/* ROUND CTA */}
             <div className="hidden lg:flex justify-center">
               <Link href="/about">
-                <div className="w-40 h-40 rounded-full border border-[var(--border)] flex items-center justify-center text-center cursor-pointer hover:border-[var(--primary)] transition-all duration-300">
-                  <span className="text-sm uppercase tracking-wider text-[var(--foreground)]">
+                <div className="group w-40 h-40 rounded-full border border-[var(--border)] flex items-center justify-center text-center cursor-pointer hover:border-[var(--primary)] hover:bg-[var(--primary)] transition-all duration-300">
+                  <span className="text-sm uppercase tracking-wider text-[var(--foreground)] group-hover:text-white transition-colors duration-300">
                     Know More
                     <br />
                     About Us ↗
@@ -352,6 +306,96 @@ export default function Home() {
 
       <ProductCarousel />
 
+      <section className="relative py-16 bg-[var(--background)] overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[var(--primary)]/5 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[var(--primary)]/5 blur-[120px]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[420px_1fr] gap-16 items-start">
+            {/* LEFT CONTENT */}
+            <div className="sticky top-24">
+              <div className="flex items-center gap-4 mb-6">
+                <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
+                  Industries We Serve
+                </p>
+              </div>
+
+              <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+                Trusted Across
+                <br />
+                Diverse Industries
+              </h2>
+
+              <p className="mt-6 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)]">
+                From infrastructure and agriculture to recycling and polymer
+                processing, HPMC delivers reliable extrusion solutions tailored
+                to the evolving needs of modern industries.
+              </p>
+
+              <div className="mt-8 p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)]">
+                <p className="text-[var(--text-secondary)] leading-7">
+                  Whether you are launching a new manufacturing venture or
+                  expanding an existing production facility, our team provides
+                  complete turnkey solutions aligned with your business goals.
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT GRID */}
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  icon: "💧",
+                  title: "Water Supply & Infrastructure",
+                },
+                {
+                  icon: "🌾",
+                  title: "Agriculture & Irrigation",
+                },
+                {
+                  icon: "🏗️",
+                  title: "Construction & Building Materials",
+                },
+                {
+                  icon: "⚡",
+                  title: "Electrical & Cable Industries",
+                },
+                {
+                  icon: "📦",
+                  title: "Packaging & Consumer Products",
+                },
+                {
+                  icon: "🏭",
+                  title: "Industrial Components Manufacturing",
+                },
+                {
+                  icon: "♻️",
+                  title: "Plastic Recycling & Sustainability",
+                },
+                {
+                  icon: "🧪",
+                  title: "PVC Compounding & Polymer Processing",
+                },
+              ].map((industry, index) => (
+                <div
+                  key={index}
+                  className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-4 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--primary)] hover:shadow-[var(--shadow-primary)]"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-2xl mb-5 transition-all duration-300 group-hover:bg-[var(--primary)] group-hover:text-white">
+                    {industry.icon}
+                  </div>
+
+                  <h3 className="text-base  text-[var(--text-primary)] leading-7">
+                    {industry.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-16  bg-[var(--background)] overflow-hidden">
         {/* BACKGROUND EFFECT */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--primary)]/5 blur-[120px]" />
@@ -362,82 +406,40 @@ export default function Home() {
             {/* LEFT */}
             <div className="max-w-3xl">
               <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
-                Why Choose Us
+                Why Choose HPMC
               </p>
 
               <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                Delivering Engineering
+                Trusted By Manufacturers
                 <br />
-                Excellence Worldwide
+                For Over 50 Years
               </h2>
 
-              {/* LINE */}
-              <div className="w-16 h-[3px] bg-[var(--primary)] mt-4 rounded-full" />
-
               <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, laboriosam. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit.
+                Combining engineering excellence, superior quality, and
+                dedicated support to deliver reliable extrusion solutions that
+                drive long-term business growth.
               </p>
             </div>
 
             {/* RIGHT BUTTON */}
-            <div>
-              <button className="bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-8 py-4 rounded-xl text-white font-semibold uppercase tracking-wide flex items-center gap-3">
-                Explore More
-                <span>→</span>
-              </button>
-            </div>
           </div>
 
           {/* CARDS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* CARD */}
-            <div className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-7 hover:-translate-y-2 hover:shadow-[var(--shadow-primary)] transition duration-300">
-              {/* ICON */}
-              <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-3xl mb-6 group-hover:bg-[var(--primary)] transition">
-                <span className="group-hover:scale-110 transition">⚙️</span>
-              </div>
-
-              <h3 className="text-xl font-bold text-[var(--text-primary)]">
-                Advanced Technology
-              </h3>
-
-              <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae, laboriosam.
-              </p>
-            </div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {/* CARD */}
             <div className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-7 hover:-translate-y-2 hover:shadow-[var(--shadow-primary)] transition duration-300">
               <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-3xl mb-6 group-hover:bg-[var(--primary)] transition">
-                <span className="group-hover:scale-110 transition">🌍</span>
+                <span className="group-hover:scale-110 transition">🤝</span>
               </div>
 
               <h3 className="text-xl font-bold text-[var(--text-primary)]">
-                Global Presence
+                Transparent Practices
               </h3>
 
               <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae, laboriosam.
-              </p>
-            </div>
-
-            {/* CARD */}
-            <div className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-7 hover:-translate-y-2 hover:shadow-[var(--shadow-primary)] transition duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-3xl mb-6 group-hover:bg-[var(--primary)] transition">
-                <span className="group-hover:scale-110 transition">👨‍🔧</span>
-              </div>
-
-              <h3 className="text-xl font-bold text-[var(--text-primary)]">
-                Expert Engineers
-              </h3>
-
-              <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae, laboriosam.
+                Honest communication, ethical dealings, and complete
+                transparency at every stage.
               </p>
             </div>
 
@@ -448,45 +450,116 @@ export default function Home() {
               </div>
 
               <h3 className="text-xl font-bold text-[var(--text-primary)]">
-                Trusted Quality
+                Superior Quality
               </h3>
 
               <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae, laboriosam.
+                Precision-engineered machinery built for durability, efficiency,
+                and performance.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-7 hover:-translate-y-2 hover:shadow-[var(--shadow-primary)] transition duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-3xl mb-6 group-hover:bg-[var(--primary)] transition">
+                <span className="group-hover:scale-110 transition">⏱️</span>
+              </div>
+
+              <h3 className="text-xl font-bold text-[var(--text-primary)]">
+                Timely Delivery
+              </h3>
+
+              <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)]">
+                Efficient planning and execution ensure projects are completed
+                on schedule.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-7 hover:-translate-y-2 hover:shadow-[var(--shadow-primary)] transition duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-3xl mb-6 group-hover:bg-[var(--primary)] transition">
+                <span className="group-hover:scale-110 transition">👨‍🔧</span>
+              </div>
+
+              <h3 className="text-xl font-bold text-[var(--text-primary)]">
+                Technical Support
+              </h3>
+
+              <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)]">
+                Expert guidance, installation assistance, and responsive
+                after-sales service.
+              </p>
+            </div>
+
+            <div className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-7 hover:-translate-y-2 hover:shadow-[var(--shadow-primary)] transition duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-3xl mb-6 group-hover:bg-[var(--primary)] transition">
+                <span className="group-hover:scale-110 transition">📈</span>
+              </div>
+
+              <h3 className="text-xl font-bold text-[var(--text-primary)]">
+                Long-Term Reliability
+              </h3>
+
+              <p className="mt-4 text-[15px] leading-7 text-[var(--text-secondary)]">
+                Trusted by customers for repeat projects, expansions, and new
+                production lines.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <Clients />
 
       <section className="relative overflow-hidden py-16 bg-[var(--background)]">
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-14">
-            <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
-              Testimonials
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+            <div className="text-center md:text-left">
+              <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
+                Testimonials
+              </p>
 
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)]">
-              What Our Clients Say
-            </h2>
+              <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)]">
+                What Our Clients Say
+              </h2>
 
-            <div className="w-16 h-[3px] bg-[var(--primary)] mx-auto mt-4 rounded-full" />
+              <p className="mt-5 max-w-2xl text-[var(--text-secondary)] leading-8">
+                Trusted by businesses worldwide for delivering quality,
+                reliability, and innovation.
+              </p>
+            </div>
 
-            <p className="mt-5 max-w-2xl mx-auto text-[var(--text-secondary)] leading-8">
-              Trusted by businesses worldwide for delivering quality,
-              reliability, and innovation.
-            </p>
+            {/* Navigation */}
+            <div className="flex items-center justify-center gap-3">
+              <button
+                ref={prevRef}
+                className="w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
+              >
+                <ArrowLeft size={20} />
+              </button>
+
+              <button
+                ref={nextRef}
+                className="w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
+              >
+                <ArrowRight size={20} />
+              </button>
+            </div>
           </div>
 
           {/* Slider */}
           <Swiper
-            modules={[Autoplay, Pagination]}
+            modules={[Autoplay, Pagination, Navigation]}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
             }}
             pagination={{
               clickable: true,

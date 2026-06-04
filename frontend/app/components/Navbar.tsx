@@ -472,7 +472,7 @@ export default function Navbar() {
               </div>
 
               {/* GALLERY */}
-              <Link
+              {/* <Link
                 href="/gallery"
                 className={`relative h-full flex items-center text-[14px] uppercase font-semibold tracking-wide transition ${
                   pathname === "/gallery"
@@ -484,7 +484,7 @@ export default function Navbar() {
                 {pathname === "/gallery" && (
                   <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--primary)] rounded-full" />
                 )}
-              </Link>
+              </Link> */}
 
               {/* BLOG */}
               <Link
@@ -693,12 +693,12 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link
+            {/* <Link
               href="/gallery"
               className="py-4 text-[var(--text-primary)] font-semibold uppercase text-sm"
             >
               Gallery
-            </Link>
+            </Link> */}
 
             <Link
               href="/blog"
