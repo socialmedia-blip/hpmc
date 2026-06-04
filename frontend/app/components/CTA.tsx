@@ -33,8 +33,9 @@ export default function CTA() {
                 </h2>
 
                 <p className="mt-2 text-[15px] md:text-base text-white/80  leading-7 max-w-[520px]">
-                  lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod
+                  Looking for reliable plastic extrusion machinery? Our experts
+                  are ready to help you find the right solution for your
+                  manufacturing needs.
                 </p>
               </div>
             </div>

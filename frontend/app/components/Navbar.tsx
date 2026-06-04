@@ -187,6 +187,10 @@ const companyMenu = [
     link: "/memberships",
   },
   {
+    name: "Clients",
+    link: "/clients",
+  },
+  {
     name: "Code of Conduct",
     link: "/code-of-conduct",
   },

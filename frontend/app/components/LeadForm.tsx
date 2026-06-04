@@ -350,10 +350,11 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
             <div className="mt-8 space-y-3">
               {[
-                "Premium Quality Products",
-                "Fast Response & Support",
-                "Trusted Industry Expertise",
-                "Reliable Manufacturing Solutions",
+                " 50+ Years of Experience ",
+                "1000+ Successful Installations",
+                "ISO Certified Manufacturing",
+                "Global Export Presence",
+                "End-to-End Technical Support",
               ].map((item) => (
                 <div
                   key={item}

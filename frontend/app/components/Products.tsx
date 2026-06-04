@@ -195,7 +195,8 @@ export default function ProductCarousel() {
                 </p>
 
                 <div className="mt-8 flex gap-3">
-                  <button
+                  <Link
+                    href={product.link}
                     className="
                       rounded-xl
                       border
@@ -210,7 +211,7 @@ export default function ProductCarousel() {
                     "
                   >
                     View More
-                  </button>
+                  </Link>
 
                   <button
                     onClick={() => handleDownload(product.catalogue)}

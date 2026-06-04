@@ -73,7 +73,7 @@ const heroSlides = [
 
 const stats = [
   { icon: "🏆", value: 50, suffix: "+", label: "Years of Experience" },
-  { icon: "⚙️", value: 12000, suffix: "+", label: "Machines Installed" },
+  { icon: "⚙️", value: 1000, suffix: "+", label: "Machines Installed" },
   { icon: "🌍", value: 80, suffix: "+", label: "Countries Worldwide" },
   { icon: "👨‍🔧", value: 100, suffix: "+", label: "Expert Engineers" },
   { icon: "🎯", value: 100, suffix: "%", label: "Customer Satisfaction" },

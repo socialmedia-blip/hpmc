@@ -169,8 +169,9 @@ export default function Footer() {
                   </h2>
 
                   <p className="mt-4 text-white/70 leading-7 text-[15px]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatibus, illum. Stay updated with industry trends.
+                    Stay informed with the latest industry trends, product
+                    innovations, extrusion technologies, and company updates
+                    delivered directly to your inbox.
                   </p>
                 </div>
 
