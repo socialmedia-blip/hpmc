@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
+import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
   "/product.jpg",
@@ -25,50 +26,62 @@ const galleryImages = [
 
 const features = [
   {
-    title: "High Output Performance",
-    desc: "Designed for continuous production with optimized screw geometry, ensuring maximum throughput and consistent material flow for a wide range of plastic processing applications.",
+    title: "Precision Die Head",
+    desc: "Engineered for accurate pipe formation, the die head is available for pipe sizes ranging from 16mm to 160mm and is equipped with a stainless-steel spider for superior flow distribution and dimensional accuracy.",
     image: "/product.jpg",
 
     highlights: [
-      "Consistent melt quality",
-      "High production capacity",
-      "Reduced material wastage",
+      "16mm – 160mm pipe range",
+      "Stainless steel spider",
+      "Uniform material flow",
     ],
   },
 
   {
-    title: "Energy Efficient Operation",
-    desc: "Equipped with advanced drive systems and optimized heating controls to minimize power consumption while maintaining stable production performance.",
+    title: "Advanced Cooling Unit",
+    desc: "The vacuum and water cooling system ensures precise pipe dimensions, excellent surface finish, and efficient cooling performance for consistent production quality.",
     image: "/product.jpg",
 
     highlights: [
-      "Low energy consumption",
-      "Advanced temperature control",
-      "Reduced operating costs",
+      "Vacuum tank for 16mm – 50mm pipes",
+      "Accurate pipe sizing",
+      "Spray & non-spray cooling options",
     ],
   },
 
   {
-    title: "Robust & Durable Construction",
-    desc: "Built with premium-grade materials and precision-engineered components to ensure long service life, reliability, and continuous industrial operation.",
+    title: "Heavy-Duty Caterpuller",
+    desc: "Equipped with independent geared motors for both rollers, the caterpuller delivers smooth pipe movement while preventing wrinkles and maintaining stable production speed.",
     image: "/product.jpg",
 
     highlights: [
-      "Heavy-duty frame structure",
-      "Wear-resistant screw & barrel",
-      "Suitable for long production runs",
+      "Dual geared motor drive",
+      "Smooth pipe handling",
+      "Wrinkle-free operation",
     ],
   },
 
   {
-    title: "Easy Maintenance & User-Friendly",
-    desc: "Designed for quick accessibility and simplified maintenance procedures, reducing downtime and improving overall production efficiency.",
+    title: "Automatic Cutting System",
+    desc: "The automatic cutting unit features pneumatic clamping and length sensing technology to provide accurate, clean, and repeatable pipe cutting operations.",
     image: "/product.jpg",
 
     highlights: [
-      "Quick component access",
-      "Minimal maintenance requirements",
-      "Operator-friendly controls",
+      "Pneumatic holding system",
+      "Preset length control",
+      "Consistent cutting accuracy",
+    ],
+  },
+
+  {
+    title: "High-Precision Cutting Saw",
+    desc: "Designed for reliable and clean pipe cutting, the cutting saw is equipped with a pneumatic cylinder and limit switch mechanism for precise length measurement and operation.",
+    image: "/product.jpg",
+
+    highlights: [
+      "Clean & accurate cuts",
+      "Pneumatic clamping",
+      "Limit switch controlled",
     ],
   },
 ];
@@ -106,8 +119,44 @@ const applications = [
   },
 ];
 
+const specifications = [
+  {
+    parameter: "Min Pipe OD (mm)",
+    values: ["16", "40", "63", "63"],
+  },
+  {
+    parameter: "Max Pipe OD (mm)",
+    values: ["50", "110", "160", "200"],
+  },
+  {
+    parameter: "Max Plasticizing Capacity (Kg/hr)",
+    values: ["50", "80", "120", "140"],
+  },
+  {
+    parameter: "Max Output (Kg/hr)",
+    values: ["40", "60", "90", "120"],
+  },
+  {
+    parameter: "Main Drive (Kw)",
+    values: ["11", "15", "22.5", "36"],
+  },
+  {
+    parameter: "Barrel Heating (Kw)",
+    values: ["8", "12", "15", "18"],
+  },
+  {
+    parameter: "Die Heating (Kw)",
+    values: ["2", "5", "5", "5"],
+  },
+  {
+    parameter: "Screw Speed Variation (RPM)",
+    values: ["15 - 35", "15 - 35", "15 - 35", "15 - 35"],
+  },
+];
+
 export default function SingleScrewExtruder() {
   const [openPopup, setOpenPopup] = useState(false);
+  const [openPopup2, setOpenPopup2] = useState(false);
   const [catalogueToDownload, setCatalogueToDownload] = useState("");
   const [activeImage, setActiveImage] = useState(0);
 
@@ -179,9 +228,10 @@ export default function SingleScrewExtruder() {
             </h1>
 
             <p className="mt-6 text-gray-600 text-sm md:text-base leading-7 max-w-[500px]">
-              Guided by innovation, quality, and customer success, we are
-              shaping the future of extrusion technology with solutions built
-              for performance, reliability, and long-term growth.
+              HPMC Single Screw Extruders deliver reliable performance for PVC
+              pipe and profile production. Suitable for water supply, sewage,
+              agricultural, and industrial applications, the series is available
+              in HPMC 65, HPMC 75, HPMC 90, and HPMC 100 models.
             </p>
 
             {/* Buttons */}
@@ -191,7 +241,7 @@ export default function SingleScrewExtruder() {
                 className="flex items-center gap-3 bg-[#65BC4F] hover:bg-[#54a63f] transition-all px-6 py-3 rounded-lg"
               >
                 <span className="text-white font-semibold uppercase text-sm">
-                  Talk to Our Experts
+                  Request a Demo
                 </span>
 
                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
@@ -205,6 +255,17 @@ export default function SingleScrewExtruder() {
 
       <section className="py-20 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <span className="text-[var(--primary)] uppercase tracking-[3px] font-semibold text-sm">
+            Product Overview
+          </span>
+
+          <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+            PVC Pipe Plant -
+            <span className="text-[var(--primary)]">
+              {" "}
+              Single Screw Extruder
+            </span>
+          </h2>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* PRODUCT GALLERY */}
             <div>
@@ -270,49 +331,35 @@ export default function SingleScrewExtruder() {
 
             {/* CONTENT */}
             <div>
-              <span className="text-[var(--primary)] uppercase tracking-[3px] font-semibold text-sm">
-                Product Overview
-              </span>
-
-              <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                High Performance
-                <br />
-                Single Screw Extrusion
-                <span className="text-[var(--primary)]"> Technology</span>
-              </h2>
-
               <p className="mt-8 text-[var(--text-secondary)] leading-8">
-                HPMC Single Screw Extruders are designed to provide stable
-                output, superior melt quality, and excellent energy efficiency.
-                Built with advanced engineering and precision manufacturing,
-                these machines are suitable for processing a wide variety of
-                thermoplastic materials.
+                HPMC Single Screw Extruders are engineered for high-performance
+                PVC pipe and profile extrusion applications. Available in HPMC
+                65, HPMC 75, HPMC 90, and HPMC 100 models, the series delivers
+                reliable output, excellent melt quality, and consistent
+                processing performance.
               </p>
 
               <p className="mt-5 text-[var(--text-secondary)] leading-8">
-                Whether for pipe, profile, sheet, or granule production, our
-                extrusion systems ensure reliable operation, consistent product
-                quality, and long service life even under demanding industrial
-                conditions.
+                Featuring advanced Barrier Design (Double Thread) screw
+                technology, the system ensures superior melt homogeneity,
+                precise process control, and exceptional product quality.
+                Suitable for pelletized materials, it offers output capacities
+                up to 450 Kg/hr for polyolefin processing.
               </p>
 
               {/* Highlights */}
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
-                  "High Output",
-                  "Energy Efficient",
-                  "Low Maintenance",
-                  "Industrial Grade",
+                  "Up to 450 Kg/hr Output",
+                  "Barrier Design Screw",
+                  "Excellent Melt Quality",
+                  "Low Energy Consumption",
+                  "Stable Processing",
+                  "Models HPMC 65–100",
                 ].map((item) => (
                   <div
                     key={item}
-                    className="
-                flex
-                items-center
-                gap-3
-                text-[var(--text-primary)]
-                font-medium
-              "
+                    className="flex items-center gap-3 text-[var(--text-primary)] font-medium"
                   >
                     <div className="w-2 h-2 rounded-full bg-[var(--primary)]" />
                     {item}
@@ -320,24 +367,54 @@ export default function SingleScrewExtruder() {
                 ))}
               </div>
 
+              {/* Stats Cards */}
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
+                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                    4
+                  </h4>
+                  <p className="text-sm text-[var(--text-secondary)] mt-1">
+                    Machine Models
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
+                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                    150mm
+                  </h4>
+                  <p className="text-sm text-[var(--text-secondary)] mt-1">
+                    Screw Diameter
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
+                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                    450+
+                  </h4>
+                  <p className="text-sm text-[var(--text-secondary)] mt-1">
+                    Kg/hr Output
+                  </p>
+                </div>
+              </div>
+
               {/* Buttons */}
               <div className="flex flex-wrap gap-4 mt-10">
                 <button
                   onClick={() => handleDownload("/catalogue.pdf")}
                   className="
-              bg-[var(--primary)]
-              hover:opacity-90
-              text-white
-              font-semibold
-              px-7
-              py-4
-              rounded-xl
-              transition-all
-              duration-300
-              flex
-              items-center
-              gap-3
-            "
+        bg-[var(--primary)]
+        hover:opacity-90
+        text-white
+        font-semibold
+        px-7
+        py-4
+        rounded-xl
+        transition-all
+        duration-300
+        flex
+        items-center
+        gap-3
+      "
                 >
                   Download Catalogue
                   <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
@@ -346,19 +423,21 @@ export default function SingleScrewExtruder() {
                 </button>
 
                 <button
-                  onClick={() => setOpenPopup(true)}
+                  onClick={() => setOpenPopup2(true)}
                   className="
-              border
-              border-[var(--border)]
-              hover:border-[var(--primary)]
-              text-[var(--text-primary)]
-              px-7
-              py-4
-              rounded-xl
-              font-semibold
-              transition-all
-              duration-300
-            "
+        border
+        border-[var(--border)]
+        hover:border-[var(--primary)]
+        hover:bg-[var(--primary)]
+        hover:text-white
+        text-[var(--text-primary)]
+        px-7
+        py-4
+        rounded-xl
+        font-semibold
+        transition-all
+        duration-300
+      "
                 >
                   Request Quote
                 </button>
@@ -602,11 +681,77 @@ export default function SingleScrewExtruder() {
         </div>
       </section>
 
+      <section className="py-24 bg-[var(--background)]">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
+              Machine Models
+            </span>
+
+            <h2 className="mt-4 text-5xl font-bold text-[var(--text-primary)]">
+              Technical
+              <span className="text-[var(--primary)]"> Specifications</span>
+            </h2>
+          </div>
+
+          <div
+            className="overflow-x-auto rounded-3xl border"
+            style={{ borderColor: "var(--border)" }}
+          >
+            <table className="w-full min-w-[1000px] border-collapse">
+              <thead>
+                <tr className="bg-[var(--primary)] text-white">
+                  <th className="px-8 py-6 text-left font-semibold">
+                    MACHINE MODELS
+                  </th>
+                  <th className="px-8 py-6 text-center font-semibold">
+                    HPMC 65
+                  </th>
+                  <th className="px-8 py-6 text-center font-semibold">
+                    HPMC 75
+                  </th>
+                  <th className="px-8 py-6 text-center font-semibold">
+                    HPMC 90
+                  </th>
+                  <th className="px-8 py-6 text-center font-semibold">
+                    HPMC 100
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {specifications.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="border-b hover:bg-[var(--muted)] transition-colors"
+                    style={{ borderColor: "var(--border)" }}
+                  >
+                    <td className="px-8 py-5 font-semibold text-[var(--text-primary)]">
+                      {item.parameter}
+                    </td>
+
+                    {item.values.map((value, idx) => (
+                      <td
+                        key={idx}
+                        className="px-8 py-5 text-center text-[var(--text-secondary)]"
+                      >
+                        {value}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <CTA />
       <ScrollToTop />
       <FloatingContact />
       <Footer />
-      <PopupForm open={openPopup} onClose={() => setOpenPopup(false)} />
+      <DemoPopup open={openPopup} onClose={() => setOpenPopup(false)} />
+      <PopupForm open={openPopup2} onClose={() => setOpenPopup2(false)} />
     </div>
   );
 }

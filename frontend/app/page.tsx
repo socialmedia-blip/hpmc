@@ -22,6 +22,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import ProductCarousel from "./components/Products";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import DemoPopup from "./components/PopupDemo";
 
 const testimonials = [
   {
@@ -152,17 +153,18 @@ export default function Home() {
                     </p>
 
                     <div className="flex flex-row gap-3 mt-5">
-                      <Link href="/products">
-                        <button className="flex items-center justify-center gap-3 bg-[#65BC4F] hover:bg-lime-600 transition px-5 py-2.5 rounded-lg group w-full sm:w-auto">
-                          <span className="uppercase text-white font-semibold text-xs sm:text-sm">
-                            Explore Products
-                          </span>
+                      <button
+                        onClick={() => setOpenPopup(true)}
+                        className="flex items-center justify-center gap-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-5 py-2.5 rounded-lg group w-full sm:w-auto"
+                      >
+                        <span className="uppercase text-white font-semibold text-xs sm:text-sm">
+                          Schedule A Demo
+                        </span>
 
-                          <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-                            <span className="text-white text-sm">→</span>
-                          </div>
-                        </button>
-                      </Link>
+                        <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
+                          <span className="text-white text-sm">→</span>
+                        </div>
+                      </button>
 
                       <button
                         onClick={() => setOpenVideo(true)}
@@ -644,7 +646,7 @@ export default function Home() {
       <Footer />
       <FloatingContact />
       <ScrollToTopButton />
-      <PopupForm open={openPopup} onClose={() => setOpenPopup(false)} />
+      <DemoPopup open={openPopup} onClose={() => setOpenPopup(false)} />
 
       {openVideo && (
         <div

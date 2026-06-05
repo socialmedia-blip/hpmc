@@ -1,12 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X, Phone, Calendar, Headphones } from "lucide-react";
+import {
+  MessageCircle,
+  X,
+  Phone,
+  Calendar,
+  Headphones,
+  MonitorPlay,
+} from "lucide-react";
 import PopupForm from "./Popup";
+import DemoPopup from "./PopupDemo";
 
 export default function FloatingContact() {
   const [open, setOpen] = useState(false);
   const [openPopup, setOpenPopup] = useState(false);
+  const [openPopup2, setOpenPopup2] = useState(false);
 
   return (
     <>
@@ -14,7 +23,7 @@ export default function FloatingContact() {
       <div className="hidden md:block">
         {open && (
           <div
-            className="fixed bottom-32 right-6 z-[9999] w-[320px] overflow-hidden rounded-2xl border shadow-2xl"
+            className="fixed bottom-24 right-6 z-[9999] w-[320px] overflow-hidden rounded-2xl border shadow-2xl"
             style={{
               background: "var(--card)",
               borderColor: "var(--border)",
@@ -23,7 +32,7 @@ export default function FloatingContact() {
           >
             {/* Header */}
             <div
-              className="px-6 py-5 text-center text-white"
+              className="px-6 py-4 text-center text-white"
               style={{
                 background: "var(--primary)",
               }}
@@ -40,7 +49,7 @@ export default function FloatingContact() {
               href="https://api.whatsapp.com/send?phone=91123123123"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 border-b px-6 py-5 transition-all duration-300 hover:bg-[var(--muted)]"
+              className="flex items-center gap-4 border-b px-6 py-4 transition-all duration-300 hover:bg-[var(--muted)]"
               style={{
                 borderColor: "var(--border)",
               }}
@@ -79,7 +88,7 @@ export default function FloatingContact() {
             {/* Call */}
             <a
               href="tel:+918800818156"
-              className="flex items-center gap-4 border-b px-6 py-5 transition-all duration-300 hover:bg-[var(--muted)]"
+              className="flex items-center gap-4 border-b px-6 py-4 transition-all duration-300 hover:bg-[var(--muted)]"
               style={{
                 borderColor: "var(--border)",
               }}
@@ -121,7 +130,7 @@ export default function FloatingContact() {
                 setOpen(false); // close floating panel
                 setOpenPopup(true); // open popup form
               }}
-              className="flex w-full items-center gap-4 px-6 py-5 text-left transition-all duration-300 hover:bg-[var(--muted)]"
+              className="border-b border-[var(--border)] flex w-full items-center gap-4 px-6 py-4 text-left transition-all duration-300 hover:bg-[var(--muted)]"
             >
               <div
                 className="flex h-12 w-12 items-center justify-center rounded-full"
@@ -150,6 +159,45 @@ export default function FloatingContact() {
                   }}
                 >
                   Plan your project with us
+                </p>
+              </div>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false); // close floating panel
+                setOpenPopup2(true); // open popup form
+              }}
+              className="flex w-full items-center gap-4 px-6 py-4 text-left transition-all duration-300 hover:bg-[var(--muted)]"
+            >
+              <div
+                className="flex h-12 w-12 items-center justify-center rounded-full"
+                style={{
+                  background: "rgba(132,204,22,0.12)",
+                  color: "var(--primary)",
+                }}
+              >
+                <MonitorPlay size={20} />
+              </div>
+
+              <div>
+                <p
+                  className="font-semibold"
+                  style={{
+                    color: "var(--text-primary)",
+                  }}
+                >
+                  Request A Demo
+                </p>
+
+                <p
+                  className="text-sm"
+                  style={{
+                    color: "var(--text-secondary)",
+                  }}
+                >
+                  See our machines in action
                 </p>
               </div>
             </button>
@@ -206,6 +254,7 @@ export default function FloatingContact() {
         </div>
       </div>
       <PopupForm open={openPopup} onClose={() => setOpenPopup(false)} />
+      <DemoPopup open={openPopup2} onClose={() => setOpenPopup2(false)} />
     </>
   );
 }
