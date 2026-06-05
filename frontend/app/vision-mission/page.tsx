@@ -13,7 +13,7 @@ import ScrollToTop from "../components/ScrollToTop";
 
 const items = [
   { number: "50+", label: "Years Experience" },
-  { number: "12K+", label: "Machines Installed" },
+  { number: "1K+", label: "Machines Installed" },
   { number: "25+", label: "Countries Served" },
   { number: "24/7", label: "Technical Support" },
 ];
