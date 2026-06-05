@@ -140,17 +140,108 @@ const specifications = [
     parameter: "Main Drive (Kw)",
     values: ["11", "15", "22.5", "36"],
   },
+
+  // Blank Row
   {
-    parameter: "Barrel Heating (Kw)",
+    type: "blank",
+  },
+
+  // Section Header
+  {
+    type: "section",
+    parameter: "Heating",
+  },
+  {
+    parameter: "Barrel (Kw)",
     values: ["8", "12", "15", "18"],
   },
   {
-    parameter: "Die Heating (Kw)",
+    parameter: "Die (Kw)",
     values: ["2", "5", "5", "5"],
   },
   {
     parameter: "Screw Speed Variation (RPM)",
     values: ["15 - 35", "15 - 35", "15 - 35", "15 - 35"],
+  },
+
+  // Blank Row
+  {
+    type: "blank",
+  },
+
+  // Section Header
+  {
+    type: "section",
+    parameter: "Vaccum Sizing Tank",
+  },
+  {
+    parameter: "Pump Drive (KW)",
+    values: ["0.75", "-", "-", "-"],
+  },
+  {
+    parameter: "Length (Mtrs)",
+    values: ["3", "-", "-", "-"],
+  },
+  {
+    parameter: "Water Circulating Requirement (Ltrs/min)",
+    values: ["450", "-", "-", "-"],
+  },
+
+  // Blank Row
+  {
+    type: "blank",
+  },
+
+  // Section Header
+  {
+    type: "section",
+    parameter: "Cooling Tanks",
+  },
+  {
+    parameter: "Length (Ltrs)",
+    values: ["-", "3.0", "4.0", "4.0"],
+  },
+  {
+    parameter: "Water Circulating Requirement (Ltrs/Min)",
+    values: ["-", "450", "500", "500"],
+  },
+
+  // Blank Row
+  {
+    type: "blank",
+  },
+
+  // Section Header
+  {
+    type: "section",
+    parameter: "Haul Off",
+  },
+  {
+    parameter: "Drive Range (KW)",
+    values: ["0.75", "1.5", "2.2", "2.2"],
+  },
+  {
+    parameter: "Pulling Speed (mtr/min) Range 1",
+    values: ["0.5 to 2.0", "0.4 to 2.0", "2 to 6", "2 to 6"],
+  },
+
+  // Blank Row
+  {
+    type: "blank",
+  },
+
+  // Section Header
+  {
+    type: "section",
+    parameter: "Cutting Saw",
+  },
+  {
+    parameter: "Saw Diameter (mm)",
+    values: ["300", "400", "500", "500"],
+  },
+  {
+    parameter: "Saw Drive Load (KW)",
+    values: ["0.75/2800", "0.75/2800", "1.5/2800", "1.5/2800"],
   },
 ];
 
@@ -678,7 +769,7 @@ export default function SingleScrewExtruder() {
         </div>
       </section>
 
-      <section className="py-24 bg-[var(--background)]">
+      <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
@@ -698,45 +789,83 @@ export default function SingleScrewExtruder() {
             <table className="w-full min-w-[1000px] border-collapse">
               <thead>
                 <tr className="bg-[var(--primary)] text-white">
-                  <th className="px-8 py-6 text-left font-semibold">
+                  <th
+                    className="px-8 py-6 text-left font-semibold border"
+                    style={{ borderColor: "rgba(255,255,255,0.2)" }}
+                  >
                     MACHINE MODELS
                   </th>
-                  <th className="px-8 py-6 text-center font-semibold">
-                    HPMC 65
-                  </th>
-                  <th className="px-8 py-6 text-center font-semibold">
-                    HPMC 75
-                  </th>
-                  <th className="px-8 py-6 text-center font-semibold">
-                    HPMC 90
-                  </th>
-                  <th className="px-8 py-6 text-center font-semibold">
-                    HPMC 100
-                  </th>
+
+                  {["HPMC 65", "HPMC 75", "HPMC 90", "HPMC 100"].map(
+                    (model) => (
+                      <th
+                        key={model}
+                        className="px-8 py-6 text-center font-semibold border"
+                        style={{ borderColor: "rgba(255,255,255,0.2)" }}
+                      >
+                        {model}
+                      </th>
+                    ),
+                  )}
                 </tr>
               </thead>
 
               <tbody>
-                {specifications.map((item, index) => (
-                  <tr
-                    key={index}
-                    className="border-b hover:bg-[var(--muted)] transition-colors"
-                    style={{ borderColor: "var(--border)" }}
-                  >
-                    <td className="px-8 py-5 font-semibold text-[var(--text-primary)]">
-                      {item.parameter}
-                    </td>
+                {specifications.map((item, index) => {
+                  if (item.type === "blank") {
+                    return (
+                      <tr key={index}>
+                        <td
+                          colSpan={5}
+                          className="h-16 border-b"
+                          style={{ borderColor: "var(--border)" }}
+                        />
+                      </tr>
+                    );
+                  }
 
-                    {item.values.map((value, idx) => (
-                      <td
-                        key={idx}
-                        className="px-8 py-5 text-center text-[var(--text-secondary)]"
+                  if (item.type === "section") {
+                    return (
+                      <tr
+                        key={index}
+                        className="border-b"
+                        style={{ borderColor: "var(--border)" }}
                       >
-                        {value}
+                        <td className="px-8 py-5 font-semibold text-left text-[var(--text-primary)]">
+                          {item.parameter}
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    );
+                  }
+
+                  return (
+                    <tr
+                      key={index}
+                      className="hover:bg-[var(--muted)] transition-colors"
+                    >
+                      <td
+                        className="px-8 py-5 font-semibold border"
+                        style={{ borderColor: "var(--border)" }}
+                      >
+                        {item.parameter}
                       </td>
-                    ))}
-                  </tr>
-                ))}
+
+                      {item.values?.map((value, idx) => (
+                        <td
+                          key={idx}
+                          className="px-8 py-5 text-center border"
+                          style={{ borderColor: "var(--border)" }}
+                        >
+                          {value}
+                        </td>
+                      ))}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

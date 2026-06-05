@@ -310,91 +310,118 @@ export default function Home() {
       <ProductCarousel />
 
       <section className="relative py-16 bg-[var(--background)] overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[var(--primary)]/5 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[var(--primary)]/5 blur-[120px]" />
+        {/* Background Glow */}
+        <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)]/5 blur-[120px]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[420px_1fr] gap-16 items-start">
-            {/* LEFT CONTENT */}
-            <div className="sticky top-24">
-              <div className="flex items-center gap-4 mb-6">
-                <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
-                  Industries We Serve
-                </p>
-              </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
+          {/* Heading */}
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
+              Industries We Serve
+            </span>
 
-              <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                Trusted Across
-                <br />
-                Diverse Industries
-              </h2>
+            <h2 className="mt-4 text-5xl font-bold text-[var(--text-primary)]">
+              Powering Industries
+              <span className="text-[var(--primary)]">
+                {" "}
+                Across Every Sector
+              </span>
+            </h2>
 
-              <p className="mt-6 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)]">
-                From infrastructure and agriculture to recycling and polymer
-                processing, HPMC delivers reliable extrusion solutions tailored
-                to the evolving needs of modern industries.
-              </p>
+            <p className="mt-6 text-[var(--text-secondary)] leading-8">
+              HPMC extrusion solutions support critical industries worldwide,
+              enabling efficient production, sustainable manufacturing, and
+              long-term operational reliability.
+            </p>
+          </div>
 
-              <div className="mt-8 p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)]">
-                <p className="text-[var(--text-secondary)] leading-7">
-                  Whether you are launching a new manufacturing venture or
-                  expanding an existing production facility, our team provides
-                  complete turnkey solutions aligned with your business goals.
-                </p>
-              </div>
-            </div>
+          {/* Ecosystem */}
+          <div className="relative flex justify-center items-center min-h-[650px]">
+            {/* Orbit Rings */}
+            <div className="absolute w-[500px] h-[500px] rounded-full border border-[var(--border)]/60" />
+            <div className="absolute w-[380px] h-[380px] rounded-full border border-dashed border-[var(--primary)]/20" />
+            {/* Center Circle */}
+            <div className="relative z-20">
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-full bg-[var(--primary)]/10 blur-3xl scale-125" />
 
-            {/* RIGHT GRID */}
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
-                {
-                  icon: "💧",
-                  title: "Water Supply & Infrastructure",
-                },
-                {
-                  icon: "🌾",
-                  title: "Agriculture & Irrigation",
-                },
-                {
-                  icon: "🏗️",
-                  title: "Construction & Building Materials",
-                },
-                {
-                  icon: "⚡",
-                  title: "Electrical & Cable Industries",
-                },
-                {
-                  icon: "📦",
-                  title: "Packaging & Consumer Products",
-                },
-                {
-                  icon: "🏭",
-                  title: "Industrial Components Manufacturing",
-                },
-                {
-                  icon: "♻️",
-                  title: "Plastic Recycling & Sustainability",
-                },
-                {
-                  icon: "🧪",
-                  title: "PVC Compounding & Polymer Processing",
-                },
-              ].map((industry, index) => (
-                <div
-                  key={index}
-                  className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-4 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--primary)] hover:shadow-[var(--shadow-primary)]"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-[var(--primary)]/10 flex items-center justify-center text-2xl mb-5 transition-all duration-300 group-hover:bg-[var(--primary)] group-hover:text-white">
-                    {industry.icon}
-                  </div>
+              <div className="relative w-80 h-80 rounded-full bg-[var(--card)] border border-[var(--border)] shadow-2xl flex flex-col justify-center items-center text-center p-8">
+                <div className="absolute inset-4 rounded-full border border-[var(--primary)]/15" />
 
-                  <h3 className="text-base  text-[var(--text-primary)] leading-7">
-                    {industry.title}
-                  </h3>
+                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[var(--primary)]/20 to-[var(--primary)]/5 flex items-center justify-center mb-5">
+                  <Image
+                    src="/product.jpg"
+                    alt="HPMC Machine"
+                    width={80}
+                    height={80}
+                  />
                 </div>
-              ))}
+
+                <h3 className="text-3xl font-bold text-[var(--text-primary)]">
+                  HPMC
+                </h3>
+
+                <p className="mt-3 text-sm text-[var(--text-secondary)] max-w-[220px]">
+                  Advanced Pipe Extrusion Solutions
+                </p>
+              </div>
             </div>
+
+            {/* Top */}
+            <IndustryNode
+              className="top-0 left-1/2 -translate-x-1/2"
+              icon="💧"
+              title="Water Infrastructure"
+            />
+
+            {/* Top Right */}
+            <IndustryNode
+              className="top-[15%] right-[10%]"
+              icon="⚡"
+              title="Electrical & Cable"
+            />
+
+            {/* Right */}
+            <IndustryNode
+              className="top-1/2 right-0 -translate-y-1/2"
+              icon="🏗️"
+              title="Construction"
+            />
+
+            {/* Bottom Right */}
+            <IndustryNode
+              className="bottom-[15%] right-[10%]"
+              icon="📦"
+              title="Packaging"
+            />
+
+            {/* Bottom */}
+            <IndustryNode
+              className="bottom-0 left-1/2 -translate-x-1/2"
+              icon="🧪"
+              title="Polymer Processing"
+            />
+
+            {/* Bottom Left */}
+            <IndustryNode
+              className="bottom-[15%] left-[10%]"
+              icon="♻️"
+              title="Plastic Recycling"
+            />
+
+            {/* Left */}
+            <IndustryNode
+              className="top-1/2 left-0 -translate-y-1/2"
+              icon="🏭"
+              title="Industrial Components"
+            />
+
+            {/* Top Left */}
+            <IndustryNode
+              className="top-[15%] left-[10%]"
+              icon="🌾"
+              title="Agriculture & Irrigation"
+            />
           </div>
         </div>
       </section>
@@ -700,6 +727,28 @@ function Counter({ end, suffix = "" }: CounterProps) {
       ) : (
         `0${suffix}`
       )}
+    </div>
+  );
+}
+
+interface IndustryNodeProps {
+  icon: string;
+  title: string;
+  className: string;
+}
+
+function IndustryNode({ icon, title, className }: IndustryNodeProps) {
+  return (
+    <div className={`absolute group ${className}`}>
+      <div className="w-44 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-2 hover:border-[var(--primary)] hover:shadow-xl">
+        <div className="w-14 h-14 mx-auto rounded-xl bg-[var(--primary)]/10 flex items-center justify-center text-2xl mb-3 group-hover:bg-[var(--primary)] group-hover:text-white transition-all">
+          {icon}
+        </div>
+
+        <h3 className="text-sm font-medium text-[var(--text-primary)] leading-6">
+          {title}
+        </h3>
+      </div>
     </div>
   );
 }
