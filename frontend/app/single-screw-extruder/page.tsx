@@ -553,16 +553,13 @@ export default function SingleScrewExtruder() {
 
             <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
               Products Manufactured Using Our
-              <span className="text-[var(--primary)]">
-                {" "}
-                Blown Film Extrusion Line
-              </span>
+              <span className="text-[var(--primary)]"> PVC Pipe Plant</span>
             </h2>
 
             <p className="mt-5 max-w-3xl mx-auto text-[var(--text-secondary)] leading-8">
-              Our extrusion systems are used across multiple industries for
-              manufacturing packaging films, vacuum bags, food-grade films and
-              industrial wrapping solutions.
+              HPMC Single Screw Extruders are widely used for manufacturing a
+              variety of PVC pipes and profiles for infrastructure, agriculture,
+              construction, and industrial applications.
             </p>
           </div>
 
