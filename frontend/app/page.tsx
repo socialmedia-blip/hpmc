@@ -24,6 +24,41 @@ import ProductCarousel from "./components/Products";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import DemoPopup from "./components/PopupDemo";
 
+const industries = [
+  {
+    icon: "💧",
+    title: "Water Infrastructure",
+  },
+  {
+    icon: "⚡",
+    title: "Electrical & Cable",
+  },
+  {
+    icon: "🏗️",
+    title: "Construction",
+  },
+  {
+    icon: "📦",
+    title: "Packaging",
+  },
+  {
+    icon: "🧪",
+    title: "Polymer Processing",
+  },
+  {
+    icon: "♻️",
+    title: "Plastic Recycling",
+  },
+  {
+    icon: "🏭",
+    title: "Industrial Components",
+  },
+  {
+    icon: "🌾",
+    title: "Agriculture & Irrigation",
+  },
+];
+
 const testimonials = [
   {
     name: "John Smith",
@@ -315,28 +350,31 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
           {/* Heading */}
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
-              Industries We Serve
-            </span>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
+            {/* LEFT */}
+            <div className="max-w-3xl">
+              <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
+                Industries We Serve
+              </p>
 
-            <h2 className="mt-4 text-5xl font-bold text-[var(--text-primary)]">
-              Powering Industries
-              <span className="text-[var(--primary)]">
-                {" "}
+              <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+                Powering Industries
+                <br />
                 Across Every Sector
-              </span>
-            </h2>
+              </h2>
 
-            <p className="mt-6 text-[var(--text-secondary)] leading-8">
-              HPMC extrusion solutions support critical industries worldwide,
-              enabling efficient production, sustainable manufacturing, and
-              long-term operational reliability.
-            </p>
+              <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
+                HPMC extrusion solutions support critical industries worldwide,
+                enabling efficient production, sustainable manufacturing, and
+                long-term operational reliability.
+              </p>
+            </div>
+
+            {/* RIGHT BUTTON */}
           </div>
 
           {/* Ecosystem */}
-          <div className="relative flex justify-center items-center min-h-[650px]">
+          <div className="hidden lg:flex relative flex justify-center items-center md:min-h-[650px]">
             {/* Orbit Rings */}
             <div className="absolute w-[500px] h-[500px] rounded-full border border-[var(--border)]/60" />
             <div className="absolute w-[380px] h-[380px] rounded-full border border-dashed border-[var(--primary)]/20" />
@@ -422,6 +460,44 @@ export default function Home() {
               icon="🌾"
               title="Agriculture & Irrigation"
             />
+          </div>
+
+          <div className="lg:hidden">
+            <div className="relative mb-10 flex justify-center">
+              <div className="w-48 h-48 rounded-full bg-[var(--card)] border border-[var(--border)] shadow-xl flex flex-col items-center justify-center text-center p-4">
+                <Image
+                  src="/product.jpg"
+                  alt="HPMC Machine"
+                  width={70}
+                  height={70}
+                />
+
+                <h3 className="mt-3 text-xl font-bold text-[var(--text-primary)]">
+                  HPMC
+                </h3>
+
+                <p className="text-xs text-[var(--text-secondary)] mt-2">
+                  Advanced Pipe Extrusion Solutions
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {industries.map((industry, index) => (
+                <div
+                  key={index}
+                  className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 text-center"
+                >
+                  <div className="w-12 h-12 mx-auto rounded-xl bg-[var(--primary)]/10 flex items-center justify-center text-xl mb-3">
+                    {industry.icon}
+                  </div>
+
+                  <h3 className="text-sm font-medium text-[var(--text-primary)] leading-5">
+                    {industry.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
