@@ -87,6 +87,7 @@ interface CounterProps {
 
 export default function Home() {
   const [openPopup, setOpenPopup] = useState(false);
+  const [openPopup2, setOpenPopup2] = useState(false);
   const [openVideo, setOpenVideo] = useState(false);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -97,7 +98,7 @@ export default function Home() {
     if (alreadyShown) return;
 
     const timer = setTimeout(() => {
-      setOpenPopup(true);
+      setOpenPopup2(true);
       sessionStorage.setItem("popupShown", "true");
     }, 10000);
 
@@ -647,6 +648,7 @@ export default function Home() {
       <FloatingContact />
       <ScrollToTopButton />
       <DemoPopup open={openPopup} onClose={() => setOpenPopup(false)} />
+      <PopupForm open={openPopup2} onClose={() => setOpenPopup2(false)} />
 
       {openVideo && (
         <div
