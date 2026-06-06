@@ -15,6 +15,7 @@ app.use("/client", require("./routes/client.route"));
 app.use("/subscribers", require("./routes/subscriber.route"));
 app.use("/newsletter", require("./routes/newsletter.route"));
 app.use("/blog", require("./routes/blog.route"));
+app.use("/sitevisit", require("./routes/sitevisit.route"));
 
 app.get("/", (req, res) => {
   res.status(200).send("API LIVE 🚀");
