@@ -194,7 +194,7 @@ export default function Home() {
                         className="flex items-center justify-center gap-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-5 py-2.5 rounded-lg group w-full sm:w-auto"
                       >
                         <span className="uppercase text-white font-semibold text-xs sm:text-sm">
-                          Schedule A Demo
+                          Book a Site Visit
                         </span>
 
                         <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">

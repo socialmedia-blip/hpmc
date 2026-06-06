@@ -56,7 +56,7 @@ export default function Training() {
                 className="flex items-center gap-3 bg-[#65BC4F] hover:bg-[#54a63f] transition-all px-6 py-3 rounded-lg"
               >
                 <span className="text-white font-semibold uppercase text-sm">
-                  Talk to Our Experts
+                  Schedule a Site Visit
                 </span>
 
                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">

@@ -188,7 +188,7 @@ export default function FloatingContact() {
                     color: "var(--text-primary)",
                   }}
                 >
-                  Request A Demo
+                  Book a Site Visit
                 </p>
 
                 <p

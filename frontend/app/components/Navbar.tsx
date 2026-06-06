@@ -249,8 +249,8 @@ const contactMenu = [
         link: "/get-in-touch",
       },
       {
-        name: "Request A Demo",
-        link: "/request-a-demo",
+        name: "Schedule a Site Visit",
+        link: "/schedule-a-site-visit",
       },
       {
         name: "Become An Agent",

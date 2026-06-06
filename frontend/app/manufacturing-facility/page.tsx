@@ -10,6 +10,7 @@ import PopupForm from "../components/Popup";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import DemoPopup from "../components/PopupDemo";
 
 export default function ManufacturingFacility() {
   const facilityStats = [
@@ -252,7 +253,7 @@ export default function ManufacturingFacility() {
       <ScrollToTop />
       <FloatingContact />
       <Footer />
-      <PopupForm open={openPopup} onClose={() => setOpenPopup(false)} />
+      <DemoPopup open={openPopup} onClose={() => setOpenPopup(false)} />
     </div>
   );
 }
