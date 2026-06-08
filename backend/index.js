@@ -18,6 +18,8 @@ app.use("/blog", require("./routes/blog.route"));
 app.use("/sitevisit", require("./routes/sitevisit.route"));
 app.use("/agent", require("./routes/agent.route"));
 app.use("/vendor", require("./routes/vendor.route"));
+app.use("/career", require("./routes/career.route"));
+app.use("/job-application", require("./routes/jobApplication.route"));
 
 app.get("/", (req, res) => {
   res.status(200).send("API LIVE 🚀");
