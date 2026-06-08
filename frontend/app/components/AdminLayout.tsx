@@ -16,6 +16,7 @@ import Image from "next/image";
 import {
   GalleryThumbnails,
   Gauge,
+  MonitorPlay,
   NotebookPen,
   User2,
   Users,
@@ -46,6 +47,11 @@ export default function AdminLayout({
       to: "/admin/lead",
     },
     {
+      icon: <MonitorPlay size={18} />,
+      label: "Site Visits",
+      to: "/admin/site-visit",
+    },
+    {
       icon: <User2 size={18} />,
       label: "Subscribers",
       to: "/admin/subscribers",
@@ -64,6 +70,26 @@ export default function AdminLayout({
       icon: <NotebookPen size={18} />,
       label: "Blogs",
       to: "/admin/blogs",
+    },
+    {
+      icon: <NotebookPen size={18} />,
+      label: "Agents",
+      to: "/admin/agents",
+    },
+    {
+      icon: <NotebookPen size={18} />,
+      label: "Vendors",
+      to: "/admin/vendors",
+    },
+    {
+      icon: <NotebookPen size={18} />,
+      label: "Openings",
+      to: "/admin/openings",
+    },
+    {
+      icon: <NotebookPen size={18} />,
+      label: "Job Applications",
+      to: "/admin/job-applications",
     },
   ];
 
@@ -173,17 +199,18 @@ export default function AdminLayout({
       {/* DESKTOP SIDEBAR */}
       <aside
         className="
-    hidden lg:flex flex-col
-    w-64 fixed h-full
-    p-5
+    hidden lg:flex
+    flex-col
+    w-48
+    fixed
+    h-screen
     bg-[var(--sidebar-card)]
     border-r border-[var(--border)]
     backdrop-blur-xl
   "
       >
-        {" "}
         {/* Logo */}
-        <div className="mb-8">
+        <div className="p-5 shrink-0">
           <Image
             src="/hp-logo.png"
             alt="logo"
@@ -192,48 +219,55 @@ export default function AdminLayout({
             className="object-contain"
           />
         </div>
-        {/* Nav */}
-        <nav className="flex flex-col gap-2 flex-1">
-          {navItems.map(({ icon, label, to }) => (
-            <Link
-              key={to}
-              href={to}
-              className={`
-                  flex items-center gap-3
-                  px-4 py-3 rounded-xl
-                  text-sm font-medium
-                  transition-all duration-300
-                  ${
-                    pathname === to
-                      ? "bg-[var(--primary)] text-white shadow-lg"
-                      : "text-[var(--text-secondary)] hover:bg-[var(--muted)] hover:text-[var(--primary)]"
-                  }
-                `}
-            >
-              {icon}
-              {label}
-            </Link>
-          ))}
-        </nav>
-        {/* Logout */}
-        <button
-          onClick={handleLogout}
-          className="
+
+        {/* Scrollable Navigation */}
+        <div className="flex-1 overflow-y-auto px-5 pb-5">
+          <nav className="flex flex-col gap-2">
+            {navItems.map(({ icon, label, to }) => (
+              <Link
+                key={to}
+                href={to}
+                className={`
             flex items-center gap-3
             px-4 py-3 rounded-xl
-            text-red-500
-            hover:bg-red-500/10
-            transition-all
-          "
-        >
-          <FaSignOutAlt />
-          Logout
-        </button>
+            text-sm font-medium
+            transition-all duration-300
+            ${
+              pathname === to
+                ? "bg-[var(--primary)] text-white shadow-lg"
+                : "text-[var(--text-secondary)] hover:bg-[var(--muted)] hover:text-[var(--primary)]"
+            }
+          `}
+              >
+                {icon}
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        {/* Fixed Logout */}
+        <div className="p-5 border-t border-[var(--border)] shrink-0">
+          <button
+            onClick={handleLogout}
+            className="
+        w-full
+        flex items-center gap-3
+        px-4 py-3 rounded-xl
+        text-red-500
+        hover:bg-red-500/10
+        transition-all
+      "
+          >
+            <FaSignOutAlt />
+            Logout
+          </button>
+        </div>
       </aside>
       {/* MAIN CONTENT */}
       <main
         className="
-    flex-1 lg:ml-64
+    flex-1 lg:ml-48
     overflow-y-auto
     min-h-screen
     p-5 sm:p-8

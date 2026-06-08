@@ -1,5 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const multer = require("multer");
+
+const storage = require("../config/storage");
+const upload = multer({ storage });
 
 const {
   createApplication,
@@ -10,7 +14,7 @@ const {
 } = require("../controllers/jobApplication.controller");
 
 // Public
-router.post("/", createApplication);
+router.post("/", upload.single("resume"), createApplication);
 
 // Admin
 router.get("/", getAllApplications);

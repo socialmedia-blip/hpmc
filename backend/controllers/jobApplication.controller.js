@@ -16,7 +16,7 @@ exports.createApplication = async (req, res) => {
       expectedCTC,
       noticePeriod,
       coverLetter,
-    } = req.body;
+    } = req.body || {};
 
     // Required Fields
     if (!name || !email || !phone) {
@@ -34,13 +34,17 @@ exports.createApplication = async (req, res) => {
       });
     }
 
-    let resumeUrl;
+    let resumeUrl = "";
 
     if (req.file.secure_url) {
       resumeUrl = req.file.secure_url;
     } else if (req.file.path) {
       resumeUrl = req.file.path;
-    } else {
+    } else if (req.file.location) {
+      resumeUrl = req.file.location;
+    }
+
+    if (!resumeUrl) {
       return res.status(400).json({
         success: false,
         message: "Resume upload failed",
@@ -62,78 +66,9 @@ exports.createApplication = async (req, res) => {
       resumeUrl,
     });
 
-    // Admin Email
-    await sendEmail({
-      to: "chandangomia2812@gmail.com",
-      subject: "New Job Application - HPMC",
-      html: `
-        <h2>New Job Application Received</h2>
+    // Emails...
 
-        <p><strong>Name:</strong> ${application.name}</p>
-
-        <p><strong>Email:</strong> ${application.email}</p>
-
-        <p><strong>Phone:</strong> ${application.phone}</p>
-
-        <p><strong>Current Location:</strong>
-        ${application.currentLocation || "-"}</p>
-
-        <p><strong>Experience:</strong>
-        ${application.experience || "-"}</p>
-
-        <p><strong>Current Company:</strong>
-        ${application.currentCompany || "-"}</p>
-
-        <p><strong>Current CTC:</strong>
-        ${application.currentCTC || "-"}</p>
-
-        <p><strong>Expected CTC:</strong>
-        ${application.expectedCTC || "-"}</p>
-
-        <p><strong>Notice Period:</strong>
-        ${application.noticePeriod || "-"}</p>
-
-        <p><strong>Cover Letter:</strong></p>
-
-        <p>${application.coverLetter || "-"}</p>
-
-        <p>
-          <strong>Resume:</strong>
-          <a href="${application.resumeUrl}" target="_blank">
-            View Resume
-          </a>
-        </p>
-      `,
-    });
-
-    // Candidate Email
-    await sendEmail({
-      to: application.email,
-      subject: "Application Received - HPMC",
-      html: `
-        <h2>Hello ${application.name},</h2>
-
-        <p>
-          Thank you for applying at HPMC.
-        </p>
-
-        <p>
-          We have successfully received your application.
-        </p>
-
-        <p>
-          Our HR team will review your profile and
-          contact you if your qualifications match
-          our requirements.
-        </p>
-
-        <p>
-          Thank you for your interest in joining HPMC.
-        </p>
-      `,
-    });
-
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
       message: "Application submitted successfully",
       data: application,
@@ -141,7 +76,7 @@ exports.createApplication = async (req, res) => {
   } catch (error) {
     console.error("Application Error:", error);
 
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: error.message,
     });

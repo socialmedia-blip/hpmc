@@ -14,6 +14,80 @@ import ScheduleDemoForm from "../components/LeadFormDemo";
 
 export default function VendorRegistration() {
   const [openPopup, setOpenPopup] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    gstNumber: "",
+    panNumber: "",
+    businessType: "Manufacturer",
+    address: "",
+    city: "",
+    state: "",
+    country: "India",
+    pincode: "",
+    productsServices: "",
+    experience: "",
+    website: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/vendor`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            experience: Number(formData.experience || 0),
+          }),
+        },
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to submit registration");
+      }
+
+      alert("Vendor registration submitted successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        companyName: "",
+        gstNumber: "",
+        panNumber: "",
+        businessType: "Manufacturer",
+        address: "",
+        city: "",
+        state: "",
+        country: "India",
+        pincode: "",
+        productsServices: "",
+        experience: "",
+        website: "",
+        message: "",
+      });
+    } catch (error: any) {
+      alert(error.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div>
       <Navbar />
@@ -85,18 +159,31 @@ export default function VendorRegistration() {
                 Complete the form below and our team will contact you.
               </p>
 
-              <form className="mt-8 space-y-6">
+              <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                 <div className="grid md:grid-cols-2 gap-5">
                   <input
                     type="text"
+                    required
                     placeholder="Contact Person Name *"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
 
                   <input
                     type="text"
+                    required
                     placeholder="Company Name *"
+                    value={formData.companyName}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        companyName: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
@@ -105,71 +192,90 @@ export default function VendorRegistration() {
                 <div className="grid md:grid-cols-2 gap-5">
                   <input
                     type="email"
+                    required
                     placeholder="Email Address *"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
 
                   <input
                     type="tel"
+                    required
                     placeholder="Mobile Number *"
-                    className="h-14 px-4 rounded-xl border bg-transparent"
-                    style={{ borderColor: "var(--border)" }}
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-5">
-                  <input
-                    type="text"
-                    placeholder="Country *"
-                    className="h-14 px-4 rounded-xl border bg-transparent"
-                    style={{ borderColor: "var(--border)" }}
-                  />
-
-                  <input
-                    type="text"
-                    placeholder="State *"
-                    className="h-14 px-4 rounded-xl border bg-transparent"
-                    style={{ borderColor: "var(--border)" }}
-                  />
-
-                  <input
-                    type="text"
-                    placeholder="City *"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
                 </div>
 
                 <select
+                  value={formData.businessType}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      businessType: e.target.value,
+                    })
+                  }
                   className="w-full h-14 px-4 rounded-xl border bg-transparent"
                   style={{ borderColor: "var(--border)" }}
                 >
-                  <option>Business Type</option>
-                  <option>Manufacturer</option>
-                  <option>Trader</option>
-                  <option>Distributor</option>
-                  <option>Service Provider</option>
+                  <option value="Manufacturer">Manufacturer</option>
+                  <option value="Trader">Trader</option>
+                  <option value="Service Provider">Service Provider</option>
+                  <option value="Raw Material Supplier">
+                    Raw Material Supplier
+                  </option>
+                  <option value="Transporter">Transporter</option>
+                  <option value="Other">Other</option>
                 </select>
 
                 <input
                   type="text"
+                  required
                   placeholder="Products / Services Offered *"
+                  value={formData.productsServices}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      productsServices: e.target.value,
+                    })
+                  }
                   className="w-full h-14 px-4 rounded-xl border bg-transparent"
                   style={{ borderColor: "var(--border)" }}
                 />
 
                 <div className="grid md:grid-cols-2 gap-5">
                   <input
-                    type="text"
+                    type="number"
                     placeholder="Years of Experience"
+                    value={formData.experience}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        experience: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
 
                   <input
                     type="text"
-                    placeholder="Annual Production Capacity"
+                    placeholder="Website"
+                    value={formData.website}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        website: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
@@ -179,6 +285,13 @@ export default function VendorRegistration() {
                   <input
                     type="text"
                     placeholder="GST Number"
+                    value={formData.gstNumber}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        gstNumber: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
@@ -186,6 +299,13 @@ export default function VendorRegistration() {
                   <input
                     type="text"
                     placeholder="PAN Number"
+                    value={formData.panNumber}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        panNumber: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
@@ -193,39 +313,102 @@ export default function VendorRegistration() {
 
                 <input
                   type="text"
-                  placeholder="Website"
+                  required
+                  placeholder="Address *"
+                  value={formData.address}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      address: e.target.value,
+                    })
+                  }
                   className="w-full h-14 px-4 rounded-xl border bg-transparent"
                   style={{ borderColor: "var(--border)" }}
                 />
 
+                <div className="grid md:grid-cols-3 gap-5">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Country *"
+                    value={formData.country}
+                    onChange={(e) =>
+                      setFormData({ ...formData, country: e.target.value })
+                    }
+                    className="h-14 px-4 rounded-xl border bg-transparent"
+                    style={{ borderColor: "var(--border)" }}
+                  />
+
+                  <input
+                    type="text"
+                    required
+                    placeholder="State *"
+                    value={formData.state}
+                    onChange={(e) =>
+                      setFormData({ ...formData, state: e.target.value })
+                    }
+                    className="h-14 px-4 rounded-xl border bg-transparent"
+                    style={{ borderColor: "var(--border)" }}
+                  />
+
+                  <input
+                    type="text"
+                    required
+                    placeholder="City *"
+                    value={formData.city}
+                    onChange={(e) =>
+                      setFormData({ ...formData, city: e.target.value })
+                    }
+                    className="h-14 px-4 rounded-xl border bg-transparent"
+                    style={{ borderColor: "var(--border)" }}
+                  />
+                </div>
+
                 <input
-                  type="file"
-                  className="w-full p-4 rounded-xl border"
+                  type="text"
+                  placeholder="Pincode"
+                  value={formData.pincode}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      pincode: e.target.value,
+                    })
+                  }
+                  className="w-full h-14 px-4 rounded-xl border bg-transparent"
                   style={{ borderColor: "var(--border)" }}
                 />
 
                 <textarea
                   rows={5}
                   placeholder="Tell us about your organization, manufacturing capabilities, certifications, major clients, and products/services."
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      message: e.target.value,
+                    })
+                  }
                   className="w-full p-4 rounded-xl border bg-transparent resize-none"
                   style={{ borderColor: "var(--border)" }}
                 />
 
                 <button
                   type="submit"
+                  disabled={loading}
                   className="
-      bg-[var(--primary)]
-      hover:opacity-90
-      text-white
-      font-semibold
-      px-8
-      py-4
-      rounded-xl
-      transition-all
-      duration-300
-    "
+    bg-[var(--primary)]
+    hover:opacity-90
+    disabled:opacity-70
+    text-white
+    font-semibold
+    px-8
+    py-4
+    rounded-xl
+    transition-all
+    duration-300
+  "
                 >
-                  Submit Registration
+                  {loading ? "Submitting..." : "Submit Registration"}
                 </button>
               </form>
             </div>

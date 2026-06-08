@@ -4,21 +4,82 @@ import { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
-export default function ScheduleDemoForm() {
+export default function ScheduleSiteVisitForm() {
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    company: "",
+    companyName: "",
     date: "",
     time: "",
-    notes: "",
+    message: "",
   });
 
   const inputStyle = {
     background: "var(--background)",
     color: "var(--text-primary)",
     borderColor: "var(--border)",
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+
+      const visitDateTime = new Date(
+        `${formData.date}T${formData.time}`,
+      ).toISOString();
+
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        companyName: formData.companyName,
+        visitDateTime,
+        message: formData.message,
+      };
+
+      if (!formData.phone) {
+        alert("Phone number is required");
+        return;
+      }
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/sitevisit`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        },
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to submit request");
+      }
+
+      alert("Site visit request submitted successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        companyName: "",
+        date: "",
+        time: "",
+        message: "",
+      });
+    } catch (error: any) {
+      alert(error.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -31,16 +92,16 @@ export default function ScheduleDemoForm() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-flex rounded-full bg-[var(--primary)]/10 px-5 py-2 text-sm font-semibold text-[var(--primary)]">
-            Schedule a Demo
+            Schedule a Site Visit
           </span>
 
           <h2 className="mt-5 text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
-            Book Your Live Product Demo
+            Book Your Factory Site Visit
           </h2>
 
           <p className="mt-4 max-w-2xl mx-auto text-[var(--text-secondary)]">
-            Pick your preferred date and time. Our specialists will connect with
-            you and provide a personalized demonstration.
+            Choose your preferred date and time. Our team will coordinate your
+            visit and provide a guided tour of our facility.
           </p>
         </div>
 
@@ -54,19 +115,20 @@ export default function ScheduleDemoForm() {
             }}
           >
             <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-              Why Schedule a Demo?
+              Why Schedule a Site Visit?
             </h3>
 
             <p className="mt-3 text-[var(--text-secondary)]">
-              Get a complete walkthrough from our technical experts.
+              Experience our facility and products firsthand with our expert
+              team.
             </p>
 
             <div className="mt-8 space-y-4">
               {[
-                "Live Product Demonstration",
-                "One-to-One Expert Consultation",
-                "Technical Q&A Session",
-                "30-Minute Guided Tour",
+                "Factory & Facility Tour",
+                "Meet Our Technical Team",
+                "Product Manufacturing Overview",
+                "Customized Business Discussion",
               ].map((item) => (
                 <div
                   key={item}
@@ -96,11 +158,12 @@ export default function ScheduleDemoForm() {
               borderColor: "var(--border)",
             }}
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-5">
                 <input
                   type="text"
                   placeholder="Full Name *"
+                  required
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({
@@ -115,6 +178,7 @@ export default function ScheduleDemoForm() {
                 <input
                   type="email"
                   placeholder="Email Address *"
+                  required
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({
@@ -138,6 +202,7 @@ export default function ScheduleDemoForm() {
                   <PhoneInput
                     international
                     defaultCountry="IN"
+                    required
                     value={formData.phone}
                     onChange={(value) =>
                       setFormData({
@@ -150,12 +215,13 @@ export default function ScheduleDemoForm() {
 
                 <input
                   type="text"
-                  placeholder="Company Name"
-                  value={formData.company}
+                  placeholder="Company Name *"
+                  required
+                  value={formData.companyName}
                   onChange={(e) =>
                     setFormData({
                       ...formData,
-                      company: e.target.value,
+                      companyName: e.target.value,
                     })
                   }
                   className="rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
@@ -163,15 +229,16 @@ export default function ScheduleDemoForm() {
                 />
               </div>
 
-              {/* Date & Time Cards */}
+              {/* Date & Time */}
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label className="mb-2 block font-medium text-[var(--text-primary)]">
-                    Preferred Date
+                    Preferred Date *
                   </label>
 
                   <input
                     type="date"
+                    required
                     value={formData.date}
                     onChange={(e) =>
                       setFormData({
@@ -186,11 +253,12 @@ export default function ScheduleDemoForm() {
 
                 <div>
                   <label className="mb-2 block font-medium text-[var(--text-primary)]">
-                    Preferred Time
+                    Preferred Time *
                   </label>
 
                   <input
                     type="time"
+                    required
                     value={formData.time}
                     onChange={(e) =>
                       setFormData({
@@ -207,11 +275,11 @@ export default function ScheduleDemoForm() {
               <textarea
                 rows={5}
                 placeholder="Additional Notes"
-                value={formData.notes}
+                value={formData.message}
                 onChange={(e) =>
                   setFormData({
                     ...formData,
-                    notes: e.target.value,
+                    message: e.target.value,
                   })
                 }
                 className="w-full resize-none rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
@@ -220,9 +288,10 @@ export default function ScheduleDemoForm() {
 
               <button
                 type="submit"
-                className="w-full rounded-2xl bg-[var(--primary)] py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                disabled={loading}
+                className="w-full rounded-2xl bg-[var(--primary)] py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Schedule Demo
+                {loading ? "Submitting..." : "Request Site Visit"}
               </button>
             </form>
           </div>

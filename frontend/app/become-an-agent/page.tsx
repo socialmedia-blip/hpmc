@@ -14,6 +14,69 @@ import ScheduleDemoForm from "../components/LeadFormDemo";
 
 export default function BecomeAgent() {
   const [openPopup, setOpenPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    businessType: "Distributor",
+    experience: "",
+    state: "",
+    city: "",
+    currentProducts: "",
+    monthlyRequirement: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/agent`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            experience: Number(formData.experience || 0),
+          }),
+        },
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to submit application");
+      }
+
+      alert("Agent application submitted successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        companyName: "",
+        businessType: "Distributor",
+        experience: "",
+        state: "",
+        city: "",
+        currentProducts: "",
+        monthlyRequirement: "",
+        message: "",
+      });
+    } catch (error: any) {
+      alert(error.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div>
       <Navbar />
@@ -85,18 +148,34 @@ export default function BecomeAgent() {
                 you.
               </p>
 
-              <form className="mt-8 space-y-6">
+              <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                 <div className="grid md:grid-cols-2 gap-5">
                   <input
                     type="text"
+                    required
                     placeholder="Full Name *"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        name: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
 
                   <input
                     type="email"
+                    required
                     placeholder="Email Address *"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        email: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
@@ -105,46 +184,97 @@ export default function BecomeAgent() {
                 <div className="grid md:grid-cols-2 gap-5">
                   <input
                     type="tel"
+                    required
                     placeholder="Phone Number *"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        phone: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
 
                   <input
                     type="text"
+                    required
                     placeholder="Company Name *"
+                    value={formData.companyName}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        companyName: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5">
-                  <input
-                    type="text"
-                    placeholder="Country *"
+                  <select
+                    value={formData.businessType}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        businessType: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
-                  />
+                  >
+                    <option value="Distributor">Distributor</option>
+                    <option value="Dealer">Dealer</option>
+                    <option value="Trader">Trader</option>
+                    <option value="Manufacturer">Manufacturer</option>
+                    <option value="Wholesaler">Wholesaler</option>
+                    <option value="Other">Other</option>
+                  </select>
 
                   <input
-                    type="text"
-                    placeholder="City / State *"
-                    className="h-14 px-4 rounded-xl border bg-transparent"
-                    style={{ borderColor: "var(--border)" }}
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-5">
-                  <input
-                    type="text"
+                    type="number"
                     placeholder="Industry Experience (Years)"
+                    value={formData.experience}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        experience: e.target.value,
+                      })
+                    }
+                    className="h-14 px-4 rounded-xl border bg-transparent"
+                    style={{ borderColor: "var(--border)" }}
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-5">
+                  <input
+                    type="text"
+                    required
+                    placeholder="State *"
+                    value={formData.state}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        state: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
 
                   <input
                     type="text"
-                    placeholder="Current Business"
+                    required
+                    placeholder="City *"
+                    value={formData.city}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        city: e.target.value,
+                      })
+                    }
                     className="h-14 px-4 rounded-xl border bg-transparent"
                     style={{ borderColor: "var(--border)" }}
                   />
@@ -152,33 +282,63 @@ export default function BecomeAgent() {
 
                 <input
                   type="text"
-                  placeholder="Website (Optional)"
+                  placeholder="Current Products"
+                  value={formData.currentProducts}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      currentProducts: e.target.value,
+                    })
+                  }
+                  className="w-full h-14 px-4 rounded-xl border bg-transparent"
+                  style={{ borderColor: "var(--border)" }}
+                />
+
+                <input
+                  type="text"
+                  placeholder="Expected Monthly Requirement"
+                  value={formData.monthlyRequirement}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      monthlyRequirement: e.target.value,
+                    })
+                  }
                   className="w-full h-14 px-4 rounded-xl border bg-transparent"
                   style={{ borderColor: "var(--border)" }}
                 />
 
                 <textarea
                   rows={5}
-                  placeholder="Tell us about your business, market coverage, customer base, and why you want to become an HPMC agent..."
+                  placeholder="Tell us about your business, market coverage and customer base..."
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      message: e.target.value,
+                    })
+                  }
                   className="w-full p-4 rounded-xl border bg-transparent resize-none"
                   style={{ borderColor: "var(--border)" }}
                 />
 
                 <button
                   type="submit"
+                  disabled={loading}
                   className="
-              bg-[var(--primary)]
-              hover:opacity-90
-              text-white
-              font-semibold
-              px-8
-              py-4
-              rounded-xl
-              transition-all
-              duration-300
-            "
+      bg-[var(--primary)]
+      hover:opacity-90
+      disabled:opacity-70
+      text-white
+      font-semibold
+      px-8
+      py-4
+      rounded-xl
+      transition-all
+      duration-300
+    "
                 >
-                  Submit Application
+                  {loading ? "Submitting..." : "Submit Application"}
                 </button>
               </form>
             </div>
