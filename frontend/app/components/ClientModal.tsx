@@ -132,35 +132,55 @@ export default function ClientModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
       <div
         className="
-          w-full max-w-2xl
+    relative
+    w-full
+    max-w-4xl
     max-h-[90vh]
+    overflow-hidden
+    rounded-[32px]
     bg-[var(--card)]
     border border-[var(--border)]
-    rounded-2xl
-    shadow-2xl
-    flex flex-col
-    overflow-hidden
-        "
+    shadow-[0_30px_100px_rgba(0,0,0,0.35)]
+  "
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-transparent pointer-events-none" />
         {/* Header */}
-        <div className="flex justify-between items-center px-6 py-5 border-b border-[var(--border)]">
-          <h2 className="font-serif text-2xl text-[var(--text-primary)]">
-            {initialData ? "Edit Client" : "Create Client"}
-          </h2>
+        <div className="sticky top-0 z-10 bg-[var(--card)] border-b border-[var(--border)] px-8 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="uppercase tracking-[4px] text-xs text-[var(--primary)] mb-2">
+                Admin Panel
+              </p>
 
-          <button
-            onClick={onClose}
-            className="text-[var(--text-secondary)] hover:text-[var(--primary)]"
-          >
-            <X size={18} />
-          </button>
+              <h2 className="font-serif text-3xl text-[var(--text-primary)]">
+                {initialData ? "Edit Client" : "Create Clients"}
+              </h2>
+            </div>
+
+            <button
+              onClick={onClose}
+              className="
+        h-11 w-11
+        rounded-xl
+        border border-[var(--border)]
+        flex items-center justify-center
+        hover:bg-[var(--background-secondary)]
+        transition
+      "
+            >
+              <X size={18} />
+            </button>
+          </div>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-6 overflow-auto">
+        <form
+          onSubmit={handleSubmit}
+          className="overflow-y-auto max-h-[calc(90vh-180px)] p-8 space-y-6"
+        >
           {/* Error */}
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-600 text-sm">
@@ -173,14 +193,16 @@ export default function ClientModal({
             <div
               key={index}
               className="
-                  border border-[var(--border)]
-                  rounded-2xl
-                  p-5
-                  bg-[var(--muted)]
-                "
+rounded-3xl
+border border-[var(--border)]
+bg-[var(--background-secondary)]
+p-6
+hover:border-[var(--primary)]/30
+transition
+"
             >
               <div className="flex justify-between items-center mb-4">
-                <p className="text-sm text-[var(--text-secondary)]">
+                <p className="uppercase tracking-[3px] text-xs text-[var(--primary)]">
                   Client {index + 1}
                 </p>
 
@@ -188,7 +210,15 @@ export default function ClientModal({
                   <button
                     type="button"
                     onClick={() => removeClientField(index)}
-                    className="text-red-500"
+                    className="
+    h-9 w-9
+    rounded-xl
+    bg-red-500/10
+    text-red-500
+    flex items-center justify-center
+    hover:bg-red-500/20
+    transition
+  "
                   >
                     <Trash2 size={16} />
                   </button>
@@ -214,22 +244,54 @@ export default function ClientModal({
               {!initialData && (
                 <label
                   className="
-                      flex items-center justify-center
-                      h-28
-                      border-2 border-dashed border-[var(--border)]
-                      rounded-2xl
-                      bg-[var(--card)]
-                      cursor-pointer
-                      hover:border-[var(--primary)]
-                      transition
-                    "
+    group
+    relative
+    flex flex-col
+    items-center
+    justify-center
+    h-48
+    border-2
+    border-dashed
+    border-[var(--border)]
+    rounded-3xl
+    bg-[var(--card)]
+    cursor-pointer
+    hover:border-[var(--primary)]
+    transition-all
+  "
                 >
                   {client.preview ? (
-                    <img src={client.preview} className="h-16 object-contain" />
+                    <img
+                      src={client.preview}
+                      className="
+        h-28
+        object-contain
+        transition
+        group-hover:scale-105
+      "
+                    />
                   ) : (
-                    <span className="text-sm text-[var(--text-secondary)]">
-                      Upload logo
-                    </span>
+                    <>
+                      <div
+                        className="
+          h-14 w-14
+          rounded-2xl
+          bg-[var(--primary)]/10
+          flex items-center justify-center
+          mb-3
+        "
+                      >
+                        <Plus size={24} className="text-[var(--primary)]" />
+                      </div>
+
+                      <span className="font-medium text-[var(--text-primary)]">
+                        Upload Client Logo
+                      </span>
+
+                      <span className="text-sm text-[var(--text-secondary)] mt-1">
+                        PNG, JPG, WEBP
+                      </span>
+                    </>
                   )}
 
                   <input
@@ -260,19 +322,28 @@ export default function ClientModal({
               Add Another Client
             </button>
           )}
-
-          {/* Footer */}
-          <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border)]">
+        </form>
+        {/* Footer */}
+        <div
+          className="
+    sticky bottom-0
+    bg-[var(--card)]
+    border-t border-[var(--border)]
+    px-8 py-5
+  "
+        >
+          <div className="flex items-center justify-end gap-3">
             <button
               type="button"
               onClick={onClose}
               className="
-                h-11 px-6
-                border border-[var(--border)]
-                text-[var(--text-secondary)]
-                hover:border-[var(--primary)]
-                hover:text-[var(--primary)]
-              "
+        h-12 px-6
+        rounded-xl
+        border border-[var(--border)]
+        text-[var(--text-primary)]
+        hover:bg-[var(--background-secondary)]
+        transition
+      "
             >
               Cancel
             </button>
@@ -281,18 +352,20 @@ export default function ClientModal({
               type="submit"
               disabled={loading}
               className="
-                h-11 px-6
-                bg-[var(--primary)]
-                text-white
-                rounded-xl
-                hover:bg-[var(--primary-dark)]
-                transition
-              "
+        h-12 px-8
+        rounded-xl
+        bg-[var(--primary)]
+        text-white
+        font-medium
+        hover:opacity-90
+        disabled:opacity-50
+        transition
+      "
             >
-              {loading ? "Saving..." : "Save"}
+              {loading ? "Saving..." : "Save Client"}
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,19 @@
 "use client";
 
 import ClientModal from "@/app/components/ClientModal";
-import { Trash2, Plus, Pencil } from "lucide-react";
-import { useEffect, useState } from "react";
+import {
+  Building2,
+  CalendarDays,
+  ImageIcon,
+  Pencil,
+  Plus,
+  RefreshCw,
+  Search,
+  Trash2,
+  UsersRound,
+} from "lucide-react";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 
 interface Client {
   _id: string;
@@ -11,317 +22,428 @@ interface Client {
   createdAt: string;
 }
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 12;
+
+async function requestClients(apiBase: string | undefined) {
+  const res = await fetch(`${apiBase}/client`, {
+    cache: "no-store",
+  });
+  const result = await res.json();
+
+  if (!res.ok || !result.success) {
+    throw new Error(result.message || "Failed to fetch clients");
+  }
+
+  return [...(result.data || [])].sort(
+    (a: Client, b: Client) =>
+      new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+  ) as Client[];
+}
 
 export default function AdminClient() {
   const [clients, setClients] = useState<Client[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState("");
-
+  const [deletingId, setDeletingId] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editClient, setEditClient] = useState<Client | null>(null);
 
   const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
 
-  /* Fetch */
-  const fetchClients = async () => {
-    try {
-      setLoading(true);
-      setError("");
+  useEffect(() => {
+    let cancelled = false;
 
-      const res = await fetch(`${API_BASE}/client`, {
-        cache: "no-store",
+    requestClients(API_BASE)
+      .then((data) => {
+        if (!cancelled) setClients(data);
+      })
+      .catch((err: unknown) => {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : "Something went wrong");
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
       });
 
-      const result = await res.json();
+    return () => {
+      cancelled = true;
+    };
+  }, [API_BASE]);
 
-      if (!res.ok || !result.success) {
-        throw new Error(result.message || "Fetch failed");
-      }
+  const filteredClients = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
 
-      const sortedClients = result.data.sort(
-        (a: Client, b: Client) =>
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-      );
+    return clients.filter((client) => {
+      const matchesSearch = !query || client.name.toLowerCase().includes(query);
+      const matchesDate =
+        !selectedDate ||
+        new Date(client.createdAt).toISOString().startsWith(selectedDate);
 
-      setClients(sortedClients);
+      return matchesSearch && matchesDate;
+    });
+  }, [clients, searchQuery, selectedDate]);
+
+  const stats = useMemo(() => {
+    const now = new Date();
+
+    return {
+      total: clients.length,
+      thisMonth: clients.filter((client) => {
+        const createdAt = new Date(client.createdAt);
+        return (
+          createdAt.getMonth() === now.getMonth() &&
+          createdAt.getFullYear() === now.getFullYear()
+        );
+      }).length,
+      latest: clients[0]
+        ? new Date(clients[0].createdAt).toLocaleDateString()
+        : "No data",
+    };
+  }, [clients]);
+
+  const totalPages = Math.ceil(filteredClients.length / ITEMS_PER_PAGE);
+  const activePage = Math.min(currentPage, Math.max(totalPages, 1));
+  const currentClients = filteredClients.slice(
+    (activePage - 1) * ITEMS_PER_PAGE,
+    activePage * ITEMS_PER_PAGE,
+  );
+  const hasActiveFilters = Boolean(searchQuery || selectedDate);
+
+  const refreshClients = async () => {
+    try {
+      setRefreshing(true);
+      setError("");
+      setClients(await requestClients(API_BASE));
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
+      setRefreshing(false);
       setLoading(false);
     }
   };
 
-  useEffect(() => {
-    fetchClients();
-  }, []);
-
-  /* Create */
-  const handleCreate = async (formData: FormData) => {
-    try {
-      const res = await fetch(`${API_BASE}/client`, {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.message || "Create failed");
-      }
-
-      setIsModalOpen(false);
-      await fetchClients();
-    } catch (err) {
-      alert("Create failed");
-    }
+  const openCreateModal = () => {
+    setEditClient(null);
+    setIsModalOpen(true);
   };
 
-  /* Edit */
+  const openEditModal = (client: Client) => {
+    setEditClient(client);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setEditClient(null);
+  };
+
+  const handleCreate = async (formData: FormData) => {
+    const res = await fetch(`${API_BASE}/client`, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.message || "Create failed");
+    }
+
+    closeModal();
+    setClients(await requestClients(API_BASE));
+  };
+
   const handleEdit = async (formData: FormData) => {
     if (!editClient) return;
 
-    try {
-      const res = await fetch(`${API_BASE}/client/${editClient._id}`, {
-        method: "PUT",
-        body: formData,
-      });
+    const res = await fetch(`${API_BASE}/client/${editClient._id}`, {
+      method: "PUT",
+      body: formData,
+    });
+    const data = await res.json();
 
+    if (!res.ok) {
+      throw new Error(data.message || "Update failed");
+    }
+
+    closeModal();
+    setClients(await requestClients(API_BASE));
+  };
+
+  const handleDelete = async (client: Client) => {
+    if (!confirm(`Delete "${client.name}"?`)) return;
+
+    try {
+      setDeletingId(client._id);
+
+      const res = await fetch(`${API_BASE}/client/${client._id}`, {
+        method: "DELETE",
+      });
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.message || "Update failed");
+        throw new Error(data.message || "Delete failed");
       }
 
-      setEditClient(null);
-      setIsModalOpen(false);
-
-      await fetchClients();
-    } catch {
-      alert("Update failed");
+      setClients((prev) => prev.filter((item) => item._id !== client._id));
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Delete failed");
+    } finally {
+      setDeletingId("");
     }
   };
 
-  /* Delete */
-  const handleDelete = async (id: string) => {
-    if (!confirm("Delete this client?")) return;
-
-    await fetch(`${API_BASE}/client/${id}`, {
-      method: "DELETE",
-    });
-
-    setClients((prev) => prev.filter((c) => c._id !== id));
+  const resetFilters = () => {
+    setSearchQuery("");
+    setSelectedDate("");
+    setCurrentPage(1);
   };
-
-  /* Pagination */
-  const totalPages = Math.ceil(clients.length / ITEMS_PER_PAGE);
-
-  const currentClients = clients.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
-  );
 
   return (
     <div>
-      {/* Header */}
-      <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <p className="uppercase tracking-[4px] text-xs text-[var(--primary)] mb-2">
-            Admin Panel
-          </p>
+      <div className="mb-8">
+        <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="mb-2 text-xs uppercase tracking-[4px] text-[var(--primary)]">
+              Admin Panel
+            </p>
+            <h1 className="font-serif text-4xl text-[var(--text-primary)]">
+              Clients
+            </h1>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+              Manage the client logos displayed across the website.
+            </p>
+          </div>
 
-          <h1 className="text-4xl font-bold text-[var(--text-primary)]">
-            Clients
-          </h1>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={refreshClients}
+              disabled={refreshing}
+              className="flex h-11 items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card)] px-4 text-sm font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] disabled:opacity-60"
+            >
+              <RefreshCw
+                size={17}
+                className={refreshing ? "animate-spin" : ""}
+              />
+              <span className="hidden sm:inline">Refresh</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={openCreateModal}
+              className="flex h-11 items-center gap-2 rounded-xl bg-[var(--primary)] px-5 font-medium text-white transition hover:opacity-90"
+            >
+              <Plus size={18} />
+              Add Client
+            </button>
+          </div>
         </div>
 
-        <button
-          onClick={() => {
-            setEditClient(null);
-            setIsModalOpen(true);
-          }}
-          className="
-            h-11 px-6
-            bg-[var(--primary)]
-            text-white
-            rounded-xl
-            flex items-center gap-2
-            hover:bg-[var(--primary-dark)]
-            transition-all
-          "
-        >
-          <Plus size={16} />
-          Create Client
-        </button>
+        <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-3 md:gap-4">
+          <OverviewCard
+            label="Total Clients"
+            value={String(stats.total)}
+            icon={<UsersRound size={19} />}
+            color="blue"
+          />
+          <OverviewCard
+            label="Added This Month"
+            value={String(stats.thisMonth)}
+            icon={<CalendarDays size={19} />}
+            color="green"
+          />
+          <OverviewCard
+            label="Latest Addition"
+            value={stats.latest}
+            icon={<Building2 size={19} />}
+            color="violet"
+            compact
+          />
+        </div>
+
+        <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-4 md:p-5">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-[minmax(0,1fr)_220px_auto]">
+            <div className="relative">
+              <Search
+                size={17}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]"
+              />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(event) => {
+                  setSearchQuery(event.target.value);
+                  setCurrentPage(1);
+                }}
+                placeholder="Search clients by name..."
+                className="h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] pl-10 pr-4 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]"
+              />
+            </div>
+
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={(event) => {
+                setSelectedDate(event.target.value);
+                setCurrentPage(1);
+              }}
+              className="h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] px-3 text-sm text-[var(--text-primary)] outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            />
+
+            {hasActiveFilters && (
+              <button
+                type="button"
+                onClick={resetFilters}
+                className="h-11 rounded-xl border border-[var(--border)] px-4 text-sm font-medium text-[var(--text-secondary)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+
+          <p className="mt-3 text-xs text-[var(--text-secondary)]">
+            Showing{" "}
+            <span className="font-semibold text-[var(--primary)]">
+              {filteredClients.length}
+            </span>{" "}
+            of <span className="font-semibold">{clients.length}</span> clients
+          </p>
+        </div>
       </div>
 
-      {/* Loading */}
       {loading && (
-        <div className="flex flex-col items-center justify-center h-[300px]">
-          <div className="w-10 h-10 border-4 border-[var(--border)] border-t-[var(--primary)] rounded-full animate-spin mb-4" />
-
+        <div className="flex h-[320px] flex-col items-center justify-center">
+          <div className="mb-4 h-10 w-10 animate-spin rounded-full border-4 border-[var(--border)] border-t-[var(--primary)]" />
           <p className="text-[var(--text-secondary)]">Loading clients...</p>
         </div>
       )}
 
-      {/* Error */}
       {!loading && error && (
-        <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-8 text-center">
-          <h3 className="text-red-600 font-semibold mb-2">
+        <div className="rounded-2xl border border-red-500/20 bg-red-500/5 p-8 text-center">
+          <h3 className="mb-2 font-semibold text-red-600">
             Failed to load clients
           </h3>
-
-          <p className="text-red-500 text-sm">{error}</p>
+          <p className="mb-5 text-sm text-red-500">{error}</p>
+          <button
+            type="button"
+            onClick={refreshClients}
+            className="h-10 rounded-xl bg-red-600 px-5 text-sm font-medium text-white transition hover:bg-red-700"
+          >
+            Try Again
+          </button>
         </div>
       )}
 
-      {/* Empty */}
-      {!loading && !error && clients.length === 0 && (
-        <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-12 text-center">
-          <h3 className="text-2xl font-serif text-[var(--text-primary)] mb-3">
-            No Clients Found
+      {!loading && !error && filteredClients.length === 0 && (
+        <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-10 text-center md:p-14">
+          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)]">
+            <ImageIcon size={27} />
+          </div>
+          <h3 className="mb-3 font-serif text-2xl text-[var(--text-primary)]">
+            {hasActiveFilters ? "No Matching Clients" : "No Clients Found"}
           </h3>
-
-          <p className="text-[var(--text-secondary)]">
-            Create your first client.
+          <p className="mx-auto max-w-md text-sm text-[var(--text-secondary)]">
+            {hasActiveFilters
+              ? "Try changing or clearing the current search filters."
+              : "Add your first client logo to begin building the showcase."}
           </p>
+          {!hasActiveFilters && (
+            <button
+              type="button"
+              onClick={openCreateModal}
+              className="mx-auto mt-6 flex h-11 items-center gap-2 rounded-xl bg-[var(--primary)] px-5 font-medium text-white"
+            >
+              <Plus size={18} />
+              Add First Client
+            </button>
+          )}
         </div>
       )}
 
-      {/* Mobile Cards */}
-      {!loading && clients.length > 0 && (
+      {!loading && !error && filteredClients.length > 0 && (
         <>
-          <div className="md:hidden space-y-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {currentClients.map((client) => (
-              <div
+              <article
                 key={client._id}
-                className="
-                    bg-[var(--card)]
-                    border border-[var(--border)]
-                    rounded-2xl
-                    p-5
-                  "
+                className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)]/40 hover:shadow-xl"
               >
-                <div className="flex justify-between mb-4">
-                  <h3 className="font-semibold text-[var(--text-primary)]">
-                    {client.name}
-                  </h3>
+                <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-[var(--border)] bg-gradient-to-br from-[var(--background-secondary)] to-[var(--card)] p-7">
+                  <div className="absolute inset-0 opacity-[0.04] [background-image:radial-gradient(var(--text-primary)_1px,transparent_1px)] [background-size:16px_16px]" />
+                  <Image
+                    src={client.image}
+                    alt={`${client.name} logo`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    className="relative z-10 object-contain p-7 transition duration-300 group-hover:scale-105"
+                  />
+                </div>
 
-                  <div className="flex gap-3">
+                <div className="p-5">
+                  <div className="mb-5">
+                    <p className="mb-1 text-[10px] uppercase tracking-[2px] text-[var(--primary)]">
+                      Client
+                    </p>
+                    <h2 className="truncate text-lg font-semibold text-[var(--text-primary)]">
+                      {client.name}
+                    </h2>
+                    <p className="mt-1 text-xs text-[var(--text-secondary)]">
+                      Added {new Date(client.createdAt).toLocaleDateString()}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 border-t border-[var(--border)] pt-4">
                     <button
-                      onClick={() => {
-                        setEditClient(client);
-                        setIsModalOpen(true);
-                      }}
-                      className="text-blue-500"
+                      type="button"
+                      onClick={() => openEditModal(client)}
+                      className="flex h-10 flex-1 items-center justify-center gap-2 rounded-xl border border-blue-500/20 bg-blue-500/5 text-sm font-medium text-blue-600 transition hover:bg-blue-500/10"
                     >
-                      <Pencil size={16} />
+                      <Pencil size={15} />
+                      Edit
                     </button>
-
                     <button
-                      onClick={() => handleDelete(client._id)}
-                      className="text-red-500"
+                      type="button"
+                      onClick={() => handleDelete(client)}
+                      disabled={deletingId === client._id}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/5 text-red-500 transition hover:bg-red-500/10 disabled:opacity-50"
+                      title="Delete client"
+                      aria-label={`Delete ${client.name}`}
                     >
-                      <Trash2 size={16} />
+                      {deletingId === client._id ? (
+                        <RefreshCw size={15} className="animate-spin" />
+                      ) : (
+                        <Trash2 size={15} />
+                      )}
                     </button>
                   </div>
                 </div>
-
-                <img src={client.image} className="h-16 object-contain" />
-              </div>
+              </article>
             ))}
           </div>
 
-          {/* Desktop Table */}
-          <div className="hidden md:block overflow-x-auto bg-[var(--card)] border border-[var(--border)] rounded-2xl">
-            <table className="w-full">
-              <thead className="bg-[var(--bg-secondary)]">
-                <tr>
-                  <th className="px-5 py-4 text-left">Logo</th>
-
-                  <th className="px-5 py-4 text-left">Name</th>
-
-                  <th className="px-5 py-4 text-left">Created</th>
-
-                  <th className="px-5 py-4 text-left">Actions</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {currentClients.map((client) => (
-                  <tr
-                    key={client._id}
-                    className="border-t border-[var(--border)] hover:bg-[var(--bg-secondary)]"
-                  >
-                    <td className="px-5 py-4">
-                      <img src={client.image} className="h-10 object-contain" />
-                    </td>
-
-                    <td className="px-5 py-4 text-[var(--text-primary)]">
-                      {client.name}
-                    </td>
-
-                    <td className="px-5 py-4 text-[var(--text-secondary)]">
-                      {new Date(client.createdAt).toLocaleDateString()}
-                    </td>
-
-                    <td className="px-5 py-4 flex gap-4">
-                      <button
-                        onClick={() => {
-                          setEditClient(client);
-                          setIsModalOpen(true);
-                        }}
-                        className="text-blue-500"
-                      >
-                        <Pencil size={18} />
-                      </button>
-
-                      <button
-                        onClick={() => handleDelete(client._id)}
-                        className="text-red-500"
-                      >
-                        <Trash2 size={18} />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex justify-end mt-8 gap-3">
+            <div className="flex items-center justify-center gap-3 pb-16 pt-8 md:justify-end">
               <button
-                disabled={currentPage === 1}
-                onClick={() => setCurrentPage((p) => p - 1)}
-                className="
-                    h-10 px-5
-                    border border-[var(--border)]
-                    text-[var(--text-secondary)]
-                    hover:border-[var(--primary)]
-                    hover:text-[var(--primary)]
-                    disabled:opacity-40
-                  "
+                type="button"
+                disabled={activePage === 1}
+                onClick={() => setCurrentPage((page) => page - 1)}
+                className="h-11 rounded-xl border border-[var(--border)] bg-[var(--card)] px-5 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Prev
               </button>
-
-              <div className="h-10 px-5 flex items-center">{currentPage}</div>
-
+              <div className="flex h-11 min-w-[52px] items-center justify-center rounded-xl bg-[var(--primary)] px-4 font-medium text-white">
+                {activePage}
+              </div>
               <button
-                disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage((p) => p + 1)}
-                className="
-                    h-10 px-5
-                    border border-[var(--border)]
-                    text-[var(--text-secondary)]
-                    hover:border-[var(--primary)]
-                    hover:text-[var(--primary)]
-                    disabled:opacity-40
-                  "
+                type="button"
+                disabled={activePage === totalPages}
+                onClick={() => setCurrentPage((page) => page + 1)}
+                className="h-11 rounded-xl border border-[var(--border)] bg-[var(--card)] px-5 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Next
               </button>
@@ -330,10 +452,9 @@ export default function AdminClient() {
         </>
       )}
 
-      {/* Modal */}
       <ClientModal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={closeModal}
         onSubmit={editClient ? handleEdit : handleCreate}
         initialData={
           editClient
@@ -344,6 +465,60 @@ export default function AdminClient() {
             : undefined
         }
       />
+    </div>
+  );
+}
+
+function OverviewCard({
+  label,
+  value,
+  icon,
+  color,
+  compact = false,
+}: {
+  label: string;
+  value: string;
+  icon: React.ReactNode;
+  color: "blue" | "green" | "violet";
+  compact?: boolean;
+}) {
+  const styles = {
+    blue: {
+      card: "from-blue-500/10 to-blue-600/5 border-blue-500/20",
+      icon: "bg-blue-500/10 text-blue-600",
+      value: "text-blue-600",
+    },
+    green: {
+      card: "from-green-500/10 to-green-600/5 border-green-500/20",
+      icon: "bg-green-500/10 text-green-600",
+      value: "text-green-600",
+    },
+    violet: {
+      card: "from-violet-500/10 to-violet-600/5 border-violet-500/20",
+      icon: "bg-violet-500/10 text-violet-600",
+      value: "text-violet-600",
+    },
+  }[color];
+
+  return (
+    <div className={`rounded-2xl border bg-gradient-to-br p-4 ${styles.card}`}>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <p className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+          {label}
+        </p>
+        <div
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${styles.icon}`}
+        >
+          {icon}
+        </div>
+      </div>
+      <p
+        className={`font-bold ${styles.value} ${
+          compact ? "text-xl md:text-2xl" : "text-3xl"
+        }`}
+      >
+        {value}
+      </p>
     </div>
   );
 }

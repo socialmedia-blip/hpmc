@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  FaBars,
-  FaTimes,
-  FaSignOutAlt,
-  FaMailBulk,
-  FaQuoteRight,
-} from "react-icons/fa";
+import { FaBars, FaTimes, FaMailBulk } from "react-icons/fa";
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -14,11 +8,15 @@ import { useState } from "react";
 import Image from "next/image";
 
 import {
-  GalleryThumbnails,
+  Briefcase,
+  Building2,
+  FileCheck,
   Gauge,
+  LogOut,
   MonitorPlay,
-  NotebookPen,
+  Newspaper,
   User2,
+  UserCog,
   Users,
   Users2,
 } from "lucide-react";
@@ -67,27 +65,27 @@ export default function AdminLayout({
       to: "/admin/newsletter",
     },
     {
-      icon: <NotebookPen size={18} />,
+      icon: <Newspaper size={18} />,
       label: "Blogs",
       to: "/admin/blogs",
     },
     {
-      icon: <NotebookPen size={18} />,
+      icon: <UserCog size={18} />,
       label: "Agents",
       to: "/admin/agents",
     },
     {
-      icon: <NotebookPen size={18} />,
+      icon: <Building2 size={18} />,
       label: "Vendors",
       to: "/admin/vendors",
     },
     {
-      icon: <NotebookPen size={18} />,
+      icon: <Briefcase size={18} />,
       label: "Openings",
       to: "/admin/openings",
     },
     {
-      icon: <NotebookPen size={18} />,
+      icon: <FileCheck size={18} />,
       label: "Job Applications",
       to: "/admin/job-applications",
     },
@@ -182,16 +180,18 @@ export default function AdminLayout({
         {/* Logout */}
         <div className="absolute bottom-5 left-0 w-full px-3">
           <button
+            type="button"
             onClick={handleLogout}
             className="
-              w-full flex items-center gap-3
-              px-4 py-3 rounded-xl
-              text-red-500
-              hover:bg-red-50
+              flex h-11 w-full items-center justify-center gap-2
+              rounded-xl border border-red-500/20
+              bg-red-500/5 px-4
+              text-sm font-medium text-red-500
               transition-all
+              hover:border-red-500/30 hover:bg-red-500/10
             "
           >
-            <FaSignOutAlt />
+            <LogOut size={17} />
             Logout
           </button>
         </div>
@@ -249,17 +249,18 @@ export default function AdminLayout({
         {/* Fixed Logout */}
         <div className="p-5 border-t border-[var(--border)] shrink-0">
           <button
+            type="button"
             onClick={handleLogout}
             className="
-        w-full
-        flex items-center gap-3
-        px-4 py-3 rounded-xl
-        text-red-500
-        hover:bg-red-500/10
-        transition-all
-      "
+              flex h-11 w-full items-center justify-center gap-2
+              rounded-xl border border-red-500/20
+              bg-red-500/5 px-4
+              text-sm font-medium text-red-500
+              transition-all
+              hover:border-red-500/30 hover:bg-red-500/10
+            "
           >
-            <FaSignOutAlt />
+            <LogOut size={17} />
             Logout
           </button>
         </div>
