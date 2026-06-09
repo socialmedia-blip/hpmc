@@ -6,6 +6,8 @@ import "react-phone-number-input/style.css";
 
 export default function ScheduleSiteVisitForm() {
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -28,6 +30,8 @@ export default function ScheduleSiteVisitForm() {
 
     try {
       setLoading(true);
+      setErrorMessage("");
+      setSuccessMessage("");
 
       const visitDateTime = new Date(
         `${formData.date}T${formData.time}`,
@@ -43,7 +47,7 @@ export default function ScheduleSiteVisitForm() {
       };
 
       if (!formData.phone) {
-        alert("Phone number is required");
+        setErrorMessage("Phone number is required");
         return;
       }
 
@@ -64,7 +68,9 @@ export default function ScheduleSiteVisitForm() {
         throw new Error(data.message || "Failed to submit request");
       }
 
-      alert("Site visit request submitted successfully!");
+      setSuccessMessage(
+        data.message || "Site visit request submitted successfully!",
+      );
 
       setFormData({
         name: "",
@@ -76,7 +82,7 @@ export default function ScheduleSiteVisitForm() {
         message: "",
       });
     } catch (error: any) {
-      alert(error.message || "Something went wrong");
+      setErrorMessage(error.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -159,6 +165,17 @@ export default function ScheduleSiteVisitForm() {
             }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
+              {successMessage && (
+                <div className="rounded-2xl border border-green-500/30 bg-green-500/10 p-4 text-green-600">
+                  {successMessage}
+                </div>
+              )}
+
+              {errorMessage && (
+                <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-red-500">
+                  {errorMessage}
+                </div>
+              )}
               <div className="grid md:grid-cols-2 gap-5">
                 <input
                   type="text"
@@ -239,6 +256,7 @@ export default function ScheduleSiteVisitForm() {
                   <input
                     type="date"
                     required
+                    min={new Date().toISOString().split("T")[0]}
                     value={formData.date}
                     onChange={(e) =>
                       setFormData({
@@ -253,7 +271,7 @@ export default function ScheduleSiteVisitForm() {
 
                 <div>
                   <label className="mb-2 block font-medium text-[var(--text-primary)]">
-                    Preferred Time *
+                    Preferred Time (IST) *
                   </label>
 
                   <input

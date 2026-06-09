@@ -138,21 +138,6 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
     }
   };
 
-  const toggleService = (service: string) => {
-    setSelectedServices((prev) =>
-      prev.includes(service)
-        ? prev.filter((item) => item !== service)
-        : [...prev, service],
-    );
-
-    if (errors.services) {
-      setErrors((prev) => ({
-        ...prev,
-        services: "",
-      }));
-    }
-  };
-
   const validate = () => {
     const newErrors: Record<string, string> = {};
 
@@ -216,6 +201,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       if (data.alreadyRegistered) {
         onSuccess?.();
+        setServerError(data.message || "Email already registered.");
         return;
       }
 

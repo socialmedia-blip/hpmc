@@ -201,6 +201,7 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
 
       if (data.alreadyRegistered) {
         onSuccess?.();
+        setServerError(data.message || "Email already registered.");
         return;
       }
 

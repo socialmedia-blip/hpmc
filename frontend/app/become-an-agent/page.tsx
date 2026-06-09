@@ -15,6 +15,8 @@ import ScheduleDemoForm from "../components/LeadFormDemo";
 export default function BecomeAgent() {
   const [openPopup, setOpenPopup] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -34,6 +36,8 @@ export default function BecomeAgent() {
     e.preventDefault();
 
     try {
+      setSuccessMessage("");
+      setErrorMessage("");
       setLoading(true);
 
       const response = await fetch(
@@ -56,7 +60,10 @@ export default function BecomeAgent() {
         throw new Error(data.message || "Failed to submit application");
       }
 
-      alert("Agent application submitted successfully!");
+      setSuccessMessage(
+        data.message || "Agent application submitted successfully!",
+      );
+      setErrorMessage("");
 
       setFormData({
         name: "",
@@ -72,7 +79,8 @@ export default function BecomeAgent() {
         message: "",
       });
     } catch (error: any) {
-      alert(error.message || "Something went wrong");
+      setErrorMessage(error.message || "Something went wrong");
+      setSuccessMessage("");
     } finally {
       setLoading(false);
     }
@@ -149,6 +157,17 @@ export default function BecomeAgent() {
               </p>
 
               <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+                {successMessage && (
+                  <div className="rounded-2xl border border-green-500/30 bg-green-500/10 p-4 text-green-600">
+                    {successMessage}
+                  </div>
+                )}
+
+                {errorMessage && (
+                  <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-red-500">
+                    {errorMessage}
+                  </div>
+                )}
                 <div className="grid md:grid-cols-2 gap-5">
                   <input
                     type="text"
