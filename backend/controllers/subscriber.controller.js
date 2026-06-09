@@ -38,9 +38,9 @@ exports.subscribeEmail = async (req, res) => {
     try {
       await sendEmail({
         to: email,
-        subject: "Welcome to Oaklyn Newsletter 🏡",
+        subject: "Welcome to HPMC 🏡",
         html: `
-          <h2>Welcome to Oaklyn Real Estates</h2>
+          <h2>Welcome to HPMC</h2>
           <p>Thanks for subscribing to our newsletter.</p>
 
           <hr />
@@ -50,7 +50,7 @@ exports.subscribeEmail = async (req, res) => {
               Unsubscribe here
             </a>
           </p>
-          <p>– Team Oaklyn Real Estates</p>
+          <p>– Team HPMC</p>
         `,
       });
     } catch (emailErr) {
