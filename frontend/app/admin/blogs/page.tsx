@@ -1,12 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-import { Edit, Trash2, Code, ImageIcon, Plus, FileText, X } from "lucide-react";
-
-import Fuse from "fuse.js";
-import { formatHtml } from "@/app/components/utils/formatHtml";
 import AddBlog from "@/app/components/AddBlog";
+import { formatHtml } from "@/app/components/utils/formatHtml";
+import Fuse from "fuse.js";
+import {
+  CalendarDays,
+  Code,
+  Edit,
+  FileText,
+  Filter,
+  ImageIcon,
+  Newspaper,
+  Plus,
+  RotateCcw,
+  Search,
+  Tags,
+  Trash2,
+  UserRound,
+  X,
+} from "lucide-react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 
 interface BlogPost {
   _id: string;
@@ -15,311 +28,485 @@ interface BlogPost {
   content: string;
   author: string;
   datePublished: string;
+  lastUpdated?: string;
   slug: string;
   coverImage?: string;
+  coverImageAlt?: string;
+  tags?: string[] | string;
+  faqs?: { question: string; answer: string }[];
+}
+
+const ITEMS_PER_PAGE = 10;
+
+async function requestBlogs(apiBase: string | undefined) {
+  const res = await fetch(`${apiBase}/blog/viewblog`, { cache: "no-store" });
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || data.error || "Failed to fetch blogs");
+  }
+
+  return [...(data || [])].sort(
+    (a: BlogPost, b: BlogPost) =>
+      new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
+  ) as BlogPost[];
 }
 
 export default function AdminBlogsPage() {
   const [showAddModal, setShowAddModal] = useState(false);
-
   const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
-
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
-
   const [loading, setLoading] = useState(true);
-
+  const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-
   const [currentPage, setCurrentPage] = useState(1);
-
-  const itemsPerPage = 10;
-
-  /* Modals */
   const [editingSlug, setEditingSlug] = useState<string | null>(null);
-
   const [htmlContent, setHtmlContent] = useState("");
-
   const [showHtmlEditor, setShowHtmlEditor] = useState(false);
-
   const [showImageModal, setShowImageModal] = useState(false);
-
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
-  /* Fetch */
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
+
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/blog/viewblog`,
-      );
-
-      const data = await res.json();
-
-      setBlogs(data);
-    } catch (error) {
-      console.error(error);
+      setError("");
+      setBlogs(await requestBlogs(API_BASE));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchBlogs();
-  }, []);
+    let cancelled = false;
 
-  /* Search */
-  const fuse = new Fuse(blogs, {
-    keys: ["title", "author"],
-    threshold: 0.3,
-    ignoreLocation: true,
-  });
+    requestBlogs(API_BASE)
+      .then((data) => {
+        if (!cancelled) setBlogs(data);
+      })
+      .catch((err: unknown) => {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : "Something went wrong");
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
 
-  const filteredBlogs =
-    searchQuery.trim() === ""
-      ? blogs
-      : fuse.search(searchQuery).map((r) => r.item);
+    return () => {
+      cancelled = true;
+    };
+  }, [API_BASE]);
 
-  /* Pagination */
-  const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
-
-  const paginatedBlogs = filteredBlogs.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage,
+  const fuse = useMemo(
+    () =>
+      new Fuse(blogs, {
+        keys: ["title", "author", "excerpt", "slug", "tags"],
+        threshold: 0.3,
+        ignoreLocation: true,
+      }),
+    [blogs],
   );
 
-  /* Update Image */
+  const filteredBlogs = useMemo(() => {
+    if (!searchQuery.trim()) return blogs;
+    return fuse.search(searchQuery).map((result) => result.item);
+  }, [blogs, fuse, searchQuery]);
+
+  const stats = {
+    total: blogs.length,
+    authors: new Set(blogs.map((blog) => blog.author).filter(Boolean)).size,
+    tagged: blogs.filter((blog) => normalizeTags(blog.tags).length > 0).length,
+    latest: blogs[0]
+      ? new Date(blogs[0].datePublished).toLocaleDateString()
+      : "None",
+  };
+
+  const hasActiveFilters = Boolean(searchQuery);
+  const totalPages = Math.ceil(filteredBlogs.length / ITEMS_PER_PAGE);
+  const activePage = Math.min(currentPage, Math.max(totalPages, 1));
+  const paginatedBlogs = filteredBlogs.slice(
+    (activePage - 1) * ITEMS_PER_PAGE,
+    activePage * ITEMS_PER_PAGE,
+  );
+
+  const resetFilters = () => {
+    setSearchQuery("");
+    setCurrentPage(1);
+  };
+
   const handleUpdateImage = async () => {
     if (!selectedImage || !editingSlug) return;
 
     const formData = new FormData();
-
     formData.append("coverImage", selectedImage);
 
     try {
-      await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/blog/${editingSlug}/image`,
-        {
-          method: "PATCH",
-          body: formData,
-        },
-      );
+      const res = await fetch(`${API_BASE}/blog/${editingSlug}/image`, {
+        method: "PATCH",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const result = await res.json();
+        throw new Error(result.message || "Failed to update image");
+      }
 
       setShowImageModal(false);
-
       setSelectedImage(null);
-
       fetchBlogs();
-    } catch {
-      alert("Failed to update image");
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Failed to update image");
     }
+  };
+
+  const handleDelete = async (blog: BlogPost) => {
+    if (!confirm("Delete this blog?")) return;
+
+    try {
+      const res = await fetch(`${API_BASE}/blog/${blog.slug}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const result = await res.json();
+        throw new Error(result.message || result.msg || "Delete failed");
+      }
+
+      setBlogs((prev) => prev.filter((item) => item._id !== blog._id));
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Delete failed");
+    }
+  };
+
+  const handleSaveHtml = async () => {
+    if (!editingSlug) return;
+
+    const res = await fetch(`${API_BASE}/blog/${editingSlug}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: htmlContent }),
+    });
+
+    if (!res.ok) {
+      const result = await res.json();
+      alert(result.message || result.msg || "Failed to save HTML");
+      return;
+    }
+
+    setShowHtmlEditor(false);
+    fetchBlogs();
   };
 
   return (
     <div>
-      {/* Header */}
-      <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <p className="uppercase tracking-[4px] text-xs text-[var(--primary)] mb-2">
-            Admin Panel
-          </p>
+      <div className="mb-8">
+        <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="mb-2 text-xs uppercase tracking-[4px] text-[var(--primary)]">
+              Admin Panel
+            </p>
+            <h1 className="font-serif text-4xl text-[var(--text-primary)]">
+              Blogs
+            </h1>
+          </div>
 
-          <h1 className="font-serif text-4xl text-[var(--text-primary)]">
-            Blogs
-          </h1>
+          <div className="flex flex-wrap items-center gap-3">
+            {hasActiveFilters && (
+              <button
+                onClick={resetFilters}
+                className="flex h-11 items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card)] px-4 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)]"
+              >
+                <RotateCcw size={16} />
+                Reset
+              </button>
+            )}
+
+            <button
+              onClick={() => {
+                setEditingBlog(null);
+                setShowAddModal(true);
+              }}
+              className="flex h-11 items-center gap-2 rounded-xl bg-[var(--primary)] px-5 font-medium text-white transition hover:opacity-90"
+            >
+              <Plus size={18} />
+              Add Blog
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-3">
-          {/* Search */}
-          <input
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setCurrentPage(1);
-            }}
-            placeholder="Search blogs..."
-            className="
-    h-11 px-4 w-full md:w-72
-    rounded-xl
-    border border-[var(--border)]
-    bg-[var(--background)]
-    text-[var(--text-primary)]
-    placeholder:text-[var(--text-light)]
-    outline-none
-    transition-all
-    focus:border-[var(--primary)]
-    focus:ring-2
-    focus:ring-[var(--primary)]/20
-  "
+        <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4 md:gap-4">
+          <StatCard
+            label="Published"
+            value={stats.total}
+            icon={<Newspaper size={18} />}
+            color="blue"
           />
+          <StatCard
+            label="Authors"
+            value={stats.authors}
+            icon={<UserRound size={18} />}
+            color="green"
+          />
+          <StatCard
+            label="Tagged"
+            value={stats.tagged}
+            icon={<Tags size={18} />}
+            color="violet"
+          />
+          <StatCard
+            label="Latest Post"
+            value={stats.latest}
+            icon={<CalendarDays size={18} />}
+            color="cyan"
+          />
+        </div>
 
-          {/* Add */}
-          <button
-            onClick={() => {
-              setEditingBlog(null);
-              setShowAddModal(true);
-            }}
-            className="
-    h-11 px-6 rounded-xl
-    bg-[var(--primary)]
-    text-white
-    flex items-center gap-2
-    font-medium
-    transition-all
-    hover:opacity-90
-  "
-          >
-            <Plus size={16} />
-            Add Blog
-          </button>
+        <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 md:p-6">
+          <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <Filter size={18} className="text-[var(--primary)]" />
+              <p className="text-sm font-semibold text-[var(--text-primary)]">
+                Blog Search
+              </p>
+              {hasActiveFilters && (
+                <span className="rounded-full bg-[var(--primary)]/15 px-2 py-1 text-xs font-semibold text-[var(--primary)]">
+                  Active
+                </span>
+              )}
+            </div>
+            <p className="text-xs text-[var(--text-secondary)]">
+              Showing{" "}
+              <span className="font-semibold text-[var(--primary)]">
+                {filteredBlogs.length}
+              </span>{" "}
+              of <span className="font-semibold">{blogs.length}</span>
+            </p>
+          </div>
+
+          <div className="relative">
+            <Search
+              size={16}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]"
+            />
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => {
+                setSearchQuery(event.target.value);
+                setCurrentPage(1);
+              }}
+              placeholder="Search by title, author, excerpt, slug, or tags..."
+              className="h-11 w-full rounded-lg border border-[var(--border)] bg-[var(--background-secondary)] pl-10 pr-4 text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Loading */}
       {loading && (
-        <div className="flex flex-col items-center justify-center h-[300px]">
-          <div className="w-10 h-10 border-4 border-[var(--border)] border-t-[var(--primary)] rounded-full animate-spin mb-4" />
-
+        <div className="flex h-[300px] flex-col items-center justify-center">
+          <div className="mb-4 h-10 w-10 animate-spin rounded-full border-4 border-[var(--border)] border-t-[var(--primary)]" />
           <p className="text-[var(--text-secondary)]">Loading blogs...</p>
         </div>
       )}
 
-      {/* Empty */}
-      {!loading && filteredBlogs.length === 0 && (
-        <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-12 text-center">
-          <FileText size={32} className="mx-auto text-[var(--muted)] mb-4" />
-
-          <h3 className="font-serif text-2xl text-[var(--text-primary)]">
-            No Blogs Found
+      {!loading && error && (
+        <div className="rounded-2xl border border-red-500/20 bg-red-500/5 p-8 text-center">
+          <h3 className="mb-2 font-semibold text-red-600">
+            Something went wrong
           </h3>
+          <p className="mb-5 text-sm text-red-500">{error}</p>
+          <button
+            onClick={fetchBlogs}
+            className="h-10 rounded-xl bg-red-600 px-5 text-sm font-medium text-white transition hover:bg-red-700"
+          >
+            Try Again
+          </button>
         </div>
       )}
 
-      {/* Table */}
-      {!loading && filteredBlogs.length > 0 && (
+      {!loading && !error && filteredBlogs.length === 0 && (
+        <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-12 text-center">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)]">
+            <FileText size={25} />
+          </div>
+          <h3 className="mb-3 font-serif text-2xl text-[var(--text-primary)]">
+            No Blogs Found
+          </h3>
+          <p className="text-[var(--text-secondary)]">
+            {hasActiveFilters
+              ? "No blogs match the current search."
+              : "Publish your first blog to start building the library."}
+          </p>
+        </div>
+      )}
+
+      {!loading && !error && filteredBlogs.length > 0 && (
         <>
-          <div className="overflow-x-auto bg-[var(--card)] border border-[var(--border)] rounded-2xl">
-            <table className="w-full">
-              <thead className="bg-[var(--muted)]">
-                <tr>
-                  <th className="px-5 py-4 text-left">Title</th>
-
-                  <th className="px-5 py-4 text-left">Content</th>
-
-                  <th className="px-5 py-4 text-left">Author</th>
-
-                  <th className="px-5 py-4 text-left">Published</th>
-
-                  <th className="px-5 py-4 text-left">Actions</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {paginatedBlogs.map((blog) => (
-                  <tr
-                    key={blog._id}
-                    className="border-t border-[var(--border)] hover:bg-[var(--muted)]"
-                  >
-                    <td className="px-5 py-4 font-medium text-[var(--text-primary)]">
-                      {blog.title}
-                    </td>
-
-                    <td className="px-5 py-4 max-w-[280px]">
-                      <div
-                        className="line-clamp-3 text-[var(--text-secondary)]"
-                        dangerouslySetInnerHTML={{
-                          __html: blog.content,
-                        }}
-                      />
-                    </td>
-
-                    <td className="px-5 py-4 text-[var(--text-secondary)]">
-                      {blog.author}
-                    </td>
-
-                    <td className="px-5 py-4 text-[var(--text-secondary)]">
-                      {new Date(blog.datePublished).toLocaleDateString()}
-                    </td>
-
-                    <td className="px-5 py-4">
-                      <div className="flex gap-4">
-                        <button
-                          onClick={() => {
-                            setEditingBlog(blog);
-
-                            setShowAddModal(true);
-                          }}
-                          className="text-blue-500"
-                        >
-                          <Edit size={16} />
-                        </button>
-
-                        <button
-                          onClick={() => {
-                            setEditingSlug(blog.slug);
-
-                            setShowImageModal(true);
-                          }}
-                          className="text-purple-500"
-                        >
-                          <ImageIcon size={16} />
-                        </button>
-
-                        <button
-                          onClick={async () => {
-                            setEditingSlug(blog.slug);
-
-                            setHtmlContent(await formatHtml(blog.content));
-
-                            setShowHtmlEditor(true);
-                          }}
-                          className="text-amber-500"
-                        >
-                          <Code size={16} />
-                        </button>
-
-                        <button
-                          onClick={async () => {
-                            if (!confirm("Delete this blog?")) return;
-
-                            await fetch(
-                              `${process.env.NEXT_PUBLIC_API_BASE}/blog/${blog.slug}`,
-                              {
-                                method: "DELETE",
-                              },
-                            );
-
-                            fetchBlogs();
-                          }}
-                          className="text-red-500"
-                        >
-                          <Trash2 size={16} />
-                        </button>
-                      </div>
-                    </td>
+          <div className="mb-20 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)]">
+            <div className="overflow-x-auto">
+              <table className="w-full table-fixed md:table-auto">
+                <thead>
+                  <tr className="border-b border-[var(--border)] bg-[var(--background-secondary)]">
+                    <th className="w-[48%] px-3 py-4 text-left text-xs font-semibold text-[var(--text-primary)] sm:px-4 sm:text-sm md:w-auto md:px-5">
+                      Blog
+                    </th>
+                    <th className="hidden px-5 py-4 text-left text-sm font-semibold text-[var(--text-primary)] lg:table-cell">
+                      Author
+                    </th>
+                    <th className="hidden px-5 py-4 text-left text-sm font-semibold text-[var(--text-primary)] xl:table-cell">
+                      Tags
+                    </th>
+                    <th className="w-[25%] px-2 py-4 text-left text-xs font-semibold text-[var(--text-primary)] sm:px-4 sm:text-sm md:w-auto md:px-5">
+                      Published
+                    </th>
+                    <th className="w-[27%] px-2 py-4 text-right text-xs font-semibold text-[var(--text-primary)] sm:px-4 sm:text-sm md:w-auto md:px-5">
+                      Actions
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+
+                <tbody>
+                  {paginatedBlogs.map((blog) => (
+                    <tr
+                      key={blog._id}
+                      className="border-b border-[var(--border)] transition last:border-b-0 hover:bg-[var(--background-secondary)]"
+                    >
+                      <td className="px-3 py-4 sm:px-4 md:px-5">
+                        <div className="flex min-w-0 items-center gap-3">
+                          <div className="hidden h-14 w-16 shrink-0 overflow-hidden rounded-xl bg-[var(--background-secondary)] sm:block">
+                            {blog.coverImage ? (
+                              <img
+                                src={blog.coverImage}
+                                alt={blog.coverImageAlt || blog.title}
+                                className="h-full w-full object-cover"
+                              />
+                            ) : (
+                              <div className="flex h-full w-full items-center justify-center text-[var(--text-secondary)]">
+                                <ImageIcon size={18} />
+                              </div>
+                            )}
+                          </div>
+                          <div className="min-w-0">
+                            <p className="truncate text-sm font-medium text-[var(--text-primary)] md:text-base">
+                              {blog.title}
+                            </p>
+                            <p className="mt-1 line-clamp-2 text-[11px] leading-5 text-[var(--text-secondary)] sm:text-xs">
+                              {stripHtml(blog.excerpt || blog.content)}
+                            </p>
+                            <p className="mt-1 truncate text-[11px] text-[var(--text-secondary)] lg:hidden">
+                              {blog.author || "Unknown author"}
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td className="hidden px-5 py-4 lg:table-cell">
+                        <p className="max-w-[180px] truncate text-sm font-medium text-[var(--text-primary)]">
+                          {blog.author || "-"}
+                        </p>
+                        <p className="mt-1 max-w-[180px] truncate text-xs text-[var(--text-secondary)]">
+                          /{blog.slug}
+                        </p>
+                      </td>
+
+                      <td className="hidden px-5 py-4 xl:table-cell">
+                        <div className="flex max-w-[260px] flex-wrap gap-2">
+                          {normalizeTags(blog.tags).length > 0 ? (
+                            normalizeTags(blog.tags)
+                              .slice(0, 3)
+                              .map((tag) => (
+                                <span
+                                  key={tag}
+                                  className="rounded-full bg-[var(--primary)]/10 px-3 py-1 text-xs font-semibold text-[var(--primary)]"
+                                >
+                                  {tag}
+                                </span>
+                              ))
+                          ) : (
+                            <span className="text-sm text-[var(--text-secondary)]">
+                              No tags
+                            </span>
+                          )}
+                        </div>
+                      </td>
+
+                      <td className="px-2 py-4 text-xs text-[var(--text-secondary)] sm:px-4 md:px-5 md:text-sm">
+                        {new Date(blog.datePublished).toLocaleDateString()}
+                      </td>
+
+                      <td className="px-2 py-4 sm:px-4 md:px-5">
+                        <div className="flex justify-end gap-1 md:gap-2">
+                          <button
+                            onClick={() => {
+                              setEditingBlog(blog);
+                              setShowAddModal(true);
+                            }}
+                            className="flex h-8 w-8 items-center justify-center rounded-lg text-blue-500 transition hover:bg-blue-500/10 md:h-9 md:w-9"
+                            title="Edit blog"
+                            aria-label={`Edit ${blog.title}`}
+                          >
+                            <Edit size={15} />
+                          </button>
+                          <button
+                            onClick={() => {
+                              setEditingSlug(blog.slug);
+                              setShowImageModal(true);
+                            }}
+                            className="flex h-8 w-8 items-center justify-center rounded-lg text-violet-500 transition hover:bg-violet-500/10 md:h-9 md:w-9"
+                            title="Update image"
+                            aria-label={`Update image for ${blog.title}`}
+                          >
+                            <ImageIcon size={15} />
+                          </button>
+                          <button
+                            onClick={async () => {
+                              setEditingSlug(blog.slug);
+                              setHtmlContent(await formatHtml(blog.content));
+                              setShowHtmlEditor(true);
+                            }}
+                            className="flex h-8 w-8 items-center justify-center rounded-lg text-amber-500 transition hover:bg-amber-500/10 md:h-9 md:w-9"
+                            title="Edit HTML"
+                            aria-label={`Edit HTML for ${blog.title}`}
+                          >
+                            <Code size={15} />
+                          </button>
+                          <button
+                            onClick={() => handleDelete(blog)}
+                            className="flex h-8 w-8 items-center justify-center rounded-lg text-red-500 transition hover:bg-red-500/10 md:h-9 md:w-9"
+                            title="Delete"
+                            aria-label={`Delete ${blog.title}`}
+                          >
+                            <Trash2 size={15} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
 
-          {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex justify-end mt-8 gap-3">
+            <div className="flex items-center justify-center gap-3 pb-20 md:justify-end">
               <button
-                disabled={currentPage === 1}
-                onClick={() => setCurrentPage((p) => p - 1)}
-                className="h-10 px-5 border border-[var(--border)] disabled:opacity-40"
+                disabled={activePage === 1}
+                onClick={() => setCurrentPage((page) => page - 1)}
+                className="h-11 rounded-xl border border-[var(--border)] bg-[var(--card)] px-5 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Prev
               </button>
-
-              <div className="h-10 px-5 flex items-center">{currentPage}</div>
-
+              <div className="flex h-11 min-w-[52px] items-center justify-center rounded-xl bg-[var(--primary)] px-4 font-medium text-white">
+                {activePage}
+              </div>
               <button
-                disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage((p) => p + 1)}
-                className="h-10 px-5 border border-[var(--border)] disabled:opacity-40"
+                disabled={activePage === totalPages}
+                onClick={() => setCurrentPage((page) => page + 1)}
+                className="h-11 rounded-xl border border-[var(--border)] bg-[var(--card)] px-5 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Next
               </button>
@@ -328,12 +515,10 @@ export default function AdminBlogsPage() {
         </>
       )}
 
-      {/* Add Blog */}
       {showAddModal && (
         <AddBlog
           onClose={() => {
             setShowAddModal(false);
-
             setEditingBlog(null);
           }}
           onSuccess={fetchBlogs}
@@ -341,105 +526,203 @@ export default function AdminBlogsPage() {
         />
       )}
 
-      {/* HTML Modal */}
       {showHtmlEditor && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
-          <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-4xl overflow-hidden">
-            <div className="flex justify-between items-center px-6 py-4 border-b border-[var(--border)]">
-              <h2 className="font-serif text-2xl">HTML Editor</h2>
-
-              <button onClick={() => setShowHtmlEditor(false)}>
-                <X size={18} />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <textarea
-                value={htmlContent}
-                onChange={(e) => setHtmlContent(e.target.value)}
-                className="w-full h-80 border border-[var(--border)] p-4 font-mono outline-none"
-              />
-            </div>
-
-            <div className="px-6 py-4 border-t border-[var(--border)] flex justify-end gap-3">
+        <EditorModal
+          title="HTML Editor"
+          eyebrow="Advanced Content"
+          onClose={() => setShowHtmlEditor(false)}
+          footer={
+            <>
               <button
                 onClick={() => setShowHtmlEditor(false)}
-                className="h-11 px-6 border border-[var(--border)]"
+                className="h-11 rounded-xl border border-[var(--border)] px-6 text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)]"
               >
                 Cancel
               </button>
-
               <button
-                onClick={async () => {
-                  if (!editingSlug) return;
-
-                  await fetch(
-                    `${process.env.NEXT_PUBLIC_API_BASE}/blog/${editingSlug}`,
-                    {
-                      method: "PUT",
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        content: htmlContent,
-                      }),
-                    },
-                  );
-
-                  setShowHtmlEditor(false);
-                  fetchBlogs();
-                }}
-                className="
-    h-11 px-6 rounded-xl
-    bg-[var(--primary)]
-    text-white
-    font-medium
-    hover:opacity-90
-    transition-all
-  "
+                onClick={handleSaveHtml}
+                className="h-11 rounded-xl bg-[var(--primary)] px-6 font-medium text-white transition hover:opacity-90"
               >
                 Save Changes
               </button>
-            </div>
-          </div>
-        </div>
+            </>
+          }
+        >
+          <textarea
+            value={htmlContent}
+            onChange={(event) => setHtmlContent(event.target.value)}
+            className="h-[55vh] w-full resize-none rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)] p-4 font-mono text-sm text-[var(--text-primary)] outline-none focus:ring-2 focus:ring-[var(--primary)]"
+          />
+        </EditorModal>
       )}
 
-      {/* Image Modal */}
       {showImageModal && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
-          <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-md overflow-hidden">
-            <div className="px-6 py-4 border-b border-[var(--border)]">
-              <h2 className="font-serif text-2xl">Update Image</h2>
-            </div>
-
-            <div className="p-6">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => setSelectedImage(e.target.files?.[0] || null)}
-                className="w-full"
-              />
-            </div>
-
-            <div className="px-6 py-4 border-t border-[var(--border)] flex justify-end gap-3">
+        <EditorModal
+          title="Update Cover Image"
+          eyebrow="Media Library"
+          onClose={() => {
+            setShowImageModal(false);
+            setSelectedImage(null);
+          }}
+          footer={
+            <>
               <button
-                onClick={() => setShowImageModal(false)}
-                className="h-11 px-6 border border-[var(--border)]"
+                onClick={() => {
+                  setShowImageModal(false);
+                  setSelectedImage(null);
+                }}
+                className="h-11 rounded-xl border border-[var(--border)] px-6 text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)]"
               >
                 Cancel
               </button>
-
               <button
                 onClick={handleUpdateImage}
-                className="h-11 px-6 bg-[var(--primary)] text-[var(--card)] border border-[var(--border)]"
+                disabled={!selectedImage}
+                className="h-11 rounded-xl bg-[var(--primary)] px-6 font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Update
+                Update Image
               </button>
+            </>
+          }
+        >
+          <label className="flex min-h-48 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[var(--border)] bg-[var(--background-secondary)] p-6 text-center transition hover:border-[var(--primary)]">
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)]">
+              <ImageIcon size={22} />
             </div>
-          </div>
-        </div>
+            <p className="font-medium text-[var(--text-primary)]">
+              {selectedImage ? selectedImage.name : "Choose a new cover image"}
+            </p>
+            <p className="mt-1 text-sm text-[var(--text-secondary)]">
+              JPG, PNG, or WebP works best for blog cards.
+            </p>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(event) =>
+                setSelectedImage(event.target.files?.[0] || null)
+              }
+              className="hidden"
+            />
+          </label>
+        </EditorModal>
       )}
+    </div>
+  );
+}
+
+function normalizeTags(tags?: string[] | string) {
+  if (!tags) return [];
+  if (Array.isArray(tags)) return tags.filter(Boolean);
+  return tags
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+}
+
+function stripHtml(value: string) {
+  return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function EditorModal({
+  title,
+  eyebrow,
+  children,
+  footer,
+  onClose,
+}: {
+  title: string;
+  eyebrow: string;
+  children: ReactNode;
+  footer: ReactNode;
+  onClose: () => void;
+}) {
+  return (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-3 backdrop-blur-md sm:p-4"
+      role="dialog"
+      aria-modal="true"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div className="relative max-h-[94vh] w-full max-w-4xl overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--card)] shadow-[0_30px_100px_rgba(0,0,0,0.35)] md:rounded-[32px]">
+        <div className="flex items-center justify-between border-b border-[var(--border)] px-5 py-5 md:px-8">
+          <div>
+            <p className="mb-2 text-[10px] uppercase tracking-[3px] text-[var(--primary)] sm:text-xs sm:tracking-[4px]">
+              {eyebrow}
+            </p>
+            <h2 className="font-serif text-2xl text-[var(--text-primary)] md:text-3xl">
+              {title}
+            </h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] md:h-11 md:w-11"
+            aria-label={`Close ${title}`}
+          >
+            <X size={20} />
+          </button>
+        </div>
+        <div className="max-h-[calc(94vh-180px)] overflow-y-auto p-5 md:p-8">
+          {children}
+        </div>
+        <div className="flex justify-end gap-3 border-t border-[var(--border)] px-5 py-4 md:px-8">
+          {footer}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StatCard({
+  label,
+  value,
+  icon,
+  color,
+}: {
+  label: string;
+  value: number | string;
+  icon: ReactNode;
+  color: "blue" | "violet" | "green" | "cyan";
+}) {
+  const styles = {
+    blue: {
+      card: "from-blue-500/10 to-blue-600/5 border-blue-500/20",
+      icon: "bg-blue-500/10 text-blue-600",
+      value: "text-blue-600",
+    },
+    violet: {
+      card: "from-violet-500/10 to-violet-600/5 border-violet-500/20",
+      icon: "bg-violet-500/10 text-violet-600",
+      value: "text-violet-600",
+    },
+    green: {
+      card: "from-green-500/10 to-green-600/5 border-green-500/20",
+      icon: "bg-green-500/10 text-green-600",
+      value: "text-green-600",
+    },
+    cyan: {
+      card: "from-cyan-500/10 to-cyan-600/5 border-cyan-500/20",
+      icon: "bg-cyan-500/10 text-cyan-600",
+      value: "text-cyan-600",
+    },
+  }[color];
+
+  return (
+    <div className={`rounded-2xl border bg-gradient-to-br p-4 ${styles.card}`}>
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <p className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+          {label}
+        </p>
+        <div
+          className={`flex h-9 w-9 items-center justify-center rounded-xl ${styles.icon}`}
+        >
+          {icon}
+        </div>
+      </div>
+      <p className={`text-2xl font-bold md:text-3xl ${styles.value}`}>
+        {value}
+      </p>
     </div>
   );
 }
