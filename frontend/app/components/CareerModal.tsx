@@ -1,7 +1,18 @@
 "use client";
 
-import { X } from "lucide-react";
-import { useEffect, useState } from "react";
+import {
+  AlertCircle,
+  BriefcaseBusiness,
+  Building2,
+  Check,
+  CirclePlus,
+  GripVertical,
+  MapPin,
+  Save,
+  Trash2,
+  X,
+} from "lucide-react";
+import { useMemo, useState } from "react";
 
 interface Career {
   _id?: string;
@@ -23,8 +34,62 @@ interface CareerPopupProps {
   initialData?: Career | null;
 }
 
+const emptyCareer: Career = {
+  title: "",
+  department: "",
+  location: "",
+  employmentType: "Full Time",
+  experience: "",
+  description: "",
+  responsibilities: [""],
+  requirements: [""],
+  isActive: true,
+};
+
+const fieldInputClasses =
+  "h-12 w-full rounded-xl border border-[var(--border)] bg-[var(--card)] px-4 text-[var(--text-primary)] outline-none transition placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]";
+
+function getInitialCareer(initialData?: Career | null): Career {
+  if (!initialData) {
+    return { ...emptyCareer, responsibilities: [""], requirements: [""] };
+  }
+
+  return {
+    _id: initialData._id,
+    title: initialData.title || "",
+    department: initialData.department || "",
+    location: initialData.location || "",
+    employmentType: initialData.employmentType || "Full Time",
+    experience: initialData.experience || "",
+    description: initialData.description || "",
+    responsibilities: initialData.responsibilities?.length
+      ? initialData.responsibilities
+      : [""],
+    requirements: initialData.requirements?.length
+      ? initialData.requirements
+      : [""],
+    isActive: initialData.isActive,
+  };
+}
+
 export default function CareerPopup({
   isOpen,
+  initialData,
+  ...props
+}: CareerPopupProps) {
+  if (!isOpen) return null;
+
+  return (
+    <CareerPopupContent
+      key={initialData?._id || "create"}
+      isOpen={isOpen}
+      initialData={initialData}
+      {...props}
+    />
+  );
+}
+
+function CareerPopupContent({
   onClose,
   refreshData,
   initialData,
@@ -33,55 +98,25 @@ export default function CareerPopup({
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [formData, setFormData] = useState<Career>(() =>
+    getInitialCareer(initialData),
+  );
 
-  const [formData, setFormData] = useState<Career>({
-    title: "",
-    department: "",
-    location: "",
-    employmentType: "Full Time",
-    experience: "",
-    description: "",
-    responsibilities: [""],
-    requirements: [""],
-    isActive: true,
-  });
+  const isEdit = Boolean(initialData?._id);
 
-  useEffect(() => {
-    if (initialData) {
-      setFormData({
-        _id: initialData._id,
-        title: initialData.title || "",
-        department: initialData.department || "",
-        location: initialData.location || "",
-        employmentType: initialData.employmentType || "Full Time",
-        experience: initialData.experience || "",
-        description: initialData.description || "",
-        responsibilities: initialData.responsibilities?.length
-          ? initialData.responsibilities
-          : [""],
-        requirements: initialData.requirements?.length
-          ? initialData.requirements
-          : [""],
-        isActive: initialData.isActive,
-      });
-    } else {
-      setFormData({
-        title: "",
-        department: "",
-        location: "",
-        employmentType: "Full Time",
-        experience: "",
-        description: "",
-        responsibilities: [""],
-        requirements: [""],
-        isActive: true,
-      });
-    }
+  const completion = useMemo(() => {
+    const checks = [
+      formData.title.trim(),
+      formData.department.trim(),
+      formData.location.trim(),
+      formData.experience.trim(),
+      formData.description.trim(),
+      formData.responsibilities.some((item) => item.trim()),
+      formData.requirements.some((item) => item.trim()),
+    ];
 
-    setError("");
-  }, [initialData, isOpen]);
-
-  if (!isOpen) return null;
+    return Math.round((checks.filter(Boolean).length / checks.length) * 100);
+  }, [formData]);
 
   const handleChange = (field: keyof Career, value: string | boolean) => {
     setFormData((prev) => ({
@@ -117,14 +152,20 @@ export default function CareerPopup({
     field: "responsibilities" | "requirements",
     index: number,
   ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: prev[field].filter((_, i) => i !== index),
-    }));
+    setFormData((prev) => {
+      const nextValues = prev[field].filter(
+        (_, itemIndex) => itemIndex !== index,
+      );
+
+      return {
+        ...prev,
+        [field]: nextValues.length ? nextValues : [""],
+      };
+    });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     try {
       setLoading(true);
@@ -142,15 +183,20 @@ export default function CareerPopup({
         throw new Error("Location is required");
       }
 
-      formData.responsibilities = formData.responsibilities.filter(
-        (item) => item.trim() !== "",
-      );
-
-      formData.requirements = formData.requirements.filter(
-        (item) => item.trim() !== "",
-      );
-
-      const isEdit = Boolean(initialData?._id);
+      const payload: Career = {
+        ...formData,
+        title: formData.title.trim(),
+        department: formData.department.trim(),
+        location: formData.location.trim(),
+        experience: formData.experience.trim(),
+        description: formData.description.trim(),
+        responsibilities: formData.responsibilities.filter(
+          (item) => item.trim() !== "",
+        ),
+        requirements: formData.requirements.filter(
+          (item) => item.trim() !== "",
+        ),
+      };
 
       const response = await fetch(
         isEdit
@@ -161,7 +207,7 @@ export default function CareerPopup({
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(payload),
         },
       );
 
@@ -175,7 +221,6 @@ export default function CareerPopup({
       }
 
       await refreshData();
-
       onClose();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
@@ -185,282 +230,364 @@ export default function CareerPopup({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
-      <div
-        className="
-          w-full max-w-3xl
-          max-h-[90vh]
-          bg-[var(--card)]
-          border border-[var(--border)]
-          rounded-2xl
-          shadow-2xl
-          flex flex-col
-          overflow-hidden
-        "
-      >
-        {/* Header */}
-        <div className="flex justify-between items-center px-6 py-5 border-b border-[var(--border)]">
-          <h2 className="font-serif text-2xl text-[var(--text-primary)]">
-            {initialData ? "Edit Opening" : "Create Opening"}
-          </h2>
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 px-3 py-4 backdrop-blur-md sm:px-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="career-modal-title"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget && !loading) onClose();
+      }}
+    >
+      <div className="relative flex max-h-[94vh] w-full max-w-5xl flex-col overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--card)] shadow-[0_30px_100px_rgba(0,0,0,0.35)] md:rounded-[32px]">
+        <div className="border-b border-[var(--border)] bg-[var(--card)] px-5 py-5 md:px-8">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="mb-2 text-[10px] uppercase tracking-[3px] text-[var(--primary)] sm:text-xs sm:tracking-[4px]">
+                {isEdit ? "Edit Opening" : "Create Opening"}
+              </p>
+              <h2
+                id="career-modal-title"
+                className="truncate font-serif text-2xl text-[var(--text-primary)] md:text-3xl"
+              >
+                {formData.title || "New Job Opening"}
+              </h2>
+              <p className="mt-2 text-sm text-[var(--text-secondary)]">
+                Keep the posting sharp, complete, and ready for applicants.
+              </p>
+            </div>
 
-          <button
-            onClick={onClose}
-            disabled={loading}
-            className="text-[var(--text-secondary)] hover:text-[var(--primary)]"
-          >
-            <X size={18} />
-          </button>
+            <button
+              onClick={onClose}
+              disabled={loading}
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] disabled:opacity-50 md:h-11 md:w-11"
+              aria-label="Close opening modal"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <MiniStat
+              icon={<BriefcaseBusiness size={16} />}
+              label="Type"
+              value={formData.employmentType}
+            />
+            <MiniStat
+              icon={<Building2 size={16} />}
+              label="Department"
+              value={formData.department || "Not set"}
+            />
+            <MiniStat
+              icon={<MapPin size={16} />}
+              label="Location"
+              value={formData.location || "Not set"}
+            />
+          </div>
+
+          <div className="mt-5">
+            <div className="mb-2 flex items-center justify-between text-xs">
+              <span className="font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+                Completion
+              </span>
+              <span className="font-semibold text-[var(--primary)]">
+                {completion}%
+              </span>
+            </div>
+            <div className="h-2 overflow-hidden rounded-full bg-[var(--background-secondary)]">
+              <div
+                className="h-full rounded-full bg-[var(--primary)] transition-all"
+                style={{ width: `${completion}%` }}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-6 overflow-auto">
-          {error && (
-            <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-600 text-sm">
-              {error}
-            </div>
-          )}
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
+          <div className="min-h-0 flex-1 overflow-y-auto p-5 md:p-8">
+            {error && (
+              <div className="mb-6 flex items-start gap-3 rounded-2xl border border-red-500/20 bg-red-500/5 p-4 text-sm text-red-600">
+                <AlertCircle size={18} className="mt-0.5 shrink-0" />
+                <p>{error}</p>
+              </div>
+            )}
 
-          {/* Row 1 */}
-          <div className="grid md:grid-cols-2 gap-5">
-            <input
-              value={formData.title}
-              onChange={(e) => handleChange("title", e.target.value)}
-              placeholder="Job Title"
-              className="
-                w-full h-12 px-4
-                border border-[var(--border)]
-                bg-[var(--card)]
-                text-[var(--text-primary)]
-                outline-none
-                rounded-xl
-              "
-            />
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+              <FormField label="Job Title" required>
+                <input
+                  value={formData.title}
+                  onChange={(event) =>
+                    handleChange("title", event.target.value)
+                  }
+                  placeholder="Senior Sales Executive"
+                  className={fieldInputClasses}
+                />
+              </FormField>
 
-            <input
-              value={formData.department}
-              onChange={(e) => handleChange("department", e.target.value)}
-              placeholder="Department"
-              className="
-                w-full h-12 px-4
-                border border-[var(--border)]
-                bg-[var(--card)]
-                text-[var(--text-primary)]
-                outline-none
-                rounded-xl
-              "
-            />
-          </div>
+              <FormField label="Department" required>
+                <input
+                  value={formData.department}
+                  onChange={(event) =>
+                    handleChange("department", event.target.value)
+                  }
+                  placeholder="Sales, Production, Service..."
+                  className={fieldInputClasses}
+                />
+              </FormField>
 
-          {/* Row 2 */}
-          <div className="grid md:grid-cols-2 gap-5">
-            <input
-              value={formData.location}
-              onChange={(e) => handleChange("location", e.target.value)}
-              placeholder="Location"
-              className="
-                w-full h-12 px-4
-                border border-[var(--border)]
-                bg-[var(--card)]
-                text-[var(--text-primary)]
-                outline-none
-                rounded-xl
-              "
-            />
+              <FormField label="Location" required>
+                <input
+                  value={formData.location}
+                  onChange={(event) =>
+                    handleChange("location", event.target.value)
+                  }
+                  placeholder="Ahmedabad, Gujarat"
+                  className={fieldInputClasses}
+                />
+              </FormField>
 
-            <select
-              value={formData.employmentType}
-              onChange={(e) => handleChange("employmentType", e.target.value)}
-              className="
-                w-full h-12 px-4
-                border border-[var(--border)]
-                bg-[var(--card)]
-                text-[var(--text-primary)]
-                outline-none
-                rounded-xl
-              "
-            >
-              <option value="Full Time">Full Time</option>
-              <option value="Part Time">Part Time</option>
-              <option value="Internship">Internship</option>
-              <option value="Contract">Contract</option>
-            </select>
-          </div>
+              <FormField label="Employment Type">
+                <select
+                  value={formData.employmentType}
+                  onChange={(event) =>
+                    handleChange("employmentType", event.target.value)
+                  }
+                  className={`${fieldInputClasses} cursor-pointer`}
+                >
+                  <option value="Full Time">Full Time</option>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Internship">Internship</option>
+                  <option value="Contract">Contract</option>
+                </select>
+              </FormField>
 
-          {/* Experience */}
-          <input
-            value={formData.experience}
-            onChange={(e) => handleChange("experience", e.target.value)}
-            placeholder="Experience (e.g. 2-5 Years)"
-            className="
-              w-full h-12 px-4
-              border border-[var(--border)]
-              bg-[var(--card)]
-              text-[var(--text-primary)]
-              outline-none
-              rounded-xl
-            "
-          />
+              <FormField label="Experience" className="lg:col-span-2">
+                <input
+                  value={formData.experience}
+                  onChange={(event) =>
+                    handleChange("experience", event.target.value)
+                  }
+                  placeholder="2-5 Years"
+                  className={fieldInputClasses}
+                />
+              </FormField>
 
-          {/* Description */}
-          <textarea
-            rows={8}
-            value={formData.description}
-            onChange={(e) => handleChange("description", e.target.value)}
-            placeholder="Job Description..."
-            className="
-              w-full p-4
-              border border-[var(--border)]
-              bg-[var(--card)]
-              text-[var(--text-primary)]
-              outline-none
-              rounded-xl
-              resize-none
-            "
-          />
-
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="font-medium text-[var(--text-primary)]">
-                Responsibilities
-              </h3>
-
-              <button
-                type="button"
-                onClick={() => addField("responsibilities")}
-                className="px-3 py-1 rounded-lg bg-[var(--primary)] text-white text-sm"
-              >
-                Add
-              </button>
+              <FormField label="Job Description" className="lg:col-span-2">
+                <textarea
+                  rows={7}
+                  value={formData.description}
+                  onChange={(event) =>
+                    handleChange("description", event.target.value)
+                  }
+                  placeholder="Describe the role, team, goals, and candidate profile..."
+                  className={`${fieldInputClasses} min-h-[180px] resize-none py-4`}
+                />
+              </FormField>
             </div>
 
-            <div className="space-y-3">
-              {formData.responsibilities.map((item, index) => (
-                <div key={index} className="flex gap-3">
-                  <input
-                    value={item}
-                    onChange={(e) =>
-                      handleArrayChange(
-                        "responsibilities",
-                        index,
-                        e.target.value,
-                      )
-                    }
-                    placeholder={`Responsibility ${index + 1}`}
-                    className="
-            flex-1 h-11 px-4
-            border border-[var(--border)]
-            rounded-xl
-            bg-[var(--card)]
-          "
-                  />
+            <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
+              <ArrayField
+                title="Responsibilities"
+                values={formData.responsibilities}
+                placeholder="Own regional sales targets"
+                onAdd={() => addField("responsibilities")}
+                onRemove={(index) => removeField("responsibilities", index)}
+                onChange={(index, value) =>
+                  handleArrayChange("responsibilities", index, value)
+                }
+              />
 
-                  <button
-                    type="button"
-                    onClick={() => removeField("responsibilities", index)}
-                    className="px-3 rounded-xl border border-red-200 text-red-500"
-                  >
-                    Remove
-                  </button>
+              <ArrayField
+                title="Requirements"
+                values={formData.requirements}
+                placeholder="Experience in capital equipment sales"
+                onAdd={() => addField("requirements")}
+                onRemove={(index) => removeField("requirements", index)}
+                onChange={(index, value) =>
+                  handleArrayChange("requirements", index, value)
+                }
+              />
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)] p-5">
+              <label className="flex cursor-pointer items-start justify-between gap-4">
+                <div>
+                  <p className="font-semibold text-[var(--text-primary)]">
+                    Publish opening
+                  </p>
+                  <p className="mt-1 text-sm text-[var(--text-secondary)]">
+                    Active openings are visible on the public careers page.
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="font-medium text-[var(--text-primary)]">
-                Requirements
-              </h3>
-
-              <button
-                type="button"
-                onClick={() => addField("requirements")}
-                className="px-3 py-1 rounded-lg bg-[var(--primary)] text-white text-sm"
-              >
-                Add
-              </button>
-            </div>
-
-            <div className="space-y-3">
-              {formData.requirements.map((item, index) => (
-                <div key={index} className="flex gap-3">
+                <span
+                  className={`relative h-7 w-12 rounded-full transition ${
+                    formData.isActive ? "bg-[var(--primary)]" : "bg-slate-300"
+                  }`}
+                >
                   <input
-                    value={item}
-                    onChange={(e) =>
-                      handleArrayChange("requirements", index, e.target.value)
+                    type="checkbox"
+                    checked={formData.isActive}
+                    onChange={(event) =>
+                      handleChange("isActive", event.target.checked)
                     }
-                    placeholder={`Requirement ${index + 1}`}
-                    className="
-            flex-1 h-11 px-4
-            border border-[var(--border)]
-            rounded-xl
-            bg-[var(--card)]
-          "
+                    className="sr-only"
                   />
-
-                  <button
-                    type="button"
-                    onClick={() => removeField("requirements", index)}
-                    className="px-3 rounded-xl border border-red-200 text-red-500"
+                  <span
+                    className={`absolute top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[var(--primary)] shadow transition ${
+                      formData.isActive ? "left-6" : "left-1"
+                    }`}
                   >
-                    Remove
-                  </button>
-                </div>
-              ))}
+                    {formData.isActive && <Check size={12} />}
+                  </span>
+                </span>
+              </label>
             </div>
           </div>
 
-          {/* Status */}
-          <label className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              checked={formData.isActive}
-              onChange={(e) => handleChange("isActive", e.target.checked)}
-            />
+          <div className="border-t border-[var(--border)] bg-[var(--card)] px-5 py-4 md:px-8">
+            <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-xs text-[var(--text-secondary)]">
+                {formData.isActive
+                  ? "Public listing enabled"
+                  : "Saved as inactive"}
+              </p>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  disabled={loading}
+                  onClick={onClose}
+                  className="h-11 flex-1 rounded-xl border border-[var(--border)] px-5 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] disabled:opacity-50 sm:flex-none"
+                >
+                  Cancel
+                </button>
 
-            <span className="text-[var(--text-primary)]">Active Opening</span>
-          </label>
-
-          {/* Footer */}
-          <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border)]">
-            <button
-              type="button"
-              disabled={loading}
-              onClick={onClose}
-              className="
-                h-11 px-6
-                border border-[var(--border)]
-                text-[var(--text-secondary)]
-                hover:border-[var(--primary)]
-                hover:text-[var(--primary)]
-                rounded-xl
-              "
-            >
-              Cancel
-            </button>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="
-                h-11 px-6
-                bg-[var(--primary)]
-                text-white
-                rounded-xl
-                disabled:opacity-70
-              "
-            >
-              {loading
-                ? initialData
-                  ? "Updating..."
-                  : "Creating..."
-                : initialData
-                  ? "Update Opening"
-                  : "Create Opening"}
-            </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-[var(--primary)] px-6 font-medium text-white transition hover:opacity-90 disabled:opacity-70 sm:flex-none"
+                >
+                  <Save size={17} />
+                  {loading
+                    ? isEdit
+                      ? "Updating..."
+                      : "Creating..."
+                    : isEdit
+                      ? "Update Opening"
+                      : "Create Opening"}
+                </button>
+              </div>
+            </div>
           </div>
         </form>
+      </div>
+    </div>
+  );
+}
+
+function MiniStat({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)] px-4 py-3">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[var(--primary)]/10 text-[var(--primary)]">
+        {icon}
+      </div>
+      <div className="min-w-0">
+        <p className="text-[10px] uppercase tracking-wider text-[var(--text-secondary)]">
+          {label}
+        </p>
+        <p className="truncate text-sm font-semibold text-[var(--text-primary)]">
+          {value}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function FormField({
+  label,
+  children,
+  required = false,
+  className = "",
+}: {
+  label: string;
+  children: React.ReactNode;
+  required?: boolean;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <label className="mb-2 block text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+        {label}
+        {required && <span className="text-red-500"> *</span>}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+function ArrayField({
+  title,
+  values,
+  placeholder,
+  onAdd,
+  onRemove,
+  onChange,
+}: {
+  title: string;
+  values: string[];
+  placeholder: string;
+  onAdd: () => void;
+  onRemove: (index: number) => void;
+  onChange: (index: number, value: string) => void;
+}) {
+  return (
+    <div className="rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)] p-5">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <div>
+          <p className="font-semibold text-[var(--text-primary)]">{title}</p>
+          <p className="mt-1 text-xs text-[var(--text-secondary)]">
+            Add concise points for clearer candidate screening.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onAdd}
+          className="flex h-9 items-center gap-2 rounded-xl bg-[var(--primary)] px-3 text-sm font-medium text-white transition hover:opacity-90"
+        >
+          <CirclePlus size={15} />
+          Add
+        </button>
+      </div>
+
+      <div className="space-y-3">
+        {values.map((item, index) => (
+          <div key={index} className="flex items-center gap-2">
+            <div className="flex h-11 w-9 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--text-secondary)]">
+              <GripVertical size={15} />
+            </div>
+            <input
+              value={item}
+              onChange={(event) => onChange(index, event.target.value)}
+              placeholder={`${placeholder} ${index + 1}`}
+              className={`${fieldInputClasses} h-11 flex-1`}
+            />
+            <button
+              type="button"
+              onClick={() => onRemove(index)}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-red-500/20 text-red-500 transition hover:bg-red-500/10"
+              aria-label={`Remove ${title} ${index + 1}`}
+            >
+              <Trash2 size={16} />
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
