@@ -55,6 +55,32 @@ const leadSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+
+    leadStatus: {
+      type: String,
+      enum: ["new", "contacted", "follow-up", "qualified", "won", "lost"],
+      default: "new",
+    },
+
+    notes: [
+      {
+        text: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+
+        createdBy: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Employee",
+        },
+
+        createdAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   {
     timestamps: true,

@@ -67,6 +67,8 @@ export default function LoginPage() {
         sameSite: "strict",
       });
 
+      localStorage.setItem("employeeToken", data.token);
+
       Cookies.set("employee", JSON.stringify(data.employee), {
         expires: 1,
         sameSite: "strict",

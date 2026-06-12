@@ -1,4 +1,5 @@
 const Employee = require("../models/employee.model");
+const Lead = require("../models/lead.model");
 const bcrypt = require("bcryptjs");
 
 const jwt = require("jsonwebtoken");
@@ -273,4 +274,139 @@ exports.employeeLogin = async (req, res) => {
       message: "Server Error",
     });
   }
+};
+
+exports.getMyLeads = async (req, res) => {
+  try {
+    const leads = await Lead.find({
+      assignedTo: req.employee.id,
+    })
+      .populate("assignedTo", "name email")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      success: true,
+      leads,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
+exports.updateLeadStatus = async (req, res) => {
+  try {
+    const { leadStatus } = req.body;
+
+    const lead = await Lead.findByIdAndUpdate(
+      req.params.id,
+      { leadStatus },
+      { new: true },
+    );
+
+    if (!lead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      lead,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
+exports.addLeadNote = async (req, res) => {
+  try {
+    const { text } = req.body;
+
+    const lead = await Lead.findById(req.params.id);
+
+    if (!lead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found",
+      });
+    }
+
+    lead.notes.push({
+      text,
+      createdBy: req.employee.id,
+    });
+
+    await lead.save();
+
+    await lead.populate("notes.createdBy", "name email");
+
+    res.status(200).json({
+      success: true,
+      lead,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
+exports.getLeadById = async (req, res) => {
+  try {
+    const lead = await Lead.findById(req.params.id)
+      .populate("assignedTo", "name email")
+      .populate("notes.createdBy", "name email");
+
+    if (!lead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      lead,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
+exports.updateFollowUp = async (req, res) => {
+  const { followUpDate, followUpRemark } = req.body;
+
+  const lead = await Lead.findByIdAndUpdate(
+    req.params.id,
+    {
+      followUpDate,
+      followUpRemark,
+      leadStatus: "follow-up",
+    },
+    { new: true },
+  );
+
+  res.json({
+    success: true,
+    lead,
+  });
 };

@@ -39,10 +39,28 @@ export default function EmployeeLayout({
       label: "Dashboard",
       to: "/employee",
     },
+    {
+      icon: <Users size={18} />,
+      label: "My Leads",
+      to: "/employee/my-leads",
+    },
+    {
+      icon: <FileCheck size={18} />,
+      label: "Follow Ups",
+      to: "/employee/followups",
+    },
+    {
+      icon: <User2 size={18} />,
+      label: "Profile",
+      to: "/employee/profile",
+    },
   ];
 
   const handleLogout = () => {
     Cookies.remove("employeeAuth");
+    Cookies.remove("employee");
+    localStorage.removeItem("employeeToken");
+
     router.push("/login");
   };
 
