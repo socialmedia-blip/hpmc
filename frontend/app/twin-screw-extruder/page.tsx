@@ -26,61 +26,67 @@ const galleryImages = [
 
 const features = [
   {
-    title: "Precision Die Head",
-    desc: "Engineered for accurate pipe formation, the die head is available for pipe sizes ranging from 16mm to 160mm and is equipped with a stainless-steel spider for superior flow distribution and dimensional accuracy.",
+    title: "Forged Alloy Steel Die Head",
+    desc: "Manufactured from high carbon content forged alloy steel, the die head delivers superior durability, longer service life, and reliable performance for PVC pipe production.",
     image: "/product.jpg",
-
     highlights: [
-      "16mm – 160mm pipe range",
-      "Stainless steel spider",
-      "Uniform material flow",
+      "Forged alloy steel construction",
+      "High carbon content",
+      "Extended service life",
     ],
   },
 
   {
-    title: "Advanced Cooling Unit",
-    desc: "The vacuum and water cooling system ensures precise pipe dimensions, excellent surface finish, and efficient cooling performance for consistent production quality.",
+    title: "Spray Cooling Bath",
+    desc: "Designed for intensive pipe cooling using multiple self-cleaning spray nozzles. The tank features axial adjustment on slide rails with locking arrangements and an acrylic transparent cover for easy inspection.",
     image: "/product.jpg",
-
     highlights: [
-      "Vacuum tank for 16mm – 50mm pipes",
-      "Accurate pipe sizing",
-      "Spray & non-spray cooling options",
+      "Self-cleaning spray nozzles",
+      "Axial tank adjustment",
+      "Transparent inspection cover",
     ],
   },
 
   {
-    title: "Heavy-Duty Caterpuller",
-    desc: "Equipped with independent geared motors for both rollers, the caterpuller delivers smooth pipe movement while preventing wrinkles and maintaining stable production speed.",
+    title: "Pneumatic Caterpuller Haul-Off",
+    desc: "Twin and multi-track haul-off system with pneumatic pressure adjustment and AC frequency variable drive synchronization. Suitable for pipe sizes ranging from 20mm to 315mm.",
     image: "/product.jpg",
-
     highlights: [
-      "Dual geared motor drive",
-      "Smooth pipe handling",
-      "Wrinkle-free operation",
+      "20mm–315mm pipe range",
+      "AC drive synchronized",
+      "Pneumatic track adjustment",
     ],
   },
 
   {
-    title: "Automatic Cutting System",
-    desc: "The automatic cutting unit features pneumatic clamping and length sensing technology to provide accurate, clean, and repeatable pipe cutting operations.",
+    title: "Planetary Cutting Saw",
+    desc: "PLC-controlled planetary cutting system designed for pipe diameters up to 315mm. Equipped with hard alloy saw blades and a dust extraction system for clean and efficient cutting.",
     image: "/product.jpg",
-
     highlights: [
-      "Pneumatic holding system",
-      "Preset length control",
-      "Consistent cutting accuracy",
+      "PLC controlled cutting",
+      "Up to 315mm pipe diameter",
+      "Dust extraction system",
     ],
   },
 
   {
-    title: "High-Precision Cutting Saw",
-    desc: "Designed for reliable and clean pipe cutting, the cutting saw is equipped with a pneumatic cylinder and limit switch mechanism for precise length measurement and operation.",
+    title: "Automatic Cutting Unit",
+    desc: "Features a carborundum cutter for reduced material wastage and smooth cutting. Pneumatic cylinders and adjustable clamping force ensure accurate cutting across different wall thicknesses.",
     image: "/product.jpg",
-
     highlights: [
-      "Clean & accurate cuts",
-      "Pneumatic clamping",
+      "Low-wastage cutting",
+      "Adjustable clamping force",
+      "Length sensing limit switch",
+    ],
+  },
+
+  {
+    title: "Automatic Tipping Chute",
+    desc: "Operated through pneumatic cylinders and limit switches, the tipping chute ensures efficient pipe stacking and smooth handling during continuous production.",
+    image: "/product.jpg",
+    highlights: [
+      "Automatic pipe stacking",
+      "Pneumatic operation",
       "Limit switch controlled",
     ],
   },
@@ -122,23 +128,23 @@ const applications = [
 const specifications = [
   {
     parameter: "Min Pipe OD (mm)",
-    values: ["16", "40", "63", "63"],
+    values: ["16", "16", "16", "63", "110"],
   },
   {
     parameter: "Max Pipe OD (mm)",
-    values: ["50", "110", "160", "200"],
+    values: ["50", "200", "200", "225", "315"],
   },
   {
     parameter: "Max Plasticizing Capacity (Kg/hr)",
-    values: ["50", "80", "120", "140"],
+    values: ["90", "170", "190", "300", "425"],
   },
   {
     parameter: "Max Output (Kg/hr)",
-    values: ["40", "60", "90", "120"],
+    values: ["80", "150", "170", "250", "350"],
   },
   {
     parameter: "Main Drive (Kw)",
-    values: ["11", "15", "22.5", "36"],
+    values: ["15", "18.5", "22", "37", "55"],
   },
 
   // Blank Row
@@ -153,15 +159,15 @@ const specifications = [
   },
   {
     parameter: "Barrel (Kw)",
-    values: ["8", "12", "15", "18"],
+    values: ["11", "15", "18", "20", "35"],
   },
   {
     parameter: "Die (Kw)",
-    values: ["2", "5", "5", "5"],
+    values: ["3", "5", "5", "8", "12"],
   },
   {
     parameter: "Screw Speed Variation (RPM)",
-    values: ["15 - 35", "15 - 35", "15 - 35", "15 - 35"],
+    values: ["1 - 37", "1 - 37", "1 - 37", "1 - 37", "1 - 37"],
   },
 
   // Blank Row
@@ -176,15 +182,15 @@ const specifications = [
   },
   {
     parameter: "Pump Drive (KW)",
-    values: ["0.75", "-", "-", "-"],
+    values: ["2.25", "2.25", "2.25", "-", "-"],
   },
   {
     parameter: "Length (Mtrs)",
-    values: ["3", "-", "-", "-"],
+    values: ["3.0", "1.0", "1.0", "-", "-"],
   },
   {
     parameter: "Water Circulating Requirement (Ltrs/min)",
-    values: ["450", "-", "-", "-"],
+    values: ["400", "400", "400", "-", "-"],
   },
 
   // Blank Row
@@ -195,15 +201,19 @@ const specifications = [
   // Section Header
   {
     type: "section",
-    parameter: "Cooling Tanks",
+    parameter: "Spray Bath",
   },
   {
-    parameter: "Length (Ltrs)",
-    values: ["-", "3.0", "4.0", "4.0"],
+    parameter: "Length (mtrs)",
+    values: ["3", "5", "5", "6", "6"],
   },
   {
-    parameter: "Water Circulating Requirement (Ltrs/Min)",
-    values: ["-", "450", "500", "500"],
+    parameter: "Water Requirement Circulating(Ltrs/Min)",
+    values: ["-", "-", "-", "450", "500"],
+  },
+  {
+    parameter: "Drive Range (kw)",
+    values: ["1.5", "4", "4", "4", "5.5"],
   },
 
   // Blank Row
@@ -217,12 +227,12 @@ const specifications = [
     parameter: "Haul Off",
   },
   {
-    parameter: "Drive Range (KW)",
-    values: ["0.75", "1.5", "2.2", "2.2"],
+    parameter: "No. of Arms",
+    values: ["2", "2", "2", "2", "3"],
   },
   {
-    parameter: "Pulling Speed (mtr/min) Range 1",
-    values: ["0.5 to 2.0", "0.4 to 2.0", "2 to 6", "2 to 6"],
+    parameter: "Width of Belt (inch)",
+    values: ["4", "6", "6", "6", "2.5"],
   },
 
   // Blank Row
@@ -237,15 +247,15 @@ const specifications = [
   },
   {
     parameter: "Saw Diameter (mm)",
-    values: ["300", "400", "500", "500"],
+    values: ["300", "500", "500", "500", "200"],
   },
   {
     parameter: "Saw Drive Load (KW)",
-    values: ["0.75/2800", "0.75/2800", "1.5/2800", "1.5/2800"],
+    values: ["0.75", "1.5", "1.5", "1.5", "2.25"],
   },
 ];
 
-export default function SingleScrewExtruder() {
+export default function TwinScrewExtruder() {
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopup2, setOpenPopup2] = useState(false);
   const [catalogueToDownload, setCatalogueToDownload] = useState("");
@@ -315,15 +325,18 @@ export default function SingleScrewExtruder() {
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
           <div className="max-w-[520px] pt-24 lg:pt-0">
             <h1 className="text-[32px] sm:text-[42px] md:text-[54px] lg:text-[64px] leading-[1.05] font-bold text-[#0B1220]">
-              Single Screw
-              <span className="text-[#65BC4F]"> Extrusion</span>
+              Twin Screw
+              <span className="text-[#65BC4F]"> Extruder</span>
             </h1>
 
             <p className="mt-6 text-gray-600 text-sm md:text-base leading-7 max-w-[500px]">
-              HPMC Single Screw Extruders deliver reliable performance for PVC
-              pipe and profile production. Suitable for water supply, sewage,
-              agricultural, and industrial applications, the series is available
-              in HPMC 65, HPMC 75, HPMC 90, and HPMC 100 models.
+              HPMC Conical Twin Screw Extruders are engineered for
+              high-efficiency PVC pipe production with superior plasticizing
+              performance and consistent output. Designed for both small and
+              large diameter pipes, the series delivers excellent productivity
+              with low power consumption and output capacities up to 150 kg/hr.
+              Available in HPMC 45/90, HPMC 51/105, HPMC 65/132, HPMC 80/156,
+              and HPMC 92/188 models.
             </p>
 
             {/* Buttons */}
@@ -353,10 +366,7 @@ export default function SingleScrewExtruder() {
 
           <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
             PVC Pipe Plant -
-            <span className="text-[var(--primary)]">
-              {" "}
-              Single Screw Extruder
-            </span>
+            <span className="text-[var(--primary)]"> Twin Screw Extruder</span>
           </h2>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* PRODUCT GALLERY */}
@@ -449,30 +459,31 @@ export default function SingleScrewExtruder() {
             {/* CONTENT */}
             <div>
               <p className="mt-8 text-[var(--text-secondary)] leading-8">
-                HPMC Single Screw Extruders are engineered for high-performance
-                PVC pipe and profile extrusion applications. Available in HPMC
-                65, HPMC 75, HPMC 90, and HPMC 100 models, the series delivers
-                reliable output, excellent melt quality, and consistent
-                processing performance.
+                HPMC Conical Twin Screw Extruders for PVC Pipe Plants are
+                available in HPMC 45/90, HPMC 51/105, HPMC 65/132, HPMC 80/156,
+                and HPMC 92/188 models. The extruders are equipped with a
+                compact and reliable gearbox along with bi-metallic screw and
+                barrel technology for longer service life and dependable
+                performance in PVC pipe manufacturing applications.
               </p>
 
               <p className="mt-5 text-[var(--text-secondary)] leading-8">
-                Featuring advanced Barrier Design (Double Thread) screw
-                technology, the system ensures superior melt homogeneity,
-                precise process control, and exceptional product quality.
-                Suitable for pelletized materials, it offers output capacities
-                up to 450 Kg/hr for polyolefin processing.
+                Featuring Barrier Design (Double Thread) screw technology, the
+                system delivers consistent melt homogeneity, excellent process
+                control, and stable operation for superior end-product quality.
+                Suitable for all pelletized materials, the extruder offers
+                output capacities up to 450 Kg/hr for polyolefin processing.
               </p>
 
               {/* Highlights */}
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
                   "Up to 450 Kg/hr Output",
+                  "Bi-Metallic Screw & Barrel",
                   "Barrier Design Screw",
-                  "Excellent Melt Quality",
-                  "Low Energy Consumption",
-                  "Stable Processing",
-                  "Models HPMC 65–100",
+                  "Excellent Melt Homogeneity",
+                  "Reliable Gearbox System",
+                  "5 Machine Models",
                 ].map((item) => (
                   <div
                     key={item}
@@ -488,7 +499,7 @@ export default function SingleScrewExtruder() {
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
                   <h4 className="text-2xl font-bold text-[var(--primary)]">
-                    4
+                    5
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">
                     Machine Models
@@ -497,10 +508,10 @@ export default function SingleScrewExtruder() {
 
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
                   <h4 className="text-2xl font-bold text-[var(--primary)]">
-                    150mm
+                    20–150mm
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">
-                    Screw Diameter
+                    Screw Diameter Range
                   </p>
                 </div>
 
@@ -575,7 +586,7 @@ export default function SingleScrewExtruder() {
               Why Choose Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Twin Screw Extruder
               </span>
             </h2>
           </div>
@@ -660,9 +671,9 @@ export default function SingleScrewExtruder() {
         </div>
       </section>
 
-      <section className="py-16 bg-[var(--background)] overflow-hidden">
+      {/* <section className="py-16 bg-[var(--background)] overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
-          {/* Heading */}
+        
           <div className="text-center mb-14">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
               Applications
@@ -680,7 +691,7 @@ export default function SingleScrewExtruder() {
             </p>
           </div>
 
-          {/* Slider */}
+    
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
@@ -741,7 +752,7 @@ export default function SingleScrewExtruder() {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -822,17 +833,21 @@ export default function SingleScrewExtruder() {
                     MACHINE MODELS
                   </th>
 
-                  {["HPMC 65", "HPMC 75", "HPMC 90", "HPMC 100"].map(
-                    (model) => (
-                      <th
-                        key={model}
-                        className="px-8 py-6 text-center font-semibold border"
-                        style={{ borderColor: "rgba(255,255,255,0.2)" }}
-                      >
-                        {model}
-                      </th>
-                    ),
-                  )}
+                  {[
+                    "HPMC 45/90",
+                    "HPMC 51/105",
+                    "HPMC 55/110",
+                    "HPMC 65/132",
+                    "HPMC 80/156",
+                  ].map((model) => (
+                    <th
+                      key={model}
+                      className="px-8 py-6 text-center font-semibold border"
+                      style={{ borderColor: "rgba(255,255,255,0.2)" }}
+                    >
+                      {model}
+                    </th>
+                  ))}
                 </tr>
               </thead>
 

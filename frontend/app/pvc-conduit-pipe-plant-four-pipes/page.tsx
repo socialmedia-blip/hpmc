@@ -26,62 +26,46 @@ const galleryImages = [
 
 const features = [
   {
-    title: "Precision Die Head",
-    desc: "Engineered for accurate pipe formation, the die head is available for pipe sizes ranging from 16mm to 160mm and is equipped with a stainless-steel spider for superior flow distribution and dimensional accuracy.",
+    title: "Four Pipe Die Head",
+    desc: "Designed for pipe sizes ranging from 16mm to 32mm, the four pipe die head features a stainless steel spider and advanced flow channel design. It enables simultaneous production of four pipes from a single mould, ensuring lower production costs with uniform PVC distribution, temperature, and pressure across all pipes.",
     image: "/product.jpg",
-
     highlights: [
-      "16mm – 160mm pipe range",
-      "Stainless steel spider",
-      "Uniform material flow",
+      "16mm–32mm pipe range",
+      "Four pipe production from single mould",
+      "Uniform PVC flow distribution",
     ],
   },
 
   {
-    title: "Advanced Cooling Unit",
-    desc: "The vacuum and water cooling system ensures precise pipe dimensions, excellent surface finish, and efficient cooling performance for consistent production quality.",
+    title: "Four Pipe Vacuum Tank",
+    desc: "Manufactured from stainless steel, the four pipe vacuum tank minimizes material wastage by allowing continued production even if one pipe line is stopped. The vacuum sections operate independently, ensuring stable performance and uninterrupted production.",
     image: "/product.jpg",
-
     highlights: [
-      "Vacuum tank for 16mm – 50mm pipes",
-      "Accurate pipe sizing",
-      "Spray & non-spray cooling options",
+      "Stainless steel construction",
+      "Independent vacuum sections",
+      "Reduced production wastage",
     ],
   },
 
   {
-    title: "Heavy-Duty Caterpuller",
-    desc: "Equipped with independent geared motors for both rollers, the caterpuller delivers smooth pipe movement while preventing wrinkles and maintaining stable production speed.",
+    title: "Four Pipe Haul-Off",
+    desc: "Engineered to provide traction at different speeds for pipes of varying diameters. The system is driven by four independent geared motors powering all four belts. Pneumatic cylinders adjust track spacing, while chain-driven rubber pads prevent pipe slippage even at high line speeds.",
     image: "/product.jpg",
-
     highlights: [
-      "Dual geared motor drive",
-      "Smooth pipe handling",
-      "Wrinkle-free operation",
+      "Four independent geared motors",
+      "Pneumatic track adjustment",
+      "Anti-slip rubber pad system",
     ],
   },
 
   {
-    title: "Automatic Cutting System",
-    desc: "The automatic cutting unit features pneumatic clamping and length sensing technology to provide accurate, clean, and repeatable pipe cutting operations.",
+    title: "Four Pipe Cutting Unit",
+    desc: "Designed for accurate cutting of multiple pipes at different lengths and timings. The cutting length is controlled through the tipping chute limit switch, while a specialized high-speed blade ensures smooth and precise cuts. The entire operation is PLC controlled for reliable performance.",
     image: "/product.jpg",
-
     highlights: [
-      "Pneumatic holding system",
-      "Preset length control",
-      "Consistent cutting accuracy",
-    ],
-  },
-
-  {
-    title: "High-Precision Cutting Saw",
-    desc: "Designed for reliable and clean pipe cutting, the cutting saw is equipped with a pneumatic cylinder and limit switch mechanism for precise length measurement and operation.",
-    image: "/product.jpg",
-
-    highlights: [
-      "Clean & accurate cuts",
-      "Pneumatic clamping",
-      "Limit switch controlled",
+      "PLC controlled operation",
+      "Adjustable cutting length",
+      "High-speed smooth cutting blade",
     ],
   },
 ];
@@ -122,23 +106,23 @@ const applications = [
 const specifications = [
   {
     parameter: "Min Pipe OD (mm)",
-    values: ["16", "40", "63", "63"],
+    values: ["16", "16"],
   },
   {
     parameter: "Max Pipe OD (mm)",
-    values: ["50", "110", "160", "200"],
+    values: ["32", "32"],
   },
   {
     parameter: "Max Plasticizing Capacity (Kg/hr)",
-    values: ["50", "80", "120", "140"],
+    values: ["250", "350"],
   },
   {
     parameter: "Max Output (Kg/hr)",
-    values: ["40", "60", "90", "120"],
+    values: ["220", "320"],
   },
   {
     parameter: "Main Drive (Kw)",
-    values: ["11", "15", "22.5", "36"],
+    values: ["37", "55"],
   },
 
   // Blank Row
@@ -153,15 +137,15 @@ const specifications = [
   },
   {
     parameter: "Barrel (Kw)",
-    values: ["8", "12", "15", "18"],
+    values: ["24", "36"],
   },
   {
     parameter: "Die (Kw)",
-    values: ["2", "5", "5", "5"],
+    values: ["12", "12"],
   },
   {
     parameter: "Screw Speed Variation (RPM)",
-    values: ["15 - 35", "15 - 35", "15 - 35", "15 - 35"],
+    values: ["1 - 37", "1 - 37"],
   },
 
   // Blank Row
@@ -172,38 +156,23 @@ const specifications = [
   // Section Header
   {
     type: "section",
-    parameter: "Vaccum Sizing Tank",
+    parameter: "Vaccum Sizing Tank And Water Tank",
   },
   {
     parameter: "Pump Drive (KW)",
-    values: ["0.75", "-", "-", "-"],
+    values: ["3.7*1", "3.7*1"],
+  },
+  {
+    parameter: "Pump Drive (KW)",
+    values: ["3", "3"],
   },
   {
     parameter: "Length (Mtrs)",
-    values: ["3", "-", "-", "-"],
+    values: ["3", "3"],
   },
   {
-    parameter: "Water Circulating Requirement (Ltrs/min)",
-    values: ["450", "-", "-", "-"],
-  },
-
-  // Blank Row
-  {
-    type: "blank",
-  },
-
-  // Section Header
-  {
-    type: "section",
-    parameter: "Cooling Tanks",
-  },
-  {
-    parameter: "Length (Ltrs)",
-    values: ["-", "3.0", "4.0", "4.0"],
-  },
-  {
-    parameter: "Water Circulating Requirement (Ltrs/Min)",
-    values: ["-", "450", "500", "500"],
+    parameter: "Water Requirement Circulating ( Ltrs/min)",
+    values: ["300", "300"],
   },
 
   // Blank Row
@@ -217,12 +186,12 @@ const specifications = [
     parameter: "Haul Off",
   },
   {
-    parameter: "Drive Range (KW)",
-    values: ["0.75", "1.5", "2.2", "2.2"],
+    parameter: "Drive Range (kw)",
+    values: ["2.2x4", "2.2x4"],
   },
   {
-    parameter: "Pulling Speed (mtr/min) Range 1",
-    values: ["0.5 to 2.0", "0.4 to 2.0", "2 to 6", "2 to 6"],
+    parameter: "Pulling Speed (mtr/min)Range",
+    values: ["2 to 6", "2 to 6"],
   },
 
   // Blank Row
@@ -237,15 +206,15 @@ const specifications = [
   },
   {
     parameter: "Saw Diameter (mm)",
-    values: ["300", "400", "500", "500"],
+    values: ["200", "200"],
   },
   {
     parameter: "Saw Drive Load (KW)",
-    values: ["0.75/2800", "0.75/2800", "1.5/2800", "1.5/2800"],
+    values: ["0.75x4", "0.75x4"],
   },
 ];
 
-export default function SingleScrewExtruder() {
+export default function PvcConduitPipePlantFourPipes() {
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopup2, setOpenPopup2] = useState(false);
   const [catalogueToDownload, setCatalogueToDownload] = useState("");
@@ -315,15 +284,14 @@ export default function SingleScrewExtruder() {
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
           <div className="max-w-[520px] pt-24 lg:pt-0">
             <h1 className="text-[32px] sm:text-[42px] md:text-[54px] lg:text-[64px] leading-[1.05] font-bold text-[#0B1220]">
-              Single Screw
-              <span className="text-[#65BC4F]"> Extrusion</span>
+              PVC Conduit Pipe Plant
+              <span className="text-[#65BC4F]"> (Four Pipes)</span>
             </h1>
 
             <p className="mt-6 text-gray-600 text-sm md:text-base leading-7 max-w-[500px]">
-              HPMC Single Screw Extruders deliver reliable performance for PVC
-              pipe and profile production. Suitable for water supply, sewage,
-              agricultural, and industrial applications, the series is available
-              in HPMC 65, HPMC 75, HPMC 90, and HPMC 100 models.
+              HPMC PVC Conduit Pipe Plant (Four Pipes) enables simultaneous
+              production of four PVC pipes from a single mould, delivering high
+              output up to 350 Kg/hr with low energy consumption.
             </p>
 
             {/* Buttons */}
@@ -355,7 +323,7 @@ export default function SingleScrewExtruder() {
             PVC Pipe Plant -
             <span className="text-[var(--primary)]">
               {" "}
-              Single Screw Extruder
+              PVC Conduit Pipe Plant (Four Pipes)
             </span>
           </h2>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -449,30 +417,32 @@ export default function SingleScrewExtruder() {
             {/* CONTENT */}
             <div>
               <p className="mt-8 text-[var(--text-secondary)] leading-8">
-                HPMC Single Screw Extruders are engineered for high-performance
-                PVC pipe and profile extrusion applications. Available in HPMC
-                65, HPMC 75, HPMC 90, and HPMC 100 models, the series delivers
-                reliable output, excellent melt quality, and consistent
-                processing performance.
+                HPMC PVC Conduit Pipe Plant (Four Pipes), available in HPMC
+                65/132 and HPMC 80/156 models, is a high-performance Conical
+                Twin Screw Extruder designed for electrical piping systems and
+                underground duct applications. It enables the production of a
+                large number of small and large diameter pipes within a short
+                production cycle.
               </p>
 
               <p className="mt-5 text-[var(--text-secondary)] leading-8">
-                Featuring advanced Barrier Design (Double Thread) screw
-                technology, the system ensures superior melt homogeneity,
-                precise process control, and exceptional product quality.
-                Suitable for pelletized materials, it offers output capacities
-                up to 450 Kg/hr for polyolefin processing.
+                The plant can simultaneously produce four pipes of different
+                weights and diameters from a single mould. Featuring
+                counter-rotating conical twin screws, bi-metallic screw and
+                barrel technology, and high filler loading capability, it
+                delivers extrusion output ranging from 250 Kg/hr to 350 Kg/hr
+                with excellent efficiency and durability.
               </p>
 
               {/* Highlights */}
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
-                  "Up to 450 Kg/hr Output",
-                  "Barrier Design Screw",
-                  "Excellent Melt Quality",
-                  "Low Energy Consumption",
-                  "Stable Processing",
-                  "Models HPMC 65–100",
+                  "Four Pipe Production",
+                  "250–350 Kg/hr Output",
+                  "Single Mould Operation",
+                  "High Filler Loading",
+                  "Bi-Metallic Screw & Barrel",
+                  "Electrical & Duct Applications",
                 ].map((item) => (
                   <div
                     key={item}
@@ -487,29 +457,29 @@ export default function SingleScrewExtruder() {
               {/* Stats Cards */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
-                  <h4 className="text-2xl font-bold text-[var(--primary)]">
-                    4
+                  <h4 className="text-xl font-bold text-[var(--primary)]">
+                    HPMC 65/132 & 80/156
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">
-                    Machine Models
+                    Extruder Models
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
                   <h4 className="text-2xl font-bold text-[var(--primary)]">
-                    150mm
+                    4 Pipes
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">
-                    Screw Diameter
+                    From One Mould
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
                   <h4 className="text-2xl font-bold text-[var(--primary)]">
-                    450+
+                    350 Kg/hr
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">
-                    Kg/hr Output
+                    Maximum Output
                   </p>
                 </div>
               </div>
@@ -572,10 +542,10 @@ export default function SingleScrewExtruder() {
             </span>
 
             <h2 className="mt-4 text-5xl lg:text-5xl font-bold">
-              Why Choose Our
+              Sections of
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                PVC Conduit Pipe Plant (Four Pipes)
               </span>
             </h2>
           </div>
@@ -660,9 +630,9 @@ export default function SingleScrewExtruder() {
         </div>
       </section>
 
-      <section className="py-16 bg-[var(--background)] overflow-hidden">
+      {/* <section className="py-16 bg-[var(--background)] overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
-          {/* Heading */}
+        
           <div className="text-center mb-14">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
               Applications
@@ -680,7 +650,7 @@ export default function SingleScrewExtruder() {
             </p>
           </div>
 
-          {/* Slider */}
+    
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
@@ -741,7 +711,7 @@ export default function SingleScrewExtruder() {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -822,17 +792,15 @@ export default function SingleScrewExtruder() {
                     MACHINE MODELS
                   </th>
 
-                  {["HPMC 65", "HPMC 75", "HPMC 90", "HPMC 100"].map(
-                    (model) => (
-                      <th
-                        key={model}
-                        className="px-8 py-6 text-center font-semibold border"
-                        style={{ borderColor: "rgba(255,255,255,0.2)" }}
-                      >
-                        {model}
-                      </th>
-                    ),
-                  )}
+                  {["HPMC 65/132", "HPMC 80/156"].map((model) => (
+                    <th
+                      key={model}
+                      className="px-8 py-6 text-center font-semibold border"
+                      style={{ borderColor: "rgba(255,255,255,0.2)" }}
+                    >
+                      {model}
+                    </th>
+                  ))}
                 </tr>
               </thead>
 
