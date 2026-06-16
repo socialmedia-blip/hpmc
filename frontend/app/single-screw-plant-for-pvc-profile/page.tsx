@@ -103,6 +103,11 @@ const specifications = [
     values: ["11", "15", "22.5"],
   },
 
+  // Blank Row
+  {
+    type: "blank",
+  },
+
   {
     type: "section",
     parameter: "Heating",
@@ -119,6 +124,11 @@ const specifications = [
   {
     parameter: "Screw Speed Variation (RPM)",
     values: ["15-45", "15-45", "15-45"],
+  },
+
+  // Blank Row
+  {
+    type: "blank",
   },
 
   {
@@ -138,6 +148,11 @@ const specifications = [
     values: ["450", "-", "-"],
   },
 
+  // Blank Row
+  {
+    type: "blank",
+  },
+
   {
     type: "section",
     parameter: "Cooling Tanks",
@@ -149,6 +164,11 @@ const specifications = [
   {
     parameter: "Water Circulating Requirement (Ltrs/min)",
     values: ["-", "450", "500"],
+  },
+
+  // Blank Row
+  {
+    type: "blank",
   },
 
   {
@@ -166,6 +186,11 @@ const specifications = [
   {
     parameter: "Pulling Speed (mts/min) Range 2",
     values: ["0.71 to 3.55", "1.4 to 7.2", "1.4 to 7.2"],
+  },
+
+  // Blank Row
+  {
+    type: "blank",
   },
 
   {
@@ -253,7 +278,7 @@ export default function SingleScrewPlantForPvcProfile() {
           <div className="max-w-[520px] pt-24 lg:pt-0">
             <h1 className="text-[32px] sm:text-[42px] md:text-[54px] lg:text-[64px] leading-[1.05] font-bold text-[#0B1220]">
               Single Screw Plant
-              <span className="text-[#65BC4F]">For PVC Profile</span>
+              <span className="text-[#65BC4F]"> For PVC Profile</span>
             </h1>
 
             <p className="mt-6 text-gray-600 text-sm md:text-base leading-7 max-w-[500px]">
@@ -776,25 +801,6 @@ export default function SingleScrewPlantForPvcProfile() {
 
               <tbody>
                 {specifications.map((item, index) => {
-                  if (item.type === "section") {
-                    return (
-                      <tr key={index} className="bg-[var(--muted)]">
-                        <td
-                          className="px-8 py-4 font-semibold border"
-                          style={{ borderColor: "var(--border)" }}
-                        >
-                          {item.parameter}
-                        </td>
-
-                        <td
-                          colSpan={3}
-                          className="border"
-                          style={{ borderColor: "var(--border)" }}
-                        />
-                      </tr>
-                    );
-                  }
-
                   return (
                     <tr
                       key={index}
@@ -807,7 +813,7 @@ export default function SingleScrewPlantForPvcProfile() {
                         {item.parameter}
                       </td>
 
-                      {item.values.map((value, idx) => (
+                      {item.values?.map((value, idx) => (
                         <td
                           key={idx}
                           className="px-8 py-5 text-center border"
