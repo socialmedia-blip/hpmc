@@ -970,7 +970,7 @@ export default function SingleScrewExtruder() {
           </div>
         </div>
       </section>
-
+      {/* Faqs */}
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-5">
           <div className="text-center mb-16">
