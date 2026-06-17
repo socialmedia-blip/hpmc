@@ -63,66 +63,81 @@ const specifications = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Co-Rotating Twin Screw Extruder?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Co-Rotating Twin Screw Extruder is an advanced polymer processing machine designed for compounding, masterbatch production, recycling, filler modification, and engineering plastic processing with superior mixing and dispersion performance.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+      "What applications are suitable for a Co-Rotating Twin Screw Extruder?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "The machine is widely used for direct compounding, PVC cable compounds, masterbatch production, polymer blending, recycling, film and sheet extrusion, injection molding compounds, and engineering plastic formulations.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "What materials can be processed using this extruder?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "The system can process PVC, PP, PE, ABS, PA, PC, engineering plastics, masterbatches, recycled materials, filler compounds, and glass fiber reinforced formulations.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "What is the production capacity of the Twin Screw Extruder?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
-  },
-  {
-    question: "What pipe sizes can be produced?",
-    answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
-  },
-  {
-    question: "What are the advantages of Barrier Design Screw Technology?",
-    answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
-  },
-  {
-    question: "Is the machine suitable for continuous production?",
-    answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Depending on the selected model, production capacities range from 2 Kg/hr to 1000 Kg/hr, making it suitable for laboratory, pilot, and large-scale industrial production.",
   },
   {
     question:
-      "Can the machine be customized according to production requirements?",
+      "Why is a Co-Rotating Twin Screw Extruder preferred for compounding?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Co-rotating twin screws provide excellent distributive and dispersive mixing, superior additive dispersion, better filler distribution, and highly consistent compound quality.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Can the machine process high filler formulations?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
+      "Yes. The extruder supports high filler loading applications, including talc-filled compounds with loading levels up to 80% while maintaining processing stability.",
   },
   {
-    question: "Does HPMC provide installation and training support?",
+    question: "Can glass fiber reinforced compounds be produced?",
     answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
+      "Yes. The system can process glass fiber reinforced compounds with loading levels up to 50%, ensuring excellent dispersion and mechanical performance.",
   },
   {
-    question: "What maintenance is required for a Single Screw Extruder?",
+    question: "What are the advantages of modular screw design?",
     answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
+      "The modular screw design allows flexible screw configurations, optimized processing, improved mixing efficiency, and customization for different materials and applications.",
   },
   {
-    question: "Why choose HPMC Single Screw Extruders?",
+    question: "Is the machine suitable for recycling applications?",
     answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "Yes. The Co-Rotating Twin Screw Extruder is widely used for plastic recycling, material recovery, granulation, and reprocessing of polymer waste into reusable compounds.",
+  },
+  {
+    question: "Can the machine be used for masterbatch production?",
+    answer:
+      "Yes. It is ideal for color masterbatches, additive masterbatches, filler masterbatches, and specialty compound manufacturing requiring precise dispersion.",
+  },
+  {
+    question: "How does the gearbox system improve reliability?",
+    answer:
+      "The heavy-duty gearbox ensures stable torque transmission, smooth operation, high load capacity, and reliable long-term performance in demanding production environments.",
+  },
+  {
+    question: "What industries use Co-Rotating Twin Screw Extruders?",
+    answer:
+      "These extruders are widely used in plastics processing, automotive, cable manufacturing, packaging, construction materials, polymer compounding, recycling, and engineering plastics industries.",
+  },
+  {
+    question: "Is the machine energy efficient?",
+    answer:
+      "Yes. Advanced screw geometry, optimized drive systems, and efficient processing technology help reduce power consumption while maximizing output and productivity.",
+  },
+  {
+    question: "Does HPMC provide installation and technical support?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, operator training, process optimization support, spare parts supply, and comprehensive after-sales service.",
+  },
+  {
+    question: "Why choose HPMC Co-Rotating Twin Screw Extruders?",
+    answer:
+      "HPMC Co-Rotating Twin Screw Extruders offer superior mixing performance, high production efficiency, excellent compound quality, flexible processing capabilities, energy-efficient operation, and long machine life.",
   },
 ];
 
@@ -583,7 +598,7 @@ export default function CorotatingTwinScrewExtruder() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Corotating Twin Screw Extruder
               </span>
             </h2>
 

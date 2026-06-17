@@ -63,68 +63,82 @@ const specifications = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Co-Rotating Triple Screw Extruder?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Co-Rotating Triple Screw Extruder is a high-performance polymer processing machine designed for compounding, masterbatch production, recycling, and high-filler formulations requiring exceptional mixing, plasticization, and throughput.",
   },
   {
-    question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+    question: "What applications are suitable for a Triple Screw Extruder?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "The machine is widely used for direct compounding, PVC cable compounds, masterbatch production, engineering plastics, polymer alloys, film and sheet extrusion compounds, injection molding compounds, and recycling applications.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "What materials can be processed using this extruder?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "The system can process PVC, PP, PE, ABS, PA, PC, engineering plastics, recycled polymers, filler compounds, masterbatches, and specialty polymer formulations.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "What is the production capacity of the Triple Screw Extruder?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
+      "Depending on the machine model, production capacities range from 2 Kg/hr to 1500 Kg/hr, making it suitable for laboratory development, pilot production, and large-scale industrial manufacturing.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "What are the advantages of Triple Screw Technology?",
     answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
+      "Triple Screw Technology provides superior distributive mixing, enhanced dispersive mixing, higher throughput, better plasticization, improved filler dispersion, and greater process efficiency compared to conventional extrusion systems.",
   },
   {
-    question: "What are the advantages of Barrier Design Screw Technology?",
+    question: "Can the machine process high filler formulations?",
     answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "Yes. The Triple Screw Extruder is specifically designed for high-filler compounding applications, ensuring excellent dispersion, stable processing, and consistent product quality.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question: "Is the machine suitable for masterbatch production?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Yes. The system is ideal for color masterbatches, additive masterbatches, filler masterbatches, and specialty compounds requiring precise dispersion and mixing.",
   },
   {
-    question:
-      "Can the machine be customized according to production requirements?",
+    question: "Can the machine process engineering plastics?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Yes. The extruder is widely used for engineering plastic compounding, polymer modification, reinforced compounds, and advanced material formulations.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "What are polymer alloys and composite applications?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
+      "Polymer alloys combine multiple polymers to improve performance characteristics, while composite applications include materials reinforced with fillers, fibers, or additives to achieve specific mechanical and thermal properties.",
   },
   {
-    question: "Does HPMC provide installation and training support?",
+    question: "Can the Triple Screw Extruder process wood fiber composites?",
     answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
+      "Yes. The machine is suitable for manufacturing wood-plastic composites (WPC), fiber-reinforced compounds, and other composite material formulations.",
   },
   {
-    question: "What maintenance is required for a Single Screw Extruder?",
+    question: "How does the modular screw design improve performance?",
     answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
+      "The modular screw configuration allows customized processing setups, optimized mixing zones, improved flexibility, and adaptation for different materials and production requirements.",
   },
   {
-    question: "Why choose HPMC Single Screw Extruders?",
+    question: "What is the role of the Die Face Cutter and Vibratory Sieve?",
     answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "The Die Face Cutter produces uniform pellets while the Vibratory Sieve removes irregular particles, ensuring consistent pellet size and high-quality finished compounds.",
+  },
+  {
+    question: "Which industries use Triple Screw Extruders?",
+    answer:
+      "These machines are widely used in plastics processing, automotive, cable manufacturing, packaging, construction materials, polymer compounding, recycling, and engineering plastics industries.",
+  },
+  {
+    question: "Does HPMC provide installation and technical support?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, operator training, process optimization support, spare parts supply, and comprehensive after-sales service.",
+  },
+  {
+    question: "Why choose HPMC Co-Rotating Triple Screw Extruders?",
+    answer:
+      "HPMC Triple Screw Extruders offer exceptional mixing performance, high production capacity, superior compound quality, flexible processing capabilities, energy-efficient operation, and reliable long-term performance.",
   },
 ];
+
 export default function CorotatingTripleScrewExtruder() {
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopup2, setOpenPopup2] = useState(false);
@@ -574,7 +588,7 @@ export default function CorotatingTripleScrewExtruder() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Corotating Triple Screw Extruder
               </span>
             </h2>
 

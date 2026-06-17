@@ -64,66 +64,80 @@ const specifications = [
 
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Soft Cable Grade PVC Compounding Plant?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Soft Cable Grade PVC Compounding Plant is a co-rotating twin screw extrusion system designed for manufacturing PVC compounds used in cable insulation, cable sheathing, flexible wire coatings, and electrical cable applications.",
+  },
+  {
+    question: "What is cable grade PVC compound used for?",
+    answer:
+      "Cable grade PVC compounds are widely used for insulation and sheathing of electrical wires, power cables, control cables, communication cables, automotive wiring, and industrial cable applications.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+      "Why is a Co-Rotating Twin Screw Extruder used for PVC compounding?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "Co-rotating twin screw extruders provide superior mixing, excellent dispersion of additives, stable processing conditions, and consistent compound quality required for cable manufacturing.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "What materials can be processed using this compounding plant?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "The plant can process PVC resin, plasticizers, stabilizers, fillers, flame retardants, pigments, additives, and other formulation ingredients used in cable compound manufacturing.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "What are the advantages of Soft Cable Grade PVC compounds?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
+      "Soft PVC compounds offer flexibility, excellent electrical insulation, flame resistance, durability, weather resistance, and long service life in cable applications.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "What is the production capacity of the PVC Compounding Plant?",
     answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
+      "Depending on the machine model, production capacities range from 2 Kg/hr to 1000 Kg/hr, making the system suitable for both development and large-scale industrial production.",
   },
   {
-    question: "What are the advantages of Barrier Design Screw Technology?",
+    question: "Can the plant produce cable insulation and sheathing compounds?",
     answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "Yes. The system is specifically designed for manufacturing both PVC insulation compounds and PVC sheathing compounds used in various cable constructions.",
+  },
+  {
+    question: "What are the benefits of twin screw compounding technology?",
+    answer:
+      "Twin screw technology ensures homogeneous mixing, excellent additive dispersion, improved process stability, high output rates, and consistent pellet quality.",
+  },
+  {
+    question: "Can the machine process flame-retardant PVC formulations?",
+    answer:
+      "Yes. The plant is capable of processing flame-retardant, heat-resistant, and specialty PVC cable compound formulations required by modern cable manufacturers.",
+  },
+  {
+    question: "What industries use PVC cable compounds?",
+    answer:
+      "PVC cable compounds are widely used in power transmission, electrical infrastructure, telecommunications, automotive wiring, industrial automation, and building construction industries.",
+  },
+  {
+    question: "Can the plant be used for masterbatch production?",
+    answer:
+      "Yes. The compounding plant is suitable for color masterbatch production, additive masterbatches, filler compounds, and customized polymer formulations.",
+  },
+  {
+    question: "How energy efficient is the PVC Compounding Plant?",
+    answer:
+      "The plant is engineered with advanced screw configurations, efficient drive systems, and optimized processing technology to maximize output while minimizing energy consumption.",
   },
   {
     question: "Is the machine suitable for continuous production?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Yes. HPMC Co-Rotating Twin Screw Extruders are designed for continuous operation with stable output, reliable performance, and minimal downtime.",
   },
   {
-    question:
-      "Can the machine be customized according to production requirements?",
+    question: "Does HPMC provide installation and technical support?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Yes. HPMC provides installation, commissioning, operator training, process optimization assistance, spare parts support, and comprehensive after-sales services.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Why choose HPMC Soft Cable Grade PVC Compounding Plants?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
-  },
-  {
-    question: "Does HPMC provide installation and training support?",
-    answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
-  },
-  {
-    question: "What maintenance is required for a Single Screw Extruder?",
-    answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
-  },
-  {
-    question: "Why choose HPMC Single Screw Extruders?",
-    answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "HPMC PVC Compounding Plants offer superior mixing performance, consistent compound quality, high production efficiency, advanced twin screw technology, energy-efficient operation, and long-term reliability.",
   },
 ];
 
@@ -581,7 +595,7 @@ export default function SoftCableGradePVC() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Soft Cable Grade PVC Compounding Plant
               </span>
             </h2>
 
