@@ -33,66 +33,81 @@ const galleryImages = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Twin Screw Plant for PVC Profile?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Twin Screw Plant for PVC Profile is an advanced extrusion system designed for manufacturing PVC profiles used in doors, windows, partitions, wall panels, sealing applications, and decorative construction products.",
   },
   {
-    question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+    question: "What are PVC profiles used for?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "PVC profiles are widely used in doors, windows, office partitions, wall cladding, cable trunking, furniture components, decorative trims, and various interior and exterior construction applications.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "Why is a Twin Screw Extruder used for PVC profile production?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "Twin Screw Extruders provide superior mixing, excellent plasticization, stable material flow, and better filler dispersion, resulting in higher-quality PVC profiles and improved production efficiency.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "What materials can be processed using this plant?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
+      "The plant is designed to process PVC compounds, high-calcium formulations, profile-grade PVC materials, and customized profile formulations for various applications.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "What are the advantages of Twin Screw Technology?",
     answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
+      "Twin Screw Technology offers excellent melt homogeneity, improved additive dispersion, higher output rates, lower power consumption, better process stability, and consistent profile quality.",
   },
   {
-    question: "What are the advantages of Barrier Design Screw Technology?",
+    question: "What is the production capacity of the PVC Profile Plant?",
     answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "Production capacity depends on the selected machine configuration and profile design. The plant is engineered for high-output profile manufacturing with reliable and consistent performance.",
+  },
+  {
+    question: "Can the machine process high calcium PVC formulations?",
+    answer:
+      "Yes. Twin Screw PVC Profile Plants are specifically designed to handle higher calcium loading while maintaining profile strength, dimensional stability, and surface finish quality.",
+  },
+  {
+    question: "What profile sizes can be manufactured?",
+    answer:
+      "The extrusion system can manufacture a wide range of PVC profiles including door profiles, window profiles, decorative trims, partitions, and customized profile sections.",
+  },
+  {
+    question: "How does Twin Screw Technology improve profile quality?",
+    answer:
+      "The twin screw design ensures uniform material distribution, stable processing temperatures, improved fusion, and excellent surface finish for high-quality PVC profiles.",
+  },
+  {
+    question: "Which industries use PVC Profile Extrusion Plants?",
+    answer:
+      "PVC Profile Plants are widely used in construction, architecture, interior decoration, furniture manufacturing, electrical applications, and infrastructure projects.",
   },
   {
     question: "Is the machine suitable for continuous production?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Yes. HPMC Twin Screw PVC Profile Plants are designed for continuous operation with stable output, high productivity, and minimal downtime.",
+  },
+  {
+    question: "How energy efficient is the Twin Screw PVC Profile Plant?",
+    answer:
+      "The machine is engineered with optimized screw geometry, efficient drive systems, and advanced processing technology to maximize output while minimizing energy consumption.",
   },
   {
     question:
-      "Can the machine be customized according to production requirements?",
+      "What maintenance is required for a Twin Screw PVC Profile Plant?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Routine maintenance includes inspection of screw elements, barrel sections, gearbox lubrication, heating systems, cooling systems, and electrical components to ensure reliable operation.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Does HPMC provide installation and technical support?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
+      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and comprehensive after-sales services.",
   },
   {
-    question: "Does HPMC provide installation and training support?",
+    question:
+      "Why choose HPMC Twin Screw Plants for PVC Profile Manufacturing?",
     answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
-  },
-  {
-    question: "What maintenance is required for a Single Screw Extruder?",
-    answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
-  },
-  {
-    question: "Why choose HPMC Single Screw Extruders?",
-    answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "HPMC Twin Screw PVC Profile Plants offer superior mixing performance, excellent profile quality, high production efficiency, energy-saving operation, reliable performance, and long service life.",
   },
 ];
 
@@ -562,7 +577,7 @@ export default function TwinScrewPlantForPvcProfile() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Twin Screw Plant For PVC Profile
               </span>
             </h2>
 

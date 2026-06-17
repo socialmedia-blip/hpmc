@@ -101,66 +101,80 @@ const features = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Twin Screw Plant for PVC Trunking?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Twin Screw Plant for PVC Trunking is an advanced extrusion system designed to manufacture PVC trunking profiles used for cable management, wire protection, electrical installations, and commercial infrastructure projects.",
   },
   {
-    question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+    question: "What is PVC trunking used for?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "PVC trunking is widely used for organizing and protecting electrical cables, communication wires, network cables, and power distribution systems in residential, commercial, and industrial buildings.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "Why is a Twin Screw Extruder used for PVC trunking production?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "Twin Screw Extruders provide superior mixing, excellent plasticization, better filler dispersion, and stable processing, ensuring high-quality PVC trunking profiles with consistent dimensions.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "What are the advantages of PVC trunking?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
+      "PVC trunking offers easy cable management, corrosion resistance, durability, lightweight construction, electrical insulation, and a clean professional appearance for wiring installations.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "What materials can be processed using this plant?",
     answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
+      "The plant is designed to process PVC compounds, profile-grade PVC materials, and high-calcium formulations used in trunking and cable management systems.",
   },
   {
-    question: "What are the advantages of Barrier Design Screw Technology?",
+    question: "What is the benefit of the Conical Twin Screw Extruder?",
     answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "The Conical Twin Screw Extruder provides efficient plasticization, high output rates, low power consumption, excellent material fusion, and reliable long-term performance.",
+  },
+  {
+    question: "Can the machine handle high calcium PVC formulations?",
+    answer:
+      "Yes. The system is specifically designed to process high-calcium PVC formulations while maintaining product quality, dimensional accuracy, and production stability.",
+  },
+  {
+    question: "How does the Die Head improve product quality?",
+    answer:
+      "The forged alloy steel die head ensures uniform material flow, better profile formation, dimensional consistency, and long operational life.",
+  },
+  {
+    question: "What is the role of the Spray Bath?",
+    answer:
+      "The Spray Bath provides intensive cooling and accurate profile sizing, ensuring dimensional stability, smooth surface finish, and consistent product quality.",
+  },
+  {
+    question: "How does the Pneumatic Haul Off improve production?",
+    answer:
+      "The Pneumatic Haul Off provides smooth and synchronized pulling of trunking profiles, preventing deformation and ensuring stable production speeds.",
+  },
+  {
+    question: "What is the purpose of the Automatic Cutting Unit?",
+    answer:
+      "The Automatic Cutting Unit delivers precise profile cutting with minimal wastage, improving production efficiency and finished product consistency.",
+  },
+  {
+    question: "Which industries use PVC trunking products?",
+    answer:
+      "PVC trunking products are widely used in electrical contracting, telecommunications, commercial construction, industrial facilities, data centers, and infrastructure projects.",
   },
   {
     question: "Is the machine suitable for continuous production?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Yes. HPMC Twin Screw PVC Trunking Plants are designed for continuous operation with stable output, reliable performance, and minimal downtime.",
+  },
+  {
+    question: "Does HPMC provide installation and technical support?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, operator training, technical assistance, spare parts support, and complete after-sales services.",
   },
   {
     question:
-      "Can the machine be customized according to production requirements?",
+      "Why choose HPMC Twin Screw Plants for PVC Trunking Manufacturing?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
-  },
-  {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
-    answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
-  },
-  {
-    question: "Does HPMC provide installation and training support?",
-    answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
-  },
-  {
-    question: "What maintenance is required for a Single Screw Extruder?",
-    answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
-  },
-  {
-    question: "Why choose HPMC Single Screw Extruders?",
-    answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "HPMC Twin Screw PVC Trunking Plants offer advanced extrusion technology, superior profile quality, energy-efficient operation, high production efficiency, reliable performance, and long service life.",
   },
 ];
 
@@ -727,7 +741,7 @@ export default function TwinScrewPlantForPVCTrunking() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Twin Screw Plant For PVC Trunking
               </span>
             </h2>
 

@@ -91,66 +91,79 @@ const specifications = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is an LLDPE Pipe Plant?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "An LLDPE Pipe Plant is a specialized extrusion system used for manufacturing Linear Low-Density Polyethylene (LLDPE) pipes with excellent flexibility, durability, and chemical resistance for agricultural and industrial applications.",
   },
   {
-    question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+    question: "What is LLDPE used for in pipe manufacturing?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "LLDPE is widely used for irrigation pipes, water transportation systems, agricultural piping, industrial fluid transfer, and low-pressure distribution applications due to its flexibility and strength.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "What are the advantages of LLDPE pipes?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "LLDPE pipes offer excellent flexibility, corrosion resistance, chemical resistance, lightweight construction, impact strength, and long service life in demanding environments.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "What is the production capacity of the LLDPE Pipe Plant?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
+      "Depending on the machine model, production capacities range from 50 Kg/hr to 150 Kg/hr while maintaining consistent pipe quality and dimensional accuracy.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "Which machine models are available?",
     answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
+      "HPMC offers LLDPE Pipe Plants in HPMC 75, HPMC 90, HPMC 100, HPMC 75/45, and HPMC 90/55 configurations to meet different production requirements.",
   },
   {
-    question: "What are the advantages of Barrier Design Screw Technology?",
+    question: "What pipe sizes can be produced using this plant?",
     answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "The extrusion line is designed to manufacture LLDPE pipes ranging from 2 inches to 8 inches depending on the selected machine model and tooling setup.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question: "Why is LLDPE preferred for irrigation applications?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "LLDPE pipes provide flexibility, easy installation, resistance to cracking, UV stability, and long-term performance, making them ideal for irrigation and agricultural systems.",
   },
   {
-    question:
-      "Can the machine be customized according to production requirements?",
+    question: "Is the LLDPE Pipe Plant energy efficient?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Yes. The plant is engineered with optimized extrusion technology, efficient drive systems, and low power consumption designs to maximize productivity while reducing operating costs.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Can the machine support continuous production?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
+      "Yes. HPMC LLDPE Pipe Plants are designed for continuous operation, providing stable output, reliable performance, and minimal downtime.",
   },
   {
-    question: "Does HPMC provide installation and training support?",
+    question: "What industries use LLDPE pipes?",
     answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
+      "LLDPE pipes are widely used in agriculture, irrigation, water management, landscaping, industrial fluid transfer, and rural water supply projects.",
   },
   {
-    question: "What maintenance is required for a Single Screw Extruder?",
+    question: "How does extrusion technology improve pipe quality?",
     answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
+      "Advanced extrusion technology ensures uniform wall thickness, smooth surface finish, accurate dimensions, and consistent material distribution throughout the pipe.",
   },
   {
-    question: "Why choose HPMC Single Screw Extruders?",
+    question: "Are LLDPE pipes resistant to chemicals and corrosion?",
     answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "Yes. LLDPE pipes offer excellent resistance to chemicals, fertilizers, corrosion, and environmental stress, making them suitable for long-term outdoor use.",
+  },
+  {
+    question: "What maintenance is required for an LLDPE Pipe Plant?",
+    answer:
+      "Routine maintenance includes inspection of the screw and barrel, lubrication of moving parts, checking heating systems, cleaning extrusion components, and monitoring electrical systems.",
+  },
+  {
+    question: "Does HPMC provide installation and technical support?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and complete after-sales service.",
+  },
+  {
+    question: "Why choose HPMC LLDPE Pipe Plants?",
+    answer:
+      "HPMC LLDPE Pipe Plants offer reliable performance, high production efficiency, low power consumption, excellent pipe quality, durable construction, and long-term operational reliability.",
   },
 ];
 
@@ -689,10 +702,7 @@ export default function LldpePipePlante() {
 
             <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
               Everything About Our
-              <span className="text-[var(--primary)]">
-                {" "}
-                Single Screw Extruder
-              </span>
+              <span className="text-[var(--primary)]"> LLDPE Pipe Plant</span>
             </h2>
 
             <p className="mt-5 text-[var(--text-secondary)] max-w-2xl mx-auto">

@@ -172,66 +172,80 @@ const specifications = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Twin Screw Plant for CPVC Pipe?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Twin Screw Plant for CPVC Pipe is a specialized extrusion system designed for manufacturing CPVC pipes with excellent dimensional accuracy, high output, and superior processing stability for plumbing and industrial applications.",
+  },
+  {
+    question: "What is CPVC pipe used for?",
+    answer:
+      "CPVC pipes are widely used for hot and cold water distribution systems, residential plumbing, commercial buildings, industrial fluid transportation, fire sprinkler systems, and chemical handling applications.",
+  },
+  {
+    question: "Why is a Twin Screw Extruder used for CPVC pipe production?",
+    answer:
+      "Twin Screw Extruders provide better mixing, superior plasticization, stable processing, and higher output, making them ideal for manufacturing high-quality CPVC pipes.",
+  },
+  {
+    question: "What are the advantages of CPVC pipes?",
+    answer:
+      "CPVC pipes offer high temperature resistance, corrosion resistance, excellent chemical compatibility, long service life, smooth internal surfaces, and leak-proof performance.",
+  },
+  {
+    question: "What is the production capacity of the CPVC Pipe Plant?",
+    answer:
+      "Depending on the selected machine model, the plant can achieve output capacities ranging from 150 Kg/hr to 350 Kg/hr while maintaining consistent pipe quality.",
+  },
+  {
+    question: "Which machine models are available?",
+    answer:
+      "HPMC offers CPVC Pipe Extrusion Plants in HPMC 51/105, HPMC 65/132, and HPMC 80/156 Twin Screw configurations to suit different production requirements.",
+  },
+  {
+    question: "What pipe sizes can be produced using this plant?",
+    answer:
+      "The extrusion line can manufacture CPVC pipes ranging from small plumbing pipes to larger industrial piping systems depending on tooling and machine configuration.",
+  },
+  {
+    question: "What is the benefit of the CPVC Conical Twin Screw Extruder?",
+    answer:
+      "The CPVC Conical Twin Screw Extruder provides efficient plasticization, high calcium loading capability, low power consumption, stable output, and long service life.",
+  },
+  {
+    question: "How does the Spray Bath improve pipe quality?",
+    answer:
+      "The Spray Bath provides intensive cooling through multiple spray nozzles, ensuring accurate pipe dimensions, better surface finish, and stable production.",
+  },
+  {
+    question: "What is the role of the Pneumatic Haul-Off Unit?",
+    answer:
+      "The Pneumatic Haul-Off Unit ensures smooth pipe pulling, synchronized operation with the extruder, and precise control during production.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+      "How does the Planetary Cutting Saw improve production efficiency?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "The PLC-controlled Planetary Cutting Saw delivers precise cutting, reduced material wastage, clean pipe ends, and efficient processing of larger pipe diameters.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "Can the machine handle high calcium formulations?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
-  },
-  {
-    question: "Which industries use Single Screw Extrusion Machines?",
-    answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
-  },
-  {
-    question: "What pipe sizes can be produced?",
-    answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
-  },
-  {
-    question: "What are the advantages of Barrier Design Screw Technology?",
-    answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "Yes. The Twin Screw CPVC Pipe Plant is specifically designed to process high-calcium formulations while maintaining stable output and excellent pipe quality.",
   },
   {
     question: "Is the machine suitable for continuous production?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Yes. HPMC CPVC Pipe Plants are engineered for continuous operation with high productivity, low downtime, and reliable long-term performance.",
   },
   {
-    question:
-      "Can the machine be customized according to production requirements?",
+    question: "Does HPMC provide installation and technical support?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Yes. HPMC provides installation, commissioning, operator training, technical assistance, spare parts support, and comprehensive after-sales services.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Why choose HPMC Twin Screw Plants for CPVC Pipe Manufacturing?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
-  },
-  {
-    question: "Does HPMC provide installation and training support?",
-    answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
-  },
-  {
-    question: "What maintenance is required for a Single Screw Extruder?",
-    answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
-  },
-  {
-    question: "Why choose HPMC Single Screw Extruders?",
-    answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "HPMC CPVC Pipe Plants offer advanced twin screw technology, high production efficiency, energy-saving operation, excellent pipe quality, reliable performance, and long machine life.",
   },
 ];
 
@@ -876,7 +890,7 @@ export default function TwinScrewPlantForCpvcPipe() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Twin Screw Plant For CPVC Pipe
               </span>
             </h2>
 

@@ -215,66 +215,79 @@ const specifications = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Single Screw Plant for PVC Profile?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Single Screw Plant for PVC Profile is a specialized extrusion system designed to manufacture PVC profiles used in doors, windows, partitions, sealing applications, decorative panels, and interior construction products.",
   },
   {
-    question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+    question: "What are PVC profiles used for?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "PVC profiles are widely used in doors, windows, office partitions, wall panels, cable trunking, decorative trims, sealing systems, and various interior and exterior construction applications.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "What is the production capacity of the PVC Profile Plant?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "The HPMC PVC Profile Extrusion Plant offers production capacities of up to 200 Kg/hr while maintaining excellent profile quality and dimensional accuracy.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "What materials can be processed using this extrusion plant?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
+      "The plant is primarily designed for PVC compounds and pelletized materials used in profile manufacturing, decorative products, and construction applications.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "What profile sizes can be manufactured?",
     answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
+      "The extrusion system can produce PVC profiles and panels up to 32 inches in width depending on the profile design and tooling configuration.",
   },
   {
-    question: "What are the advantages of Barrier Design Screw Technology?",
+    question: "Why is a Single Screw Extruder used for PVC profile production?",
     answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "Single Screw Extruders provide stable material flow, efficient plasticization, excellent melt homogeneity, and consistent processing performance required for high-quality profile manufacturing.",
+  },
+  {
+    question: "What are the benefits of Barrier Design Double Thread Screws?",
+    answer:
+      "Barrier Design Double Thread Screws improve melt quality, enhance mixing efficiency, increase output, reduce energy consumption, and ensure superior profile surface finish.",
+  },
+  {
+    question: "Can the machine handle high calcium formulations?",
+    answer:
+      "Yes. The extrusion system is designed to process higher calcium-loaded PVC formulations while maintaining stable production and excellent profile quality.",
+  },
+  {
+    question: "What industries use PVC Profile Extrusion Plants?",
+    answer:
+      "PVC Profile Plants are widely used in construction, interior decoration, furniture manufacturing, infrastructure projects, electrical applications, and architectural product manufacturing.",
+  },
+  {
+    question: "How does the cooling system improve profile quality?",
+    answer:
+      "The cooling system ensures proper profile sizing, dimensional stability, smooth surface finish, and uniform cooling throughout the production process.",
+  },
+  {
+    question: "What is the function of the Caterpuller Unit?",
+    answer:
+      "The Caterpuller Unit provides smooth and synchronized profile movement, prevents deformation, and maintains consistent production quality during extrusion.",
+  },
+  {
+    question: "How does the Automatic Cutting Unit improve efficiency?",
+    answer:
+      "The Automatic Cutting Unit uses preset length sensing and pneumatic gripping systems to deliver accurate profile cutting with minimal material wastage.",
   },
   {
     question: "Is the machine suitable for continuous production?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Yes. HPMC PVC Profile Plants are engineered for continuous operation with reliable performance, stable output, and minimal downtime.",
   },
   {
-    question:
-      "Can the machine be customized according to production requirements?",
+    question: "Does HPMC provide installation and technical support?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and comprehensive after-sales services.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Why choose HPMC PVC Profile Extrusion Plants?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
-  },
-  {
-    question: "Does HPMC provide installation and training support?",
-    answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
-  },
-  {
-    question: "What maintenance is required for a Single Screw Extruder?",
-    answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
-  },
-  {
-    question: "Why choose HPMC Single Screw Extruders?",
-    answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "HPMC PVC Profile Plants offer high production efficiency, superior profile quality, advanced extrusion technology, energy-efficient operation, reliable performance, and long service life.",
   },
 ];
 
@@ -914,7 +927,7 @@ export default function SingleScrewPlantForPvcProfile() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Single Screw Plant For PVC Profile
               </span>
             </h2>
 

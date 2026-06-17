@@ -91,66 +91,80 @@ const specifications = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a Single Screw Plant for Soft Garden Pipe?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Single Screw Plant for Soft Garden Pipe is a specialized extrusion system designed to manufacture flexible garden pipes with consistent quality, smooth finish, and reliable performance for irrigation and water distribution applications.",
+  },
+  {
+    question: "What are soft garden pipes used for?",
+    answer:
+      "Soft garden pipes are widely used for gardening, irrigation systems, agricultural water supply, landscaping, household watering, nurseries, and general water transfer applications.",
+  },
+  {
+    question: "What materials can be processed using this plant?",
+    answer:
+      "The plant is designed to process flexible PVC compounds and other suitable thermoplastic materials used in the production of soft garden hoses and water pipes.",
+  },
+  {
+    question: "What pipe sizes can be manufactured with this machine?",
+    answer:
+      "The extrusion line can produce soft garden pipes ranging from ½ inch to 2 inches in diameter depending on the selected model and tooling configuration.",
+  },
+  {
+    question: "What is the production capacity of the Soft Garden Pipe Plant?",
+    answer:
+      "Depending on the machine model, production capacities range from 50 Kg/hr to 130 Kg/hr while maintaining excellent pipe quality and dimensional consistency.",
+  },
+  {
+    question: "Which machine models are available?",
+    answer:
+      "HPMC offers Soft Garden Pipe Plants in HPMC 75, HPMC 90, HPMC 100, HPMC 75/45, and HPMC 90/55 configurations to meet different production requirements.",
+  },
+  {
+    question: "Why is a Single Screw Extruder used for garden pipe production?",
+    answer:
+      "Single Screw Extruders provide stable melting, uniform material flow, efficient plasticization, and reliable processing, ensuring high-quality flexible pipe production.",
+  },
+  {
+    question: "What are the advantages of soft garden pipes?",
+    answer:
+      "Soft garden pipes are lightweight, flexible, easy to handle, resistant to corrosion, durable, and suitable for various agricultural and domestic watering applications.",
+  },
+  {
+    question: "Can the machine support continuous production?",
+    answer:
+      "Yes. HPMC Soft Garden Pipe Plants are designed for continuous operation with stable output, reliable performance, and minimal downtime.",
+  },
+  {
+    question: "Are the pipes suitable for agricultural irrigation?",
+    answer:
+      "Yes. Soft garden pipes are widely used in farms, nurseries, greenhouses, and irrigation systems due to their flexibility and ease of installation.",
+  },
+  {
+    question: "How does extrusion technology improve pipe quality?",
+    answer:
+      "Advanced extrusion technology ensures uniform wall thickness, smooth surface finish, accurate dimensions, and consistent material distribution throughout the pipe.",
+  },
+  {
+    question: "Is the machine energy efficient?",
+    answer:
+      "Yes. The plant is designed with optimized screw geometry, efficient drive systems, and advanced processing technology to maximize output while reducing energy consumption.",
+  },
+  {
+    question: "What maintenance is required for a Soft Garden Pipe Plant?",
+    answer:
+      "Routine maintenance includes inspecting the screw and barrel, checking heaters, lubricating moving parts, cleaning extrusion components, and monitoring electrical systems.",
+  },
+  {
+    question: "Does HPMC provide installation and technical support?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, operator training, technical assistance, spare parts support, and comprehensive after-sales services.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+      "Why choose HPMC Single Screw Plants for Soft Garden Pipe Manufacturing?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
-  },
-  {
-    question: "What is the output capacity of the Single Screw Extruder?",
-    answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
-  },
-  {
-    question: "Which industries use Single Screw Extrusion Machines?",
-    answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
-  },
-  {
-    question: "What pipe sizes can be produced?",
-    answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
-  },
-  {
-    question: "What are the advantages of Barrier Design Screw Technology?",
-    answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
-  },
-  {
-    question: "Is the machine suitable for continuous production?",
-    answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
-  },
-  {
-    question:
-      "Can the machine be customized according to production requirements?",
-    answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
-  },
-  {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
-    answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
-  },
-  {
-    question: "Does HPMC provide installation and training support?",
-    answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
-  },
-  {
-    question: "What maintenance is required for a Single Screw Extruder?",
-    answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
-  },
-  {
-    question: "Why choose HPMC Single Screw Extruders?",
-    answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "HPMC Soft Garden Pipe Plants offer reliable performance, efficient production, excellent pipe quality, low maintenance requirements, energy-efficient operation, and long service life.",
   },
 ];
 
@@ -695,7 +709,7 @@ export default function SingleScrewPlantForGardenPipe() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                Single Screw Plant For Garden Pipe
               </span>
             </h2>
 

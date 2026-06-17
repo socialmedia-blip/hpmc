@@ -275,66 +275,80 @@ const caterpillarSpecifications = [
 ];
 const faqData = [
   {
-    question: "What is a Single Screw Extruder?",
+    question: "What is a High Speed Two Layer Cable Plant?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A High Speed Two Layer Cable Plant is an advanced cable extrusion system designed for simultaneous insulation and sheathing of electrical cables, delivering high productivity, precise coating, and superior cable quality.",
+  },
+  {
+    question: "What types of cables can be manufactured using this plant?",
+    answer:
+      "The plant is suitable for manufacturing power cables, control cables, communication cables, building wires, automotive cables, and various insulated and sheathed cable products.",
+  },
+  {
+    question: "What is the advantage of Two Layer Cable Extrusion?",
+    answer:
+      "Two layer extrusion enables simultaneous application of insulation and sheathing, reducing production time, improving efficiency, and ensuring consistent cable quality.",
+  },
+  {
+    question: "Which materials can be processed on the cable plant?",
+    answer:
+      "The machine can process PVC, XLPE, PE, LDPE, HDPE, and other cable-grade thermoplastic materials depending on the cable application and production requirements.",
+  },
+  {
+    question: "What is the function of the Two Layer Die Head?",
+    answer:
+      "The Two Layer Die Head ensures uniform material distribution, excellent concentricity, precise insulation thickness, and superior cable surface finish.",
+  },
+  {
+    question: "What is a Cross Head in cable extrusion?",
+    answer:
+      "The Cross Head is a critical component that applies insulation or sheathing material uniformly around the conductor, ensuring accurate cable coating and dimensional consistency.",
+  },
+  {
+    question: "How does the Capstan improve cable production?",
+    answer:
+      "The Capstan provides smooth traction control and synchronized cable movement, ensuring stable production speeds and preventing cable damage during manufacturing.",
+  },
+  {
+    question: "What are the benefits of the Advanced Screw Design?",
+    answer:
+      "The barrier screw and grooved barrel design improve material mixing, increase output capacity, enhance melt quality, and provide better temperature control during cable extrusion.",
+  },
+  {
+    question: "What cable sizes can be produced using this plant?",
+    answer:
+      "The system supports cable diameters ranging from 10 mm to 50 mm depending on the selected production setup and cable specifications.",
+  },
+  {
+    question: "How does the Caterpillar Haul-Off improve production quality?",
+    answer:
+      "The Caterpillar Haul-Off ensures smooth cable pulling, stable line speed, synchronized operation, and consistent cable dimensions throughout the production process.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+      "What is the production capacity of the High Speed Two Layer Cable Plant?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "Production capacity varies depending on the selected extruder model, material type, cable size, and processing conditions, with configurations available for both medium and high-output production.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "Which industries use cables manufactured by this plant?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
-  },
-  {
-    question: "Which industries use Single Screw Extrusion Machines?",
-    answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
-  },
-  {
-    question: "What pipe sizes can be produced?",
-    answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
-  },
-  {
-    question: "What are the advantages of Barrier Design Screw Technology?",
-    answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "Cables produced on this plant are widely used in electrical infrastructure, power transmission, telecommunications, automotive wiring, industrial automation, and construction projects.",
   },
   {
     question: "Is the machine suitable for continuous production?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "Yes. HPMC High Speed Two Layer Cable Plants are engineered for continuous operation with stable output, high productivity, and minimal downtime.",
   },
   {
-    question:
-      "Can the machine be customized according to production requirements?",
+    question: "Does HPMC provide installation and technical support?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and complete after-sales services.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Why choose HPMC High Speed Two Layer Cable Plants?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
-  },
-  {
-    question: "Does HPMC provide installation and training support?",
-    answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
-  },
-  {
-    question: "What maintenance is required for a Single Screw Extruder?",
-    answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
-  },
-  {
-    question: "Why choose HPMC Single Screw Extruders?",
-    answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "HPMC Cable Plants offer advanced extrusion technology, precise cable coating, high production efficiency, reliable operation, energy-efficient performance, and long machine life.",
   },
 ];
 
@@ -1101,7 +1115,7 @@ export default function HighSpeedTwoLayerCablePlant() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Extruder
+                High Speed Two Layer Cable Plant
               </span>
             </h2>
 
