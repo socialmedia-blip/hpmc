@@ -369,6 +369,12 @@ export default function Footer() {
                 >
                   CSR Activities
                 </Link>
+                <Link
+                  href="/faq"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  FAQs
+                </Link>
               </div>
             </div>
 
