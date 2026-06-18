@@ -28,12 +28,27 @@ const daysSince = (date) => {
 };
 
 const getAgingTone = (lead) => {
-  const leadAgeDays = daysSince(lead.createdAt) || 0;
-  const lastContactDays =
-    daysSince(lead.lastActivityAt || lead.assignedAt || lead.createdAt) || 0;
+  if (!lead.followUpDate) return "green";
 
-  if (lastContactDays >= 5 || leadAgeDays >= 15) return "red";
-  if (lastContactDays >= 2 || leadAgeDays >= 7) return "yellow";
+  const followUp = new Date(lead.followUpDate);
+
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+
+  const todayEnd = new Date();
+  todayEnd.setHours(23, 59, 59, 999);
+
+  // Overdue
+  if (followUp < todayStart) {
+    return "red";
+  }
+
+  // Today's followup
+  if (followUp >= todayStart && followUp <= todayEnd) {
+    return "yellow";
+  }
+
+  // Future followup
   return "green";
 };
 
