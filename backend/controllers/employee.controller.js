@@ -103,6 +103,10 @@ const buildWorkDesk = (leads) => {
       !(lead.activityLog || []).some((item) => item.type === "quotation"),
   );
 
+  const wonLeads = leads.filter((lead) => lead.leadStatus === "won");
+
+  const lostLeads = leads.filter((lead) => lead.leadStatus === "lost");
+
   const priorityLeads = [
     ...overdue,
     ...dueToday,
@@ -138,6 +142,8 @@ const buildWorkDesk = (leads) => {
       siteVisits: siteVisits.length,
       quotationPending: quotationPending.length,
       openLeads: openLeads.length,
+      wonLeads: wonLeads.length,
+      lostLeads: lostLeads.length,
     },
     priorityLeads,
   };
