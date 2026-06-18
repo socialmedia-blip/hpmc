@@ -1,27 +1,83 @@
 "use client";
-import React, { useEffect, useState } from "react";
 
-const LanguageSelector = () => {
-  const [lang, setLang] = useState<string>("");
+import React, { useEffect, useRef, useState } from "react";
+import { Globe } from "lucide-react";
 
-  // 🔹 Load saved language on mount
+const languages = [
+  { code: "en", label: "EN", title: "English" },
+  { code: "hi", label: "HI", title: "Hindi" },
+  { code: "bn", label: "BN", title: "Bengali" },
+  { code: "te", label: "TE", title: "Telugu" },
+  { code: "mr", label: "MR", title: "Marathi" },
+  { code: "ta", label: "TA", title: "Tamil" },
+  { code: "ur", label: "UR", title: "Urdu" },
+  { code: "gu", label: "GU", title: "Gujarati" },
+  { code: "kn", label: "KN", title: "Kannada" },
+  { code: "ml", label: "ML", title: "Malayalam" },
+  { code: "pa", label: "PA", title: "Punjabi" },
+  { code: "or", label: "OR", title: "Odia" },
+  { code: "as", label: "AS", title: "Assamese" },
+
+  { code: "ar", label: "AR", title: "Arabic" },
+  { code: "fa", label: "FA", title: "Persian (Farsi)" },
+  { code: "tr", label: "TR", title: "Turkish" },
+
+  { code: "fr", label: "FR", title: "French" },
+  { code: "de", label: "DE", title: "German" },
+  { code: "es", label: "ES", title: "Spanish" },
+  { code: "it", label: "IT", title: "Italian" },
+  { code: "pt", label: "PT", title: "Portuguese" },
+  { code: "ru", label: "RU", title: "Russian" },
+  { code: "nl", label: "NL", title: "Dutch" },
+  { code: "pl", label: "PL", title: "Polish" },
+
+  { code: "zh-CN", label: "ZH", title: "Chinese (Simplified)" },
+  { code: "zh-TW", label: "ZT", title: "Chinese (Traditional)" },
+  { code: "ja", label: "JA", title: "Japanese" },
+  { code: "ko", label: "KO", title: "Korean" },
+
+  { code: "id", label: "ID", title: "Indonesian" },
+  { code: "th", label: "TH", title: "Thai" },
+  { code: "vi", label: "VI", title: "Vietnamese" },
+  { code: "ms", label: "MS", title: "Malay" },
+
+  { code: "sw", label: "SW", title: "Swahili" },
+  { code: "af", label: "AF", title: "Afrikaans" },
+  { code: "am", label: "AM", title: "Amharic" },
+
+  { code: "uk", label: "UK", title: "Ukrainian" },
+  { code: "he", label: "HE", title: "Hebrew" },
+];
+
+export default function LanguageSelector() {
+  const [lang, setLang] = useState("en");
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const savedLang = localStorage.getItem("lang");
-    if (savedLang) {
-      setLang(savedLang);
-    }
+    if (savedLang) setLang(savedLang);
   }, []);
 
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedLang = e.target.value;
-    if (!selectedLang) return;
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
 
-    // 🔹 Save selection
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const changeLanguage = (selectedLang: string) => {
     setLang(selectedLang);
     localStorage.setItem("lang", selectedLang);
 
     if (selectedLang === "en") {
-      // 🔹 Reset to English
       document.cookie =
         "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
       window.location.hash = "";
@@ -29,63 +85,80 @@ const LanguageSelector = () => {
       return;
     }
 
-    // 🔹 Set Google Translate cookie
     document.cookie = `googtrans=/en/${selectedLang};path=/`;
     window.location.hash = `#googtrans=en/${selectedLang}`;
 
-    // 🔹 Apply translation
     setTimeout(() => window.location.reload(), 300);
   };
 
   return (
-    <select
-      value={lang}
-      onChange={handleLanguageChange}
-      title="Select language"
-      className="language-selector appearance-none bg-[var(--card)] rounded-full text-center cursor-pointer"
-    >
-      <option value="" disabled title="Language">
-        🌐
-      </option>
+    <div className="relative" ref={wrapperRef}>
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="
+      flex h-10 w-14 items-center justify-center
+      rounded-full
+      bg-[var(--card)]
+      text-[var(--text-primary)]
+      border border-[var(--border)]
+      shadow-sm
+      transition-all duration-200
+      hover:bg-[var(--muted)]
+    "
+      >
+        <Globe size={16} />
+      </button>
 
-      <option value="en" title="English">
-        EN
-      </option>
-      <option value="ar" title="Arabic">
-        AR
-      </option>
-      <option value="fr" title="French">
-        FR
-      </option>
-      <option value="de" title="German">
-        DE
-      </option>
-      <option value="hi" title="Hindi">
-        HI
-      </option>
-      <option value="es" title="Spanish">
-        ES
-      </option>
-      <option value="it" title="Italian">
-        IT
-      </option>
-      <option value="pt" title="Portuguese">
-        PT
-      </option>
-      <option value="ru" title="Russian">
-        RU
-      </option>
-      <option value="zh-CN" title="Chinese (Simplified)">
-        ZH
-      </option>
-      <option value="ja" title="Japanese">
-        JA
-      </option>
-      <option value="ko" title="Korean">
-        KO
-      </option>
-    </select>
+      {open && (
+        <div
+          className="
+        absolute left-0 top-14 z-50
+        w-48 overflow-hidden
+        
+        border border-[var(--border)]
+        bg-[var(--card)]
+        shadow-2xl
+      "
+        >
+          <div className="max-h-[580px] md:max-h-96 overflow-y-auto">
+            {languages.map((language) => (
+              <button
+                key={language.code}
+                title={language.title}
+                onClick={() => {
+                  changeLanguage(language.code);
+                  setOpen(false);
+                }}
+                className={`
+              flex w-full items-center justify-between
+              px-4 py-1 text-left
+              transition-colors duration-200
+              hover:bg-[var(--muted)]
+              ${lang === language.code ? "bg-[var(--muted)]" : ""}
+            `}
+              >
+                <span
+                  className={`
+                text-sm
+                ${
+                  lang === language.code
+                    ? "text-[var(--primary)] font-semibold"
+                    : "text-[var(--text-primary)]"
+                }
+              `}
+                >
+                  {language.title}
+                </span>
+
+                {lang === language.code && (
+                  <span className="text-[var(--primary)] text-xs">✓</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
-};
-
-export default LanguageSelector;
+}
