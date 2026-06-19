@@ -106,7 +106,7 @@ export default function Dashboard() {
   const [note, setNote] = useState("");
   const [followUpDate, setFollowUpDate] = useState("");
   const [followUpRemark, setFollowUpRemark] = useState("");
-
+  const [showAllTimeline, setShowAllTimeline] = useState(false);
   const fetchDesk = async () => {
     try {
       setLoading(true);
@@ -130,6 +130,9 @@ export default function Dashboard() {
       setLoading(false);
     }
   };
+  const visibleTimeline = showAllTimeline
+    ? desk.recentActivity
+    : desk.recentActivity.slice(0, 4);
 
   /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
   useEffect(() => {
@@ -324,9 +327,10 @@ export default function Dashboard() {
             <Clock3 size={18} className="text-[var(--primary)]" />
             <h2 className="font-semibold">Recent Timeline</h2>
           </div>
+
           <div className="space-y-4">
             {desk.recentActivity.length ? (
-              desk.recentActivity.map((item, index) => (
+              visibleTimeline.map((item, index) => (
                 <div
                   key={item._id || `${item.createdAt}-${index}`}
                   className="border-l-2 border-[var(--primary)]/40 pl-4"
@@ -344,6 +348,16 @@ export default function Dashboard() {
               </p>
             )}
           </div>
+
+          {/* Add here */}
+          {desk.recentActivity.length > 4 && (
+            <button
+              onClick={() => setShowAllTimeline(!showAllTimeline)}
+              className="mt-4 w-full rounded-xl border border-[var(--border)] py-2 text-sm font-medium text-[var(--primary)] hover:bg-[var(--primary)]/5"
+            >
+              {showAllTimeline ? "Show Less" : "Show More"}
+            </button>
+          )}
         </aside>
       </div>
 
