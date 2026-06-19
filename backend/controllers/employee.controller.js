@@ -507,6 +507,16 @@ exports.updateLeadStatus = async (req, res) => {
 
     const previousStatus = lead.leadStatus || "new";
     lead.leadStatus = leadStatus;
+    const previousStatus = lead.leadStatus || "new";
+
+    lead.leadStatus = leadStatus;
+
+    if (["won", "lost"].includes(leadStatus)) {
+      lead.followUpDate = null;
+      lead.followUpRemark = "";
+    }
+
+    lead.lastActivityAt = new Date();
     lead.lastActivityAt = new Date();
     lead.activityLog.push({
       type: "status",
