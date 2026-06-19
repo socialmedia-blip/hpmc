@@ -480,6 +480,7 @@ exports.getMyLeads = async (req, res) => {
 exports.updateLeadStatus = async (req, res) => {
   try {
     const { leadStatus } = req.body;
+
     const allowedStatus = [
       "new",
       "contacted",
@@ -506,18 +507,17 @@ exports.updateLeadStatus = async (req, res) => {
     }
 
     const previousStatus = lead.leadStatus || "new";
-    lead.leadStatus = leadStatus;
-    const previousStatus = lead.leadStatus || "new";
 
     lead.leadStatus = leadStatus;
 
-    if (["won", "lost"].includes(leadStatus)) {
+    // Clear follow-up when lead moves out of follow-up stage
+    if (leadStatus !== "follow-up") {
       lead.followUpDate = null;
       lead.followUpRemark = "";
     }
 
     lead.lastActivityAt = new Date();
-    lead.lastActivityAt = new Date();
+
     lead.activityLog.push({
       type: "status",
       employee: req.employee.id,
