@@ -17,8 +17,15 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { RxCrossCircled } from "react-icons/rx";
 
-type LeadStatus = "new" | "contacted" | "follow-up" | "qualified" | "won" | "lost";
+type LeadStatus =
+  | "new"
+  | "contacted"
+  | "follow-up"
+  | "qualified"
+  | "won"
+  | "lost";
 
 interface Employee {
   _id: string;
@@ -81,7 +88,8 @@ export default function AdminLead() {
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<LeadRequest | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState<(typeof statusOptions)[number]>("all");
+  const [statusFilter, setStatusFilter] =
+    useState<(typeof statusOptions)[number]>("all");
   const [assignmentFilter, setAssignmentFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -97,7 +105,8 @@ export default function AdminLead() {
 
       setLeads(
         [...(Array.isArray(leadData) ? leadData : [])].sort(
-          (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
         ),
       );
       if (employeeData.success) setEmployees(employeeData.employees || []);
@@ -127,7 +136,9 @@ export default function AdminLead() {
       const matchesStatus = statusFilter === "all" || status === statusFilter;
       const matchesAssignment =
         assignmentFilter === "all" ||
-        (assignmentFilter === "assigned" ? Boolean(lead.assignedTo) : !lead.assignedTo);
+        (assignmentFilter === "assigned"
+          ? Boolean(lead.assignedTo)
+          : !lead.assignedTo);
 
       return matchesSearch && matchesStatus && matchesAssignment;
     });
@@ -140,7 +151,7 @@ export default function AdminLead() {
       unassigned: leads.filter((lead) => !lead.assignedTo).length,
       followUps: leads.filter((lead) => lead.leadStatus === "follow-up").length,
       won: leads.filter((lead) => lead.leadStatus === "won").length,
-      pending: leads.filter((lead) => !lead.marked).length,
+      lost: leads.filter((lead) => lead.leadStatus === "lost").length,
     }),
     [leads],
   );
@@ -154,8 +165,12 @@ export default function AdminLead() {
     searchQuery || statusFilter !== "all" || assignmentFilter !== "all";
 
   const updateLeadInState = (leadId: string, patch: Partial<LeadRequest>) => {
-    setLeads((prev) => prev.map((lead) => (lead._id === leadId ? { ...lead, ...patch } : lead)));
-    setSelectedLead((prev) => (prev?._id === leadId ? { ...prev, ...patch } : prev));
+    setLeads((prev) =>
+      prev.map((lead) => (lead._id === leadId ? { ...lead, ...patch } : lead)),
+    );
+    setSelectedLead((prev) =>
+      prev?._id === leadId ? { ...prev, ...patch } : prev,
+    );
   };
 
   const handleAssignLead = async (leadId: string, employeeId: string) => {
@@ -192,7 +207,15 @@ export default function AdminLead() {
 
   const handleExport = () => {
     const rows = [
-      ["Name", "Email", "Phone", "Company", "Status", "Assigned To", "Next Follow Up"],
+      [
+        "Name",
+        "Email",
+        "Phone",
+        "Company",
+        "Status",
+        "Assigned To",
+        "Next Follow Up",
+      ],
       ...filteredLeads.map((lead) => [
         lead.name,
         lead.email,
@@ -203,8 +226,14 @@ export default function AdminLead() {
         lead.followUpDate ? new Date(lead.followUpDate).toLocaleString() : "",
       ]),
     ];
-    const csv = rows.map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
-    const url = window.URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    const csv = rows
+      .map((row) =>
+        row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(","),
+      )
+      .join("\n");
+    const url = window.URL.createObjectURL(
+      new Blob([csv], { type: "text/csv" }),
+    );
     const link = document.createElement("a");
     link.href = url;
     link.download = `leads-${new Date().toISOString().split("T")[0]}.csv`;
@@ -223,18 +252,29 @@ export default function AdminLead() {
     <div className="pb-24">
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="mb-2 text-xs uppercase tracking-[4px] text-[var(--primary)]">Admin Panel</p>
-          <h1 className="font-serif text-4xl text-[var(--text-primary)]">Lead CRM</h1>
+          <p className="mb-2 text-xs uppercase tracking-[4px] text-[var(--primary)]">
+            Admin Panel
+          </p>
+          <h1 className="font-serif text-4xl text-[var(--text-primary)]">
+            Lead CRM
+          </h1>
           <p className="mt-2 text-sm text-[var(--text-secondary)]">
-            Assign inquiries, monitor employee follow-ups, and keep the sales pipeline moving.
+            Assign inquiries, monitor employee follow-ups, and keep the sales
+            pipeline moving.
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <button onClick={handleExport} className="flex h-11 items-center gap-2 rounded-xl bg-[var(--primary)] px-5 font-medium text-white">
+          <button
+            onClick={handleExport}
+            className="flex h-11 items-center gap-2 rounded-xl bg-[var(--primary)] px-5 font-medium text-white"
+          >
             <Download size={17} /> Export
           </button>
           {hasFilters && (
-            <button onClick={resetFilters} className="flex h-11 items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card)] px-4">
+            <button
+              onClick={resetFilters}
+              className="flex h-11 items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card)] px-4"
+            >
               <RotateCcw size={16} /> Reset
             </button>
           )}
@@ -242,18 +282,51 @@ export default function AdminLead() {
       </div>
 
       <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-6">
-        <Stat label="Total" value={stats.total} icon={<Users size={18} />} tone="blue" />
-        <Stat label="Assigned" value={stats.assigned} icon={<UserRoundCheck size={18} />} tone="green" />
-        <Stat label="Unassigned" value={stats.unassigned} icon={<Filter size={18} />} tone="amber" />
-        <Stat label="Follow Ups" value={stats.followUps} icon={<CalendarClock size={18} />} tone="violet" />
-        <Stat label="Won" value={stats.won} icon={<CheckCircle2 size={18} />} tone="emerald" />
-        <Stat label="Pending" value={stats.pending} icon={<CalendarClock size={18} />} tone="rose" />
+        <Stat
+          label="Total"
+          value={stats.total}
+          icon={<Users size={18} />}
+          tone="blue"
+        />
+        <Stat
+          label="Assigned"
+          value={stats.assigned}
+          icon={<UserRoundCheck size={18} />}
+          tone="green"
+        />
+        <Stat
+          label="Unassigned"
+          value={stats.unassigned}
+          icon={<Filter size={18} />}
+          tone="amber"
+        />
+        <Stat
+          label="Follow Ups"
+          value={stats.followUps}
+          icon={<CalendarClock size={18} />}
+          tone="violet"
+        />
+        <Stat
+          label="Won"
+          value={stats.won}
+          icon={<CheckCircle2 size={18} />}
+          tone="emerald"
+        />
+        <Stat
+          label="Lost"
+          value={stats.lost}
+          icon={<RxCrossCircled size={18} />}
+          tone="rose"
+        />
       </div>
 
       <div className="mb-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5">
         <div className="grid gap-4 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div className="relative">
-            <Search size={17} className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]" />
+            <Search
+              size={17}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]"
+            />
             <input
               value={searchQuery}
               onChange={(e) => {
@@ -264,8 +337,18 @@ export default function AdminLead() {
               className="h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] pl-10 pr-4 outline-none focus:ring-2 focus:ring-[var(--primary)]"
             />
           </div>
-          <Select value={statusFilter} onChange={(value) => setStatusFilter(value as (typeof statusOptions)[number])} options={statusOptions} />
-          <Select value={assignmentFilter} onChange={setAssignmentFilter} options={["all", "assigned", "unassigned"]} />
+          <Select
+            value={statusFilter}
+            onChange={(value) =>
+              setStatusFilter(value as (typeof statusOptions)[number])
+            }
+            options={statusOptions}
+          />
+          <Select
+            value={assignmentFilter}
+            onChange={setAssignmentFilter}
+            options={["all", "assigned", "unassigned"]}
+          />
         </div>
       </div>
 
@@ -279,62 +362,119 @@ export default function AdminLead() {
             <table className="w-full min-w-[980px]">
               <thead className="border-b border-[var(--border)] bg-[var(--background-secondary)]">
                 <tr>
-                  {["Lead", "Contact", "Pipeline", "Assigned To", "Next Follow Up", "Actions"].map((head) => (
-                    <th key={head} className="px-5 py-4 text-left text-sm font-semibold">{head}</th>
+                  {[
+                    "Lead",
+                    "Contact",
+                    "Status",
+                    "Assigned To",
+                    "Next Follow Up",
+                    "Actions",
+                  ].map((head) => (
+                    <th
+                      key={head}
+                      className="px-5 py-4 text-left text-sm font-semibold"
+                    >
+                      {head}
+                    </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {currentLeads.map((lead) => (
-                  <tr key={lead._id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--background-secondary)]">
+                  <tr
+                    key={lead._id}
+                    className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--background-secondary)]"
+                  >
                     <td className="px-5 py-4">
                       <p className="font-semibold">{lead.name}</p>
-                      <p className="mt-1 text-sm text-[var(--text-secondary)]">{lead.companyName || "No company"}</p>
+                      <p className="mt-1 text-sm text-[var(--text-secondary)]">
+                        {lead.companyName || "No company"}
+                      </p>
                     </td>
                     <td className="px-5 py-4 text-sm">
                       <p>{lead.phone}</p>
-                      <p className="mt-1 text-[var(--text-secondary)]">{lead.email}</p>
+                      <p className="mt-1 text-[var(--text-secondary)]">
+                        {lead.email}
+                      </p>
                     </td>
                     <td className="px-5 py-4">
-                      <span className={`rounded-full px-3 py-1 text-xs font-semibold ${statusClass(lead.leadStatus || "new")}`}>
+                      <span
+                        className={`rounded-full px-3 py-1 text-xs font-semibold ${statusClass(lead.leadStatus || "new")}`}
+                      >
                         {lead.leadStatus || "new"}
                       </span>
-                      <button
-                        onClick={() => handleMark(lead._id, !lead.marked)}
-                        className={`ml-2 rounded-full px-3 py-1 text-xs font-semibold ${lead.marked ? "bg-green-500/10 text-green-600" : "bg-yellow-500/10 text-yellow-600"}`}
-                      >
-                        {lead.marked ? "Completed" : "Open"}
-                      </button>
                     </td>
                     <td className="px-5 py-4">
                       <select
                         value={lead.assignedTo?._id || ""}
-                        onChange={(e) => handleAssignLead(lead._id, e.target.value)}
+                        onChange={(e) =>
+                          handleAssignLead(lead._id, e.target.value)
+                        }
                         className="h-10 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] px-3 outline-none"
                       >
                         <option value="">Unassigned</option>
-                        {employees.filter((employee) => employee.active !== false).map((employee) => (
-                          <option key={employee._id} value={employee._id}>{employee.name}</option>
-                        ))}
+                        {employees
+                          .filter((employee) => employee.active !== false)
+                          .map((employee) => (
+                            <option key={employee._id} value={employee._id}>
+                              {employee.name}
+                            </option>
+                          ))}
                       </select>
                     </td>
                     <td className="px-5 py-4 text-sm">
                       {lead.followUpDate ? (
                         <>
                           <p>{new Date(lead.followUpDate).toLocaleString()}</p>
-                          <p className="mt-1 max-w-[220px] truncate text-[var(--text-secondary)]">{lead.followUpRemark}</p>
+                          <p className="mt-1 max-w-[220px] truncate text-[var(--text-secondary)]">
+                            {lead.followUpRemark}
+                          </p>
                         </>
                       ) : (
-                        <span className="text-[var(--text-secondary)]">Not scheduled</span>
+                        <span className="text-[var(--text-secondary)]">
+                          Not scheduled
+                        </span>
                       )}
                     </td>
                     <td className="px-5 py-4">
                       <div className="flex justify-end gap-2">
-                        <a href={`tel:${lead.phone}`} className="grid h-9 w-9 place-items-center rounded-lg text-green-600 hover:bg-green-500/10" title="Call"><Phone size={16} /></a>
-                        <a href={`mailto:${lead.email}`} className="grid h-9 w-9 place-items-center rounded-lg text-blue-600 hover:bg-blue-500/10" title="Email"><Mail size={16} /></a>
-                        <a href={`https://wa.me/${lead.phone.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-lg text-emerald-600 hover:bg-emerald-500/10" title="WhatsApp"><MessageCircle size={16} /></a>
-                        <button onClick={() => setSelectedLead(lead)} className="grid h-9 w-9 place-items-center rounded-lg text-[var(--primary)] hover:bg-[var(--primary)]/10" title="View"><Eye size={16} /></button>
-                        <button onClick={() => handleDelete(lead._id)} className="grid h-9 w-9 place-items-center rounded-lg text-red-600 hover:bg-red-500/10" title="Delete"><Trash2 size={16} /></button>
+                        <a
+                          href={`tel:${lead.phone}`}
+                          className="grid h-9 w-9 place-items-center rounded-lg text-green-600 hover:bg-green-500/10"
+                          title="Call"
+                        >
+                          <Phone size={16} />
+                        </a>
+                        <a
+                          href={`mailto:${lead.email}`}
+                          className="grid h-9 w-9 place-items-center rounded-lg text-blue-600 hover:bg-blue-500/10"
+                          title="Email"
+                        >
+                          <Mail size={16} />
+                        </a>
+                        <a
+                          href={`https://wa.me/${lead.phone.replace(/\D/g, "")}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="grid h-9 w-9 place-items-center rounded-lg text-emerald-600 hover:bg-emerald-500/10"
+                          title="WhatsApp"
+                        >
+                          <MessageCircle size={16} />
+                        </a>
+                        <button
+                          onClick={() => setSelectedLead(lead)}
+                          className="grid h-9 w-9 place-items-center rounded-lg text-[var(--primary)] hover:bg-[var(--primary)]/10"
+                          title="View"
+                        >
+                          <Eye size={16} />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(lead._id)}
+                          className="grid h-9 w-9 place-items-center rounded-lg text-red-600 hover:bg-red-500/10"
+                          title="Delete"
+                        >
+                          <Trash2 size={16} />
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -353,14 +493,34 @@ export default function AdminLead() {
 
       {totalPages > 1 && (
         <div className="mt-6 flex justify-end gap-3">
-          <button disabled={currentPage === 1} onClick={() => setCurrentPage((page) => page - 1)} className="h-10 rounded-xl border border-[var(--border)] px-4 disabled:opacity-40">Prev</button>
-          <div className="grid h-10 min-w-10 place-items-center rounded-xl bg-[var(--primary)] px-4 text-white">{currentPage}</div>
-          <button disabled={currentPage === totalPages} onClick={() => setCurrentPage((page) => page + 1)} className="h-10 rounded-xl border border-[var(--border)] px-4 disabled:opacity-40">Next</button>
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((page) => page - 1)}
+            className="h-10 rounded-xl border border-[var(--border)] px-4 disabled:opacity-40"
+          >
+            Prev
+          </button>
+          <div className="grid h-10 min-w-10 place-items-center rounded-xl bg-[var(--primary)] px-4 text-white">
+            {currentPage}
+          </div>
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((page) => page + 1)}
+            className="h-10 rounded-xl border border-[var(--border)] px-4 disabled:opacity-40"
+          >
+            Next
+          </button>
         </div>
       )}
 
       {selectedLead && (
-        <LeadModal lead={selectedLead} employees={employees} onClose={() => setSelectedLead(null)} onAssign={handleAssignLead} onMark={handleMark} />
+        <LeadModal
+          lead={selectedLead}
+          employees={employees}
+          onClose={() => setSelectedLead(null)}
+          onAssign={handleAssignLead}
+          onMark={handleMark}
+        />
       )}
     </div>
   );
@@ -388,10 +548,17 @@ function LeadModal({
       <div className="flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)]">
         <div className="flex items-center justify-between border-b border-[var(--border)] px-6 py-5">
           <div>
-            <p className="mb-1 text-xs uppercase tracking-[4px] text-[var(--primary)]">Lead Detail</p>
+            <p className="mb-1 text-xs uppercase tracking-[4px] text-[var(--primary)]">
+              Lead Detail
+            </p>
             <h2 className="font-serif text-3xl">{lead.name}</h2>
           </div>
-          <button onClick={onClose} className="grid h-11 w-11 place-items-center rounded-xl border border-[var(--border)]"><X size={20} /></button>
+          <button
+            onClick={onClose}
+            className="grid h-11 w-11 place-items-center rounded-xl border border-[var(--border)]"
+          >
+            <X size={20} />
+          </button>
         </div>
 
         <div className="grid gap-6 overflow-y-auto p-6 lg:grid-cols-[1fr_0.9fr]">
@@ -404,29 +571,52 @@ function LeadModal({
                 <Info label="Phone" value={lead.phone} />
                 <Info label="Source" value={lead.source || "Website"} />
               </div>
-              <p className="mt-5 whitespace-pre-wrap text-sm leading-6 text-[var(--text-secondary)]">{lead.message || "No message provided."}</p>
+              <p className="mt-5 whitespace-pre-wrap text-sm leading-6 text-[var(--text-secondary)]">
+                {lead.message || "No message provided."}
+              </p>
             </section>
 
             <section className="rounded-2xl border border-[var(--border)] p-5">
               <h3 className="mb-4 font-semibold">Products</h3>
               <div className="flex flex-wrap gap-2">
-                {lead.products?.length ? lead.products.map((product) => (
-                  <span key={product} className="rounded-full bg-[var(--primary)]/10 px-3 py-1 text-sm text-[var(--primary)]">{product}</span>
-                )) : <span className="text-sm text-[var(--text-secondary)]">No product selected.</span>}
+                {lead.products?.length ? (
+                  lead.products.map((product) => (
+                    <span
+                      key={product}
+                      className="rounded-full bg-[var(--primary)]/10 px-3 py-1 text-sm text-[var(--primary)]"
+                    >
+                      {product}
+                    </span>
+                  ))
+                ) : (
+                  <span className="text-sm text-[var(--text-secondary)]">
+                    No product selected.
+                  </span>
+                )}
               </div>
             </section>
 
             <section className="rounded-2xl border border-[var(--border)] p-5">
               <h3 className="mb-4 font-semibold">Employee Notes</h3>
               <div className="space-y-3">
-                {lead.notes?.length ? lead.notes.map((note, index) => (
-                  <div key={`${note.createdAt}-${index}`} className="rounded-xl bg-[var(--background-secondary)] p-4">
-                    <p className="text-sm">{note.text}</p>
-                    <p className="mt-2 text-xs text-[var(--text-secondary)]">
-                      {note.createdBy?.name || "Employee"} - {new Date(note.createdAt).toLocaleString()}
-                    </p>
-                  </div>
-                )) : <p className="text-sm text-[var(--text-secondary)]">No notes yet.</p>}
+                {lead.notes?.length ? (
+                  lead.notes.map((note, index) => (
+                    <div
+                      key={`${note.createdAt}-${index}`}
+                      className="rounded-xl bg-[var(--background-secondary)] p-4"
+                    >
+                      <p className="text-sm">{note.text}</p>
+                      <p className="mt-2 text-xs text-[var(--text-secondary)]">
+                        {note.createdBy?.name || "Employee"} -{" "}
+                        {new Date(note.createdAt).toLocaleString()}
+                      </p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    No notes yet.
+                  </p>
+                )}
               </div>
             </section>
           </div>
@@ -440,9 +630,13 @@ function LeadModal({
                 className="h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] px-3 outline-none"
               >
                 <option value="">Unassigned</option>
-                {employees.filter((employee) => employee.active !== false).map((employee) => (
-                  <option key={employee._id} value={employee._id}>{employee.name}</option>
-                ))}
+                {employees
+                  .filter((employee) => employee.active !== false)
+                  .map((employee) => (
+                    <option key={employee._id} value={employee._id}>
+                      {employee.name}
+                    </option>
+                  ))}
               </select>
               <button
                 onClick={() => onMark(lead._id, !lead.marked)}
@@ -455,14 +649,24 @@ function LeadModal({
             <section className="rounded-2xl border border-[var(--border)] p-5">
               <h3 className="mb-4 font-semibold">Timeline</h3>
               <div className="space-y-4">
-                {timeline.length ? timeline.map((item, index) => (
-                  <div key={`${item.createdAt}-${index}`} className="border-l-2 border-[var(--primary)]/40 pl-4">
-                    <p className="text-sm font-medium">{item.message}</p>
-                    <p className="mt-1 text-xs text-[var(--text-secondary)]">
-                      {item.employee?.name || "Admin"} - {new Date(item.createdAt).toLocaleString()}
-                    </p>
-                  </div>
-                )) : <p className="text-sm text-[var(--text-secondary)]">No timeline recorded.</p>}
+                {timeline.length ? (
+                  timeline.map((item, index) => (
+                    <div
+                      key={`${item.createdAt}-${index}`}
+                      className="border-l-2 border-[var(--primary)]/40 pl-4"
+                    >
+                      <p className="text-sm font-medium">{item.message}</p>
+                      <p className="mt-1 text-xs text-[var(--text-secondary)]">
+                        {item.employee?.name || "Admin"} -{" "}
+                        {new Date(item.createdAt).toLocaleString()}
+                      </p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    No timeline recorded.
+                  </p>
+                )}
               </div>
             </section>
           </aside>
@@ -472,7 +676,15 @@ function LeadModal({
   );
 }
 
-function Select({ value, onChange, options }: { value: string; onChange: (value: string) => void; options: string[] }) {
+function Select({
+  value,
+  onChange,
+  options,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  options: string[];
+}) {
   return (
     <select
       value={value}
@@ -480,7 +692,9 @@ function Select({ value, onChange, options }: { value: string; onChange: (value:
       className="h-11 rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] px-3 capitalize outline-none focus:ring-2 focus:ring-[var(--primary)]"
     >
       {options.map((option) => (
-        <option key={option} value={option}>{option.replace("-", " ")}</option>
+        <option key={option} value={option}>
+          {option.replace("-", " ")}
+        </option>
       ))}
     </select>
   );
@@ -489,13 +703,25 @@ function Select({ value, onChange, options }: { value: string; onChange: (value:
 function Info({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">{label}</p>
+      <p className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+        {label}
+      </p>
       <p className="mt-1 break-words font-medium">{value}</p>
     </div>
   );
 }
 
-function Stat({ label, value, icon, tone }: { label: string; value: number; icon: React.ReactNode; tone: string }) {
+function Stat({
+  label,
+  value,
+  icon,
+  tone,
+}: {
+  label: string;
+  value: number;
+  icon: React.ReactNode;
+  tone: string;
+}) {
   const tones: Record<string, string> = {
     blue: "border-blue-500/20 bg-blue-500/10 text-blue-600",
     green: "border-green-500/20 bg-green-500/10 text-green-600",
@@ -507,7 +733,9 @@ function Stat({ label, value, icon, tone }: { label: string; value: number; icon
   return (
     <div className={`rounded-2xl border p-4 ${tones[tone]}`}>
       <div className="mb-3 flex items-center justify-between">
-        <span className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">{label}</span>
+        <span className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+          {label}
+        </span>
         {icon}
       </div>
       <p className="text-3xl font-bold">{value}</p>
