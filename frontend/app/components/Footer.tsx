@@ -242,54 +242,62 @@ export default function Footer() {
                   <MapPin className="text-lime-400 mt-1" size={18} />
 
                   <p className="text-gray-400 text-sm leading-[28px]">
-                    Lorem ipsum dolor sit amet consectetur , India
+                    5, Category II, DSIDC Industrial Area Nangloi, Delhi-110041
                   </p>
                 </div>
 
                 <div className="flex gap-4">
                   <Phone className="text-lime-400" size={18} />
 
-                  <p className="text-gray-400 text-sm">+91 98765 43210</p>
+                  <p className="text-gray-400 text-sm">+91 95605 96392</p>
                 </div>
 
                 <div className="flex gap-4">
                   <Mail className="text-lime-400" size={18} />
 
                   <p className="text-gray-400 text-sm break-all">
-                    info@company.com
+                    info@hindustanplastics.com
                   </p>
                 </div>
               </div>
 
               {/* SOCIAL */}
               <div className="flex items-center gap-4 mt-8">
-                <Link
-                  href="/"
+                <a
+                  href="https://www.linkedin.com/company/132303934/admin/dashboard/?editPageActiveTab=info"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:bg-lime-500 hover:border-lime-500 hover:text-white transition"
                 >
                   <FaLinkedinIn size={18} />
-                </Link>
+                </a>
 
-                <Link
-                  href="/"
+                <a
+                  href="https://www.facebook.com/profile.php?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=61591089651211&sk=about"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:bg-lime-500 hover:border-lime-500 hover:text-white transition"
                 >
                   <FaFacebookF size={18} />
-                </Link>
+                </a>
 
-                <Link
-                  href="/"
+                <a
+                  href="https://www.youtube.com/@HindustanPlasticsMachineCorpor"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:bg-lime-500 hover:border-lime-500 hover:text-white transition"
                 >
                   <FaYoutube size={18} />
-                </Link>
+                </a>
 
-                <Link
-                  href="/"
+                <a
+                  href="https://www.instagram.com/hindustanplasticsofficial?igsh=ZzkzdWc3Y2YxbGd4&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:bg-lime-500 hover:border-lime-500 hover:text-white transition"
                 >
                   <FaInstagram size={18} />
-                </Link>
+                </a>
               </div>
             </div>
 

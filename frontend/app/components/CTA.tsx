@@ -53,7 +53,7 @@ export default function CTA() {
 
                   <h4 className="text-[var(--foreground)]  font-semibold whitespace-nowrap">
                     {" "}
-                    +91 98765 43210
+                    +91 95605 96392
                   </h4>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function CTA() {
 
                   <h4 className="text-[var(--foreground)]  font-semibold whitespace-nowrap">
                     {" "}
-                    info@company.com
+                    info@hindustanplastics.com
                   </h4>
                 </div>
               </div>
