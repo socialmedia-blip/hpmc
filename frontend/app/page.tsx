@@ -8,7 +8,18 @@ import Clients from "./components/Client";
 import PopupForm from "./components/Popup";
 import { useEffect, useRef, useState } from "react";
 import FloatingContact from "./components/FloatingButton";
-import { Quote, Star } from "lucide-react";
+import {
+  Building2,
+  Droplets,
+  Quote,
+  Star,
+  Zap,
+  Package,
+  FlaskConical,
+  Recycle,
+  Factory,
+  Wheat,
+} from "lucide-react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import ScrollToTopButton from "./components/ScrollToTop";
@@ -26,36 +37,44 @@ import DemoPopup from "./components/PopupDemo";
 
 const industries = [
   {
-    icon: "💧",
-    title: "Water Infrastructure",
+    icon: <Droplets size={42} />,
+    title: "Water",
+    color: "#0EA5E9",
   },
   {
-    icon: "⚡",
-    title: "Electrical & Cable",
+    icon: <Zap size={42} />,
+    title: "Electrical",
+    color: "#F97316",
   },
   {
-    icon: "🏗️",
+    icon: <Building2 size={42} />,
     title: "Construction",
+    color: "#65BC4F",
   },
   {
-    icon: "📦",
+    icon: <Package size={42} />,
     title: "Packaging",
+    color: "#8B5CF6",
   },
   {
-    icon: "🧪",
-    title: "Polymer Processing",
+    icon: <FlaskConical size={42} />,
+    title: "Polymer",
+    color: "#06B6D4",
   },
   {
-    icon: "♻️",
-    title: "Plastic Recycling",
+    icon: <Recycle size={42} />,
+    title: "Recycling",
+    color: "#16A34A",
   },
   {
-    icon: "🏭",
-    title: "Industrial Components",
+    icon: <Factory size={42} />,
+    title: "Industrial",
+    color: "#2563EB",
   },
   {
-    icon: "🌾",
-    title: "Agriculture & Irrigation",
+    icon: <Wheat size={42} />,
+    title: "Agriculture",
+    color: "#CA8A04",
   },
 ];
 
@@ -344,160 +363,43 @@ export default function Home() {
 
       <ProductCarousel />
 
-      <section className="relative py-16 bg-[var(--background)] overflow-hidden">
-        {/* Background Glow */}
-        <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)]/5 blur-[120px]" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
+      <section className="py-16 bg-[var(--background)]">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
           {/* Heading */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
-            {/* LEFT */}
-            <div className="max-w-3xl">
-              <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
-                Industries We Serve
-              </p>
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
+              Industries We Serve
+            </p>
 
-              <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                Powering Industries
-                <br />
-                Across Every Sector
-              </h2>
+            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+              Industries We Serve
+            </h2>
 
-              <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
-                HPMC extrusion solutions support critical industries worldwide,
-                enabling efficient production, sustainable manufacturing, and
-                long-term operational reliability.
-              </p>
-            </div>
-
-            {/* RIGHT BUTTON */}
+            <p className="mt-5 text-[var(--text-secondary)] leading-8">
+              HPMC extrusion solutions support a wide range of industries with
+              reliable, efficient, and high-performance manufacturing systems.
+            </p>
           </div>
 
-          {/* Ecosystem */}
-          <div className="hidden lg:flex relative flex justify-center items-center md:min-h-[650px]">
-            {/* Orbit Rings */}
-            <div className="absolute w-[500px] h-[500px] rounded-full border border-[var(--border)]/60" />
-            <div className="absolute w-[380px] h-[380px] rounded-full border border-dashed border-[var(--primary)]/20" />
-            {/* Center Circle */}
-            <div className="relative z-20">
-              {/* Glow */}
-              <div className="absolute inset-0 rounded-full bg-[var(--primary)]/10 blur-3xl scale-125" />
-
-              <div className="relative w-80 h-80 rounded-full bg-[var(--card)] border border-[var(--border)] shadow-2xl flex flex-col justify-center items-center text-center p-8">
-                <div className="absolute inset-4 rounded-full border border-[var(--primary)]/15" />
-
-                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[var(--primary)]/20 to-[var(--primary)]/5 flex items-center justify-center mb-5">
-                  <Image
-                    src="/product.jpg"
-                    alt="HPMC Machine"
-                    width={80}
-                    height={80}
-                  />
-                </div>
-
-                <h3 className="text-3xl font-bold text-[var(--text-primary)]">
-                  HPMC
-                </h3>
-
-                <p className="mt-3 text-sm text-[var(--text-secondary)] max-w-[220px]">
-                  Advanced Pipe Extrusion Solutions
-                </p>
-              </div>
-            </div>
-
-            {/* Top */}
-            <IndustryNode
-              className="top-0 left-1/2 -translate-x-1/2"
-              icon="💧"
-              title="Water Infrastructure"
-            />
-
-            {/* Top Right */}
-            <IndustryNode
-              className="top-[15%] right-[10%]"
-              icon="⚡"
-              title="Electrical & Cable"
-            />
-
-            {/* Right */}
-            <IndustryNode
-              className="top-1/2 right-0 -translate-y-1/2"
-              icon="🏗️"
-              title="Construction"
-            />
-
-            {/* Bottom Right */}
-            <IndustryNode
-              className="bottom-[15%] right-[10%]"
-              icon="📦"
-              title="Packaging"
-            />
-
-            {/* Bottom */}
-            <IndustryNode
-              className="bottom-0 left-1/2 -translate-x-1/2"
-              icon="🧪"
-              title="Polymer Processing"
-            />
-
-            {/* Bottom Left */}
-            <IndustryNode
-              className="bottom-[15%] left-[10%]"
-              icon="♻️"
-              title="Plastic Recycling"
-            />
-
-            {/* Left */}
-            <IndustryNode
-              className="top-1/2 left-0 -translate-y-1/2"
-              icon="🏭"
-              title="Industrial Components"
-            />
-
-            {/* Top Left */}
-            <IndustryNode
-              className="top-[15%] left-[10%]"
-              icon="🌾"
-              title="Agriculture & Irrigation"
-            />
-          </div>
-
-          <div className="lg:hidden">
-            <div className="relative mb-10 flex justify-center">
-              <div className="w-48 h-48 rounded-full bg-[var(--card)] border border-[var(--border)] shadow-xl flex flex-col items-center justify-center text-center p-4">
-                <Image
-                  src="/product.jpg"
-                  alt="HPMC Machine"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="mt-3 text-xl font-bold text-[var(--text-primary)]">
-                  HPMC
-                </h3>
-
-                <p className="text-xs text-[var(--text-secondary)] mt-2">
-                  Advanced Pipe Extrusion Solutions
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {industries.map((industry, index) => (
+          {/* Industries */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-5 mt-16">
+            {industries.map((industry, index) => (
+              <div key={index} className="group text-center">
                 <div
-                  key={index}
-                  className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 text-center"
+                  className={`w-full aspect-square rounded-md flex items-center justify-center
+        shadow-lg transition-all duration-300 group-hover:-translate-y-2`}
+                  style={{
+                    backgroundColor: industry.color,
+                  }}
                 >
-                  <div className="w-12 h-12 mx-auto rounded-xl bg-[var(--primary)]/10 flex items-center justify-center text-xl mb-3">
-                    {industry.icon}
-                  </div>
-
-                  <h3 className="text-sm font-medium text-[var(--text-primary)] leading-5">
-                    {industry.title}
-                  </h3>
+                  <div className="text-white text-4xl">{industry.icon}</div>
                 </div>
-              ))}
-            </div>
+
+                <h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-[var(--text-primary)] leading-5">
+                  {industry.title}
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
