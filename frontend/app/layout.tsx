@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
-import ScrollToTopButton from "./components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,19 +40,20 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
+        {/* Google Analytics */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-CQ0ZBF6NP5"
           strategy="afterInteractive"
         />
 
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-      gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
-    `}
+            gtag('config', 'G-CQ0ZBF6NP5');
+          `}
         </Script>
       </body>
     </html>
