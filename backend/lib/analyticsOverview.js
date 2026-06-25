@@ -17,6 +17,11 @@ const getOverview = async () => {
       { name: "newUsers" },
       { name: "sessions" },
       { name: "screenPageViews" },
+      { name: "engagedSessions" },
+      { name: "engagementRate" },
+      { name: "bounceRate" },
+      { name: "averageSessionDuration" },
+      { name: "eventCount" },
     ],
   });
 

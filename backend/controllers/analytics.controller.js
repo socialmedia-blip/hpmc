@@ -3,6 +3,9 @@ const getVisitorsChart = require("../lib/analyticsVisitorsChart");
 const getTopPages = require("../lib/analyticsTopPages");
 const getCities = require("../lib/analyticsCities");
 const getTrafficSources = require("../lib/analyticsTrafficSources");
+const getCountries = require("../lib/analyticsCountries");
+const getDevices = require("../lib/analyticsDevices");
+const getBrowsers = require("../lib/analyticsBrowsers");
 
 exports.overview = async (req, res) => {
   try {
@@ -15,6 +18,11 @@ exports.overview = async (req, res) => {
         newUsers: 0,
         sessions: 0,
         pageViews: 0,
+        engagedSessions: 0,
+        engagementRate: 0,
+        bounceRate: 0,
+        averageSessionDuration: 0,
+        eventCount: 0,
       });
     }
 
@@ -26,6 +34,11 @@ exports.overview = async (req, res) => {
       newUsers: Number(metrics[2]?.value || 0),
       sessions: Number(metrics[3]?.value || 0),
       pageViews: Number(metrics[4]?.value || 0),
+      engagedSessions: Number(metrics[5]?.value || 0),
+      engagementRate: Number(metrics[6]?.value || 0),
+      bounceRate: Number(metrics[7]?.value || 0),
+      averageSessionDuration: Number(metrics[8]?.value || 0),
+      eventCount: Number(metrics[9]?.value || 0),
     });
   } catch (err) {
     console.error("Analytics Error:", err);
@@ -33,6 +46,80 @@ exports.overview = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to fetch analytics data",
+    });
+  }
+};
+
+exports.countryVisitors = async (req, res) => {
+  try {
+    const data = await getCountries();
+
+    if (!data.rows || data.rows.length === 0) {
+      return res.json([]);
+    }
+
+    const countries = data.rows.map((row) => ({
+      country: row.dimensionValues[0]?.value || "Unknown",
+      visitors: Number(row.metricValues[0]?.value || 0),
+    }));
+
+    res.json(countries);
+  } catch (err) {
+    console.error("Country Analytics Error:", err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch country analytics",
+    });
+  }
+};
+
+exports.deviceBreakdown = async (req, res) => {
+  try {
+    const data = await getDevices();
+
+    if (!data.rows || data.rows.length === 0) {
+      return res.json([]);
+    }
+
+    const devices = data.rows.map((row) => ({
+      device: row.dimensionValues[0]?.value || "Unknown",
+      visitors: Number(row.metricValues[0]?.value || 0),
+      sessions: Number(row.metricValues[1]?.value || 0),
+    }));
+
+    res.json(devices);
+  } catch (err) {
+    console.error("Device Analytics Error:", err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch device analytics",
+    });
+  }
+};
+
+exports.browserBreakdown = async (req, res) => {
+  try {
+    const data = await getBrowsers();
+
+    if (!data.rows || data.rows.length === 0) {
+      return res.json([]);
+    }
+
+    const browsers = data.rows.map((row) => ({
+      browser: row.dimensionValues[0]?.value || "Unknown",
+      visitors: Number(row.metricValues[0]?.value || 0),
+      pageViews: Number(row.metricValues[1]?.value || 0),
+    }));
+
+    res.json(browsers);
+  } catch (err) {
+    console.error("Browser Analytics Error:", err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch browser analytics",
     });
   }
 };
