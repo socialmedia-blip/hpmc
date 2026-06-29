@@ -92,7 +92,7 @@ type FormDataType = {
   email: string;
   phone: string;
   company: string;
-  city: string;
+  address: string;
   message: string;
 };
 
@@ -119,7 +119,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
     email: "",
     phone: "",
     company: "",
-    city: "",
+    address: "",
     message: "",
   });
 
@@ -196,9 +196,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       if (field.required) {
         const isEmpty =
-          field.type === "checkbox"
-            ? !value
-            : !String(value || "").trim();
+          field.type === "checkbox" ? !value : !String(value || "").trim();
 
         if (isEmpty) {
           newErrors[field.id] = `${field.label} is required`;
@@ -229,6 +227,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
       ...customFieldValues,
       ...(formData.company.trim() ? { companyName: formData.company } : {}),
       ...(selectedServices.length ? { products: selectedServices } : {}),
+      ...(formData.address.trim() ? { address: formData.address } : {}),
     };
 
     try {
@@ -328,7 +327,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         email: "",
         phone: "",
         company: "",
-        city: "",
+        address: "",
         message: "",
       });
 
@@ -537,15 +536,13 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                     style={inputStyle}
                   />
                   {errors.email && (
-                    <p className="mt-2 text-sm text-red-500">
-                      {errors.email}
-                    </p>
+                    <p className="mt-2 text-sm text-red-500">{errors.email}</p>
                   )}
                 </div>
 
                 <div>
                   <div
-                    className="rounded-2xl border px-4 py-4"
+                    className="rounded-2xl border px-4 py-3"
                     style={{
                       background: "var(--background)",
                       borderColor: "var(--border)",
@@ -573,6 +570,17 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                     style={inputStyle}
                   />
                 </div>
+              </div>
+
+              <div className="mt-4">
+                <input
+                  type="text"
+                  placeholder="City, State"
+                  value={formData.address}
+                  onChange={(e) => handleChange("address", e.target.value)}
+                  className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                  style={inputStyle}
+                />
               </div>
 
               {/* Services */}
@@ -664,20 +672,9 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                   }}
                 />
                 {errors.services && (
-                  <p className="mt-2 text-sm text-red-500">
-                    {errors.services}
-                  </p>
+                  <p className="mt-2 text-sm text-red-500">{errors.services}</p>
                 )}
               </div>
-
-              <LeadCustomFields
-                fields={leadForm.customFields}
-                values={customFieldValues}
-                errors={errors}
-                inputStyle={inputStyle}
-                loading={leadFormLoading}
-                onChange={handleCustomFieldChange}
-              />
 
               {/* Message */}
               <div className="mt-8">

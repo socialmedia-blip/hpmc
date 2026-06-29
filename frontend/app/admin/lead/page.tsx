@@ -568,6 +568,7 @@ export default function AdminLead() {
                   {[
                     "Lead",
                     "Contact",
+                    "Address",
                     ...(showAssignment
                       ? ["Status", "Assigned To"]
                       : ["Submitted"]),
@@ -596,6 +597,9 @@ export default function AdminLead() {
                       <p className="mt-1 text-[var(--text-secondary)]">
                         {lead.email}
                       </p>
+                    </td>
+                    <td className="px-5 py-4 text-sm">
+                      <p>{formatFieldValue(lead.customFields?.address)}</p>
                     </td>
                     {showAssignment && (
                       <>

@@ -27,6 +27,7 @@ interface Lead {
   leadStatus?: string;
   verified?: boolean;
   createdAt: string;
+  customFields?: Record<string, string | number | boolean | string[]>;
 }
 
 export default function MyLeadsPage() {
@@ -222,16 +223,21 @@ export default function MyLeadsPage() {
           <table className="w-full min-w-[920px]">
             <thead className="border-b border-[var(--border)] bg-[var(--background-secondary)]">
               <tr>
-                {["Lead", "Contact", "Status", "Submitted", "Actions"].map(
-                  (head) => (
-                    <th
-                      key={head}
-                      className="px-5 py-4 text-left text-sm font-semibold text-[var(--text-primary)]"
-                    >
-                      {head}
-                    </th>
-                  ),
-                )}
+                {[
+                  "Lead",
+                  "Contact",
+                  "Address",
+                  "Status",
+                  "Submitted",
+                  "Actions",
+                ].map((head) => (
+                  <th
+                    key={head}
+                    className="px-5 py-4 text-left text-sm font-semibold text-[var(--text-primary)]"
+                  >
+                    {head}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
@@ -257,6 +263,13 @@ export default function MyLeadsPage() {
                     </p>
                     <p className="mt-1 flex items-center gap-2 text-[var(--text-secondary)]">
                       <Mail size={14} /> {lead.email}
+                    </p>
+                  </td>
+                  <td className="px-5 py-4 text-sm">
+                    <p className="flex items-center gap-2">
+                      {Array.isArray(lead.customFields?.address)
+                        ? lead.customFields?.address.join(", ")
+                        : String(lead.customFields?.address ?? "-")}
                     </p>
                   </td>
                   <td className="px-5 py-4">
