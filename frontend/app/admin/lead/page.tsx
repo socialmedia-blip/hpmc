@@ -7,10 +7,10 @@ import {
   Eye,
   Filter,
   Mail,
-  MessageCircle,
   Phone,
   RotateCcw,
   Search,
+  Star,
   Trash2,
   Upload,
   UserRoundCheck,
@@ -28,6 +28,8 @@ type LeadStatus =
   | "follow-up"
   | "interested"
   | "not-interested";
+
+type LeadCategory = "general" | "important";
 
 interface Employee {
   _id: string;
@@ -58,6 +60,7 @@ interface LeadRequest {
   message?: string;
   verified?: boolean;
   leadStatus?: LeadStatus;
+  leadCategory?: LeadCategory;
   source?: string;
   followUpDate?: string | null;
   followUpRemark?: string;
@@ -75,6 +78,12 @@ const statusOptions: Array<"all" | LeadStatus> = [
   "follow-up",
   "interested",
   "not-interested",
+];
+
+const categoryOptions: Array<"all" | LeadCategory> = [
+  "all",
+  "important",
+  "general",
 ];
 
 const ITEMS_PER_PAGE = 20;
@@ -102,6 +111,8 @@ export default function AdminLead() {
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] =
     useState<(typeof statusOptions)[number]>("all");
+  const [categoryFilter, setCategoryFilter] =
+    useState<(typeof categoryOptions)[number]>("all");
   const [assignmentFilter, setAssignmentFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [importing, setImporting] = useState(false);
@@ -168,6 +179,9 @@ export default function AdminLead() {
         (showAssignment &&
           (lead.assignedTo?.name || "").toLowerCase().includes(query));
       const matchesStatus = statusFilter === "all" || status === statusFilter;
+      const matchesCategory =
+        categoryFilter === "all" ||
+        (lead.leadCategory || "general") === categoryFilter;
       const matchesAssignment =
         !showAssignment ||
         assignmentFilter === "all" ||
@@ -175,9 +189,16 @@ export default function AdminLead() {
           ? Boolean(lead.assignedTo)
           : !lead.assignedTo);
 
-      return matchesSearch && matchesStatus && matchesAssignment;
+      return matchesSearch && matchesStatus && matchesCategory && matchesAssignment;
     });
-  }, [assignmentFilter, leads, searchQuery, showAssignment, statusFilter]);
+  }, [
+    assignmentFilter,
+    categoryFilter,
+    leads,
+    searchQuery,
+    showAssignment,
+    statusFilter,
+  ]);
 
   const stats = useMemo(
     () => ({
@@ -195,6 +216,8 @@ export default function AdminLead() {
         (lead) => lead.leadStatus === "not-interested",
       ).length,
       verified: leads.filter((lead) => lead.verified).length,
+      important: leads.filter((lead) => lead.leadCategory === "important")
+        .length,
       open: leads.filter(
         (lead) =>
           !["interested", "not-interested"].includes(lead.leadStatus || "new"),
@@ -211,6 +234,7 @@ export default function AdminLead() {
   const hasFilters =
     searchQuery ||
     statusFilter !== "all" ||
+    categoryFilter !== "all" ||
     (showAssignment && assignmentFilter !== "all");
 
   const updateLeadInState = (leadId: string, patch: Partial<LeadRequest>) => {
@@ -231,6 +255,23 @@ export default function AdminLead() {
     const data = await res.json();
     if (!data.success) {
       alert(data.message || "Failed to assign lead");
+      return;
+    }
+    updateLeadInState(leadId, data.lead);
+  };
+
+  const handleCategoryChange = async (
+    leadId: string,
+    leadCategory: LeadCategory,
+  ) => {
+    const res = await fetch(`${API_BASE}/lead/${leadId}/category`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ leadCategory }),
+    });
+    const data = await res.json();
+    if (!data.success) {
+      alert(data.message || "Failed to update lead category");
       return;
     }
     updateLeadInState(leadId, data.lead);
@@ -258,8 +299,8 @@ export default function AdminLead() {
         "Company",
         ...customFieldKeys,
         ...(showAssignment
-          ? ["Status", "Assigned To", "Next Follow Up"]
-          : ["Verified", "Status", "Submitted At"]),
+          ? ["Category", "Status", "Assigned To", "Next Follow Up"]
+          : ["Category", "Verified", "Status", "Submitted At"]),
       ],
       ...filteredLeads.map((lead) => [
         lead.name,
@@ -268,11 +309,13 @@ export default function AdminLead() {
         ...customFieldKeys.map((key) => lead.customFields?.[key] ?? ""),
         ...(showAssignment
           ? [
+              lead.leadCategory || "general",
               lead.leadStatus || "new",
               lead.assignedTo?.name || "Unassigned",
               formatDateTime(lead.followUpDate),
             ]
           : [
+              lead.leadCategory || "general",
               lead.verified ? "Yes" : "No",
               lead.leadStatus || "new",
               formatDateTime(lead.createdAt),
@@ -303,6 +346,7 @@ export default function AdminLead() {
         "message",
         "source",
         "status",
+        "category",
         "verified",
         "companyName",
         "address",
@@ -314,6 +358,7 @@ export default function AdminLead() {
         "Interested in product demo",
         "Facebook",
         "new",
+        "important",
         "yes",
         "Acme Pvt Ltd",
         "City, State",
@@ -388,6 +433,7 @@ export default function AdminLead() {
   const resetFilters = () => {
     setSearchQuery("");
     setStatusFilter("all");
+    setCategoryFilter("all");
     setAssignmentFilter("all");
     setCurrentPage(1);
   };
@@ -448,7 +494,7 @@ export default function AdminLead() {
 
       <div
         className={`mb-6 grid grid-cols-2 gap-3 ${
-          showAssignment ? "lg:grid-cols-6" : "lg:grid-cols-3"
+          showAssignment ? "lg:grid-cols-7" : "lg:grid-cols-3"
         }`}
       >
         <Stat
@@ -475,6 +521,12 @@ export default function AdminLead() {
         )}
         {showAssignment ? (
           <>
+            <Stat
+              label="Important"
+              value={stats.important}
+              icon={<Star size={18} />}
+              tone="amber"
+            />
             <Stat
               label="Follow Ups"
               value={stats.followUps}
@@ -508,6 +560,12 @@ export default function AdminLead() {
               icon={<Filter size={18} />}
               tone="amber"
             />
+            <Stat
+              label="Important"
+              value={stats.important}
+              icon={<Star size={18} />}
+              tone="amber"
+            />
           </>
         )}
       </div>
@@ -515,7 +573,9 @@ export default function AdminLead() {
       <div className="mb-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5">
         <div
           className={`grid gap-4 ${
-            showAssignment ? "lg:grid-cols-[1.5fr_1fr_1fr]" : "lg:grid-cols-1"
+            showAssignment
+              ? "lg:grid-cols-[1.5fr_1fr_1fr_1fr]"
+              : "lg:grid-cols-[1.5fr_1fr]"
           }`}
         >
           <div className="relative">
@@ -546,6 +606,13 @@ export default function AdminLead() {
               options={statusOptions}
             />
           )}
+          <Select
+            value={categoryFilter}
+            onChange={(value) =>
+              setCategoryFilter(value as (typeof categoryOptions)[number])
+            }
+            options={categoryOptions}
+          />
           {showAssignment && (
             <Select
               value={assignmentFilter}
@@ -570,6 +637,7 @@ export default function AdminLead() {
                     "Lead",
                     "Contact",
                     "Address",
+                    "Category",
                     ...(showAssignment
                       ? ["Status", "Assigned To"]
                       : ["Submitted"]),
@@ -608,6 +676,14 @@ export default function AdminLead() {
                     </td>
                     <td className="px-5 py-4 text-sm">
                       <p>{formatFieldValue(lead.customFields?.address)}</p>
+                    </td>
+                    <td className="px-5 py-4">
+                      <CategoryControl
+                        value={lead.leadCategory || "general"}
+                        onChange={(category) =>
+                          handleCategoryChange(lead._id, category)
+                        }
+                      />
                     </td>
                     {showAssignment && (
                       <>
@@ -742,6 +818,7 @@ export default function AdminLead() {
           showAssignment={showAssignment}
           onClose={() => setSelectedLead(null)}
           onAssign={handleAssignLead}
+          onCategoryChange={handleCategoryChange}
         />
       )}
 
@@ -831,12 +908,14 @@ function LeadModal({
   showAssignment,
   onClose,
   onAssign,
+  onCategoryChange,
 }: {
   lead: LeadRequest;
   employees: Employee[];
   showAssignment: boolean;
   onClose: () => void;
   onAssign: (leadId: string, employeeId: string) => void;
+  onCategoryChange: (leadId: string, leadCategory: LeadCategory) => void;
 }) {
   const timeline = [...(lead.activityLog || [])].sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
@@ -874,6 +953,17 @@ function LeadModal({
                 <Info label="Email" value={lead.email} />
                 <Info label="Phone" value={lead.phone} />
                 <Info label="Source" value={lead.source || "Website"} />
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+                    Category
+                  </p>
+                  <div className="mt-2">
+                    <CategoryControl
+                      value={lead.leadCategory || "general"}
+                      onChange={(category) => onCategoryChange(lead._id, category)}
+                    />
+                  </div>
+                </div>
                 <Info label="Verified" value={lead.verified ? "Yes" : "No"} />
 
                 <Info
@@ -992,6 +1082,37 @@ function LeadModal({
   );
 }
 
+function CategoryControl({
+  value,
+  onChange,
+}: {
+  value: LeadCategory;
+  onChange: (value: LeadCategory) => void;
+}) {
+  return (
+    <div className="inline-flex overflow-hidden rounded-full border border-[var(--border)] bg-[var(--background-secondary)] p-1">
+      {(["important", "general"] as LeadCategory[]).map((category) => {
+        const active = value === category;
+        return (
+          <button
+            key={category}
+            type="button"
+            onClick={() => onChange(category)}
+            className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold capitalize transition ${
+              active
+                ? categoryClass(category)
+                : "text-[var(--text-secondary)] hover:bg-[var(--card)]"
+            }`}
+          >
+            {category === "important" && <Star size={13} />}
+            {category}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 function Select({
   value,
   onChange,
@@ -1073,4 +1194,11 @@ function statusClass(status: LeadStatus) {
     interested: "bg-green-500/10 text-green-600",
     "not-interested": "bg-red-500/10 text-red-600",
   }[status];
+}
+
+function categoryClass(category: LeadCategory) {
+  return {
+    important: "bg-amber-500/15 text-amber-700 ring-1 ring-amber-500/30",
+    general: "bg-slate-500/10 text-slate-600 ring-1 ring-slate-500/20",
+  }[category];
 }

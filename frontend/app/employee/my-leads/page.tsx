@@ -5,12 +5,11 @@ import {
   Eye,
   Filter,
   Mail,
-  MessageCircle,
   Phone,
   PhoneCall,
   RefreshCw,
   Search,
-  StickyNote,
+  Star,
   TrendingDown,
   Trophy,
   Users,
@@ -27,6 +26,7 @@ interface Lead {
   email: string;
   message?: string;
   leadStatus?: string;
+  leadCategory?: "general" | "important";
   verified?: boolean;
   createdAt: string;
   customFields?: Record<string, string | number | boolean | string[]>;
@@ -45,6 +45,7 @@ export default function MyLeadsPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("all");
   const [error, setError] = useState("");
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [note, setNote] = useState("");
@@ -117,6 +118,34 @@ export default function MyLeadsPage() {
     }
   };
 
+  const updateCategory = async (
+    leadId: string,
+    leadCategory: "general" | "important",
+  ) => {
+    try {
+      const token = localStorage.getItem("employeeToken");
+      const res = await fetch(`${API_BASE}/employee/${leadId}/category`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ leadCategory }),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || "Failed to update category");
+      }
+
+      setLeads((prev) =>
+        prev.map((lead) => (lead._id === leadId ? data.lead : lead)),
+      );
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Failed to update category");
+    }
+  };
+
   const filteredLeads = useMemo(() => {
     const query = search.trim().toLowerCase();
 
@@ -132,10 +161,13 @@ export default function MyLeadsPage() {
 
       const matchesStatus =
         statusFilter === "all" || (lead.leadStatus || "new") === statusFilter;
+      const matchesCategory =
+        categoryFilter === "all" ||
+        (lead.leadCategory || "general") === categoryFilter;
 
-      return matchesSearch && matchesStatus;
+      return matchesSearch && matchesStatus && matchesCategory;
     });
-  }, [leads, search, statusFilter]);
+  }, [categoryFilter, leads, search, statusFilter]);
 
   const stats = useMemo(
     () => ({
@@ -143,6 +175,8 @@ export default function MyLeadsPage() {
       interested: leads.filter((lead) => lead.leadStatus === "interested")
         .length,
       contacted: leads.filter((lead) => lead.leadStatus === "contacted").length,
+      important: leads.filter((lead) => lead.leadCategory === "important")
+        .length,
       followup: leads.filter((lead) => lead.leadStatus === "follow-up").length,
       notInterested: leads.filter(
         (lead) => lead.leadStatus === "not-interested",
@@ -198,7 +232,7 @@ export default function MyLeadsPage() {
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-6">
         <StatCard
           title="Total Leads"
           value={stats.total}
@@ -208,6 +242,11 @@ export default function MyLeadsPage() {
           title="Contacted"
           value={stats.contacted}
           icon={<PhoneCall size={20} />}
+        />
+        <StatCard
+          title="Important"
+          value={stats.important}
+          icon={<Star size={20} />}
         />
         <StatCard
           title="Follow Up"
@@ -227,7 +266,7 @@ export default function MyLeadsPage() {
       </div>
 
       <div className="mt-8 rounded-3xl border border-[var(--border)] bg-[var(--card)] p-5">
-        <div className="grid gap-4 lg:grid-cols-[1.4fr_0.8fr_auto]">
+        <div className="grid gap-4 lg:grid-cols-[1.4fr_0.8fr_0.8fr_auto]">
           <div className="relative">
             <Search
               size={18}
@@ -240,6 +279,22 @@ export default function MyLeadsPage() {
               onChange={(event) => setSearch(event.target.value)}
               className="h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] pl-11 pr-4 outline-none focus:ring-2 focus:ring-[var(--primary)]"
             />
+          </div>
+
+          <div className="relative">
+            <Star
+              size={18}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]"
+            />
+            <select
+              value={categoryFilter}
+              onChange={(event) => setCategoryFilter(event.target.value)}
+              className="h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] pl-11 pr-4 outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            >
+              <option value="all">All Category</option>
+              <option value="important">Important</option>
+              <option value="general">General</option>
+            </select>
           </div>
 
           <div className="relative">
@@ -277,6 +332,7 @@ export default function MyLeadsPage() {
                   "Contact",
                   "Address",
                   "Latest Note",
+                  "Category",
                   "Status",
                   "Submitted",
                   "Actions",
@@ -365,6 +421,13 @@ export default function MyLeadsPage() {
                         No notes yet
                       </p>
                     )}
+                  </td>
+
+                  <td className="px-5 py-4">
+                    <CategoryControl
+                      value={lead.leadCategory || "general"}
+                      onChange={(category) => updateCategory(lead._id, category)}
+                    />
                   </td>
 
                   <td className="px-5 py-4">
@@ -475,6 +538,44 @@ function StatCard({
       <p className="mt-1 text-sm text-[var(--text-secondary)]">{title}</p>
     </div>
   );
+}
+
+function CategoryControl({
+  value,
+  onChange,
+}: {
+  value: "general" | "important";
+  onChange: (value: "general" | "important") => void;
+}) {
+  return (
+    <div className="inline-flex overflow-hidden rounded-full border border-[var(--border)] bg-[var(--background-secondary)] p-1">
+      {(["important", "general"] as const).map((category) => {
+        const active = value === category;
+        return (
+          <button
+            key={category}
+            type="button"
+            onClick={() => onChange(category)}
+            className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold capitalize transition ${
+              active
+                ? categoryClass(category)
+                : "text-[var(--text-secondary)] hover:bg-[var(--card)]"
+            }`}
+          >
+            {category === "important" && <Star size={13} />}
+            {category}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function categoryClass(category: "general" | "important") {
+  return {
+    important: "bg-amber-500/15 text-amber-700 ring-1 ring-amber-500/30",
+    general: "bg-slate-500/10 text-slate-600 ring-1 ring-slate-500/20",
+  }[category];
 }
 
 function NoteModal({

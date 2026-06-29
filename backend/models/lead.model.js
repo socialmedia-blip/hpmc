@@ -8,10 +8,20 @@ const LEAD_STATUSES = [
   "not-interested",
 ];
 
+const LEAD_CATEGORIES = ["general", "important"];
+
 const normalizeLeadStatus = (status) => {
   if (status === "qualified" || status === "won") return "interested";
   if (status === "lost") return "not-interested";
   return LEAD_STATUSES.includes(status) ? status : "new";
+};
+
+const normalizeLeadCategory = (category) => {
+  const normalized = String(category || "").trim().toLowerCase();
+  if (["important", "priority", "hot", "starred"].includes(normalized)) {
+    return "important";
+  }
+  return LEAD_CATEGORIES.includes(normalized) ? normalized : "general";
 };
 
 const leadSchema = new mongoose.Schema(
@@ -71,6 +81,13 @@ const leadSchema = new mongoose.Schema(
       default: "new",
     },
 
+    leadCategory: {
+      type: String,
+      enum: LEAD_CATEGORIES,
+      set: normalizeLeadCategory,
+      default: "general",
+    },
+
     followUpDate: {
       type: Date,
       default: null,
@@ -127,6 +144,7 @@ const leadSchema = new mongoose.Schema(
             "email",
             "site-visit",
             "quotation",
+            "category",
           ],
           required: true,
         },
@@ -154,11 +172,15 @@ const leadSchema = new mongoose.Schema(
 
 leadSchema.pre("validate", function normalizeLegacyLeadStatus() {
   this.leadStatus = normalizeLeadStatus(this.leadStatus);
+  this.leadCategory = normalizeLeadCategory(this.leadCategory);
 });
 
 leadSchema.index({ assignedTo: 1, leadStatus: 1, followUpDate: 1 });
+leadSchema.index({ leadCategory: 1, createdAt: -1 });
 leadSchema.index({ createdAt: -1 });
 
 module.exports = mongoose.model("Lead", leadSchema);
 module.exports.LEAD_STATUSES = LEAD_STATUSES;
+module.exports.LEAD_CATEGORIES = LEAD_CATEGORIES;
+module.exports.normalizeLeadCategory = normalizeLeadCategory;
 module.exports.normalizeLeadStatus = normalizeLeadStatus;

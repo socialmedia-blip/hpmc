@@ -1,5 +1,9 @@
 const Lead = require("../models/lead.model");
-const { normalizeLeadStatus, LEAD_STATUSES } = require("../models/lead.model");
+const {
+  LEAD_STATUSES,
+  normalizeLeadCategory,
+  normalizeLeadStatus,
+} = require("../models/lead.model");
 const Employee = require("../models/employee.model");
 const Settings = require("../models/Settings");
 const sendEmail = require("../utils/sendEmail");
@@ -48,6 +52,7 @@ const decorateLead = (lead, options = {}) => {
 
   const decoratedLead = {
     ...plainLead,
+    leadCategory: normalizeLeadCategory(plainLead.leadCategory),
     leadStatus: normalizeLeadStatus(plainLead.leadStatus),
     aging: {
       leadAgeDays: daysSince(plainLead.createdAt) || 0,
@@ -149,6 +154,8 @@ const importReservedHeaders = new Set(
     "source",
     "status",
     "leadstatus",
+    "category",
+    "leadcategory",
     "verified",
     "assignedto",
     "assignedemployee",
@@ -490,6 +497,9 @@ exports.importLeads = async (req, res) => {
 
       const rawStatus = getRowValue(row, ["status", "lead status"]);
       const leadStatus = normalizeLeadStatus(rawStatus.toLowerCase());
+      const leadCategory = normalizeLeadCategory(
+        getRowValue(row, ["category", "lead category"]),
+      );
       const assignedValue = getRowValue(row, [
         "assigned to",
         "assigned employee",
@@ -532,6 +542,7 @@ exports.importLeads = async (req, res) => {
         source: getRowValue(row, ["source"]) || "Imported",
         verified: parseBoolean(getRowValue(row, ["verified"])),
         leadStatus,
+        leadCategory,
         customFields,
         assignedTo,
         assignedAt: assignedTo ? now : null,
@@ -557,6 +568,14 @@ exports.importLeads = async (req, res) => {
                 {
                   type: "status",
                   message: `Lead status set to ${leadStatus} during import`,
+                },
+              ]
+            : []),
+          ...(leadCategory === "important"
+            ? [
+                {
+                  type: "category",
+                  message: "Lead marked important during import",
                 },
               ]
             : []),
@@ -588,6 +607,48 @@ exports.importLeads = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Server error while importing leads",
+    });
+  }
+};
+
+exports.updateLeadCategory = async (req, res) => {
+  try {
+    const leadCategory = normalizeLeadCategory(req.body.leadCategory);
+    const lead = await Lead.findById(req.params.id);
+
+    if (!lead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found",
+      });
+    }
+
+    const previousCategory = normalizeLeadCategory(lead.leadCategory);
+
+    lead.leadCategory = leadCategory;
+    lead.lastActivityAt = new Date();
+
+    if (previousCategory !== leadCategory) {
+      lead.activityLog.push({
+        type: "category",
+        message: `Category changed: ${previousCategory} -> ${leadCategory}`,
+      });
+    }
+
+    await lead.save();
+    await lead.populate("assignedTo", "name email");
+    await lead.populate("notes.createdBy", "name email");
+    await lead.populate("activityLog.employee", "name email");
+
+    res.status(200).json({
+      success: true,
+      lead: decorateLead(lead),
+    });
+  } catch (error) {
+    console.error("Update Lead Category Error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
     });
   }
 };

@@ -13,6 +13,7 @@ const {
   getMyLeads,
   getMyWorkDesk,
   updateLeadStatus,
+  updateLeadCategory,
   addLeadNote,
   recordLeadAction,
   getLeadById,
@@ -41,6 +42,8 @@ router.patch("/:id/status", updateEmployeeStatus);
 router.delete("/:id", deleteEmployee);
 
 router.patch("/:id/lead-status", employeeAuth, updateLeadStatus);
+
+router.patch("/:id/category", employeeAuth, updateLeadCategory);
 
 router.post("/:id/note", employeeAuth, addLeadNote);
 

@@ -9,6 +9,7 @@ const {
   importLeads,
   deleteLead,
   assignLead,
+  updateLeadCategory,
 } = require("../controllers/lead.controller");
 
 const upload = multer({
@@ -56,6 +57,7 @@ router.post("/verify-otp", verifyOTP);
 router.post("/import", uploadLeadFile, importLeads);
 router.get("/activity", getAllLeadActivity);
 router.get("/", getAllLeads);
+router.patch("/:id/category", updateLeadCategory);
 router.delete("/:id", deleteLead);
 router.put("/assign", assignLead);
 

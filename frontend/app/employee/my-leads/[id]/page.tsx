@@ -9,6 +9,7 @@ import {
   Phone,
   RefreshCw,
   Save,
+  Star,
   StickyNote,
 } from "lucide-react";
 import Link from "next/link";
@@ -43,6 +44,7 @@ interface Lead {
   products?: string[];
   message?: string;
   leadStatus: string;
+  leadCategory?: "general" | "important";
   source?: string;
   followUpDate?: string | null;
   followUpRemark?: string;
@@ -70,6 +72,7 @@ export default function LeadDetailsPage() {
   const [error, setError] = useState("");
   const [note, setNote] = useState("");
   const [status, setStatus] = useState("new");
+  const [category, setCategory] = useState<"general" | "important">("general");
   const [followUpDate, setFollowUpDate] = useState("");
   const [followUpRemark, setFollowUpRemark] = useState("");
 
@@ -91,6 +94,7 @@ export default function LeadDetailsPage() {
 
       setLead(data.lead);
       setStatus(data.lead.leadStatus || "new");
+      setCategory(data.lead.leadCategory || "general");
       setFollowUpDate(
         data.lead.followUpDate ? data.lead.followUpDate.slice(0, 16) : "",
       );
@@ -120,6 +124,12 @@ export default function LeadDetailsPage() {
   const updateStatus = async () => {
     await saveRequest(`${API_BASE}/employee/${id}/lead-status`, "PATCH", {
       leadStatus: status,
+    });
+  };
+
+  const updateCategory = async (leadCategory: "general" | "important") => {
+    await saveRequest(`${API_BASE}/employee/${id}/category`, "PATCH", {
+      leadCategory,
     });
   };
 
@@ -213,6 +223,7 @@ export default function LeadDetailsPage() {
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge value={lead.leadStatus || "new"} />
+              <CategoryBadge value={lead.leadCategory || "general"} />
               <Badge value={lead.source || "Website"} />
             </div>
           </div>
@@ -302,6 +313,12 @@ export default function LeadDetailsPage() {
               >
                 Save Status
               </button>
+            </div>
+          </Panel>
+
+          <Panel title="Lead Category" icon={<Star size={18} />}>
+            <div className="md:col-span-2">
+              <CategoryControl value={category} onChange={updateCategory} />
             </div>
           </Panel>
 
@@ -440,6 +457,57 @@ function formatCustomFieldLabel(value: string) {
     .replace(/([A-Z])/g, " $1")
     .replace(/[-_]/g, " ")
     .replace(/^./, (char) => char.toUpperCase());
+}
+
+function CategoryBadge({ value }: { value: "general" | "important" }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold capitalize ${categoryClass(
+        value,
+      )}`}
+    >
+      {value === "important" && <Star size={13} />}
+      {value}
+    </span>
+  );
+}
+
+function CategoryControl({
+  value,
+  onChange,
+}: {
+  value: "general" | "important";
+  onChange: (value: "general" | "important") => void;
+}) {
+  return (
+    <div className="inline-flex overflow-hidden rounded-full border border-[var(--border)] bg-[var(--background-secondary)] p-1">
+      {(["important", "general"] as const).map((category) => {
+        const active = value === category;
+        return (
+          <button
+            key={category}
+            type="button"
+            onClick={() => onChange(category)}
+            className={`flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold capitalize transition ${
+              active
+                ? categoryClass(category)
+                : "text-[var(--text-secondary)] hover:bg-[var(--card)]"
+            }`}
+          >
+            {category === "important" && <Star size={14} />}
+            {category}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function categoryClass(category: "general" | "important") {
+  return {
+    important: "bg-amber-500/15 text-amber-700 ring-1 ring-amber-500/30",
+    general: "bg-slate-500/10 text-slate-600 ring-1 ring-slate-500/20",
+  }[category];
 }
 
 function Badge({ value }: { value: string }) {

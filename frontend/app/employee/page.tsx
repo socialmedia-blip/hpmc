@@ -12,6 +12,7 @@ import {
   Phone,
   RefreshCw,
   Send,
+  Star,
   StickyNote,
   UserPlus,
 } from "lucide-react";
@@ -45,6 +46,7 @@ interface Lead {
   phone: string;
   email: string;
   leadStatus?: string;
+  leadCategory?: "general" | "important";
   followUpDate?: string | null;
   followUpRemark?: string;
   createdAt: string;
@@ -396,6 +398,12 @@ function LeadWorkCard({
             <span className="rounded-full bg-[var(--primary)]/10 px-3 py-1 text-xs font-semibold capitalize text-[var(--primary)]">
               {(lead.leadStatus || "new").replace("-", " ")}
             </span>
+            {lead.leadCategory === "important" && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-700 ring-1 ring-amber-500/30">
+                <Star size={13} />
+                Important
+              </span>
+            )}
             {lead.followUpDate && (
               <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-600">
                 {new Date(lead.followUpDate).toLocaleString()}

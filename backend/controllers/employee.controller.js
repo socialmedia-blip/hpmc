@@ -1,6 +1,10 @@
 const Employee = require("../models/employee.model");
 const Lead = require("../models/lead.model");
-const { LEAD_STATUSES, normalizeLeadStatus } = require("../models/lead.model");
+const {
+  LEAD_STATUSES,
+  normalizeLeadCategory,
+  normalizeLeadStatus,
+} = require("../models/lead.model");
 const bcrypt = require("bcryptjs");
 
 const jwt = require("jsonwebtoken");
@@ -68,6 +72,7 @@ const decorateLead = (lead) => {
 
   return {
     ...plainLead,
+    leadCategory: normalizeLeadCategory(plainLead.leadCategory),
     leadStatus: normalizeLeadStatus(plainLead.leadStatus),
     aging: {
       leadAgeDays: daysSince(plainLead.createdAt) || 0,
@@ -106,6 +111,9 @@ const buildWorkDesk = (leads) => {
       ["interested", "contacted"].includes(getLeadStatus(lead)) &&
       !(lead.activityLog || []).some((item) => item.type === "quotation"),
   );
+  const importantLeads = openLeads.filter(
+    (lead) => normalizeLeadCategory(lead.leadCategory) === "important",
+  );
 
   const interestedLeads = leads.filter(
     (lead) => getLeadStatus(lead) === "interested",
@@ -116,6 +124,7 @@ const buildWorkDesk = (leads) => {
   );
 
   const priorityLeads = [
+    ...importantLeads,
     ...overdue,
     ...dueToday,
     ...newLeads,
@@ -532,6 +541,49 @@ exports.updateLeadStatus = async (req, res) => {
   } catch (error) {
     console.error(error);
 
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
+exports.updateLeadCategory = async (req, res) => {
+  try {
+    const leadCategory = normalizeLeadCategory(req.body.leadCategory);
+    const lead = await getAssignedLead(req.params.id, req.employee.id);
+
+    if (!lead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found or not assigned to you",
+      });
+    }
+
+    const previousCategory = normalizeLeadCategory(lead.leadCategory);
+
+    lead.leadCategory = leadCategory;
+    lead.lastActivityAt = new Date();
+
+    if (previousCategory !== leadCategory) {
+      lead.activityLog.push({
+        type: "category",
+        employee: req.employee.id,
+        message: `Category changed: ${previousCategory} -> ${leadCategory}`,
+      });
+    }
+
+    await lead.save();
+    await lead.populate("assignedTo", "name email");
+    await lead.populate("notes.createdBy", "name email");
+    await lead.populate("activityLog.employee", "name email");
+
+    res.status(200).json({
+      success: true,
+      lead: decorateLead(lead),
+    });
+  } catch (error) {
+    console.error("Update Lead Category Error:", error);
     res.status(500).json({
       success: false,
       message: "Server Error",
