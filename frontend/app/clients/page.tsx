@@ -9,20 +9,39 @@ import PopupForm from "../components/Popup";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const clients = [
-  "/clients/client (1).jpg",
-  "/clients/client (2).jpg",
-  "/clients/client (3).jpg",
-  "/clients/client (4).jpg",
-  "/clients/client (5).jpg",
-  "/clients/client (6).jpg",
-  "/clients/client (8).jpg",
-];
+interface Client {
+  _id: string;
+  name: string;
+  image: string;
+}
 
 export default function Clients() {
   const [openPopup, setOpenPopup] = useState(false);
+  const [clients, setClients] = useState<Client[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
+
+  useEffect(() => {
+    const fetchClients = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/client`);
+
+        const data = await res.json();
+        console.log(data);
+
+        setClients(data.data || []);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchClients();
+  }, []);
 
   return (
     <div className="bg-[var(--background)]">
@@ -41,23 +60,58 @@ export default function Clients() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="group bg-[var(--card)] border border-[var(--border)] rounded-3xl p-6 flex items-center justify-center h-[180px] hover:border-[var(--primary)] hover:shadow-[var(--shadow-primary)] transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="relative w-full h-full">
-                  <Image
-                    src={client}
-                    alt={`Client ${index + 1}`}
-                    fill
-                    className="object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
+          {loading ? (
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="h-[190px] animate-pulse rounded-3xl border border-[var(--border)] bg-[var(--card)]"
+                >
+                  <div className="flex h-full items-center justify-center">
+                    <div className="h-20 w-36 rounded-xl bg-[var(--background-secondary)]" />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : clients.length ? (
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+              {clients.map((client) => (
+                <div
+                  key={client._id}
+                  className="group relative overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card)] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[var(--primary)] hover:shadow-[var(--shadow-primary)]"
+                >
+                  <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-transparent" />
+                  </div>
+
+                  <div className="relative flex h-[170px] items-center justify-center">
+                    <Image
+                      src={client.image}
+                      alt={client.name}
+                      fill
+                      sizes="(max-width:768px) 100vw,25vw"
+                      className="object-contain p-5 grayscale transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-3xl border border-dashed border-[var(--border)] bg-[var(--card)] py-24 text-center">
+              <Building2
+                size={60}
+                className="mx-auto text-[var(--text-secondary)]"
+              />
+
+              <h3 className="mt-6 text-2xl font-semibold">
+                No Clients Available
+              </h3>
+
+              <p className="mt-3 text-[var(--text-secondary)]">
+                Clients will appear here once added.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

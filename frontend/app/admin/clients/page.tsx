@@ -367,63 +367,88 @@ export default function AdminClient() {
 
       {!loading && !error && filteredClients.length > 0 && (
         <>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-            {currentClients.map((client) => (
-              <article
-                key={client._id}
-                className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)]/40 hover:shadow-xl"
-              >
-                <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-[var(--border)] bg-gradient-to-br from-[var(--background-secondary)] to-[var(--card)] p-7">
-                  <div className="absolute inset-0 opacity-[0.04] [background-image:radial-gradient(var(--text-primary)_1px,transparent_1px)] [background-size:16px_16px]" />
-                  <Image
-                    src={client.image}
-                    alt={`${client.name} logo`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                    className="relative z-10 object-contain p-7 transition duration-300 group-hover:scale-105"
-                  />
-                </div>
+          <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)]">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[900px]">
+                <thead className="border-b border-[var(--border)] bg-[var(--background-secondary)]">
+                  <tr>
+                    <th className="px-5 py-4 text-left text-sm font-semibold">
+                      Logo
+                    </th>
+                    <th className="px-5 py-4 text-left text-sm font-semibold">
+                      Client Name
+                    </th>
+                    <th className="px-5 py-4 text-left text-sm font-semibold">
+                      Added On
+                    </th>
+                    <th className="px-5 py-4 text-center text-sm font-semibold">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
 
-                <div className="p-5">
-                  <div className="mb-5">
-                    <p className="mb-1 text-[10px] uppercase tracking-[2px] text-[var(--primary)]">
-                      Client
-                    </p>
-                    <h2 className="truncate text-lg font-semibold text-[var(--text-primary)]">
-                      {client.name}
-                    </h2>
-                    <p className="mt-1 text-xs text-[var(--text-secondary)]">
-                      Added {new Date(client.createdAt).toLocaleDateString()}
-                    </p>
-                  </div>
+                <tbody>
+                  {currentClients.map((client) => (
+                    <tr
+                      key={client._id}
+                      className="border-b border-[var(--border)] transition hover:bg-[var(--background-secondary)] last:border-0"
+                    >
+                      {/* Logo */}
+                      <td className="px-5 py-4">
+                        <div className="relative h-14 w-20 overflow-hidden rounded-lg border border-[var(--border)] bg-white">
+                          <Image
+                            src={client.image}
+                            alt={client.name}
+                            fill
+                            className="object-contain p-2"
+                          />
+                        </div>
+                      </td>
 
-                  <div className="flex items-center gap-2 border-t border-[var(--border)] pt-4">
-                    <button
-                      type="button"
-                      onClick={() => openEditModal(client)}
-                      className="flex h-10 flex-1 items-center justify-center gap-2 rounded-xl border border-blue-500/20 bg-blue-500/5 text-sm font-medium text-blue-600 transition hover:bg-blue-500/10"
-                    >
-                      <Pencil size={15} />
-                      Edit
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleDelete(client)}
-                      disabled={deletingId === client._id}
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/5 text-red-500 transition hover:bg-red-500/10 disabled:opacity-50"
-                      title="Delete client"
-                      aria-label={`Delete ${client.name}`}
-                    >
-                      {deletingId === client._id ? (
-                        <RefreshCw size={15} className="animate-spin" />
-                      ) : (
-                        <Trash2 size={15} />
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </article>
-            ))}
+                      {/* Name */}
+                      <td className="px-5 py-4">
+                        <h3 className="font-semibold text-[var(--text-primary)]">
+                          {client.name}
+                        </h3>
+                      </td>
+
+                      {/* Created */}
+                      <td className="px-5 py-4 text-sm text-[var(--text-secondary)]">
+                        {new Date(client.createdAt).toLocaleDateString()}
+                      </td>
+
+                      {/* Actions */}
+                      <td className="px-5 py-4">
+                        <div className="flex items-center justify-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => openEditModal(client)}
+                            className="grid h-9 w-9 place-items-center rounded-lg text-blue-600 hover:bg-blue-500/10"
+                            title="Edit Client"
+                          >
+                            <Pencil size={16} />
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => handleDelete(client)}
+                            disabled={deletingId === client._id}
+                            className="grid h-9 w-9 place-items-center rounded-lg text-red-600 hover:bg-red-500/10 disabled:opacity-50"
+                            title="Delete Client"
+                          >
+                            {deletingId === client._id ? (
+                              <RefreshCw size={16} className="animate-spin" />
+                            ) : (
+                              <Trash2 size={16} />
+                            )}
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           {totalPages > 1 && (

@@ -132,26 +132,15 @@ export default function ClientModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
-      <div
-        className="
-    relative
-    w-full
-    max-w-4xl
-    max-h-[90vh]
-    overflow-hidden
-    rounded-[32px]
-    bg-[var(--card)]
-    border border-[var(--border)]
-    shadow-[0_30px_100px_rgba(0,0,0,0.35)]
-  "
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-transparent pointer-events-none" />
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4 backdrop-blur-md">
+      <div className="relative flex h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-[32px] border border-[var(--border)] bg-[var(--card)] shadow-[0_30px_100px_rgba(0,0,0,0.35)]">
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-transparent" />
+
         {/* Header */}
-        <div className="sticky top-0 z-10 bg-[var(--card)] border-b border-[var(--border)] px-8 py-6">
+        <div className="shrink-0 border-b border-[var(--border)] bg-[var(--card)] px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="uppercase tracking-[4px] text-xs text-[var(--primary)] mb-2">
+              <p className="mb-2 text-xs uppercase tracking-[4px] text-[var(--primary)]">
                 Admin Panel
               </p>
 
@@ -161,211 +150,134 @@ export default function ClientModal({
             </div>
 
             <button
+              type="button"
               onClick={onClose}
-              className="
-        h-11 w-11
-        rounded-xl
-        border border-[var(--border)]
-        flex items-center justify-center
-        hover:bg-[var(--background-secondary)]
-        transition
-      "
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] transition hover:bg-[var(--background-secondary)]"
             >
               <X size={18} />
             </button>
           </div>
         </div>
 
-        {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="overflow-y-auto max-h-[calc(90vh-180px)] p-8 space-y-6"
-        >
-          {/* Error */}
-          {error && (
-            <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-600 text-sm">
-              {error}
-            </div>
-          )}
-
-          {/* Fields */}
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="
-rounded-3xl
-border border-[var(--border)]
-bg-[var(--background-secondary)]
-p-6
-hover:border-[var(--primary)]/30
-transition
-"
-            >
-              <div className="flex justify-between items-center mb-4">
-                <p className="uppercase tracking-[3px] text-xs text-[var(--primary)]">
-                  Client {index + 1}
-                </p>
-
-                {!initialData && clients.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => removeClientField(index)}
-                    className="
-    h-9 w-9
-    rounded-xl
-    bg-red-500/10
-    text-red-500
-    flex items-center justify-center
-    hover:bg-red-500/20
-    transition
-  "
-                  >
-                    <Trash2 size={16} />
-                  </button>
-                )}
+        {/* FORM START */}
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
+          {/* Scrollable Body */}
+          <div className="flex-1 overflow-y-auto p-8">
+            {error && (
+              <div className="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+                {error}
               </div>
+            )}
 
-              {/* Name */}
-              <input
-                value={client.name}
-                onChange={(e) => handleChange(index, "name", e.target.value)}
-                placeholder="Client name"
-                className="
-                    w-full h-12 px-4 mb-4
-                    border border-[var(--border)]
-                    bg-[var(--card)]
-                    text-[var(--text-primary)]
-                    outline-none
-                    focus:border-[var(--primary)]
-                  "
-              />
-
-              {/* Upload */}
-              {!initialData && (
-                <label
-                  className="
-    group
-    relative
-    flex flex-col
-    items-center
-    justify-center
-    h-48
-    border-2
-    border-dashed
-    border-[var(--border)]
-    rounded-3xl
-    bg-[var(--card)]
-    cursor-pointer
-    hover:border-[var(--primary)]
-    transition-all
-  "
+            <div className="space-y-6">
+              {clients.map((client, index) => (
+                <div
+                  key={index}
+                  className="rounded-3xl border border-[var(--border)] bg-[var(--background-secondary)] p-6 transition hover:border-[var(--primary)]/30"
                 >
-                  {client.preview ? (
-                    <img
-                      src={client.preview}
-                      className="
-        h-28
-        object-contain
-        transition
-        group-hover:scale-105
-      "
-                    />
-                  ) : (
-                    <>
-                      <div
-                        className="
-          h-14 w-14
-          rounded-2xl
-          bg-[var(--primary)]/10
-          flex items-center justify-center
-          mb-3
-        "
+                  <div className="mb-4 flex items-center justify-between">
+                    <p className="text-xs uppercase tracking-[3px] text-[var(--primary)]">
+                      Client {index + 1}
+                    </p>
+
+                    {!initialData && clients.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => removeClientField(index)}
+                        className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-500/10 text-red-500 transition hover:bg-red-500/20"
                       >
-                        <Plus size={24} className="text-[var(--primary)]" />
-                      </div>
-
-                      <span className="font-medium text-[var(--text-primary)]">
-                        Upload Client Logo
-                      </span>
-
-                      <span className="text-sm text-[var(--text-secondary)] mt-1">
-                        PNG, JPG, WEBP
-                      </span>
-                    </>
-                  )}
+                        <Trash2 size={16} />
+                      </button>
+                    )}
+                  </div>
 
                   <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
+                    value={client.name}
                     onChange={(e) =>
-                      handleChange(index, "image", e.target.files?.[0] || null)
+                      handleChange(index, "name", e.target.value)
                     }
+                    placeholder="Client name"
+                    className="mb-4 h-12 w-full rounded-xl border border-[var(--border)] bg-[var(--card)] px-4 outline-none focus:border-[var(--primary)]"
                   />
-                </label>
+
+                  {!initialData && (
+                    <label className="group flex h-48 cursor-pointer flex-col items-center justify-center rounded-3xl border-2 border-dashed border-[var(--border)] bg-[var(--card)] transition hover:border-[var(--primary)]">
+                      {client.preview ? (
+                        <div className="relative h-28 w-40">
+                          <img
+                            src={client.preview}
+                            alt="Preview"
+                            className="h-full w-full object-contain transition group-hover:scale-105"
+                          />
+                        </div>
+                      ) : (
+                        <>
+                          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--primary)]/10">
+                            <Plus size={24} className="text-[var(--primary)]" />
+                          </div>
+
+                          <span className="font-medium">
+                            Upload Client Logo
+                          </span>
+
+                          <span className="mt-1 text-sm text-[var(--text-secondary)]">
+                            PNG, JPG, WEBP
+                          </span>
+                        </>
+                      )}
+
+                      <input
+                        type="file"
+                        accept="image/*"
+                        hidden
+                        onChange={(e) =>
+                          handleChange(
+                            index,
+                            "image",
+                            e.target.files?.[0] || null,
+                          )
+                        }
+                      />
+                    </label>
+                  )}
+                </div>
+              ))}
+
+              {!initialData && (
+                <button
+                  type="button"
+                  onClick={addClientField}
+                  className="flex items-center gap-2 text-sm font-medium text-[var(--primary)]"
+                >
+                  <Plus size={16} />
+                  Add Another Client
+                </button>
               )}
             </div>
-          ))}
-
-          {/* Add */}
-          {!initialData && (
-            <button
-              type="button"
-              onClick={addClientField}
-              className="
-                flex items-center gap-2
-                text-sm
-                text-[var(--primary)]
-              "
-            >
-              <Plus size={16} />
-              Add Another Client
-            </button>
-          )}
-        </form>
-        {/* Footer */}
-        <div
-          className="
-    sticky bottom-0
-    bg-[var(--card)]
-    border-t border-[var(--border)]
-    px-8 py-5
-  "
-        >
-          <div className="flex items-center justify-end gap-3">
-            <button
-              type="button"
-              onClick={onClose}
-              className="
-        h-12 px-6
-        rounded-xl
-        border border-[var(--border)]
-        text-[var(--text-primary)]
-        hover:bg-[var(--background-secondary)]
-        transition
-      "
-            >
-              Cancel
-            </button>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="
-        h-12 px-8
-        rounded-xl
-        bg-[var(--primary)]
-        text-white
-        font-medium
-        hover:opacity-90
-        disabled:opacity-50
-        transition
-      "
-            >
-              {loading ? "Saving..." : "Save Client"}
-            </button>
           </div>
-        </div>
+
+          {/* Footer */}
+          <div className="shrink-0 border-t border-[var(--border)] bg-[var(--card)] px-8 py-5">
+            <div className="flex items-center justify-end gap-3">
+              <button
+                type="button"
+                onClick={onClose}
+                className="h-12 rounded-xl border border-[var(--border)] px-6 transition hover:bg-[var(--background-secondary)]"
+              >
+                Cancel
+              </button>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="h-12 rounded-xl bg-[var(--primary)] px-8 font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {loading ? "Saving..." : "Save Client"}
+              </button>
+            </div>
+          </div>
+        </form>
+        {/* FORM END */}
       </div>
     </div>
   );

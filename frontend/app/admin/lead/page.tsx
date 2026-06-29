@@ -189,7 +189,9 @@ export default function AdminLead() {
           ? Boolean(lead.assignedTo)
           : !lead.assignedTo);
 
-      return matchesSearch && matchesStatus && matchesCategory && matchesAssignment;
+      return (
+        matchesSearch && matchesStatus && matchesCategory && matchesAssignment
+      );
     });
   }, [
     assignmentFilter,
@@ -637,7 +639,7 @@ export default function AdminLead() {
                     "Lead",
                     "Contact",
                     "Address",
-                    "Category",
+
                     ...(showAssignment
                       ? ["Status", "Assigned To"]
                       : ["Submitted"]),
@@ -659,14 +661,52 @@ export default function AdminLead() {
                     className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--background-secondary)]"
                   >
                     <td className="px-5 py-4">
-                      <p className="font-semibold text-[var(--text-primary)] hover:text-[var(--primary)]">
-                        {lead.name}
-                      </p>
-                      <p className="mt-1 max-w-[260px] truncate text-xs text-[var(--text-secondary)]">
-                        {String(
-                          lead.customFields?.companyName ?? "No company detail",
-                        )}
-                      </p>
+                      <div className="flex items-start gap-2">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            handleCategoryChange(
+                              lead._id,
+                              lead.leadCategory === "important"
+                                ? "general"
+                                : "important",
+                            )
+                          }
+                          className="mt-0.5 transition hover:scale-110"
+                          title={
+                            lead.leadCategory === "important"
+                              ? "Remove from Important"
+                              : "Mark as Important"
+                          }
+                        >
+                          <Star
+                            size={18}
+                            fill={
+                              lead.leadCategory === "important"
+                                ? "currentColor"
+                                : "none"
+                            }
+                            className={
+                              lead.leadCategory === "important"
+                                ? "text-amber-500"
+                                : "text-gray-400 hover:text-amber-500"
+                            }
+                          />
+                        </button>
+
+                        <div>
+                          <p className="font-semibold text-[var(--text-primary)] hover:text-[var(--primary)]">
+                            {lead.name}
+                          </p>
+
+                          <p className="mt-1 max-w-[260px] truncate text-xs text-[var(--text-secondary)]">
+                            {String(
+                              lead.customFields?.companyName ??
+                                "No company detail",
+                            )}
+                          </p>
+                        </div>
+                      </div>
                     </td>
                     <td className="px-5 py-4 text-sm">
                       <p>{lead.phone}</p>
@@ -677,14 +717,7 @@ export default function AdminLead() {
                     <td className="px-5 py-4 text-sm">
                       <p>{formatFieldValue(lead.customFields?.address)}</p>
                     </td>
-                    <td className="px-5 py-4">
-                      <CategoryControl
-                        value={lead.leadCategory || "general"}
-                        onChange={(category) =>
-                          handleCategoryChange(lead._id, category)
-                        }
-                      />
-                    </td>
+
                     {showAssignment && (
                       <>
                         <td className="px-5 py-4">
@@ -736,13 +769,6 @@ export default function AdminLead() {
 
                     <td className="px-5 py-4">
                       <div className="flex justify-end gap-2">
-                        <a
-                          href={`tel:${lead.phone}`}
-                          className="grid h-9 w-9 place-items-center rounded-lg text-green-600 hover:bg-green-500/10"
-                          title="Call"
-                        >
-                          <Phone size={16} />
-                        </a>
                         <a
                           href={`mailto:${lead.email}`}
                           className="grid h-9 w-9 place-items-center rounded-lg text-blue-600 hover:bg-blue-500/10"
@@ -960,7 +986,9 @@ function LeadModal({
                   <div className="mt-2">
                     <CategoryControl
                       value={lead.leadCategory || "general"}
-                      onChange={(category) => onCategoryChange(lead._id, category)}
+                      onChange={(category) =>
+                        onCategoryChange(lead._id, category)
+                      }
                     />
                   </div>
                 </div>

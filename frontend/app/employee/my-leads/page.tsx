@@ -332,7 +332,6 @@ export default function MyLeadsPage() {
                   "Contact",
                   "Address",
                   "Latest Note",
-                  "Category",
                   "Status",
                   "Submitted",
                   "Actions",
@@ -353,17 +352,55 @@ export default function MyLeadsPage() {
                   className="border-b border-[var(--border)] transition last:border-b-0 hover:bg-[var(--background-secondary)]"
                 >
                   <td className="px-5 py-4">
-                    <Link
-                      href={`/employee/my-leads/${lead._id}`}
-                      className="font-semibold text-[var(--text-primary)] hover:text-[var(--primary)]"
-                    >
-                      {lead.name}
-                    </Link>
-                    <p className="mt-1 max-w-[260px] truncate text-xs text-[var(--text-secondary)]">
-                      {String(
-                        lead.customFields?.companyName ?? "No company detail",
-                      )}
-                    </p>
+                    <div className="flex items-start gap-2">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          updateCategory(
+                            lead._id,
+                            lead.leadCategory === "important"
+                              ? "general"
+                              : "important",
+                          )
+                        }
+                        className="mt-0.5 transition hover:scale-110"
+                        title={
+                          lead.leadCategory === "important"
+                            ? "Remove from Important"
+                            : "Mark as Important"
+                        }
+                      >
+                        <Star
+                          size={18}
+                          fill={
+                            lead.leadCategory === "important"
+                              ? "currentColor"
+                              : "none"
+                          }
+                          className={
+                            lead.leadCategory === "important"
+                              ? "text-amber-500"
+                              : "text-gray-400 hover:text-amber-500"
+                          }
+                        />
+                      </button>
+
+                      <div>
+                        <Link
+                          href={`/employee/my-leads/${lead._id}`}
+                          className="font-semibold text-[var(--text-primary)] hover:text-[var(--primary)]"
+                        >
+                          {lead.name}
+                        </Link>
+
+                        <p className="mt-1 max-w-[260px] truncate text-xs text-[var(--text-secondary)]">
+                          {String(
+                            lead.customFields?.companyName ??
+                              "No company detail",
+                          )}
+                        </p>
+                      </div>
+                    </div>
                   </td>
                   <td className="px-5 py-4 text-sm">
                     <p className="flex items-center gap-2">
@@ -421,13 +458,6 @@ export default function MyLeadsPage() {
                         No notes yet
                       </p>
                     )}
-                  </td>
-
-                  <td className="px-5 py-4">
-                    <CategoryControl
-                      value={lead.leadCategory || "general"}
-                      onChange={(category) => updateCategory(lead._id, category)}
-                    />
                   </td>
 
                   <td className="px-5 py-4">
