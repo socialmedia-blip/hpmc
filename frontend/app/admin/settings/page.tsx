@@ -55,7 +55,10 @@ const moduleCategories = [
   {
     title: "Brand Trust",
     description: "Showcase customers and social proof across the website.",
-    modules: [{ key: "clients", label: "Clients" }],
+    modules: [
+      { key: "clients", label: "Clients" },
+      { key: "testimonials", label: "Testimonials" },
+    ],
   },
   {
     title: "Network",

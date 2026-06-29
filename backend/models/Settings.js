@@ -101,6 +101,11 @@ const settingsSchema = new mongoose.Schema({
       default: true,
     },
 
+    testimonials: {
+      type: Boolean,
+      default: true,
+    },
+
     vendors: {
       type: Boolean,
       default: true,

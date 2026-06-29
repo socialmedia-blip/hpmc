@@ -12,6 +12,7 @@ import {
   Mail,
   MonitorPlay,
   Newspaper,
+  Quote,
   PhoneCall,
   RefreshCw,
   ShieldCheck,
@@ -36,6 +37,7 @@ type ModuleKey =
   | "siteVisits"
   | "subscribers"
   | "clients"
+  | "testimonials"
   | "newsletter"
   | "blogs"
   | "agents"
@@ -99,6 +101,7 @@ const EMPTY_COLLECTIONS: DashboardCollections = {
   siteVisits: [],
   subscribers: [],
   clients: [],
+  testimonials: [],
   newsletter: [],
   blogs: [],
   agents: [],
@@ -149,6 +152,16 @@ const MODULES: ModuleConfig[] = [
     icon: <Users2 size={19} />,
     color: "cyan",
     subtitle: () => "Published profiles",
+  },
+  {
+    key: "testimonials",
+    label: "Testimonials",
+    singular: "Testimonial",
+    endpoint: "testimonial",
+    href: "/admin/testimonials",
+    icon: <Quote size={19} />,
+    color: "green",
+    subtitle: (items) => `${items.filter((item) => item.isActive !== false).length} active`,
   },
   {
     key: "newsletter",

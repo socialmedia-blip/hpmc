@@ -6,7 +6,7 @@ import Link from "next/link";
 import CTA from "./components/CTA";
 import Clients from "./components/Client";
 import PopupForm from "./components/Popup";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import FloatingContact from "./components/FloatingButton";
 import {
   Building2,
@@ -149,6 +149,15 @@ const testimonials = [
   },
 ];
 
+interface Testimonial {
+  _id?: string;
+  name: string;
+  company?: string;
+  review?: string;
+  youtubeUrl?: string;
+  rating?: number;
+}
+
 const heroSlides = [
   {
     image: "/home-hero3.png",
@@ -209,11 +218,12 @@ interface CounterProps {
 }
 
 export default function Home() {
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopup2, setOpenPopup2] = useState(false);
   const [openVideo, setOpenVideo] = useState(false);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const [homepageTestimonials, setHomepageTestimonials] =
+    useState<Testimonial[]>(testimonials);
 
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem("popupShown");
@@ -227,6 +237,34 @@ export default function Home() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const fetchTestimonials = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/testimonial?active=true`, {
+          cache: "no-store",
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.success) return;
+
+        if (!cancelled && Array.isArray(data.data) && data.data.length > 0) {
+          setHomepageTestimonials(data.data);
+        }
+      } catch (error) {
+        console.error("Failed to load testimonials", error);
+      }
+    };
+
+    if (API_BASE) void fetchTestimonials();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [API_BASE]);
+
   return (
     <div>
       <Navbar />
@@ -407,7 +445,7 @@ export default function Home() {
               <div className="pl-8">
                 <p className="text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-[750px]">
                   For more than five decades, Hindustan Plastics & Machine
-                  Corporation has been a trusted leader in India's plastic
+                  Corporation has been a trusted leader in India&apos;s plastic
                   processing and extrusion machinery industry. Since 1972, we
                   have delivered innovative, reliable, and high-performance
                   manufacturing solutions built on engineering precision,
@@ -556,15 +594,13 @@ export default function Home() {
             {/* Navigation */}
             <div className="flex items-center justify-center gap-3">
               <button
-                ref={prevRef}
-                className="w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
+                className="testimonial-prev w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
               >
                 <ArrowLeft size={20} />
               </button>
 
               <button
-                ref={nextRef}
-                className="w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
+                className="testimonial-next w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
               >
                 <ArrowRight size={20} />
               </button>
@@ -579,12 +615,8 @@ export default function Home() {
               disableOnInteraction: false,
             }}
             navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            onBeforeInit={(swiper: any) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
+              prevEl: ".testimonial-prev",
+              nextEl: ".testimonial-next",
             }}
             pagination={{
               clickable: true,
@@ -603,65 +635,92 @@ export default function Home() {
               },
             }}
           >
-            {testimonials.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="group flex h-[340px] flex-col rounded-3xl border p-6 transition-all duration-500 hover:shadow-2xl"
-                  style={{
-                    borderColor: "var(--border)",
-                  }}
-                >
-                  {/* Quote */}
-                  <div className="mb-6 flex justify-between">
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={18}
-                          className="fill-[var(--primary)] text-[var(--primary)]"
+            {homepageTestimonials.map((item, index) => {
+              const embedUrl = getYoutubeEmbedUrl(item.youtubeUrl);
+              const rating = Math.round(
+                Math.min(Math.max(item.rating || 5, 1), 5),
+              );
+
+              return (
+                <SwiperSlide key={item._id || index}>
+                  <div
+                    className="group flex h-[430px] flex-col rounded-3xl border p-5 transition-all duration-500 hover:shadow-2xl"
+                    style={{
+                      borderColor: "var(--border)",
+                    }}
+                  >
+                    {/* Quote */}
+                    <div className="mb-6 flex justify-between">
+                      <div className="flex gap-1">
+                        {[...Array(rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            size={18}
+                            className="fill-[var(--primary)] text-[var(--primary)]"
+                          />
+                        ))}
+                      </div>
+
+                      <Quote
+                        size={34}
+                        className="text-[var(--primary)] opacity-30"
+                      />
+                    </div>
+
+                    {embedUrl && (
+                      <div className="mb-5 overflow-hidden rounded-2xl border border-[var(--border)] bg-black">
+                        <iframe
+                          src={embedUrl}
+                          title={`${item.name} video testimonial`}
+                          className="aspect-video w-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
                         />
-                      ))}
+                      </div>
+                    )}
+
+                    {/* Review */}
+                    {item.review ? (
+                      <div className="mb-6 flex-1 overflow-y-auto pr-2">
+                        <p className="leading-8 text-[var(--text-secondary)]">
+                          &quot;{item.review}&quot;
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="mb-6 flex-1">
+                        <p className="text-sm leading-7 text-[var(--text-secondary)]">
+                          Watch the video review from this customer.
+                        </p>
+                      </div>
+                    )}
+
+                    {/* User */}
+                    <div className="mt-auto flex items-center gap-4 border-t pt-5 border-[var(--border)]">
+                      <div
+                        className="flex h-14 w-14 items-center justify-center rounded-full border-2 text-lg font-bold"
+                        style={{
+                          borderColor: "var(--primary)",
+                          background: "rgba(132,204,22,0.12)",
+                          color: "var(--primary)",
+                        }}
+                      >
+                        {item.name.charAt(0).toUpperCase()}
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)]">
+                          {item.name}
+                        </h4>
+
+                        <p className="text-sm text-[var(--text-secondary)]">
+                          {item.company}
+                        </p>
+                      </div>
                     </div>
-
-                    <Quote
-                      size={34}
-                      className="text-[var(--primary)] opacity-30"
-                    />
                   </div>
-
-                  {/* Review */}
-                  <div className="mb-6 flex-1 overflow-y-auto pr-2">
-                    <p className="leading-8 text-[var(--text-secondary)]">
-                      "{item.review}"
-                    </p>
-                  </div>
-
-                  {/* User */}
-                  <div className="mt-auto flex items-center gap-4 border-t pt-5 border-[var(--border)]">
-                    <div
-                      className="flex h-14 w-14 items-center justify-center rounded-full border-2 text-lg font-bold"
-                      style={{
-                        borderColor: "var(--primary)",
-                        background: "rgba(132,204,22,0.12)",
-                        color: "var(--primary)",
-                      }}
-                    >
-                      {item.name.charAt(0).toUpperCase()}
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-[var(--text-primary)]">
-                        {item.name}
-                      </h4>
-
-                      <p className="text-sm text-[var(--text-secondary)]">
-                        {item.company}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </section>
@@ -701,6 +760,29 @@ export default function Home() {
       )}
     </div>
   );
+}
+
+function getYoutubeEmbedUrl(url?: string) {
+  if (!url) return "";
+
+  try {
+    const parsedUrl = new URL(url);
+    let videoId = "";
+
+    if (parsedUrl.hostname.includes("youtu.be")) {
+      videoId = parsedUrl.pathname.replace("/", "");
+    } else if (parsedUrl.pathname.startsWith("/shorts/")) {
+      videoId = parsedUrl.pathname.split("/")[2] || "";
+    } else if (parsedUrl.pathname.startsWith("/embed/")) {
+      videoId = parsedUrl.pathname.split("/")[2] || "";
+    } else {
+      videoId = parsedUrl.searchParams.get("v") || "";
+    }
+
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : "";
+  } catch {
+    return "";
+  }
 }
 
 function Counter({ end, suffix = "" }: CounterProps) {

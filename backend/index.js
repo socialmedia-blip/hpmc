@@ -11,6 +11,7 @@ app.use(cors());
 
 app.use("/lead", require("./routes/lead.route"));
 app.use("/client", require("./routes/client.route"));
+app.use("/testimonial", require("./routes/testimonial.route"));
 app.use("/subscribers", require("./routes/subscriber.route"));
 app.use("/newsletter", require("./routes/newsletter.route"));
 app.use("/blog", require("./routes/blog.route"));

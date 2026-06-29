@@ -8,6 +8,11 @@ const getOrCreateSettings = async () => {
     settings = await Settings.create({});
   }
 
+  if (settings.modules && settings.modules.testimonials === undefined) {
+    settings.modules.testimonials = true;
+    await settings.save();
+  }
+
   return settings;
 };
 
