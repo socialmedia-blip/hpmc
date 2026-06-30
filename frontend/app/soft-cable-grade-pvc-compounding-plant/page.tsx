@@ -25,10 +25,8 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/co-rotating twing screw extruder/soft cable pvc/CO-ROTATING-TWIN-SCREW-EXTRUDER.jpg",
+  "/products/co-rotating twing screw extruder/soft cable pvc/ELECTRICALPANEL-CO-ROTATING-TWIN-SCREW-EXTRUDER.jpg",
 ];
 
 const specifications = [

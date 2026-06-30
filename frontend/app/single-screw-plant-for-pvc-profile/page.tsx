@@ -25,17 +25,18 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/pvc profile extruder/single screw/single_screw_extruder_die_head.jpg",
+  "/products/pvc profile extruder/single screw/cooling_unit.jpg",
+  "/products/pvc profile extruder/single screw/caterpuller.jpg",
+  "/products/pvc profile extruder/single screw/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
 ];
 
 const features = [
   {
     title: "Die Head",
     desc: "Precision-engineered die heads are available for pipe sizes ranging from 16mm to 160mm. Equipped with stainless steel spiders, they ensure smooth material flow, accurate sizing, and superior pipe quality.",
-    image: "/product.jpg",
+    image:
+      "/products/pvc profile extruder/single screw/single_screw_extruder_die_head.jpg",
     highlights: [
       "16mm–160mm pipe range",
       "Stainless steel spider",
@@ -46,7 +47,7 @@ const features = [
   {
     title: "Cooling Unit",
     desc: "The cooling system includes a vacuum tank for smaller pipe sizes and water tanks with spray cooling options, ensuring proper pipe sizing, uniform cooling, and dimensional stability.",
-    image: "/product.jpg",
+    image: "/products/pvc profile extruder/single screw/cooling_unit.jpg",
     highlights: [
       "Vacuum sizing tank",
       "Spray cooling system",
@@ -57,7 +58,7 @@ const features = [
   {
     title: "Caterpuller",
     desc: "Driven by separate geared motors for both haul-off rollers, the caterpuller provides smooth pipe movement, prevents wrinkles, and ensures consistent production quality.",
-    image: "/product.jpg",
+    image: "/products/pvc profile extruder/single screw/caterpuller.jpg",
     highlights: [
       "Dual geared motors",
       "Smooth pipe flow",
@@ -68,7 +69,8 @@ const features = [
   {
     title: "Automatic Cutting Unit",
     desc: "Equipped with pneumatic cylinders for secure gripping and a limit switch for accurate length sensing, ensuring precise and automated pipe cutting.",
-    image: "/product.jpg",
+    image:
+      "/products/pvc profile extruder/single screw/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
     highlights: [
       "Pneumatic gripping system",
       "Preset length sensing",
@@ -79,7 +81,7 @@ const features = [
   {
     title: "Tipping Chute",
     desc: "The tipping chute uses pneumatic cylinders and limit switch controls for efficient handling, collection, and stacking of finished pipes.",
-    image: "/product.jpg",
+    image: "/products/pvc profile extruder/single screw/tipping_chute.jpg",
     highlights: [
       "Automatic pipe stacking",
       "Pneumatic operation",

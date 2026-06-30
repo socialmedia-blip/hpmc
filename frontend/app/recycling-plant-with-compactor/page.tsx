@@ -24,10 +24,8 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/plastic-recycling-plant/Recycling plant with compactor/compacter.jpg",
+  "/products/plastic-recycling-plant/Recycling plant with compactor/compacter_prd.jpg",
 ];
 
 const faqData = [

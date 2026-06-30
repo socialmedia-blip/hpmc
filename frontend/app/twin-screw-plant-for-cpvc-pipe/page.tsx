@@ -26,17 +26,17 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/cpvc pipe extruder/conical-twin-screw-extruder.jpg",
+  "/products/cpvc pipe extruder/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
+  "/products/cpvc pipe extruder/PNEUAMTIC-HAUL-OFF.jpg",
+  "/products/cpvc pipe extruder/SPRAY-BATH-TANK.jpg",
 ];
 
 const features = [
   {
     title: "CPVC Conical Twin Screw Extruder",
     desc: "Counter-rotating conical twin screw extruder manufactured on CNC WMW German thread milling machines using simulation software. Designed for high calcium loading with compact gearbox, synchronized drives, high output, and low power consumption.",
-    image: "/product.jpg",
+    image: "/products/cpvc pipe extruder/conical-twin-screw-extruder.jpg",
     highlights: [
       "CNC machined twin screws",
       "High calcium loading capability",
@@ -47,7 +47,7 @@ const features = [
   {
     title: "Die Head",
     desc: "Manufactured from high carbon content forged alloy steel for enhanced durability, longer service life, and reliable performance during CPVC pipe production.",
-    image: "/product.jpg",
+    image: "/products/cpvc pipe extruder/ohoopee6.jpg",
     highlights: [
       "Forged alloy steel",
       "High carbon content",
@@ -58,7 +58,7 @@ const features = [
   {
     title: "Spray Bath",
     desc: "Intensive pipe cooling system equipped with multiple self-cleaning spray nozzles, axial tank adjustment on slide rails, and an acrylic transparent cover for easy inspection.",
-    image: "/product.jpg",
+    image: "/products/cpvc pipe extruder/SPRAY-BATH-TANK.jpg",
     highlights: [
       "Self-cleaning spray nozzles",
       "Axial tank adjustment",
@@ -69,7 +69,7 @@ const features = [
   {
     title: "Pneumatic Haul Off",
     desc: "Twin and multi-track haul-off system suitable for pipe sizes from 20mm to 315mm. Synchronized with the extruder through AC frequency variable drive and equipped with pneumatic pressure adjustment.",
-    image: "/product.jpg",
+    image: "/products/cpvc pipe extruder/PNEUAMTIC-HAUL-OFF.jpg",
     highlights: [
       "20mm–315mm pipe range",
       "AC drive synchronization",
@@ -80,7 +80,7 @@ const features = [
   {
     title: "Planetary Cutting Saw",
     desc: "PLC-controlled planetary cutting system for pipe diameters up to 315mm. Includes UPVC chamfering rotary cutting, dust extraction system, and hard alloy saw blades for thick-wall pipes.",
-    image: "/product.jpg",
+    image: "/products/cpvc pipe extruder/ohoopee26.jpg",
     highlights: [
       "PLC controlled operation",
       "Up to 315mm diameter",
@@ -91,7 +91,8 @@ const features = [
   {
     title: "Automatic Cutting Unit",
     desc: "Automatic cutting unit for pipes up to 200mm diameter featuring a carborundum cutter, pneumatic cylinder movements, adjustable clamping force, and length sensing limit switch.",
-    image: "/product.jpg",
+    image:
+      "/products/cpvc pipe extruder/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
     highlights: [
       "Up to 200mm pipes",
       "Low material wastage",
@@ -102,7 +103,7 @@ const features = [
   {
     title: "Tipping Chute",
     desc: "Automatic pipe stacking system operated using pneumatic cylinders and limit switches for smooth handling and efficient collection of finished pipes.",
-    image: "/product.jpg",
+    image: "/products/cpvc pipe extruder/ohoopee10.jpg",
     highlights: [
       "Automatic pipe stacking",
       "Pneumatic operation",
@@ -310,7 +311,7 @@ export default function TwinScrewPlantForCpvcPipe() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/herosection/tseHero.png')",
           }}
         />
 

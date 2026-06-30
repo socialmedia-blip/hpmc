@@ -26,10 +26,10 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/pvc profile extruder/twin screw/twin.png",
+  "/products/pvc profile extruder/twin screw/automatic.png",
+  "/products/pvc profile extruder/twin screw/cutting.png",
+  "/products/pvc profile extruder/twin screw/Vaccum-Callobration-Tank-1.jpg",
 ];
 const faqData = [
   {

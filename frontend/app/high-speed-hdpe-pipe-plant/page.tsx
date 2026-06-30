@@ -23,18 +23,13 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
-];
+const galleryImages = ["/products/HDPE pipe plant/image-7.jpg"];
 
 const features = [
   {
     title: "Spiral Type Die Head",
     desc: "Advanced spiral type die head designed to maintain stable wall thickness even at high production outputs. The low-pressure diagonal channel and spiral mixing section ensure homogeneous plasticization and efficient extrusion at lower temperatures.",
-    image: "/product.jpg",
+    image: "/products/HDPE pipe plant/SPIRAL-TYPE-DIE-HEAD.jpg",
     highlights: [
       "Pipe production up to 630mm",
       "Stable wall thickness",
@@ -45,7 +40,7 @@ const features = [
   {
     title: "Screw & Barrel",
     desc: "Equipped with a barrier-type mixing screw and hard-alloy groove feed bush, the system delivers higher output rates, consistent material flow, and excellent plasticizing performance while reducing material slippage.",
-    image: "/product.jpg",
+    image: "/products/HDPE pipe plant/screw-barrel.jpg",
     highlights: [
       "Barrier-type mixing screw",
       "Hard alloy feed bush",
@@ -56,7 +51,7 @@ const features = [
   {
     title: "PLC Control System",
     desc: "Integrated PLC-based control system with a large liquid crystal display provides convenient operation, precise process monitoring, and easy adjustment of production parameters.",
-    image: "/product.jpg",
+    image: "/products/HDPE pipe plant/plccontrol-system.jpg",
     highlights: [
       "PLC controlled operation",
       "Large LCD interface",
@@ -67,7 +62,7 @@ const features = [
   {
     title: "Vacuum Tank",
     desc: "Specially designed vacuum sizing tank ensures excellent pipe diameter accuracy and roundness, even for pipes with higher wall thickness. The high-speed spray vortex system provides uniform and efficient cooling.",
-    image: "/product.jpg",
+    image: "/products/HDPE pipe plant/Vacuum-Tank.jpg",
     highlights: [
       "Accurate pipe sizing",
       "Excellent roundness",
@@ -78,7 +73,7 @@ const features = [
   {
     title: "Multiple Arm Haul-Off",
     desc: "Heavy-duty haul-off unit with up to six arms for pipes up to 630mm diameter. Designed to maintain perfect pipe roundness while delivering smooth traction, durability, and energy-efficient performance.",
-    image: "/product.jpg",
+    image: "/products/HDPE pipe plant/Multiple-Arm-Haul-Off.jpg",
     highlights: [
       "Up to 630mm pipe diameter",
       "Six-arm configuration",
@@ -89,7 +84,7 @@ const features = [
   {
     title: "Planetary Cutting Saw",
     desc: "High-performance planetary cutting system engineered for smooth and precise pipe cutting. Designed to complement high-output extrusion lines while ensuring consistent cut quality and operational reliability.",
-    image: "/product.jpg",
+    image: "/products/HDPE pipe plant/PlANETARY-CUTTING-SAW.jpg",
     highlights: [
       "Smooth pipe cutting",
       "High cutting precision",
@@ -100,7 +95,7 @@ const features = [
   {
     title: "Double / Single Station Coiler",
     desc: "Available in both double and single station configurations for efficient pipe collection and winding. Suitable for different pipe diameters to support continuous production and easy handling.",
-    image: "/product.jpg",
+    image: "/products/HDPE pipe plant/DOUBLE-SINGLE-STATION-COILER.jpg",
     highlights: [
       "Double station up to 63mm",
       "Single station up to 110mm",

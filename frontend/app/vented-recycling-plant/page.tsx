@@ -24,10 +24,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/plastic-recycling-plant/vented recycling plant/VENTED-RECYCLING-PLANT-1-1.jpg",
 ];
 
 const faqData = [

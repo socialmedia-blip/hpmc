@@ -26,17 +26,16 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/cable extruder/high_speed_two_layer_cable.jpg",
+  "/products/cable extruder/capstan.jpg",
+  "/products/cable extruder/two_layer_die_head.jpg",
 ];
 
 const features = [
   {
     title: "Two Layer Die Head",
     desc: "Precision-engineered two-layer die head designed for uniform insulation and sheathing applications. Ensures consistent material flow, excellent concentricity, and superior cable quality.",
-    image: "/product.jpg",
+    image: "/products/cable extruder/two_layer_die_head.jpg",
     highlights: [
       "Two-layer extrusion",
       "Uniform material flow",
@@ -47,7 +46,7 @@ const features = [
   {
     title: "Capstan",
     desc: "Designed for efficient transmission of tractive forces and smooth cable movement. Suitable for cable diameters ranging from 10mm to 50mm, ensuring stable and reliable production.",
-    image: "/product.jpg",
+    image: "/products/cable extruder/capstan.jpg",
     highlights: [
       "10mm–50mm cable range",
       "Smooth traction control",
@@ -58,7 +57,7 @@ const features = [
   {
     title: "Advanced Screw Design",
     desc: "Barrier screw design provides homogeneous mixing, while the grooved barrel design delivers higher output. Equipped with powerful air blowers and cooling jackets for precise temperature control.",
-    image: "/product.jpg",
+    image: "/products/cable extruder/screw_design.png",
     highlights: [
       "Barrier screw design",
       "Grooved barrel technology",
@@ -69,7 +68,7 @@ const features = [
   {
     title: "Cross-Head",
     desc: "Available in fixed-center or die-center configurations to ensure accurate insulation and sheathing applications across a wide range of cable manufacturing requirements.",
-    image: "/product.jpg",
+    image: "/products/cable extruder/cross_head.jpg",
     highlights: [
       "Fixed center option",
       "Die center option",
@@ -80,7 +79,7 @@ const features = [
   {
     title: "Haul-Off Caterpillar",
     desc: "Pneumatically operated caterpillar haul-off system synchronized with the main extruder. Designed to allow irregularities to pass through smoothly while maintaining stable cable pulling.",
-    image: "/product.jpg",
+    image: "/products/cable extruder/haul_off_caterpillar.jpg",
     highlights: [
       "Pneumatic operation",
       "Extruder synchronized",

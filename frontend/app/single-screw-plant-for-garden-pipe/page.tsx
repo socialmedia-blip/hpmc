@@ -26,10 +26,7 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/garden pipe extruder/garden-pipe-extruder.jpg",
 ];
 
 const specifications = [
@@ -229,7 +226,7 @@ export default function SingleScrewPlantForGardenPipe() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/herosection/sseHero.png')",
           }}
         />
 

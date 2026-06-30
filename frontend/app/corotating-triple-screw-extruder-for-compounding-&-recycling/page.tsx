@@ -25,10 +25,9 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/co-rotating twing screw extruder/corotating-triple-screw-extruder-for-compounding-recycling-engineering-plastic/triple-screw-extruder-for-high-filler-main.jpg",
+  "/products/co-rotating twing screw extruder/corotating-triple-screw-extruder-for-compounding-recycling-engineering-plastic/triple-screw-extruder-for-high-filler-v1.jpg",
+  "/products/co-rotating twing screw extruder/corotating-triple-screw-extruder-for-compounding-recycling-engineering-plastic/triple-screw-extruder-for-high-filler-v2.jpg",
 ];
 
 const specifications = [

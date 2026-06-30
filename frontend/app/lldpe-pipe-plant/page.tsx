@@ -25,12 +25,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
-const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
-];
+const galleryImages = ["/products/lldpe pipe extruder/image.-12.jpg"];
 
 const specifications = [
   {
@@ -228,7 +223,7 @@ export default function LldpePipePlante() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/herosection/sseHero.png')",
           }}
         />
 

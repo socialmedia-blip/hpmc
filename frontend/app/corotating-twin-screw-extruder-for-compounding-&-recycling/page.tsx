@@ -25,10 +25,8 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
+  "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling2.jpg",
 ];
 
 const specifications = [

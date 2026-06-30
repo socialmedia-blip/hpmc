@@ -26,10 +26,10 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/pvc trunking extruder/conical-twin-screw-extruder.jpg",
+  "/products/pvc trunking extruder/PNEUAMTIC-HAUL-OFF.jpg",
+  "/products/pvc trunking extruder/SPRAY-BATH-TANK.jpg",
+  "/products/pvc trunking extruder/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
 ];
 
 const features = [
@@ -47,7 +47,7 @@ const features = [
   {
     title: "Die Head",
     desc: "Manufactured from high carbon content forged alloy steel to provide superior durability, longer service life, and reliable production performance.",
-    image: "/product.jpg",
+
     highlights: [
       "Forged alloy steel",
       "Extended service life",
@@ -58,7 +58,7 @@ const features = [
   {
     title: "Spray Bath",
     desc: "Intensive cooling system equipped with self-cleaning spray nozzles, axial tank adjustment, and an acrylic transparent cover for easy monitoring and inspection.",
-    image: "/product.jpg",
+    image: "/products/pvc trunking extruder/SPRAY-BATH-TANK.jpg",
     highlights: [
       "Self-cleaning nozzles",
       "Axial tank adjustment",
@@ -69,7 +69,7 @@ const features = [
   {
     title: "Pneumatic Haul Off",
     desc: "Twin and multi-track haul-off system suitable for pipe sizes from 20mm to 315mm. Features AC drive synchronization and pneumatic pressure adjustment for smooth operation.",
-    image: "/product.jpg",
+    image: "/products/pvc trunking extruder/PNEUAMTIC-HAUL-OFF.jpg",
     highlights: [
       "20mm–315mm pipe range",
       "AC drive synchronized",
@@ -80,7 +80,8 @@ const features = [
   {
     title: "Automatic Cutting Unit",
     desc: "Equipped with a carborundum cutter for smooth and precise cutting with minimal wastage. Pneumatic cylinders and adjustable clamping ensure accurate operation.",
-    image: "/product.jpg",
+    image:
+      "/products/pvc trunking extruder/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
     highlights: [
       "Low-wastage cutting",
       "Smooth & clean cuts",
@@ -91,7 +92,7 @@ const features = [
   {
     title: "Tipping Chute",
     desc: "Automatic pipe stacking system operated through pneumatic cylinders and limit switches for efficient handling and collection of finished products.",
-    image: "/product.jpg",
+    image: "/products/pvc trunking extruder/ohoopee10.jpg",
     highlights: [
       "Automatic stacking",
       "Pneumatic operation",

@@ -24,10 +24,8 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/plastic-recycling-plant/two-stage-recycling-plant/vented_type_extruder.jpg",
+  "/products/plastic-recycling-plant/two-stage-recycling-plant/2_stage.jpg",
 ];
 
 const specifications = [
