@@ -214,6 +214,204 @@ const productsData = [
   },
 ];
 
+const productsDataDesktop = [
+  {
+    name: "Single Screw Extruder",
+    category: "PVC Pipe Plant",
+    image: "/products/single-screw-extruder.jpg",
+    link: "/single-screw-extruder",
+  },
+  {
+    name: "Conical Twin Screw Extruder",
+    category: "PVC Pipe Plant",
+    image: "/products/conical-twin-screw-extruder.jpg",
+    link: "/twin-screw-extruder",
+  },
+  {
+    name: "PVC Conduit Pipe Plant",
+    category: "PVC Pipe Plant",
+    image: "/product.jpg",
+    link: "#",
+  },
+  {
+    name: "PVC Conduit Pipe Plant (Dual Pipes)",
+    category: "PVC Pipe Plant",
+    image: "/products/PVC-CONDUIT-PIPE-PLANT-two-PIPES-1.jpg",
+    link: "/pvc-conduit-pipe-plant-two-pipes",
+  },
+  {
+    name: "PVC Conduit Pipe Plant (Four Pipes)",
+    category: "PVC Pipe Plant",
+    image: "/products/PVC-CONDUIT-PIPE-PLANT-FOUR-PIPES-1.jpg",
+    link: "/pvc-conduit-pipe-plant-four-pipes",
+  },
+
+  {
+    name: "Two Stage Recycling Plant",
+    category: "Plastic Recycling Plant",
+    image: "/product.jpg",
+    link: "/two-stage-recycling-plant",
+  },
+  {
+    name: "Vented Recycling Plant",
+    category: "Plastic Recycling Plant",
+    image: "/products/VENTED-RECYCLING-PLANT-1-1.jpg",
+    link: "/vented-recycling-plant",
+  },
+  {
+    name: "Recycling Plant With Compactor",
+    category: "Plastic Recycling Plant",
+    image: "/products/recycling-plant-with-compacter.jpg",
+    link: "/recycling-plant-with-compactor",
+  },
+  {
+    name: "Co-Rotating Twin Screw Extruder",
+    category: "Plastic Recycling Plant",
+    image: "/product.jpg",
+    link: "#",
+  },
+
+  {
+    name: "Single + Twin Screw Extruder",
+    category: "Co-Rotating Twin Screw Extruder",
+    image: "/product.jpg",
+    link: "#",
+  },
+  {
+    name: "Corotating Twin Screw Extruder for Compounding & Recycling",
+    category: "Co-Rotating Twin Screw Extruder",
+    image:
+      "/products/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
+    link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "Corotating Triple Screw Extruder for Compounding & Recycling (Engineering Plastic)",
+    category: "Co-Rotating Twin Screw Extruder",
+    image:
+      "/products/corotating-triple-screw-extruder-for-compounding-recycling.jpg",
+    link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "Soft Cable Grade PVC Compounding Plant",
+    category: "Co-Rotating Twin Screw Extruder",
+    image: "/products/soft-cable-grade-pvc-compunding-plant.jpg",
+    link: "/soft-cable-grade-pvc-compounding-plant",
+  },
+
+  {
+    name: "High Speed HDPE Pipe Plant",
+    category: "HDPE Pipe Plant",
+    image: "/products/hdpe-pipe-plant.jpg",
+    link: "/high-speed-hdpe-pipe-plant",
+  },
+
+  {
+    name: "Single Screw Plant for PVC Compounding",
+    category: "PVC Compounding Extruder",
+    image: "/product.jpg",
+    link: "#",
+  },
+  {
+    name: "Conical Twin Screw Plant for PVC Compounding",
+    category: "PVC Compounding Extruder",
+    image: "/product.jpg",
+    link: "/pvc-compounding",
+  },
+  {
+    name: "Co-Rotating Two Stage Extruder",
+    category: "PVC Compounding Extruder",
+    image: "/product.jpg",
+    link: "#",
+  },
+
+  {
+    name: "Single Screw Plant for PVC Profile",
+    category: "PVC Profile Extruder",
+    image: "/product.jpg",
+    link: "/single-screw-plant-for-pvc-profile",
+  },
+  {
+    name: "Conical Twin Screw Plant for PVC Profile",
+    category: "PVC Profile Extruder",
+    image: "/products/TWIN-SCREW-PLANT-FOR-PVC-PROFILE.jpeg",
+    link: "/twin-screw-plant-for-pvc-profile",
+  },
+
+  {
+    name: "Single Screw Plant for Single Layer PPR Pipe",
+    category: "PPR Pipe Extruder",
+    image: "/products/PPr-Pipe-extruder.jpg",
+    link: "/ppr-pipe-extruder",
+  },
+  {
+    name: "Single Screw Plant for Three Layer PPR Pipe",
+    category: "PPR Pipe Extruder",
+    image: "/product.jpg",
+    link: "#",
+  },
+
+  {
+    name: "High Speed Two Layer Cable Plant",
+    category: "Cable Extruder",
+    image: "/products/high_speed_two_layer_cable.jpg",
+    link: "/high-speed-two-layer-cable-plant",
+  },
+
+  {
+    name: "Twin Screw Plant for PVC Trunking",
+    category: "PVC Trunking Extruder",
+    image: "/product.jpg",
+    link: "/twin-screw-plant-for-pvc-trunking",
+  },
+
+  {
+    name: "Single Screw Plant for Garden Pipe",
+    category: "Garden Pipe Extruder",
+    image: "/products/single-screw-plant-for-soft-garden-pipe.jpg",
+    link: "/single-screw-plant-for-garden-pipe",
+  },
+  {
+    name: "Three Layer Single Screw Plant for Garden Pipe",
+    category: "Garden Pipe Extruder",
+    image: "/product.jpg",
+    link: "#",
+  },
+
+  {
+    name: "LLDPE Lay Flat Pipe Plant",
+    category: "LLDPE Pipe Extruder",
+    image: "/products/lldpe-pipe-plant.jpg",
+    link: "/lldpe-pipe-plant",
+  },
+
+  {
+    name: "Conical Twin Screw Plant for CPVC Pipe",
+    category: "CPVC Pipe Extruder",
+    image: "/product.jpg",
+    link: "/twin-screw-plant-for-cpvc-pipe",
+  },
+  {
+    name: "Conical Twin Screw Plant for Dual CPVC Pipe",
+    category: "CPVC Pipe Extruder",
+    image: "/product.jpg",
+    link: "#",
+  },
+
+  {
+    name: "WPC Profile (Chokhat) Plant",
+    category: "WPC Profile Plant",
+    image: "/product.jpg",
+    link: "#",
+  },
+
+  {
+    name: "WPC Board Plant",
+    category: "WPC Board Plant",
+    image: "/product.jpg",
+    link: "#",
+  },
+];
+
 const companyMenu = [
   {
     name: "About Us",
@@ -364,6 +562,7 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(0);
 
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [desktopMegaMenu, setDesktopMegaMenu] = useState(false);
 
   const [mobileProduct, setMobileProduct] = useState(false);
   const [mobileContact, setMobileContact] = useState(false);
@@ -490,8 +689,9 @@ export default function Navbar() {
 
               {/* PRODUCTS */}
               <div
-                className="relative group h-full flex items-center"
-                onMouseLeave={() => setActiveDropdown(null)}
+                className="group h-full flex items-center"
+                onMouseEnter={() => setDesktopMegaMenu(true)}
+                onMouseLeave={() => setDesktopMegaMenu(false)}
               >
                 <button
                   className={`flex items-center gap-1 text-[14px] uppercase font-semibold tracking-wide transition h-full ${
@@ -500,7 +700,6 @@ export default function Navbar() {
                       : "text-[var(--text-primary)] hover:text-[var(--primary)]"
                   }`}
                 >
-                  {" "}
                   Products
                   <ChevronDown size={16} />
                 </button>
@@ -508,44 +707,6 @@ export default function Navbar() {
                 {isProductActive && (
                   <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--primary)] rounded-full" />
                 )}
-
-                {/* DROPDOWN */}
-                <div className="absolute top-full left-0 mt-0 w-[340px] bg-[var(--card)] shadow-[var(--shadow-primary)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-[var(--border)]">
-                  {productsData.map((item, index) => (
-                    <div
-                      key={index}
-                      className="relative"
-                      onMouseEnter={() => setActiveDropdown(index)}
-                    >
-                      {/* LEFT */}
-                      <div className="flex items-center justify-between px-4 py-1 hover:bg-[var(--muted)] cursor-pointer transition">
-                        <span className="text-[var(--text-secondary)] font-medium">
-                          {item.title}
-                        </span>
-
-                        <ChevronRight
-                          size={16}
-                          className="text-[var(--text-secondary)]"
-                        />
-                      </div>
-
-                      {/* RIGHT */}
-                      {activeDropdown === index && (
-                        <div className="absolute left-full top-0 w-[350px] bg-[var(--card)] shadow-[var(--shadow-primary)] border border-[var(--border)]">
-                          {item.children.map((child, i) => (
-                            <Link
-                              href={child.link}
-                              key={i}
-                              className="block px-4 py-1 hover:bg-[var(--muted)] hover:text-[var(--primary)] transition text-[var(--text-secondary)]"
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* SERVICES */}
@@ -672,6 +833,44 @@ export default function Navbar() {
                 </div>
               </div>
             </nav>
+
+            {desktopMegaMenu && (
+              <div
+                className="absolute left-0 top-full w-full bg-[var(--card)] border-t border-[var(--border)] shadow-2xl z-50"
+                onMouseEnter={() => setDesktopMegaMenu(true)}
+                onMouseLeave={() => setDesktopMegaMenu(false)}
+              >
+                <div className="max-w-7xl mx-auto px-6 py-8 max-h-[75vh] overflow-y-auto">
+                  <div className="grid grid-cols-6  gap-5">
+                    {productsDataDesktop.map((product) => (
+                      <Link
+                        key={product.name}
+                        href={product.link}
+                        className="group rounded-xl border border-[var(--border)] bg-[var(--background)] overflow-hidden hover:border-[var(--primary)] hover:shadow-lg transition-all duration-300"
+                      >
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          width={300}
+                          height={180}
+                          className="w-full h-28 object-cover"
+                        />
+
+                        <div className="p-3">
+                          <p className="text-[11px] uppercase tracking-wider text-[var(--primary)] mb-1">
+                            {product.category}
+                          </p>
+
+                          <h4 className="text-[13px] font-semibold text-[var(--text-primary)] group-hover:text-[var(--primary)] transition">
+                            {product.name}
+                          </h4>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* RIGHT SIDE */}
             <div className="flex items-center gap-4">
