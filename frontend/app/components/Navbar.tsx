@@ -689,7 +689,7 @@ export default function Navbar() {
 
               {/* PRODUCTS */}
               <div
-                className="group h-full flex items-center"
+                className="relative group h-full flex items-center"
                 onMouseEnter={() => setDesktopMegaMenu(true)}
                 onMouseLeave={() => setDesktopMegaMenu(false)}
               >
