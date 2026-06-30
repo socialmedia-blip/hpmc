@@ -24,10 +24,10 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/conical-twin-screw-extruder.jpg",
+  "/products/pcpptp.jpg",
+  "/products/pcpptp2.jpg",
+  "/products/pcpptp3.jpg",
 ];
 
 const faqData = [
@@ -112,7 +112,7 @@ const features = [
   {
     title: "Dual Pipe Die Head",
     desc: "Designed for smaller pipe sizes ranging from 16mm to 50mm, the dual pipe die head is equipped with a stainless steel spider and advanced flow channel design. It enables the production of two pipes from a single mould, reducing production costs while ensuring uniform PVC distribution, temperature, and pressure across both pipes.",
-    image: "/product.jpg",
+    image: "/products/pcpptp.jpg",
     highlights: [
       "16mm–50mm pipe range",
       "Dual pipe production from single mould",
@@ -123,7 +123,7 @@ const features = [
   {
     title: "Dual Pipe Vacuum Tank",
     desc: "Constructed from stainless steel, the dual pipe vacuum tank ensures uninterrupted production by allowing one pipe line to continue operating even if the other is stopped. It features separate vacuum and water pumps for each vacuum chamber, minimizing material wastage and improving efficiency.",
-    image: "/product.jpg",
+    image: "/products/pcpptp2.jpg",
     highlights: [
       "Stainless steel construction",
       "Independent vacuum chambers",
@@ -134,7 +134,7 @@ const features = [
   {
     title: "Dual Pipe Take-Up / Haul-Off",
     desc: "Engineered to provide traction at two different speeds, enabling simultaneous production of pipes with varying diameters. The system is powered by four geared motors driving all four belts, synchronized through an AC frequency variable drive. Pneumatic cylinders allow precise track adjustment, while PLC control ensures smooth operation.",
-    image: "/product.jpg",
+    image: "/products/pcpptp3.jpg",
     highlights: [
       "Dual-speed pipe traction",
       "Four geared motor drive system",
@@ -145,7 +145,6 @@ const features = [
   {
     title: "Dual Pipe Cutting Unit",
     desc: "Designed to cut two pipes independently at different lengths and timings. The cutting length can be accurately set through the tipping chute limit switch, while the high-speed blade delivers clean and precise cuts. The entire system operates through a PLC-controlled mechanism for reliable performance.",
-    image: "/product.jpg",
     highlights: [
       "Independent dual-pipe cutting",
       "Adjustable cutting length",
@@ -734,14 +733,16 @@ export default function PvcConduitPipePlantTwoPipes() {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="relative bg-gradient-to-br from-white to-[#f5f7f8]">
-                      <Image
-                        src={feature.image}
-                        alt={feature.title}
-                        fill
-                        className="object-contain p-8"
-                      />
-                    </div>
+                    {feature.image && (
+                      <div className="relative min-h-[380px] bg-gradient-to-br from-white to-[#f5f7f8]">
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          className="object-contain p-8"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -833,9 +834,9 @@ export default function PvcConduitPipePlantTwoPipes() {
         </div>
       </section> */}
 
-      <section className="py-16 bg-[var(--background)]">
+      {/* <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
-          {/* Heading */}
+        
           <div className="text-center mb-16">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
               Product Showcase
@@ -853,9 +854,9 @@ export default function PvcConduitPipePlantTwoPipes() {
             </p>
           </div>
 
-          {/* Main Layout */}
+         
           <div>
-            {/* Video */}
+         
             <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-[var(--border)] shadow-xl">
               <video
                 ref={videoRef}
@@ -883,7 +884,7 @@ export default function PvcConduitPipePlantTwoPipes() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">

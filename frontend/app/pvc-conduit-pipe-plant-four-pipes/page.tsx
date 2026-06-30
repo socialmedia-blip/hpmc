@@ -24,10 +24,9 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
+  "/products/PVC-CONDUIT-PIPE-PLANT-FOUR-PIPES-1.jpg",
+  "/products/pcppfp2.jpg",
+  "/products/pcppfp4.jpg",
 ];
 
 const faqData = [
@@ -112,7 +111,6 @@ const features = [
   {
     title: "Four Pipe Die Head",
     desc: "Designed for pipe sizes ranging from 16mm to 32mm, the four pipe die head features a stainless steel spider and advanced flow channel design. It enables simultaneous production of four pipes from a single mould, ensuring lower production costs with uniform PVC distribution, temperature, and pressure across all pipes.",
-    image: "/product.jpg",
     highlights: [
       "16mm–32mm pipe range",
       "Four pipe production from single mould",
@@ -123,7 +121,7 @@ const features = [
   {
     title: "Four Pipe Vacuum Tank",
     desc: "Manufactured from stainless steel, the four pipe vacuum tank minimizes material wastage by allowing continued production even if one pipe line is stopped. The vacuum sections operate independently, ensuring stable performance and uninterrupted production.",
-    image: "/product.jpg",
+    image: "/products/pcppfp2.jpg",
     highlights: [
       "Stainless steel construction",
       "Independent vacuum sections",
@@ -134,7 +132,6 @@ const features = [
   {
     title: "Four Pipe Haul-Off",
     desc: "Engineered to provide traction at different speeds for pipes of varying diameters. The system is driven by four independent geared motors powering all four belts. Pneumatic cylinders adjust track spacing, while chain-driven rubber pads prevent pipe slippage even at high line speeds.",
-    image: "/product.jpg",
     highlights: [
       "Four independent geared motors",
       "Pneumatic track adjustment",
@@ -145,7 +142,7 @@ const features = [
   {
     title: "Four Pipe Cutting Unit",
     desc: "Designed for accurate cutting of multiple pipes at different lengths and timings. The cutting length is controlled through the tipping chute limit switch, while a specialized high-speed blade ensures smooth and precise cuts. The entire operation is PLC controlled for reliable performance.",
-    image: "/product.jpg",
+    image: "/products/pcppfp2.jpg",
     highlights: [
       "PLC controlled operation",
       "Adjustable cutting length",
@@ -703,14 +700,16 @@ export default function PvcConduitPipePlantFourPipes() {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="relative bg-gradient-to-br from-white to-[#f5f7f8]">
-                      <Image
-                        src={feature.image}
-                        alt={feature.title}
-                        fill
-                        className="object-contain p-8"
-                      />
-                    </div>
+                    {feature.image && (
+                      <div className="relative min-h-[380px] bg-gradient-to-br from-white to-[#f5f7f8]">
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          className="object-contain p-8"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -802,9 +801,9 @@ export default function PvcConduitPipePlantFourPipes() {
         </div>
       </section> */}
 
-      <section className="py-16 bg-[var(--background)]">
+      {/* <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
-          {/* Heading */}
+         
           <div className="text-center mb-16">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
               Product Showcase
@@ -822,9 +821,9 @@ export default function PvcConduitPipePlantFourPipes() {
             </p>
           </div>
 
-          {/* Main Layout */}
+     
           <div>
-            {/* Video */}
+           
             <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-[var(--border)] shadow-xl">
               <video
                 ref={videoRef}
@@ -852,7 +851,7 @@ export default function PvcConduitPipePlantFourPipes() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
