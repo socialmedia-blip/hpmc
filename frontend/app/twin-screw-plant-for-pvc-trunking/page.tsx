@@ -580,14 +580,16 @@ export default function TwinScrewPlantForPVCTrunking() {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="relative bg-gradient-to-br from-white to-[#f5f7f8]">
-                      <Image
-                        src={feature.image}
-                        alt={feature.title}
-                        fill
-                        className="object-contain p-8"
-                      />
-                    </div>
+                    {feature.image && (
+                      <div className="relative min-h-[380px] bg-gradient-to-br from-white to-[#f5f7f8]">
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          className="object-contain p-8"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
