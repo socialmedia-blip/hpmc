@@ -23,9 +23,9 @@ import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
   "/products/single-screw-extruder.jpg",
-  "/products/sse2.jpg",
-  "/products/sse3.jpg",
-  "/products/sse4.jpg",
+  "/products/sse/sse2.jpg",
+  "/products/sse/sse3.jpg",
+  "/products/sse/sse4.jpg",
 ];
 
 const faqData = [
@@ -97,7 +97,7 @@ const features = [
   {
     title: "Precision Die Head",
     desc: "Engineered for accurate pipe formation, the die head is available for pipe sizes ranging from 16mm to 160mm and is equipped with a stainless-steel spider for superior flow distribution and dimensional accuracy.",
-    image: "/products/sse1.jpg",
+    image: "/products/sse/sse1.jpg",
 
     highlights: [
       "16mm – 160mm pipe range",
@@ -109,7 +109,7 @@ const features = [
   {
     title: "Advanced Cooling Unit",
     desc: "The vacuum and water cooling system ensures precise pipe dimensions, excellent surface finish, and efficient cooling performance for consistent production quality.",
-    image: "/products/sse2.jpg",
+    image: "/products/sse/sse2.jpg",
 
     highlights: [
       "Vacuum tank for 16mm – 50mm pipes",
@@ -121,7 +121,7 @@ const features = [
   {
     title: "Heavy-Duty Caterpuller",
     desc: "Equipped with independent geared motors for both rollers, the caterpuller delivers smooth pipe movement while preventing wrinkles and maintaining stable production speed.",
-    image: "/products/sse3.jpg",
+    image: "/products/sse/sse3.jpg",
 
     highlights: [
       "Dual geared motor drive",
@@ -133,7 +133,7 @@ const features = [
   {
     title: "Automatic Cutting System",
     desc: "The automatic cutting unit features pneumatic clamping and length sensing technology to provide accurate, clean, and repeatable pipe cutting operations.",
-    image: "/products/sse4.jpg",
+    image: "/products/sse/sse4.jpg",
 
     highlights: [
       "Pneumatic holding system",
@@ -145,7 +145,7 @@ const features = [
   {
     title: "High-Precision Cutting Saw",
     desc: "Designed for reliable and clean pipe cutting, the cutting saw is equipped with a pneumatic cylinder and limit switch mechanism for precise length measurement and operation.",
-    image: "/products/sse5.jpg",
+    image: "/products/sse/sse5.jpg",
 
     highlights: [
       "Clean & accurate cuts",

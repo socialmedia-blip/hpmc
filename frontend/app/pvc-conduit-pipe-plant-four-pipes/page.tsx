@@ -25,8 +25,8 @@ import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
   "/products/PVC-CONDUIT-PIPE-PLANT-FOUR-PIPES-1.jpg",
-  "/products/pcppfp2.jpg",
-  "/products/pcppfp4.jpg",
+  "/products/pcppfp/pcppfp2.jpg",
+  "/products/pcppfp/pcppfp4.jpg",
 ];
 
 const faqData = [
@@ -121,7 +121,7 @@ const features = [
   {
     title: "Four Pipe Vacuum Tank",
     desc: "Manufactured from stainless steel, the four pipe vacuum tank minimizes material wastage by allowing continued production even if one pipe line is stopped. The vacuum sections operate independently, ensuring stable performance and uninterrupted production.",
-    image: "/products/pcppfp2.jpg",
+    image: "/products/pcppfp/pcppfp2.jpg",
     highlights: [
       "Stainless steel construction",
       "Independent vacuum sections",
@@ -142,7 +142,7 @@ const features = [
   {
     title: "Four Pipe Cutting Unit",
     desc: "Designed for accurate cutting of multiple pipes at different lengths and timings. The cutting length is controlled through the tipping chute limit switch, while a specialized high-speed blade ensures smooth and precise cuts. The entire operation is PLC controlled for reliable performance.",
-    image: "/products/pcppfp2.jpg",
+    image: "/products/pcppfp/pcppfp4.jpg",
     highlights: [
       "PLC controlled operation",
       "Adjustable cutting length",

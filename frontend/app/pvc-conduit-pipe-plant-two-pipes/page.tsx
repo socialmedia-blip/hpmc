@@ -25,9 +25,9 @@ import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
   "/products/conical-twin-screw-extruder.jpg",
-  "/products/pcpptp.jpg",
-  "/products/pcpptp2.jpg",
-  "/products/pcpptp3.jpg",
+  "/products/pcpptp/pcpptp.jpg",
+  "/products/pcpptp/pcpptp2.jpg",
+  "/products/pcpptp/pcpptp3.jpg",
 ];
 
 const faqData = [
@@ -112,7 +112,7 @@ const features = [
   {
     title: "Dual Pipe Die Head",
     desc: "Designed for smaller pipe sizes ranging from 16mm to 50mm, the dual pipe die head is equipped with a stainless steel spider and advanced flow channel design. It enables the production of two pipes from a single mould, reducing production costs while ensuring uniform PVC distribution, temperature, and pressure across both pipes.",
-    image: "/products/pcpptp.jpg",
+    image: "/products/pcpptp/pcpptp.jpg",
     highlights: [
       "16mm–50mm pipe range",
       "Dual pipe production from single mould",
@@ -123,7 +123,7 @@ const features = [
   {
     title: "Dual Pipe Vacuum Tank",
     desc: "Constructed from stainless steel, the dual pipe vacuum tank ensures uninterrupted production by allowing one pipe line to continue operating even if the other is stopped. It features separate vacuum and water pumps for each vacuum chamber, minimizing material wastage and improving efficiency.",
-    image: "/products/pcpptp2.jpg",
+    image: "/products/pcpptp/pcpptp2.jpg",
     highlights: [
       "Stainless steel construction",
       "Independent vacuum chambers",
@@ -134,7 +134,7 @@ const features = [
   {
     title: "Dual Pipe Take-Up / Haul-Off",
     desc: "Engineered to provide traction at two different speeds, enabling simultaneous production of pipes with varying diameters. The system is powered by four geared motors driving all four belts, synchronized through an AC frequency variable drive. Pneumatic cylinders allow precise track adjustment, while PLC control ensures smooth operation.",
-    image: "/products/pcpptp3.jpg",
+    image: "/products/pcpptp/pcpptp3.jpg",
     highlights: [
       "Dual-speed pipe traction",
       "Four geared motor drive system",
