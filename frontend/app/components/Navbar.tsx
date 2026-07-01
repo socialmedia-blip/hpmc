@@ -59,7 +59,7 @@ const productsData = [
       },
       {
         name: "Co-Rotating Twin Screw Extruder",
-        link: "#",
+        link: "/co-rotating-twin-screw-extruder",
       },
     ],
   },
@@ -268,7 +268,7 @@ const productsDataDesktop = [
     name: "Co-Rotating Twin Screw Extruder",
     category: "Plastic Recycling Plant",
     image: "/product.jpg",
-    link: "#",
+    link: "/co-rotating-twin-screw-extruder",
   },
 
   {
