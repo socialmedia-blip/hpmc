@@ -113,6 +113,9 @@ export default function CorotatingTwinScrewExtruder() {
   const [isZooming, setIsZooming] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
   const [active, setActive] = useState<number | null>(0);
   const [showAllFaqs, setShowAllFaqs] = useState(false);
 
@@ -139,6 +142,22 @@ export default function CorotatingTwinScrewExtruder() {
       x: Math.max(0, Math.min(100, x)),
       y: Math.max(0, Math.min(100, y)),
     });
+  };
+
+  const toggleVideo = async () => {
+    if (!videoRef.current) return;
+
+    if (playing) {
+      videoRef.current.pause();
+      setPlaying(false);
+    } else {
+      try {
+        await videoRef.current.play();
+        setPlaying(true);
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
 
   return (
@@ -406,6 +425,55 @@ export default function CorotatingTwinScrewExtruder() {
                   Request Quote
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-[var(--background)]">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
+              Product Showcase
+            </span>
+
+            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
+              See Our Machine
+              <span className="text-[var(--primary)]"> In Action</span>
+            </h2>
+
+            <p className="mt-5 max-w-3xl mx-auto text-[var(--text-secondary)]">
+              Explore detailed machine visuals and watch real production
+              demonstrations to understand the performance and quality of our
+              extrusion systems.
+            </p>
+          </div>
+
+          <div>
+            <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-[var(--border)] shadow-xl">
+              <video
+                ref={videoRef}
+                controls
+                poster="/videos/co-rotating.png"
+                className="w-full h-full object-cover"
+                onPlay={() => setPlaying(true)}
+                onPause={() => setPlaying(false)}
+              >
+                <source src="/videos/CO-ROTATING.mp4" type="video/mp4" />
+              </video>
+
+              {!playing && (
+                <>
+                  <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+
+                  <button
+                    onClick={toggleVideo}
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white shadow-2xl flex items-center justify-center hover:scale-110 transition-all"
+                  >
+                    <Play size={34} className="ml-1 text-[var(--primary)]" />
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>

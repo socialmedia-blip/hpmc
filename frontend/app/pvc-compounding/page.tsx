@@ -774,12 +774,12 @@ export default function PVCCompounding() {
               <video
                 ref={videoRef}
                 controls
-                poster="/capture.png"
+                poster="/videos/pvc-compounding.png"
                 className="w-full h-full object-cover"
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
               >
-                <source src="/abc.mp4" type="video/mp4" />
+                <source src="/videos/PVC-COMPOUNDING.mp4" type="video/mp4" />
               </video>
 
               {!playing && (

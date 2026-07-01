@@ -593,15 +593,11 @@ export default function Home() {
 
             {/* Navigation */}
             <div className="flex items-center justify-center gap-3">
-              <button
-                className="testimonial-prev w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
-              >
+              <button className="testimonial-prev w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300">
                 <ArrowLeft size={20} />
               </button>
 
-              <button
-                className="testimonial-next w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300"
-              >
+              <button className="testimonial-next w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--text-primary)] hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-300">
                 <ArrowRight size={20} />
               </button>
             </div>
@@ -751,7 +747,7 @@ export default function Home() {
             {/* Video */}
             <div className="overflow-hidden rounded-2xl bg-black shadow-2xl">
               <video controls preload="metadata" className="w-full h-auto">
-                <source src="/abc.mp4" type="video/mp4" />
+                <source src="/videos/intro.mp4" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
             </div>
