@@ -155,7 +155,6 @@ export default function CorotatingTwinScrewExtruder() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
 
         {/* Content */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">

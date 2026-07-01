@@ -61,6 +61,10 @@ const productsData = [
         name: "Co-Rotating Twin Screw Extruder",
         link: "/co-rotating-twin-screw-extruder",
       },
+      {
+        name: "Compactor type Extruder",
+        link: "/compactor-type-extruder",
+      },
     ],
   },
   {
@@ -100,7 +104,7 @@ const productsData = [
     children: [
       {
         name: "Single Screw Plant for PVC Compounding",
-        link: "#",
+        link: "/single-screw-plant-for-pvc-compounding",
       },
       {
         name: "Conical Twin Screw Plant for PVC Compounding",
@@ -168,7 +172,7 @@ const productsData = [
       },
       {
         name: "Three Layer Single Screw Plant for Garden Pipe",
-        link: "#",
+        link: "/three-layer-single-screw-plant-for-garden-pipe",
       },
     ],
   },
@@ -209,6 +213,24 @@ const productsData = [
       {
         name: "WPC Board Plant",
         link: "/wpc-board-plant",
+      },
+    ],
+  },
+  {
+    title: "Single Shaft Shredder",
+    children: [
+      {
+        name: "Single Shaft Shredder",
+        link: "/single-shaft-shredder",
+      },
+    ],
+  },
+  {
+    title: "Laser Filter",
+    children: [
+      {
+        name: "Self Cleaning Laser Filter",
+        link: "/self-cleaning-laser-filter",
       },
     ],
   },
@@ -270,6 +292,12 @@ const productsDataDesktop = [
     image: "/product.jpg",
     link: "/co-rotating-twin-screw-extruder",
   },
+  {
+    name: "Compactor type Extruder",
+    category: "Plastic Recycling Plant",
+    image: "/product.jpg",
+    link: "/compactor-type-extruder",
+  },
 
   {
     name: "Single + Twin Screw Extruder",
@@ -309,7 +337,7 @@ const productsDataDesktop = [
     name: "Single Screw Plant for PVC Compounding",
     category: "PVC Compounding Extruder",
     image: "/product.jpg",
-    link: "#",
+    link: "/single-screw-plant-for-pvc-compounding",
   },
   {
     name: "Conical Twin Screw Plant for PVC Compounding",
@@ -374,7 +402,7 @@ const productsDataDesktop = [
     name: "Three Layer Single Screw Plant for Garden Pipe",
     category: "Garden Pipe Extruder",
     image: "/product.jpg",
-    link: "#",
+    link: "/three-layer-single-screw-plant-for-garden-pipe",
   },
 
   {
@@ -409,6 +437,18 @@ const productsDataDesktop = [
     category: "WPC Board Plant",
     image: "/product.jpg",
     link: "/wpc-board-plant",
+  },
+  {
+    name: "Single Shaft Shredder",
+    category: "Single Shaft Shredder",
+    image: "/product.jpg",
+    link: "/single-shaft-shredder",
+  },
+  {
+    name: "Shelf Cleaning Laser Filter",
+    category: "Laser Filter",
+    image: "/product.jpg",
+    link: "/shelf-cleaning-laser-filter",
   },
 ];
 
