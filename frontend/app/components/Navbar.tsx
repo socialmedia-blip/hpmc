@@ -199,7 +199,7 @@ const productsData = [
     children: [
       {
         name: "WPC Profile (Chokhat) Plant",
-        link: "#",
+        link: "/wpc-profile-plant",
       },
     ],
   },
@@ -208,7 +208,7 @@ const productsData = [
     children: [
       {
         name: "WPC Board Plant",
-        link: "#",
+        link: "/wpc-board-plant",
       },
     ],
   },
@@ -401,14 +401,14 @@ const productsDataDesktop = [
     name: "WPC Profile (Chokhat) Plant",
     category: "WPC Profile Plant",
     image: "/product.jpg",
-    link: "#",
+    link: "/wpc-profile-plant",
   },
 
   {
     name: "WPC Board Plant",
     category: "WPC Board Plant",
     image: "/product.jpg",
-    link: "#",
+    link: "/wpc-board-plant",
   },
 ];
 
