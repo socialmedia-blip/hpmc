@@ -48,12 +48,15 @@ export default function RootLayout({
 
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-            gtag('config', 'G-6NZ6SEW5PP');
-          `}
+    gtag('config', 'G-6NZ6SEW5PP', {
+      page_path: window.location.pathname,
+      send_page_view: true,
+    });
+  `}
         </Script>
       </body>
     </html>
