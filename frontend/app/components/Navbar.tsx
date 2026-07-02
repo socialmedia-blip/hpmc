@@ -435,30 +435,30 @@ const companyMenu = [
     name: "Our Journey",
     link: "/our-journey",
   },
-  {
-    name: "Leadership Team",
-    link: "/leadership-team",
-  },
+  // {
+  //   name: "Leadership Team",
+  //   link: "/leadership-team",
+  // },
   {
     name: "Manufacturing Facility",
     link: "/manufacturing-facility",
   },
-  {
-    name: "Global Reach",
-    link: "/global-reach",
-  },
-  {
-    name: "Memberships",
-    link: "/memberships",
-  },
+  // {
+  //   name: "Global Reach",
+  //   link: "/global-reach",
+  // },
+  // {
+  //   name: "Memberships",
+  //   link: "/memberships",
+  // },
   {
     name: "Clients",
     link: "/clients",
   },
-  {
-    name: "Code of Conduct",
-    link: "/code-of-conduct",
-  },
+  // {
+  //   name: "Code of Conduct",
+  //   link: "/code-of-conduct",
+  // },
   {
     name: "Milestones",
     link: "/milestones",

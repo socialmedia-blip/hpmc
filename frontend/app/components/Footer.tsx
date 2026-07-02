@@ -331,12 +331,12 @@ export default function Footer() {
                 >
                   Our Journey
                 </Link>
-                <Link
+                {/* <Link
                   href="/leadership-team"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
                   Leadership Teams
-                </Link>
+                </Link> */}
 
                 <Link
                   href="/manufacturing-facility"
@@ -344,7 +344,7 @@ export default function Footer() {
                 >
                   Manufacturing Facility
                 </Link>
-                <Link
+                {/* <Link
                   href="/global-reach"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
@@ -355,12 +355,18 @@ export default function Footer() {
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
                   Memberships
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   href="/code-of-conduct"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
                   Code of Conduct
+                </Link> */}
+                <Link
+                  href="/clients"
+                  className="text-gray-400 hover:text-lime-400 transition text-sm"
+                >
+                  Clients
                 </Link>
                 <Link
                   href="/milestones"
