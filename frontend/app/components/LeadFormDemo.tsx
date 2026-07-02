@@ -114,7 +114,7 @@ export default function ScheduleSiteVisitForm() {
         <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
           {/* Left Panel */}
           <div
-            className="rounded-[30px] border p-8 h-fit"
+            className="hidden lg:block rounded-[30px] border p-8 h-fit"
             style={{
               background: "var(--sidebar-bg)",
               borderColor: "var(--border)",

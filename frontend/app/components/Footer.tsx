@@ -17,28 +17,72 @@ const footerProducts = [
     link: "/single-screw-extruder",
   },
   {
-    name: "Twin Screw Extruder",
+    name: "Conical Twin Screw Extruder",
     link: "/twin-screw-extruder",
+  },
+  {
+    name: "PVC Conduit Pipe Plant",
+    link: "/pvc-conduit-pipe-plant",
+  },
+  {
+    name: "PVC Conduit Pipe Plant (Dual Pipes)",
+    link: "/pvc-conduit-pipe-plant-two-pipes",
   },
   {
     name: "PVC Conduit Pipe Plant (Four Pipes)",
     link: "/pvc-conduit-pipe-plant-four-pipes",
   },
   {
-    name: "PVC Conduit Pipe Plant (Two Pipes)",
-    link: "/pvc-conduit-pipe-plant-two-pipes",
-  },
-  {
     name: "High Speed HDPE Pipe Plant",
     link: "/high-speed-hdpe-pipe-plant",
   },
   {
-    name: "Twin Screw Plant for PVC Compounding",
+    name: "Single Screw Plant for PVC Compounding",
+    link: "/single-screw-plant-for-pvc-compounding",
+  },
+  {
+    name: "Conical Twin Screw Plant for PVC Compounding",
     link: "/pvc-compounding",
   },
   {
-    name: "Single Screw Plant for PPR Pipe",
+    name: "Single Screw Plant for PVC Profile",
+    link: "/single-screw-plant-for-pvc-profile",
+  },
+  {
+    name: "Conical Twin Screw Plant for PVC Profile",
+    link: "/twin-screw-plant-for-pvc-profile",
+  },
+  {
+    name: "Single Screw Plant for Single Layer PPR Pipe",
     link: "/ppr-pipe-extruder",
+  },
+  {
+    name: "High Speed Two Layer Cable Plant",
+    link: "/high-speed-two-layer-cable-plant",
+  },
+  {
+    name: "Twin Screw Plant for PVC Trunking",
+    link: "/twin-screw-plant-for-pvc-trunking",
+  },
+  {
+    name: "Single Screw Plant for Garden Pipe",
+    link: "/single-screw-plant-for-garden-pipe",
+  },
+  {
+    name: "Soft PVC Garden Pipe Extrusion Line",
+    link: "/soft-pvc-garden-pipe-extrusion-line",
+  },
+  {
+    name: "LLDPE Lay Flat Pipe Plant",
+    link: "/lldpe-pipe-plant",
+  },
+  {
+    name: "Conical Twin Screw Plant for CPVC Pipe",
+    link: "/twin-screw-plant-for-cpvc-pipe",
+  },
+  {
+    name: "Conical Twin Screw Plant for Dual CPVC Pipe",
+    link: "/conical-twin-screw-plant-for-cpvc-dual-pipe",
   },
   {
     name: "Two Stage Recycling Plant",
@@ -53,44 +97,40 @@ const footerProducts = [
     link: "/recycling-plant-with-compactor",
   },
   {
+    name: "Co-Rotating Twin Screw Extruder",
+    link: "/co-rotating-twin-screw-extruder",
+  },
+  {
+    name: "Compactor Type Extruder",
+    link: "/compactor-type-extruder",
+  },
+  {
+    name: "Corotating Twin Screw Extruder for Compounding & Recycling",
+    link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "Corotating Triple Screw Extruder for Compounding & Recycling",
+    link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+  },
+  {
     name: "Soft Cable Grade PVC Compounding Plant",
     link: "/soft-cable-grade-pvc-compounding-plant",
   },
   {
-    name: "Corotating Twin Screw Extruder",
-    link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+    name: "WPC Profile (Chokhat) Plant",
+    link: "/wpc-profile-plant",
   },
   {
-    name: "Corotating Triple Screw Extruder",
-    link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+    name: "WPC Board Plant",
+    link: "/wpc-board-plant",
   },
   {
-    name: "High Speed Two Layer Cable Plant",
-    link: "/high-speed-two-layer-cable-plant",
+    name: "Single Shaft Shredder",
+    link: "/single-shaft-shredder",
   },
   {
-    name: "Twin Screw Plant for PVC Trunking",
-    link: "/twin-screw-plant-for-pvc-trunking",
-  },
-  {
-    name: "Single Screw Plant for PVC Profile",
-    link: "/single-screw-plant-for-pvc-profile",
-  },
-  {
-    name: "Twin Screw Plant for PVC Profile",
-    link: "/twin-screw-plant-for-pvc-profile",
-  },
-  {
-    name: "Single Screw Plant for Garden Pipe",
-    link: "/single-screw-plant-for-garden-pipe",
-  },
-  {
-    name: "LLDPE Pipe Plant",
-    link: "/lldpe-pipe-plant",
-  },
-  {
-    name: "Twin Screw Plant for CPVC Pipe",
-    link: "/twin-screw-plant-for-cpvc-pipe",
+    name: "Shelf Cleaning Laser Filter",
+    link: "/shelf-cleaning-laser-filter",
   },
 ];
 
@@ -227,7 +267,7 @@ export default function Footer() {
 
         {/* MAIN FOOTER */}
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
             {/* LOGO */}
             <div>
               <Image src="/hp-logo.png" alt="logo" width={200} height={80} />
@@ -396,17 +436,17 @@ export default function Footer() {
             </div>
 
             {/* PRODUCTS */}
-            <div className="md:col-span-2">
+            <div className="md:col-span-3">
               <h3 className="text-white text-lg font-semibold mb-6">
                 Products
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {footerProducts.map((product) => (
                   <Link
                     key={product.link}
                     href={product.link}
-                    className="text-gray-400 hover:text-lime-400 transition text-sm"
+                    className="text-gray-400 hover:text-[var(--primary)] transition text-sm"
                   >
                     {product.name}
                   </Link>

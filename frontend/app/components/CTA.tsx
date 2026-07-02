@@ -75,7 +75,7 @@ export default function CTA() {
               {/* BUTTON */}
               <button
                 onClick={() => setOpenPopup(true)}
-                className="hidden lg:flex items-center gap-3 bg-[var(--primary)] rounded-full pl-4 pr-1 py-1 group hover:bg-[var(--background)] border-2 border-[var(--primary)] transition-all duration-300"
+                className="flex items-center gap-3 bg-[var(--primary)] rounded-full pl-4 pr-1 py-1 group hover:bg-[var(--background)] border-2 border-[var(--primary)] transition-all duration-300"
               >
                 <span className="text-[14px] uppercase font-semibold text-white group-hover:text-[var(--text-primary)]">
                   Request A Quote

@@ -11,27 +11,25 @@ import LeadCustomFields, {
 } from "./LeadCustomFields";
 
 const productOptions = [
-  { value: "Single Screw Extruder", label: "Single Screw Extruder" },
-  { value: "Twin Screw Extruder", label: "Twin Screw Extruder" },
+  {
+    value: "Single Screw Extruder",
+    label: "Single Screw Extruder",
+  },
+  {
+    value: "Conical Twin Screw Extruder",
+    label: "Conical Twin Screw Extruder",
+  },
+  {
+    value: "PVC Conduit Pipe Plant",
+    label: "PVC Conduit Pipe Plant",
+  },
+  {
+    value: "PVC Conduit Pipe Plant (Dual Pipes)",
+    label: "PVC Conduit Pipe Plant (Dual Pipes)",
+  },
   {
     value: "PVC Conduit Pipe Plant (Four Pipes)",
     label: "PVC Conduit Pipe Plant (Four Pipes)",
-  },
-  {
-    value: "PVC Conduit Pipe Plant (Two Pipes)",
-    label: "PVC Conduit Pipe Plant (Two Pipes)",
-  },
-  {
-    value: "High Speed HDPE Pipe Plant",
-    label: "High Speed HDPE Pipe Plant",
-  },
-  {
-    value: "Twin Screw Plant for PVC Compounding",
-    label: "Twin Screw Plant for PVC Compounding",
-  },
-  {
-    value: "Single Screw Plant for PPR Pipe",
-    label: "Single Screw Plant for PPR Pipe",
   },
   {
     value: "Two Stage Recycling Plant",
@@ -46,16 +44,50 @@ const productOptions = [
     label: "Recycling Plant With Compactor",
   },
   {
+    value: "Co-Rotating Twin Screw Extruder",
+    label: "Co-Rotating Twin Screw Extruder",
+  },
+  {
+    value: "Compactor Type Extruder",
+    label: "Compactor Type Extruder",
+  },
+  {
+    value: "Corotating Twin Screw Extruder for Compounding & Recycling",
+    label: "Corotating Twin Screw Extruder for Compounding & Recycling",
+  },
+  {
+    value:
+      "Corotating Triple Screw Extruder for Compounding & Recycling (Engineering Plastic)",
+    label:
+      "Corotating Triple Screw Extruder for Compounding & Recycling (Engineering Plastic)",
+  },
+  {
     value: "Soft Cable Grade PVC Compounding Plant",
     label: "Soft Cable Grade PVC Compounding Plant",
   },
   {
-    value: "Corotating Twin Screw Extruder",
-    label: "Corotating Twin Screw Extruder",
+    value: "High Speed HDPE Pipe Plant",
+    label: "High Speed HDPE Pipe Plant",
   },
   {
-    value: "Corotating Triple Screw Extruder",
-    label: "Corotating Triple Screw Extruder",
+    value: "Single Screw Plant for PVC Compounding",
+    label: "Single Screw Plant for PVC Compounding",
+  },
+  {
+    value: "Conical Twin Screw Plant for PVC Compounding",
+    label: "Conical Twin Screw Plant for PVC Compounding",
+  },
+  {
+    value: "Single Screw Plant for PVC Profile",
+    label: "Single Screw Plant for PVC Profile",
+  },
+  {
+    value: "Conical Twin Screw Plant for PVC Profile",
+    label: "Conical Twin Screw Plant for PVC Profile",
+  },
+  {
+    value: "Single Screw Plant for Single Layer PPR Pipe",
+    label: "Single Screw Plant for Single Layer PPR Pipe",
   },
   {
     value: "High Speed Two Layer Cable Plant",
@@ -66,24 +98,40 @@ const productOptions = [
     label: "Twin Screw Plant for PVC Trunking",
   },
   {
-    value: "Single Screw Plant for PVC Profile",
-    label: "Single Screw Plant for PVC Profile",
-  },
-  {
-    value: "Twin Screw Plant for PVC Profile",
-    label: "Twin Screw Plant for PVC Profile",
-  },
-  {
     value: "Single Screw Plant for Garden Pipe",
     label: "Single Screw Plant for Garden Pipe",
   },
   {
-    value: "LLDPE Pipe Plant",
-    label: "LLDPE Pipe Plant",
+    value: "Soft PVC Garden Pipe Extrusion Line",
+    label: "Soft PVC Garden Pipe Extrusion Line",
   },
   {
-    value: "Twin Screw Plant for CPVC Pipe",
-    label: "Twin Screw Plant for CPVC Pipe",
+    value: "LLDPE Lay Flat Pipe Plant",
+    label: "LLDPE Lay Flat Pipe Plant",
+  },
+  {
+    value: "Conical Twin Screw Plant for CPVC Pipe",
+    label: "Conical Twin Screw Plant for CPVC Pipe",
+  },
+  {
+    value: "Conical Twin Screw Plant for Dual CPVC Pipe",
+    label: "Conical Twin Screw Plant for Dual CPVC Pipe",
+  },
+  {
+    value: "WPC Profile (Chokhat) Plant",
+    label: "WPC Profile (Chokhat) Plant",
+  },
+  {
+    value: "WPC Board Plant",
+    label: "WPC Board Plant",
+  },
+  {
+    value: "Single Shaft Shredder",
+    label: "Single Shaft Shredder",
+  },
+  {
+    value: "Shelf Cleaning Laser Filter",
+    label: "Shelf Cleaning Laser Filter",
   },
 ];
 
