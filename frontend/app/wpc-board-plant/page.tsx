@@ -490,7 +490,7 @@ export default function WpcProfilePlant() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Conical Twin Screw Plant For CPVC Dual Pipe
+                WPC Board Plant
               </span>
             </h2>
 

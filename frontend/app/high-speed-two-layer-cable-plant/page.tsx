@@ -855,9 +855,9 @@ export default function HighSpeedTwoLayerCablePlant() {
         </div>
       </section> */}
 
-      <section className="py-16 bg-[var(--background)]">
+      {/* <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
-          {/* Heading */}
+     
           <div className="text-center mb-16">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
               Product Showcase
@@ -875,9 +875,8 @@ export default function HighSpeedTwoLayerCablePlant() {
             </p>
           </div>
 
-          {/* Main Layout */}
           <div>
-            {/* Video */}
+           
             <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-[var(--border)] shadow-xl">
               <video
                 ref={videoRef}
@@ -905,7 +904,7 @@ export default function HighSpeedTwoLayerCablePlant() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">

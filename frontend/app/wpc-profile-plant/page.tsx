@@ -491,10 +491,7 @@ export default function WpcProfilePlant() {
 
             <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
               Everything About Our
-              <span className="text-[var(--primary)]">
-                {" "}
-                Conical Twin Screw Plant For CPVC Dual Pipe
-              </span>
+              <span className="text-[var(--primary)]"> WPC Profile Plant</span>
             </h2>
 
             <p className="mt-5 text-[var(--text-secondary)] max-w-2xl mx-auto">
