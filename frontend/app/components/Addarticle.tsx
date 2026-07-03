@@ -1,0 +1,791 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import {
+  FileQuestion,
+  ImageIcon,
+  Link2,
+  Loader2,
+  Plus,
+  Sparkles,
+  Trash2,
+  UploadCloud,
+  UserRound,
+  X,
+} from "lucide-react";
+import {
+  useEffect,
+  useState,
+  type InputHTMLAttributes,
+  type ReactNode,
+} from "react";
+
+import "react-quill-new/dist/quill.snow.css";
+
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
+
+interface Article {
+  _id?: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  tags?: string | string[];
+  coverImage?: string;
+  coverImageAlt?: string;
+  faqs?: { question: string; answer: string }[];
+}
+
+interface GeneratedArticle {
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  tags: string;
+  coverImage?: string;
+  coverImageAlt: string;
+  faqs?: { question: string; answer: string }[];
+}
+
+interface Props {
+  onClose: () => void;
+  onSuccess: () => void;
+  existingarticle?: Article | null;
+}
+
+function getInitialFormData(existingarticle: Article | null) {
+  return {
+    title: existingarticle?.title || "",
+    slug: existingarticle?.slug || "",
+    excerpt: existingarticle?.excerpt || "",
+    content: existingarticle?.content || "",
+    author: existingarticle?.author || "",
+    tags: Array.isArray(existingarticle?.tags)
+      ? existingarticle.tags.join(", ")
+      : existingarticle?.tags || "",
+    coverImageAlt: existingarticle?.coverImageAlt || "",
+    coverImageUrl: "",
+    coverImage: null as File | null,
+  };
+}
+
+function getInitialFaqs(existingarticle: Article | null) {
+  return existingarticle?.faqs?.length
+    ? existingarticle.faqs
+    : [{ question: "", answer: "" }];
+}
+
+const Addarticle = ({ onClose, onSuccess, existingarticle = null }: Props) => {
+  const [formData, setFormData] = useState(() =>
+    getInitialFormData(existingarticle),
+  );
+  const [faqs, setFaqs] = useState(() => getInitialFaqs(existingarticle));
+  const [preview, setPreview] = useState<string | null>(
+    existingarticle?.coverImage || null,
+  );
+  const [submitting, setSubmitting] = useState(false);
+  const [creationMode, setCreationMode] = useState<"manual" | "ai">("manual");
+  const [aiGenerating, setAiGenerating] = useState(false);
+  const [aiError, setAiError] = useState("");
+  const [aiPrompt, setAiPrompt] = useState({
+    topic: "",
+    keywords: "",
+    tone: "professional and helpful",
+    audience: "factory owners, purchase teams, plant managers",
+    length: "medium",
+    generateImage: true,
+  });
+
+  useEffect(() => {
+    return () => {
+      if (preview?.startsWith("blob:")) URL.revokeObjectURL(preview);
+    };
+  }, [preview]);
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target;
+
+    if (name === "title" && !existingarticle) {
+      setFormData((prev) => ({
+        ...prev,
+        title: value,
+        slug: value
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, "")
+          .trim()
+          .replace(/\s+/g, "-"),
+      }));
+      return;
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFaqChange = (
+    index: number,
+    field: "question" | "answer",
+    value: string,
+  ) => {
+    setFaqs((prev) =>
+      prev.map((faq, faqIndex) =>
+        faqIndex === index ? { ...faq, [field]: value } : faq,
+      ),
+    );
+  };
+
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setFormData((prev) => ({ ...prev, coverImage: file }));
+    setFormData((prev) => ({ ...prev, coverImageUrl: "" }));
+    setPreview((currentPreview) => {
+      if (currentPreview?.startsWith("blob:")) {
+        URL.revokeObjectURL(currentPreview);
+      }
+      return URL.createObjectURL(file);
+    });
+  };
+
+  const sanitizeHtml = (html: string) =>
+    html.replace(/&nbsp;/g, " ").replace(/<wbr\s*\/?>/gi, "").trim();
+
+  const applyGeneratedArticle = (article: GeneratedArticle) => {
+    setFormData((prev) => ({
+      ...prev,
+      title: article.title || prev.title,
+      slug: article.slug || prev.slug,
+      excerpt: article.excerpt || prev.excerpt,
+      content: article.content || prev.content,
+      author: article.author || prev.author || "HPMC Team",
+      tags: article.tags || prev.tags,
+      coverImageAlt: article.coverImageAlt || prev.coverImageAlt,
+      coverImageUrl: article.coverImage || "",
+      coverImage: null,
+    }));
+
+    if (article.coverImage) {
+      setPreview((currentPreview) => {
+        if (currentPreview?.startsWith("blob:")) {
+          URL.revokeObjectURL(currentPreview);
+        }
+        return article.coverImage || null;
+      });
+    }
+
+    if (article.faqs?.length) {
+      setFaqs(article.faqs);
+    }
+  };
+
+  const handleGenerateWithAI = async () => {
+    if (!aiPrompt.topic.trim() || aiGenerating) return;
+
+    try {
+      setAiGenerating(true);
+      setAiError("");
+
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/article/ai/generate`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(aiPrompt),
+        },
+      );
+
+      const result = await res.json();
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.message || "Failed to generate article");
+      }
+
+      applyGeneratedArticle(result.article);
+      setCreationMode("manual");
+    } catch (err) {
+      setAiError(err instanceof Error ? err.message : "AI generation failed");
+    } finally {
+      setAiGenerating(false);
+    }
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (submitting) return;
+
+    try {
+      setSubmitting(true);
+
+      const articleData = new FormData();
+      Object.entries({
+        ...formData,
+        content: sanitizeHtml(formData.content),
+      }).forEach(([key, value]) => {
+        if (value !== null && value !== "") {
+          articleData.append(key, value as string | Blob);
+        }
+      });
+      articleData.append("faqs", JSON.stringify(faqs));
+
+      const res = await fetch(
+        existingarticle
+          ? `${process.env.NEXT_PUBLIC_API_BASE}/article/${existingarticle.slug}`
+          : `${process.env.NEXT_PUBLIC_API_BASE}/article/add`,
+        {
+          method: existingarticle ? "PUT" : "POST",
+          body: articleData,
+        },
+      );
+
+      if (!res.ok) {
+        const result = await res.json();
+        throw new Error(result.message || result.error || "Failed to save article");
+      }
+
+      onSuccess();
+      onClose();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ["bold", "italic", "underline"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["blockquote"],
+      ["link"],
+      ["clean"],
+    ],
+  };
+
+  const quillFormats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "list",
+    "blockquote",
+    "link",
+  ];
+
+  return (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-3 backdrop-blur-md sm:p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="article-modal-title"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div className="relative flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--card)] shadow-[0_30px_100px_rgba(0,0,0,0.35)] md:rounded-[32px]">
+        <div className="flex items-center justify-between border-b border-[var(--border)] px-5 py-5 md:px-8">
+          <div className="min-w-0 pr-3">
+            <p className="mb-2 text-[10px] uppercase tracking-[3px] text-[var(--primary)] sm:text-xs sm:tracking-[4px]">
+              Publishing Studio
+            </p>
+            <h2
+              id="article-modal-title"
+              className="truncate font-serif text-2xl text-[var(--text-primary)] md:text-3xl"
+            >
+              {existingarticle ? "Edit Article" : "Create Article"}
+            </h2>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+              Shape the article, cover media, SEO details, and FAQs in one flow.
+            </p>
+          </div>
+
+          <button
+            onClick={onClose}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)] md:h-11 md:w-11"
+            aria-label="Close article editor"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
+          <div className="min-h-0 flex-1 overflow-y-auto p-5 md:p-8">
+            {!existingarticle && (
+              <Panel
+                eyebrow="Creation Mode"
+                title="Manual or AI Assisted"
+                icon={<Sparkles size={18} />}
+              >
+                <div className="mb-5 grid grid-cols-2 gap-2 rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)] p-2">
+                  <button
+                    type="button"
+                    onClick={() => setCreationMode("manual")}
+                    className={`h-11 rounded-xl font-medium transition ${
+                      creationMode === "manual"
+                        ? "bg-[var(--primary)] text-white"
+                        : "text-[var(--text-primary)] hover:bg-[var(--card)]"
+                    }`}
+                  >
+                    Manual
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCreationMode("ai")}
+                    className={`h-11 rounded-xl font-medium transition ${
+                      creationMode === "ai"
+                        ? "bg-[var(--primary)] text-white"
+                        : "text-[var(--text-primary)] hover:bg-[var(--card)]"
+                    }`}
+                  >
+                    Generate with AI
+                  </button>
+                </div>
+
+                {creationMode === "ai" && (
+                  <div className="grid gap-4">
+                    {aiError && (
+                      <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-500">
+                        {aiError}
+                      </div>
+                    )}
+
+                    <div>
+                      <label className="mb-2 block text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+                        Article Topic
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={aiPrompt.topic}
+                        onChange={(event) =>
+                          setAiPrompt((prev) => ({
+                            ...prev,
+                            topic: event.target.value,
+                          }))
+                        }
+                        placeholder="Example: Benefits of PVC pipe extrusion machines for modern manufacturing"
+                        className="w-full resize-none rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] p-4 text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]"
+                      />
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <InputField
+                        label="Keywords"
+                        value={aiPrompt.keywords}
+                        onChange={(event) =>
+                          setAiPrompt((prev) => ({
+                            ...prev,
+                            keywords: event.target.value,
+                          }))
+                        }
+                        placeholder="PVC pipe plant, extrusion machine, HPMC"
+                      />
+                      <InputField
+                        label="Audience"
+                        value={aiPrompt.audience}
+                        onChange={(event) =>
+                          setAiPrompt((prev) => ({
+                            ...prev,
+                            audience: event.target.value,
+                          }))
+                        }
+                        placeholder="Factory owners, purchase teams"
+                      />
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-3">
+                      <InputField
+                        label="Tone"
+                        value={aiPrompt.tone}
+                        onChange={(event) =>
+                          setAiPrompt((prev) => ({
+                            ...prev,
+                            tone: event.target.value,
+                          }))
+                        }
+                        placeholder="Professional"
+                      />
+                      <div>
+                        <label className="mb-2 block text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+                          Length
+                        </label>
+                        <select
+                          value={aiPrompt.length}
+                          onChange={(event) =>
+                            setAiPrompt((prev) => ({
+                              ...prev,
+                              length: event.target.value,
+                            }))
+                          }
+                          className="h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] px-4 text-[var(--text-primary)] outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                        >
+                          <option value="short">Short</option>
+                          <option value="medium">Medium</option>
+                          <option value="long">Long</option>
+                        </select>
+                      </div>
+                      <label className="flex h-11 items-center justify-between gap-3 rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] px-4">
+                        <span className="text-sm font-medium text-[var(--text-primary)]">
+                          Generate image
+                        </span>
+                        <input
+                          type="checkbox"
+                          checked={aiPrompt.generateImage}
+                          onChange={(event) =>
+                            setAiPrompt((prev) => ({
+                              ...prev,
+                              generateImage: event.target.checked,
+                            }))
+                          }
+                          className="h-5 w-5 accent-[var(--primary)]"
+                        />
+                      </label>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleGenerateWithAI}
+                      disabled={aiGenerating || !aiPrompt.topic.trim()}
+                      className="flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--primary)] px-5 font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {aiGenerating ? (
+                        <Loader2 size={18} className="animate-spin" />
+                      ) : (
+                        <Sparkles size={18} />
+                      )}
+                      {aiGenerating
+                        ? "Generating draft..."
+                        : "Generate Article Draft"}
+                    </button>
+                  </div>
+                )}
+              </Panel>
+            )}
+
+            <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+              <div className="space-y-6">
+                <Panel
+                  eyebrow="Article"
+                  title="Story Details"
+                  icon={<Sparkles size={18} />}
+                >
+                  <div className="grid gap-4">
+                    <InputField
+                      label="Title"
+                      name="title"
+                      value={formData.title}
+                      onChange={handleChange}
+                      placeholder="Article title"
+                      required
+                    />
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <InputField
+                        label="Slug"
+                        name="slug"
+                        value={formData.slug}
+                        onChange={handleChange}
+                        placeholder="article-url-slug"
+                        required
+                        icon={<Link2 size={15} />}
+                      />
+                      <InputField
+                        label="Author"
+                        name="author"
+                        value={formData.author}
+                        onChange={handleChange}
+                        placeholder="Author name"
+                        required
+                        icon={<UserRound size={15} />}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="mb-2 block text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+                        Meta Description
+                      </label>
+                      <textarea
+                        rows={4}
+                        name="excerpt"
+                        value={formData.excerpt}
+                        onChange={handleChange}
+                        placeholder="Short summary for article cards and SEO..."
+                        required
+                        className="w-full resize-none rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] p-4 text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]"
+                      />
+                    </div>
+                  </div>
+                </Panel>
+
+                <Panel
+                  eyebrow="Editor"
+                  title="Article Content"
+                  icon={<FileQuestion size={18} />}
+                >
+                  <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)]">
+                    <ReactQuill
+                      theme="snow"
+                      value={formData.content}
+                      onChange={(value) =>
+                        setFormData((prev) => ({ ...prev, content: value }))
+                      }
+                      modules={quillModules}
+                      formats={quillFormats}
+                      className="newsletter-editor article-editor"
+                    />
+                  </div>
+                </Panel>
+              </div>
+
+              <div className="space-y-6">
+                <Panel
+                  eyebrow="Media"
+                  title="Cover Image"
+                  icon={<ImageIcon size={18} />}
+                >
+                  <label
+                    htmlFor="cover-image"
+                    className="group flex min-h-64 cursor-pointer flex-col overflow-hidden rounded-2xl border-2 border-dashed border-[var(--border)] bg-[var(--background-secondary)] transition hover:border-[var(--primary)]"
+                  >
+                    {preview ? (
+                      <div className="relative h-64 w-full">
+                        <img
+                          src={preview}
+                          alt={formData.coverImageAlt || formData.title}
+                          className="h-full w-full object-cover"
+                        />
+                        <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-black/65 px-4 py-3 text-white backdrop-blur">
+                          <p className="text-sm font-medium">
+                            Click to replace cover image
+                          </p>
+                          <p className="mt-1 text-xs text-white/75">
+                            Use a wide, sharp image for the best article card.
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex min-h-64 flex-col items-center justify-center p-6 text-center">
+                        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)]">
+                          <UploadCloud size={26} />
+                        </div>
+                        <p className="font-medium text-[var(--text-primary)]">
+                          Upload cover image
+                        </p>
+                        <p className="mt-2 max-w-xs text-sm leading-6 text-[var(--text-secondary)]">
+                          Choose a polished image that represents the article.
+                        </p>
+                      </div>
+                    )}
+                    <input
+                      id="cover-image"
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageChange}
+                      required={!existingarticle && !formData.coverImageUrl}
+                      className="hidden"
+                    />
+                  </label>
+
+                  <div className="mt-4">
+                    <InputField
+                      label="Image Alt Text"
+                      name="coverImageAlt"
+                      value={formData.coverImageAlt}
+                      onChange={handleChange}
+                      placeholder="Describe the cover image"
+                    />
+                  </div>
+                </Panel>
+
+                <Panel eyebrow="SEO" title="Tags" icon={<Sparkles size={18} />}>
+                  <InputField
+                    label="Tags"
+                    name="tags"
+                    value={formData.tags}
+                    onChange={handleChange}
+                    placeholder="extrusion, machinery, maintenance"
+                  />
+                </Panel>
+
+                <Panel
+                  eyebrow="Schema"
+                  title="FAQs"
+                  icon={<FileQuestion size={18} />}
+                  action={
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setFaqs((prev) => [
+                          ...prev,
+                          { question: "", answer: "" },
+                        ])
+                      }
+                      className="flex h-9 items-center gap-2 rounded-xl border border-[var(--border)] px-3 text-sm font-medium text-[var(--primary)] transition hover:bg-[var(--background-secondary)]"
+                    >
+                      <Plus size={15} />
+                      Add
+                    </button>
+                  }
+                >
+                  <div className="space-y-3">
+                    {faqs.map((faq, index) => (
+                      <div
+                        key={index}
+                        className="rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)] p-4"
+                      >
+                        <div className="mb-3 flex items-center justify-between gap-3">
+                          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+                            FAQ {index + 1}
+                          </p>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setFaqs((prev) => {
+                                const next = prev.filter(
+                                  (_, faqIndex) => faqIndex !== index,
+                                );
+                                return next.length
+                                  ? next
+                                  : [{ question: "", answer: "" }];
+                              })
+                            }
+                            className="flex h-8 w-8 items-center justify-center rounded-lg text-red-500 transition hover:bg-red-500/10"
+                            aria-label={`Remove FAQ ${index + 1}`}
+                          >
+                            <Trash2 size={15} />
+                          </button>
+                        </div>
+
+                        <input
+                          type="text"
+                          placeholder="Question"
+                          value={faq.question}
+                          onChange={(event) =>
+                            handleFaqChange(
+                              index,
+                              "question",
+                              event.target.value,
+                            )
+                          }
+                          className="mb-3 h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--card)] px-3 text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]"
+                        />
+
+                        <textarea
+                          placeholder="Answer"
+                          value={faq.answer}
+                          onChange={(event) =>
+                            handleFaqChange(index, "answer", event.target.value)
+                          }
+                          className="min-h-24 w-full resize-none rounded-xl border border-[var(--border)] bg-[var(--card)] p-3 text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </Panel>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-[var(--border)] bg-[var(--card)] px-5 py-4 md:px-8">
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+              <button
+                type="button"
+                onClick={onClose}
+                className="h-11 rounded-xl border border-[var(--border)] px-6 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)]"
+              >
+                Cancel
+              </button>
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="flex h-11 items-center justify-center gap-2 rounded-xl bg-[var(--primary)] px-6 font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {submitting && <Loader2 size={17} className="animate-spin" />}
+                {submitting
+                  ? existingarticle
+                    ? "Updating..."
+                    : "Publishing..."
+                  : existingarticle
+                    ? "Update Article"
+                    : "Publish Article"}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+function Panel({
+  eyebrow,
+  title,
+  icon,
+  action,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  icon: ReactNode;
+  action?: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <section className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5">
+      <div className="mb-5 flex items-start justify-between gap-4">
+        <div className="flex items-start gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--primary)]/10 text-[var(--primary)]">
+            {icon}
+          </div>
+          <div>
+            <p className="mb-1 text-[10px] uppercase tracking-[3px] text-[var(--primary)]">
+              {eyebrow}
+            </p>
+            <h3 className="font-serif text-xl text-[var(--text-primary)]">
+              {title}
+            </h3>
+          </div>
+        </div>
+        {action}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function InputField({
+  label,
+  icon,
+  ...props
+}: InputHTMLAttributes<HTMLInputElement> & {
+  label: string;
+  icon?: ReactNode;
+}) {
+  return (
+    <div>
+      <label className="mb-2 block text-xs uppercase tracking-wider text-[var(--text-secondary)]">
+        {label}
+      </label>
+      <div className="relative">
+        {icon && (
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]">
+            {icon}
+          </span>
+        )}
+        <input
+          {...props}
+          className={`h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] ${
+            icon ? "pl-10" : "pl-4"
+          } pr-4 text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus:ring-2 focus:ring-[var(--primary)]`}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default Addarticle;
+

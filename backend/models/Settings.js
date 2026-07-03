@@ -76,6 +76,11 @@ const settingsSchema = new mongoose.Schema({
       default: true,
     },
 
+    articles: {
+      type: Boolean,
+      default: true,
+    },
+
     gallery: {
       type: Boolean,
       default: true,

@@ -15,6 +15,11 @@ const getOrCreateSettings = async () => {
     changed = true;
   }
 
+  if (settings.modules && settings.modules.articles === undefined) {
+    settings.modules.articles = true;
+    changed = true;
+  }
+
   if (settings.modules && settings.modules.gallery === undefined) {
     settings.modules.gallery = true;
     changed = true;

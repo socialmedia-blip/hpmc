@@ -96,6 +96,12 @@ export default function AdminLayout({
           to: "/admin/blogs",
         },
         {
+          key: "articles",
+          icon: <FileCheck size={18} />,
+          label: "Articles",
+          to: "/admin/articles",
+        },
+        {
           key: "gallery",
           icon: <Images size={18} />,
           label: "Gallery",
