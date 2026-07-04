@@ -25,6 +25,11 @@ const getOrCreateSettings = async () => {
     changed = true;
   }
 
+  if (settings.modules && settings.modules.googleBusiness === undefined) {
+    settings.modules.googleBusiness = true;
+    changed = true;
+  }
+
   if (changed) await settings.save();
 
   return settings;

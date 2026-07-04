@@ -116,6 +116,11 @@ const settingsSchema = new mongoose.Schema({
       default: true,
     },
 
+    googleBusiness: {
+      type: Boolean,
+      default: true,
+    },
+
     vendors: {
       type: Boolean,
       default: true,

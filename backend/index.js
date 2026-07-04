@@ -25,6 +25,7 @@ app.use("/employee", require("./routes/employee.routes"));
 app.use("/api/settings", settingsRoutes);
 app.use("/analytics", require("./routes/analytics.route"));
 app.use("/gallery", require("./routes/gallery.route"));
+app.use("/google-business", require("./routes/googleBusiness.route"));
 
 app.get("/", (req, res) => {
   res.status(200).send("API LIVE 🚀");

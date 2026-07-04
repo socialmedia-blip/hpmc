@@ -60,6 +60,7 @@ const moduleCategories = [
     modules: [
       { key: "clients", label: "Clients" },
       { key: "testimonials", label: "Testimonials" },
+      { key: "googleBusiness", label: "Google Business" },
     ],
   },
   {
