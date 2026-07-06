@@ -6,6 +6,8 @@ const getTrafficSources = require("../lib/analyticsTrafficSources");
 const getCountries = require("../lib/analyticsCountries");
 const getDevices = require("../lib/analyticsDevices");
 const getBrowsers = require("../lib/analyticsBrowsers");
+const getNewVsReturning = require("../lib/analyticsNewVsReturning");
+const getRealtime = require("../lib/analyticsRealtime");
 
 exports.overview = async (req, res) => {
   try {
@@ -216,6 +218,74 @@ exports.trafficSources = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to fetch traffic sources",
+    });
+  }
+};
+
+exports.newVsReturning = async (req, res) => {
+  try {
+    const data = await getNewVsReturning();
+
+    if (!data.rows || data.rows.length === 0) {
+      return res.json([]);
+    }
+
+    const visitors = data.rows.map((row) => {
+      const rawType = row.dimensionValues[0]?.value || "Unknown";
+
+      return {
+        type:
+          rawType.toLowerCase() === "new"
+            ? "New visitors"
+            : rawType.toLowerCase() === "returning"
+              ? "Returning visitors"
+              : rawType,
+        visitors: Number(row.metricValues[0]?.value || 0),
+      };
+    });
+
+    res.json(visitors);
+  } catch (err) {
+    console.error("New vs Returning Analytics Error:", err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch new vs returning visitors",
+    });
+  }
+};
+
+exports.realtime = async (req, res) => {
+  try {
+    const data = await getRealtime();
+
+    if (!data.rows || data.rows.length === 0) {
+      return res.json({
+        activeUsers: 0,
+        countries: [],
+      });
+    }
+
+    const countries = data.rows.map((row) => ({
+      country: row.dimensionValues[0]?.value || "Unknown",
+      activeUsers: Number(row.metricValues[0]?.value || 0),
+    }));
+
+    const activeUsers = countries.reduce(
+      (total, country) => total + country.activeUsers,
+      0,
+    );
+
+    res.json({
+      activeUsers,
+      countries,
+    });
+  } catch (err) {
+    console.error("Realtime Analytics Error:", err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch realtime analytics",
     });
   }
 };

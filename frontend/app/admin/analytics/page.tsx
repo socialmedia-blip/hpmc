@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import {
   Activity,
+  Clock3,
   Eye,
   Globe,
   TrendingUp,
@@ -19,6 +20,9 @@ import {
   YAxis,
   Tooltip,
   CartesianGrid,
+  PieChart,
+  Pie,
+  Cell,
 } from "recharts";
 
 interface AnalyticsData {
@@ -71,10 +75,28 @@ interface BrowserData {
   pageViews: number;
 }
 
+interface VisitorTypeData {
+  type: string;
+  visitors: number;
+}
+
+interface RealtimeCountry {
+  country: string;
+  activeUsers: number;
+}
+
+interface RealtimeData {
+  activeUsers: number;
+  countries: RealtimeCountry[];
+}
+
+const VISITOR_COLORS = ["#65BC4F", "#2563eb", "#f59e0b", "#e11d48"];
+
 export default function AnalyticsPage() {
   const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
 
   const [loading, setLoading] = useState(true);
+  const [realtimeLoading, setRealtimeLoading] = useState(true);
   const [chartData, setChartData] = useState<ChartPoint[]>([]);
   const [topPages, setTopPages] = useState<TopPage[]>([]);
   const [cities, setCities] = useState<CityData[]>([]);
@@ -82,6 +104,11 @@ export default function AnalyticsPage() {
   const [sources, setSources] = useState<SourceData[]>([]);
   const [devices, setDevices] = useState<DeviceData[]>([]);
   const [browsers, setBrowsers] = useState<BrowserData[]>([]);
+  const [visitorTypes, setVisitorTypes] = useState<VisitorTypeData[]>([]);
+  const [realtime, setRealtime] = useState<RealtimeData>({
+    activeUsers: 0,
+    countries: [],
+  });
 
   const [analytics, setAnalytics] = useState<AnalyticsData>({
     totalUsers: 0,
@@ -107,6 +134,7 @@ export default function AnalyticsPage() {
         countriesRes,
         devicesRes,
         browsersRes,
+        visitorTypesRes,
       ] = await Promise.all([
         fetch(`${API_BASE}/analytics/overview`, {
           cache: "no-store",
@@ -132,6 +160,9 @@ export default function AnalyticsPage() {
         fetch(`${API_BASE}/analytics/browsers`, {
           cache: "no-store",
         }),
+        fetch(`${API_BASE}/analytics/new-vs-returning`, {
+          cache: "no-store",
+        }),
       ]);
 
       const overview = await overviewRes.json();
@@ -142,6 +173,7 @@ export default function AnalyticsPage() {
       const countriesData = await countriesRes.json();
       const devicesData = await devicesRes.json();
       const browsersData = await browsersRes.json();
+      const visitorTypesData = await visitorTypesRes.json();
 
       setAnalytics(overview);
       setChartData(Array.isArray(chart) ? chart : []);
@@ -151,6 +183,9 @@ export default function AnalyticsPage() {
       setCountries(Array.isArray(countriesData) ? countriesData : []);
       setDevices(Array.isArray(devicesData) ? devicesData : []);
       setBrowsers(Array.isArray(browsersData) ? browsersData : []);
+      setVisitorTypes(
+        Array.isArray(visitorTypesData) ? visitorTypesData : [],
+      );
     } catch (error) {
       console.error(error);
     } finally {
@@ -158,14 +193,45 @@ export default function AnalyticsPage() {
     }
   };
 
+  const fetchRealtime = async () => {
+    try {
+      const response = await fetch(`${API_BASE}/analytics/realtime`, {
+        cache: "no-store",
+      });
+      const data = await response.json();
+
+      setRealtime({
+        activeUsers: Number(data?.activeUsers || 0),
+        countries: Array.isArray(data?.countries) ? data.countries : [],
+      });
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setRealtimeLoading(false);
+    }
+  };
+
   /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
   useEffect(() => {
     fetchAnalytics();
+    fetchRealtime();
+
+    const interval = window.setInterval(fetchRealtime, 30000);
+
+    return () => window.clearInterval(interval);
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
 
   const topCity = cities.length > 0 ? cities[0] : { city: "N/A", visitors: 0 };
+  const totalVisitorTypes = visitorTypes.reduce(
+    (total, item) => total + item.visitors,
+    0,
+  );
   const formatPercent = (value: number) => `${(value * 100).toFixed(1)}%`;
+  const formatShare = (value: number) =>
+    totalVisitorTypes > 0
+      ? `${((value / totalVisitorTypes) * 100).toFixed(1)}%`
+      : "0%";
   const formatDuration = (seconds: number) => {
     const safeSeconds = Math.round(seconds || 0);
     const minutes = Math.floor(safeSeconds / 60);
@@ -184,8 +250,8 @@ export default function AnalyticsPage() {
       tone: "blue",
     },
     {
-      label: "Active Users",
-      value: analytics.activeUsers,
+      label: "Realtime Users",
+      value: realtime.activeUsers,
       icon: <UserCheck size={18} />,
       tone: "green",
     },
@@ -287,6 +353,144 @@ export default function AnalyticsPage() {
             subLabel={item.subLabel}
           />
         ))}
+      </div>
+
+      <div className="mb-6 grid gap-6 xl:grid-cols-[1.1fr_1.4fr]">
+        <div className="overflow-hidden rounded-3xl border border-green-500/20 bg-[var(--card)]">
+          <div className="bg-gradient-to-br from-green-500/15 via-[var(--card)] to-blue-500/10 p-6">
+            <div className="mb-6 flex items-center justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[3px] text-green-600">
+                  Live now
+                </p>
+                <h2 className="mt-2 text-xl font-semibold text-[var(--text-primary)]">
+                  Real Time Active Users
+                </h2>
+              </div>
+
+              <div className="flex items-center gap-2 rounded-full border border-green-500/20 bg-white/70 px-3 py-2 text-xs font-semibold text-green-700">
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+                Auto refresh
+              </div>
+            </div>
+
+            <div className="flex items-end gap-4">
+              <p className="text-6xl font-bold text-green-600">
+                {realtimeLoading ? "..." : realtime.activeUsers}
+              </p>
+              <p className="mb-3 text-sm text-[var(--text-secondary)]">
+                active in the last 30 minutes
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-3 p-6 sm:grid-cols-2">
+            {realtime.countries.length > 0 ? (
+              realtime.countries.slice(0, 4).map((country) => (
+                <div
+                  key={country.country}
+                  className="flex items-center justify-between rounded-2xl border border-[var(--border)] bg-[var(--background-secondary)] px-4 py-3"
+                >
+                  <span className="text-sm font-medium">{country.country}</span>
+                  <span className="font-semibold text-green-600">
+                    {country.activeUsers}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full rounded-2xl border border-dashed border-[var(--border)] py-8 text-center text-sm text-[var(--text-secondary)]">
+                No active users at this moment.
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-[var(--border)] bg-[var(--card)] p-6">
+          <div className="mb-5 flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-semibold text-[var(--text-primary)]">
+                New vs Returning Visitors
+              </h2>
+              <p className="mt-1 text-sm text-[var(--text-secondary)]">
+                Visitor loyalty split for the last 30 days
+              </p>
+            </div>
+
+            <Clock3 size={22} className="text-[var(--primary)]" />
+          </div>
+
+          {visitorTypes.length > 0 ? (
+            <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.1fr]">
+              <div className="h-[260px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={visitorTypes}
+                      dataKey="visitors"
+                      nameKey="type"
+                      innerRadius={62}
+                      outerRadius={105}
+                      paddingAngle={4}
+                    >
+                      {visitorTypes.map((entry, index) => (
+                        <Cell
+                          key={entry.type}
+                          fill={VISITOR_COLORS[index % VISITOR_COLORS.length]}
+                        />
+                      ))}
+                    </Pie>
+                    <Tooltip
+                      formatter={(value) => [
+                        Number(value || 0).toLocaleString(),
+                        "Visitors",
+                      ]}
+                      contentStyle={{
+                        borderRadius: 16,
+                        border: "1px solid #e5e7eb",
+                      }}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="space-y-4">
+                {visitorTypes.map((item, index) => (
+                  <div
+                    key={item.type}
+                    className="rounded-2xl border border-[var(--border)] p-4"
+                  >
+                    <div className="mb-3 flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <span
+                          className="h-3 w-3 rounded-full"
+                          style={{
+                            backgroundColor:
+                              VISITOR_COLORS[index % VISITOR_COLORS.length],
+                          }}
+                        />
+                        <span className="font-medium text-[var(--text-primary)]">
+                          {item.type}
+                        </span>
+                      </div>
+
+                      <span className="text-sm font-semibold text-[var(--primary)]">
+                        {formatShare(item.visitors)}
+                      </span>
+                    </div>
+
+                    <p className="text-2xl font-bold">
+                      {item.visitors.toLocaleString()}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="flex h-[260px] items-center justify-center rounded-2xl border border-dashed border-[var(--border)] text-center text-[var(--text-secondary)]">
+              No new or returning visitor data available.
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="mb-6 rounded-3xl border border-[var(--border)] bg-gradient-to-r from-[var(--primary)]/10 via-transparent to-transparent p-6">
