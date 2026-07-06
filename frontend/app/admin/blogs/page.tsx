@@ -351,12 +351,10 @@ export default function AdminBlogsPage() {
               <table className="w-full table-fixed md:table-auto">
                 <thead>
                   <tr className="border-b border-[var(--border)] bg-[var(--background-secondary)]">
-                    <th className="w-[48%] px-3 py-4 text-left text-xs font-semibold text-[var(--text-primary)] sm:px-4 sm:text-sm md:w-auto md:px-5">
+                    <th className="w-[40%] px-3 py-4 text-left text-xs font-semibold text-[var(--text-primary)] sm:px-4 sm:text-sm md:w-auto md:px-5">
                       Blog
                     </th>
-                    <th className="hidden px-5 py-4 text-left text-sm font-semibold text-[var(--text-primary)] lg:table-cell">
-                      Author
-                    </th>
+
                     <th className="hidden px-5 py-4 text-left text-sm font-semibold text-[var(--text-primary)] xl:table-cell">
                       Tags
                     </th>
@@ -397,20 +395,11 @@ export default function AdminBlogsPage() {
                             <p className="mt-1 line-clamp-2 text-[11px] leading-5 text-[var(--text-secondary)] sm:text-xs">
                               {stripHtml(blog.excerpt || blog.content)}
                             </p>
-                            <p className="mt-1 truncate text-[11px] text-[var(--text-secondary)] lg:hidden">
+                            <p className="mt-1 truncate text-[14px] font-semibold text-[var(--text-secondary)] ">
                               {blog.author || "Unknown author"}
                             </p>
                           </div>
                         </div>
-                      </td>
-
-                      <td className="hidden px-5 py-4 lg:table-cell">
-                        <p className="max-w-[180px] truncate text-sm font-medium text-[var(--text-primary)]">
-                          {blog.author || "-"}
-                        </p>
-                        <p className="mt-1 max-w-[180px] truncate text-xs text-[var(--text-secondary)]">
-                          /{blog.slug}
-                        </p>
                       </td>
 
                       <td className="hidden px-5 py-4 xl:table-cell">
@@ -620,7 +609,10 @@ function normalizeTags(tags?: string[] | string) {
 }
 
 function stripHtml(value: string) {
-  return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  return value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function EditorModal({
