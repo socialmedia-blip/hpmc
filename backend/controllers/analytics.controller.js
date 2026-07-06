@@ -8,10 +8,21 @@ const getDevices = require("../lib/analyticsDevices");
 const getBrowsers = require("../lib/analyticsBrowsers");
 const getNewVsReturning = require("../lib/analyticsNewVsReturning");
 const getRealtime = require("../lib/analyticsRealtime");
+const {
+  getDateRange,
+  getMongoDateRange,
+} = require("../lib/analyticsDateRange");
+const Lead = require("../models/lead.model");
+
+const getConversionRate = (leads, users) => {
+  if (!users) return 0;
+  return Number(((leads / users) * 100).toFixed(2));
+};
 
 exports.overview = async (req, res) => {
   try {
-    const data = await getOverview();
+    const dateRange = getDateRange(req.query);
+    const data = await getOverview(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json({
@@ -54,7 +65,8 @@ exports.overview = async (req, res) => {
 
 exports.countryVisitors = async (req, res) => {
   try {
-    const data = await getCountries();
+    const dateRange = getDateRange(req.query);
+    const data = await getCountries(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -78,7 +90,8 @@ exports.countryVisitors = async (req, res) => {
 
 exports.deviceBreakdown = async (req, res) => {
   try {
-    const data = await getDevices();
+    const dateRange = getDateRange(req.query);
+    const data = await getDevices(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -103,7 +116,8 @@ exports.deviceBreakdown = async (req, res) => {
 
 exports.browserBreakdown = async (req, res) => {
   try {
-    const data = await getBrowsers();
+    const dateRange = getDateRange(req.query);
+    const data = await getBrowsers(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -128,7 +142,8 @@ exports.browserBreakdown = async (req, res) => {
 
 exports.visitorsChart = async (req, res) => {
   try {
-    const data = await getVisitorsChart();
+    const dateRange = getDateRange(req.query);
+    const data = await getVisitorsChart(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -152,7 +167,8 @@ exports.visitorsChart = async (req, res) => {
 
 exports.topPages = async (req, res) => {
   try {
-    const data = await getTopPages();
+    const dateRange = getDateRange(req.query);
+    const data = await getTopPages(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -176,7 +192,8 @@ exports.topPages = async (req, res) => {
 
 exports.cityVisitors = async (req, res) => {
   try {
-    const data = await getCities();
+    const dateRange = getDateRange(req.query);
+    const data = await getCities(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -200,7 +217,8 @@ exports.cityVisitors = async (req, res) => {
 
 exports.trafficSources = async (req, res) => {
   try {
-    const data = await getTrafficSources();
+    const dateRange = getDateRange(req.query);
+    const data = await getTrafficSources(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -224,7 +242,8 @@ exports.trafficSources = async (req, res) => {
 
 exports.newVsReturning = async (req, res) => {
   try {
-    const data = await getNewVsReturning();
+    const dateRange = getDateRange(req.query);
+    const data = await getNewVsReturning(dateRange);
 
     if (!data.rows || data.rows.length === 0) {
       return res.json([]);
@@ -286,6 +305,84 @@ exports.realtime = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Failed to fetch realtime analytics",
+    });
+  }
+};
+
+exports.conversions = async (req, res) => {
+  try {
+    const dateRange = getDateRange(req.query);
+    const { start, end } = getMongoDateRange(dateRange);
+    const leadFilter = {
+      createdAt: {
+        $gte: start,
+        $lte: end,
+      },
+    };
+
+    const [overviewData, totalLeads, verifiedLeads, sourceBreakdown] =
+      await Promise.all([
+        getOverview(dateRange),
+        Lead.countDocuments(leadFilter),
+        Lead.countDocuments({
+          ...leadFilter,
+          verified: true,
+        }),
+        Lead.aggregate([
+          {
+            $match: leadFilter,
+          },
+          {
+            $group: {
+              _id: {
+                $ifNull: ["$source", "Website"],
+              },
+              leads: {
+                $sum: 1,
+              },
+            },
+          },
+          {
+            $sort: {
+              leads: -1,
+            },
+          },
+          {
+            $limit: 10,
+          },
+        ]),
+      ]);
+
+    const metrics = overviewData.rows?.[0]?.metricValues || [];
+    const totalUsers = Number(metrics[0]?.value || 0);
+    const activeUsers = Number(metrics[1]?.value || 0);
+    const sessions = Number(metrics[3]?.value || 0);
+    const pageViews = Number(metrics[4]?.value || 0);
+
+    res.json({
+      totalLeads,
+      verifiedLeads,
+      totalUsers,
+      activeUsers,
+      sessions,
+      pageViews,
+      userConversionRate: getConversionRate(totalLeads, totalUsers),
+      activeUserConversionRate: getConversionRate(totalLeads, activeUsers),
+      sessionConversionRate: getConversionRate(totalLeads, sessions),
+      leadsPerThousandViews: pageViews
+        ? Number(((totalLeads / pageViews) * 1000).toFixed(2))
+        : 0,
+      sourceBreakdown: sourceBreakdown.map((item) => ({
+        source: item._id || "Website",
+        leads: item.leads,
+      })),
+    });
+  } catch (err) {
+    console.error("Conversion Analytics Error:", err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch conversion analytics",
     });
   }
 };

@@ -13,5 +13,6 @@ router.get("/devices", analyticsController.deviceBreakdown);
 router.get("/browsers", analyticsController.browserBreakdown);
 router.get("/new-vs-returning", analyticsController.newVsReturning);
 router.get("/realtime", analyticsController.realtime);
+router.get("/conversions", analyticsController.conversions);
 
 module.exports = router;

@@ -1,13 +1,13 @@
 const analyticsClient = require("./googleAnalytics");
 
-const getCountries = async () => {
+const getCountries = async (dateRange = {}) => {
   const [response] = await analyticsClient.runReport({
     property: `properties/${process.env.GA_PROPERTY_ID}`,
 
     dateRanges: [
       {
-        startDate: "30daysAgo",
-        endDate: "today",
+        startDate: dateRange.startDate || "30daysAgo",
+        endDate: dateRange.endDate || "today",
       },
     ],
 
