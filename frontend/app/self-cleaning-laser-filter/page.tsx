@@ -77,7 +77,7 @@ export default function CompactorTypeExtruder() {
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
           <div className="max-w-[620px] pt-24 lg:pt-0">
             <h1 className="mt-6 text-[34px] sm:text-[46px] md:text-[58px] lg:text-[60px] leading-[1.05] font-bold text-[#0B1220]">
-              Shelf Cleaning
+              Self Cleaning
               <span className="block text-[#65BC4F]">Laser Filter</span>
             </h1>
 
@@ -110,7 +110,7 @@ export default function CompactorTypeExtruder() {
             Laser Filter -
             <span className="text-[var(--primary)]">
               {" "}
-              Shelf Cleaning Laser Filter
+              Self Cleaning Laser Filter
             </span>
           </h2>
           <div className="grid lg:grid-cols-2 gap-16 items-center">

@@ -129,8 +129,8 @@ const footerProducts = [
     link: "/single-shaft-shredder",
   },
   {
-    name: "Shelf Cleaning Laser Filter",
-    link: "/shelf-cleaning-laser-filter",
+    name: "Self Cleaning Laser Filter",
+    link: "/self-cleaning-laser-filter",
   },
 ];
 

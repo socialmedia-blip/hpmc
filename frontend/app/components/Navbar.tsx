@@ -415,10 +415,10 @@ const productsDataDesktop = [
     link: "/single-shaft-shredder",
   },
   {
-    name: "Shelf Cleaning Laser Filter",
+    name: "Self Cleaning Laser Filter",
     category: "Laser Filter",
     image: "/products/wpc/laserfilter.png",
-    link: "/shelf-cleaning-laser-filter",
+    link: "/self-cleaning-laser-filter",
   },
 ];
 
