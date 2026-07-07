@@ -459,10 +459,10 @@ const companyMenu = [
   //   name: "Code of Conduct",
   //   link: "/code-of-conduct",
   // },
-  {
-    name: "Milestones",
-    link: "/milestones",
-  },
+  // {
+  //   name: "Milestones",
+  //   link: "/milestones",
+  // },
   {
     name: "Awards & Recognition",
     link: "/awards-recognition",

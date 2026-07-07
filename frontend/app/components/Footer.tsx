@@ -408,12 +408,12 @@ export default function Footer() {
                 >
                   Clients
                 </Link>
-                <Link
+                {/* <Link
                   href="/milestones"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
                 >
                   Milestones
-                </Link>
+                </Link> */}
                 <Link
                   href="/awards-recognition"
                   className="text-gray-400 hover:text-lime-400 transition text-sm"
