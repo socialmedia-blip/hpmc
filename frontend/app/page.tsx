@@ -166,7 +166,7 @@ const heroSlides = [
     desc: "Delivering complete turnkey solutions for PVC, HDPE, PPR, Recycling, Compounding & Profile Extrusion industries with 1000+ successful installations, global exports, and end-to-end technical support.",
   },
   {
-    image: "/home-hero.png",
+    image: "/home-hero1.png",
     tag: "Extrusion Redefined",
     title: ["Precision.", "Performance.", "Possibilities."],
     desc: "Advanced plastic extrusion machinery engineered for superior output and reliability.",

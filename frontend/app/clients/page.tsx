@@ -90,7 +90,7 @@ export default function Clients() {
                       alt={client.name}
                       fill
                       sizes="(max-width:768px) 100vw,25vw"
-                      className="object-contain p-5 grayscale transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0"
+                      className="object-contain p-5 transition-all duration-500 group-hover:scale-110"
                     />
                   </div>
                 </div>
