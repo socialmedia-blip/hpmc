@@ -167,7 +167,7 @@ export default function About() {
 
               <div className="relative h-[248px] rounded-[var(--radius)] overflow-hidden shadow-[var(--shadow-primary)]">
                 <Image
-                  src="/images/img3.jpg"
+                  src="/images/img6.jpg"
                   alt=""
                   fill
                   className="object-cover"
