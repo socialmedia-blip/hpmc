@@ -19,7 +19,7 @@ export default function ProductCarousel() {
       image: "/products/single-screw-extruder.jpg",
       link: "/single-screw-extruder",
       description:
-        "Efficient single screw extrusion system designed for manufacturing high-quality PVC pipes with excellent output, energy efficiency, and consistent production performance.",
+        "Energy-efficient single screw extrusion machine ideal for PVC pipes, profiles, and industrial plastic processing applications, delivering stable output and reliable performance.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -28,7 +28,7 @@ export default function ProductCarousel() {
       image: "/products/conical-twin-screw-extruder.jpg",
       link: "/twin-screw-extruder",
       description:
-        "Advanced conical twin screw extrusion technology delivering superior plasticizing, stable processing, and reliable production for PVC pipe applications.",
+        "Advanced conical twin screw extrusion machine providing excellent plasticizing, consistent melt quality, and high production efficiency for PVC extrusion applications.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -37,7 +37,7 @@ export default function ProductCarousel() {
       image: "/products/PVC-CONDUIT-PIPE-PLANT-two-PIPES-1.jpg",
       link: "/pvc-conduit-pipe-plant-two-pipes",
       description:
-        "High-speed dual pipe extrusion plant engineered for efficient production of premium PVC conduit pipes with excellent dimensional accuracy and productivity.",
+        "High-speed dual pipe extrusion plant engineered for manufacturing premium-quality PVC conduit pipes with excellent dimensional accuracy, smooth surface finish, and higher production efficiency.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -46,7 +46,7 @@ export default function ProductCarousel() {
       image: "/products/PVC-CONDUIT-PIPE-PLANT-FOUR-PIPES-1.jpg",
       link: "/pvc-conduit-pipe-plant-four-pipes",
       description:
-        "Four-pipe extrusion solution designed to maximize production capacity while maintaining exceptional quality, precision, and operational efficiency.",
+        "Advanced four-pipe extrusion solution designed to maximize production capacity whilen maintaining exceptional quality, process stability, and operational efficiency.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -55,7 +55,7 @@ export default function ProductCarousel() {
       image: "/products/VENTED-RECYCLING-PLANT-1-1.jpg",
       link: "/vented-recycling-plant",
       description:
-        "High-performance vented recycling plant for processing plastic waste into quality reusable granules with effective degassing and improved material properties.",
+        "Efficient plastic recycling system designed for processing plastic waste into premium-qualityreusable granules with effective moisture removal, degassing, and improved material properties.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -64,7 +64,7 @@ export default function ProductCarousel() {
       image: "/products/recycling-plant-with-compacter.jpg",
       link: "/recycling-plant-with-compactor",
       description:
-        "Integrated recycling plant with compactor for efficient handling of plastic scrap, ensuring enhanced feeding, uniform melting, and superior recycling performance.",
+        "Integrated plastic recycling plant featuring an advanced compactor system for better material feeding, uniform melting, and enhanced recycling productivity.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -74,7 +74,7 @@ export default function ProductCarousel() {
         "/products/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
       link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
       description:
-        "Advanced co-rotating twin screw extrusion system designed for efficient compounding and plastic recycling with excellent mixing performance, consistent output, and superior material quality.",
+        "High-performance twin screw extrusion system developed for plastic compounding and recycling applications, ensuring superior mixing, consistent output, and excellent material dispersion.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -85,7 +85,7 @@ export default function ProductCarousel() {
         "/products/corotating-triple-screw-extruder-for-compounding-recycling.jpg",
       link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
       description:
-        "High-performance triple screw extrusion technology developed for engineering plastics, delivering exceptional dispersion, enhanced compounding efficiency, and superior processing performance.",
+        "Innovative triple screw extrusion technology designed for engineering plastics, offering outstanding mixing efficiency, superior dispersion, and high-quality compound production",
       catalogue: "/catalogue.pdf",
     },
   ];
@@ -111,17 +111,19 @@ export default function ProductCarousel() {
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
         {/* LEFT SIDE */}
         <div className="max-w-3xl">
-          <p className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
+          <h2 className="text-[var(--primary)] font-semibold uppercase tracking-[2px] text-sm">
             Our Products
-          </p>
-
-          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-            Engineered For Every Need
           </h2>
 
-          <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
+          <span className="mt-3 text-3xl md:text-3xl font-bold text-[var(--text-primary)] leading-tight">
             Complete plastic extrusion solutions for pipes, profiles, recycling,
             compounding, and custom industrial applications.
+          </span>
+
+          <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-3xl">
+            We manufacture a comprehensive range of plastic extrusion machines designed to deliver
+precision, efficiency, and consistent production across multiple industrial applications.
+
           </p>
         </div>
       </div>
