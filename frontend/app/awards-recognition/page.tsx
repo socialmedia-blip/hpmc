@@ -13,28 +13,64 @@ import ScrollToTop from "../components/ScrollToTop";
 
 const awards = [
   {
-    year: "2024",
-    title: "Manufacturing Excellence Award",
+    year: "2026",
+    title: "Global Conclave on Plastic Recycling & Sustainability",
+    image: "/awards/global-conclave-2026.webp",
+  },
+  {
+    year: "2026",
+    title: "PlastIndia 2026 Exhibitor Appreciation",
+    image: "/awards/plastindia-2026.webp",
+  },
+  {
+    year: "2023",
+    title: "Plastivision India 2023 Participation Award",
+    image: "/awards/plastivision-2023.webp",
   },
   {
     year: "2022",
-    title: "Innovation in Extrusion Technology",
+    title: "IndPlas 2022 Silver Sponsor",
+    image: "/awards/indplas-2022-silver-sponsor.webp",
+  },
+  {
+    year: "2022",
+    title: "Nepal 5P International Expo Appreciation",
+    image: "/awards/nepal-5p-2022.webp",
+  },
+  {
+    year: "2022",
+    title: "PlastAsia 2022 Certificate of Participation",
+    image: "/awards/plastasia-2022.webp",
   },
   {
     year: "2020",
-    title: "Global Export Achievement",
+    title: "Plastivision India 2020 Memento",
+    image: "/awards/plastivision-2020.webp",
+  },
+  {
+    year: "2020",
+    title: "Plastivision India 2020 Exhibitor Excellence Award",
+    image: "/awards/plastivision-2020-excellence.webp",
+  },
+  {
+    year: "2019",
+    title: "World Environment Expo 2019 Appreciation",
+    image: "/awards/world-environment-expo-2019.webp",
   },
   {
     year: "2018",
-    title: "Customer Excellence Recognition",
+    title: "IPLEX'18 Participation Recognition",
+    image: "/awards/iplex-2018.webp",
   },
   {
-    year: "2015",
-    title: "Industry Leadership Award",
+    year: "2018",
+    title: "IndPlas 2018 Participation Certificate",
+    image: "/awards/indplas-2018.webp",
   },
   {
-    year: "2010",
-    title: "Quality Manufacturing Recognition",
+    year: "2022",
+    title: "IndPlas 2022 Exhibitor Trophy",
+    image: "/awards/indplas-exhibitor-trophy.webp",
   },
 ];
 
@@ -94,28 +130,48 @@ export default function AwardsRecognition() {
         </div>
       </section>
 
-      <section className="py-16 bg-[var(--background)] ">
+      <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <div className="text-center mb-20">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
               Awards Timeline
             </span>
 
-            <h2 className="text-5xl lg:text-6xl font-bold text-[var(--text-primary)] mt-4">
+            <h2 className="mt-4 text-5xl lg:text-6xl font-bold text-[var(--text-primary)]">
               Recognized Through The Years
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {awards.map((award) => (
-              <div className="group bg-white/5 border border-white/10 rounded-[32px] p-8 hover:border-[var(--primary)] transition">
-                <span className="text-[var(--primary)] text-6xl font-black">
-                  {award.year}
-                </span>
+              <div
+                key={award.title}
+                className="group overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)] transition-all duration-300 hover:-translate-y-2 hover:border-[var(--primary)] hover:shadow-2xl"
+              >
+                {/* Image */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <Image
+                    src={award.image}
+                    alt={award.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
 
-                <h3 className="text-[var(--text-primary)] text-2xl font-bold mt-6">
-                  {award.title}
-                </h3>
+                  {/* Year Badge */}
+                  <div className="absolute left-5 top-5 rounded-full bg-[var(--primary)] px-5 py-2 text-sm font-bold text-white shadow-lg">
+                    {award.year}
+                  </div>
+
+                  {/* Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold leading-snug text-[var(--text-primary)]">
+                    {award.title}
+                  </h3>
+                </div>
               </div>
             ))}
           </div>
