@@ -379,7 +379,7 @@ export default function PvcConduitPipePlantTwoPipes() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/heroSection/tsehero.png')",
           }}
         />
 

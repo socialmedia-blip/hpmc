@@ -78,7 +78,7 @@ export default function SingleShaftShredder() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/home-hero1.png')",
           }}
         />
 

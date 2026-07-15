@@ -11,12 +11,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import {
-  Play,
-  Pause,
-  ChevronDown,
-  Sparkles,
-  HelpCircle,
   ArrowRight,
+  ChevronDown,
+  HelpCircle,
+  Play,
+  Sparkles,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -24,115 +23,118 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = ["/products/wpc/sspfpc.png"];
+const galleryImages = ["/products/wpc/wet-recycling.png"];
 
 const faqData = [
   {
-    question: "What is a Single Screw Plant for PVC Compounding?",
+    question: "What is a Wet Recycling Extrusion Line?",
     answer:
-      "A Single Screw Plant for PVC Compounding is an extrusion system designed to manufacture high-quality rigid and soft PVC compounds with excellent mixing, plasticization, and consistent output for various industrial applications.",
+      "A Wet Recycling Extrusion Line is designed to recycle plastic materials containing moisture, converting them into high-quality recycled pellets with efficient extrusion technology.",
+  },
+  {
+    question: "Which plastic materials can be processed?",
+    answer:
+      "The system is suitable for processing various plastic materials such as PP, PE, LDPE, HDPE, and other recyclable thermoplastics, depending on the application and machine configuration.",
+  },
+  {
+    question: "How much moisture can the machine handle?",
+    answer:
+      "The Wet Recycling Extrusion Line is designed to process plastic materials with moisture content of up to 25%, reducing the need for extensive pre-drying.",
+  },
+  {
+    question: "Is an agglomerator required before extrusion?",
+    answer:
+      "No. One of the key advantages of the Wet Recycling Extrusion Line is that it can process wet plastic material without requiring an agglomerator.",
+  },
+  {
+    question: "What is the production capacity of the machine?",
+    answer:
+      "Depending on the machine model and material being processed, the production capacity can reach up to 600 kg/hr.",
+  },
+  {
+    question: "How does the Wet Recycling Extrusion Line improve efficiency?",
+    answer:
+      "The system simplifies the recycling process by handling wet materials directly, reducing processing steps and improving overall production efficiency.",
+  },
+  {
+    question: "Does the machine help reduce power consumption?",
+    answer:
+      "Yes. The machine is designed with an energy-efficient extrusion system that helps reduce overall power consumption during recycling operations.",
+  },
+  {
+    question: "What are the benefits of wet recycling extrusion?",
+    answer:
+      "Wet recycling extrusion minimizes material preparation, reduces processing time, lowers operating costs, and produces consistent recycled pellets.",
+  },
+  {
+    question: "Can the machine process post-consumer plastic waste?",
+    answer:
+      "Yes. It is suitable for processing various types of post-consumer and post-industrial plastic waste after appropriate washing and size reduction.",
+  },
+  {
+    question: "Is the machine suitable for continuous production?",
+    answer:
+      "Yes. The Wet Recycling Extrusion Line is designed for stable, continuous operation to maximize productivity and maintain consistent product quality.",
+  },
+  {
+    question: "Which industries use recycled plastic pellets?",
+    answer:
+      "Recycled plastic pellets produced by the line are used in packaging, construction, agriculture, automotive, household products, pipe manufacturing, and other plastic processing industries.",
+  },
+  {
+    question: "Does HPMC provide installation and after-sales support?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, operator training, spare parts, technical assistance, and complete after-sales support.",
   },
   {
     question:
-      "What materials can be processed using the HPMC PVC Compounding Plant?",
+      "What are the key advantages of the Wet Recycling Extrusion Line?",
     answer:
-      "The HPMC PVC Compounding Plant is suitable for processing rigid PVC, soft PVC, PVC compounds with calcium carbonate (CaCO₃), additives, stabilizers, plasticizers, and other PVC formulations.",
+      "Key advantages include high-moisture material processing, no agglomerator requirement, energy-efficient operation, reliable performance, and consistent pellet quality.",
   },
   {
-    question: "What is the production capacity of the PVC Compounding Plant?",
+    question:
+      "Can the machine be customized for different production requirements?",
     answer:
-      "Depending on the machine model, the HPMC PVC Compounding Plant offers production capacities ranging from 100 kg/hr to 225 kg/hr while ensuring excellent compound quality and process stability.",
+      "Yes. HPMC offers machine configurations to meet different material types, production capacities, and customer-specific recycling requirements.",
   },
   {
-    question: "Which machine models are available?",
+    question: "Why choose HPMC Wet Recycling Extrusion Lines?",
     answer:
-      "The HPMC Single Screw PVC Compounding Plant is available in HPMC 90, HPMC 100, and HPMC 120 models to meet different production requirements.",
-  },
-  {
-    question: "What are the applications of PVC compounds?",
-    answer:
-      "PVC compounds produced by this plant are widely used in medical products, food packaging, industrial components, building and construction materials, consumer goods, and institutional applications.",
-  },
-  {
-    question: "Can the machine process high-filler PVC compounds?",
-    answer:
-      "Yes. The HPMC PVC Compounding Plant can process PVC compounds with high filler loading up to 100 PHR CaCO₃, making it ideal for PVC profile applications.",
-  },
-  {
-    question: "Can the plant produce soft PVC compounds?",
-    answer:
-      "Yes. The machine is suitable for manufacturing soft PVC compounds used in cable insulation, moulding applications, and other flexible PVC products.",
-  },
-  {
-    question: "What are the benefits of the HPMC PVC Compounding Plant?",
-    answer:
-      "The plant provides excellent plasticization, uniform mixing, stable extrusion, energy-efficient operation, reliable performance, and consistent compound quality for continuous production.",
-  },
-  {
-    question: "Is the machine suitable for continuous industrial production?",
-    answer:
-      "Yes. The HPMC PVC Compounding Plant is engineered for continuous operation with high productivity, low downtime, and dependable long-term performance.",
-  },
-  {
-    question: "How energy efficient is the PVC Compounding Plant?",
-    answer:
-      "The machine incorporates optimized screw geometry, efficient heating systems, and reliable drive technology to maximize productivity while minimizing power consumption.",
-  },
-  {
-    question: "Does HPMC provide installation and technical support?",
-    answer:
-      "Yes. HPMC provides complete installation, commissioning, operator training, technical assistance, spare parts, and comprehensive after-sales support for all PVC compounding plants.",
-  },
-  {
-    question: "What maintenance is required for the PVC Compounding Plant?",
-    answer:
-      "Routine maintenance includes inspection of the screw and barrel, gearbox lubrication, heaters, cooling systems, electrical components, and regular cleaning to ensure consistent machine performance.",
-  },
-  {
-    question: "Why choose HPMC Single Screw PVC Compounding Plants?",
-    answer:
-      "HPMC PVC Compounding Plants are known for robust construction, high production efficiency, consistent compound quality, low maintenance, energy-efficient operation, and reliable after-sales support.",
+      "HPMC Wet Recycling Extrusion Lines combine reliable engineering, efficient wet material processing, energy-saving operation, robust construction, and dependable after-sales support for long-term performance.",
   },
 ];
 
-const specifications = [
-  {
-    parameter: "Max. Plasticizing Capacity (kg/hr)",
-    values: ["120", "150", "225"],
-  },
-  {
-    parameter: "Max. Output (kg/hr)",
-    values: ["100", "140", "225"],
-  },
-  {
-    parameter: "Main Drive (kW)",
-    values: ["22.5", "30", "45"],
-  },
-  {
-    parameter: "Barrel (kW)",
-    values: ["12", "15", "20"],
-  },
-  {
-    parameter: "Die (kW)",
-    values: ["3", "3", "3"],
-  },
-  {
-    parameter: "Screw Speed Variation (RPM)",
-    values: ["20-50", "20-50", "20-40"],
-  },
-];
-
-export default function SingleScrewPlantPvcCompounding() {
+export default function TwoStageRecyclingPlant() {
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopup2, setOpenPopup2] = useState(false);
   const [catalogueToDownload, setCatalogueToDownload] = useState("");
   const [activeImage, setActiveImage] = useState(0);
   const [isZooming, setIsZooming] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
-
   const [active, setActive] = useState<number | null>(0);
   const [showAllFaqs, setShowAllFaqs] = useState(false);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
   const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+
+  const toggleVideo = async () => {
+    if (!videoRef.current) return;
+
+    if (playing) {
+      videoRef.current.pause();
+      setPlaying(false);
+    } else {
+      try {
+        await videoRef.current.play();
+        setPlaying(true);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
 
   const handleDownload = (catalogue: string) => {
     const access = localStorage.getItem("catalogue_access");
@@ -166,29 +168,32 @@ export default function SingleScrewPlantPvcCompounding() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero1.png')",
+            backgroundImage: "url('/herosection/wetrecycling.png')",
           }}
         />
 
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/10" />
+
         {/* Content */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
-          <div className="max-w-[620px] pt-24 lg:pt-0">
-            <h1 className="mt-6 text-[34px] sm:text-[46px] md:text-[58px] lg:text-[60px] leading-[1.05] font-bold text-[#0B1220]">
-              Single Screw Plant For
-              <span className="block text-[#65BC4F]">PVC Compounding</span>
+          <div className="max-w-[520px] pt-24 lg:pt-0">
+            <h1 className="text-[32px] sm:text-[42px] md:text-[54px] lg:text-[64px] leading-[1.05] font-bold text-[#0B1220]">
+              Wet Recycling
+              <span className="text-[#65BC4F]"> Extrusion Line</span>
             </h1>
 
             {/* Buttons */}
-            <div className="flex flex-wrap gap-4 mt-10">
+            <div className="flex flex-wrap gap-4 mt-8">
               <button
                 onClick={() => setOpenPopup(true)}
-                className="flex items-center gap-3 bg-[#65BC4F] hover:bg-[#54a63f] transition-all duration-300 px-7 py-4 rounded-xl"
+                className="flex items-center gap-3 bg-[#65BC4F] hover:bg-[#54a63f] transition-all px-6 py-3 rounded-lg"
               >
                 <span className="text-white font-semibold uppercase text-sm">
                   Request a Demo
                 </span>
 
-                <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                   <span className="text-white">→</span>
                 </div>
               </button>
@@ -204,10 +209,8 @@ export default function SingleScrewPlantPvcCompounding() {
           </span>
 
           <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-            PVC Compounding Extruder -
             <span className="text-[var(--primary)]">
-              {" "}
-              Single Screw Plant For PVC Compounding
+              Wet Recycling Extrusion Line
             </span>
           </h2>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -297,75 +300,68 @@ export default function SingleScrewPlantPvcCompounding() {
                 ))}
               </div>
             </div>
+
             {/* CONTENT */}
             <div>
-              <p className="mt-6 text-[var(--text-secondary)] leading-8">
-                HPMC PVC Compounding Plants are engineered for efficient
-                production of rigid and soft PVC compounds with excellent
-                mixing, uniform dispersion, and consistent output. The system
-                ensures high productivity while maintaining superior compound
-                quality for various industrial applications.
+              <p className="mt-8 text-[var(--text-secondary)] leading-8">
+                HPMC Wet Recycling Extrusion Line is designed for processing
+                plastic materials with high moisture content. The advanced
+                extrusion system enables efficient recycling while maintaining
+                consistent output quality and reducing energy consumption.
               </p>
 
               <p className="mt-5 text-[var(--text-secondary)] leading-8">
-                Suitable for PVC profiles, cable compounds, moulding compounds,
-                and high-filler formulations up to 100 PHR CaCO₃, the plant
-                delivers reliable performance with energy-efficient operation
-                and low maintenance requirements.
+                The line can process wet plastic flakes without the need for an
+                agglomerator, making recycling simpler and more cost-effective
+                for post-consumer and post-industrial plastic waste.
               </p>
 
-              {/* Applications */}
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold text-[var(--text-primary)]">
-                  Applications
-                </h4>
-
-                <div className="grid grid-cols-2 gap-3 mt-4">
-                  {[
-                    "Medical Products",
-                    "Food Packaging",
-                    "Industrial Components",
-                    "Building & Construction",
-                    "Consumer Goods",
-                    "Institutional Products",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-3 text-[var(--text-primary)]"
-                    >
-                      <div className="w-2 h-2 rounded-full bg-[var(--primary)]"></div>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
+              {/* Highlights */}
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {[
+                  "High Moisture Processing",
+                  "No Agglomerator Required",
+                  "Energy Efficient Operation",
+                  "Consistent Extrusion Output",
+                  "Easy Material Feeding",
+                  "Reliable Recycling Solution",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 text-[var(--text-primary)] font-medium"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-[var(--primary)]" />
+                    {item}
+                  </div>
+                ))}
               </div>
 
-              {/* Highlights */}
-              <div className="grid grid-cols-3 gap-4 mt-10">
-                <div className="rounded-2xl border border-[var(--border)] p-5 bg-[var(--card)]">
-                  <h4 className="text-3xl font-bold text-[var(--primary)]">
-                    225
+              {/* Stats Cards */}
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
+                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                    Up to 25%
                   </h4>
-                  <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                    Max Output (kg/hr)
+                  <p className="text-sm text-[var(--text-secondary)] mt-1">
+                    Moisture Handling
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-[var(--border)] p-5 bg-[var(--card)]">
-                  <h4 className="text-3xl font-bold text-[var(--primary)]">
-                    100
+                <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
+                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                    600 KG/HR
                   </h4>
-                  <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                    PHR CaCO₃ Support
+                  <p className="text-sm text-[var(--text-secondary)] mt-1">
+                    Production Capacity
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-[var(--border)] p-5 bg-[var(--card)]">
-                  <h4 className="text-3xl font-bold text-[var(--primary)]">
-                    3
+                <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
+                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                    40%
                   </h4>
-                  <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                    Machine Models
+                  <p className="text-sm text-[var(--text-secondary)] mt-1">
+                    Power Saving*
                   </p>
                 </div>
               </div>
@@ -374,7 +370,20 @@ export default function SingleScrewPlantPvcCompounding() {
               <div className="flex flex-wrap gap-4 mt-10">
                 <button
                   onClick={() => handleDownload("/catalogue.pdf")}
-                  className="bg-[var(--primary)] hover:opacity-90 text-white font-semibold px-7 py-4 rounded-xl transition-all duration-300 flex items-center gap-3"
+                  className="
+        bg-[var(--primary)]
+        hover:opacity-90
+        text-white
+        font-semibold
+        px-7
+        py-4
+        rounded-xl
+        transition-all
+        duration-300
+        flex
+        items-center
+        gap-3
+      "
                 >
                   Download Catalogue
                   <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
@@ -384,7 +393,20 @@ export default function SingleScrewPlantPvcCompounding() {
 
                 <button
                   onClick={() => setOpenPopup2(true)}
-                  className="border border-[var(--border)] hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white text-[var(--text-primary)] px-7 py-4 rounded-xl font-semibold transition-all duration-300"
+                  className="
+        border
+        border-[var(--border)]
+        hover:border-[var(--primary)]
+        hover:bg-[var(--primary)]
+        hover:text-white
+        text-[var(--text-primary)]
+        px-7
+        py-4
+        rounded-xl
+        font-semibold
+        transition-all
+        duration-300
+      "
                 >
                   Request Quote
                 </button>
@@ -394,78 +416,6 @@ export default function SingleScrewPlantPvcCompounding() {
         </div>
       </section>
 
-      <section className="py-16 bg-[var(--background)]">
-        <div className="max-w-7xl mx-auto px-5 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
-              Machine Models
-            </span>
-
-            <h2 className="mt-4 text-5xl font-bold text-[var(--text-primary)]">
-              Technical
-              <span className="text-[var(--primary)]"> Specifications</span>
-            </h2>
-          </div>
-
-          <div
-            className="overflow-x-auto rounded-3xl border"
-            style={{ borderColor: "var(--border)" }}
-          >
-            <table className="w-full min-w-[1000px] border-collapse">
-              <thead>
-                <tr className="bg-[var(--primary)] text-white">
-                  <th
-                    className="px-8 py-6 text-left font-semibold border"
-                    style={{ borderColor: "rgba(255,255,255,0.2)" }}
-                  >
-                    MACHINE MODELS
-                  </th>
-
-                  {["HPMC 90", "HPMC 100", "HPMC 120"].map((model) => (
-                    <th
-                      key={model}
-                      className="px-8 py-6 text-center font-semibold border"
-                      style={{ borderColor: "rgba(255,255,255,0.2)" }}
-                    >
-                      {model}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-
-              <tbody>
-                {specifications.map((item, index) => {
-                  return (
-                    <tr
-                      key={index}
-                      className="hover:bg-[var(--muted)] transition-colors"
-                    >
-                      <td
-                        className="px-8 py-5 font-semibold border"
-                        style={{ borderColor: "var(--border)" }}
-                      >
-                        {item.parameter}
-                      </td>
-
-                      {item.values?.map((value, idx) => (
-                        <td
-                          key={idx}
-                          className="px-8 py-5 text-center border"
-                          style={{ borderColor: "var(--border)" }}
-                        >
-                          {value}
-                        </td>
-                      ))}
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Faqs */}
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-5">
           <div className="text-center mb-16">
@@ -477,7 +427,7 @@ export default function SingleScrewPlantPvcCompounding() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Single Screw Plant For PVC Compounding
+                Vented Recycling Plant
               </span>
             </h2>
 

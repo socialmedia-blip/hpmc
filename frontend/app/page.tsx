@@ -162,13 +162,17 @@ const heroSlides = [
   {
     image: "/home-hero3.png",
     tag: "India's Leading Plastic Extrusion Machine Manufacturer",
-    title: ["Precision Plastic Extrusion", "Machines Built for", "Maximum Performance"],
-    desc: "Hindustan Plastics & Machine Corporation (HPMC) is a leading Plastic Extrusion Machine Manufacturer in India, delivering innovative, energy-efficient, and high-performance extrusion machinery for pipe, profile, recycling, and compounding applications. Engineered for precision,productivity, and long-term reliability."
+    title: [
+      "Precision Plastic Extrusion",
+      "Machines Built for",
+      "Maximum Performance",
+    ],
+    desc: "Hindustan Plastics & Machine Corporation (HPMC) is a leading Plastic Extrusion Machine Manufacturer in India, delivering innovative, energy-efficient, and high-performance extrusion machinery for pipe, profile, recycling, and compounding applications. Engineered for precision,productivity, and long-term reliability.",
   },
   {
     image: "/home-hero1.png",
     tag: "Trusted by Manufacturers Across India & Worldwide",
-    title: ["Complete Plastic" ,"Extrusion", "Machinery Solutions."],
+    title: ["Complete Plastic", "Extrusion", "Machinery Solutions."],
     desc: "From PVC and HDPE pipe extrusion plants to recycling systems and compounding extruders,HPMC designs and manufactures advanced plastic extrusion machines that help manufacturers increase production efficiency, reduce downtime, and achieve consistent product quality",
   },
   {
@@ -285,92 +289,90 @@ export default function Home() {
           }}
           className="min-h-[calc(100svh-72px)]"
         >
- {heroSlides.map((slide, index) => {
-  const HeadingTag = index === 0 ? "h1" : "h2";
+          {heroSlides.map((slide, index) => {
+            const HeadingTag = index === 0 ? "h1" : "h2";
 
-  return (
-    <SwiperSlide key={index} className="h-auto">
-      <div className="relative flex min-h-[calc(100svh-72px)] w-full items-center overflow-hidden bg-[#f7f7f7] py-6 sm:py-8 lg:py-10">
-        {/* BACKGROUND IMAGE */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${slide.image})`,
-          }}
-        />
+            return (
+              <SwiperSlide key={index} className="h-auto">
+                <div className="relative flex min-h-[calc(100svh-72px)] w-full items-center overflow-hidden bg-[#f7f7f7] py-6 sm:py-8 lg:py-10">
+                  {/* BACKGROUND IMAGE */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${slide.image})`,
+                    }}
+                  />
 
-        {/* CONTENT */}
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-  <div className="max-w-[620px] w-full">
+                  {/* CONTENT */}
+                  <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+                    <div className="max-w-[620px] w-full">
+                      <span className="block mb-2 text-[#65BC4F] font-semibold uppercase tracking-[2px] text-[10px] sm:text-xs md:text-sm">
+                        {slide.tag}
+                      </span>
 
-    <span className="block mb-2 text-[#65BC4F] font-semibold uppercase tracking-[2px] text-[10px] sm:text-xs md:text-sm">
-      {slide.tag}
-    </span>
+                      <HeadingTag className="text-[clamp(1.75rem,2.75vw,2.5rem)] font-bold leading-[1.1] text-[#0B1220]">
+                        {slide.title[0]}
+                        <br />
+                        {slide.title[1]}
+                        <br />
+                        <span className="text-[#65BC4F]">{slide.title[2]}</span>
+                      </HeadingTag>
 
-    <HeadingTag className="text-[clamp(1.75rem,2.75vw,2.5rem)] font-bold leading-[1.1] text-[#0B1220]">
-      {slide.title[0]}
-      <br />
-      {slide.title[1]}
-      <br />
-      <span className="text-[#65BC4F]">{slide.title[2]}</span>
-    </HeadingTag>
+                      <p className="mt-3 max-w-[520px] text-[13px] leading-6 text-gray-700 sm:text-sm lg:text-[15px]">
+                        {slide.desc}
+                      </p>
 
-    <p className="mt-3 max-w-[520px] text-[13px] leading-6 text-gray-700 sm:text-sm lg:text-[15px]">
-      {slide.desc}
-    </p>
+                      <div className="mt-5 flex flex-wrap gap-3">
+                        <button
+                          onClick={() => setOpenPopup(true)}
+                          className="flex items-center justify-center gap-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-5 py-2.5 rounded-lg group"
+                        >
+                          <span className="uppercase text-white font-semibold text-xs sm:text-sm">
+                            Book a Site Visit
+                          </span>
 
-    <div className="mt-5 flex flex-wrap gap-3">
-      <button
-        onClick={() => setOpenPopup(true)}
-        className="flex items-center justify-center gap-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-5 py-2.5 rounded-lg group"
-      >
-        <span className="uppercase text-white font-semibold text-xs sm:text-sm">
-          Book a Site Visit
-        </span>
+                          <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
+                            <span className="text-white text-sm">→</span>
+                          </div>
+                        </button>
 
-        <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-          <span className="text-white text-sm">→</span>
-        </div>
-      </button>
+                        <button
+                          onClick={() => setOpenVideo(true)}
+                          className="flex items-center justify-center gap-3 border border-gray-300 hover:border-[#65BC4F] transition px-5 py-2.5 rounded-lg group bg-white/70 backdrop-blur-sm"
+                        >
+                          <span className="uppercase font-semibold text-xs sm:text-sm text-black group-hover:text-lime-600">
+                            Watch Video
+                          </span>
 
-      <button
-        onClick={() => setOpenVideo(true)}
-        className="flex items-center justify-center gap-3 border border-gray-300 hover:border-[#65BC4F] transition px-5 py-2.5 rounded-lg group bg-white/70 backdrop-blur-sm"
-      >
-        <span className="uppercase font-semibold text-xs sm:text-sm text-black group-hover:text-lime-600">
-          Watch Video
-        </span>
+                          <div className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-[#65BC4F]">
+                            <span className="text-xs text-black group-hover:text-lime-600">
+                              ▶
+                            </span>
+                          </div>
+                        </button>
+                      </div>
 
-        <div className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-[#65BC4F]">
-          <span className="text-xs text-black group-hover:text-lime-600">
-            ▶
-          </span>
-        </div>
-      </button>
-    </div>
+                      <div className="mt-6 flex flex-wrap items-center gap-4">
+                        <button className="hero-prev w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
+                          ←
+                        </button>
 
-    <div className="mt-6 flex flex-wrap items-center gap-4">
-      <button className="hero-prev w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
-        ←
-      </button>
+                        <button className="hero-next w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
+                          →
+                        </button>
 
-      <button className="hero-next w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
-        →
-      </button>
+                        <div className="hidden sm:block h-[1px] w-20 bg-gray-300" />
 
-      <div className="hidden sm:block h-[1px] w-20 bg-gray-300" />
-
-      <span className="hidden text-xs uppercase tracking-wider text-gray-500 sm:block">
-        Slide Navigation
-      </span>
-    </div>
-
-  </div>
-</div>
-      </div>
-    </SwiperSlide>
-  );
-})}
+                        <span className="hidden text-xs uppercase tracking-wider text-gray-500 sm:block">
+                          Slide Navigation
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </section>
 
@@ -432,11 +434,31 @@ export default function Home() {
             <div className="hidden md:flex justify-center">
               <button
                 onClick={() => setOpenVideo(true)}
-                className="w-28 h-28 rounded-full border-2 border-[var(--primary)] flex items-center justify-center group hover:bg-[var(--primary)] transition-all"
+                className="group relative flex h-28 w-28 items-center justify-center"
               >
-                <span className="text-3xl text-[var(--primary)] group-hover:text-white ml-1">
-                  ▶
-                </span>
+                {/* Animated Rings */}
+                <span className="absolute inset-0 rounded-full border-2 border-red-500/30 animate-ping"></span>
+                <span className="absolute inset-2 rounded-full border border-red-500/40"></span>
+
+                {/* Main Circle */}
+                <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-red-500/40">
+                  {/* Red Play Button */}
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 transition-all duration-300 group-hover:bg-red-700">
+                    <svg
+                      className="ml-1 h-6 w-6 fill-white"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Play Video Label */}
+                <div className="absolute -bottom-10 text-center">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">
+                    Watch Video
+                  </p>
+                </div>
               </button>
             </div>
 
@@ -446,10 +468,20 @@ export default function Home() {
 
               <div className="pl-8">
                 <p className="text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-[750px] text-justify">
-                  For over 50 years, Hindustan Plastics & Machine Corporation has been recognized as a trustedPlastic Extrusion Machine Manufacturer in India. We specialize in designing, manufacturing,and supplying advanced plastic extrusion machinery for PVC, HDPE, CPVC, PPR, profile extrusion, plastic recycling, and compounding industries.
+                  For over 50 years, Hindustan Plastics & Machine Corporation
+                  has been recognized as a trustedPlastic Extrusion Machine
+                  Manufacturer in India. We specialize in designing,
+                  manufacturing,and supplying advanced plastic extrusion
+                  machinery for PVC, HDPE, CPVC, PPR, profile extrusion, plastic
+                  recycling, and compounding industries.
                 </p>
                 <p className="text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-[750px] text-justify">
-                  Our machines are engineered for higher output, lower energy consumption, superior processstability, and long service life. From concept and machine manufacturing to installation,commissioning, and technical support, we deliver complete turnkey solutions tailored to the production needs of plastic manufacturers across India and global markets.
+                  Our machines are engineered for higher output, lower energy
+                  consumption, superior processstability, and long service life.
+                  From concept and machine manufacturing to
+                  installation,commissioning, and technical support, we deliver
+                  complete turnkey solutions tailored to the production needs of
+                  plastic manufacturers across India and global markets.
                 </p>
               </div>
             </div>
@@ -485,9 +517,9 @@ export default function Home() {
             </h2>
 
             <p className="mt-5 text-[var(--text-secondary)] leading-8">
-              HPMC extrusion machinery supports manufacturers across a wide range of industries with
-              reliable, high-performance, and energy-efficient production solutions.
-
+              HPMC extrusion machinery supports manufacturers across a wide
+              range of industries with reliable, high-performance, and
+              energy-efficient production solutions.
             </p>
           </div>
 
@@ -530,13 +562,13 @@ export default function Home() {
               <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
                 Trusted Plastic Extrusion Machine Manufacturer
                 <br />
-                 for Over Five Decades.
+                for Over Five Decades.
               </h2>
 
               <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-2xl">
-                Our commitment to engineering excellence, product quality, and customer satisfaction has made
-                HPMC the preferred partner for plastic manufacturers worldwide.
-
+                Our commitment to engineering excellence, product quality, and
+                customer satisfaction has made HPMC the preferred partner for
+                plastic manufacturers worldwide.
               </p>
             </div>
 
@@ -584,7 +616,9 @@ export default function Home() {
               </h2>
 
               <p className="mt-5 max-w-2xl text-[var(--text-secondary)] leading-8">
-                Manufacturers across India and international markets trust HPMC for delivering dependable plastic extrusion machinery, exceptional service, and long-term manufacturing solutions.
+                Manufacturers across India and international markets trust HPMC
+                for delivering dependable plastic extrusion machinery,
+                exceptional service, and long-term manufacturing solutions.
               </p>
             </div>
 

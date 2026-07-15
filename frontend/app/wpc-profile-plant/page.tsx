@@ -158,7 +158,7 @@ export default function WpcProfilePlant() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/heroSection/tsehero.png')",
+            backgroundImage: "url('/herosection/wpcHero.png')",
           }}
         />
 

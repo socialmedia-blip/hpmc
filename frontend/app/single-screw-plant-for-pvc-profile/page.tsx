@@ -25,7 +25,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/products/pvc profile extruder/single screw/single_screw_extruder_die_head.jpg",
+  "/products/single-screw-extruder.jpg",
   "/products/pvc profile extruder/single screw/cooling_unit.jpg",
   "/products/pvc profile extruder/single screw/caterpuller.jpg",
   "/products/pvc profile extruder/single screw/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
@@ -354,7 +354,7 @@ export default function SingleScrewPlantForPvcProfile() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/herosection/sseHero.png')",
           }}
         />
 

@@ -200,7 +200,7 @@ export default function SoftCableGradePVC() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/home-hero3.png')",
           }}
         />
 

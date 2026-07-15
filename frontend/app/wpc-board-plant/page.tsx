@@ -158,7 +158,7 @@ export default function WpcProfilePlant() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/heroSection/tsehero.png')",
+            backgroundImage: "url('/herosection/wpcHero.png')",
           }}
         />
 
@@ -488,10 +488,7 @@ export default function WpcProfilePlant() {
 
             <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
               Everything About Our
-              <span className="text-[var(--primary)]">
-                {" "}
-                WPC Board Plant
-              </span>
+              <span className="text-[var(--primary)]"> WPC Board Plant</span>
             </h2>
 
             <p className="mt-5 text-[var(--text-secondary)] max-w-2xl mx-auto">

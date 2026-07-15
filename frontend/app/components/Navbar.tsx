@@ -277,13 +277,13 @@ const productsDataDesktop = [
   {
     name: "Co-Rotating Twin Screw Extruder",
     category: "Plastic Recycling Plant",
-    image: "/product.jpg",
+    image: "/products/co-rotating.png",
     link: "/co-rotating-twin-screw-extruder",
   },
   {
     name: "Compactor type Extruder",
     category: "Plastic Recycling Plant",
-    image: "/product.jpg",
+    image: "/products/recycling-plant-with-compacter.jpg",
     link: "/compactor-type-extruder",
   },
 
@@ -304,7 +304,8 @@ const productsDataDesktop = [
   {
     name: "Soft Cable Grade PVC Compounding Plant",
     category: "Co-Rotating Twin Screw Extruder",
-    image: "/products/soft-cable-grade-pvc-compunding-plant.jpg",
+    image:
+      "/products/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
     link: "/soft-cable-grade-pvc-compounding-plant",
   },
 
@@ -331,7 +332,7 @@ const productsDataDesktop = [
   {
     name: "Single Screw Plant for PVC Profile",
     category: "PVC Profile Extruder",
-    image: "/product.jpg",
+    image: "/products/single-screw-extruder.jpg",
     link: "/single-screw-plant-for-pvc-profile",
   },
   {
@@ -344,7 +345,7 @@ const productsDataDesktop = [
   {
     name: "Single Screw Plant for Single Layer PPR Pipe",
     category: "PPR Pipe Extruder",
-    image: "/products/PPr-Pipe-extruder.jpg",
+    image: "/products/hdpe-pipe-plant.jpg",
     link: "/ppr-pipe-extruder",
   },
 
@@ -419,6 +420,12 @@ const productsDataDesktop = [
     category: "Laser Filter",
     image: "/products/wpc/laserfilter.png",
     link: "/self-cleaning-laser-filter",
+  },
+  {
+    name: "Wet Recycling Extrusion Line",
+    category: "Wet Recycling Extrusion Line",
+    image: "/products/wpc/wet-recycling.png",
+    link: "/wet-recycling-extrusion-line",
   },
 ];
 

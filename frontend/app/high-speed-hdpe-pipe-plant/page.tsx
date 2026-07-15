@@ -405,7 +405,7 @@ export default function HighSpeedHDPEPipePlant() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero.png')",
+            backgroundImage: "url('/herosection/hdpe.png')",
           }}
         />
 
