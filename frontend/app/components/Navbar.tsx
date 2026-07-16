@@ -265,13 +265,13 @@ const productsDataDesktop = [
   {
     name: "Vented Recycling Plant",
     category: "Plastic Recycling Plant",
-    image: "/products/VENTED-RECYCLING-PLANT-1-1.jpg",
+    image: "/products/vented.png",
     link: "/vented-recycling-plant",
   },
   {
     name: "Recycling Plant With Compactor",
     category: "Plastic Recycling Plant",
-    image: "/products/recycling-plant-with-compacter.jpg",
+    image: "/products/recycling-plant-with-compacter.png",
     link: "/recycling-plant-with-compactor",
   },
   {
@@ -283,7 +283,7 @@ const productsDataDesktop = [
   {
     name: "Compactor type Extruder",
     category: "Plastic Recycling Plant",
-    image: "/products/recycling-plant-with-compacter.jpg",
+    image: "/products/recycling-plant-with-compacter.png",
     link: "/compactor-type-extruder",
   },
 

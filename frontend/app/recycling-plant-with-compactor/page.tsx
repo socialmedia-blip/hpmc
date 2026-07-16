@@ -24,7 +24,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/products/plastic-recycling-plant/Recycling plant with compactor/compacter.jpg",
+  "/products/recycling-plant-with-compacter.png",
   "/products/plastic-recycling-plant/Recycling plant with compactor/compacter_prd.jpg",
 ];
 
@@ -221,7 +221,7 @@ export default function RecyclingPlantWithCompactor() {
             Plastic Palletizing Plant -
             <span className="text-[var(--primary)]">
               {" "}
-              Vented Recycling Plant
+              Recycling Plant With Compactor
             </span>
           </h2>
           <div className="grid lg:grid-cols-2 gap-16 items-center">

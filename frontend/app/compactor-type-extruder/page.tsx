@@ -24,7 +24,10 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = ["/products/wpc/compactortypeextruder.png"];
+const galleryImages = [
+  "/products/recycling-plant-with-compacter.png",
+  "/products/wpc/compactortypeextruder.png",
+];
 
 export default function CompactorTypeExtruder() {
   const [openPopup, setOpenPopup] = useState(false);

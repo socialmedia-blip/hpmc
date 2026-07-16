@@ -23,9 +23,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = [
-  "/products/plastic-recycling-plant/vented recycling plant/VENTED-RECYCLING-PLANT-1-1.jpg",
-];
+const galleryImages = ["/products/vented.png"];
 
 const faqData = [
   {

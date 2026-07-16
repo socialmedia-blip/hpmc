@@ -23,10 +23,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = [
-  "/products/plastic-recycling-plant/two-stage-recycling-plant/vented_type_extruder.jpg",
-  "/products/plastic-recycling-plant/two-stage-recycling-plant/2_stage.jpg",
-];
+const galleryImages = ["/products/conical-twin-screw-extruder.jpg"];
 
 const specifications = [
   {

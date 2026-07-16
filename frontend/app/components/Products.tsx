@@ -52,7 +52,7 @@ export default function ProductCarousel() {
     {
       id: 5,
       title: "Vented Recycling Plant",
-      image: "/products/VENTED-RECYCLING-PLANT-1-1.jpg",
+      image: "/products/vented.png",
       link: "/vented-recycling-plant",
       description:
         "Efficient plastic recycling system designed for processing plastic waste into premium-qualityreusable granules with effective moisture removal, degassing, and improved material properties.",
@@ -61,7 +61,7 @@ export default function ProductCarousel() {
     {
       id: 6,
       title: "Recycling Plant With Compactor",
-      image: "/products/recycling-plant-with-compacter.jpg",
+      image: "/products/recycling-plant-with-compacter.png",
       link: "/recycling-plant-with-compactor",
       description:
         "Integrated plastic recycling plant featuring an advanced compactor system for better material feeding, uniform melting, and enhanced recycling productivity.",
@@ -121,9 +121,9 @@ export default function ProductCarousel() {
           </span>
 
           <p className="mt-5 text-[15px] md:text-[17px] leading-8 text-[var(--text-secondary)] max-w-3xl">
-            We manufacture a comprehensive range of plastic extrusion machines designed to deliver
-precision, efficiency, and consistent production across multiple industrial applications.
-
+            We manufacture a comprehensive range of plastic extrusion machines
+            designed to deliver precision, efficiency, and consistent production
+            across multiple industrial applications.
           </p>
         </div>
       </div>
