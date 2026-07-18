@@ -81,42 +81,42 @@ const values = [
 
 const industries = [
   {
-    icon: <Droplets size={42} />,
+    image: "/industry/water.png",
     title: "Water Infrastructure",
     color: "#0EA5E9",
   },
   {
-    icon: <Zap size={42} />,
+    image: "/industry/electrical.png",
     title: "Electrical & Cable",
     color: "#F97316",
   },
   {
-    icon: <Building2 size={42} />,
+    image: "/industry/construction.png",
     title: "Construction",
     color: "#65BC4F",
   },
   {
-    icon: <Package size={42} />,
+    image: "/industry/packaging.png",
     title: "Packaging",
     color: "#8B5CF6",
   },
   {
-    icon: <FlaskConical size={42} />,
+    image: "/industry/polymer.png",
     title: "Polymer Processing",
     color: "#06B6D4",
   },
   {
-    icon: <Recycle size={42} />,
+    image: "/industry/plastic.png",
     title: "Plastic Recycling",
     color: "#16A34A",
   },
   {
-    icon: <Factory size={42} />,
+    image: "/industry/industrial.png",
     title: "Industrial Manufacturing",
     color: "#2563EB",
   },
   {
-    icon: <Wheat size={42} />,
+    image: "/industry/agriculture.png",
     title: "Agriculture & Irrigation",
     color: "#CA8A04",
   },
@@ -533,22 +533,24 @@ export default function Home() {
               energy-efficient production solutions.
             </p>
           </div>
-
           {/* Industries */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-5 mt-16">
+
+          <div className="grid grid-cols-2 gap-5 mt-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
             {industries.map((industry, index) => (
-              <div key={index} className="group text-center">
-                <div
-                  className={`w-full aspect-square rounded-md flex items-center justify-center
-        shadow-lg transition-all duration-300 group-hover:-translate-y-2`}
-                  style={{
-                    backgroundColor: industry.color,
-                  }}
-                >
-                  <div className="text-white text-4xl">{industry.icon}</div>
+              <div
+                key={index}
+                className="group flex flex-col items-center text-center"
+              >
+                <div className="relative h-32 w-32 overflow-hidden  transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-105">
+                  <Image
+                    src={industry.image}
+                    alt={industry.title}
+                    fill
+                    className="object-contain transition-transform duration-700 group-hover:scale-110"
+                  />
                 </div>
 
-                <h3 className="mt-3 text-xs font-bold uppercase tracking-wide text-[var(--text-primary)] leading-5">
+                <h3 className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-[var(--text-primary)] leading-5">
                   {industry.title}
                 </h3>
               </div>

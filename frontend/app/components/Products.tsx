@@ -160,26 +160,33 @@ export default function ProductCarousel() {
               <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
               {/* Mobile Content */}
-              <div className="absolute bottom-0 left-0 right-0 z-20 p-4 md:hidden">
-                <h3 className="text-lg font-bold text-white">
+              {/* Mobile Content */}
+              <div className="absolute inset-x-0 bottom-0 z-20 p-4 md:hidden">
+                <h3 className="mb-3 text-lg font-bold text-white">
                   {product.title}
                 </h3>
 
-                <div className="mt-3 flex gap-2">
+                <div className="grid grid-cols-2 gap-3">
                   <Link
                     href={product.link}
                     className="
-                      flex-1
-                      rounded-xl
-                      border
-                      border-white/30
-                      bg-white/10
-                      py-2.5
-                      text-sm
-                      font-medium
-                      text-white
-                      backdrop-blur-sm
-                    "
+        flex
+        h-12
+        items-center
+        justify-center
+        rounded-xl
+        border
+        border-white/20
+        bg-black/30
+        text-center
+        text-sm
+        font-semibold
+        text-white
+        backdrop-blur-md
+        transition-all
+        hover:bg-white
+        hover:text-black
+      "
                   >
                     View More
                   </Link>
@@ -187,14 +194,19 @@ export default function ProductCarousel() {
                   <button
                     onClick={() => handleDownload(product.catalogue)}
                     className="
-                      flex-1
-                      rounded-xl
-                      bg-[var(--primary)]
-                      py-2.5
-                      text-sm
-                      font-medium
-                      text-white
-                    "
+        flex
+        h-12
+        items-center
+        justify-center
+        rounded-xl
+        bg-[var(--primary)]
+        text-center
+        text-sm
+        font-semibold
+        text-white
+        transition-all
+        hover:opacity-90
+      "
                   >
                     Catalogue
                   </button>
@@ -235,21 +247,27 @@ export default function ProductCarousel() {
                   {product.description}
                 </p>
 
-                <div className="mt-8 flex gap-3">
+                <div className="mt-8 flex items-center justify-center gap-3">
                   <Link
                     href={product.link}
                     className="
-                      rounded-xl
-                      border
-                      border-white/30
-                      px-5
-                      py-3
-                      font-semibold
-                      text-white
-                      transition
-                      hover:bg-white
-                      hover:text-black
-                    "
+      inline-flex
+      items-center
+      justify-center
+      rounded-xl
+      border
+      border-white/30
+      bg-white/10
+      px-6
+      py-3
+      text-sm
+      font-semibold
+      text-white
+      backdrop-blur-sm
+      transition-all
+      hover:bg-white
+      hover:text-black
+    "
                   >
                     View More
                   </Link>
@@ -257,15 +275,20 @@ export default function ProductCarousel() {
                   <button
                     onClick={() => handleDownload(product.catalogue)}
                     className="
-                      rounded-xl
-                      bg-[var(--primary)]
-                      px-5
-                      py-3
-                      font-semibold
-                      text-white
-                      transition
-                      hover:scale-105
-                    "
+      inline-flex
+      items-center
+      justify-center
+      rounded-xl
+      bg-[var(--primary)]
+      px-6
+      py-3
+      text-sm
+      font-semibold
+      text-white
+      transition-all
+      hover:scale-105
+      hover:opacity-90
+    "
                   >
                     Catalogue
                   </button>
