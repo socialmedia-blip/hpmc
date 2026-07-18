@@ -192,6 +192,19 @@ export default function CorotatingTripleScrewExtruder() {
 
   return (
     <div>
+      <title>
+        Co-Rotating Triple Screw Extruder for Compounding & Recycling | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Co-Rotating Triple Screw Extruder is engineered for polymer compounding and recycling with high filler loading, superior mixing, masterbatch production, and output capacities up to 1500 kg/hr. Designed for reliable, energy-efficient industrial performance."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/co-rotating-triple-screw-extruder-for-compounding-&-recycling"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

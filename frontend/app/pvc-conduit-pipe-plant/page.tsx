@@ -273,6 +273,19 @@ export default function PvcConduitPipePlant() {
 
   return (
     <div>
+      <title>
+        PVC Conduit Pipe Plant | PVC Pipe Extrusion Machine Manufacturer | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC PVC Conduit Pipe Plants are designed for high-speed and precision PVC conduit pipe manufacturing. Available in multiple models with bi-metallic screw & barrel technology, energy-efficient performance, and output up to 450 Kg/hr for reliable production."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/pvc-conduit-pipe-plant"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

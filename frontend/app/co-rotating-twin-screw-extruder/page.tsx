@@ -162,6 +162,19 @@ export default function CorotatingTwinScrewExtruder() {
 
   return (
     <div>
+      <title>
+        Co-Rotating Twin Screw Extruder | Plastic Recycling Plant | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Co-Rotating Twin Screw Extruder is a high-performance plastic recycling and polymer compounding machine designed for masterbatch production, engineering plastics, and high filler applications. Delivers superior mixing, excellent dispersion, energy efficiency, and consistent industrial output."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/co-rotating-twin-screw-extruder"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

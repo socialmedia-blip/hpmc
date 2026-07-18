@@ -164,6 +164,19 @@ export default function RecyclingPlantWithCompactor() {
 
   return (
     <div>
+      <title>
+        Recycling Plant With Compactor | Plastic Recycling Machine | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Recycling Plant With Compactor is a high-performance plastic recycling machine designed for processing LDPE, HDPE, LLDPE, PP, ABS, Polycarbonate, and engineering plastics into high-quality reusable granules with superior efficiency and reliable output."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/recycling-plant-with-compactor"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

@@ -71,6 +71,19 @@ export default function SingleShaftShredder() {
 
   return (
     <div>
+      <title>
+        Single Shaft Shredder | Industrial Plastic Shredder Manufacturer | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Single Shaft Shredder is a heavy-duty industrial plastic shredding machine designed for efficient size reduction of plastic waste, pipes, lumps, films, and industrial scrap. Built for reliable performance, high throughput, and seamless integration with plastic recycling lines."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/single-shaft-shredder"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

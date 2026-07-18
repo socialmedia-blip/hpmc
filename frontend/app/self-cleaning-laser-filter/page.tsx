@@ -62,6 +62,19 @@ export default function CompactorTypeExtruder() {
 
   return (
     <div>
+      <title>
+        Self Cleaning Laser Filter | Plastic Melt Filtration System | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Self Cleaning Laser Filter is an advanced plastic melt filtration system designed for continuous, automatic impurity removal during plastic recycling and extrusion. Improve melt quality, reduce downtime, and increase production efficiency with self-cleaning laser filtration technology."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/self-cleaning-laser-filter"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

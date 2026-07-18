@@ -372,6 +372,19 @@ export default function PvcConduitPipePlantTwoPipes() {
 
   return (
     <div>
+      <title>
+        PVC Conduit Pipe Plant (Two Pipes) | Twin Pipe Extrusion Machine | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC PVC Conduit Pipe Plant (Two Pipes) is a high-performance Conical Twin Screw Extruder designed for simultaneous twin PVC conduit pipe production. Featuring single mould operation, bi-metallic screw & barrel technology, and output up to 150 Kg/hr for efficient electrical conduit manufacturing."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/pvc-conduit-pipe-plant-two-pipes"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

@@ -151,6 +151,20 @@ export default function WpcProfilePlant() {
 
   return (
     <div>
+      <title>
+        WPC Profile Plant | Wood Plastic Composite Profile Extrusion Machine |
+        HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC WPC Profile Plant is an advanced Wood Plastic Composite extrusion machine for manufacturing WPC door frames (chokhat), decking, wall panels, fencing, and decorative profiles. Designed for high production efficiency, superior surface finish, and output up to 200 Kg/hr."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/wpc-profile-plant"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

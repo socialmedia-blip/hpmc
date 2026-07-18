@@ -151,6 +151,19 @@ export default function WpcProfilePlant() {
 
   return (
     <div>
+      <title>
+        WPC Board Plant | Wood Plastic Composite Extrusion Machine | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC WPC Board Plant is a high-performance Wood Plastic Composite extrusion machine designed for manufacturing WPC boards, decking, wall panels, fencing, door frames, and decorative profiles. Delivering energy-efficient operation, excellent surface finish, and output up to 200 Kg/hr."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/wpc-board-plant"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

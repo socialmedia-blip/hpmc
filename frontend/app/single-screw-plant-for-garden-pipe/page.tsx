@@ -219,6 +219,20 @@ export default function SingleScrewPlantForGardenPipe() {
 
   return (
     <div>
+      <title>
+        Single Screw Plant for Soft Garden Pipe | PVC Garden Pipe Extrusion
+        Machine | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Single Screw Plant for Soft Garden Pipe is a high-performance PVC garden pipe extrusion machine engineered for manufacturing flexible PVC garden pipes, hoses, and tubing. Designed for reliable performance, energy-efficient production, and long service life."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/single-screw-plant-soft-garden-pipe"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
@@ -489,141 +503,6 @@ export default function SingleScrewPlantForGardenPipe() {
           </div>
         </div>
       </section>
-
-      {/* <section className="py-16 bg-[var(--background)] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        
-          <div className="text-center mb-14">
-            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
-              Applications
-            </span>
-
-            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
-              Products Manufactured Using Our
-              <span className="text-[var(--primary)]"> PVC Pipe Plant</span>
-            </h2>
-
-            <p className="mt-5 max-w-3xl mx-auto text-[var(--text-secondary)] leading-8">
-              HPMC Single Screw Extruders are widely used for manufacturing a
-              variety of PVC pipes and profiles for infrastructure, agriculture,
-              construction, and industrial applications.
-            </p>
-          </div>
-
-    
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={24}
-            slidesPerView={1.2}
-            loop={true}
-            speed={4000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-            }}
-            className="applications-swiper"
-          >
-            {applications.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="
-              group
-              relative
-              h-[320px]
-              rounded-[20px]
-              overflow-hidden
-              cursor-pointer
-            "
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="
-                object-cover
-                transition-all
-                duration-700
-                group-hover:scale-110
-              "
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-
-                  <div className="absolute bottom-0 p-6">
-                    <h3 className="text-white text-2xl font-bold">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-white/80 mt-3 leading-6">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section> */}
-
-      {/* <section className="py-16 bg-[var(--background)]">
-        <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        
-          <div className="text-center mb-16">
-            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
-              Product Showcase
-            </span>
-
-            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
-              See Our Machine
-              <span className="text-[var(--primary)]"> In Action</span>
-            </h2>
-
-            <p className="mt-5 max-w-3xl mx-auto text-[var(--text-secondary)]">
-              Explore detailed machine visuals and watch real production
-              demonstrations to understand the performance and quality of our
-              extrusion systems.
-            </p>
-          </div>
-
-         
-          <div>
-         
-            <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-[var(--border)] shadow-xl">
-              <video
-                ref={videoRef}
-                controls
-                poster="/capture.png"
-                className="w-full h-full object-cover"
-                onPlay={() => setPlaying(true)}
-                onPause={() => setPlaying(false)}
-              >
-                <source src="/abc.mp4" type="video/mp4" />
-              </video>
-
-              {!playing && (
-                <>
-                  <div className="absolute inset-0 bg-black/25 pointer-events-none" />
-
-                  <button
-                    onClick={toggleVideo}
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white shadow-2xl flex items-center justify-center hover:scale-110 transition-all"
-                  >
-                    <Play size={34} className="ml-1 text-[var(--primary)]" />
-                  </button>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">

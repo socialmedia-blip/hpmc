@@ -159,6 +159,19 @@ export default function SingleScrewPlantPvcCompounding() {
 
   return (
     <div>
+      <title>
+        Single Screw Plant for PVC Compounding | PVC Compounding Extruder | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Single Screw Plant for PVC Compounding is a high-performance PVC compounding extruder designed for producing rigid and soft PVC compounds with superior mixing, uniform dispersion, high output, energy efficiency, and reliable industrial performance."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/single-screw-plant-for-pvc-compounding"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

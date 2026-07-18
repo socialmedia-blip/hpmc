@@ -405,6 +405,20 @@ export default function HighSpeedTwoLayerCablePlant() {
 
   return (
     <div>
+      <title>
+        High Speed Two Layer Cable Plant | Cable Extrusion Machine Manufacturer
+        | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC High Speed Two Layer Cable Plant is an advanced cable extrusion machine designed for PVC, XLPE and insulated cable manufacturing. Engineered for high-speed production, precision extrusion, energy efficiency and reliable industrial performance."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/high-speed-two-layer-cable-plant"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

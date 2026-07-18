@@ -233,6 +233,20 @@ export default function TwinScrewPlantForPVCTrunking() {
 
   return (
     <div>
+      <title>
+        Twin Screw Plant for PVC Trunking | PVC Trunking Extrusion Machine |
+        HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Twin Screw Plant for PVC Trunking is a high-performance PVC trunking extrusion machine designed for manufacturing electrical cable trunking, PVC profiles, and wiring ducts. Engineered for consistent output, energy-efficient operation, and long-lasting industrial performance."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/twin-screw-plant-pvc-trunking"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

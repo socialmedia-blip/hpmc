@@ -161,6 +161,20 @@ export default function TwoStageRecyclingPlant() {
 
   return (
     <div>
+      <title>
+        Wet Recycling Extrusion Line | Plastic Recycling Machine Manufacturer |
+        HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Wet Recycling Extrusion Line is engineered for processing high-moisture plastic flakes without an agglomerator. Ideal for post-consumer and post-industrial plastic waste, it delivers energy-efficient recycling, consistent extrusion quality, and production capacity up to 600 KG/HR."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/wet-recycling-extrusion-line"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

@@ -65,6 +65,19 @@ export default function CompactorTypeExtruder() {
 
   return (
     <div>
+      <title>
+        Compactor Type Extruder | Plastic Recycling Extruder Machine | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC Compactor Type Extruder is a high-performance plastic recycling extruder designed for processing PE, PP, LDPE, HDPE, and plastic film waste. Engineered for efficient recycling, superior melting, energy efficiency, and consistent pellet production."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/compactor-type-extruder"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
