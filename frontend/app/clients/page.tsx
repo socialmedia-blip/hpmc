@@ -45,6 +45,16 @@ export default function Clients() {
 
   return (
     <div className="bg-[var(--background)]">
+      <title>
+        Our Clients | Trusted Plastic Extrusion Machinery Manufacturer | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="Discover the manufacturers and businesses that trust HPMC for high-performance plastic extrusion machinery. For over 50 years, we have built long-term partnerships through quality engineering, reliable solutions, and exceptional customer support."
+      />
+
+      <link rel="canonical" href="https://hindustanplastics.com/clients" />
       <Navbar />
 
       {/* CLIENT LOGO WALL */}

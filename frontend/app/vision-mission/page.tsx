@@ -22,6 +22,19 @@ export default function VisionMission() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
+      <title>
+        Vision & Mission | HPMC - Plastic Extrusion Machinery Manufacturer
+      </title>
+
+      <meta
+        name="description"
+        content="Discover HPMC's vision and mission to deliver innovative, high-performance plastic extrusion machinery. Learn how our commitment to engineering excellence, quality, reliability, and customer success has driven manufacturing innovation since 1972."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/vision-mission"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

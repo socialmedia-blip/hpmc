@@ -78,6 +78,19 @@ export default function AwardsRecognition() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
+      <title>
+        Awards & Recognition | HPMC - Excellence in Plastic Extrusion Machinery
+      </title>
+
+      <meta
+        name="description"
+        content="Explore HPMC's awards, recognitions, and industry achievements earned through decades of engineering excellence, innovation, and leadership in plastic extrusion machinery manufacturing since 1972."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/awards-recognition"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

@@ -47,6 +47,20 @@ export default function ManufacturingFacility() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
+      <title>
+        Manufacturing Facility | HPMC - Advanced Plastic Extrusion Machinery
+        Plant
+      </title>
+
+      <meta
+        name="description"
+        content="Explore HPMC's advanced manufacturing facility, equipped with modern infrastructure, precision machining, rigorous quality testing, and world-class production capabilities for plastic extrusion machinery since 1972."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/manufacturing-facility"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
