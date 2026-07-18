@@ -429,3 +429,83 @@ iframe.goog-te-menu-frame {
   border-color: var(--primary);
   box-shadow: 0 0 0 4px rgb(101 188 79 / 10%);
 }
+
+/* =========================================
+   LEAD FORM MOBILE FIX
+========================================= */
+
+.lead-form-shell,
+.lead-form-shell * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.lead-form-shell input,
+.lead-form-shell textarea,
+.lead-form-shell .PhoneInputInput {
+  max-width: 100%;
+}
+
+.lead-phone-input {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+}
+
+.lead-phone-input .PhoneInputCountry {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+}
+
+.lead-phone-input .PhoneInputInput {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-primary);
+  outline: none;
+}
+
+@media (max-width: 360px) {
+  .lead-form-shell {
+    border-radius: 18px;
+  }
+}
+
+/* =========================================
+   DEMO FORM MOBILE FIX
+========================================= */
+
+.demo-form-shell,
+.demo-form-shell * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.demo-form-shell input,
+.demo-form-shell textarea,
+.demo-form-shell .PhoneInputInput {
+  max-width: 100%;
+}
+
+.demo-phone-input {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+}
+
+.demo-phone-input .PhoneInputCountry {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+}
+
+.demo-phone-input .PhoneInputInput {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-primary);
+  outline: none;
+}

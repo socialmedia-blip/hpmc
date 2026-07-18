@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Globe } from "lucide-react";
+import { Globe, ChevronDown, Check } from "lucide-react";
 
 const languages = [
   { code: "en", label: "EN", title: "English" },
@@ -52,7 +52,11 @@ const languages = [
 export default function LanguageSelector() {
   const [lang, setLang] = useState("en");
   const [open, setOpen] = useState(false);
+
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const currentLanguage =
+    languages.find((l) => l.code === lang) || languages[0];
 
   useEffect(() => {
     const savedLang = localStorage.getItem("lang");
@@ -70,6 +74,7 @@ export default function LanguageSelector() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
@@ -93,66 +98,133 @@ export default function LanguageSelector() {
 
   return (
     <div className="relative" ref={wrapperRef}>
+      {/* Button */}
       <button
         type="button"
         onClick={() => setOpen(!open)}
         className="
-      flex h-10 w-14 items-center justify-center
-      rounded-full
-      bg-[var(--card)]
-      text-[var(--text-primary)]
-      border border-[var(--border)]
-      shadow-sm
-      transition-all duration-200
-      hover:bg-[var(--muted)]
-    "
+          flex
+          h-11
+          min-w-[90px]
+          items-center
+          justify-between
+          gap-2
+          rounded-full
+          border
+          border-[var(--border)]
+          bg-[var(--card)]
+          px-3
+          text-sm
+          font-medium
+          text-[var(--text-primary)]
+          shadow-sm
+          transition-all
+          duration-300
+          hover:border-[var(--primary)]
+          hover:shadow-lg
+        "
       >
-        <Globe size={16} />
+        <div className="flex items-center gap-2">
+          <Globe size={16} className="text-[var(--primary)]" />
+
+          <span>{currentLanguage.label}</span>
+        </div>
+
+        <ChevronDown
+          size={16}
+          className={`transition-transform duration-300 ${
+            open ? "rotate-180" : ""
+          }`}
+        />
       </button>
 
+      {/* Dropdown */}
       {open && (
         <div
           className="
-        absolute left-0 top-14 z-50
-        w-48 overflow-hidden
-        
-        border border-[var(--border)]
-        bg-[var(--card)]
-        shadow-2xl
-      "
+            absolute
+            right-0
+            top-14
+            z-50
+            w-64
+            overflow-hidden
+            rounded-2xl
+            border
+            border-[var(--border)]
+            bg-[var(--card)]
+            shadow-[0_20px_60px_rgba(0,0,0,.18)]
+          "
         >
-          <div className="max-h-[580px] md:max-h-96 overflow-y-auto">
+          {/* Header */}
+          <div className="border-b border-[var(--border)] p-4">
+            <p className="text-xs uppercase tracking-widest text-[var(--text-secondary)]">
+              Current Language
+            </p>
+
+            <div className="mt-2 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary)]/10">
+                <Globe size={18} className="text-[var(--primary)]" />
+              </div>
+
+              <div>
+                <p className="font-semibold text-[var(--text-primary)]">
+                  {currentLanguage.title}
+                </p>
+
+                <p className="text-xs text-[var(--text-secondary)]">
+                  {currentLanguage.label}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Languages */}
+          <div className="max-h-[380px] overflow-y-auto py-2">
             {languages.map((language) => (
               <button
                 key={language.code}
-                title={language.title}
                 onClick={() => {
                   changeLanguage(language.code);
                   setOpen(false);
                 }}
                 className={`
-              flex w-full items-center justify-between
-              px-4 py-1 text-left
-              transition-colors duration-200
-              hover:bg-[var(--muted)]
-              ${lang === language.code ? "bg-[var(--muted)]" : ""}
-            `}
+                  mx-2
+                  flex
+                  w-[calc(100%-16px)]
+                  items-center
+                  justify-between
+                  rounded-xl
+                  px-3
+                  py-3
+                  transition-all
+                  duration-200
+                  ${
+                    lang === language.code
+                      ? "bg-[var(--primary)]/10"
+                      : "hover:bg-[var(--muted)]"
+                  }
+                `}
               >
-                <span
-                  className={`
-                text-sm
-                ${
-                  lang === language.code
-                    ? "text-[var(--primary)] font-semibold"
-                    : "text-[var(--text-primary)]"
-                }
-              `}
-                >
-                  {language.title}
-                </span>
+                <div className="text-left">
+                  <p
+                    className={`font-medium ${
+                      lang === language.code
+                        ? "text-[var(--primary)]"
+                        : "text-[var(--text-primary)]"
+                    }`}
+                  >
+                    {language.title}
+                  </p>
+
+                  <p className="text-xs text-[var(--text-secondary)]">
+                    {language.label}
+                  </p>
+                </div>
 
                 {lang === language.code && (
-                  <span className="text-[var(--primary)] text-xs">✓</span>
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--primary)] text-white">
+                    <Check size={15} />
+                  </div>
                 )}
               </button>
             ))}

@@ -81,37 +81,39 @@ export default function ScheduleSiteVisitForm() {
         time: "",
         message: "",
       });
-    } catch (error: any) {
-      setErrorMessage(error.message || "Something went wrong");
+    } catch (error: unknown) {
+      setErrorMessage(
+        error instanceof Error ? error.message : "Something went wrong",
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="relative py-4">
+    <section className="relative w-full min-w-0 overflow-hidden py-2 sm:py-4">
       {/* Background Glow */}
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[var(--primary)]/10 blur-3xl" />
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-5">
+      <div className="relative mx-auto w-full min-w-0 max-w-7xl px-0 sm:px-3 md:px-5">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="mb-6 min-w-0 text-center sm:mb-10 md:mb-12">
           <span className="inline-flex rounded-full bg-[var(--primary)]/10 px-5 py-2 text-sm font-semibold text-[var(--primary)]">
             Schedule a Site Visit
           </span>
 
-          <h2 className="mt-5 text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
+          <h2 className="mt-4 text-2xl font-bold leading-tight text-[var(--text-primary)] sm:text-3xl md:mt-5 md:text-5xl">
             Book Your Factory Site Visit
           </h2>
 
-          <p className="mt-4 max-w-2xl mx-auto text-[var(--text-secondary)]">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-[var(--text-secondary)] sm:mt-4 sm:text-base">
             Choose your preferred date and time. Our team will coordinate your
             visit and provide a guided tour of our facility.
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
+        <div className="grid min-w-0 gap-4 lg:grid-cols-[360px_1fr] lg:gap-6">
           {/* Left Panel */}
           <div
             className="hidden lg:block rounded-[30px] border p-8 h-fit"
@@ -158,13 +160,16 @@ export default function ScheduleSiteVisitForm() {
 
           {/* Form */}
           <div
-            className="rounded-[30px] border p-6 md:p-8"
+            className="demo-form-shell min-w-0 rounded-2xl border p-3 sm:p-5 md:rounded-[30px] md:p-8"
             style={{
               background: "var(--card)",
               borderColor: "var(--border)",
             }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="min-w-0 space-y-4 sm:space-y-6"
+            >
               {successMessage && (
                 <div className="rounded-2xl border border-green-500/30 bg-green-500/10 p-4 text-green-600">
                   {successMessage}
@@ -176,7 +181,7 @@ export default function ScheduleSiteVisitForm() {
                   {errorMessage}
                 </div>
               )}
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid min-w-0 gap-4 md:grid-cols-2 md:gap-5">
                 <input
                   type="text"
                   placeholder="Full Name *"
@@ -188,7 +193,7 @@ export default function ScheduleSiteVisitForm() {
                       name: e.target.value,
                     })
                   }
-                  className="rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
+                  className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none focus:border-[var(--primary)] sm:py-4"
                   style={inputStyle}
                 />
 
@@ -203,20 +208,21 @@ export default function ScheduleSiteVisitForm() {
                       email: e.target.value,
                     })
                   }
-                  className="rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
+                  className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none focus:border-[var(--primary)] sm:py-4"
                   style={inputStyle}
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid min-w-0 gap-4 md:grid-cols-2 md:gap-5">
                 <div
-                  className="rounded-2xl border px-4 py-4"
+                  className="min-w-0 rounded-2xl border px-3 py-3 sm:px-4 sm:py-4"
                   style={{
                     background: "var(--background)",
                     borderColor: "var(--border)",
                   }}
                 >
                   <PhoneInput
+                    className="demo-phone-input"
                     international
                     defaultCountry="IN"
                     required
@@ -241,13 +247,13 @@ export default function ScheduleSiteVisitForm() {
                       companyName: e.target.value,
                     })
                   }
-                  className="rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
+                  className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none focus:border-[var(--primary)] sm:py-4"
                   style={inputStyle}
                 />
               </div>
 
               {/* Date & Time */}
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid min-w-0 gap-4 md:grid-cols-2 md:gap-5">
                 <div>
                   <label className="mb-2 block font-medium text-[var(--text-primary)]">
                     Preferred Date *
@@ -264,7 +270,7 @@ export default function ScheduleSiteVisitForm() {
                         date: e.target.value,
                       })
                     }
-                    className="w-full rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
+                    className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none focus:border-[var(--primary)] sm:py-4"
                     style={inputStyle}
                   />
                 </div>
@@ -284,7 +290,7 @@ export default function ScheduleSiteVisitForm() {
                         time: e.target.value,
                       })
                     }
-                    className="w-full rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
+                    className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none focus:border-[var(--primary)] sm:py-4"
                     style={inputStyle}
                   />
                 </div>
@@ -300,14 +306,14 @@ export default function ScheduleSiteVisitForm() {
                     message: e.target.value,
                   })
                 }
-                className="w-full resize-none rounded-2xl border px-4 py-4 outline-none focus:border-[var(--primary)]"
+                className="block w-full min-w-0 resize-none rounded-2xl border px-4 py-3 outline-none focus:border-[var(--primary)] sm:py-4"
                 style={inputStyle}
               />
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-2xl bg-[var(--primary)] py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full rounded-2xl bg-[var(--primary)] px-4 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70 sm:text-lg"
               >
                 {loading ? "Submitting..." : "Request Site Visit"}
               </button>

@@ -390,14 +390,14 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
   };
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="relative ">
+    <section className="relative w-full min-w-0 overflow-hidden">
+      <div className="relative min-w-0">
         {/* FORM */}
         {currentStep === "form" && (
           <>
             <form
               onSubmit={handleSubmit}
-              className="relative overflow-hidden rounded-[28px] border p-4 md:p-6"
+              className="lead-form-shell relative w-full min-w-0 overflow-hidden rounded-2xl border p-3 sm:rounded-[28px] sm:p-4 md:p-6"
               style={{
                 background: "var(--card)",
                 borderColor: "var(--border)",
@@ -447,14 +447,14 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
               )}
 
               {/* Inputs */}
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid min-w-0 gap-4 md:grid-cols-2 md:gap-5">
                 <div>
                   <input
                     type="text"
                     placeholder="Full Name *"
                     value={formData.name}
                     onChange={(e) => handleChange("name", e.target.value)}
-                    className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                    className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
                     style={inputStyle}
                   />
                   {errors.name && (
@@ -468,7 +468,7 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
                     placeholder="Email Address *"
                     value={formData.email}
                     onChange={(e) => handleChange("email", e.target.value)}
-                    className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                    className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
                     style={inputStyle}
                   />
                   {errors.email && (
@@ -478,13 +478,14 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
 
                 <div>
                   <div
-                    className="rounded-2xl border px-4 py-4"
+                    className="min-w-0 rounded-2xl border px-3 py-3 sm:px-4"
                     style={{
                       background: "var(--background)",
                       borderColor: "var(--border)",
                     }}
                   >
                     <PhoneInput
+                      className="lead-phone-input"
                       international
                       defaultCountry="IN"
                       value={formData.phone}
@@ -502,19 +503,19 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
                     placeholder="Company Name"
                     value={formData.company}
                     onChange={(e) => handleChange("company", e.target.value)}
-                    className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                    className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
                     style={inputStyle}
                   />
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 min-w-0">
                 <input
                   type="text"
                   placeholder="City, State"
                   value={formData.address}
                   onChange={(e) => handleChange("address", e.target.value)}
-                  className="w-full rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
+                  className="block w-full min-w-0 rounded-2xl border px-4 py-3 outline-none transition-all focus:border-[var(--primary)]"
                   style={inputStyle}
                 />
               </div>
@@ -540,6 +541,8 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
                   styles={{
                     control: (base, state) => ({
                       ...base,
+                      width: "100%",
+                      minWidth: 0,
                       minHeight: "56px",
                       borderRadius: "16px",
                       borderColor: state.isFocused
@@ -548,6 +551,17 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
                       backgroundColor: "var(--background)",
                       boxShadow: "none",
                       padding: "4px",
+                    }),
+
+                    container: (base) => ({
+                      ...base,
+                      width: "100%",
+                      minWidth: 0,
+                    }),
+
+                    valueContainer: (base) => ({
+                      ...base,
+                      minWidth: 0,
                     }),
 
                     menu: (base) => ({
@@ -598,6 +612,7 @@ export default function LeadForm2({ onSuccess }: LeadFormProps) {
 
                     input: (base) => ({
                       ...base,
+                      minWidth: 0,
                       color: "var(--text-primary)",
                     }),
 
