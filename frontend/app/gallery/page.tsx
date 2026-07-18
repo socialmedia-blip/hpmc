@@ -71,6 +71,16 @@ export default function Gallery() {
 
   return (
     <div>
+      <title>
+        Gallery | Plastic Extrusion Machines & Manufacturing Projects | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="Explore the HPMC gallery showcasing plastic extrusion machines, manufacturing facilities, customer installations, exhibitions, industrial projects, and engineering excellence in extrusion technology."
+      />
+
+      <link rel="canonical" href="https://hindustanplastics.com/gallery" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

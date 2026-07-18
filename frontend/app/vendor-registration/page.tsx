@@ -98,6 +98,17 @@ export default function VendorRegistration() {
   };
   return (
     <div>
+      <title>Vendor Registration | Become an HPMC Supplier</title>
+
+      <meta
+        name="description"
+        content="Register as a vendor with HPMC and become a trusted supplier of industrial materials, components, machinery, and services. Complete your vendor registration to explore long-term business opportunities with Hindustan Plastics & Machine Corporation."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/vendor-registration"
+      />
       <Navbar />
 
       <section className="py-24 bg-[var(--background)]">

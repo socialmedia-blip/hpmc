@@ -3,8 +3,22 @@ import LegalDocumentPage from "../components/LegalDocumentPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | HPMC",
+
   description:
-    "Privacy Policy for Hindustan Plastics & Machine Corporation website visitors, customers, vendors, agents, and applicants.",
+    "Read the HPMC Privacy Policy to understand how Hindustan Plastics & Machine Corporation collects, uses, stores, and protects the personal information of website visitors, customers, vendors, agents, and job applicants.",
+
+  alternates: {
+    canonical: "https://hindustanplastics.com/privacy-policy",
+  },
+
+  openGraph: {
+    title: "Privacy Policy | HPMC",
+    description:
+      "Learn how Hindustan Plastics & Machine Corporation collects, uses, stores, and safeguards your personal information.",
+    url: "https://hindustanplastics.com/privacy-policy",
+    siteName: "HPMC",
+    type: "website",
+  },
 };
 
 const sections = [

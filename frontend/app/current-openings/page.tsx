@@ -41,6 +41,17 @@ export default function CurrentOpening() {
 
   return (
     <div>
+      <title>Careers | Current Openings | Plastic Extrusion Jobs | HPMC</title>
+
+      <meta
+        name="description"
+        content="Explore current career opportunities at HPMC. Join our team in the plastic extrusion machinery industry and discover rewarding jobs in engineering, manufacturing, sales, service, and corporate functions."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/current-openings"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

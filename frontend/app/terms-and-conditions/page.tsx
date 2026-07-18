@@ -3,8 +3,29 @@ import LegalDocumentPage from "../components/LegalDocumentPage";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | HPMC",
+
   description:
-    "Terms and Conditions for using the Hindustan Plastics & Machine Corporation website.",
+    "Read the Terms & Conditions of Hindustan Plastics & Machine Corporation (HPMC) governing the use of our website, products, services, and business interactions.",
+
+  alternates: {
+    canonical: "https://hindustanplastics.com/terms-and-conditions",
+  },
+
+  openGraph: {
+    title: "Terms & Conditions | HPMC",
+    description:
+      "Read the Terms & Conditions of Hindustan Plastics & Machine Corporation (HPMC) governing the use of our website, products, services, and business interactions.",
+    url: "https://hindustanplastics.com/terms-and-conditions",
+    siteName: "HPMC",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary",
+    title: "Terms & Conditions | HPMC",
+    description:
+      "Read the Terms & Conditions of Hindustan Plastics & Machine Corporation (HPMC).",
+  },
 };
 
 const sections = [

@@ -87,6 +87,17 @@ export default function BecomeAgent() {
   };
   return (
     <div>
+      <title>Worldwide Representatives | Become an Agent | HPMC</title>
+
+      <meta
+        name="description"
+        content="Connect with HPMC's worldwide representatives and authorized overseas agents for plastic extrusion machinery, technical support, sales assistance, and local customer service. Find your nearest HPMC representative today."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/become-an-agent"
+      />
       <Navbar />
 
       <section className="py-24 bg-[var(--background)]">

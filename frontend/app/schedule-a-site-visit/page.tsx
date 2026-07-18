@@ -16,6 +16,17 @@ export default function RequestDemo() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
+      <title>Schedule a Site Visit | HPMC Plastic Extrusion Solutions</title>
+
+      <meta
+        name="description"
+        content="Schedule a site visit with HPMC to explore our plastic extrusion machinery, manufacturing capabilities, and customized industrial solutions. Connect with our experts for demonstrations, technical consultations, and project discussions."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/schedule-site-visit"
+      />
       <Navbar />
       <div className="mt-24">
         <ScheduleDemoForm />

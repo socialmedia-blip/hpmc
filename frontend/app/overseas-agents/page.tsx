@@ -41,6 +41,17 @@ export default function OverseasAgents() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
+      <title>Worldwide Representatives | Overseas Agents | HPMC</title>
+
+      <meta
+        name="description"
+        content="Connect with HPMC's worldwide representatives and authorized overseas agents for plastic extrusion machinery, technical support, sales assistance, and local customer service. Find your nearest HPMC representative today."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/overseas-agents"
+      />
       <Navbar />
 
       <section className="py-24 bg-[var(--background)]">
