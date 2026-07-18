@@ -17,6 +17,19 @@ export default function TechnicalAssistance() {
 
   return (
     <div>
+      <title>
+        Technical Assistance | Plastic Extrusion Machine Support | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="Get expert technical assistance from HPMC for plastic extrusion machinery. We provide machine installation, troubleshooting, process optimization, operator training, remote support, and maintenance guidance to ensure maximum productivity and reliable performance."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/technical-assistance"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

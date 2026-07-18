@@ -16,6 +16,16 @@ export default function SpareParts() {
 
   return (
     <div>
+      <title>
+        Genuine Spare Parts | Plastic Extrusion Machine Components | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC supplies genuine spare parts for plastic extrusion machinery, including critical machine components, fast dispatch, technical support, and reliable inventory management to minimize downtime and ensure uninterrupted production performance."
+      />
+
+      <link rel="canonical" href="https://hindustanplastics.com/spare-parts" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

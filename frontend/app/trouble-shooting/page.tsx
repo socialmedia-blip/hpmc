@@ -16,6 +16,17 @@ export default function TroubleShooting() {
 
   return (
     <div>
+      <title>Trouble Shooting | Plastic Extrusion Machine Support | HPMC</title>
+
+      <meta
+        name="description"
+        content="HPMC provides expert trouble shooting support for plastic extrusion machinery, including root cause analysis, process optimization, machine diagnostics, production issue resolution, and technical guidance to minimize downtime and ensure reliable manufacturing performance."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/trouble-shooting"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

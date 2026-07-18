@@ -75,17 +75,56 @@ export default function CTA() {
               {/* BUTTON */}
               <button
                 onClick={() => setOpenPopup(true)}
-                className="flex items-center gap-3 bg-[var(--primary)] rounded-full pl-4 pr-1 py-1 group hover:bg-[var(--background)] border-2 border-[var(--primary)] transition-all duration-300"
+                className="
+    inline-flex
+    items-center
+    justify-center
+    gap-3
+    rounded-full
+    border-2
+    border-[var(--primary)]
+    bg-[var(--primary)]
+    px-2
+    py-2
+    transition-all
+    duration-300
+    hover:bg-[var(--background)]
+    group
+  "
               >
-                <span className="text-[14px] uppercase font-semibold text-white group-hover:text-[var(--text-primary)]">
+                <span
+                  className="
+      flex-1
+      px-4
+      text-center
+      text-sm
+      font-semibold
+      uppercase
+      text-white
+      group-hover:text-[var(--text-primary)]
+    "
+                >
                   Request A Quote
                 </span>
 
-                <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center group-hover:bg-[var(--primary)] transition">
-                  <span className="text-[var(--primary)] group-hover:text-white text-lg">
+                <span
+                  className="
+      flex
+      h-10
+      w-10
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      bg-white
+      transition-all
+      group-hover:bg-[var(--primary)]
+    "
+                >
+                  <span className="text-lg text-[var(--primary)] group-hover:text-white">
                     →
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </div>

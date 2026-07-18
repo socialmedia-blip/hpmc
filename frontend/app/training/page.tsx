@@ -16,6 +16,16 @@ export default function Training() {
 
   return (
     <div>
+      <title>
+        Operator Training | Plastic Extrusion Machine Training | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC offers professional operator training for plastic extrusion machinery, covering machine operation, process optimization, maintenance, troubleshooting, safety practices, and hands-on technical guidance to improve productivity and ensure consistent manufacturing performance."
+      />
+
+      <link rel="canonical" href="https://hindustanplastics.com/training" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

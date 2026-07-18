@@ -16,6 +16,19 @@ export default function ExtrusionHints() {
 
   return (
     <div>
+      <title>
+        Extrusion Hints | Plastic Extrusion Process Optimization | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="Explore HPMC extrusion hints and expert guidance for plastic extrusion processes. Learn best practices for process optimization, temperature control, material handling, troubleshooting, and improving machine efficiency and product quality."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/extrusion-hints"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

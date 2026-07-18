@@ -16,6 +16,19 @@ export default function FieldServices() {
 
   return (
     <div>
+      <title>
+        Field Services | On-Site Plastic Extrusion Machine Support | HPMC
+      </title>
+
+      <meta
+        name="description"
+        content="HPMC provides professional field services for plastic extrusion machinery, including on-site installation, commissioning, machine inspections, preventive maintenance, troubleshooting, operator training, and performance optimization to maximize productivity."
+      />
+
+      <link
+        rel="canonical"
+        href="https://hindustanplastics.com/field-services"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

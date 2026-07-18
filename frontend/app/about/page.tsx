@@ -23,28 +23,23 @@ import {
 const features = [
   {
     title: "Engineering Excellence",
-    desc: "Precision manufacturing backed by over five decades of industry expertise.",
+    desc: "Precision-engineered extrusion solutions backed by decades of manufacturing expertise and technical innovation.",
     icon: Cog,
   },
   {
     title: "Quality",
-    desc: "Built with robust engineering standards and rigorous quality control.",
+    desc: "Every machine is built with premium materials, strict quality standards, and reliable performance in mind.",
     icon: ShieldCheck,
   },
   {
     title: "Innovation",
-    desc: "Advanced extrusion technologies designed for higher productivity.",
+    desc: "Advanced extrusion technologies developed to maximize productivity, efficiency, and long-term operational value.",
     icon: Lightbulb,
   },
   {
     title: "Customer Success",
-    desc: "Focused on helping customers build profitable manufacturing businesses.",
+    desc: "Dedicated support and customized solutions that help manufacturers achieve sustainable growth and profitability.",
     icon: Handshake,
-  },
-  {
-    title: "Reliability",
-    desc: "Trusted by manufacturers for long-term performance and support.",
-    icon: TrendingUp,
   },
 ];
 
@@ -191,7 +186,7 @@ export default function About() {
       <section className="pb-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           {/* VALUES */}
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {features.map((item, index) => {
               const Icon = item.icon;
 
@@ -205,7 +200,7 @@ export default function About() {
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-[var(--text-secondary)] leading-6">
+                  <p className="text-sm text-[var(--text-secondary)]  leading-6">
                     {item.desc}
                   </p>
                 </div>
