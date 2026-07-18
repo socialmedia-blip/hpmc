@@ -271,6 +271,15 @@ export default function Home() {
 
   return (
     <div>
+      <title>
+        Plastic Extrusion Machine Manufacturer in India | HPMC - Since 1972
+      </title>
+      <meta
+        name="description"
+        content="Hindustan Plastics & Machine Corporation (HPMC) is a leading plastic extrusion machine manufacturer in India since 1972. We manufacture PVC Pipe Plants, HDPE Pipe Plants, PPR Pipe Plants, Plastic Recycling Machines, PVC Profile Extrusion Lines and complete extrusion solutions."
+      />
+      {/* Google Search Console verification */}
+      <link rel="canonical" href="https://hindustanplastics.com" />
       <Navbar />
       <section className="relative mt-[72px] w-full">
         <Swiper
@@ -387,7 +396,9 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="group flex flex-col items-center text-center p-6 border border-[var(--border)] transition-all duration-300 hover:bg-[var(--primary)] hover:-translate-y-1"
+                    className={`group flex flex-col items-center text-center p-6 border border-[var(--border)] transition-all duration-300 hover:bg-[var(--primary)] hover:-translate-y-1 ${
+                      index === 4 ? "hidden md:flex" : ""
+                    }`}
                   >
                     <div className="relative w-[60px] h-[60px] rounded-full border-2 border-[var(--border)] flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-white">
                       <div className="absolute top-[-2px] left-1/2 -translate-x-1/2 w-[64px] h-[32px] border-t-[3px] border-[var(--primary)] rounded-t-full transition-all duration-300 group-hover:border-white" />
@@ -612,7 +623,7 @@ export default function Home() {
               </span>
 
               <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[var(--text-primary)]">
-                What Our Customers Say.
+                What Our Partners Say.
               </h2>
 
               <p className="mt-5 max-w-2xl text-[var(--text-secondary)] leading-8">
