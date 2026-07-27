@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 
 const whatsappMessage = encodeURIComponent(
-  "Hello HPMC Team, I would like to know more about the Co-Rotating Twin Screw Extruder.",
+  "Hello HPMC Team, I’m interested in your extrusion solutions and would like to discuss my requirements. Please assist me with more details.",
 );
 
 export default function LandingFooter() {

@@ -31,38 +31,58 @@ const productName = "Conical Twin Screw Extrusion Line";
 const applications = [
   {
     title: "PVC Pipe",
-    description:
-      "Reliable extrusion solutions for manufacturing PVC pipes with consistent processing, precise control and dependable production performance.",
-    image: "/products/TWIN-SCREW-PLANT-FOR-PVC-PROFILE.jpeg",
     tag: "Pipe Extrusion",
+    description:
+      "Designed for reliable PVC pipe production with stable material processing, controlled extrusion and consistent output across different pipe requirements.",
+    points: [
+      "Stable & consistent extrusion",
+      "Suitable for multiple pipe sizes",
+      "Reliable continuous production",
+    ],
   },
   {
     title: "UPVC Window Profile",
-    description:
-      "Conical twin screw extrusion technology for producing UPVC window profiles with stable processing and consistent profile quality.",
-    image: "/products/TWIN-SCREW-PLANT-FOR-PVC-PROFILE.jpeg",
     tag: "Window Profiles",
+    description:
+      "Conical twin screw extrusion solutions for manufacturing UPVC window profiles with controlled processing, dimensional consistency and dependable production.",
+    points: [
+      "Consistent profile dimensions",
+      "Controlled material processing",
+      "Reliable production performance",
+    ],
   },
   {
     title: "PVC Profile",
-    description:
-      "Engineered extrusion solutions for PVC profiles used across construction, electrical and other profile applications.",
-    image: "/products/TWIN-SCREW-PLANT-FOR-PVC-PROFILE.jpeg",
     tag: "Profile Extrusion",
+    description:
+      "Engineered for manufacturing PVC profiles used across construction, electrical and industrial applications with stable processing and consistent profile quality.",
+    points: [
+      "Consistent profile quality",
+      "Stable material flow",
+      "Multiple profile applications",
+    ],
   },
   {
     title: "WPC Profile",
-    description:
-      "Extrusion solutions for processing WPC formulations into profiles for door frames, building products and related applications.",
-    image: "/products/wpc/wpc.png",
     tag: "WPC Processing",
+    description:
+      "Designed for efficient processing of wood-plastic composite formulations into durable profiles for building, furniture and decorative applications.",
+    points: [
+      "Excellent surface finish",
+      "Stable & reliable processing",
+      "Suitable for diverse WPC profiles",
+    ],
   },
   {
     title: "PVC Compounding",
-    description:
-      "Efficient processing solutions for PVC compounding applications requiring controlled mixing and consistent material processing.",
-    image: "/products/conical-twin-screw-extruder.jpg",
     tag: "Compounding",
+    description:
+      "Efficient processing solutions for PVC compounding applications requiring controlled material handling, consistent mixing and dependable processing performance.",
+    points: [
+      "Consistent material processing",
+      "Controlled mixing performance",
+      "Application-specific configuration",
+    ],
   },
 ];
 
@@ -356,7 +376,7 @@ export default function ConicalTwinScrewExtrusionLine() {
 
                   <div className="relative flex min-h-[300px] items-center justify-center sm:min-h-[380px]">
                     <Image
-                      src="/products/TWIN-SCREW-PLANT-FOR-PVC-PROFILE.jpeg"
+                      src="/products/conical-twin-screw-extruder.jpg"
                       alt="HPMC Conical Twin Screw Extrusion Line"
                       width={700}
                       height={500}
@@ -555,76 +575,132 @@ export default function ConicalTwinScrewExtrusionLine() {
         ========================================================= */}
         <section
           id="applications"
-          className="relative overflow-hidden bg-gradient-to-b from-[#07110b] via-[#0B1220] to-[#07110b] px-5 py-20 text-white sm:px-8 lg:py-32"
+          className="relative overflow-hidden bg-[var(--background)] px-5 py-20 sm:px-8 "
         >
-          <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-[#65BC4F]/10 blur-3xl" />
-          <div className="absolute left-0 bottom-1/4 h-96 w-96 rounded-full bg-[#65BC4F]/5 blur-3xl" />
+          {/* Background Effects */}
+          <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-[100px]" />
+          <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-[100px]" />
 
           <div className="relative mx-auto max-w-7xl">
-            <div className="mx-auto mb-20 max-w-3xl text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#78d660]">
-                Applications
-              </p>
+            {/* Section Heading */}
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/10 px-4 py-2">
+                <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
 
-              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-[52px]">
-                One extrusion platform.
-                <span className="block text-[#78d660]">
-                  Multiple applications.
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)] sm:text-sm">
+                  Applications
+                </p>
+              </div>
+
+              <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
+                One Extrusion Platform.
+                <span className="block text-[var(--primary)]">
+                  Multiple Applications.
                 </span>
               </h2>
 
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                Configure the Conical Twin Screw Extrusion Line according to
-                your material, end product and production requirements.
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
+                HPMC Conical Twin Screw Extrusion Lines can be configured for
+                different PVC and WPC processing requirements, from pipe and
+                profile production to compounding applications.
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Application Cards */}
+            <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
               {applications.map((application, index) => (
-                <article
+                <div
                   key={application.title}
-                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-sm transition duration-300 hover:-translate-y-2 hover:border-[#65BC4F]/40 hover:bg-white/[0.12] ${
-                    index === 0 ? "lg:col-span-2" : ""
-                  }`}
+                  className={`
+            group relative overflow-hidden rounded-2xl
+            border border-[var(--border)]
+            bg-[var(--card)]
+            p-6
+            transition-all duration-300
+            hover:-translate-y-1
+            hover:border-[var(--primary)]/40
+            hover:shadow-[var(--shadow-primary)]
+            sm:p-7
+
+            ${
+              index < 3
+                ? "lg:col-span-2"
+                : index === 3
+                  ? "lg:col-span-3"
+                  : "lg:col-span-3"
+            }
+          `}
                 >
-                  <div
-                    className={`relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 ${
-                      index === 0 ? "h-80" : "h-56"
-                    }`}
-                  >
-                    <Image
-                      src={application.image}
-                      alt={`${application.title} extrusion application`}
-                      fill
-                      className="object-contain p-8 transition duration-500 group-hover:scale-[1.06]"
-                    />
+                  {/* Hover Glow */}
+                  <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[var(--primary)]/0 blur-3xl transition-all duration-500 group-hover:bg-[var(--primary)]/10" />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+                  {/* Number */}
+                  <span className="absolute right-6 top-6 text-4xl font-bold leading-none text-[var(--primary)]/[0.08] transition-colors group-hover:text-[var(--primary)]/[0.14]">
+                    0{index + 1}
+                  </span>
 
-                    <div className="absolute left-5 top-5 rounded-full bg-[#0B1220]/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md border border-white/10">
-                      {application.tag}
+                  <div className="relative">
+                    {/* Icon */}
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--primary)]/15 bg-[var(--primary)]/10 text-[var(--primary)] transition-all duration-300 group-hover:bg-[var(--primary)] group-hover:text-white">
+                      <Layers3 className="h-5 w-5" />
                     </div>
-                  </div>
 
-                  <div className="relative z-10 p-8">
-                    <h3 className="text-2xl font-bold group-hover:text-[#78d660] transition">
+                    {/* Tag */}
+                    <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+                      {application.tag}
+                    </p>
+
+                    {/* Title */}
+                    <h3 className="mt-2 text-xl font-bold text-[var(--text-primary)] sm:text-2xl">
                       {application.title}
                     </h3>
 
-                    <p className="mt-4 leading-7 text-slate-300 group-hover:text-slate-200 transition">
+                    {/* Description */}
+                    <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
                       {application.description}
                     </p>
 
-                    <a
-                      href="#enquire"
-                      className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#78d660] transition group-hover:gap-3"
-                    >
-                      Enquire for this application
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
+                    {/* Divider */}
+                    <div className="my-5 h-px bg-[var(--border)]" />
+
+                    {/* Points */}
+                    <ul className="space-y-3">
+                      {application.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-3 text-sm font-medium leading-6 text-[var(--text-primary)]"
+                        >
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--primary)]/10">
+                            <Check className="h-3 w-3 text-[var(--primary)]" />
+                          </span>
+
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Bottom Accent */}
+                    <div className="mt-6 h-[2px] w-10 rounded-full bg-[var(--primary)]/30 transition-all duration-300 group-hover:w-20 group-hover:bg-[var(--primary)]" />
                   </div>
-                </article>
+                </div>
               ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-12 flex flex-col items-center text-center">
+              <p className="max-w-xl text-sm leading-7 text-[var(--text-secondary)]">
+                Not sure which extrusion configuration is suitable for your
+                application? Share your material, product and production
+                requirements with our team.
+              </p>
+
+              <a
+                href="#enquire"
+                className="group mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--primary)] px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(101,188,79,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--primary-dark)] hover:shadow-[0_14px_32px_rgba(101,188,79,0.30)] sm:text-base"
+              >
+                Discuss Your Application
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
         </section>
@@ -632,7 +708,7 @@ export default function ConicalTwinScrewExtrusionLine() {
         {/* =========================================================
             FEATURES
         ========================================================= */}
-        <section className="relative overflow-hidden bg-[var(--background)] px-5 py-20 text-[var(--foreground)] transition-colors duration-300 sm:px-8 lg:py-32">
+        <section className="relative overflow-hidden bg-[var(--background)] px-5 py-20 text-[var(--foreground)] transition-colors duration-300 sm:px-8">
           {/* Background Glow */}
           <div className="pointer-events-none absolute left-0 top-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-3xl" />
           <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-3xl" />
@@ -742,7 +818,7 @@ export default function ConicalTwinScrewExtrusionLine() {
         {/* =========================================================
             TECHNICAL SPECIFICATIONS
         ========================================================= */}
-        <section className="relative overflow-hidden bg-[var(--background)] px-5 py-20 text-[var(--foreground)] transition-colors duration-300 sm:px-8 lg:py-32">
+        <section className="relative overflow-hidden bg-[var(--background)] px-5 py-20 text-[var(--foreground)] transition-colors duration-300 sm:px-8">
           {/* Background Effects */}
           <div className="pointer-events-none absolute left-0 top-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-3xl" />
           <div className="pointer-events-none absolute bottom-1/4 right-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-3xl" />
@@ -905,7 +981,7 @@ export default function ConicalTwinScrewExtrusionLine() {
         {/* =========================================================
             WHY HPMC
         ========================================================= */}
-        <section className="relative overflow-hidden bg-[var(--secondary)] px-5 py-20 text-white transition-colors duration-300 sm:px-8 lg:py-32">
+        <section className="relative overflow-hidden bg-[var(--secondary)] px-5 py-20 text-white transition-colors duration-300 sm:px-8">
           {/* Background Effects */}
           <div className="pointer-events-none absolute right-0 top-0 h-[450px] w-[450px] rounded-full bg-[var(--primary)]/10 blur-[120px]" />
           <div className="pointer-events-none absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-[100px]" />
