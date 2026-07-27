@@ -3,7 +3,6 @@ const multer = require("multer");
 const router = express.Router();
 const {
   sendOTP,
-  createLandingLead,
   verifyOTP,
   getAllLeads,
   getAllLeadActivity,
@@ -54,7 +53,6 @@ const uploadLeadFile = (req, res, next) => {
 };
 
 router.post("/send-otp", sendOTP);
-router.post("/landing", createLandingLead);
 router.post("/verify-otp", verifyOTP);
 router.post("/import", uploadLeadFile, importLeads);
 router.get("/activity", getAllLeadActivity);

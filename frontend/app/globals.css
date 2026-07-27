@@ -51,6 +51,11 @@
   );
 
   --sidebar-card: #ffffff;
+
+  /* Landing page surfaces */
+  --landing-soft-bg: #f4f8f3;
+  --landing-accent-bg: #eaf4e6;
+  --landing-callout-bg: #f4f8f3;
 }
 
 /* =========================================
@@ -91,6 +96,11 @@
   --sidebar-bg: linear-gradient(135deg, #071a2f 0%, #0b1727 100%);
 
   --sidebar-card: rgba(255, 255, 255, 0.04);
+
+  /* Landing page surfaces */
+  --landing-soft-bg: #07130c;
+  --landing-accent-bg: #07130c;
+  --landing-callout-bg: #0b2011;
 }
 
 /* =========================================

@@ -186,69 +186,30 @@ const readWorkbookRows = (file) => {
 };
 
 /* ============================
-   LANDING PAGE LEAD
-=============================== */
-exports.createLandingLead = async (req, res) => {
-  try {
-    const { name, email, phone, companyName, message, product, website } =
-      req.body;
-
-    // Honeypot field: return a success response without creating spam records.
-    if (website) {
-      return res.status(201).json({ success: true });
-    }
-
-    if (!name?.trim() || !email?.trim() || !phone?.trim() || !message?.trim()) {
-      return res.status(400).json({
-        success: false,
-        message: "Name, email, phone and message are required.",
-      });
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      return res.status(400).json({
-        success: false,
-        message: "Please provide a valid email address.",
-      });
-    }
-
-    const lead = await Lead.create({
-      name: name.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone.trim(),
-      message: message.trim(),
-      verified: false,
-      source: "Google Ads - Co-Rotating Twin Screw Landing Page",
-      customFields: {
-        companyName: companyName?.trim() || "",
-        product: product?.trim() || "Co-Rotating Twin Screw Extruder",
-        landingPage: "/landing/Co-rotating-twin-screw-extruder",
-      },
-      activityLog: [
-        {
-          type: "created",
-          message: "Lead submitted through the Co-Rotating Twin Screw landing page",
-        },
-      ],
-    });
-
-    res.status(201).json({ success: true, leadId: lead._id });
-  } catch (error) {
-    console.error("Landing Lead Error:", error);
-    res.status(500).json({
-      success: false,
-      message: "Unable to save your enquiry. Please try again.",
-    });
-  }
-};
-
-/* ============================
    SEND OTP
 =============================== */
 exports.sendOTP = async (req, res) => {
   try {
-    const { name, email, phone, message, customFields, ...extraLeadFields } =
-      req.body;
+    const {
+      name,
+      email,
+      phone,
+      message,
+      customFields,
+      source,
+      landingPage,
+      activityMessage,
+      website,
+      ...extraLeadFields
+    } = req.body;
+
+    // Honeypot field: reject automated submissions before an email is sent.
+    if (website) {
+      return res.status(400).json({
+        success: false,
+        message: "Unable to process this enquiry.",
+      });
+    }
 
     // Basic validation
     if (!name || !email || !phone || !message) {
@@ -258,7 +219,8 @@ exports.sendOTP = async (req, res) => {
     }
 
     // Check duplicate email
-    const existingLead = await Lead.findOne({ email });
+    const normalizedEmail = email.trim().toLowerCase();
+    const existingLead = await Lead.findOne({ email: normalizedEmail });
     if (existingLead) {
       return res.status(200).json({
         success: true,
@@ -290,14 +252,18 @@ exports.sendOTP = async (req, res) => {
     const otp = Math.floor(100000 + Math.random() * 900000);
 
     // Store OTP with lead data
-    otpStore.set(email, {
+    otpStore.set(normalizedEmail, {
       otp,
       data: {
-        name,
-        email,
-        phone,
-        message,
+        name: name.trim(),
+        email: normalizedEmail,
+        phone: phone.trim(),
+        message: message.trim(),
         customFields: customFieldsResult.values,
+        source: source?.trim() || "Website",
+        landingPage: landingPage?.trim() || "",
+        activityMessage:
+          activityMessage?.trim() || "Lead created from website inquiry",
       },
       createdAt: Date.now(),
     });
@@ -406,8 +372,9 @@ exports.sendOTP = async (req, res) => {
 exports.verifyOTP = async (req, res) => {
   try {
     const { email, otp } = req.body;
+    const normalizedEmail = String(email || "").trim().toLowerCase();
 
-    const record = otpStore.get(email);
+    const record = otpStore.get(normalizedEmail);
 
     if (!record) {
       return res.status(400).json({
@@ -418,13 +385,13 @@ exports.verifyOTP = async (req, res) => {
     // Check expiry (5 minutes)
     const isExpired = Date.now() - record.createdAt > 5 * 60 * 1000;
     if (isExpired) {
-      otpStore.delete(email);
+      otpStore.delete(normalizedEmail);
       return res.status(400).json({
         message: "OTP expired",
       });
     }
 
-    if (parseInt(otp) !== record.otp) {
+    if (parseInt(otp, 10) !== record.otp) {
       return res.status(400).json({
         message: "Invalid OTP",
       });
@@ -437,13 +404,13 @@ exports.verifyOTP = async (req, res) => {
       activityLog: [
         {
           type: "created",
-          message: "Lead created from website inquiry",
+          message: record.data.activityMessage,
         },
       ],
     });
 
     await newLead.save();
-    otpStore.delete(email);
+    otpStore.delete(normalizedEmail);
 
     /* ===== Confirmation Email ===== */
     await sendEmail({
