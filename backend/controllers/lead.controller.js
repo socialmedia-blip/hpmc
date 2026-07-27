@@ -186,6 +186,63 @@ const readWorkbookRows = (file) => {
 };
 
 /* ============================
+   LANDING PAGE LEAD
+=============================== */
+exports.createLandingLead = async (req, res) => {
+  try {
+    const { name, email, phone, companyName, message, product, website } =
+      req.body;
+
+    // Honeypot field: return a success response without creating spam records.
+    if (website) {
+      return res.status(201).json({ success: true });
+    }
+
+    if (!name?.trim() || !email?.trim() || !phone?.trim() || !message?.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: "Name, email, phone and message are required.",
+      });
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide a valid email address.",
+      });
+    }
+
+    const lead = await Lead.create({
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      phone: phone.trim(),
+      message: message.trim(),
+      verified: false,
+      source: "Google Ads - Co-Rotating Twin Screw Landing Page",
+      customFields: {
+        companyName: companyName?.trim() || "",
+        product: product?.trim() || "Co-Rotating Twin Screw Extruder",
+        landingPage: "/landing/Co-rotating-twin-screw-extruder",
+      },
+      activityLog: [
+        {
+          type: "created",
+          message: "Lead submitted through the Co-Rotating Twin Screw landing page",
+        },
+      ],
+    });
+
+    res.status(201).json({ success: true, leadId: lead._id });
+  } catch (error) {
+    console.error("Landing Lead Error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Unable to save your enquiry. Please try again.",
+    });
+  }
+};
+
+/* ============================
    SEND OTP
 =============================== */
 exports.sendOTP = async (req, res) => {

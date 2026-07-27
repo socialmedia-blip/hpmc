@@ -1,0 +1,277 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Check,
+  ChevronRight,
+  CircleGauge,
+  Layers3,
+  Settings2,
+} from "lucide-react";
+import LandingLeadForm from "../../components/LandingLeadForm";
+import LandingNavbar from "../../components/LandingNavbar";
+import LandingFooter from "../../components/LandingFooter";
+
+export const metadata: Metadata = {
+  title: "Co-Rotating Twin Screw Extruder | HPMC",
+  description:
+    "High-performance co-rotating twin screw extruders for polymer compounding, masterbatch, reinforced composites and recycling.",
+};
+
+const productName = "Co-Rotating Twin Screw Extruder";
+
+const applications = [
+  "Direct and inline polymer compounding",
+  "PVC soft cable-grade compounding",
+  "Compression and injection moulding compounds",
+  "Film and sheet extrusion",
+  "Masterbatches, plastic alloys and natural fibre composites",
+  "Plastic recycling and granulation",
+];
+
+const features = [
+  "Building-block screw and barrel design, configured around your material and process.",
+  "High-precision hardened gear teeth and an interlocking lubrication system for dependable gearbox operation.",
+  "Single- or twin-screw feeder options for smooth, simple material feeding.",
+  "Die-face cutter and vibratory sieve integration for a streamlined granulation line.",
+];
+
+const benefits = [
+  {
+    icon: CircleGauge,
+    title: "Efficient output",
+    text: "A longer L/D ratio helps achieve high production with optimised power consumption.",
+  },
+  {
+    icon: Layers3,
+    title: "Intensive mixing",
+    text: "Built for demanding masterbatch, compounding and polymer-alloy formulations.",
+  },
+  {
+    icon: Settings2,
+    title: "Flexible formulation",
+    text: "Fit up to three side feeders for fillers, glass fibre and performance additives.",
+  },
+];
+
+export default function CoRotatingTwinScrewLandingPage() {
+  return (
+    <>
+      <LandingNavbar />
+      <main className="overflow-hidden bg-white text-[#0B1220]">
+        <section className="relative isolate overflow-hidden bg-[#f4f8f3]">
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[radial-gradient(circle_at_72%_42%,rgba(101,188,79,0.2),transparent_34%)]" />
+          <div className="absolute -right-40 top-8 h-96 w-96 rounded-full border-[40px] border-[#65BC4F]/10" />
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-10 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:px-10 lg:pb-24 lg:pt-24">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#65BC4F]/25 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.13em] text-[#438f32]">
+                <BadgeCheck className="h-4 w-4" /> Engineering excellence since
+                1972
+              </div>
+              <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-[58px]">
+                Co-Rotating Twin Screw{" "}
+                <span className="text-[#579f42]">Extruder</span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                Precision compounding for polymers, high-filler masterbatches,
+                reinforced composites and recycling—engineered for consistent
+                quality, robust mixing and productive operation.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#enquire"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-6 py-3.5 font-bold text-white transition hover:bg-[#4fa23a]"
+                >
+                  Get a custom solution <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="#applications"
+                  className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-bold text-slate-700 transition hover:border-[#65BC4F] hover:text-[#438f32]"
+                >
+                  Explore applications
+                </a>
+              </div>
+              <div className="mt-9 grid max-w-xl grid-cols-3 border-t border-slate-200 pt-6">
+                {[
+                  ["80%", "Talc loading"],
+                  ["50%", "Glass fibre"],
+                  ["3", "Side feeders"],
+                ].map(([value, label]) => (
+                  <div
+                    key={label}
+                    className="border-r border-slate-200 px-3 first:pl-0 last:border-0"
+                  >
+                    <p className="text-2xl font-bold text-[#438f32] sm:text-3xl">
+                      {value}
+                    </p>
+                    <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-xl">
+              <div className="absolute inset-5 rounded-[2rem] bg-[#65BC4F]/15 blur-2xl" />
+              <div className="relative rounded-[2rem] border border-white bg-white/75 p-4 shadow-[0_30px_70px_rgba(15,23,42,0.12)] backdrop-blur sm:p-6">
+                <Image
+                  src="/products/co-rotating.png"
+                  alt="HPMC co-rotating twin screw extruder"
+                  width={730}
+                  height={363}
+                  priority
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+              <div className="absolute -bottom-5 left-4 rounded-xl bg-[#0B1220] px-4 py-3 text-sm font-semibold text-white shadow-lg sm:left-8">
+                Built for rigorous mixing
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="applications"
+          className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
+        >
+          <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#579f42]">
+                Product overview
+              </p>
+              <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+                Compounding capability that adapts to your process.
+              </h2>
+              <p className="mt-5 leading-8 text-slate-600">
+                HPMC co-rotating twin screw extruders combine controlled
+                plasticisation, homogeneous dispersion, filling modification,
+                enhancement, recovery and granulation in one adaptable platform.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {applications.map((application) => (
+                <div
+                  key={application}
+                  className="flex gap-3 rounded-2xl border border-slate-200 p-4 transition hover:border-[#65BC4F]/50 hover:shadow-lg hover:shadow-green-950/5"
+                >
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#65BC4F]/15 text-[#438f32]">
+                    <Check className="h-4 w-4" />
+                  </span>
+                  <p className="font-semibold leading-6 text-slate-700">
+                    {application}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#0B1220] py-16 text-white lg:py-24">
+          <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:px-10">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#83d86e]">
+                Designed for reliability
+              </p>
+              <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+                Configured around your formulation.
+              </h2>
+              <p className="mt-5 max-w-xl leading-8 text-slate-300">
+                Every configuration is optimally adjusted to material properties
+                and process requirements, while preserving the versatility to
+                support future applications.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {features.map((feature, index) => (
+                <div
+                  key={feature}
+                  className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#65BC4F] text-sm font-bold text-white">
+                    0{index + 1}
+                  </span>
+                  <p className="leading-7 text-slate-200">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#579f42]">
+              Performance benefits
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              More control for demanding compounds.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {benefits.map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="rounded-3xl border border-slate-200 p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#65BC4F]/50 hover:shadow-xl hover:shadow-green-950/5"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#65BC4F]/15 text-[#438f32]">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-6 text-xl font-bold">{title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-12 rounded-3xl border border-[#65BC4F]/25 bg-[#f4f8f3] p-7 text-center sm:p-10">
+            <p className="text-xl font-bold leading-8 text-[#0B1220] sm:text-2xl">
+              HPMC introduces co-rotating twin screw extruders for the
+              economical production of long-fibre reinforced components.
+            </p>
+            <p className="mt-3 text-slate-600">
+              Process polymers with up to 80% talc or 50% glass fibre in a
+              single process.
+            </p>
+          </div>
+        </section>
+
+        <section
+          id="enquire"
+          className="bg-[#eaf4e6] px-5 py-16 sm:px-8 lg:py-24"
+        >
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#579f42]">
+                Plan your extrusion line
+              </p>
+              <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
+                Get a configuration built for your material.
+              </h2>
+              <p className="mt-5 leading-8 text-slate-600">
+                Share your resin, fillers, target output and end use. Our team
+                will help define a co-rotating twin screw solution matched to
+                your production goals.
+              </p>
+              <ul className="mt-7 space-y-3 text-slate-700">
+                <li className="flex gap-3">
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#438f32]" />
+                  Application-focused recommendations
+                </li>
+                <li className="flex gap-3">
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#438f32]" />
+                  Expert technical consultation
+                </li>
+                <li className="flex gap-3">
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#438f32]" />
+                  Fast response from the HPMC team
+                </li>
+              </ul>
+            </div>
+            <LandingLeadForm product={productName} />
+          </div>
+        </section>
+      </main>
+      <LandingFooter />
+    </>
+  );
+}
