@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/lead", require("./routes/lead.route"));
+app.use("/landing-leads", require("./routes/landingLead.route"));
 app.use("/client", require("./routes/client.route"));
 app.use("/testimonial", require("./routes/testimonial.route"));
 app.use("/subscribers", require("./routes/subscriber.route"));

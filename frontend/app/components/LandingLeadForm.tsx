@@ -40,7 +40,7 @@ export default function LandingLeadForm({
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/lead/send-otp`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/landing-leads/send-otp`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -50,14 +50,10 @@ export default function LandingLeadForm({
             phone: values.phone,
             message: values.message,
             website: values.website,
-            source: "Google Ads - Co-Rotating Twin Screw Landing Page",
-            activityMessage:
-              "Lead verified through the Co-Rotating Twin Screw landing page",
-            customFields: {
-              companyName: values.companyName,
-              product,
-              landingPage: "/landing/Co-rotating-twin-screw-extruder",
-            },
+            companyName: values.companyName,
+            product,
+            landingPage: window.location.pathname,
+            source: `Landing page - ${product}`,
           }),
         },
       );
@@ -92,11 +88,15 @@ export default function LandingLeadForm({
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/lead/verify-otp`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/landing-leads/verify-otp`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: values.email, otp }),
+          body: JSON.stringify({
+            email: values.email,
+            otp,
+            landingPage: window.location.pathname,
+          }),
         },
       );
       const data = await response.json();
