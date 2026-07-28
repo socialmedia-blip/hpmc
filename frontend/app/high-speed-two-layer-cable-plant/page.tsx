@@ -26,7 +26,7 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/products/cable extruder/high_speed_two_layer_cable.jpg",
+  "/products/high-speed.png",
   "/products/cable extruder/capstan.jpg",
   "/products/cable extruder/two_layer_die_head.jpg",
 ];

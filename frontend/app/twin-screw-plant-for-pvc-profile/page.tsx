@@ -26,7 +26,7 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/products/pvc profile extruder/twin screw/twin.png",
+  "/products/TWIN-SCREW-PLANT-FOR-PVC-PROFILE.jpeg",
   "/products/pvc profile extruder/twin screw/automatic.png",
   "/products/pvc profile extruder/twin screw/cutting.png",
   "/products/pvc profile extruder/twin screw/Vaccum-Callobration-Tank-1.jpg",
@@ -185,7 +185,7 @@ export default function TwinScrewPlantForPvcProfile() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero1.png')",
+            backgroundImage: "url('/herosection/pvc-profile.png')",
           }}
         />
 

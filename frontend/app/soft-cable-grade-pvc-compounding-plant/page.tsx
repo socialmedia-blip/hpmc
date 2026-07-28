@@ -25,7 +25,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/products/co-rotating twing screw extruder/soft cable pvc/CO-ROTATING-TWIN-SCREW-EXTRUDER.jpg",
+  "/products/co-rotating-twin-screw-extruder.png",
   "/products/co-rotating twing screw extruder/soft cable pvc/ELECTRICALPANEL-CO-ROTATING-TWIN-SCREW-EXTRUDER.jpg",
 ];
 
@@ -213,7 +213,8 @@ export default function SoftCableGradePVC() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero3.png')",
+            backgroundImage:
+              "url('/herosection/co-rotating-twin-screw-extruder.png')",
           }}
         />
 

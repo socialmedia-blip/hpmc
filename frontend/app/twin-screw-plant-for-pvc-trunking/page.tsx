@@ -26,7 +26,7 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/products/pvc trunking extruder/conical-twin-screw-extruder.jpg",
+  "/product.jpg",
   "/products/pvc trunking extruder/PNEUAMTIC-HAUL-OFF.jpg",
   "/products/pvc trunking extruder/SPRAY-BATH-TANK.jpg",
   "/products/pvc trunking extruder/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
