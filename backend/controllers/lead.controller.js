@@ -220,14 +220,14 @@ exports.sendOTP = async (req, res) => {
 
     // Check duplicate email
     const normalizedEmail = email.trim().toLowerCase();
-    const existingLead = await Lead.findOne({ email: normalizedEmail });
-    if (existingLead) {
-      return res.status(200).json({
-        success: true,
-        alreadyRegistered: true,
-        message: "Email already registered.",
-      });
-    }
+    // const existingLead = await Lead.findOne({ email: normalizedEmail });
+    // if (existingLead) {
+    //   return res.status(200).json({
+    //     success: true,
+    //     alreadyRegistered: true,
+    //     message: "Email already registered.",
+    //   });
+    // }
 
     const settings = await Settings.findOne();
     const customFieldConfig = settings?.leadForm?.customFields || [];
@@ -372,7 +372,9 @@ exports.sendOTP = async (req, res) => {
 exports.verifyOTP = async (req, res) => {
   try {
     const { email, otp } = req.body;
-    const normalizedEmail = String(email || "").trim().toLowerCase();
+    const normalizedEmail = String(email || "")
+      .trim()
+      .toLowerCase();
 
     const record = otpStore.get(normalizedEmail);
 
