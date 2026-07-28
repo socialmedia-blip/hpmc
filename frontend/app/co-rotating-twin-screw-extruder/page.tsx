@@ -24,7 +24,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = ["/products/wpc/corotatingtwinscrewextruder.png"];
+const galleryImages = ["/products/co-rotating-twin-screw-extruder.png"];
 
 const faqData = [
   {
@@ -182,7 +182,8 @@ export default function CorotatingTwinScrewExtruder() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/heroSection/tsehero.png')",
+            backgroundImage:
+              "url('/heroSection/co-rotating-twin-screw-extruder.png')",
           }}
         />
 

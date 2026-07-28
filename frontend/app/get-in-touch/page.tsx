@@ -12,6 +12,7 @@ import PopupForm from "../components/Popup";
 import CTA from "../components/CTA";
 import ScrollToTop from "../components/ScrollToTop";
 import FloatingContact from "../components/FloatingButton";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const [openPopup, setOpenPopup] = useState(false);
@@ -96,7 +97,8 @@ const Contact = () => {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {/* Address */}
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-[#65BC4F]/10 flex items-center justify-center mb-6">
                   <MapPin className="text-[#65BC4F]" size={28} />
@@ -108,6 +110,8 @@ const Contact = () => {
                   5, Category II, DSIDC Industrial Area Nangloi, Delhi-110041
                 </p>
               </div>
+
+              {/* Call */}
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-[#65BC4F]/10 flex items-center justify-center mb-6">
                   <Phone className="text-[#65BC4F]" size={28} />
@@ -115,8 +119,15 @@ const Contact = () => {
 
                 <h3 className="text-xl font-semibold mb-3">Call Us</h3>
 
-                <p className="text-[var(--text-secondary)]">+91 95605 96392</p>
+                <a
+                  href="tel:+919560596392"
+                  className="text-[var(--text-secondary)] hover:text-[#65BC4F] transition-colors"
+                >
+                  +91 95605 96392
+                </a>
               </div>
+
+              {/* Email */}
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-[#65BC4F]/10 flex items-center justify-center mb-6">
                   <Mail className="text-[#65BC4F]" size={28} />
@@ -124,12 +135,32 @@ const Contact = () => {
 
                 <h3 className="text-xl font-semibold mb-3">Email</h3>
 
-                <p className="text-[var(--text-secondary)]">
-                  <a href="mailto:info@hindustanplastics.com">
-                    {" "}
-                    info@hindustanplastics.com
-                  </a>
-                </p>
+                <a
+                  href="mailto:info@hindustanplastics.com"
+                  className="text-[var(--text-secondary)] hover:text-[#65BC4F] transition-colors break-all"
+                >
+                  info@hindustanplastics.com
+                </a>
+              </div>
+
+              {/* WhatsApp */}
+              <div className="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all">
+                <div className="w-16 h-16 rounded-2xl bg-[#65BC4F]/10 flex items-center justify-center mb-6">
+                  <FaWhatsapp className="text-[#65BC4F]" size={28} />
+                </div>
+
+                <h3 className="text-xl font-semibold mb-3">WhatsApp</h3>
+
+                <a
+                  href={`https://wa.me/919560596392?text=${encodeURIComponent(
+                    "Hello, I’m interested in your plastic extrusion machinery and would like to know more about the suitable machine for my requirements. Please share the product details, specifications, and pricing.",
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--text-secondary)] hover:text-[#65BC4F] transition-colors"
+                >
+                  +91 95605 96392
+                </a>
               </div>
             </div>
           </div>

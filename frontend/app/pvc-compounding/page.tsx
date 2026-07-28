@@ -23,12 +23,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = [
-  "/product.jpg",
-  "/imag1.png",
-  "/product.jpg",
-  "/product.jpg",
-];
+const galleryImages = ["/products/wpc/sspfpc.png"];
 
 const faqData = [
   {
@@ -326,7 +321,7 @@ export default function PVCCompounding() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/herosection/tseHero.png')",
+            backgroundImage: "url('/herosection/pvc-compounding.png')",
           }}
         />
 

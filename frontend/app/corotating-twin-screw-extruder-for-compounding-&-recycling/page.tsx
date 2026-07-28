@@ -24,10 +24,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = [
-  "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
-  "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling2.jpg",
-];
+const galleryImages = ["/products/co-rotating-twin-screw-extruder.png"];
 
 const specifications = [
   {
@@ -213,7 +210,8 @@ export default function CorotatingTwinScrewExtruder() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero3.png')",
+            backgroundImage:
+              "url('/heroSection/co-rotating-twin-screw-extruder.png')",
           }}
         />
 

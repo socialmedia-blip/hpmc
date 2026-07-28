@@ -23,7 +23,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = ["/products/conical-twin-screw-extruder.jpg"];
+const galleryImages = ["/products/two-stage.png"];
 
 const specifications = [
   {
@@ -215,7 +215,7 @@ export default function PPRPipeExtruder() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/heroSection/tsehero.png')",
+            backgroundImage: "url('/heroSection/two-stage.png')",
           }}
         />
 

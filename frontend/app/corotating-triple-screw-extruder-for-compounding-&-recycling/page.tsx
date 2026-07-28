@@ -212,7 +212,8 @@ export default function CorotatingTripleScrewExtruder() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero3.png')",
+            backgroundImage:
+              "url('/heroSection/co-rotating-twin-screw-extruder.png')",
           }}
         />
 

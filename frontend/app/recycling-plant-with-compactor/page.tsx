@@ -108,6 +108,51 @@ const faqData = [
   },
 ];
 
+const specifications = [
+  {
+    model: "Extruder 100",
+    beltConveyor: "Magnetic frame with 1.1 kw Motor",
+    compactorMotor: "55",
+    production: "200",
+    diaScrew: "100",
+    mainMotor: "45",
+    ldRatio: "33.1",
+    hydraulicScreenChanger: "8/3",
+    waterRingPelletizer: "2.2",
+    vibratingScreenMotor: "1.75",
+    dehydratingMachineMotor: "5",
+    pumpConveyingSystemMotor: "3",
+  },
+  {
+    model: "Extruder 110",
+    beltConveyor: "Magnetic frame with 1.5 kw Motor",
+    compactorMotor: "55",
+    production: "300",
+    diaScrew: "110",
+    mainMotor: "75",
+    ldRatio: "33.1",
+    hydraulicScreenChanger: "10/3",
+    waterRingPelletizer: "2.2",
+    vibratingScreenMotor: "2.2",
+    dehydratingMachineMotor: "5",
+    pumpConveyingSystemMotor: "3",
+  },
+  {
+    model: "Extruder 120",
+    beltConveyor: "Magnetic frame with 1.5 kw Motor",
+    compactorMotor: "75",
+    production: "400",
+    diaScrew: "120",
+    mainMotor: "100",
+    ldRatio: "30.1",
+    hydraulicScreenChanger: "10/3",
+    waterRingPelletizer: "3.7",
+    vibratingScreenMotor: "3.7",
+    dehydratingMachineMotor: "5",
+    pumpConveyingSystemMotor: "3.7",
+  },
+];
+
 export default function RecyclingPlantWithCompactor() {
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopup2, setOpenPopup2] = useState(false);
@@ -439,57 +484,145 @@ export default function RecyclingPlantWithCompactor() {
           </div>
         </div>
       </section>
-      {/* 
-      <section className="py-16 bg-[var(--background)]">
-        <div className="max-w-7xl mx-auto px-5 lg:px-8">
-       
-          <div className="text-center mb-16">
-            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
-              Product Showcase
+
+      <section className="bg-[var(--background)] py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          {/* Heading */}
+          <div className="mb-12 text-center lg:mb-16">
+            <span className="text-sm font-semibold uppercase tracking-[4px] text-[var(--primary)]">
+              Machine Models
             </span>
 
-            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
-              See Our Machine
-              <span className="text-[var(--primary)]"> In Action</span>
+            <h2 className="mt-4 text-3xl font-bold text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
+              Technical
+              <span className="text-[var(--primary)]"> Specifications</span>
             </h2>
 
-            <p className="mt-5 max-w-3xl mx-auto text-[var(--text-secondary)]">
-              Explore detailed machine visuals and watch real production
-              demonstrations to understand the performance and quality of our
-              extrusion systems.
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
+              Compare available extruder models and their technical
+              specifications to select the right configuration for your
+              production requirements.
             </p>
           </div>
 
-          <div>
-           
-            <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-[var(--border)] shadow-xl">
-              <video
-                ref={videoRef}
-                controls
-                poster="/capture.png"
-                className="w-full h-full object-cover"
-                onPlay={() => setPlaying(true)}
-                onPause={() => setPlaying(false)}
-              >
-                <source src="/abc.mp4" type="video/mp4" />
-              </video>
+          {/* Table */}
+          <div
+            className="overflow-hidden rounded-3xl border bg-[var(--card)] shadow-sm"
+            style={{ borderColor: "var(--border)" }}
+          >
+            {/* Mobile scroll hint */}
+            <div
+              className="flex items-center justify-between border-b px-5 py-4 lg:hidden"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <span className="text-sm font-medium text-[var(--text-secondary)]">
+                Swipe to view all specifications
+              </span>
 
-              {!playing && (
-                <>
-                  <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+              <span className="text-[var(--primary)]">→</span>
+            </div>
 
-                  <button
-                    onClick={toggleVideo}
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white shadow-2xl flex items-center justify-center hover:scale-110 transition-all"
-                  >
-                    <Play size={34} className="ml-1 text-[var(--primary)]" />
-                  </button>
-                </>
-              )}
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[1700px] border-collapse">
+                <thead>
+                  <tr className="bg-[var(--primary)] text-white">
+                    {[
+                      "Model",
+                      "Belt Conveyor",
+                      "Compactor Motor (kW)",
+                      "Production (kg/hr)",
+                      "Dia Screw (mm)",
+                      "Main Motor (kW)",
+                      "L/D Ratio",
+                      "Hydraulic Screen Changer",
+                      "Water-Ring Pelletizer Load (kW)",
+                      "Vibrating Screen Motor Power (kW)",
+                      "Dehydrating Machine Motor Power",
+                      "Pump Conveying System Motor",
+                    ].map((heading) => (
+                      <th
+                        key={heading}
+                        className="border px-5 py-5 text-center text-xs font-semibold uppercase leading-5 tracking-wide"
+                        style={{
+                          borderColor: "rgba(255,255,255,0.2)",
+                        }}
+                      >
+                        {heading}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {specifications.map((item, index) => (
+                    <tr
+                      key={item.model}
+                      className={`
+                  transition-colors hover:bg-[var(--muted)]
+                  ${
+                    index % 2 === 0
+                      ? "bg-[var(--card)]"
+                      : "bg-[var(--background)]"
+                  }
+                `}
+                    >
+                      {/* Model */}
+                      <td
+                        className="whitespace-nowrap border px-6 py-6 text-center font-semibold text-[var(--text-primary)]"
+                        style={{ borderColor: "var(--border)" }}
+                      >
+                        <span className="rounded-full bg-[#65BC4F]/10 px-4 py-2 text-sm text-[var(--primary)]">
+                          {item.model}
+                        </span>
+                      </td>
+
+                      {/* Belt Conveyor */}
+                      <td
+                        className="min-w-[180px] border px-5 py-6 text-center text-sm leading-6 text-[var(--text-secondary)]"
+                        style={{ borderColor: "var(--border)" }}
+                      >
+                        {item.beltConveyor}
+                      </td>
+
+                      {[
+                        item.compactorMotor,
+                        item.production,
+                        item.diaScrew,
+                        item.mainMotor,
+                        item.ldRatio,
+                        item.hydraulicScreenChanger,
+                        item.waterRingPelletizer,
+                        item.vibratingScreenMotor,
+                        item.dehydratingMachineMotor,
+                        item.pumpConveyingSystemMotor,
+                      ].map((value, idx) => (
+                        <td
+                          key={idx}
+                          className="whitespace-nowrap border px-5 py-6 text-center text-sm font-medium text-[var(--text-primary)]"
+                          style={{ borderColor: "var(--border)" }}
+                        >
+                          {value}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
+
+          {/* Bottom note */}
+          <div className="mt-5 flex items-start gap-2">
+            <span className="mt-[2px] text-[var(--primary)]">*</span>
+
+            <p className="text-xs leading-6 text-[var(--text-secondary)] sm:text-sm">
+              Specifications may vary depending on material, application, and
+              production requirements. Contact our technical team for a
+              customized machine configuration.
+            </p>
+          </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-5">

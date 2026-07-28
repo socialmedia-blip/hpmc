@@ -24,7 +24,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/products/PVC-CONDUIT-PIPE-PLANT-FOUR-PIPES-1.jpg",
+  "/products/four-pipe.png",
   "/products/pcppfp/pcppfp2.jpg",
   "/products/pcppfp/pcppfp4.jpg",
 ];
@@ -373,7 +373,7 @@ export default function PvcConduitPipePlantFourPipes() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/home-hero3.png')",
+            backgroundImage: "url('/heroSection/four-pipe.png')",
           }}
         />
 
