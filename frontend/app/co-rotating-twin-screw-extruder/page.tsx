@@ -474,7 +474,7 @@ export default function CorotatingTwinScrewExtruder() {
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
               >
-                <source src="/videos/CO-ROTATING.mp4" type="video/mp4" />
+                <source src="/videos/cor-rotating.mp4" type="video/mp4" />
               </video>
 
               {!playing && (
@@ -494,6 +494,126 @@ export default function CorotatingTwinScrewExtruder() {
         </div>
       </section>
 
+      <section className="py-20 bg-[var(--muted)]">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
+              Technical Specifications
+            </span>
+
+            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
+              Machine
+              <span className="text-[var(--primary)]"> Specifications</span>
+            </h2>
+
+            <p className="mt-5 text-[var(--text-secondary)] leading-7">
+              Explore the available Co-Rotating Twin Screw Extruder models
+              designed for different production capacities and compounding
+              requirements.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-primary)]">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[850px] text-left">
+                <thead>
+                  <tr className="bg-[var(--primary)] text-white">
+                    <th className="px-6 py-5 font-semibold">Model</th>
+                    <th className="px-6 py-5 font-semibold">
+                      Screw Diameter (mm)
+                    </th>
+                    <th className="px-6 py-5 font-semibold">
+                      Screw Speed (RPM)
+                    </th>
+                    <th className="px-6 py-5 font-semibold">Motor Power</th>
+                    <th className="px-6 py-5 font-semibold">L/D Ratio</th>
+                    <th className="px-6 py-5 font-semibold">Output (kg/hr)</th>
+                  </tr>
+                </thead>
+
+                <tbody className="divide-y divide-[var(--border)]">
+                  {[
+                    {
+                      model: "HPMC 50",
+                      diameter: "50.5",
+                      speed: "500 / 600",
+                      motor: "37 / 45",
+                      ld: "32 – 48",
+                      output: "20 – 150",
+                    },
+                    {
+                      model: "HPMC 65",
+                      diameter: "62.4",
+                      speed: "400 / 500",
+                      motor: "55 / 75",
+                      ld: "32 – 48",
+                      output: "100 – 300",
+                    },
+                    {
+                      model: "HPMC 72",
+                      diameter: "71.2",
+                      speed: "400 / 500",
+                      motor: "90 / 110",
+                      ld: "32 – 48",
+                      output: "300 – 600",
+                    },
+                    {
+                      model: "HPMC 92",
+                      diameter: "91",
+                      speed: "400 / 500",
+                      motor: "220 / 250",
+                      ld: "32 – 40",
+                      output: "600 – 1000",
+                    },
+                  ].map((item, index) => (
+                    <tr
+                      key={item.model}
+                      className={`
+                  transition-colors hover:bg-[var(--primary)]/5
+                  ${index % 2 === 0 ? "bg-white" : "bg-[var(--muted)]"}
+                `}
+                    >
+                      <td className="px-6 py-5 font-bold text-[var(--primary)]">
+                        {item.model}
+                      </td>
+
+                      <td className="px-6 py-5 text-[var(--text-secondary)]">
+                        {item.diameter}
+                      </td>
+
+                      <td className="px-6 py-5 text-[var(--text-secondary)]">
+                        {item.speed}
+                      </td>
+
+                      <td className="px-6 py-5 text-[var(--text-secondary)]">
+                        {item.motor}
+                      </td>
+
+                      <td className="px-6 py-5 text-[var(--text-secondary)]">
+                        {item.ld}
+                      </td>
+
+                      <td className="px-6 py-5">
+                        <span className="inline-flex rounded-full bg-[var(--primary)]/10 px-4 py-2 font-semibold text-[var(--primary)]">
+                          {item.output}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="border-t border-[var(--border)] px-6 py-4">
+              <p className="text-sm text-[var(--text-secondary)]">
+                * Production capacity may vary depending on material,
+                formulation, filler loading, and processing conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-5">
           <div className="text-center mb-16">
@@ -505,14 +625,14 @@ export default function CorotatingTwinScrewExtruder() {
               Everything About Our
               <span className="text-[var(--primary)]">
                 {" "}
-                Conical Twin Screw Plant For CPVC Dual Pipe
+                Co-Rotating Twin Screw Extruder
               </span>
             </h2>
 
             <p className="mt-5 text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Find answers to common questions about PVC pipe extrusion, machine
-              specifications, applications, output capacity, installation, and
-              maintenance.
+              Find answers to common questions about polymer compounding,
+              machine specifications, applications, production capacity,
+              installation, operation, and maintenance.
             </p>
           </div>
 
