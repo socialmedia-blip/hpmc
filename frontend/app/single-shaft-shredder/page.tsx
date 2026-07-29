@@ -27,12 +27,27 @@ import DemoPopup from "../components/PopupDemo";
 const galleryImages = ["/products/shredder/shredder.png"];
 
 const machineGallery = [
-  "/products/shredder/SK7A9375.jpg",
-  "/products/shredder/SK7A9376.jpg",
-  "/products/shredder/SK7A9378.jpg",
-  "/products/shredder/SK7A9379.jpg",
-  "/products/shredder/SK7A9380.jpg",
-  "/products/shredder/SK7A9381.jpg",
+  "/products/shredder/SK7A9375.JPG",
+  "/products/shredder/SK7A9376.JPG",
+  "/products/shredder/SK7A9378.JPG",
+  "/products/shredder/SK7A9379.JPG",
+  "/products/shredder/SK7A9380.JPG",
+  "/products/shredder/SK7A9381.JPG",
+];
+
+const specifications = [
+  [
+    "Size of crushing chamber",
+    "600 × 600 mm (L × W)",
+    "800 × 900 mm (L × W)",
+    "1200 × 1200 mm (L × W)",
+  ],
+  ["Blade material", "SKD 11", "SKD 11", "SKD 11"],
+  ["Hardness of blade", "HRC60", "HRC60", "HRC60"],
+  ["Qty of rotary blade", "26 pcs", "38 pcs", "64 pcs"],
+  ["Power of drive motor", "22 kW AC", "37 kW AC", "45 kW AC"],
+  ["Oil pump motor", "2.2 kW", "3 kW", "4 kW AC"],
+  ["Size of screen sieve", "16 mm", "40 mm", "40 mm"],
 ];
 
 export default function SingleShaftShredder() {
@@ -222,6 +237,56 @@ export default function SingleShaftShredder() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-[var(--surface)]">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-[var(--primary)] uppercase tracking-[3px] font-semibold text-sm">
+              Technical Specifications
+            </span>
+            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
+              Choose the Right{" "}
+              <span className="text-[var(--primary)]">Model</span>
+            </h2>
+          </div>
+
+          <div className="mt-12 overflow-x-auto rounded-3xl border border-[var(--border)] bg-white shadow-[var(--shadow-primary)]">
+            <table className="w-full min-w-[720px] text-left">
+              <thead className="bg-[var(--primary)] text-white">
+                <tr>
+                  <th scope="col" className="px-6 py-5 font-semibold">
+                    Machine model
+                  </th>
+                  <th scope="col" className="px-6 py-5 font-semibold">
+                    WT 600
+                  </th>
+                  <th scope="col" className="px-6 py-5 font-semibold">
+                    WT 800
+                  </th>
+                  <th scope="col" className="px-6 py-5 font-semibold">
+                    WT 1000
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[var(--border)] text-[var(--text-secondary)]">
+                {specifications.map(([label, wt600, wt800, wt1000]) => (
+                  <tr key={label} className="even:bg-[var(--surface)]">
+                    <th
+                      scope="row"
+                      className="px-6 py-4 font-semibold text-[var(--text-primary)]"
+                    >
+                      {label}
+                    </th>
+                    <td className="px-6 py-4">{wt600}</td>
+                    <td className="px-6 py-4">{wt800}</td>
+                    <td className="px-6 py-4">{wt1000}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
