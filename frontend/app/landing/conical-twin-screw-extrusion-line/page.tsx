@@ -175,21 +175,6 @@ export default function ConicalTwinScrewExtrusionLine() {
           {/* =====================================================
       FULL HERO BACKGROUND IMAGE
   ===================================================== */}
-          <Image
-            src="/products/conical.png"
-            alt="HPMC Conical Twin Screw Extrusion Line"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-
-          {/* 
-    Main readability overlay:
-    Strong white on left where content sits,
-    gradually transparent towards machine on right.
-  */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/45 via-[42%] to-white/5" />
 
           {/* Soft vertical overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/20" />
@@ -313,7 +298,10 @@ export default function ConicalTwinScrewExtrusionLine() {
               </div>
             </div>
             <div id="quick-enquiry" className="w-full">
-              <LandingLeadForm product={productName} className="mx-auto w-full max-w-xl border border-white/70 bg-white/95" />
+              <LandingLeadForm
+                product={productName}
+                className="mx-auto w-full max-w-xl border border-white/70 bg-white/95"
+              />
             </div>
           </div>
 

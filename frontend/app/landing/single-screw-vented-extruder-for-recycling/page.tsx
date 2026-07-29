@@ -309,7 +309,7 @@ export default function ConicalTwinScrewExtrusionLine() {
 
                   <div className="relative flex min-h-[330px] items-center justify-center sm:min-h-[390px]">
                     <Image
-                      src="/products/lvented1.jpeg"
+                      src="/products/lvented1.png"
                       alt="HPMC Single Screw Vented Extruder"
                       width={700}
                       height={500}
@@ -336,7 +336,7 @@ export default function ConicalTwinScrewExtrusionLine() {
 
                     <div className="relative flex h-[190px] items-center justify-center">
                       <Image
-                        src="/products/lvented2.jpeg"
+                        src="/products/lvented2.png"
                         alt="HPMC Vented Extruder Recycling Machine"
                         width={500}
                         height={350}
