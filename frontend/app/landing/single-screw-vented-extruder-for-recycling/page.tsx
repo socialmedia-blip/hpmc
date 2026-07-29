@@ -28,9 +28,9 @@ import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
 
 export const metadata: Metadata = {
-  title: "Conical Twin Screw Extrusion Line | HPMC",
+  title: "Plastic Recycling Pelletizing Line | HPMC",
   description:
-    "HPMC Conical Twin Screw Extrusion Lines for PVC pipe, UPVC window profile, PVC profile, WPC profile and PVC compounding applications.",
+    "HPMC  Plastic Recycling Pelletizing Line for PVC pipe, UPVC window profile, PVC profile, WPC profile and PVC compounding applications.",
 };
 
 const productName = "Single screw vented extruder for recycling";

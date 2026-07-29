@@ -498,7 +498,7 @@ exports.verifyOTP = async (req, res) => {
 
     /* ===== Internal Notification ===== */
     await sendEmail({
-      to: "social_media@hindustanplastics.com",
+      to: "admin@hindustanplastics.com",
       subject: "🔔 New Lead Received - HPMC",
       html: `
   <div style="margin:0;padding:40px 20px;background:#f4f7f9;font-family:Arial,Helvetica,sans-serif;">
