@@ -228,7 +228,8 @@ const productsDataDesktop = [
   {
     name: "Co-Rotating Twin Screw Extruder",
     category: "Plastic Recycling Plant",
-    image: "/products/co-rotating-twin-screw-extruder.png",
+    image:
+      "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling2.jpg",
     link: "/co-rotating-twin-screw-extruder",
   },
   {
@@ -243,6 +244,13 @@ const productsDataDesktop = [
     image:
       "/products/corotating-triple-screw-extruder-for-compounding-recycling.jpg",
     link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "Soft Cable Grade PVC Compounding Plant",
+    category: "Co-Rotating Twin Screw Extruder",
+    image:
+      "/products/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
+    link: "/soft-cable-grade-pvc-compounding-plant",
   },
   {
     name: "Vented Recycling Plant",
@@ -331,7 +339,7 @@ const productsDataDesktop = [
   {
     name: "Twin Screw Plant for PVC Trunking",
     category: "PVC Trunking Extruder",
-    image: "/product.jpg",
+    image: "/products/trunking.png",
     link: "/twin-screw-plant-for-pvc-trunking",
   },
   {
@@ -378,13 +386,7 @@ const productsDataDesktop = [
     image: "/products/high_speed_two_layer_cable.jpg",
     link: "/high-speed-two-layer-cable-plant",
   },
-  {
-    name: "Soft Cable Grade PVC Compounding Plant",
-    category: "Co-Rotating Twin Screw Extruder",
-    image:
-      "/products/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
-    link: "/soft-cable-grade-pvc-compounding-plant",
-  },
+
   {
     name: "Single Shaft Shredder",
     category: "Single Shaft Shredder",
@@ -846,7 +848,7 @@ export default function Navbar() {
                           alt={product.name}
                           width={300}
                           height={180}
-                          className="w-full h-28 object-cover"
+                          className="w-full h-28 object-contain"
                         />
 
                         <div className="p-3">
@@ -854,7 +856,10 @@ export default function Navbar() {
                             {product.category}
                           </p> */}
 
-                          <h4 className="text-[13px] font-semibold text-[var(--text-primary)] group-hover:text-[var(--primary)] transition line-clamp-3">
+                          <h4
+                            title={product.name}
+                            className="text-[13px] font-semibold text-[var(--text-primary)] transition group-hover:text-[var(--primary)] line-clamp-2 cursor-default"
+                          >
                             {product.name}
                           </h4>
                         </div>

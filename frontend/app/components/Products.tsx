@@ -15,38 +15,42 @@ export default function ProductCarousel() {
   const products = [
     {
       id: 1,
-      title: "Single Screw Extruder",
-      image: "/products/single-screw-extruder.jpg",
-      link: "/single-screw-extruder",
+      title: "Co-Rotating Twin Screw Extruder",
+      image:
+        "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling2.jpg",
+      link: "/co-rotating-twin-screw-extruder",
       description:
-        "Energy-efficient single screw extrusion machine ideal for PVC pipes, profiles, and industrial plastic processing applications, delivering stable output and reliable performance.",
+        "High-performance co-rotating twin screw extrusion system designed for efficient plastic compounding, recycling, mixing, and consistent material processing.",
       catalogue: "/catalogue.pdf",
     },
     {
       id: 2,
-      title: "Twin Screw Extruder",
-      image: "/products/conical-twin-screw-extruder.jpg",
-      link: "/twin-screw-extruder",
+      title: "Corotating Twin Screw Extruder for Compounding & Recycling",
+      image: "/products/co-rotating-twin-screw-extruder.png",
+      link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
       description:
-        "Advanced conical twin screw extrusion machine providing excellent plasticizing, consistent melt quality, and high production efficiency for PVC extrusion applications.",
+        "High-performance twin screw extrusion system developed for plastic compounding and recycling applications, ensuring superior mixing, consistent output, and excellent material dispersion.",
       catalogue: "/catalogue.pdf",
     },
     {
       id: 3,
-      title: "PVC Conduit Pipe Plant (Two Pipes)",
-      image: "/products/PVC-CONDUIT-PIPE-PLANT-two-PIPES-1.jpg",
-      link: "/pvc-conduit-pipe-plant-two-pipes",
+      title:
+        "Corotating Triple Screw Extruder for Compounding & Recycling (Engineering Plastic)",
+      image:
+        "/products/corotating-triple-screw-extruder-for-compounding-recycling.jpg",
+      link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
       description:
-        "High-speed dual pipe extrusion plant engineered for manufacturing premium-quality PVC conduit pipes with excellent dimensional accuracy, smooth surface finish, and higher production efficiency.",
+        "Innovative triple screw extrusion technology designed for engineering plastics, offering outstanding mixing efficiency, superior dispersion, and high-quality compound production.",
       catalogue: "/catalogue.pdf",
     },
     {
       id: 4,
-      title: "PVC Conduit Pipe Plant (Four Pipes)",
-      image: "/products/PVC-CONDUIT-PIPE-PLANT-FOUR-PIPES-1.jpg",
-      link: "/pvc-conduit-pipe-plant-four-pipes",
+      title: "Soft Cable Grade PVC Compounding Plant",
+      image:
+        "/products/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
+      link: "/soft-cable-grade-pvc-compounding-plant",
       description:
-        "Advanced four-pipe extrusion solution designed to maximize production capacity whilen maintaining exceptional quality, process stability, and operational efficiency.",
+        "Specialized PVC compounding plant engineered for producing soft cable-grade PVC compounds with uniform mixing, consistent quality, and reliable production performance.",
       catalogue: "/catalogue.pdf",
     },
     {
@@ -55,11 +59,20 @@ export default function ProductCarousel() {
       image: "/products/vented.png",
       link: "/vented-recycling-plant",
       description:
-        "Efficient plastic recycling system designed for processing plastic waste into premium-qualityreusable granules with effective moisture removal, degassing, and improved material properties.",
+        "Efficient plastic recycling system designed for processing plastic waste into high-quality reusable granules with effective moisture removal, degassing, and stable output.",
       catalogue: "/catalogue.pdf",
     },
     {
       id: 6,
+      title: "Two Stage Recycling Plant",
+      image: "/products/two-stage.png",
+      link: "/two-stage-recycling-plant",
+      description:
+        "Advanced two-stage recycling plant designed for efficient processing of plastic waste, providing improved filtration, stable extrusion, and high-quality recycled granules.",
+      catalogue: "/catalogue.pdf",
+    },
+    {
+      id: 7,
       title: "Recycling Plant With Compactor",
       image: "/products/recycling-plant-with-compacter.png",
       link: "/recycling-plant-with-compactor",
@@ -68,24 +81,30 @@ export default function ProductCarousel() {
       catalogue: "/catalogue.pdf",
     },
     {
-      id: 7,
-      title: "Corotating Twin Screw Extruder for Compounding & Recycling",
-      image:
-        "/products/corotating-twin-screw-extruder-for-compounding-recycling.jpg",
-      link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+      id: 8,
+      title: "Conical Twin Screw Extruder for PVC and UPVC Pipe",
+      image: "/products/conical-twin-screw-extruder.jpg",
+      link: "/twin-screw-extruder",
       description:
-        "High-performance twin screw extrusion system developed for plastic compounding and recycling applications, ensuring superior mixing, consistent output, and excellent material dispersion.",
+        "Advanced conical twin screw extrusion machine designed for PVC and UPVC pipe production, delivering excellent plasticizing, stable output, and consistent product quality.",
       catalogue: "/catalogue.pdf",
     },
     {
-      id: 8,
-      title:
-        "Corotating Triple Screw Extruder for Compounding & Recycling (Engineering Plastic)",
-      image:
-        "/products/corotating-triple-screw-extruder-for-compounding-recycling.jpg",
-      link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+      id: 9,
+      title: "PVC Conduit Pipe Plant",
+      image: "/product.jpg",
+      link: "/pvc-conduit-pipe-plant",
       description:
-        "Innovative triple screw extrusion technology designed for engineering plastics, offering outstanding mixing efficiency, superior dispersion, and high-quality compound production",
+        "Reliable PVC conduit pipe extrusion plant engineered for producing high-quality electrical conduit pipes with consistent dimensions, smooth finish, and efficient production.",
+      catalogue: "/catalogue.pdf",
+    },
+    {
+      id: 10,
+      title: "PVC Conduit Pipe Plant (Dual Pipes)",
+      image: "/products/PVC-CONDUIT-PIPE-PLANT-two-PIPES-1.jpg",
+      link: "/pvc-conduit-pipe-plant-two-pipes",
+      description:
+        "High-speed dual pipe extrusion plant engineered for manufacturing premium-quality PVC conduit pipes with excellent dimensional accuracy, smooth surface finish, and higher production efficiency.",
       catalogue: "/catalogue.pdf",
     },
   ];

@@ -131,7 +131,7 @@ const features = [
   },
 
   {
-    title: "Automatic Cutting System",
+    title: "Automatic Cutting Saw",
     desc: "The automatic cutting unit features pneumatic clamping and length sensing technology to provide accurate, clean, and repeatable pipe cutting operations.",
     image: "/products/sse/sse4.jpg",
 
@@ -143,7 +143,7 @@ const features = [
   },
 
   {
-    title: "High-Precision Cutting Saw",
+    title: "Tipping",
     desc: "Designed for reliable and clean pipe cutting, the cutting saw is equipped with a pneumatic cylinder and limit switch mechanism for precise length measurement and operation.",
     image: "/products/sse/sse5.jpg",
 

@@ -26,7 +26,7 @@ import DemoPopup from "../components/PopupDemo";
 import { thead } from "framer-motion/client";
 
 const galleryImages = [
-  "/product.jpg",
+  "/products/trunking.png",
   "/products/pvc trunking extruder/PNEUAMTIC-HAUL-OFF.jpg",
   "/products/pvc trunking extruder/SPRAY-BATH-TANK.jpg",
   "/products/pvc trunking extruder/AUTOMATIC-CUTTING-UNIT-UPTO-200-MM.jpg",
@@ -254,7 +254,7 @@ export default function TwinScrewPlantForPVCTrunking() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/herosection/tseHero.png')",
+            backgroundImage: "url('/herosection/trunking.png')",
           }}
         />
 
