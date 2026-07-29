@@ -430,6 +430,45 @@ export default function TwoStageRecyclingPlant() {
         </div>
       </section>
 
+      <section className="py-20 bg-[var(--surface)]">
+        <div className="max-w-6xl mx-auto px-5 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-[var(--primary)] uppercase tracking-[3px] font-semibold text-sm">
+              Machine in Action
+            </span>
+            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
+              Wet Recycling <span className="text-[var(--primary)]">Process</span>
+            </h2>
+          </div>
+
+          <div className="relative mt-12 overflow-hidden rounded-3xl border border-[var(--border)] bg-black shadow-[var(--shadow-primary)]">
+            <video
+              ref={videoRef}
+              className="block w-full max-h-[680px]"
+              controls
+              playsInline
+              preload="metadata"
+              poster="/products/wpc/wet-recycling.png"
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+            >
+              <source src="/videos/wet-recycling.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <button
+              type="button"
+              onClick={toggleVideo}
+              aria-label={playing ? "Pause wet recycling video" : "Play wet recycling video"}
+              className="absolute bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--primary)] text-white shadow-lg transition hover:scale-105 hover:bg-[#54a63f]"
+            >
+              <Play size={22} fill="currentColor" className={playing ? "hidden" : "block"} />
+              <span className={playing ? "block text-xl leading-none" : "hidden"}>❚❚</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-5">
           <div className="text-center mb-16">
