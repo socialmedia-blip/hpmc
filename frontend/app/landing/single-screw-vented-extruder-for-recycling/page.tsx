@@ -35,15 +35,6 @@ export const metadata: Metadata = {
 
 const productName = "Single screw vented extruder for recycling";
 
-const whyHpmc = [
-  "Engineering experience since 1972",
-  "Application-focused extrusion solutions",
-  "Multiple machine configurations",
-  "Support from selection to installation",
-  "Solutions for diverse PVC & WPC applications",
-  "Built for industrial production environments",
-];
-
 const specifications = [
   {
     specification: "Production (Kg/Hr)",
@@ -124,21 +115,12 @@ export default function ConicalTwinScrewExtrusionLine() {
           {/* =====================================================
       FULL HERO BACKGROUND IMAGE
   ===================================================== */}
-          <Image
-            src="/products/vented1.png"
-            alt="HPMC Single Screw Vented Extruder for Recycling"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
 
           {/* 
     Main readability overlay:
     Strong white on left where content sits,
     gradually transparent towards machine on right.
   */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/45 via-[42%] to-white/5" />
 
           {/* Soft vertical overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/20" />
@@ -291,7 +273,7 @@ export default function ConicalTwinScrewExtrusionLine() {
         ========================================================= */}
         <section
           id="overview"
-          className="relative overflow-hidden bg-[var(--background)] px-5 py-20 text-[var(--foreground)] transition-colors duration-300 sm:px-8 lg:py-28"
+          className="relative overflow-hidden bg-[var(--background)] px-5 py-20 text-[var(--foreground)] transition-colors duration-300 sm:px-8"
         >
           {/* Background Decoration */}
           <div className="pointer-events-none absolute left-0 top-0 h-80 w-80 rounded-full bg-[var(--primary)]/5 blur-3xl" />
@@ -325,7 +307,7 @@ export default function ConicalTwinScrewExtrusionLine() {
 
                   <div className="relative flex min-h-[300px] items-center justify-center sm:min-h-[380px]">
                     <Image
-                      src="/products/VENTED-RECYCLING-PLANT-1-1.jpg"
+                      src="/products/vented.png"
                       alt="HPMC Single Screw Vented Extruder for Plastic Recycling"
                       width={700}
                       height={500}
