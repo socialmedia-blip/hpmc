@@ -284,13 +284,15 @@ export default function ConicalTwinScrewExtrusionLine() {
               {/* =====================================================
           IMAGE SIDE
       ===================================================== */}
+              {/* IMAGE SIDE */}
               <div className="relative order-2 lg:order-1">
+                {/* Background Glow */}
                 <div className="absolute -left-8 -top-8 h-48 w-48 rounded-full bg-[var(--primary)]/10 blur-3xl" />
                 <div className="absolute -bottom-8 -right-8 h-48 w-48 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
-                {/* Machine Image */}
-                <div className="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow-primary)] sm:p-7">
-                  {/* Soft green gradient */}
+                {/* MAIN IMAGE */}
+                <div className="group relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow-primary)] sm:p-7">
+                  {/* Green Gradient */}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--primary)]/[0.08] via-transparent to-transparent" />
 
                   {/* Grid Pattern */}
@@ -298,85 +300,67 @@ export default function ConicalTwinScrewExtrusionLine() {
                     className="pointer-events-none absolute inset-0 opacity-[0.025] dark:opacity-[0.05]"
                     style={{
                       backgroundImage: `
-                linear-gradient(var(--foreground) 1px, transparent 1px),
-                linear-gradient(90deg, var(--foreground) 1px, transparent 1px)
-              `,
+          linear-gradient(var(--foreground) 1px, transparent 1px),
+          linear-gradient(90deg, var(--foreground) 1px, transparent 1px)
+        `,
                       backgroundSize: "28px 28px",
                     }}
                   />
 
-                  <div className="relative flex min-h-[300px] items-center justify-center sm:min-h-[380px]">
+                  <div className="relative flex min-h-[330px] items-center justify-center sm:min-h-[390px]">
                     <Image
-                      src="/products/vented.png"
-                      alt="HPMC Single Screw Vented Extruder for Plastic Recycling"
+                      src="/products/lvented1.jpeg"
+                      alt="HPMC Single Screw Vented Extruder"
                       width={700}
                       height={500}
-                      className="h-auto w-full object-contain"
+                      className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
 
-                  {/* Machine Label */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--card)]/90 px-4 py-3 shadow-lg backdrop-blur-md sm:left-6 sm:right-auto">
-                    <span className="relative flex h-3 w-3 shrink-0">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--primary)] opacity-40" />
-                      <span className="relative inline-flex h-3 w-3 rounded-full bg-[var(--primary)]" />
-                    </span>
+                  {/* Label */}
+                  <div className="absolute bottom-5 left-5 rounded-xl border border-[var(--border)] bg-[var(--card)]/90 px-4 py-3 shadow-lg backdrop-blur-md">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+                      HPMC Recycling Technology
+                    </p>
 
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-                        HPMC Recycling Technology
-                      </p>
-
-                      <p className="mt-0.5 text-xs font-semibold text-[var(--text-primary)]">
-                        Built for efficient plastic reprocessing
-                      </p>
-                    </div>
+                    <p className="mt-0.5 text-xs font-semibold text-[var(--text-primary)]">
+                      Single Screw Vented Extruder
+                    </p>
                   </div>
                 </div>
 
-                {/* =================================================
-            FEATURE CARDS
-        ================================================= */}
-                <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4">
-                  {[
-                    {
-                      icon: CircleGauge,
-                      title: "Efficient Degassing",
-                      desc: "Removes moisture & volatiles",
-                    },
-                    {
-                      icon: Settings2,
-                      title: "Stable Processing",
-                      desc: "Consistent plasticization",
-                    },
-                    {
-                      icon: Factory,
-                      title: "Industrial Design",
-                      desc: "Built for continuous operation",
-                    },
-                    {
-                      icon: Layers3,
-                      title: "Flexible Processing",
-                      desc: "For reclaimed thermoplastics",
-                    },
-                  ].map(({ icon: Icon, title, desc }) => (
-                    <div
-                      key={title}
-                      className="group rounded-2xl border border-[var(--border)] bg-[var(--card)] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/50 hover:shadow-lg sm:p-5"
-                    >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] transition group-hover:bg-[var(--primary)] group-hover:text-white">
-                        <Icon className="h-5 w-5" />
-                      </div>
+                {/* SECOND IMAGE */}
+                <div className="mt-4 grid grid-cols-[1.25fr_0.75fr] gap-4">
+                  <div className="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--card)] p-4 shadow-sm">
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--primary)]/[0.06] to-transparent" />
 
-                      <h3 className="mt-4 text-sm font-bold text-[var(--text-primary)] sm:text-base">
-                        {title}
-                      </h3>
+                    <div className="relative flex h-[190px] items-center justify-center">
+                      <Image
+                        src="/products/lvented2.jpeg"
+                        alt="HPMC Vented Extruder Recycling Machine"
+                        width={500}
+                        height={350}
+                        className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
 
-                      <p className="mt-1 text-xs leading-5 text-[var(--text-secondary)] sm:text-sm">
-                        {desc}
+                  {/* Small info block */}
+                  <div className="flex flex-col justify-between rounded-[1.5rem] border border-[var(--primary)]/20 bg-[var(--primary)]/[0.06] p-5">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)]/10 text-[var(--primary)]">
+                      <Factory className="h-5 w-5" />
+                    </div>
+
+                    <div>
+                      <p className="text-lg font-bold text-[var(--text-primary)]">
+                        Industrial
+                      </p>
+
+                      <p className="mt-1 text-sm leading-6 text-[var(--text-secondary)]">
+                        Built for reliable plastic reprocessing.
                       </p>
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
 

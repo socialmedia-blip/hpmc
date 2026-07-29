@@ -10,6 +10,7 @@ import {
 import LandingLeadForm from "../../components/LandingLeadForm";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Co-Rotating Twin Screw Extruder | HPMC",
@@ -54,11 +55,34 @@ const benefits = [
 ];
 
 const technicalSpecifications = [
-  { label: "Screw Diameter (mm)", values: ["21.7", "30", "35.6", "50.5", "62.4", "71.2", "91"] },
-  { label: "Rotary Speed (RPM) Max", values: ["600", "400", "600", "500/600", "400/500", "400/500", "400/500"] },
-  { label: "Main Motor Power (kW)", values: ["4", "11", "11/15", "37/45", "55/75", "90/110", "220/250"] },
-  { label: "L/D", values: ["32-40", "28-48", "32-48", "32-48", "32-48", "32-48", "32-40"] },
-  { label: "Capacity (kg/h)", values: ["2-10", "5-30", "10-80", "20-150", "100-300", "300-600", "600-1000"] },
+  {
+    label: "Screw Diameter (mm)",
+    values: ["21.7", "30", "35.6", "50.5", "62.4", "71.2", "91"],
+  },
+  {
+    label: "Rotary Speed (RPM) Max",
+    values: ["600", "400", "600", "500/600", "400/500", "400/500", "400/500"],
+  },
+  {
+    label: "Main Motor Power (kW)",
+    values: ["4", "11", "11/15", "37/45", "55/75", "90/110", "220/250"],
+  },
+  {
+    label: "L/D",
+    values: ["32-40", "28-48", "32-48", "32-48", "32-48", "32-48", "32-40"],
+  },
+  {
+    label: "Capacity (kg/h)",
+    values: [
+      "2-10",
+      "5-30",
+      "10-80",
+      "20-150",
+      "100-300",
+      "300-600",
+      "600-1000",
+    ],
+  },
 ];
 
 const models = ["20", "30", "35", "50", "65", "72", "92"];
@@ -122,43 +146,109 @@ export default function CoRotatingTwinScrewLandingPage() {
             </div>
 
             <div id="quick-enquiry" className="w-full">
-              <LandingLeadForm product={productName} className="relative mx-auto w-full max-w-xl border border-white/70" />
+              <LandingLeadForm
+                product={productName}
+                className="relative mx-auto w-full max-w-xl border border-white/70"
+              />
             </div>
           </div>
         </section>
 
         <section
           id="applications"
-          className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
+          className="relative overflow-hidden bg-[var(--background)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
         >
-          <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#579f42]">
-                Product overview
-              </p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
-                Compounding capability that adapts to your process.
-              </h2>
-              <p className="mt-5 leading-8 text-[var(--text-secondary)]">
-                HPMC co-rotating twin screw extruders combine controlled
-                plasticisation, homogeneous dispersion, filling modification,
-                enhancement, recovery and granulation in one adaptable platform.
-              </p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {applications.map((application) => (
-                <div
-                  key={application}
-                  className="flex gap-3 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-4 transition hover:border-[#65BC4F]/50 hover:shadow-lg hover:shadow-green-950/5"
-                >
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#65BC4F]/15 text-[#438f32]">
-                    <Check className="h-4 w-4" />
+          {/* Background decoration */}
+          <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#65BC4F]/5 blur-3xl" />
+
+          <div className="relative mx-auto max-w-7xl">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+              {/* LEFT */}
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#579f42]">
+                  Product Overview
+                </p>
+
+                <h2 className="mt-3 text-3xl font-bold leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-[46px]">
+                  Compounding capability that
+                  <span className="block text-[#579f42]">
+                    adapts to your process.
                   </span>
-                  <p className="font-semibold leading-6 text-[var(--text-primary)]">
-                    {application}
+                </h2>
+
+                <p className="mt-5 max-w-xl leading-8 text-[var(--text-secondary)]">
+                  HPMC co-rotating twin screw extruders combine controlled
+                  plasticisation, homogeneous dispersion, filling modification,
+                  enhancement, recovery and granulation in one adaptable
+                  platform.
+                </p>
+
+                {/* PRODUCT IMAGE */}
+                <div className="group relative mt-8 overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)] p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                  {/* Image background */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#65BC4F]/10 via-transparent to-transparent" />
+
+                  <div className="relative flex min-h-[280px] items-center justify-center">
+                    <Image
+                      src="/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling2.jpg"
+                      alt="HPMC Co-Rotating Twin Screw Extruder"
+                      width={700}
+                      height={450}
+                      className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+
+                  {/* Image label */}
+                  <div className="absolute bottom-5 left-5 rounded-xl border border-white/70 bg-white/90 px-4 py-3 shadow-lg backdrop-blur-md">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#579f42]">
+                      HPMC Extrusion Technology
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-slate-700">
+                      Co-Rotating Twin Screw Extruder
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT - APPLICATIONS */}
+              <div>
+                <div className="mb-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#579f42]">
+                    Applications & Capabilities
+                  </p>
+
+                  <h3 className="mt-2 text-2xl font-bold text-[var(--text-primary)]">
+                    Built for versatile compounding
+                  </h3>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {applications.map((application) => (
+                    <div
+                      key={application}
+                      className="group flex gap-3 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#65BC4F]/50 hover:shadow-lg hover:shadow-green-950/5"
+                    >
+                      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#65BC4F]/15 text-[#438f32] transition-colors group-hover:bg-[#65BC4F] group-hover:text-white">
+                        <Check className="h-4 w-4" />
+                      </span>
+
+                      <p className="font-semibold leading-6 text-[var(--text-primary)]">
+                        {application}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom info */}
+                <div className="mt-5 rounded-2xl border border-[#65BC4F]/20 bg-[#65BC4F]/[0.06] p-5">
+                  <p className="text-sm leading-6 text-[var(--text-secondary)]">
+                    Machine configuration can be customized according to your
+                    material formulation, filler loading, required output and
+                    processing application.
                   </p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -187,7 +277,9 @@ export default function CoRotatingTwinScrewLandingPage() {
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#65BC4F] text-sm font-bold text-white">
                     0{index + 1}
                   </span>
-                  <p className="leading-7 text-[var(--text-secondary)]">{feature}</p>
+                  <p className="leading-7 text-[var(--text-secondary)]">
+                    {feature}
+                  </p>
                 </div>
               ))}
             </div>
@@ -213,7 +305,9 @@ export default function CoRotatingTwinScrewLandingPage() {
                   <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-6 text-xl font-bold">{title}</h3>
-                <p className="mt-3 leading-7 text-[var(--text-secondary)]">{text}</p>
+                <p className="mt-3 leading-7 text-[var(--text-secondary)]">
+                  {text}
+                </p>
               </article>
             ))}
           </div>
@@ -239,22 +333,52 @@ export default function CoRotatingTwinScrewLandingPage() {
                 Configurations for every production scale.
               </h2>
               <p className="mt-4 leading-7 text-[var(--text-secondary)]">
-                Select the model that suits your material, output and process requirements. Specifications are subject to final application configuration.
+                Select the model that suits your material, output and process
+                requirements. Specifications are subject to final application
+                configuration.
               </p>
             </div>
             <div className="mt-9 overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
               <table className="min-w-[760px] w-full border-collapse text-center text-sm sm:text-base">
                 <thead>
                   <tr className="bg-[var(--card)] text-[var(--text-primary)]">
-                    <th scope="col" className="min-w-40 border-b border-r border-[var(--border)] px-4 py-5 font-bold">MODEL</th>
-                    {models.map((model) => <th key={model} scope="col" className="border-b border-r border-[var(--border)] px-4 py-5 font-bold last:border-r-0">{model}</th>)}
+                    <th
+                      scope="col"
+                      className="min-w-40 border-b border-r border-[var(--border)] px-4 py-5 font-bold"
+                    >
+                      MODEL
+                    </th>
+                    {models.map((model) => (
+                      <th
+                        key={model}
+                        scope="col"
+                        className="border-b border-r border-[var(--border)] px-4 py-5 font-bold last:border-r-0"
+                      >
+                        {model}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
                   {technicalSpecifications.map((specification) => (
-                    <tr key={specification.label} className="text-[var(--text-secondary)] even:bg-[var(--muted)]">
-                      <th scope="row" className="border-b border-r border-[var(--border)] px-4 py-5 font-semibold leading-6 text-[var(--text-primary)] last:border-b-0">{specification.label}</th>
-                      {specification.values.map((value, index) => <td key={`${specification.label}-${models[index]}`} className="border-b border-r border-[var(--border)] px-4 py-5 font-semibold last:border-r-0 last:border-b-0">{value}</td>)}
+                    <tr
+                      key={specification.label}
+                      className="text-[var(--text-secondary)] even:bg-[var(--muted)]"
+                    >
+                      <th
+                        scope="row"
+                        className="border-b border-r border-[var(--border)] px-4 py-5 font-semibold leading-6 text-[var(--text-primary)] last:border-b-0"
+                      >
+                        {specification.label}
+                      </th>
+                      {specification.values.map((value, index) => (
+                        <td
+                          key={`${specification.label}-${models[index]}`}
+                          className="border-b border-r border-[var(--border)] px-4 py-5 font-semibold last:border-r-0 last:border-b-0"
+                        >
+                          {value}
+                        </td>
+                      ))}
                     </tr>
                   ))}
                 </tbody>
