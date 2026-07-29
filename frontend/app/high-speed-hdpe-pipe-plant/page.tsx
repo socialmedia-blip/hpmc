@@ -890,7 +890,10 @@ export default function HighSpeedHDPEPipePlant() {
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
               >
-                <source src="/videos/HDPE-PIPE-MACHINE.mp4" type="video/mp4" />
+                <source
+                  src="/videos/HDPE-PIPE-MACHINE-2.mp4"
+                  type="video/mp4"
+                />
               </video>
 
               {!playing && (

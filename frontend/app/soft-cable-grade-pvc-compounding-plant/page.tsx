@@ -474,9 +474,8 @@ export default function SoftCableGradePVC() {
         </div>
       </section>
 
-      {/* <section className="py-16 bg-[var(--background)]">
+      <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
-     
           <div className="text-center mb-16">
             <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
               Product Showcase
@@ -495,17 +494,16 @@ export default function SoftCableGradePVC() {
           </div>
 
           <div>
-         
             <div className="relative h-[500px] rounded-[32px] overflow-hidden border border-[var(--border)] shadow-xl">
               <video
                 ref={videoRef}
                 controls
-                poster="/capture.png"
+                poster="/videos/capture.png"
                 className="w-full h-full object-cover"
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
               >
-                <source src="/abc.mp4" type="video/mp4" />
+                <source src="/videos/softcable.mp4" type="video/mp4" />
               </video>
 
               {!playing && (
@@ -523,7 +521,7 @@ export default function SoftCableGradePVC() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
