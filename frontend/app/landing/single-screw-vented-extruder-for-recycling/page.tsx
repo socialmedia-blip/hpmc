@@ -28,9 +28,9 @@ import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
 
 export const metadata: Metadata = {
-  title: "Conical Twin Screw Extrusion Line | HPMC",
+  title: "Single Screw Vented Extruder for Recycling | HPMC",
   description:
-    "HPMC Conical Twin Screw Extrusion Lines for PVC pipe, UPVC window profile, PVC profile, WPC profile and PVC compounding applications.",
+    "HPMC Single Screw Vented Extruder for Recycling is designed for efficient reprocessing of reclaimed thermoplastics with effective degassing, reliable plasticization and production capacities up to 500 kg/hr.",
 };
 
 const productName = "Single screw vented extruder for recycling";
@@ -256,7 +256,10 @@ export default function ConicalTwinScrewExtrusionLine() {
               </div>
             </div>
             <div id="quick-enquiry" className="w-full">
-              <LandingLeadForm product={productName} className="mx-auto w-full max-w-xl border border-white/70 bg-white/95" />
+              <LandingLeadForm
+                product={productName}
+                className="mx-auto w-full max-w-xl border border-white/70 bg-white/95"
+              />
             </div>
           </div>
 
