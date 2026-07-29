@@ -19,6 +19,7 @@ import {
 import LandingLeadForm from "../../components/LandingLeadForm";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
+import LandingTopEnquiry from "../../components/LandingTopEnquiry";
 
 export const metadata: Metadata = {
   title: "Conical Twin Screw Extrusion Line | HPMC",
@@ -251,7 +252,7 @@ export default function ConicalTwinScrewExtrusionLine() {
               {/* CTA */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#enquire"
+                  href="#quick-enquiry"
                   className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-7 py-4 text-sm font-bold text-white shadow-[0_12px_30px_rgba(101,188,79,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#55a940] hover:shadow-[0_16px_35px_rgba(101,188,79,0.32)] sm:text-base"
                 >
                   Discuss Your Requirement
@@ -336,6 +337,8 @@ export default function ConicalTwinScrewExtrusionLine() {
             </div>
           </div>
         </section>
+
+        <LandingTopEnquiry product={productName} />
 
         {/* =========================================================
             OVERVIEW

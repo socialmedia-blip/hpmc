@@ -11,6 +11,7 @@ import {
 import LandingLeadForm from "../../components/LandingLeadForm";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
+import LandingTopEnquiry from "../../components/LandingTopEnquiry";
 
 export const metadata: Metadata = {
   title: "Co-Rotating Twin Screw Extruder | HPMC",
@@ -89,7 +90,7 @@ export default function CoRotatingTwinScrewLandingPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#enquire"
+                  href="#quick-enquiry"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-6 py-3.5 font-bold text-white transition hover:bg-[#4fa23a]"
                 >
                   Get a custom solution <ArrowRight className="h-4 w-4" />
@@ -140,6 +141,8 @@ export default function CoRotatingTwinScrewLandingPage() {
             </div>
           </div>
         </section>
+
+        <LandingTopEnquiry product={productName} />
 
         <section
           id="applications"
