@@ -66,6 +66,11 @@ const settingsSchema = new mongoose.Schema({
       default: true,
     },
 
+    googleAdsLeads: {
+      type: Boolean,
+      default: true,
+    },
+
     analytics: {
       type: Boolean,
       default: true,

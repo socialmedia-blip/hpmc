@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   ArrowRight,
   BadgeCheck,
@@ -11,7 +10,6 @@ import {
 import LandingLeadForm from "../../components/LandingLeadForm";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
-import LandingTopEnquiry from "../../components/LandingTopEnquiry";
 
 export const metadata: Metadata = {
   title: "Co-Rotating Twin Screw Extruder | HPMC",
@@ -123,26 +121,11 @@ export default function CoRotatingTwinScrewLandingPage() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-xl">
-              <div className="absolute inset-5 rounded-[2rem] bg-[#65BC4F]/15 blur-2xl" />
-              <div className="relative rounded-[2rem] border border-[var(--border)] bg-[var(--card)]/75 p-4 shadow-[0_30px_70px_rgba(15,23,42,0.12)] backdrop-blur sm:p-6">
-                <Image
-                  src="/products/co-rotating.png"
-                  alt="HPMC co-rotating twin screw extruder"
-                  width={730}
-                  height={363}
-                  priority
-                  className="h-auto w-full object-contain"
-                />
-              </div>
-              <div className="absolute -bottom-5 left-4 rounded-xl bg-[var(--card)] px-4 py-3 text-sm font-semibold text-[var(--text-primary)] shadow-lg sm:left-8">
-                Built for rigorous mixing
-              </div>
+            <div id="quick-enquiry" className="w-full">
+              <LandingLeadForm product={productName} className="relative mx-auto w-full max-w-xl border border-white/70" />
             </div>
           </div>
         </section>
-
-        <LandingTopEnquiry product={productName} />
 
         <section
           id="applications"

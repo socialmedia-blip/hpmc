@@ -32,6 +32,7 @@ const moduleCategories = [
     description: "Capture, qualify, and follow up with incoming prospects.",
     modules: [
       { key: "leads", label: "Leads" },
+      { key: "googleAdsLeads", label: "Google Ads Leads" },
       { key: "siteVisits", label: "Site Visits" },
     ],
   },
@@ -120,7 +121,14 @@ export default function SettingsPage() {
       if (data.success) {
         setCompanyName(data.data.branding?.companyName || "");
         setLogoPreview(data.data.branding?.logo || "");
-        setModules(data.data.modules || {});
+        setModules(
+          Object.fromEntries(
+            moduleList.map(({ key }) => [
+              key,
+              data.data.modules?.[key] !== false,
+            ]),
+          ),
+        );
         setCustomFields(data.data.leadForm?.customFields || []);
       }
     } catch (error) {
@@ -225,7 +233,7 @@ export default function SettingsPage() {
   };
 
   const toggleModule = (key: string) => {
-    setModules((prev) => ({ ...prev, [key]: !prev[key] }));
+    setModules((prev) => ({ ...prev, [key]: prev[key] === false }));
   };
 
   const resetDraft = () => {
@@ -417,12 +425,12 @@ export default function SettingsPage() {
                     <button
                       onClick={() => toggleModule(module.key)}
                       className={`relative h-7 w-14 rounded-full transition disabled:cursor-not-allowed disabled:opacity-60 ${
-                        modules[module.key] ? "bg-green-500" : "bg-gray-300"
+                        modules[module.key] !== false ? "bg-green-500" : "bg-gray-300"
                       }`}
                     >
                       <span
                         className={`absolute top-0.5 h-6 w-6 rounded-full bg-white transition ${
-                          modules[module.key] ? "left-7" : "left-0.5"
+                          modules[module.key] !== false ? "left-7" : "left-0.5"
                         }`}
                       />
                     </button>

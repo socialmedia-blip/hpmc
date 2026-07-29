@@ -26,7 +26,6 @@ import {
 import LandingLeadForm from "../../components/LandingLeadForm";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
-import LandingTopEnquiry from "../../components/LandingTopEnquiry";
 
 export const metadata: Metadata = {
   title: "Conical Twin Screw Extrusion Line | HPMC",
@@ -153,7 +152,7 @@ export default function ConicalTwinScrewExtrusionLine() {
           {/* =====================================================
       CONTENT
   ===================================================== */}
-          <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-20 sm:px-8 lg:min-h-[760px] lg:px-10 lg:py-24">
+          <div className="relative z-10 mx-auto grid min-h-[720px] max-w-7xl items-center gap-10 px-5 py-20 sm:px-8 lg:min-h-[760px] lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:px-10 lg:py-24">
             <div className="w-full max-w-[670px]">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-[#65BC4F]/25 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.13em] text-[#438f32] shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-md">
@@ -256,6 +255,9 @@ export default function ConicalTwinScrewExtrusionLine() {
                 </div>
               </div>
             </div>
+            <div id="quick-enquiry" className="w-full">
+              <LandingLeadForm product={productName} className="mx-auto w-full max-w-xl border border-white/70 bg-white/95" />
+            </div>
           </div>
 
           {/* =====================================================
@@ -280,8 +282,6 @@ export default function ConicalTwinScrewExtrusionLine() {
             </div>
           </div>
         </section>
-
-        <LandingTopEnquiry product={productName} />
 
         {/* =========================================================
             OVERVIEW

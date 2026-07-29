@@ -62,12 +62,6 @@ export default function LandingLeadForm({
       if (!response.ok) {
         throw new Error(data.message || "Unable to send the verification code.");
       }
-      if (data.alreadyRegistered) {
-        throw new Error(
-          "This email has already been verified. Please use another email for a new enquiry.",
-        );
-      }
-
       setOtp("");
       setStep("otp");
     } catch (submissionError) {

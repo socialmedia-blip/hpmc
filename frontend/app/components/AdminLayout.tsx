@@ -68,6 +68,12 @@ export default function AdminLayout({
           to: "/admin/lead",
         },
         {
+          key: "googleAdsLeads",
+          icon: <Users2 size={18} />,
+          label: "Google Ads Leads",
+          to: "/admin/google-ads-leads",
+        },
+        {
           key: "siteVisits",
           icon: <MonitorPlay size={18} />,
           label: "Site Visits",
@@ -184,7 +190,7 @@ export default function AdminLayout({
     .map((section) => ({
       ...section,
       items: section.items.filter(
-        (item) => item.to === "/admin" || settings?.modules?.[item.key],
+        (item) => item.to === "/admin" || settings?.modules?.[item.key] !== false,
       ),
     }))
     .filter((section) => section.items.length > 0);

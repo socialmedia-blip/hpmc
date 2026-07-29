@@ -4,17 +4,22 @@ const sendEmail = require("../utils/sendEmail");
 const otpStore = new Map();
 const OTP_EXPIRY_MS = 5 * 60 * 1000;
 
-const normalizeEmail = (email) => String(email || "").trim().toLowerCase();
+const normalizeEmail = (email) =>
+  String(email || "")
+    .trim()
+    .toLowerCase();
 
 const getOtpKey = (email, landingPage) => `${email}:${landingPage}`;
 
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const escapeHtml = (value) =>
-  String(value || "").replace(/[&<>"']/g, (character) =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-      character
-    ],
+  String(value || "").replace(
+    /[&<>"']/g,
+    (character) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        character
+      ],
   );
 
 exports.sendLandingOtp = async (req, res) => {
@@ -62,17 +67,6 @@ exports.sendLandingOtp = async (req, res) => {
       });
     }
 
-    const existingLead = await LandingLead.findOne({
-      email: normalizedEmail,
-      landingPage: trimmedLandingPage,
-    });
-    if (existingLead) {
-      return res.status(409).json({
-        success: false,
-        message: "An enquiry from this email has already been verified for this product.",
-      });
-    }
-
     const otp = String(Math.floor(100000 + Math.random() * 900000));
     otpStore.set(getOtpKey(normalizedEmail, trimmedLandingPage), {
       otp,
@@ -102,7 +96,9 @@ exports.sendLandingOtp = async (req, res) => {
       `,
     });
 
-    return res.status(200).json({ success: true, message: "OTP sent successfully." });
+    return res
+      .status(200)
+      .json({ success: true, message: "OTP sent successfully." });
   } catch (error) {
     console.error("Send landing lead OTP error:", error);
     return res.status(500).json({
@@ -121,45 +117,46 @@ exports.verifyLandingOtp = async (req, res) => {
     const record = otpStore.get(otpKey);
 
     if (!record) {
-      return res.status(400).json({ success: false, message: "OTP expired or not found." });
+      return res
+        .status(400)
+        .json({ success: false, message: "OTP expired or not found." });
     }
 
     if (Date.now() - record.createdAt > OTP_EXPIRY_MS) {
       otpStore.delete(otpKey);
-      return res.status(400).json({ success: false, message: "OTP has expired. Please request a new code." });
+      return res.status(400).json({
+        success: false,
+        message: "OTP has expired. Please request a new code.",
+      });
     }
 
     if (otp !== record.otp) {
-      return res.status(400).json({ success: false, message: "Invalid verification code." });
-    }
-
-    const alreadySaved = await LandingLead.findOne({
-      email: record.data.email,
-      landingPage: record.data.landingPage,
-    });
-    if (alreadySaved) {
-      otpStore.delete(otpKey);
-      return res.status(409).json({
-        success: false,
-        message: "An enquiry from this email has already been verified for this product.",
-      });
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid verification code." });
     }
 
     const lead = await LandingLead.create(record.data);
     otpStore.delete(otpKey);
 
-    await Promise.allSettled([
+    try {
+      await Promise.all([
       sendEmail({
         to: lead.email,
         subject: "Thank you for contacting HPMC",
         html: `<div style="font-family:Arial,Helvetica,sans-serif;padding:32px;color:#111827;"><h2>Thank you, ${escapeHtml(lead.name)}.</h2><p>Your enquiry for ${escapeHtml(lead.product)} has been received. Our team will contact you shortly.</p></div>`,
       }),
       sendEmail({
-        to: "social_media@hindustanplastics.com",
+        to: process.env.LANDING_LEADS_EMAIL || "admin@hindustanplastics.com",
         subject: `New landing page enquiry: ${lead.product}`,
-        html: `<div style="font-family:Arial,Helvetica,sans-serif;padding:24px;color:#111827;"><h2>New landing page enquiry</h2><p><strong>Product:</strong> ${escapeHtml(lead.product)}</p><p><strong>Name:</strong> ${escapeHtml(lead.name)}</p><p><strong>Email:</strong> ${escapeHtml(lead.email)}</p><p><strong>Phone:</strong> ${escapeHtml(lead.phone)}</p><p><strong>Message:</strong> ${escapeHtml(lead.message)}</p></div>`,
+        html: `<div style="font-family:Arial,Helvetica,sans-serif;padding:24px;color:#111827;"><h2>New Google Ads landing-page enquiry</h2><p><strong>Product:</strong> ${escapeHtml(lead.product)}</p><p><strong>Name:</strong> ${escapeHtml(lead.name)}</p><p><strong>Email:</strong> ${escapeHtml(lead.email)}</p><p><strong>Phone:</strong> ${escapeHtml(lead.phone)}</p><p><strong>Company:</strong> ${escapeHtml(lead.companyName || "-")}</p><p><strong>Landing page:</strong> ${escapeHtml(lead.landingPage)}</p><p><strong>Message:</strong> ${escapeHtml(lead.message)}</p></div>`,
       }),
-    ]);
+      ]);
+    } catch (emailError) {
+      // The verified lead is already saved. Keep it available to the sales team
+      // even if the email provider has a temporary delivery problem.
+      console.error("Landing lead email delivery error:", emailError);
+    }
 
     return res.status(201).json({ success: true, leadId: lead._id });
   } catch (error) {
@@ -168,5 +165,28 @@ exports.verifyLandingOtp = async (req, res) => {
       success: false,
       message: "Unable to verify the code. Please try again.",
     });
+  }
+};
+
+exports.getLandingLeads = async (_req, res) => {
+  try {
+    const leads = await LandingLead.find().sort({ createdAt: -1 }).lean();
+    return res.status(200).json({ success: true, data: leads });
+  } catch (error) {
+    console.error("Get landing leads error:", error);
+    return res.status(500).json({ success: false, message: "Unable to load leads." });
+  }
+};
+
+exports.deleteLandingLead = async (req, res) => {
+  try {
+    const lead = await LandingLead.findByIdAndDelete(req.params.id);
+    if (!lead) {
+      return res.status(404).json({ success: false, message: "Lead not found." });
+    }
+    return res.status(200).json({ success: true, message: "Lead deleted." });
+  } catch (error) {
+    console.error("Delete landing lead error:", error);
+    return res.status(500).json({ success: false, message: "Unable to delete lead." });
   }
 };

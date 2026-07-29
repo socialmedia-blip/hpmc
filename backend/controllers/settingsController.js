@@ -30,6 +30,11 @@ const getOrCreateSettings = async () => {
     changed = true;
   }
 
+  if (settings.modules && settings.modules.googleAdsLeads === undefined) {
+    settings.modules.googleAdsLeads = true;
+    changed = true;
+  }
+
   if (changed) await settings.save();
 
   return settings;
