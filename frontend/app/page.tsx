@@ -271,6 +271,12 @@ export default function Home() {
 
   return (
     <div>
+      <title>Plastic Extrusion Machine Manufacturer in India | HPMC</title>
+
+      <meta
+        name="description"
+        content="HPMC is a leading plastic extrusion machine manufacturer in India offering extrusion lines, recycling plants, compounding systems, and complete plastic processing solutions."
+      />
       <link rel="canonical" href="https://hindustanplastics.com" />
       <Navbar />
       <section className="relative mt-[72px] w-full">

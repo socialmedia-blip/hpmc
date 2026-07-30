@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -13,12 +12,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Plastic Extrusion Machine Manufacturer in India | HPMC",
-  description:
-    "HPMC is a leading plastic extrusion machine manufacturer in India offering extrusion lines, recycling plants, compounding systems, and complete plastic processing solutions.",
-};
 
 export default function RootLayout({
   children,
