@@ -36,7 +36,7 @@ const Contact = () => {
         <Navbar />
 
         {/* ================= HERO ================= */}
-        <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
+        <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden mt-20">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
