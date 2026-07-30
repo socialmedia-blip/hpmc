@@ -98,11 +98,11 @@ export default function VendorRegistration() {
   };
   return (
     <div>
-      <title>Vendor Registration | Become an HPMC Supplier</title>
+      <title>Vendor Registration | HPMC</title>
 
       <meta
         name="description"
-        content="Register as a vendor with HPMC and become a trusted supplier of industrial materials, components, machinery, and services. Complete your vendor registration to explore long-term business opportunities with Hindustan Plastics & Machine Corporation."
+        content="Register as a vendor with HPMC and become a trusted supplier for manufacturing and engineering requirements."
       />
 
       <link

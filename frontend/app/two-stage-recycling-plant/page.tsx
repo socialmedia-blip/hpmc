@@ -195,13 +195,11 @@ export default function PPRPipeExtruder() {
 
   return (
     <div>
-      <title>
-        Two Stage Recycling Plant | Plastic Recycling Extruder Machine | HPMC
-      </title>
+      <title>Two Stage Recycling Plant | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Two Stage Recycling Plant is a high-performance plastic recycling extruder designed for processing HIPS, PP, LDPE, HDPE, ABS, and engineering plastics. Featuring advanced venting technology, superior plasticization, and cost-effective recycling for consistent pellet production."
+        content="Efficient two-stage plastic recycling plants for superior filtration, higher output, and quality recycled plastic production."
       />
 
       <link

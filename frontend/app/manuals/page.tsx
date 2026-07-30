@@ -16,13 +16,11 @@ export default function Manuals() {
 
   return (
     <div>
-      <title>
-        Product Manuals | Plastic Extrusion Machine Documentation | HPMC
-      </title>
+      <title>Machine Manuals | HPMC</title>
 
       <meta
         name="description"
-        content="Access HPMC product manuals for plastic extrusion machinery, including operating instructions, technical specifications, maintenance procedures, troubleshooting guides, safety recommendations, and genuine spare parts references for efficient machine operation."
+        content="Access machine manuals and technical documentation for HPMC extrusion equipment and plastic processing systems."
       />
 
       <link rel="canonical" href="https://hindustanplastics.com/manuals" />

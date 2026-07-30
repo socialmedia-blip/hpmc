@@ -20,13 +20,11 @@ const Contact = () => {
   return (
     <>
       <div className="relative">
-        <title>
-          Contact HPMC | Plastic Extrusion Machine Manufacturer in India
-        </title>
+        <title>Contact HPMC | Get in Touch</title>
 
         <meta
           name="description"
-          content="Contact HPMC for plastic extrusion machinery, technical support, spare parts, field services, machine installation, and customized extrusion solutions. Get in touch with our experts for product inquiries and consultations."
+          content="Contact HPMC for plastic extrusion machine inquiries, technical support, product information, and business assistance."
         />
 
         <link

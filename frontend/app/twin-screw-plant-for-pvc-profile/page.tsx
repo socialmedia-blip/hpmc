@@ -165,13 +165,11 @@ export default function TwinScrewPlantForPvcProfile() {
 
   return (
     <div>
-      <title>
-        Twin Screw Plant for PVC Profile | PVC Profile Extrusion Machine | HPMC
-      </title>
+      <title>Twin Screw Plant for PVC Profile | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Twin Screw Plant for PVC Profile is a high-performance PVC profile extrusion machine designed for manufacturing window profiles, door frames, wall panels, cable ducts, and decorative PVC profiles. Engineered for precision, energy efficiency, reliable output, and long-lasting performance."
+        content="Twin screw PVC profile extrusion plants delivering precision manufacturing and superior production performance."
       />
 
       <link

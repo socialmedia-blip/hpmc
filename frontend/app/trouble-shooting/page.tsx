@@ -16,11 +16,11 @@ export default function TroubleShooting() {
 
   return (
     <div>
-      <title>Trouble Shooting | Plastic Extrusion Machine Support | HPMC</title>
+      <title>Troubleshooting Guide | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC provides expert trouble shooting support for plastic extrusion machinery, including root cause analysis, process optimization, machine diagnostics, production issue resolution, and technical guidance to minimize downtime and ensure reliable manufacturing performance."
+        content="Find troubleshooting guides for HPMC extrusion machines to quickly identify and resolve operational issues."
       />
 
       <link

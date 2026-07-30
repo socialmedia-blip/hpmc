@@ -151,13 +151,11 @@ export default function WpcProfilePlant() {
 
   return (
     <div>
-      <title>
-        WPC Board Plant | Wood Plastic Composite Extrusion Machine | HPMC
-      </title>
+      <title>WPC Board Plant | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC WPC Board Plant is a high-performance Wood Plastic Composite extrusion machine designed for manufacturing WPC boards, decking, wall panels, fencing, door frames, and decorative profiles. Delivering energy-efficient operation, excellent surface finish, and output up to 200 Kg/hr."
+        content="WPC board extrusion plants designed for manufacturing durable wood plastic composite boards with superior quality."
       />
 
       <link

@@ -161,10 +161,7 @@ export default function TwoStageRecyclingPlant() {
 
   return (
     <div>
-      <title>
-        Wet Recycling Extrusion Line | Plastic Recycling Machine Manufacturer |
-        HPMC
-      </title>
+      <title>Wet Recycling Extrusion Line | HPMC</title>
 
       <meta
         name="description"
@@ -437,7 +434,8 @@ export default function TwoStageRecyclingPlant() {
               Machine in Action
             </span>
             <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
-              Wet Recycling <span className="text-[var(--primary)]">Process</span>
+              Wet Recycling{" "}
+              <span className="text-[var(--primary)]">Process</span>
             </h2>
           </div>
 
@@ -459,11 +457,23 @@ export default function TwoStageRecyclingPlant() {
             <button
               type="button"
               onClick={toggleVideo}
-              aria-label={playing ? "Pause wet recycling video" : "Play wet recycling video"}
+              aria-label={
+                playing
+                  ? "Pause wet recycling video"
+                  : "Play wet recycling video"
+              }
               className="absolute bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--primary)] text-white shadow-lg transition hover:scale-105 hover:bg-[#54a63f]"
             >
-              <Play size={22} fill="currentColor" className={playing ? "hidden" : "block"} />
-              <span className={playing ? "block text-xl leading-none" : "hidden"}>❚❚</span>
+              <Play
+                size={22}
+                fill="currentColor"
+                className={playing ? "hidden" : "block"}
+              />
+              <span
+                className={playing ? "block text-xl leading-none" : "hidden"}
+              >
+                ❚❚
+              </span>
             </button>
           </div>
         </div>

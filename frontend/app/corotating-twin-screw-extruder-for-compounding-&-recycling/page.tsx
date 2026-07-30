@@ -196,7 +196,7 @@ export default function CorotatingTwinScrewExtruder() {
 
       <meta
         name="description"
-        content="HPMC Co-Rotating Twin Screw Extruder is engineered for polymer compounding, masterbatch production, and recycling. Featuring superior mixing, high filler loading, modular screw design, and energy-efficient performance for reliable industrial processing."
+        content="Co-rotating twin screw extruders designed for plastic compounding and recycling with high performance and consistency."
       />
 
       <link

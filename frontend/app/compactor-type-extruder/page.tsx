@@ -65,13 +65,11 @@ export default function CompactorTypeExtruder() {
 
   return (
     <div>
-      <title>
-        Compactor Type Extruder | Plastic Recycling Extruder Machine | HPMC
-      </title>
+      <title>Compactor Type Extruder | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Compactor Type Extruder is a high-performance plastic recycling extruder designed for processing PE, PP, LDPE, HDPE, and plastic film waste. Engineered for efficient recycling, superior melting, energy efficiency, and consistent pellet production."
+        content="High-efficiency compactor type extruders for recycling plastic waste with enhanced productivity and material quality."
       />
 
       <link

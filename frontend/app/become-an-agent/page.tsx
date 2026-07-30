@@ -87,11 +87,11 @@ export default function BecomeAgent() {
   };
   return (
     <div>
-      <title>Worldwide Representatives | Become an Agent | HPMC</title>
+      <title>Become an Agent | HPMC</title>
 
       <meta
         name="description"
-        content="Connect with HPMC's worldwide representatives and authorized overseas agents for plastic extrusion machinery, technical support, sales assistance, and local customer service. Find your nearest HPMC representative today."
+        content="Partner with HPMC as an authorized agent and grow your business with world-class plastic extrusion machinery."
       />
 
       <link

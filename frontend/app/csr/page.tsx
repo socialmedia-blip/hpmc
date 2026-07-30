@@ -34,13 +34,11 @@ export default function CSR() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
-      <title>
-        CSR Activities | HPMC - Corporate Social Responsibility & Sustainability
-      </title>
+      <title>CSR Activities | HPMC</title>
 
       <meta
         name="description"
-        content="Discover HPMC's Corporate Social Responsibility (CSR) initiatives focused on education, environmental sustainability, skill development, and community welfare. Learn how we create a positive impact beyond manufacturing through responsible business practices."
+        content="Learn about HPMC's Corporate Social Responsibility initiatives supporting sustainability, community development, and environmental responsibility."
       />
 
       <link rel="canonical" href="https://hindustanplastics.com/csr" />

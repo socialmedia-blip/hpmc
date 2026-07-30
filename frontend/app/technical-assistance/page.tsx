@@ -17,13 +17,11 @@ export default function TechnicalAssistance() {
 
   return (
     <div>
-      <title>
-        Technical Assistance | Plastic Extrusion Machine Support | HPMC
-      </title>
+      <title>Technical Assistance | HPMC</title>
 
       <meta
         name="description"
-        content="Get expert technical assistance from HPMC for plastic extrusion machinery. We provide machine installation, troubleshooting, process optimization, operator training, remote support, and maintenance guidance to ensure maximum productivity and reliable performance."
+        content="Get expert technical assistance for HPMC extrusion machines including installation, troubleshooting, and maintenance."
       />
 
       <link

@@ -16,13 +16,11 @@ export default function FieldServices() {
 
   return (
     <div>
-      <title>
-        Field Services | On-Site Plastic Extrusion Machine Support | HPMC
-      </title>
+      <title>Field Services | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC provides professional field services for plastic extrusion machinery, including on-site installation, commissioning, machine inspections, preventive maintenance, troubleshooting, operator training, and performance optimization to maximize productivity."
+        content="HPMC field services provide on-site support, machine inspection, maintenance, and technical assistance."
       />
 
       <link

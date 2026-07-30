@@ -168,13 +168,11 @@ export default function SingleScrewPlantPvcCompounding() {
 
   return (
     <div>
-      <title>
-        Soft PVC Garden Pipe Extrusion Line | Flexible PVC Pipe Machine | HPMC
-      </title>
+      <title>Soft PVC Garden Pipe Extrusion Line | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Soft PVC Garden Pipe Extrusion Line is a high-performance extrusion machine for manufacturing flexible PVC garden pipes, irrigation hoses, water supply pipes, and PVC tubing. Designed for high output, energy-efficient operation, and consistent pipe quality."
+        content="Soft PVC garden pipe extrusion lines designed for smooth production, consistent quality, and high productivity."
       />
 
       <link

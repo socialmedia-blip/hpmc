@@ -216,13 +216,11 @@ export default function LldpePipePlante() {
 
   return (
     <div>
-      <title>
-        LLDPE Pipe Plant | LLDPE Pipe Extrusion Machine Manufacturer | HPMC
-      </title>
+      <title>LLDPE Pipe Plant | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC LLDPE Pipe Plant is a high-performance LLDPE pipe extrusion machine engineered for reliable pipe manufacturing. Designed for high output, energy-efficient operation, consistent pipe quality, and long service life for industrial and agricultural applications."
+        content="Advanced LLDPE pipe extrusion plants offering reliable performance, precision engineering, and high production output."
       />
 
       <link

@@ -47,13 +47,11 @@ export default function About() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
-      <title>
-        About HPMC | Plastic Extrusion Machinery Manufacturer Since 1972
-      </title>
+      <title>About HPMC | Plastic Extrusion Machine Manufacturer</title>
 
       <meta
         name="description"
-        content="Learn about Hindustan Plastics & Machine Corporation (HPMC), a trusted plastic extrusion machinery manufacturer in India since 1972. Discover our engineering expertise, manufacturing excellence, 1,000+ installations, and commitment to delivering high-performance extrusion solutions."
+        content="Learn about HPMC, a trusted manufacturer of plastic extrusion machinery in India with decades of expertise, innovation, quality, and customer satisfaction."
       />
 
       <link rel="canonical" href="https://hindustanplastics.com/about" />

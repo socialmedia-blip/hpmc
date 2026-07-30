@@ -271,14 +271,6 @@ export default function Home() {
 
   return (
     <div>
-      <title>
-        Plastic Extrusion Machine Manufacturer in India | HPMC - Since 1972
-      </title>
-      <meta
-        name="description"
-        content="Hindustan Plastics & Machine Corporation (HPMC) is a leading plastic extrusion machine manufacturer in India since 1972. We manufacture PVC Pipe Plants, HDPE Pipe Plants, PPR Pipe Plants, Plastic Recycling Machines, PVC Profile Extrusion Lines and complete extrusion solutions."
-      />
-      {/* Google Search Console verification */}
       <link rel="canonical" href="https://hindustanplastics.com" />
       <Navbar />
       <section className="relative mt-[72px] w-full">

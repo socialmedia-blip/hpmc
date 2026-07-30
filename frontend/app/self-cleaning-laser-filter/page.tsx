@@ -62,13 +62,11 @@ export default function CompactorTypeExtruder() {
 
   return (
     <div>
-      <title>
-        Self Cleaning Laser Filter | Plastic Melt Filtration System | HPMC
-      </title>
+      <title>Self Cleaning Laser Filter | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Self Cleaning Laser Filter is an advanced plastic melt filtration system designed for continuous, automatic impurity removal during plastic recycling and extrusion. Improve melt quality, reduce downtime, and increase production efficiency with self-cleaning laser filtration technology."
+        content="Advanced self-cleaning laser filters for efficient melt filtration and improved plastic extrusion quality."
       />
 
       <link

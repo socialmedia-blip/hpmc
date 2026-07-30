@@ -230,19 +230,16 @@ export default function PPRPipeExtruder() {
 
   return (
     <div>
-      <title>
-        Conical Twin Screw Plant for PVC Profile | PVC Profile Extrusion Machine
-        | HPMC
-      </title>
+      <title>PPR Pipe Extruder Manufacturer | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Twin Screw Plant for PVC Profile is a high-performance PVC profile extrusion machine designed for manufacturing window profiles, door frames, cable ducts, panels, and other PVC profiles. Engineered for precision, energy efficiency, reliable output, and long-lasting performance."
+        content="High-performance PPR pipe extrusion machines engineered for precision manufacturing and long-term reliability."
       />
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/twin-screw-plant-for-pvc-profile"
+        href="https://hindustanplastics.com/ppr-pipe-extruder"
       />
       <Navbar />
 

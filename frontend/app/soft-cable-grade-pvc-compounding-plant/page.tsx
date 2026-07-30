@@ -193,13 +193,11 @@ export default function SoftCableGradePVC() {
 
   return (
     <div>
-      <title>
-        Soft Cable Grade PVC Compounding Plant | PVC Compounding Extruder | HPMC
-      </title>
+      <title>Soft Cable Grade PVC Compounding Plant | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Soft Cable Grade PVC Compounding Plant is a high-performance PVC compounding extruder designed for soft cable compounds, polymer processing, and masterbatch production. Engineered for excellent plasticization, uniform mixing, energy efficiency, and reliable industrial performance."
+        content="Soft cable grade PVC compounding plants engineered for consistent quality, precision mixing, and efficient production."
       />
 
       <link

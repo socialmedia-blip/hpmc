@@ -86,13 +86,11 @@ export default function SingleShaftShredder() {
 
   return (
     <div>
-      <title>
-        Single Shaft Shredder | Industrial Plastic Shredder Manufacturer | HPMC
-      </title>
+      <title>Single Shaft Shredder | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Single Shaft Shredder is a heavy-duty industrial plastic shredding machine designed for efficient size reduction of plastic waste, pipes, lumps, films, and industrial scrap. Built for reliable performance, high throughput, and seamless integration with plastic recycling lines."
+        content="Industrial single shaft shredders for efficient plastic waste size reduction and recycling applications."
       />
 
       <link

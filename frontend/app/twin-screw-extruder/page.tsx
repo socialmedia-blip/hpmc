@@ -398,13 +398,11 @@ export default function TwinScrewExtruder() {
 
   return (
     <div>
-      <title>
-        Conical Twin Screw Extruder | PVC Pipe Plant Manufacturer | HPMC
-      </title>
+      <title>Conical Twin Screw Extruder Manufacturer | HPMC</title>
 
       <meta
         name="description"
-        content="Discover HPMC Conical Twin Screw Extruders for PVC pipe manufacturing. Available in HPMC 45/90, 51/105, 55/110, 65/132 and 80/156 models with bi-metallic screw & barrel technology, high plasticizing efficiency, low power consumption and output up to 450 Kg/hr."
+        content="Explore HPMC twin screw extruders designed for PVC processing, compounding, and high-performance extrusion applications."
       />
 
       <link

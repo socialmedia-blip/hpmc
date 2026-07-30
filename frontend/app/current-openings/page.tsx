@@ -41,11 +41,11 @@ export default function CurrentOpening() {
 
   return (
     <div>
-      <title>Careers | Current Openings | Plastic Extrusion Jobs | HPMC</title>
+      <title>Careers at HPMC | Current Openings</title>
 
       <meta
         name="description"
-        content="Explore current career opportunities at HPMC. Join our team in the plastic extrusion machinery industry and discover rewarding jobs in engineering, manufacturing, sales, service, and corporate functions."
+        content="Explore career opportunities at HPMC and join a leading manufacturer of plastic extrusion machinery in India."
       />
 
       <link

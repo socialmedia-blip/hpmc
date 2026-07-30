@@ -370,13 +370,11 @@ export default function SingleScrewExtruder() {
 
   return (
     <div>
-      <title>
-        Single Screw Extruder | PVC Pipe Plant Manufacturer in India | HPMC
-      </title>
+      <title>Single Screw Extruder Manufacturer | HPMC</title>
 
       <meta
         name="description"
-        content="Explore HPMC Single Screw Extruders for PVC pipe, profile and polyolefin extrusion. Available in HPMC 65, HPMC 75, HPMC 90 and HPMC 100 models with Barrier Design Screw technology, output up to 450 Kg/hr, energy-efficient performance, and reliable operation."
+        content="High-performance single screw extruders for plastic processing applications with superior efficiency, output, and reliability from HPMC."
       />
 
       <link

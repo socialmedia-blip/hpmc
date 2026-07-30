@@ -364,13 +364,11 @@ export default function Faq() {
 
   return (
     <div>
-      <title>
-        FAQs | Plastic Extrusion Machinery Questions & Answers | HPMC
-      </title>
+      <title>FAQs | HPMC</title>
 
       <meta
         name="description"
-        content="Find answers to frequently asked questions about HPMC, plastic extrusion machinery, PVC Pipe Plants, HDPE Pipe Extrusion Lines, Twin Screw Extruders, recycling plants, installation, spare parts, technical support, and extrusion solutions."
+        content="Find answers to frequently asked questions about HPMC, plastic extrusion machinery, installation, maintenance, and technical support."
       />
 
       <link rel="canonical" href="https://hindustanplastics.com/faq" />

@@ -219,19 +219,16 @@ export default function SingleScrewPlantForGardenPipe() {
 
   return (
     <div>
-      <title>
-        Single Screw Plant for Soft Garden Pipe | PVC Garden Pipe Extrusion
-        Machine | HPMC
-      </title>
+      <title>Single Screw Plant for Garden Pipe | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Single Screw Plant for Soft Garden Pipe is a high-performance PVC garden pipe extrusion machine engineered for manufacturing flexible PVC garden pipes, hoses, and tubing. Designed for reliable performance, energy-efficient production, and long service life."
+        content="Single screw garden pipe extrusion plants built for reliable production, durability, and operational efficiency."
       />
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/single-screw-plant-soft-garden-pipe"
+        href="https://hindustanplastics.com/single-screw-plant-for-garden-pipe"
       />
       <Navbar />
 

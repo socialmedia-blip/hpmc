@@ -352,14 +352,11 @@ export default function PvcConduitPipePlantFourPipes() {
 
   return (
     <div>
-      <title>
-        PVC Conduit Pipe Plant (Four Pipes) | Multi Pipe Extrusion Machine |
-        HPMC
-      </title>
+      <title>Four Pipe PVC Conduit Plant | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC PVC Conduit Pipe Plant (Four Pipes) enables simultaneous production of four PVC conduit pipes from a single mould. Featuring Conical Twin Screw Extruder technology, bi-metallic screw & barrel, and output up to 350 Kg/hr for high-efficiency pipe manufacturing."
+        content="Four pipe PVC conduit extrusion plant engineered for higher production capacity, precision, and operational efficiency."
       />
 
       <link

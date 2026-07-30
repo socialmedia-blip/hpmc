@@ -209,13 +209,11 @@ export default function RecyclingPlantWithCompactor() {
 
   return (
     <div>
-      <title>
-        Recycling Plant With Compactor | Plastic Recycling Machine | HPMC
-      </title>
+      <title>Recycling Plant with Compactor | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Recycling Plant With Compactor is a high-performance plastic recycling machine designed for processing LDPE, HDPE, LLDPE, PP, ABS, Polycarbonate, and engineering plastics into high-quality reusable granules with superior efficiency and reliable output."
+        content="Plastic recycling plants with integrated compactor for improved material feeding, productivity, and processing efficiency."
       />
 
       <link

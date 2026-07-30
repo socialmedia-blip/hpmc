@@ -116,11 +116,11 @@ export default function BlogPage() {
 
   return (
     <div className="bg-[var(--bg)]">
-      <title>Blogs | Plastic Extrusion Industry Insights & News | HPMC</title>
+      <title>Plastic Extrusion Blog | HPMC</title>
 
       <meta
         name="description"
-        content="Explore HPMC blogs covering plastic extrusion technology, manufacturing innovations, industry trends, machine maintenance, recycling solutions, and expert insights for the plastics industry."
+        content="Read blogs on plastic extrusion technology, recycling, compounding, machine maintenance, and industry insights."
       />
 
       <link rel="canonical" href="https://hindustanplastics.com/blog" />

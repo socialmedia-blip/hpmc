@@ -61,13 +61,11 @@ export default function OurJourney() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
-      <title>
-        Our Journey | HPMC - 50+ Years of Engineering Excellence Since 1972
-      </title>
+      <title>Our Journey | HPMC</title>
 
       <meta
         name="description"
-        content="Explore HPMC's journey since 1972 and discover how five decades of engineering excellence, innovation, and customer trust have made us a leading plastic extrusion machinery manufacturer serving industries across India and global markets."
+        content="Explore HPMC's journey of innovation, growth, engineering excellence, and leadership in plastic extrusion machinery manufacturing."
       />
 
       <link rel="canonical" href="https://hindustanplastics.com/our-journey" />

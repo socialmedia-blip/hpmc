@@ -22,13 +22,11 @@ export default function VisionMission() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
-      <title>
-        Vision & Mission | HPMC - Plastic Extrusion Machinery Manufacturer
-      </title>
+      <title>Vision & Mission | HPMC</title>
 
       <meta
         name="description"
-        content="Discover HPMC's vision and mission to deliver innovative, high-performance plastic extrusion machinery. Learn how our commitment to engineering excellence, quality, reliability, and customer success has driven manufacturing innovation since 1972."
+        content="Discover HPMC's vision and mission focused on innovation, quality manufacturing, customer success, and sustainable plastic extrusion solutions."
       />
 
       <link

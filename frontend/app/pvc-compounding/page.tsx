@@ -300,14 +300,11 @@ export default function PVCCompounding() {
 
   return (
     <div>
-      <title>
-        Conical Twin Screw Plant for PVC Compounding | PVC Compounding Extruder
-        | HPMC
-      </title>
+      <title>Conical Twin Screw Plant for PVC Compounding | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Twin Screw Extruder for PVC Compounding is engineered for PVC compound production, polymer blending, filler modification, and pelletizing. Designed for high productivity, consistent quality, energy efficiency, and reliable industrial compounding performance."
+        content="Advanced PVC compounding solutions for consistent quality, high output, and efficient plastic processing operations."
       />
 
       <link

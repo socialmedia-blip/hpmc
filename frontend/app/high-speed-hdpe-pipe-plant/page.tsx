@@ -398,13 +398,11 @@ export default function HighSpeedHDPEPipePlant() {
 
   return (
     <div>
-      <title>
-        High Speed HDPE Pipe Plant | HDPE Pipe Extrusion Machine | HPMC
-      </title>
+      <title>High Speed HDPE Pipe Plant | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC High Speed HDPE Pipe Plant is a high-performance HDPE pipe extrusion machine designed for manufacturing HDPE pipes with superior output, energy efficiency, PLC control, and long-lasting reliability. Available in multiple models with production capacities up to 600 kg/hr."
+        content="High-speed HDPE pipe extrusion plants delivering maximum productivity, precision, and long-lasting performance."
       />
 
       <link

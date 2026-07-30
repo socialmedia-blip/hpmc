@@ -304,14 +304,11 @@ export default function TwinScrewPlantForCpvcPipe() {
 
   return (
     <div>
-      <title>
-        Conical Twin Screw Plant for CPVC Pipe | CPVC Pipe Extrusion Machine |
-        HPMC
-      </title>
+      <title>Conical Twin Screw Plant for CPVC Pipe | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Conical Twin Screw Plant for CPVC Pipe is engineered for high-performance CPVC pipe manufacturing with consistent output, low power consumption, and reliable processing. Designed for superior pipe quality, customized extrusion solutions, and long-lasting industrial performance."
+        content="Twin screw CPVC pipe extrusion plants engineered for accurate production and maximum operational efficiency."
       />
 
       <link

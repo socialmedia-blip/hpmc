@@ -201,13 +201,11 @@ export default function TwoStageRecyclingPlant() {
 
   return (
     <div>
-      <title>
-        Vented Recycling Plant | Plastic Recycling Extruder Manufacturer | HPMC
-      </title>
+      <title>Vented Recycling Plant | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Vented Recycling Plants are high-performance plastic recycling extruders designed for efficient degassing and devolatilization of PP, PE, ABS, HIPS, PA, PMMA and engineering plastics. Ideal for virgin and recycled materials with superior melt quality and cost-effective processing."
+        content="High-performance vented recycling plants designed for effective degassing and improved recycled plastic quality."
       />
 
       <link

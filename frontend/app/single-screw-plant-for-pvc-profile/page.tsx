@@ -347,14 +347,11 @@ export default function SingleScrewPlantForPvcProfile() {
 
   return (
     <div>
-      <title>
-        Single Screw Plant for PVC Profile | PVC Profile Extrusion Machine |
-        HPMC
-      </title>
+      <title>Single Screw Plant for PVC Profile | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Single Screw Plant for PVC Profile is a high-performance PVC profile extrusion machine designed for manufacturing window profiles, door frames, partitions, cable ducts, and decorative PVC profiles. Built for precision, energy efficiency, consistent output, and long-lasting performance."
+        content="Single screw extrusion plants for manufacturing high-quality PVC profiles with excellent production efficiency."
       />
 
       <link

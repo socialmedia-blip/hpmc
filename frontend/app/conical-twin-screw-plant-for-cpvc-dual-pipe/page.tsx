@@ -280,14 +280,11 @@ export default function TwinScrewExtruder() {
 
   return (
     <div>
-      <title>
-        Conical Twin Screw Plant for CPVC Dual Pipe | CPVC Pipe Extrusion
-        Machine | HPMC
-      </title>
+      <title>Conical Twin Screw Plant for CPVC Dual Pipe | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Conical Twin Screw Plant for CPVC Dual Pipe is a high-performance CPVC pipe extrusion machine engineered for efficient dual pipe production. Featuring bi-metallic screw & barrel technology, barrier design screws, and output up to 450 Kg/hr for superior productivity and long service life."
+        content="Conical twin screw CPVC dual pipe extrusion plants for high-speed and precision manufacturing applications."
       />
 
       <link

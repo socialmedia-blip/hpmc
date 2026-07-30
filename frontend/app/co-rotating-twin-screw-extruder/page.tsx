@@ -164,13 +164,11 @@ export default function CorotatingTwinScrewExtruder() {
 
   return (
     <div>
-      <title>
-        Co-Rotating Twin Screw Extruder | Plastic Recycling Plant | HPMC
-      </title>
+      <title>Co-Rotating Twin Screw Extruder | HPMC</title>
 
       <meta
         name="description"
-        content="HPMC Co-Rotating Twin Screw Extruder is a high-performance plastic recycling and polymer compounding machine designed for masterbatch production, engineering plastics, and high filler applications. Delivers superior mixing, excellent dispersion, energy efficiency, and consistent industrial output."
+        content="Advanced co-rotating twin screw extruders for plastic compounding, masterbatch production, and engineering polymers."
       />
 
       <link

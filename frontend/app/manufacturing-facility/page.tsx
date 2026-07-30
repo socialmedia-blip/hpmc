@@ -47,14 +47,11 @@ export default function ManufacturingFacility() {
   const [openPopup, setOpenPopup] = useState(false);
   return (
     <div>
-      <title>
-        Manufacturing Facility | HPMC - Advanced Plastic Extrusion Machinery
-        Plant
-      </title>
+      <title>Manufacturing Facility | HPMC</title>
 
       <meta
         name="description"
-        content="Explore HPMC's advanced manufacturing facility, equipped with modern infrastructure, precision machining, rigorous quality testing, and world-class production capabilities for plastic extrusion machinery since 1972."
+        content="Discover HPMC's advanced manufacturing facility equipped with modern technology for producing high-quality plastic extrusion machinery."
       />
 
       <link
