@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /login
+Disallow: /employee
+
+Host: https://hindustanplastics.com/
+Sitemap: https://hindustanplastics.com/sitemap.xml
