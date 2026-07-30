@@ -54,16 +54,8 @@ const productsData = [
         link: "/recycling-plant-with-compactor",
       },
       {
-        name: "Recycling Plant With Compactor",
-        link: "/recycling-plant-with-compactor",
-      },
-      {
         name: "Co-Rotating Twin Screw Extruder",
         link: "/co-rotating-twin-screw-extruder",
-      },
-      {
-        name: "Compactor type Extruder",
-        link: "/compactor-type-extruder",
       },
     ],
   },
@@ -155,10 +147,6 @@ const productsData = [
     title: "Garden Pipe Extruder",
     children: [
       {
-        name: "Single Screw Plant for Garden Pipe",
-        link: "/single-screw-plant-for-garden-pipe",
-      },
-      {
         name: "Soft PVC Garden Pipe Extrusion Line",
         link: "/soft-pvc-garden-pipe-extrusion-line",
       },
@@ -219,6 +207,15 @@ const productsData = [
       {
         name: "Self Cleaning Laser Filter",
         link: "/self-cleaning-laser-filter",
+      },
+    ],
+  },
+  {
+    title: "Wet Recycling Extrusion Line",
+    children: [
+      {
+        name: "Wet Recycling Extrusion Line",
+        link: "/wet-recycling-extrusion-line",
       },
     ],
   },
@@ -513,10 +510,6 @@ const contactMenu = [
       {
         name: "Vendor Registration",
         link: "/vendor-registration",
-      },
-      {
-        name: "Overseas Agents",
-        link: "/overseas-agents",
       },
     ],
   },

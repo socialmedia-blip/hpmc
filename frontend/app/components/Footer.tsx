@@ -13,11 +13,35 @@ import {
 
 const footerProducts = [
   {
-    name: "Single Screw Extruder",
-    link: "/single-screw-extruder",
+    name: "Co-Rotating Twin Screw Extruder",
+    link: "/co-rotating-twin-screw-extruder",
   },
   {
-    name: "Conical Twin Screw Extruder",
+    name: "Corotating Twin Screw Extruder for Compounding & Recycling",
+    link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "Corotating Triple Screw Extruder for Compounding & Recycling (Engineering Plastic)",
+    link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
+  },
+  {
+    name: "Soft Cable Grade PVC Compounding Plant",
+    link: "/soft-cable-grade-pvc-compounding-plant",
+  },
+  {
+    name: "Vented Recycling Plant",
+    link: "/vented-recycling-plant",
+  },
+  {
+    name: "Two Stage Recycling Plant",
+    link: "/two-stage-recycling-plant",
+  },
+  {
+    name: "Recycling Plant With Compactor",
+    link: "/recycling-plant-with-compactor",
+  },
+  {
+    name: "Conical Twin Screw Extruder for PVC and UPVC Pipe",
     link: "/twin-screw-extruder",
   },
   {
@@ -33,50 +57,6 @@ const footerProducts = [
     link: "/pvc-conduit-pipe-plant-four-pipes",
   },
   {
-    name: "High Speed HDPE Pipe Plant",
-    link: "/high-speed-hdpe-pipe-plant",
-  },
-  {
-    name: "Single Screw Plant for PVC Compounding",
-    link: "/single-screw-plant-for-pvc-compounding",
-  },
-  {
-    name: "Conical Twin Screw Plant for PVC Compounding",
-    link: "/pvc-compounding",
-  },
-  {
-    name: "Single Screw Plant for PVC Profile",
-    link: "/single-screw-plant-for-pvc-profile",
-  },
-  {
-    name: "Conical Twin Screw Plant for PVC Profile",
-    link: "/twin-screw-plant-for-pvc-profile",
-  },
-  {
-    name: "Single Screw Plant for Single Layer PPR Pipe",
-    link: "/ppr-pipe-extruder",
-  },
-  {
-    name: "High Speed Two Layer Cable Plant",
-    link: "/high-speed-two-layer-cable-plant",
-  },
-  {
-    name: "Twin Screw Plant for PVC Trunking",
-    link: "/twin-screw-plant-for-pvc-trunking",
-  },
-  {
-    name: "Single Screw Plant for Garden Pipe",
-    link: "/single-screw-plant-for-garden-pipe",
-  },
-  {
-    name: "Soft PVC Garden Pipe Extrusion Line",
-    link: "/soft-pvc-garden-pipe-extrusion-line",
-  },
-  {
-    name: "LLDPE Lay Flat Pipe Plant",
-    link: "/lldpe-pipe-plant",
-  },
-  {
     name: "Conical Twin Screw Plant for CPVC Pipe",
     link: "/twin-screw-plant-for-cpvc-pipe",
   },
@@ -85,36 +65,32 @@ const footerProducts = [
     link: "/conical-twin-screw-plant-for-cpvc-dual-pipe",
   },
   {
-    name: "Two Stage Recycling Plant",
-    link: "/two-stage-recycling-plant",
+    name: "Conical Twin Screw Plant for PVC Compounding",
+    link: "/pvc-compounding",
   },
   {
-    name: "Vented Recycling Plant",
-    link: "/vented-recycling-plant",
+    name: "Single Screw Plant for PVC Compounding",
+    link: "/single-screw-plant-for-pvc-compounding",
   },
   {
-    name: "Recycling Plant With Compactor",
-    link: "/recycling-plant-with-compactor",
+    name: "High Speed HDPE Pipe Plant",
+    link: "/high-speed-hdpe-pipe-plant",
   },
   {
-    name: "Co-Rotating Twin Screw Extruder",
-    link: "/co-rotating-twin-screw-extruder",
+    name: "Single Screw Plant for Single Layer PPR Pipe",
+    link: "/ppr-pipe-extruder",
   },
   {
-    name: "Compactor Type Extruder",
-    link: "/compactor-type-extruder",
+    name: "Conical Twin Screw Plant for PVC Profile",
+    link: "/twin-screw-plant-for-pvc-profile",
   },
   {
-    name: "Corotating Twin Screw Extruder for Compounding & Recycling",
-    link: "/corotating-twin-screw-extruder-for-compounding-&-recycling",
+    name: "Twin Screw Plant for PVC Trunking",
+    link: "/twin-screw-plant-for-pvc-trunking",
   },
   {
-    name: "Corotating Triple Screw Extruder for Compounding & Recycling",
-    link: "/corotating-triple-screw-extruder-for-compounding-&-recycling",
-  },
-  {
-    name: "Soft Cable Grade PVC Compounding Plant",
-    link: "/soft-cable-grade-pvc-compounding-plant",
+    name: "Single Screw Plant for PVC Profile",
+    link: "/single-screw-plant-for-pvc-profile",
   },
   {
     name: "WPC Profile (Chokhat) Plant",
@@ -125,12 +101,32 @@ const footerProducts = [
     link: "/wpc-board-plant",
   },
   {
+    name: "Soft PVC Garden Pipe Extrusion Line",
+    link: "/soft-pvc-garden-pipe-extrusion-line",
+  },
+  {
+    name: "LLDPE Lay Flat Pipe Plant",
+    link: "/lldpe-pipe-plant",
+  },
+  {
+    name: "Single Screw Extruder",
+    link: "/single-screw-extruder",
+  },
+  {
+    name: "High Speed Two Layer Cable Plant",
+    link: "/high-speed-two-layer-cable-plant",
+  },
+  {
     name: "Single Shaft Shredder",
     link: "/single-shaft-shredder",
   },
   {
     name: "Self Cleaning Laser Filter",
     link: "/self-cleaning-laser-filter",
+  },
+  {
+    name: "Wet Recycling Extrusion Line",
+    link: "/wet-recycling-extrusion-line",
   },
 ];
 
