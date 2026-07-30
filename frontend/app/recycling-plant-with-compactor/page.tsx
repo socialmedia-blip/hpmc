@@ -509,7 +509,7 @@ export default function RecyclingPlantWithCompactor() {
               <video
                 ref={videoRef}
                 controls
-                poster="/videos/co-rotating.png"
+                poster="/videos/compactor.png"
                 className="w-full h-full object-contain"
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
