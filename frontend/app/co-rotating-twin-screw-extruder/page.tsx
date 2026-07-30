@@ -469,7 +469,7 @@ export default function CorotatingTwinScrewExtruder() {
               <video
                 ref={videoRef}
                 controls
-                poster="/videos/co-rotating.png"
+                poster="/videos/co-ro.png"
                 className="w-full h-full object-cover"
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}

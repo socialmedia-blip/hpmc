@@ -506,7 +506,7 @@ export default function TwoStageRecyclingPlant() {
               <video
                 ref={videoRef}
                 controls
-                poster="/videos/co-rotating.png"
+                poster="/videos/vented.png"
                 className="w-full h-full object-contain"
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
