@@ -42,6 +42,8 @@ const specifications = [
     extruder100: "125-150",
     extruder110: "150-175 / 200-225",
     extruder120: "200-220 / 250-300",
+    extruder130: "300-350",
+    extruder140: "350-400",
     extruder150: "400-500",
   },
   {
@@ -50,6 +52,8 @@ const specifications = [
     extruder100: "100",
     extruder110: "110",
     extruder120: "120",
+    extruder130: "130",
+    extruder140: "140",
     extruder150: "150",
   },
   {
@@ -58,6 +62,8 @@ const specifications = [
     extruder100: "30",
     extruder110: "37 / 55",
     extruder120: "55 / 75",
+    extruder130: "75",
+    extruder140: "90",
     extruder150: "110",
   },
   {
@@ -66,6 +72,8 @@ const specifications = [
     extruder100: "18",
     extruder110: "22",
     extruder120: "32",
+    extruder130: "-",
+    extruder140: "-",
     extruder150: "40",
   },
   {
@@ -74,6 +82,8 @@ const specifications = [
     extruder100: "8/3",
     extruder110: "8/3",
     extruder120: "10/5",
+    extruder130: "-",
+    extruder140: "-",
     extruder150: "10/5",
   },
   {
@@ -82,6 +92,8 @@ const specifications = [
     extruder100: "33:1",
     extruder110: "33:1",
     extruder120: "30:1",
+    extruder130: "-",
+    extruder140: "-",
     extruder150: "30:1",
   },
   {
@@ -90,6 +102,8 @@ const specifications = [
     extruder100: "7",
     extruder110: "10",
     extruder120: "10",
+    extruder130: "-",
+    extruder140: "-",
     extruder150: "14",
   },
   {
@@ -98,6 +112,8 @@ const specifications = [
     extruder100: "50-70",
     extruder110: "50-70",
     extruder120: "50-70",
+    extruder130: "50-70",
+    extruder140: "50-70",
     extruder150: "50-70",
   },
 ];
@@ -942,6 +958,8 @@ export default function ConicalTwinScrewExtrusionLine() {
                         "Extruder 100",
                         "Extruder 110",
                         "Extruder 120",
+                        "Extruder 130",
+                        "Extruder 140",
                         "Extruder 150",
                       ].map((model) => (
                         <th
@@ -974,6 +992,8 @@ export default function ConicalTwinScrewExtrusionLine() {
                           spec.extruder100,
                           spec.extruder110,
                           spec.extruder120,
+                          spec.extruder130,
+                          spec.extruder140,
                           spec.extruder150,
                         ].map((value, valueIndex) => (
                           <td

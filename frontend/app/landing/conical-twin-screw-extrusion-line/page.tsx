@@ -127,11 +127,6 @@ const features = [
 
 const specifications = [
   {
-    model: "HPMC 45/90",
-    minPipeOD: "16 mm",
-    maxPipeOD: "50 mm",
-  },
-  {
     model: "HPMC 51/105",
     minPipeOD: "16 mm",
     maxPipeOD: "200 mm",
@@ -144,7 +139,7 @@ const specifications = [
   {
     model: "HPMC 65/132",
     minPipeOD: "63 mm",
-    maxPipeOD: "225 mm",
+    maxPipeOD: "250 mm",
   },
   {
     model: "HPMC 80/156",
