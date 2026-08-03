@@ -127,19 +127,19 @@ const specifications = [
   },
   {
     parameter: "Heating Load (kW)",
-    values: ["15", "18", "22", "32", "-", "-", "40"],
+    values: ["15", "18", "22", "32", "55", "60", "65"],
   },
   {
     parameter: "Hydraulic Screen Changer (Inch/HP)",
-    values: ["8/3", "8/3", "8/3", "10/5", "-", "-", "10/5"],
+    values: ["8/3", "8/3", "8/3", "10/5", "10/5", "12/5", "12/5"],
   },
   {
     parameter: "L/D Ratio",
-    values: ["33:1", "33:1", "33:1", "30:1", "-", "-", "30:1"],
+    values: ["33:1", "33:1", "33:1", "30:1", "30:1", "30:1", "30:1"],
   },
   {
     parameter: "Heating Zones",
-    values: ["6", "7", "10", "10", "-", "-", "14"],
+    values: ["6", "7", "10", "10", "12", "13", "15"],
   },
   {
     parameter: "Rotating Speed (RPM)",
