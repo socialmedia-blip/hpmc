@@ -50,13 +50,13 @@ export default function LandingNavbar() {
 
           {/* Contact CTA */}
           <a
-            href="tel:+919711956064"
+            href="tel:+919560596392"
             className="group inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-sm font-bold text-white transition"
           >
             <Phone className="h-4 w-4" />
 
             <span className="sm:hidden">CALL US</span>
-            <span className="hidden sm:inline">CALL: +91 97119 56064</span>
+            <span className="hidden sm:inline">CALL: +91 95605 96392</span>
           </a>
         </div>
       </div>

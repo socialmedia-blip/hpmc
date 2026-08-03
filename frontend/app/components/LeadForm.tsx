@@ -442,7 +442,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             <div className="mt-8 space-y-3">
               {[
                 " 50+ Years of Experience ",
-                "1000+ Successful Installations",
+                "2000+ Successful Installations",
                 "ISO Certified Manufacturing",
                 "Global Export Presence",
                 "End-to-End Technical Support",

@@ -268,6 +268,24 @@ const productsDataDesktop = [
     link: "/recycling-plant-with-compactor",
   },
   {
+    name: "Wet Recycling Extrusion Line",
+    category: "Wet Recycling Extrusion Line",
+    image: "/products/wpc/wet-recycling.png",
+    link: "/wet-recycling-extrusion-line",
+  },
+  {
+    name: "Single Shaft Shredder",
+    category: "Single Shaft Shredder",
+    image: "/products/shredder/shredder.png",
+    link: "/single-shaft-shredder",
+  },
+  {
+    name: "Self Cleaning Laser Filter",
+    category: "Laser Filter",
+    image: "/products/wpc/laserfilter.png",
+    link: "/self-cleaning-laser-filter",
+  },
+  {
     name: "Conical Twin Screw Extruder for PVC and UPVC Pipe",
     category: "PVC Pipe Plant",
     image: "/products/conical-twin-screw-extruder.jpg",
@@ -382,25 +400,6 @@ const productsDataDesktop = [
     category: "Cable Extruder",
     image: "/products/high_speed_two_layer_cable.jpg",
     link: "/high-speed-two-layer-cable-plant",
-  },
-
-  {
-    name: "Single Shaft Shredder",
-    category: "Single Shaft Shredder",
-    image: "/products/shredder/shredder.png",
-    link: "/single-shaft-shredder",
-  },
-  {
-    name: "Self Cleaning Laser Filter",
-    category: "Laser Filter",
-    image: "/products/wpc/laserfilter.png",
-    link: "/self-cleaning-laser-filter",
-  },
-  {
-    name: "Wet Recycling Extrusion Line",
-    category: "Wet Recycling Extrusion Line",
-    image: "/products/wpc/wet-recycling.png",
-    link: "/wet-recycling-extrusion-line",
   },
 ];
 

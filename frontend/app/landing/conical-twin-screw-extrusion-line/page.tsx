@@ -132,7 +132,7 @@ const specifications = [
     maxPipeOD: "200 mm",
   },
   {
-    model: "HPMC 55/110",
+    model: "HPMC 55/120",
     minPipeOD: "16 mm",
     maxPipeOD: "200 mm",
   },
