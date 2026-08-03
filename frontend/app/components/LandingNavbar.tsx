@@ -48,54 +48,15 @@ export default function LandingNavbar() {
           {/* Theme */}
           <ThemeToggle />
 
-          {/* WhatsApp */}
-          <a
-            href={`https://wa.me/919711956064?text=${whatsappMessage}`}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Contact HPMC on WhatsApp"
-            className="
-              group inline-flex items-center justify-center gap-2
-              rounded-lg
-              border border-[var(--primary)]/40
-              bg-[var(--card)]
-              px-3 py-2.5
-              text-sm font-bold
-              text-[var(--primary)]
-              shadow-sm
-              transition-all duration-300
-              hover:-translate-y-0.5
-              hover:border-[var(--primary)]
-              hover:bg-[var(--primary)]/10
-              hover:shadow-md
-              sm:px-4
-            "
-          >
-            <MessageCircle className="h-4 w-4 shrink-0" />
-
-            <span className="hidden sm:inline">WhatsApp</span>
-          </a>
-
           {/* Contact CTA */}
           <a
-            href="#enquire"
-            className="
-              group inline-flex items-center justify-center gap-2
-              rounded-lg
-              bg-[var(--primary)]
-              px-3 py-2.5
-              text-sm font-bold text-white
-              shadow-[0_8px_24px_rgba(101,188,79,0.22)]
-              transition-all duration-300
-              hover:-translate-y-0.5
-              hover:brightness-90
-              hover:shadow-[0_10px_28px_rgba(101,188,79,0.30)]
-              sm:px-4
-            "
+            href="tel:+919711956064"
+            className="group inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-sm font-bold text-white transition"
           >
-            <Phone className="h-4 w-4 shrink-0" />
+            <Phone className="h-4 w-4" />
 
-            <span>Contact</span>
+            <span className="sm:hidden">CALL US</span>
+            <span className="hidden sm:inline">CALL: +91 97119 56064</span>
           </a>
         </div>
       </div>

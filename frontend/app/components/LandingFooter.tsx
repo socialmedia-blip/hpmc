@@ -15,36 +15,56 @@ export default function LandingFooter() {
             alt="HPMC"
             width={162}
             height={55}
-            className="h-auto w-36 brightness-0 invert"
+            className="h-auto w-36"
           />
           <p className="mt-3 max-w-md text-sm leading-6 text-slate-300">
             Engineering extrusion solutions for dependable, efficient plastic
             processing.
           </p>
         </div>
-        <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold">
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Call */}
           <a
-            href="tel:919711956064"
-            className="inline-flex items-center gap-2 text-slate-200 transition hover:text-[#83d86e]"
+            href="tel:+919711956064"
+            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur transition-all duration-300 hover:border-[#83d86e] hover:bg-[#83d86e]/10 hover:text-[#83d86e]"
           >
-            <Phone className="h-4 w-4" />
-            +91 9711956064
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#83d86e]/15 text-[#83d86e] transition group-hover:bg-[#83d86e] group-hover:text-white">
+              <Phone className="h-5 w-5" />
+            </span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xs text-slate-400">Call Us</span>
+              <span>+91 97119 56064</span>
+            </div>
           </a>
+
+          {/* Email */}
           <a
-            href="mailto:admin@hindustanpalstics.com"
-            className="inline-flex items-center gap-2 text-slate-200 transition hover:text-[#83d86e]"
+            href="mailto:admin@hindustanplastics.com"
+            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur transition-all duration-300 hover:border-[#83d86e] hover:bg-[#83d86e]/10 hover:text-[#83d86e]"
           >
-            <Mail className="h-4 w-4" />
-            Email HPMC
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#83d86e]/15 text-[#83d86e] transition group-hover:bg-[#83d86e] group-hover:text-white">
+              <Mail className="h-5 w-5" />
+            </span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xs text-slate-400">Email</span>
+              <span>admin@hindustanplastics.com</span>
+            </div>
           </a>
+
+          {/* WhatsApp */}
           <a
             href={`https://wa.me/919711956064?text=${whatsappMessage}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-[#83d86e] transition hover:text-white"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1ebe5d]"
           >
-            <MessageCircle className="h-4 w-4" />
-            WhatsApp us
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+              <MessageCircle className="h-5 w-5" />
+            </span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xs text-white/80">Quick Chat</span>
+              <span>WhatsApp Us</span>
+            </div>
           </a>
         </div>
       </div>

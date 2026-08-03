@@ -60,7 +60,9 @@ export default function LandingLeadForm({
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Unable to send the verification code.");
+        throw new Error(
+          data.message || "Unable to send the verification code.",
+        );
       }
       setOtp("");
       setStep("otp");
@@ -181,7 +183,11 @@ export default function LandingLeadForm({
           type="submit"
           className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-5 py-3.5 font-bold text-white transition hover:bg-[#4fa23a] disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <ShieldCheck className="h-5 w-5" />}
+          {loading ? (
+            <Loader2 className="h-5 w-5 animate-spin" />
+          ) : (
+            <ShieldCheck className="h-5 w-5" />
+          )}
           {loading ? "Verifying…" : "Verify and submit enquiry"}
         </button>
         <div className="mt-4 flex items-center justify-between gap-3 text-sm">
@@ -227,10 +233,35 @@ export default function LandingLeadForm({
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Full name" value={values.name} onChange={(value) => updateValue("name", value)} autoComplete="name" required />
-        <Field label="Work email" type="email" value={values.email} onChange={(value) => updateValue("email", value)} autoComplete="email" required />
-        <Field label="Phone number" type="tel" value={values.phone} onChange={(value) => updateValue("phone", value)} autoComplete="tel" required />
-        <Field label="Company name" value={values.companyName} onChange={(value) => updateValue("companyName", value)} autoComplete="organization" />
+        <Field
+          label="Full name"
+          value={values.name}
+          onChange={(value) => updateValue("name", value)}
+          autoComplete="name"
+          required
+        />
+        <Field
+          label="Work email"
+          type="email"
+          value={values.email}
+          onChange={(value) => updateValue("email", value)}
+          autoComplete="email"
+          required
+        />
+        <Field
+          label="Phone number"
+          type="tel"
+          value={values.phone}
+          onChange={(value) => updateValue("phone", value)}
+          autoComplete="tel"
+          required
+        />
+        <Field
+          label="Company name"
+          value={values.companyName}
+          onChange={(value) => updateValue("companyName", value)}
+          autoComplete="organization"
+        />
       </div>
 
       <label className="mt-4 block text-sm font-semibold text-[var(--text-primary)]">
@@ -247,14 +278,27 @@ export default function LandingLeadForm({
 
       <label className="sr-only" aria-hidden="true">
         Website
-        <input tabIndex={-1} autoComplete="off" value={values.website} onChange={(event) => updateValue("website", event.target.value)} />
+        <input
+          tabIndex={-1}
+          autoComplete="off"
+          value={values.website}
+          onChange={(event) => updateValue("website", event.target.value)}
+        />
       </label>
 
       {error && <ErrorMessage message={error} />}
 
-      <button disabled={loading} type="submit" className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-5 py-3.5 font-bold text-white transition hover:bg-[#4fa23a] disabled:cursor-not-allowed disabled:opacity-70">
-        {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-4 w-4" />}
-        {loading ? "Sending code…" : "Email me a verification code"}
+      <button
+        disabled={loading}
+        type="submit"
+        className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-5 py-3.5 font-bold text-white transition hover:bg-[#4fa23a] disabled:cursor-not-allowed disabled:opacity-70"
+      >
+        {loading ? (
+          <Loader2 className="h-5 w-5 animate-spin" />
+        ) : (
+          <Send className="h-4 w-4" />
+        )}
+        {loading ? "Sending code…" : "Submit"}
       </button>
       <p className="mt-3 text-center text-xs leading-5 text-[var(--text-light)]">
         By continuing, you agree to be contacted by HPMC about this enquiry.
@@ -264,14 +308,39 @@ export default function LandingLeadForm({
 }
 
 function ErrorMessage({ message }: { message: string }) {
-  return <p className="mt-4 rounded-xl bg-red-500/10 px-4 py-3 text-sm text-red-700">{message}</p>;
+  return (
+    <p className="mt-4 rounded-xl bg-red-500/10 px-4 py-3 text-sm text-red-700">
+      {message}
+    </p>
+  );
 }
 
-function Field({ label, type = "text", value, onChange, required = false, autoComplete }: { label: string; type?: string; value: string; onChange: (value: string) => void; required?: boolean; autoComplete?: string }) {
+function Field({
+  label,
+  type = "text",
+  value,
+  onChange,
+  required = false,
+  autoComplete,
+}: {
+  label: string;
+  type?: string;
+  value: string;
+  onChange: (value: string) => void;
+  required?: boolean;
+  autoComplete?: string;
+}) {
   return (
     <label className="block text-sm font-semibold text-[var(--text-primary)]">
       {label} {required && <span className="text-[#579f42]">*</span>}
-      <input required={required} type={type} value={value} onChange={(event) => onChange(event.target.value)} autoComplete={autoComplete} className="mt-2 block w-full rounded-xl border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-[var(--text-primary)] outline-none transition placeholder:text-[var(--text-light)] focus:border-[#65BC4F] focus:ring-4 focus:ring-[#65BC4F]/10" />
+      <input
+        required={required}
+        type={type}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        autoComplete={autoComplete}
+        className="mt-2 block w-full rounded-xl border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-[var(--text-primary)] outline-none transition placeholder:text-[var(--text-light)] focus:border-[#65BC4F] focus:ring-4 focus:ring-[#65BC4F]/10"
+      />
     </label>
   );
 }
