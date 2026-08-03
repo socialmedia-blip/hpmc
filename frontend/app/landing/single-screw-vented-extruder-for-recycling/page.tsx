@@ -204,14 +204,6 @@ export default function ConicalTwinScrewExtrusionLine() {
                   Discuss Your Requirement
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
-
-                <a
-                  href="#applications"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/80 px-7 py-4 text-sm font-bold text-slate-700 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-[#65BC4F]/60 hover:bg-white hover:text-[#438f32] sm:text-base"
-                >
-                  Explore Applications
-                  <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
               </div>
 
               {/* =================================================
@@ -1226,7 +1218,7 @@ export default function ConicalTwinScrewExtrusionLine() {
                   label: "Vented Extruder Models",
                 },
                 {
-                  value: "500",
+                  value: "1500",
                   label: "kg/hr Max. Listed Output",
                 },
               ].map((item, index) => (

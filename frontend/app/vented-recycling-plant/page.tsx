@@ -112,36 +112,38 @@ const specifications = [
       "125-150",
       "150-175 / 200-225",
       "200-220 / 250-300",
+      "300-350",
+      "350-400",
       "400-500",
     ],
   },
   {
     parameter: "Screw Diameter (mm)",
-    values: ["90", "100", "110", "120", "150"],
+    values: ["90", "100", "110", "120", "130", "140", "150"],
   },
   {
     parameter: "Main Motor (kW)",
-    values: ["22.5", "30", "37 / 55", "55 / 75", "110"],
+    values: ["22.5", "30", "37 / 55", "55 / 75", "75", "90", "110"],
   },
   {
     parameter: "Heating Load (kW)",
-    values: ["15", "18", "22", "32", "40"],
+    values: ["15", "18", "22", "32", "-", "-", "40"],
   },
   {
     parameter: "Hydraulic Screen Changer (Inch/HP)",
-    values: ["8/3", "8/3", "8/3", "10/5", "10/5"],
+    values: ["8/3", "8/3", "8/3", "10/5", "-", "-", "10/5"],
   },
   {
     parameter: "L/D Ratio",
-    values: ["33:1", "33:1", "33:1", "30:1", "30:1"],
+    values: ["33:1", "33:1", "33:1", "30:1", "-", "-", "30:1"],
   },
   {
     parameter: "Heating Zones",
-    values: ["6", "7", "10", "10", "14"],
+    values: ["6", "7", "10", "10", "-", "-", "14"],
   },
   {
     parameter: "Rotating Speed (RPM)",
-    values: ["50-70", "50-70", "50-70", "50-70", "50-70"],
+    values: ["50-70", "50-70", "50-70", "50-70", "50-70", "50-70", "50-70"],
   },
 ];
 
@@ -219,7 +221,7 @@ export default function TwoStageRecyclingPlant() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/heroSection/vented.png')",
+            backgroundImage: "url('/herosection/vented.png')",
           }}
         />
 
@@ -561,6 +563,8 @@ export default function TwoStageRecyclingPlant() {
                     "EXTRUDER 100",
                     "EXTRUDER 110",
                     "EXTRUDER 120",
+                    "EXTRUDER 130",
+                    "EXTRUDER 140",
                     "EXTRUDER 150",
                   ].map((model) => (
                     <th
