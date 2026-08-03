@@ -225,7 +225,7 @@ export default function ConicalTwinScrewExtrusionLine() {
                       label: "Years Experience",
                     },
                     {
-                      value: "500",
+                      value: "1500",
                       label: "kg/hr Max. Output",
                     },
                     {
@@ -458,7 +458,7 @@ export default function ConicalTwinScrewExtrusionLine() {
 
                   <div>
                     <p className="text-xl font-bold text-[var(--primary)]">
-                      500
+                      1500
                     </p>
                     <p className="text-xs font-medium text-[var(--text-secondary)]">
                       kg/hr max. output
