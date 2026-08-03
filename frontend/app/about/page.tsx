@@ -138,7 +138,7 @@ export default function About() {
               </p>
 
               <p className="text-[var(--text-secondary)] leading-8 mb-10">
-                With more than 1,000 successful installations, we serve
+                With more than 2,000 successful installations, we serve
                 entrepreneurs, SMEs, and large-scale manufacturers through
                 innovative machinery, engineering expertise, and complete
                 turnkey manufacturing solutions.

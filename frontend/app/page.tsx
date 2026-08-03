@@ -192,13 +192,13 @@ const stats = [
   },
   {
     icon: Factory,
-    value: 1000,
+    value: 2000,
     suffix: "+",
     label: "Machines Installed Worldwide",
   },
   {
     icon: Globe,
-    value: 80,
+    value: 20,
     suffix: "+",
     label: "Countries Served",
   },

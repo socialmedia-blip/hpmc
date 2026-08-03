@@ -11,13 +11,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
-const items = [
-  { number: "50+", label: "Years Experience" },
-  { number: "12K+", label: "Machines Installed" },
-  { number: "25+", label: "Countries Served" },
-  { number: "24/7", label: "Technical Support" },
-];
-
 const journeyTimeline = [
   {
     year: "1972",
@@ -178,12 +171,12 @@ export default function OurJourney() {
             </div>
 
             <div>
-              <h3 className="text-7xl font-black text-[var(--primary)]">1K+</h3>
+              <h3 className="text-7xl font-black text-[var(--primary)]">2K+</h3>
               <p className="text-white text-xl mt-3">Machines Installed</p>
             </div>
 
             <div>
-              <h3 className="text-7xl font-black text-[var(--primary)]">25+</h3>
+              <h3 className="text-7xl font-black text-[var(--primary)]">20+</h3>
               <p className="text-white text-xl mt-3">Countries Served</p>
             </div>
 
