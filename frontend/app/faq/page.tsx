@@ -386,6 +386,18 @@ export default function Faq() {
             backgroundImage: "url('/herosection/faq.png')",
           }}
         />
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
+
+        {/* Mobile Overlay */}
+        <div
+          className="
+    absolute inset-0 lg:hidden
+    bg-gradient-to-r
+    from-white/95
+    via-white/90
+    to-white/40
+  "
+        />
 
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
           <div className="max-w-[760px] pt-24 lg:pt-0">

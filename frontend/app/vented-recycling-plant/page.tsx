@@ -405,7 +405,7 @@ export default function TwoStageRecyclingPlant() {
               {/* Stats Cards */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
-                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                  <h4 className="text-xl md:text-2xl font-bold text-[var(--primary)]">
                     PP / PE / ABS
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">
@@ -414,7 +414,7 @@ export default function TwoStageRecyclingPlant() {
                 </div>
 
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
-                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                  <h4 className="text-xl md:text-2xl font-bold text-[var(--primary)]">
                     Advanced
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">
@@ -423,7 +423,7 @@ export default function TwoStageRecyclingPlant() {
                 </div>
 
                 <div className="rounded-2xl border border-[var(--border)] p-4 bg-[var(--card)]">
-                  <h4 className="text-2xl font-bold text-[var(--primary)]">
+                  <h4 className="text-xl md:text-2xl font-bold text-[var(--primary)]">
                     Lower
                   </h4>
                   <p className="text-sm text-[var(--text-secondary)] mt-1">

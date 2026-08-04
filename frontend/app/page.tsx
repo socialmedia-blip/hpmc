@@ -294,30 +294,59 @@ export default function Home() {
             prevEl: ".hero-prev",
             nextEl: ".hero-next",
           }}
-          className="min-h-[calc(100svh-72px)]"
+          className="min-h-[75svh] lg:min-h-[calc(100svh-72px)]"
         >
           {heroSlides.map((slide, index) => {
             const HeadingTag = index === 0 ? "h1" : "h2";
 
             return (
               <SwiperSlide key={index} className="h-auto">
-                <div className="relative flex min-h-[calc(100svh-72px)] w-full items-center overflow-hidden bg-[#f7f7f7] py-6 sm:py-8 lg:py-10">
-                  {/* BACKGROUND IMAGE */}
+                <div className="relative flex min-h-[75svh] md:min-h-[calc(100svh-72px)] w-full items-center overflow-hidden bg-[#f7f7f7] py-8 md:py-10">
+                  {/* Background Image */}
                   <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    className="
+                absolute inset-0
+                bg-cover
+                bg-no-repeat
+                bg-[position:72%_center]
+                md:bg-center
+              "
                     style={{
                       backgroundImage: `url(${slide.image})`,
                     }}
                   />
 
-                  {/* CONTENT */}
+                  {/* Mobile Overlay Only */}
+                  <div
+                    className="
+                absolute inset-0
+                bg-gradient-to-r
+                from-white/95
+                via-white/90
+                to-white/10
+                lg:hidden
+              "
+                  />
+
+                  {/* Desktop Overlay */}
+                  <div
+                    className="
+                absolute inset-0 hidden lg:block
+                bg-gradient-to-r
+                from-white/70
+                via-white/35
+                to-transparent
+              "
+                  />
+
+                  {/* Content */}
                   <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-                    <div className="max-w-[620px] w-full">
-                      <span className="block mb-2 text-[#65BC4F] font-semibold uppercase tracking-[2px] text-[10px] sm:text-xs md:text-sm">
+                    <div className="max-w-[620px] w-full md:p-0 p-2">
+                      <span className="mb-2 block text-[10px] font-semibold uppercase tracking-[2px] text-[#65BC4F] sm:text-xs md:text-sm">
                         {slide.tag}
                       </span>
 
-                      <HeadingTag className="text-[clamp(1.75rem,2.75vw,2.5rem)] font-bold leading-[1.1] text-[#0B1220]">
+                      <HeadingTag className="text-[clamp(1.9rem,2.8vw,2.8rem)] font-bold leading-[1.08] text-[#0B1220]">
                         {slide.title[0]}
                         <br />
                         {slide.title[1]}
@@ -325,50 +354,50 @@ export default function Home() {
                         <span className="text-[#65BC4F]">{slide.title[2]}</span>
                       </HeadingTag>
 
-                      <p className="mt-3 max-w-[520px] text-[13px] leading-6 text-gray-700 sm:text-sm lg:text-[15px]">
+                      <p className="mt-4 max-w-[520px] text-[14px] leading-6 text-gray-700 sm:text-sm lg:text-[15px]">
                         {slide.desc}
                       </p>
 
-                      <div className="mt-5 flex flex-wrap gap-3">
+                      <div className="mt-6 flex flex-wrap gap-3">
                         <button
                           onClick={() => setOpenPopup(true)}
-                          className="flex items-center justify-center gap-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] transition px-5 py-2.5 rounded-lg group"
+                          className="flex items-center justify-center gap-3 rounded-lg bg-[var(--primary)] px-5 py-3 transition hover:bg-[var(--primary-dark)]"
                         >
-                          <span className="uppercase text-white font-semibold text-xs sm:text-sm">
+                          <span className="text-xs font-semibold uppercase text-white sm:text-sm">
                             Book a Site Visit
                           </span>
 
-                          <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-                            <span className="text-white text-sm">→</span>
+                          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
+                            <span className="text-sm text-white">→</span>
                           </div>
                         </button>
 
                         <button
                           onClick={() => setOpenVideo(true)}
-                          className="flex items-center justify-center gap-3 border border-gray-300 hover:border-[#65BC4F] transition px-5 py-2.5 rounded-lg group bg-white/70 backdrop-blur-sm"
+                          className="group flex items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white/80 px-5 py-3 backdrop-blur-sm transition hover:border-[#65BC4F]"
                         >
-                          <span className="uppercase font-semibold text-xs sm:text-sm text-black group-hover:text-lime-600">
+                          <span className="text-xs font-semibold uppercase text-black group-hover:text-[#65BC4F] sm:text-sm">
                             Watch Video
                           </span>
 
-                          <div className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-[#65BC4F]">
-                            <span className="text-xs text-black group-hover:text-lime-600">
+                          <div className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-300 group-hover:border-[#65BC4F]">
+                            <span className="text-xs group-hover:text-[#65BC4F]">
                               ▶
                             </span>
                           </div>
                         </button>
                       </div>
 
-                      <div className="mt-6 flex flex-wrap items-center gap-4">
-                        <button className="hero-prev w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
+                      <div className="mt-8 flex flex-wrap items-center gap-4">
+                        <button className="hero-prev flex h-11 w-11 items-center justify-center rounded-full border border-[#65BC4F]/30 bg-white/80 text-[#65BC4F] backdrop-blur-sm transition-all duration-300 hover:bg-[#65BC4F] hover:text-white">
                           ←
                         </button>
 
-                        <button className="hero-next w-11 h-11 rounded-full border border-[#65BC4F]/30 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#65BC4F] hover:bg-[#65BC4F] hover:text-white transition-all duration-300">
+                        <button className="hero-next flex h-11 w-11 items-center justify-center rounded-full border border-[#65BC4F]/30 bg-white/80 text-[#65BC4F] backdrop-blur-sm transition-all duration-300 hover:bg-[#65BC4F] hover:text-white">
                           →
                         </button>
 
-                        <div className="hidden sm:block h-[1px] w-20 bg-gray-300" />
+                        <div className="hidden h-px w-20 bg-gray-300 sm:block" />
 
                         <span className="hidden text-xs uppercase tracking-wider text-gray-500 sm:block">
                           Slide Navigation

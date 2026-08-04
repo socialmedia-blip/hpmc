@@ -186,7 +186,18 @@ export default function CorotatingTwinScrewExtruder() {
           }}
         />
 
-        {/* Overlay */}
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
+
+        {/* Mobile Overlay */}
+        <div
+          className="
+    absolute inset-0 lg:hidden
+    bg-gradient-to-r
+    from-white/95
+    via-white/90
+    to-white/40
+  "
+        />
 
         {/* Content */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
@@ -196,7 +207,7 @@ export default function CorotatingTwinScrewExtruder() {
               <span className="block text-[#65BC4F]">Twin Screw Extruder</span>
             </h1>
 
-            <p className="mt-6 text-lg leading-8 text-[#4B5563] max-w-[560px]">
+            <p className="mt-6 text-lg leading-8 text-gray-700 max-w-[560px]">
               High-performance co-rotating twin screw extruder engineered for
               polymer compounding, masterbatch production, engineering plastics,
               glass fibre reinforced compounds, and high filler applications

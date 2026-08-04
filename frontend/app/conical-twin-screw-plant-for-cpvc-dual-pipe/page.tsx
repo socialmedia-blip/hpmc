@@ -301,6 +301,18 @@ export default function TwinScrewExtruder() {
             backgroundImage: "url('/heroSection/tsehero.png')",
           }}
         />
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
+
+        {/* Mobile Overlay */}
+        <div
+          className="
+    absolute inset-0 lg:hidden
+    bg-gradient-to-r
+    from-white/95
+    via-white/90
+    to-white/40
+  "
+        />
 
         {/* Content */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
@@ -310,7 +322,7 @@ export default function TwinScrewExtruder() {
               <span className="text-[#65BC4F]"> CPVC Dual Pipe</span>
             </h1>
 
-            <p className="mt-6 text-gray-600 text-sm md:text-base leading-7 max-w-[500px]">
+            <p className="mt-6 text-gray-700 text-sm md:text-base leading-7 max-w-[500px]">
               HPMC Conical Twin Screw Plant For CPVC Dual Pipe are engineered
               for high-efficiency PVC pipe production with superior plasticizing
               performance and consistent output. Designed for both small and

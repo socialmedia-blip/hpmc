@@ -92,13 +92,13 @@ export default function Clients() {
                     <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-transparent" />
                   </div>
 
-                  <div className="relative flex h-[170px] items-center justify-center">
+                  <div className="relative flex h-[120px] sm:h-[140px] md:h-[170px] items-center justify-center">
                     <Image
                       src={client.image}
                       alt={client.name}
                       fill
-                      sizes="(max-width:768px) 100vw,25vw"
-                      className="object-contain p-5 transition-all duration-500 group-hover:scale-110"
+                      sizes="(max-width:768px) 50vw, (max-width:1024px) 33vw, 25vw"
+                      className="object-contain p-2 sm:p-3 md:p-5 transition-all duration-500 group-hover:scale-110"
                     />
                   </div>
                 </div>
