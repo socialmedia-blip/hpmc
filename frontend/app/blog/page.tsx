@@ -22,7 +22,7 @@ interface Blog {
 }
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
-const BLOGS_PER_PAGE = 10;
+const BLOGS_PER_PAGE = 6;
 
 /* ================= SKELETON ================= */
 
@@ -232,39 +232,61 @@ export default function BlogPage() {
                     href={`/blog/${blog.slug}`}
                     className="group"
                   >
-                    <article className="relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)] shadow-sm hover:shadow-[var(--shadow-primary)] transition-all duration-500">
+                    <article className="relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-primary)]">
                       {/* IMAGE */}
                       <div className="relative h-[340px] overflow-hidden">
                         <Image
                           src={blog.coverImage}
                           alt={blog.title}
                           fill
-                          className="object-cover group-hover:scale-110 transition duration-700"
+                          sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
 
-                        {/* DARK OVERLAY */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-70 group-hover:opacity-100 transition-all duration-500" />
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/15 group-hover:from-black group-hover:via-black/70 transition-all duration-500" />
 
-                        {/* HOVER CONTENT */}
-                        <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-8 group-hover:translate-y-0 transition-all duration-500">
-                          <h3 className="text-2xl font-bold text-white line-clamp-2">
-                            {blog.title}
-                          </h3>
+                        {/* CONTENT */}
+                        <div className="absolute inset-0 flex flex-col justify-end p-7">
+                          {/* Animated Content */}
+                          <div className="transition-all duration-500 group-hover:-translate-y-7">
+                            <h3 className="text-[24px] font-semibold leading-tight text-white line-clamp-2 drop-shadow-lg">
+                              {blog.title}
+                            </h3>
+                          </div>
 
-                          <p className="mt-4 text-white/80 leading-7 line-clamp-3 opacity-0 group-hover:opacity-100 transition duration-500">
-                            {blog.excerpt}
-                          </p>
+                          {/* Hidden Area */}
+                          <div
+                            className="
+                  max-h-0
+                  overflow-hidden
+                  opacity-0
+                  transition-all
+                  duration-500
+                  group-hover:max-h-40
+                  group-hover:opacity-100
+                  mt-0
+                  group-hover:mt-5
+                "
+                          >
+                            <p className="text-[15px] leading-7 text-white/85 line-clamp-3">
+                              {blog.excerpt}
+                            </p>
 
-                          <div className="mt-6 flex items-center justify-between opacity-0 group-hover:opacity-100">
-                            <span className="text-white/70 text-sm">
-                              {new Date(
-                                blog.datePublished,
-                              ).toLocaleDateString()}
-                            </span>
+                            <div className="mt-5 flex items-center justify-between">
+                              <span className="text-sm text-white/70">
+                                {new Date(
+                                  blog.datePublished,
+                                ).toLocaleDateString()}
+                              </span>
 
-                            <span className="text-[var(--primary)] font-semibold">
-                              Read More →
-                            </span>
+                              <span className="flex items-center gap-2 font-semibold text-[var(--primary)]">
+                                Read More
+                                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                                  →
+                                </span>
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
