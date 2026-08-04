@@ -70,12 +70,12 @@ export default function ManufacturingFacility() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 hidden md:block bg-white/10" />
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 md:hidden
+    absolute inset-0 lg:hidden
     bg-gradient-to-r
     from-white/95
     via-white/90
@@ -96,7 +96,7 @@ export default function ManufacturingFacility() {
               <span className="text-[#65BC4F]"> Precision Manufacturing</span>
             </h1>
 
-            <p className="mt-6 text-gray-800 text-sm md:text-base leading-7 max-w-[540px]">
+            <p className="mt-6 text-gray-700 text-sm md:text-base leading-7 max-w-[540px]">
               Our state-of-the-art manufacturing facility combines advanced
               machinery, skilled engineering expertise, and stringent quality
               control systems to deliver world-class extrusion solutions trusted

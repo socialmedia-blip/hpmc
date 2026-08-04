@@ -190,6 +190,19 @@ export default function SingleScrewPlantPvcCompounding() {
           }}
         />
 
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
+
+        {/* Mobile Overlay */}
+        <div
+          className="
+    absolute inset-0 lg:hidden
+    bg-gradient-to-r
+    from-white/95
+    via-white/90
+    to-white/40
+  "
+        />
+
         {/* Content */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
           <div className="max-w-[620px] pt-24 lg:pt-0">
@@ -200,7 +213,7 @@ export default function SingleScrewPlantPvcCompounding() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-[560px] text-lg leading-8 text-[#4B5563]">
+            <p className="mt-6 max-w-[560px] text-lg leading-8 text-gray-700">
               HPMC Soft PVC Garden Pipe Extrusion Lines are engineered for the
               efficient production of high-quality flexible PVC garden pipes,
               delivering consistent output, excellent dimensional accuracy, and

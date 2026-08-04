@@ -239,7 +239,18 @@ export default function LldpePipePlante() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
+
+        {/* Mobile Overlay */}
+        <div
+          className="
+    absolute inset-0 lg:hidden
+    bg-gradient-to-r
+    from-white/95
+    via-white/90
+    to-white/40
+  "
+        />
 
         {/* Content */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
@@ -249,7 +260,7 @@ export default function LldpePipePlante() {
               <span className="text-[#65BC4F]"> Pipe Plant</span>
             </h1>
 
-            <p className="mt-6 text-gray-600 text-sm md:text-base leading-7 max-w-[500px]">
+            <p className="mt-6 text-gray-700 text-sm md:text-base leading-7 max-w-[500px]">
               We manufacture and export LLDPE Pipe Plants along with Plastic
               Extruders, Twin Screw Extruders, PVC and HDPE Pipe Plants,
               Recycling Machines, Compounding Extruders, and other plastic

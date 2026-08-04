@@ -45,16 +45,16 @@ export default function VisionMission() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 hidden md:block bg-white/10" />
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 md:hidden
+    absolute inset-0 lg:hidden
     bg-gradient-to-r
     from-white/95
     via-white/90
-    to-white/20
+    to-white/40
   "
         />
 
@@ -71,7 +71,7 @@ export default function VisionMission() {
               <span className="text-[#65BC4F]"> & Mission</span>
             </h1>
 
-            <p className="mt-6 text-gray-800 text-sm md:text-base leading-7 max-w-[500px]">
+            <p className="mt-6 text-gray-700 text-sm md:text-base leading-7 max-w-[500px]">
               Guided by innovation, quality, and customer success, we are
               shaping the future of extrusion technology with solutions built
               for performance, reliability, and long-term growth.

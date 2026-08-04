@@ -40,12 +40,12 @@ export default function TechnicalAssistance() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 hidden md:block bg-white/10" />
+        <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 md:hidden
+    absolute inset-0 lg:hidden
     bg-gradient-to-r
     from-white/95
     via-white/90
