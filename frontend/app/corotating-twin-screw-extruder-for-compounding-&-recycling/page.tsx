@@ -322,7 +322,7 @@ export default function CorotatingTwinScrewExtruder() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  const [visibleFaqCount, setVisibleFaqCount] = useState(5);
+  const [visibleFaqCount, setVisibleFaqCount] = useState(10);
   const displayedFaqs = faqData.slice(0, visibleFaqCount);
   const hasMoreFaqs = visibleFaqCount < faqData.length;
   const nextFaqCount = Math.min(10, faqData.length - visibleFaqCount);

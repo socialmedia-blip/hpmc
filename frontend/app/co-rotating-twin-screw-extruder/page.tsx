@@ -348,7 +348,7 @@ export default function CorotatingTwinScrewExtruder() {
   const [playing, setPlaying] = useState(false);
 
   const [active, setActive] = useState<number | null>(0);
-  const [visibleFaqCount, setVisibleFaqCount] = useState(5);
+  const [visibleFaqCount, setVisibleFaqCount] = useState(10);
 
   const displayedFaqs = faqData.slice(0, visibleFaqCount);
   const hasMoreFaqs = visibleFaqCount < faqData.length;

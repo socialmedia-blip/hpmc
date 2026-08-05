@@ -590,7 +590,7 @@ export default function TwinScrewPlantForCpvcPipe() {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;

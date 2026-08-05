@@ -88,77 +88,396 @@ const faqData = [
   {
     question: "What is an LLDPE Pipe Plant?",
     answer:
-      "An LLDPE Pipe Plant is a specialized extrusion system used for manufacturing Linear Low-Density Polyethylene (LLDPE) pipes with excellent flexibility, durability, and chemical resistance for agricultural and industrial applications.",
+      "An LLDPE Pipe Plant is an advanced extrusion system designed to manufacture Linear Low-Density Polyethylene (LLDPE) pipes with excellent flexibility, durability, chemical resistance, and long service life for agricultural and industrial applications.",
   },
   {
-    question: "What is LLDPE used for in pipe manufacturing?",
+    question: "How does an LLDPE Pipe Extrusion Line work?",
     answer:
-      "LLDPE is widely used for irrigation pipes, water transportation systems, agricultural piping, industrial fluid transfer, and low-pressure distribution applications due to its flexibility and strength.",
+      "The extrusion line melts LLDPE resin inside the extruder, forms the molten material through a precision pipe die, cools the pipe in a vacuum and water cooling system, pulls it continuously, and cuts it into finished pipe lengths.",
   },
   {
-    question: "What are the advantages of LLDPE pipes?",
+    question: "Which materials can be processed using an LLDPE Pipe Plant?",
     answer:
-      "LLDPE pipes offer excellent flexibility, corrosion resistance, chemical resistance, lightweight construction, impact strength, and long service life in demanding environments.",
+      "The machine processes virgin LLDPE resin, recycled LLDPE blends, color masterbatch, UV stabilizers, antioxidants, processing aids, and other additives used for manufacturing premium-quality LLDPE pipes.",
   },
   {
-    question: "What is the production capacity of the LLDPE Pipe Plant?",
+    question: "Which products can be manufactured using an LLDPE Pipe Machine?",
     answer:
-      "Depending on the machine model, production capacities range from 50 Kg/hr to 150 Kg/hr while maintaining consistent pipe quality and dimensional accuracy.",
+      "The machine manufactures LLDPE irrigation pipes, agricultural pipes, water supply pipes, industrial fluid transfer pipes, flexible distribution pipes, and customized polyethylene pipe products.",
   },
   {
-    question: "Which machine models are available?",
+    question: "What are LLDPE pipes used for?",
     answer:
-      "HPMC offers LLDPE Pipe Plants in HPMC 75, HPMC 90, HPMC 100, HPMC 75/45, and HPMC 90/55 configurations to meet different production requirements.",
+      "LLDPE pipes are widely used in agriculture, irrigation, water distribution, landscaping, industrial fluid transfer, rural water supply, horticulture, and infrastructure projects.",
   },
   {
-    question: "What pipe sizes can be produced using this plant?",
+    question: "Which is the best LLDPE Pipe Machine manufacturer in India?",
     answer:
-      "The extrusion line is designed to manufacture LLDPE pipes ranging from 2 inches to 8 inches depending on the selected machine model and tooling setup.",
+      "Hindustan Plastics and Machine Corporation is one of the best LLDPE Pipe Machine manufacturers in India, offering advanced extrusion technology, high production efficiency, and dependable machine performance.",
   },
   {
-    question: "Why is LLDPE preferred for irrigation applications?",
+    question: "Who is the top LLDPE Pipe Plant manufacturer in India?",
     answer:
-      "LLDPE pipes provide flexibility, easy installation, resistance to cracking, UV stability, and long-term performance, making them ideal for irrigation and agricultural systems.",
+      "Hindustan Plastics and Machine Corporation manufactures high-performance LLDPE Pipe Plants trusted by customers across India and international markets.",
   },
   {
-    question: "Is the LLDPE Pipe Plant energy efficient?",
+    question: "What are the advantages of an LLDPE Pipe Extrusion Line?",
     answer:
-      "Yes. The plant is engineered with optimized extrusion technology, efficient drive systems, and low power consumption designs to maximize productivity while reducing operating costs.",
+      "The extrusion line offers high production efficiency, excellent pipe quality, dimensional accuracy, smooth surface finish, energy-efficient operation, and reliable long-term industrial performance.",
   },
   {
-    question: "Can the machine support continuous production?",
+    question: "Why should manufacturers invest in an LLDPE Pipe Plant?",
     answer:
-      "Yes. HPMC LLDPE Pipe Plants are designed for continuous operation, providing stable output, reliable performance, and minimal downtime.",
+      "An LLDPE Pipe Plant enables manufacturers to produce high-demand polyethylene pipes with low production costs, excellent durability, and strong market demand in agriculture and water management.",
   },
   {
-    question: "What industries use LLDPE pipes?",
+    question: "What production capacity does the LLDPE Pipe Plant offer?",
     answer:
-      "LLDPE pipes are widely used in agriculture, irrigation, water management, landscaping, industrial fluid transfer, and rural water supply projects.",
+      "Depending on the selected machine model, production capacity ranges from approximately 50 kg/hr to 150 kg/hr while maintaining excellent pipe quality and dimensional consistency.",
   },
   {
-    question: "How does extrusion technology improve pipe quality?",
+    question: "What machine models are available for the LLDPE Pipe Plant?",
     answer:
-      "Advanced extrusion technology ensures uniform wall thickness, smooth surface finish, accurate dimensions, and consistent material distribution throughout the pipe.",
+      "Hindustan Plastics and Machine Corporation offers HPMC 75, HPMC 90, HPMC 100, HPMC 75/45, and HPMC 90/55 models to suit different production capacity requirements.",
   },
   {
-    question: "Are LLDPE pipes resistant to chemicals and corrosion?",
+    question: "What pipe sizes can be manufactured using this machine?",
     answer:
-      "Yes. LLDPE pipes offer excellent resistance to chemicals, fertilizers, corrosion, and environmental stress, making them suitable for long-term outdoor use.",
+      "The machine can manufacture LLDPE pipes ranging from 2 inches to 8 inches depending on the selected machine model and extrusion tooling.",
   },
   {
-    question: "What maintenance is required for an LLDPE Pipe Plant?",
+    question: "Can customized LLDPE pipe sizes be manufactured?",
     answer:
-      "Routine maintenance includes inspection of the screw and barrel, lubrication of moving parts, checking heating systems, cleaning extrusion components, and monitoring electrical systems.",
+      "Yes. Customized dies can be developed to manufacture different pipe diameters, wall thicknesses, pressure ratings, and customer-specific pipe designs.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "Which industries use LLDPE Pipe Extrusion Lines?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and complete after-sales service.",
+      "Agriculture, irrigation, water management, landscaping, infrastructure, construction, industrial fluid transfer, mining, and rural water supply projects widely use LLDPE Pipe Plants.",
   },
   {
-    question: "Why choose HPMC LLDPE Pipe Plants?",
+    question: "Can the machine manufacture irrigation pipes?",
     answer:
-      "HPMC LLDPE Pipe Plants offer reliable performance, high production efficiency, low power consumption, excellent pipe quality, durable construction, and long-term operational reliability.",
+      "Yes. The machine is specially designed for manufacturing LLDPE irrigation pipes used in agriculture, horticulture, nurseries, farms, and landscaping applications.",
+  },
+  {
+    question: "Can the machine manufacture industrial LLDPE pipes?",
+    answer:
+      "Yes. The extrusion line manufactures industrial-grade LLDPE pipes suitable for chemical transfer, fluid handling, water transportation, and industrial processing systems.",
+  },
+  {
+    question: "Can the machine manufacture water distribution pipes?",
+    answer:
+      "Yes. The machine manufactures LLDPE water distribution pipes used in irrigation systems, rural water supply, and low-pressure water transportation.",
+  },
+  {
+    question: "Why are LLDPE pipes better than conventional metal pipes?",
+    answer:
+      "LLDPE pipes are lightweight, corrosion-resistant, chemically resistant, flexible, easy to install, durable, and require significantly lower maintenance than conventional metal pipes.",
+  },
+  {
+    question: "Is the LLDPE Pipe Extrusion Machine energy efficient?",
+    answer:
+      "Yes. Optimized screw design, efficient heating systems, and advanced drive technology help reduce electricity consumption while maintaining high production output.",
+  },
+  {
+    question: "Can the LLDPE Pipe Plant operate continuously?",
+    answer:
+      "Yes. The machine is engineered for continuous industrial production with stable output, reliable performance, and minimal downtime.",
+  },
+  {
+    question: "Can the LLDPE Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation provides customized extrusion lines, pipe dies, vacuum tanks, cooling systems, haul-off units, cutting systems, PLC automation, and turnkey production solutions.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting an LLDPE pipe manufacturing business?",
+    answer:
+      "Yes. The LLDPE Pipe Plant is an excellent investment for entrepreneurs and manufacturers planning to establish or expand an LLDPE pipe manufacturing business.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for an LLDPE Pipe Plant?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered extrusion lines with advanced technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best LLDPE Pipe Machine manufacturers in India?",
+    answer:
+      "With decades of experience in plastic extrusion machinery, innovative engineering, premium manufacturing standards, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers worldwide.",
+  },
+  {
+    question: "How can I get the best price for an LLDPE Pipe Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of an LLDPE Pipe Plant in India?",
+    answer:
+      "The price of an LLDPE Pipe Plant depends on the machine model, pipe diameter range, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best LLDPE Pipe Extrusion Machine?",
+    answer:
+      "The ideal LLDPE Pipe Extrusion Machine depends on your required pipe sizes, production capacity, raw material formulation, automation requirements, and future expansion plans.",
+  },
+  {
+    question: "Which is the best LLDPE Pipe Making Machine in India?",
+    answer:
+      "LLDPE Pipe Plants from Hindustan Plastics and Machine Corporation are engineered for high productivity, consistent pipe quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the LLDPE Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion dies, vacuum calibration tanks, cooling tanks, haul-off units, cutting systems, PLC automation, and complete turnkey production solutions.",
+  },
+  {
+    question: "Can one machine manufacture different LLDPE pipe sizes?",
+    answer:
+      "Yes. By changing the extrusion die and sizing components, the same machine can manufacture multiple pipe diameters and wall thicknesses.",
+  },
+  {
+    question: "How much electricity does an LLDPE Pipe Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, pipe dimensions, and operating conditions. The machine is designed for energy-efficient manufacturing.",
+  },
+  {
+    question: "Does the LLDPE Pipe Plant support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen enables operators to monitor production, control machine parameters, manage alarms, and improve manufacturing efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different pipe sizes and raw material formulations, reducing setup time and ensuring consistent production quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for stable LLDPE processing and premium-quality pipe production.",
+  },
+  {
+    question: "Can recycled LLDPE material be processed?",
+    answer:
+      "Yes. Depending on product requirements, the machine can process recycled LLDPE blends along with virgin material while maintaining excellent production quality.",
+  },
+  {
+    question: "How often does the LLDPE Pipe Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance includes inspecting the screw and barrel, gearbox, heaters, cooling tanks, haul-off unit, lubrication system, and electrical components.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for convenient inspection and maintenance, helping reduce downtime and improve long-term operational efficiency.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe machine operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available for the LLDPE Pipe Plant?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts supply, and production optimization support.",
+  },
+  {
+    question: "Can I request a live demonstration of the LLDPE Pipe Plant?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance, production capacity, and finished pipe quality.",
+  },
+  {
+    question:
+      "Can the LLDPE Pipe Plant be integrated into an existing manufacturing facility?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material handling systems, printing units, coiling equipment, packaging systems, and downstream automation.",
+  },
+  {
+    question: "Can the machine manufacture colored LLDPE pipes?",
+    answer:
+      "Yes. By using suitable color masterbatches, the machine can manufacture LLDPE pipes in various colors according to customer requirements and industry standards.",
+  },
+  {
+    question: "Can the machine manufacture UV-resistant LLDPE pipes?",
+    answer:
+      "Yes. UV stabilizers can be added to the raw material formulation to manufacture LLDPE pipes suitable for long-term outdoor applications.",
+  },
+  {
+    question: "Can the machine manufacture multilayer LLDPE pipes?",
+    answer:
+      "Yes. With suitable extrusion configuration and tooling, the production line can be customized to manufacture multilayer LLDPE pipe structures.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best LLDPE Pipe Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable LLDPE pipe production systems.",
+  },
+  {
+    question: "Can the LLDPE Pipe Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, PLC automation, automatic cutting systems, additional downstream equipment, and customized tooling as production requirements increase.",
+  },
+  {
+    question: "How can I get the best quotation for an LLDPE Pipe Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "Can the LLDPE Pipe Plant process different LLDPE formulations?",
+    answer:
+      "Yes. The machine is designed to process virgin LLDPE resin, recycled LLDPE blends, UV-stabilized compounds, color masterbatches, antioxidants, and customized formulations for various pipe applications.",
+  },
+  {
+    question: "Can the machine manufacture different colors of LLDPE pipes?",
+    answer:
+      "Yes. By using suitable color masterbatches, the machine can manufacture black, blue, green, white, yellow, and customized color LLDPE pipes according to customer requirements.",
+  },
+  {
+    question: "Can the machine manufacture pressure-rated LLDPE pipes?",
+    answer:
+      "Yes. With suitable raw material formulations and precision extrusion tooling, the machine can manufacture pressure-rated LLDPE pipes for water distribution and irrigation applications.",
+  },
+  {
+    question: "Can the machine manufacture flexible LLDPE pipes?",
+    answer:
+      "Yes. The extrusion line is specifically designed to manufacture flexible LLDPE pipes that offer excellent bendability, durability, and crack resistance.",
+  },
+  {
+    question:
+      "Can the LLDPE Pipe Plant manufacture pipes that meet international quality standards?",
+    answer:
+      "Yes. With quality LLDPE raw materials, precision extrusion tooling, and controlled processing parameters, the machine can manufacture pipes that comply with applicable national and international quality standards.",
+  },
+  {
+    question: "How does the LLDPE Pipe Plant improve pipe quality?",
+    answer:
+      "Optimized screw design, stable melt pressure, accurate temperature control, efficient cooling, and precision sizing ensure smooth surface finish, uniform wall thickness, and excellent dimensional accuracy.",
+  },
+  {
+    question:
+      "Can LLDPE pipes manufactured on this machine be used for agriculture?",
+    answer:
+      "Yes. The machine produces LLDPE pipes widely used for agriculture, irrigation systems, horticulture, nurseries, landscaping, and farm water distribution.",
+  },
+  {
+    question: "Can this machine reduce LLDPE pipe manufacturing costs?",
+    answer:
+      "Yes. High production efficiency, optimized raw material utilization, energy-saving operation, and reduced production waste help lower the overall manufacturing cost of LLDPE pipes.",
+  },
+  {
+    question: "What is the expected lifespan of an LLDPE Pipe Plant?",
+    answer:
+      "With regular preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation and continuous production.",
+  },
+  {
+    question: "Can the LLDPE Pipe Plant be upgraded in the future?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, PLC automation, automatic cutting systems, online printing units, additional downstream equipment, and customized tooling as production requirements grow.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture LLDPE Pipe Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced LLDPE Pipe Plants in India using precision engineering, premium-quality components, and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export LLDPE Pipe Machines worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports LLDPE Pipe Extrusion Lines and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The LLDPE Pipe Plant can be integrated into existing production facilities with customized layouts and compatible upstream and downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, machine optimization, and operational support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize LLDPE formulations, machine settings, extrusion parameters, and production efficiency to maximize output and improve finished pipe quality.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required genuine spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied raw materials to evaluate machine performance, production capacity, and finished pipe quality.",
+  },
+  {
+    question: "Is the LLDPE Pipe Plant environmentally friendly?",
+    answer:
+      "Yes. The machine uses energy-efficient technology, supports optimized raw material utilization, and can process suitable recycled LLDPE materials, helping reduce manufacturing waste.",
+  },
+  {
+    question: "Which industries benefit from LLDPE Pipe Plants?",
+    answer:
+      "Agriculture, irrigation, landscaping, construction, water supply, infrastructure development, industrial fluid handling, mining, and municipal projects benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture pipes for water supply and irrigation projects?",
+    answer:
+      "Yes. The machine is ideal for manufacturing LLDPE pipes used in agricultural irrigation, water distribution, landscaping, rural water supply, and industrial fluid transportation.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best LLDPE Pipe Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable LLDPE pipe production systems.",
+  },
+  {
+    question: "Who is the top LLDPE Pipe Extrusion Line manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance LLDPE Pipe Extrusion Lines with excellent productivity, energy efficiency, and consistent pipe quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your LLDPE Pipe Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the LLDPE Pipe Plant one of the best solutions for polyethylene pipe manufacturing?",
+    answer:
+      "Its stable extrusion process, energy-efficient operation, accurate pipe sizing, excellent surface finish, high production capacity, and reliable industrial performance make it an ideal solution for manufacturing premium-quality LLDPE pipes.",
   },
 ];
 
@@ -173,7 +492,7 @@ export default function LldpePipePlante() {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;

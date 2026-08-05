@@ -219,77 +219,408 @@ const faqData = [
   {
     question: "What is a Single Screw Plant for PVC Profile?",
     answer:
-      "A Single Screw Plant for PVC Profile is a specialized extrusion system designed to manufacture PVC profiles used in doors, windows, partitions, sealing applications, decorative panels, and interior construction products.",
+      "A Single Screw Plant for PVC Profile is a high-performance extrusion system designed to manufacture PVC profiles used in doors, windows, partitions, wall panels, decorative trims, and interior construction applications.",
+  },
+  {
+    question: "How does a Single Screw PVC Profile Extrusion Machine work?",
+    answer:
+      "The machine melts PVC compounds through a precision single screw extruder, shapes the material using a profile die, and then passes it through cooling, haul-off, cutting, and stacking systems to produce high-quality PVC profiles.",
+  },
+  {
+    question: "Which materials can be processed using this PVC Profile Plant?",
+    answer:
+      "The machine is designed to process rigid PVC compounds, profile-grade PVC materials, high-calcium PVC formulations, and customized PVC compounds for profile manufacturing.",
+  },
+  {
+    question:
+      "Which products can be manufactured using a PVC Profile Extrusion Machine?",
+    answer:
+      "The machine manufactures PVC door profiles, window profiles, partitions, wall panels, decorative trims, sealing profiles, furniture profiles, and various customized PVC sections.",
   },
   {
     question: "What are PVC profiles used for?",
     answer:
-      "PVC profiles are widely used in doors, windows, office partitions, wall panels, cable trunking, decorative trims, sealing systems, and various interior and exterior construction applications.",
+      "PVC profiles are widely used in residential buildings, commercial complexes, offices, hotels, hospitals, modular furniture, interior decoration, and construction projects.",
   },
   {
-    question: "What is the production capacity of the PVC Profile Plant?",
+    question:
+      "Which is the best Single Screw PVC Profile Machine manufacturer in India?",
     answer:
-      "The HPMC PVC Profile Extrusion Plant offers production capacities of up to 200 Kg/hr while maintaining excellent profile quality and dimensional accuracy.",
+      "Hindustan Plastics and Machine Corporation is one of the best Single Screw PVC Profile Machine manufacturers in India, offering reliable extrusion technology, high productivity, and excellent profile quality.",
   },
   {
-    question: "What materials can be processed using this extrusion plant?",
+    question:
+      "Who is the top PVC Profile Extrusion Machine manufacturer in India?",
     answer:
-      "The plant is primarily designed for PVC compounds and pelletized materials used in profile manufacturing, decorative products, and construction applications.",
+      "Hindustan Plastics and Machine Corporation manufactures advanced PVC Profile Extrusion Machines trusted by profile manufacturers across India and international markets.",
   },
   {
-    question: "What profile sizes can be manufactured?",
+    question: "What are the advantages of a Single Screw PVC Profile Plant?",
     answer:
-      "The extrusion system can produce PVC profiles and panels up to 32 inches in width depending on the profile design and tooling configuration.",
+      "The machine provides excellent plasticization, stable extrusion, superior profile finish, accurate dimensions, energy-efficient operation, and reliable long-term performance.",
   },
   {
-    question: "Why is a Single Screw Extruder used for PVC profile production?",
+    question:
+      "Why choose a Single Screw Extruder for PVC profile manufacturing?",
     answer:
-      "Single Screw Extruders provide stable material flow, efficient plasticization, excellent melt homogeneity, and consistent processing performance required for high-quality profile manufacturing.",
+      "Single Screw Extruders deliver stable material flow, efficient melting, excellent melt homogeneity, lower maintenance requirements, and consistent production quality.",
   },
   {
-    question: "What are the benefits of Barrier Design Double Thread Screws?",
+    question:
+      "What are the benefits of the Barrier Design Double Thread Screw?",
     answer:
-      "Barrier Design Double Thread Screws improve melt quality, enhance mixing efficiency, increase output, reduce energy consumption, and ensure superior profile surface finish.",
+      "The Barrier Design Double Thread Screw improves melting efficiency, enhances material mixing, increases production output, and produces smooth, high-quality PVC profiles.",
   },
   {
-    question: "Can the machine handle high calcium formulations?",
+    question: "Can the machine process high-calcium PVC formulations?",
     answer:
-      "Yes. The extrusion system is designed to process higher calcium-loaded PVC formulations while maintaining stable production and excellent profile quality.",
+      "Yes. The extrusion system is engineered to process higher calcium-loaded PVC compounds while maintaining excellent profile quality and dimensional stability.",
   },
   {
-    question: "What industries use PVC Profile Extrusion Plants?",
+    question: "What production capacity does the PVC Profile Plant offer?",
     answer:
-      "PVC Profile Plants are widely used in construction, interior decoration, furniture manufacturing, infrastructure projects, electrical applications, and architectural product manufacturing.",
+      "Depending on the selected machine model, the extrusion plant delivers efficient production with outputs suitable for small, medium, and high-volume PVC profile manufacturing.",
   },
   {
-    question: "How does the cooling system improve profile quality?",
+    question: "Can customized PVC profile sections be manufactured?",
     answer:
-      "The cooling system ensures proper profile sizing, dimensional stability, smooth surface finish, and uniform cooling throughout the production process.",
+      "Yes. Customized extrusion dies can be developed to manufacture unique PVC profile designs according to customer drawings and project requirements.",
   },
   {
-    question: "What is the function of the Caterpuller Unit?",
+    question: "Which industries use PVC Profile Extrusion Plants?",
     answer:
-      "The Caterpuller Unit provides smooth and synchronized profile movement, prevents deformation, and maintains consistent production quality during extrusion.",
+      "Construction companies, interior designers, furniture manufacturers, window and door manufacturers, electrical industries, and infrastructure developers widely use PVC Profile Plants.",
   },
   {
-    question: "How does the Automatic Cutting Unit improve efficiency?",
+    question: "Can the machine manufacture PVC door and window profiles?",
     answer:
-      "The Automatic Cutting Unit uses preset length sensing and pneumatic gripping systems to deliver accurate profile cutting with minimal material wastage.",
+      "Yes. The machine is specially designed for manufacturing PVC door frames, window frames, sliding window profiles, and customized architectural sections.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question: "Can the machine manufacture PVC wall panel profiles?",
     answer:
-      "Yes. HPMC PVC Profile Plants are engineered for continuous operation with reliable performance, stable output, and minimal downtime.",
+      "Yes. The extrusion line produces PVC wall panels and decorative interior profiles for residential and commercial buildings.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "How does the Cooling Unit improve PVC profile quality?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and comprehensive after-sales services.",
+      "The Cooling Unit provides uniform cooling and proper profile sizing, ensuring dimensional accuracy, smooth surface finish, and improved product stability.",
   },
   {
-    question: "Why choose HPMC PVC Profile Extrusion Plants?",
+    question: "What is the function of the Caterpuller in a PVC Profile Plant?",
     answer:
-      "HPMC PVC Profile Plants offer high production efficiency, superior profile quality, advanced extrusion technology, energy-efficient operation, reliable performance, and long service life.",
+      "The Caterpuller moves the PVC profile smoothly through the production line, preventing deformation while maintaining stable production speed and consistent quality.",
+  },
+  {
+    question: "How does the Automatic Cutting Unit improve production?",
+    answer:
+      "The Automatic Cutting Unit uses preset length sensing and pneumatic gripping to cut PVC profiles accurately, reducing wastage and improving production efficiency.",
+  },
+  {
+    question: "What is the purpose of the Tipping Chute?",
+    answer:
+      "The Tipping Chute automatically collects and stacks finished PVC profiles, reducing manual handling and improving production efficiency.",
+  },
+  {
+    question:
+      "Is the Single Screw PVC Profile Plant suitable for continuous production?",
+    answer:
+      "Yes. The machine is designed for continuous industrial operation with stable extrusion, consistent quality, and minimal downtime.",
+  },
+  {
+    question: "Is the PVC Profile Extrusion Machine energy efficient?",
+    answer:
+      "Yes. Optimized screw geometry, efficient heating systems, and modern drive technology help reduce power consumption while maintaining high production output.",
+  },
+  {
+    question: "Can the PVC Profile Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, profile dies, automation systems, downstream equipment, and complete production solutions based on customer requirements.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for PVC Profile Plants?",
+    answer:
+      "Hindustan Plastics and Machine Corporation provides precision-engineered PVC Profile Plants with advanced extrusion technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "How can I get the best price for a Single Screw PVC Profile Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your profile design, production capacity, and application requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a Single Screw PVC Profile Plant in India?",
+    answer:
+      "The price of a Single Screw PVC Profile Plant depends on the machine model, profile design, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best PVC Profile Extrusion Machine?",
+    answer:
+      "The ideal PVC Profile Extrusion Machine depends on your profile dimensions, production capacity, PVC formulation, automation requirements, and future expansion plans.",
+  },
+  {
+    question: "Which is the best Single Screw PVC Profile Machine in India?",
+    answer:
+      "Single Screw PVC Profile Plants from Hindustan Plastics and Machine Corporation are engineered for high productivity, energy efficiency, superior profile quality, and reliable industrial performance.",
+  },
+  {
+    question: "Can the Single Screw PVC Profile Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized profile dies, cooling systems, haul-off units, cutting systems, stacking solutions, and PLC automation based on customer production requirements.",
+  },
+  {
+    question: "Can one machine manufacture different PVC profile designs?",
+    answer:
+      "Yes. By changing the extrusion die and calibration tooling, the machine can manufacture multiple PVC profile designs using the same extrusion line.",
+  },
+  {
+    question:
+      "How much electricity does a Single Screw PVC Profile Machine consume?",
+    answer:
+      "Power consumption depends on the machine model, profile dimensions, production output, and operating conditions. The machine is designed for energy-efficient manufacturing.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen can be integrated for production monitoring, machine parameter control, alarm management, and improved productivity.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different PVC profile designs, reducing setup time and ensuring consistent quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones maintain accurate temperature control for stable PVC processing and excellent profile quality.",
+  },
+  {
+    question: "Can recycled PVC materials be processed?",
+    answer:
+      "Yes. Depending on the formulation and application, the machine can process recycled PVC blends along with virgin PVC compounds.",
+  },
+  {
+    question: "How often does the PVC Profile Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance, lubrication, inspection of the screw, barrel, gearbox, heaters, cooling systems, and electrical components help ensure reliable long-term performance.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for convenient inspection and maintenance, reducing downtime and operating costs.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Professional operator training is provided to ensure safe operation, efficient production, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting, preventive maintenance, spare parts assistance, and production optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live demonstrations and technical consultations can be arranged to help customers evaluate machine performance before making a purchase decision.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied PVC compounds can be conducted to verify machine performance, production output, and finished profile quality.",
+  },
+  {
+    question:
+      "Can the PVC Profile Plant be integrated into an existing production line?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material feeding systems, printing units, stacking systems, packaging equipment, and downstream handling systems.",
+  },
+  {
+    question: "Can the machine manufacture decorative PVC mouldings and trims?",
+    answer:
+      "Yes. The machine is suitable for manufacturing decorative trims, mouldings, edge profiles, ceiling profiles, skirting profiles, and customized architectural PVC sections.",
+  },
+  {
+    question: "Can the machine manufacture PVC furniture profiles?",
+    answer:
+      "Yes. The extrusion line produces PVC furniture profiles used in wardrobes, cabinets, modular kitchens, office furniture, and interior decoration.",
+  },
+  {
+    question: "Can the machine manufacture sealing and partition profiles?",
+    answer:
+      "Yes. The machine is widely used for manufacturing PVC sealing profiles, office partition profiles, glazing profiles, and customized construction profiles.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best PVC Profile Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable PVC profile production systems.",
+  },
+  {
+    question: "Can the PVC Profile Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with PLC automation, customized tooling, additional downstream equipment, and higher-capacity components as production requirements grow.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Single Screw PVC Profile Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your profile drawings, production capacity, and application requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Single Screw PVC Profile Plant process different PVC formulations?",
+    answer:
+      "Yes. The machine can process rigid PVC compounds, profile-grade PVC materials, high-calcium PVC formulations, recycled PVC blends, and customized PVC compounds for various profile applications.",
+  },
+  {
+    question: "Can the machine manufacture uPVC door and window profiles?",
+    answer:
+      "Yes. The extrusion line is suitable for manufacturing uPVC door frames, window frames, sliding window profiles, ventilation profiles, and customized architectural sections.",
+  },
+  {
+    question:
+      "Can the machine manufacture PVC wall panels and ceiling profiles?",
+    answer:
+      "Yes. The machine produces PVC wall panels, ceiling profiles, decorative interior panels, and false ceiling profiles for residential and commercial projects.",
+  },
+  {
+    question: "Can the machine manufacture PVC furniture and cabinet profiles?",
+    answer:
+      "Yes. The extrusion line manufactures PVC furniture profiles for wardrobes, modular kitchens, office furniture, cabinets, shelves, and interior applications.",
+  },
+  {
+    question:
+      "Can the Single Screw PVC Profile Plant manufacture products that meet international quality standards?",
+    answer:
+      "Yes. With suitable tooling, quality PVC compounds, and controlled processing parameters, the machine can manufacture PVC profiles that comply with applicable national and international standards.",
+  },
+  {
+    question:
+      "How does the Single Screw PVC Profile Plant improve profile quality?",
+    answer:
+      "The Barrier Design Double Thread Screw, stable extrusion pressure, efficient cooling, and accurate profile calibration produce smooth surfaces, excellent dimensional accuracy, and consistent product quality.",
+  },
+  {
+    question:
+      "Can PVC profiles manufactured on this machine be used in residential and commercial buildings?",
+    answer:
+      "Yes. The machine manufactures PVC profiles widely used in apartments, villas, offices, hospitals, hotels, shopping malls, schools, factories, and commercial buildings.",
+  },
+  {
+    question: "Can this machine reduce PVC profile manufacturing costs?",
+    answer:
+      "Yes. Energy-efficient operation, stable production, optimized raw material utilization, and reduced production wastage help lower the overall manufacturing cost.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a Single Screw PVC Profile Plant?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question: "Can the PVC Profile Plant be upgraded in the future?",
+    answer:
+      "Yes. The machine can be upgraded with PLC automation, customized profile dies, additional downstream equipment, and higher-capacity production systems as business requirements grow.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture Single Screw PVC Profile Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Single Screw PVC Profile Plants in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export PVC Profile Machines worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports PVC Profile Extrusion Machines and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The PVC Profile Plant can be integrated into existing manufacturing facilities with customized layouts and compatible downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, and machine optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts assist customers in optimizing machine settings, PVC formulations, extrusion parameters, production efficiency, and overall profile quality.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required genuine spare parts are readily available for quick dispatch, helping minimize downtime and ensure uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied PVC compounds and profile dies to evaluate machine performance and finished profile quality.",
+  },
+  {
+    question: "Is the Single Screw PVC Profile Plant environmentally friendly?",
+    answer:
+      "Yes. The machine is designed with energy-efficient technology that helps reduce power consumption, optimize raw material utilization, and minimize production waste.",
+  },
+  {
+    question: "Which industries benefit from Single Screw PVC Profile Plants?",
+    answer:
+      "Window and door manufacturers, furniture industries, construction companies, modular building manufacturers, interior designers, infrastructure developers, and plastic profile manufacturers benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture PVC profiles for smart buildings and modern infrastructure projects?",
+    answer:
+      "Yes. The machine is ideal for manufacturing PVC profiles used in smart buildings, commercial complexes, residential projects, hospitals, educational institutions, industrial facilities, and modern infrastructure developments.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best Single Screw PVC Profile Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable PVC profile production systems.",
+  },
+  {
+    question:
+      "Who is the top Single Screw PVC Profile Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance Single Screw PVC Profile Plants with excellent productivity, energy efficiency, and consistent profile quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your PVC Profile Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the Single Screw PVC Profile Plant one of the best solutions for PVC profile manufacturing?",
+    answer:
+      "Its efficient Barrier Design Double Thread Screw, stable extrusion process, excellent dimensional accuracy, energy-efficient operation, and reliable industrial performance make it an ideal solution for manufacturing premium-quality PVC profiles.",
   },
 ];
 
@@ -304,7 +635,7 @@ export default function SingleScrewPlantForPvcProfile() {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;

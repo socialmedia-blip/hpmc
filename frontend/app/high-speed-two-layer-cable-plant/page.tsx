@@ -276,78 +276,414 @@ const faqData = [
   {
     question: "What is a High Speed Two Layer Cable Plant?",
     answer:
-      "A High Speed Two Layer Cable Plant is an advanced cable extrusion system designed for simultaneous insulation and sheathing of electrical cables, delivering high productivity, precise coating, and superior cable quality.",
+      "A High Speed Two Layer Cable Plant is an advanced cable extrusion system designed to simultaneously apply insulation and sheathing on electrical cables, ensuring high production speed, superior concentricity, and excellent cable quality.",
   },
   {
-    question: "What types of cables can be manufactured using this plant?",
+    question: "How does a High Speed Two Layer Cable Plant work?",
     answer:
-      "The plant is suitable for manufacturing power cables, control cables, communication cables, building wires, automotive cables, and various insulated and sheathed cable products.",
+      "The machine melts cable-grade polymer materials inside the extruder, applies two layers through a precision cross-head and two-layer die head, cools the cable, and continuously pulls it through synchronized downstream equipment.",
   },
   {
-    question: "What is the advantage of Two Layer Cable Extrusion?",
+    question: "Which materials can be processed using this Cable Plant?",
     answer:
-      "Two layer extrusion enables simultaneous application of insulation and sheathing, reducing production time, improving efficiency, and ensuring consistent cable quality.",
+      "The machine can process PVC, XLPE, PE, LDPE, HDPE, and other cable-grade thermoplastic materials depending on cable specifications and production requirements.",
   },
   {
-    question: "Which materials can be processed on the cable plant?",
+    question: "Which types of cables can be manufactured using this machine?",
     answer:
-      "The machine can process PVC, XLPE, PE, LDPE, HDPE, and other cable-grade thermoplastic materials depending on the cable application and production requirements.",
+      "The plant manufactures power cables, control cables, communication cables, automotive cables, building wires, flexible cables, industrial cables, and insulated electrical wires.",
+  },
+  {
+    question: "Which industries use High Speed Two Layer Cable Plants?",
+    answer:
+      "Cable manufacturers, electrical industries, power transmission companies, construction projects, automotive industries, renewable energy projects, and telecommunication sectors widely use these extrusion plants.",
+  },
+  {
+    question:
+      "Which is the best High Speed Two Layer Cable Plant manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is one of the best High Speed Two Layer Cable Plant manufacturers in India, offering precision-engineered cable extrusion systems with high productivity and reliable performance.",
+  },
+  {
+    question: "Who is the top Cable Extruder manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation manufactures advanced Cable Extruders trusted by cable manufacturers across India and international markets.",
+  },
+  {
+    question: "What are the advantages of a High Speed Two Layer Cable Plant?",
+    answer:
+      "The machine offers simultaneous insulation and sheathing, high production efficiency, excellent concentricity, superior cable finish, energy-efficient operation, and consistent production quality.",
+  },
+  {
+    question:
+      "Why should manufacturers invest in a High Speed Two Layer Cable Plant?",
+    answer:
+      "The machine reduces production time, increases manufacturing efficiency, improves cable quality, lowers operating costs, and enhances production capacity.",
+  },
+  {
+    question: "What production capacity does the Cable Plant offer?",
+    answer:
+      "Production capacity depends on the selected extruder model, processed material, cable diameter, and processing conditions, with models suitable for both medium and high-output cable manufacturing.",
+  },
+  {
+    question: "Which extruder models are available?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers HPMC30, HPMC45, HPMC65, HPMC75, HPMC90, HPMC100, and HPMC120 cable extruder models for different production requirements.",
+  },
+  {
+    question: "What cable sizes can be manufactured using this machine?",
+    answer:
+      "The plant supports cable diameters from approximately 10 mm to 50 mm depending on the selected production line configuration and downstream equipment.",
+  },
+  {
+    question: "Can customized cable sizes be manufactured?",
+    answer:
+      "Yes. Customized cross-heads, die heads, and tooling can be supplied for different cable diameters, insulation thicknesses, and customer-specific cable designs.",
   },
   {
     question: "What is the function of the Two Layer Die Head?",
     answer:
-      "The Two Layer Die Head ensures uniform material distribution, excellent concentricity, precise insulation thickness, and superior cable surface finish.",
+      "The Two Layer Die Head ensures uniform material flow, excellent concentricity, accurate insulation thickness, and high-quality cable surface finish.",
   },
   {
-    question: "What is a Cross Head in cable extrusion?",
+    question: "What is the function of the Cross Head in cable extrusion?",
     answer:
-      "The Cross Head is a critical component that applies insulation or sheathing material uniformly around the conductor, ensuring accurate cable coating and dimensional consistency.",
+      "The Cross Head accurately applies insulation or sheathing material around the conductor while maintaining dimensional consistency throughout production.",
   },
   {
-    question: "How does the Capstan improve cable production?",
+    question: "How does the Capstan improve cable manufacturing?",
     answer:
-      "The Capstan provides smooth traction control and synchronized cable movement, ensuring stable production speeds and preventing cable damage during manufacturing.",
+      "The Capstan provides synchronized traction control, stable line speed, smooth cable movement, and consistent cable quality during production.",
   },
   {
-    question: "What are the benefits of the Advanced Screw Design?",
+    question: "What are the benefits of Barrier Screw Design?",
     answer:
-      "The barrier screw and grooved barrel design improve material mixing, increase output capacity, enhance melt quality, and provide better temperature control during cable extrusion.",
+      "Barrier Screw Design improves polymer melting efficiency, provides homogeneous material mixing, increases production output, reduces energy consumption, and enhances cable quality.",
   },
   {
-    question: "What cable sizes can be produced using this plant?",
+    question: "What is the function of the Caterpillar Haul-Off?",
     answer:
-      "The system supports cable diameters ranging from 10 mm to 50 mm depending on the selected production setup and cable specifications.",
+      "The Caterpillar Haul-Off pulls the cable smoothly at controlled speeds, ensuring stable production, accurate dimensions, and reduced cable deformation.",
   },
   {
-    question: "How does the Caterpillar Haul-Off improve production quality?",
+    question: "Is the High Speed Two Layer Cable Plant energy efficient?",
     answer:
-      "The Caterpillar Haul-Off ensures smooth cable pulling, stable line speed, synchronized operation, and consistent cable dimensions throughout the production process.",
+      "Yes. Optimized screw design, efficient heating systems, advanced drives, and modern cooling technology help reduce electricity consumption while maintaining high productivity.",
+  },
+  {
+    question: "Can the Cable Plant operate continuously?",
+    answer:
+      "Yes. The machine is designed for continuous industrial cable production with stable output, reliable operation, and minimal downtime.",
+  },
+  {
+    question: "Can the High Speed Two Layer Cable Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extruders, die heads, cross-heads, cooling systems, haul-off units, PLC automation, and complete turnkey cable extrusion solutions.",
   },
   {
     question:
-      "What is the production capacity of the High Speed Two Layer Cable Plant?",
+      "Is this machine suitable for starting a cable manufacturing business?",
     answer:
-      "Production capacity varies depending on the selected extruder model, material type, cable size, and processing conditions, with configurations available for both medium and high-output production.",
+      "Yes. The High Speed Two Layer Cable Plant is an excellent investment for entrepreneurs and manufacturers planning to establish or expand cable production.",
   },
   {
-    question: "Which industries use cables manufactured by this plant?",
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for a High Speed Two Layer Cable Plant?",
     answer:
-      "Cables produced on this plant are widely used in electrical infrastructure, power transmission, telecommunications, automotive wiring, industrial automation, and construction projects.",
+      "Hindustan Plastics and Machine Corporation offers precision-engineered cable extrusion systems, advanced technology, durable construction, customized solutions, and dependable after-sales support.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Cable Extruder manufacturers in India?",
     answer:
-      "Yes. HPMC High Speed Two Layer Cable Plants are engineered for continuous operation with stable output, high productivity, and minimal downtime.",
+      "With decades of extrusion expertise, advanced engineering, premium manufacturing standards, innovative extrusion technology, and reliable customer support, Hindustan Plastics and Machine Corporation is trusted worldwide.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question:
+      "How can I get the best price for a High Speed Two Layer Cable Plant?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and complete after-sales services.",
+      "Contact Hindustan Plastics and Machine Corporation with your cable specifications, production capacity, material type, and project requirements to receive a customized quotation and expert machine recommendation.",
   },
   {
-    question: "Why choose HPMC High Speed Two Layer Cable Plants?",
+    question:
+      "What is the price of a High Speed Two Layer Cable Plant in India?",
     answer:
-      "HPMC Cable Plants offer advanced extrusion technology, precise cable coating, high production efficiency, reliable operation, energy-efficient performance, and long machine life.",
+      "The price depends on the extruder model, production capacity, cable diameter range, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best High Speed Two Layer Cable Plant?",
+    answer:
+      "The ideal machine depends on your cable type, insulation material, production capacity, conductor size, automation requirements, and future production expansion.",
+  },
+  {
+    question: "Which is the best Cable Extrusion Machine in India?",
+    answer:
+      "Cable extrusion systems from Hindustan Plastics and Machine Corporation are engineered for high-speed production, precise insulation, excellent concentricity, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the High Speed Two Layer Cable Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extruders, cross-heads, two-layer die heads, cooling systems, capstans, caterpillar haul-off units, PLC automation, and turnkey cable manufacturing solutions.",
+  },
+  {
+    question: "Can one Cable Plant manufacture different cable sizes?",
+    answer:
+      "Yes. By changing dies, cross-head tooling, and machine settings, one extrusion line can manufacture different cable diameters and insulation thicknesses.",
+  },
+  {
+    question: "How much electricity does a Cable Extrusion Plant consume?",
+    answer:
+      "Power consumption depends on the selected extruder model, production speed, processed material, and cable dimensions. The machine is designed for energy-efficient operation.",
+  },
+  {
+    question:
+      "Does the High Speed Two Layer Cable Plant support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen enables operators to monitor production, control temperatures, adjust line speed, manage alarms, and improve manufacturing efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different cable sizes and materials, reducing setup time and ensuring consistent cable quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for stable PVC, XLPE, PE, and other cable-grade polymer processing.",
+  },
+  {
+    question: "Can recycled cable compounds be processed?",
+    answer:
+      "Depending on product specifications and material quality, the machine can process suitable recycled thermoplastic compounds for selected cable manufacturing applications.",
+  },
+  {
+    question:
+      "How often does the High Speed Two Layer Cable Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance includes inspecting the screw and barrel, gearbox, heaters, cooling system, cross-head, capstan, haul-off unit, lubrication points, and electrical components.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for convenient inspection and preventive maintenance, helping reduce downtime and improve long-term operational efficiency.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe machine operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available for the Cable Plant?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts supply, and production optimization support.",
+  },
+  {
+    question:
+      "Can I request a live demonstration of the High Speed Two Layer Cable Plant?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before making a purchase.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance, production capacity, insulation quality, and finished cable quality.",
+  },
+  {
+    question:
+      "Can the Cable Plant be integrated into an existing manufacturing facility?",
+    answer:
+      "Yes. The cable extrusion line can be integrated with existing pay-off systems, cooling troughs, spark testers, capstans, caterpillar haul-offs, take-up systems, and other downstream equipment.",
+  },
+  {
+    question: "Can the machine manufacture multi-color cables?",
+    answer:
+      "Yes. By using suitable color masterbatches, the machine can manufacture cables in multiple colors according to customer requirements and international standards.",
+  },
+  {
+    question: "Can the machine manufacture flame-retardant cables?",
+    answer:
+      "Yes. With suitable flame-retardant PVC or XLPE compounds, the plant can manufacture cables for applications requiring enhanced fire safety.",
+  },
+  {
+    question: "Can the machine manufacture automotive and industrial cables?",
+    answer:
+      "Yes. The High Speed Two Layer Cable Plant is suitable for manufacturing automotive wiring, industrial cables, control cables, communication cables, and electrical power cables.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Cable Extruder manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced cable extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable cable production systems.",
+  },
+  {
+    question:
+      "Can the High Speed Two Layer Cable Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, advanced PLC automation, online cable printing systems, spark testers, automatic take-up units, and customized tooling.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a High Speed Two Layer Cable Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your cable type, insulation material, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the High Speed Two Layer Cable Plant process different cable compounds?",
+    answer:
+      "Yes. The machine is designed to process PVC, XLPE, PE, LDPE, HDPE, and other cable-grade thermoplastic compounds with suitable extrusion configurations.",
+  },
+  {
+    question:
+      "Can the machine manufacture different colors of electrical cables?",
+    answer:
+      "Yes. By using suitable color masterbatches, the machine can manufacture black, red, blue, green, yellow, white, grey, and customized color electrical cables.",
+  },
+  {
+    question:
+      "Can the machine manufacture insulated and sheathed cables simultaneously?",
+    answer:
+      "Yes. The High Speed Two Layer Cable Plant is specially designed to apply insulation and outer sheathing in a single production process, improving productivity and reducing manufacturing time.",
+  },
+  {
+    question: "Can the machine manufacture power and control cables?",
+    answer:
+      "Yes. The extrusion line is suitable for manufacturing power cables, control cables, communication cables, instrumentation cables, and industrial electrical cables.",
+  },
+  {
+    question:
+      "Can the High Speed Two Layer Cable Plant manufacture cables that meet international quality standards?",
+    answer:
+      "Yes. With premium raw materials, precision cross-head tooling, and controlled processing parameters, the machine can manufacture cables that comply with applicable national and international quality standards.",
+  },
+  {
+    question:
+      "How does the High Speed Two Layer Cable Plant improve cable quality?",
+    answer:
+      "Advanced screw design, precision cross-head technology, accurate temperature control, synchronized line speed, and efficient cooling ensure excellent insulation thickness, concentricity, and surface finish.",
+  },
+  {
+    question:
+      "Can cables manufactured on this machine be used for residential and industrial applications?",
+    answer:
+      "Yes. The machine produces cables widely used in residential buildings, commercial projects, industrial plants, power distribution, infrastructure, renewable energy, and automotive applications.",
+  },
+  {
+    question: "Can this machine reduce cable manufacturing costs?",
+    answer:
+      "Yes. High production speed, energy-efficient operation, optimized raw material utilization, and reduced production waste help lower the overall manufacturing cost of electrical cables.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a High Speed Two Layer Cable Plant?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation and continuous cable production.",
+  },
+  {
+    question:
+      "Can the High Speed Two Layer Cable Plant be upgraded in the future?",
+    answer:
+      "Yes. The production line can be upgraded with higher-capacity extruders, PLC automation, laser diameter gauges, spark testers, automatic take-up systems, online printing units, and customized tooling.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture High Speed Two Layer Cable Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced High Speed Two Layer Cable Plants in India using precision engineering, premium-quality components, and modern cable extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export Cable Extrusion Machines worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports High Speed Two Layer Cable Plants and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing cable manufacturing facility?",
+    answer:
+      "Yes. The High Speed Two Layer Cable Plant can be integrated into existing cable production facilities with customized layouts and compatible upstream and downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, machine optimization, and operational support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts assist customers in optimizing cable compounds, extrusion parameters, line speed, temperature profiles, and overall production efficiency.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required genuine spare parts are readily available for quick dispatch, helping minimize downtime and ensure uninterrupted cable production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied cable compounds to evaluate machine performance, production speed, insulation quality, and finished cable performance.",
+  },
+  {
+    question:
+      "Is the High Speed Two Layer Cable Plant environmentally friendly?",
+    answer:
+      "Yes. The machine uses energy-efficient technology, optimizes raw material utilization, and minimizes production waste, helping manufacturers achieve more sustainable cable production.",
+  },
+  {
+    question:
+      "Which industries benefit from High Speed Two Layer Cable Plants?",
+    answer:
+      "Electrical cable manufacturers, power distribution companies, automotive industries, renewable energy projects, construction companies, telecommunications, railways, defense, and industrial equipment manufacturers benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture cables for power transmission and infrastructure projects?",
+    answer:
+      "Yes. The machine is suitable for manufacturing cables used in power transmission, commercial buildings, industrial plants, renewable energy projects, infrastructure development, and electrical distribution systems.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best Cable Extruder manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable cable extrusion systems.",
+  },
+  {
+    question:
+      "Who is the top High Speed Two Layer Cable Plant manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance High Speed Two Layer Cable Plants with excellent productivity, energy efficiency, and consistent cable quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your Cable Extrusion Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced cable extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the High Speed Two Layer Cable Plant one of the best solutions for electrical cable manufacturing?",
+    answer:
+      "Its advanced two-layer extrusion technology, precision cross-head design, stable production process, energy-efficient operation, excellent insulation quality, and high-speed manufacturing capability make it an ideal solution for producing premium-quality electrical cables.",
   },
 ];
 
@@ -362,7 +698,7 @@ export default function HighSpeedTwoLayerCablePlant() {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;

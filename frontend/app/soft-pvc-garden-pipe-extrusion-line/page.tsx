@@ -30,69 +30,414 @@ const faqData = [
   {
     question: "What is a Soft PVC Garden Pipe Extrusion Line?",
     answer:
-      "A Soft PVC Garden Pipe Extrusion Line is a complete extrusion system designed to manufacture flexible PVC garden pipes with excellent surface finish, dimensional accuracy, and consistent production quality.",
+      "A Soft PVC Garden Pipe Extrusion Line is a complete plastic extrusion system designed to manufacture flexible PVC garden pipes with excellent dimensional accuracy, smooth surface finish, and consistent production quality for residential, agricultural, and industrial applications.",
+  },
+  {
+    question: "How does a Soft PVC Garden Pipe Extrusion Machine work?",
+    answer:
+      "The machine melts soft PVC compounds inside the extruder, shapes the material through a precision pipe die, cools the pipe in a water tank, pulls it at a constant speed, and winds or cuts it into finished products.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Garden Pipe Plant?",
+      "Which materials can be processed using a Soft PVC Garden Pipe Plant?",
     answer:
-      "The HPMC Garden Pipe Plant is designed for processing soft PVC compounds used in manufacturing flexible garden hoses, water supply hoses, and other PVC tubing applications.",
-  },
-  {
-    question: "What pipe sizes can be produced?",
-    answer:
-      "The extrusion line is capable of manufacturing soft PVC garden pipes ranging from ½ inch to 2 inches in diameter depending on the selected machine model.",
+      "The machine processes soft PVC compounds, flexible PVC resin, stabilizers, plasticizers, color masterbatch, fillers, and other additives used for manufacturing premium-quality flexible PVC pipes.",
   },
   {
     question:
-      "What is the production capacity of the Garden Pipe Extrusion Line?",
+      "Which products can be manufactured using a Soft PVC Garden Pipe Machine?",
     answer:
-      "Depending on the machine model, production capacity ranges from 50 kg/hr to 130 kg/hr while maintaining excellent pipe quality and dimensional consistency.",
+      "The machine manufactures garden hoses, flexible PVC water pipes, irrigation hoses, household water supply pipes, transparent PVC tubing, industrial flexible hoses, and customized soft PVC pipes.",
   },
   {
-    question: "Which machine models are available?",
+    question: "What are Soft PVC Garden Pipes used for?",
     answer:
-      "HPMC offers HPMC 75, HPMC 90, HPMC 100, HPMC 75/45, and HPMC 90/55 models to meet different production capacities and customer requirements.",
+      "Soft PVC Garden Pipes are widely used for garden watering, agriculture, irrigation, water supply, construction sites, homes, factories, hotels, hospitals, commercial buildings, and industrial applications.",
   },
   {
-    question: "What are the applications of Soft PVC Garden Pipes?",
+    question:
+      "Which is the best Soft PVC Garden Pipe Machine manufacturer in India?",
     answer:
-      "Soft PVC garden pipes are widely used for garden watering, household water supply, kitchen and bathroom connections, irrigation, hospitals, commercial buildings, apartments, hotels, and public water distribution systems.",
+      "Hindustan Plastics and Machine Corporation is one of the best Soft PVC Garden Pipe Machine manufacturers in India, offering advanced extrusion technology, high productivity, and dependable machine performance.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question:
+      "Who is the top Soft PVC Garden Pipe Extrusion Line manufacturer in India?",
     answer:
-      "Yes. The HPMC Soft PVC Garden Pipe Extrusion Line is designed for continuous operation with stable output, low downtime, and reliable long-term performance.",
+      "Hindustan Plastics and Machine Corporation manufactures high-performance Soft PVC Garden Pipe Extrusion Lines trusted by customers across India and international markets.",
   },
   {
-    question: "Does the line include a cooling system?",
+    question:
+      "What are the advantages of a Soft PVC Garden Pipe Extrusion Line?",
     answer:
-      "Yes. The extrusion line is equipped with an integrated water cooling tank to ensure efficient pipe cooling, dimensional stability, and consistent product quality.",
+      "The extrusion line provides high production efficiency, excellent pipe quality, smooth surface finish, dimensional accuracy, energy-efficient operation, and reliable long-term industrial performance.",
   },
   {
-    question: "Can the machine be customized?",
+    question:
+      "Why should manufacturers invest in a Soft PVC Garden Pipe Plant?",
     answer:
-      "Yes. Machine configurations, extrusion dies, cooling tanks, haul-off units, winding systems, and other components can be customized according to customer production requirements.",
+      "A Soft PVC Garden Pipe Plant enables manufacturers to produce high-demand flexible PVC pipes with excellent quality, low production cost, and strong market demand across residential and agricultural sectors.",
   },
   {
-    question: "How energy efficient is the Garden Pipe Extrusion Line?",
+    question:
+      "What production capacity does the Soft PVC Garden Pipe Plant offer?",
     answer:
-      "The machine utilizes optimized screw design, efficient heating systems, and reliable drive technology to maximize production while minimizing energy consumption.",
+      "Depending on the selected machine model, production capacity ranges from approximately 50 kg/hr to 130 kg/hr while maintaining excellent pipe quality and dimensional consistency.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question:
+      "What machine models are available for the Soft PVC Garden Pipe Plant?",
     answer:
-      "Yes. HPMC provides complete installation, commissioning, operator training, spare parts support, and comprehensive after-sales service for all garden pipe extrusion plants.",
+      "Hindustan Plastics and Machine Corporation offers HPMC 75, HPMC 90, HPMC 100, HPMC 75/45, and HPMC 90/55 models to meet different production capacity requirements.",
   },
   {
-    question: "What maintenance is required for the extrusion line?",
+    question: "What pipe sizes can be manufactured using this machine?",
     answer:
-      "Routine maintenance includes inspection of the screw and barrel, gearbox lubrication, heaters, cooling tank, haul-off unit, electrical components, and regular cleaning to ensure smooth operation.",
+      "The machine can manufacture flexible PVC garden pipes ranging from ½ inch to 2 inches in diameter depending on the selected machine model and extrusion tooling.",
   },
   {
-    question: "Why choose HPMC Soft PVC Garden Pipe Extrusion Lines?",
+    question: "Can customized PVC garden pipe sizes be manufactured?",
     answer:
-      "HPMC Garden Pipe Extrusion Lines offer reliable performance, excellent pipe quality, energy-efficient operation, robust construction, low maintenance, and dependable after-sales support for long-term production.",
+      "Yes. Customized dies can be developed to manufacture different pipe diameters, wall thicknesses, and customer-specific flexible PVC pipe designs.",
+  },
+  {
+    question: "Which industries use Soft PVC Garden Pipe Extrusion Lines?",
+    answer:
+      "Agriculture, irrigation, construction, plumbing, water distribution, gardening, infrastructure, manufacturing industries, and commercial building projects widely use Soft PVC Garden Pipe Plants.",
+  },
+  {
+    question: "Can the machine manufacture irrigation hoses?",
+    answer:
+      "Yes. The machine is ideal for manufacturing flexible irrigation hoses used in farming, landscaping, horticulture, nurseries, and agricultural water distribution.",
+  },
+  {
+    question: "Can the machine manufacture household water supply hoses?",
+    answer:
+      "Yes. The extrusion line produces flexible PVC hoses suitable for household water supply, kitchen connections, bathroom plumbing, and utility applications.",
+  },
+  {
+    question: "Can the machine manufacture industrial flexible PVC hoses?",
+    answer:
+      "Yes. The machine can manufacture industrial-grade flexible PVC hoses used for water transfer, chemical handling, air supply, and light-duty industrial applications.",
+  },
+  {
+    question:
+      "Why are Soft PVC Garden Pipes better than conventional rubber hoses?",
+    answer:
+      "Soft PVC Garden Pipes are lightweight, flexible, corrosion-resistant, weather-resistant, easy to handle, economical, and require minimal maintenance compared to traditional rubber hoses.",
+  },
+  {
+    question: "Is the Soft PVC Garden Pipe Extrusion Machine energy efficient?",
+    answer:
+      "Yes. Optimized screw design, efficient heating systems, and advanced drive technology help reduce electricity consumption while maintaining high production output.",
+  },
+  {
+    question: "Can the Soft PVC Garden Pipe Plant operate continuously?",
+    answer:
+      "Yes. The machine is engineered for continuous industrial production with stable output, reliable performance, and minimal downtime.",
+  },
+  {
+    question: "Can the Soft PVC Garden Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation provides customized extrusion lines, pipe dies, cooling tanks, haul-off units, winding systems, automation, and turnkey production solutions.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC garden pipe manufacturing business?",
+    answer:
+      "Yes. The Soft PVC Garden Pipe Plant is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a flexible PVC pipe manufacturing business.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for a Soft PVC Garden Pipe Plant?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered extrusion lines with advanced technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Soft PVC Garden Pipe Machine manufacturers in India?",
+    answer:
+      "With decades of experience in plastic extrusion machinery, innovative engineering, premium manufacturing standards, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers worldwide.",
+  },
+  {
+    question:
+      "How can I get the best price for a Soft PVC Garden Pipe Extrusion Line?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "What is the price of a Soft PVC Garden Pipe Extrusion Line in India?",
+    answer:
+      "The price of a Soft PVC Garden Pipe Extrusion Line depends on the machine model, pipe size range, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question:
+      "How do I choose the best Soft PVC Garden Pipe Extrusion Machine?",
+    answer:
+      "The ideal Soft PVC Garden Pipe Extrusion Machine depends on your pipe diameter, production capacity, PVC formulation, automation requirements, and future production expansion plans.",
+  },
+  {
+    question: "Which is the best Soft PVC Garden Pipe Making Machine in India?",
+    answer:
+      "Soft PVC Garden Pipe Extrusion Lines from Hindustan Plastics and Machine Corporation are engineered for high productivity, consistent pipe quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the Soft PVC Garden Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion dies, cooling tanks, haul-off units, winding systems, cutting units, PLC automation, and complete turnkey production solutions.",
+  },
+  {
+    question: "Can one machine manufacture different PVC garden pipe sizes?",
+    answer:
+      "Yes. By changing the extrusion die and sizing components, the same machine can manufacture multiple pipe diameters and wall thicknesses.",
+  },
+  {
+    question: "How much electricity does a Soft PVC Garden Pipe Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, pipe dimensions, and operating conditions. The machine is designed for energy-efficient manufacturing.",
+  },
+  {
+    question: "Does the Soft PVC Garden Pipe Plant support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen enables operators to monitor production, control machine parameters, manage alarms, and improve manufacturing efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different pipe sizes and PVC formulations, reducing setup time and ensuring consistent quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for stable PVC processing and premium-quality flexible pipe production.",
+  },
+  {
+    question: "Can recycled PVC materials be processed?",
+    answer:
+      "Yes. Depending on product requirements, the machine can process recycled PVC blends along with virgin PVC compounds while maintaining consistent production quality.",
+  },
+  {
+    question:
+      "How often does the Soft PVC Garden Pipe Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance includes inspecting the screw and barrel, gearbox, heaters, cooling tank, haul-off unit, lubrication system, and electrical components.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection, cleaning, and maintenance, reducing downtime and improving long-term operational efficiency.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question:
+      "Are genuine spare parts available for the Soft PVC Garden Pipe Plant?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts supply, and production optimization support.",
+  },
+  {
+    question:
+      "Can I request a live demonstration of the Soft PVC Garden Pipe Extrusion Line?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied PVC compounds can be conducted to verify machine performance, production capacity, and finished pipe quality.",
+  },
+  {
+    question:
+      "Can the Soft PVC Garden Pipe Plant be integrated into an existing production facility?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material handling systems, automatic coilers, printing units, packaging equipment, and downstream automation.",
+  },
+  {
+    question: "Can the machine manufacture colored PVC garden pipes?",
+    answer:
+      "Yes. Using suitable color masterbatches, the machine can manufacture PVC garden pipes in multiple colors according to customer and market requirements.",
+  },
+  {
+    question: "Can the machine manufacture transparent PVC hoses?",
+    answer:
+      "Yes. Depending on the PVC formulation and die design, the extrusion line can manufacture transparent and semi-transparent flexible PVC hoses.",
+  },
+  {
+    question: "Can the machine manufacture braided garden hoses?",
+    answer:
+      "Yes. With suitable downstream braiding equipment, the production line can be integrated to manufacture reinforced braided PVC garden hoses.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Soft PVC Garden Pipe Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable PVC garden pipe production systems.",
+  },
+  {
+    question:
+      "Can the Soft PVC Garden Pipe Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, PLC automation, automatic winding systems, additional downstream equipment, and customized tooling as production requirements increase.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Soft PVC Garden Pipe Extrusion Line?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "What is the price of a Soft PVC Garden Pipe Extrusion Line in India?",
+    answer:
+      "The price of a Soft PVC Garden Pipe Extrusion Line depends on the machine model, pipe size range, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question:
+      "How do I choose the best Soft PVC Garden Pipe Extrusion Machine?",
+    answer:
+      "The ideal Soft PVC Garden Pipe Extrusion Machine depends on your pipe diameter, production capacity, PVC formulation, automation requirements, and future production expansion plans.",
+  },
+  {
+    question: "Which is the best Soft PVC Garden Pipe Making Machine in India?",
+    answer:
+      "Soft PVC Garden Pipe Extrusion Lines from Hindustan Plastics and Machine Corporation are engineered for high productivity, consistent pipe quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the Soft PVC Garden Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion dies, cooling tanks, haul-off units, winding systems, cutting units, PLC automation, and complete turnkey production solutions.",
+  },
+  {
+    question: "Can one machine manufacture different PVC garden pipe sizes?",
+    answer:
+      "Yes. By changing the extrusion die and sizing components, the same machine can manufacture multiple pipe diameters and wall thicknesses.",
+  },
+  {
+    question: "How much electricity does a Soft PVC Garden Pipe Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, pipe dimensions, and operating conditions. The machine is designed for energy-efficient manufacturing.",
+  },
+  {
+    question: "Does the Soft PVC Garden Pipe Plant support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen enables operators to monitor production, control machine parameters, manage alarms, and improve manufacturing efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different pipe sizes and PVC formulations, reducing setup time and ensuring consistent quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for stable PVC processing and premium-quality flexible pipe production.",
+  },
+  {
+    question: "Can recycled PVC materials be processed?",
+    answer:
+      "Yes. Depending on product requirements, the machine can process recycled PVC blends along with virgin PVC compounds while maintaining consistent production quality.",
+  },
+  {
+    question:
+      "How often does the Soft PVC Garden Pipe Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance includes inspecting the screw and barrel, gearbox, heaters, cooling tank, haul-off unit, lubrication system, and electrical components.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection, cleaning, and maintenance, reducing downtime and improving long-term operational efficiency.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question:
+      "Are genuine spare parts available for the Soft PVC Garden Pipe Plant?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts supply, and production optimization support.",
+  },
+  {
+    question:
+      "Can I request a live demonstration of the Soft PVC Garden Pipe Extrusion Line?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied PVC compounds can be conducted to verify machine performance, production capacity, and finished pipe quality.",
+  },
+  {
+    question:
+      "Can the Soft PVC Garden Pipe Plant be integrated into an existing production facility?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material handling systems, automatic coilers, printing units, packaging equipment, and downstream automation.",
+  },
+  {
+    question: "Can the machine manufacture colored PVC garden pipes?",
+    answer:
+      "Yes. Using suitable color masterbatches, the machine can manufacture PVC garden pipes in multiple colors according to customer and market requirements.",
+  },
+  {
+    question: "Can the machine manufacture transparent PVC hoses?",
+    answer:
+      "Yes. Depending on the PVC formulation and die design, the extrusion line can manufacture transparent and semi-transparent flexible PVC hoses.",
+  },
+  {
+    question: "Can the machine manufacture braided garden hoses?",
+    answer:
+      "Yes. With suitable downstream braiding equipment, the production line can be integrated to manufacture reinforced braided PVC garden hoses.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Soft PVC Garden Pipe Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable PVC garden pipe production systems.",
+  },
+  {
+    question:
+      "Can the Soft PVC Garden Pipe Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, PLC automation, automatic winding systems, additional downstream equipment, and customized tooling as production requirements increase.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Soft PVC Garden Pipe Extrusion Line?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
   },
 ];
 
@@ -141,7 +486,7 @@ export default function SingleScrewPlantPvcCompounding() {
 
   const [active, setActive] = useState<number | null>(0);
   const [showAllFaqs, setShowAllFaqs] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const handleDownload = (catalogue: string) => {
     const access = localStorage.getItem("catalogue_access");

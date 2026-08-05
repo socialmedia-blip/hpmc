@@ -574,7 +574,7 @@ export default function PvcConduitPipePlant() {
   const [active, setActive] = useState<number | null>(0);
   const [showAllFaqs, setShowAllFaqs] = useState(false);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const handleDownload = (catalogue: string) => {
     const access = localStorage.getItem("catalogue_access");

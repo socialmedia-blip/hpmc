@@ -104,78 +104,411 @@ const faqData = [
   {
     question: "What is a Twin Screw Plant for PVC Trunking?",
     answer:
-      "A Twin Screw Plant for PVC Trunking is an advanced extrusion system designed to manufacture PVC trunking profiles used for cable management, wire protection, electrical installations, and commercial infrastructure projects.",
+      "A Twin Screw Plant for PVC Trunking is an advanced extrusion system designed to manufacture PVC trunking, wiring ducts, cable management profiles, and electrical cable protection systems with high dimensional accuracy and excellent surface finish.",
+  },
+  {
+    question: "How does a PVC Trunking Extrusion Plant work?",
+    answer:
+      "The plant melts PVC compounds using a Conical Twin Screw Extruder, shapes the material through a precision die head, and uses vacuum cooling, haul-off, cutting, and stacking systems to manufacture finished PVC trunking profiles.",
+  },
+  {
+    question: "Which materials can be processed using a PVC Trunking Plant?",
+    answer:
+      "The machine processes rigid PVC compounds, high-calcium PVC formulations, profile-grade PVC materials, and customized PVC blends used for cable management products.",
+  },
+  {
+    question:
+      "Which products can be manufactured using this PVC Trunking Machine?",
+    answer:
+      "The machine manufactures PVC trunking, cable ducts, wiring ducts, electrical cable channels, cable raceways, communication cable trunking, and customized cable management profiles.",
   },
   {
     question: "What is PVC trunking used for?",
     answer:
-      "PVC trunking is widely used for organizing and protecting electrical cables, communication wires, network cables, and power distribution systems in residential, commercial, and industrial buildings.",
+      "PVC trunking is widely used to organize, protect, and route electrical wires, network cables, communication cables, and power distribution systems in residential, commercial, and industrial buildings.",
   },
   {
-    question: "Why is a Twin Screw Extruder used for PVC trunking production?",
+    question: "Which is the best PVC Trunking Machine manufacturer in India?",
     answer:
-      "Twin Screw Extruders provide superior mixing, excellent plasticization, better filler dispersion, and stable processing, ensuring high-quality PVC trunking profiles with consistent dimensions.",
-  },
-  {
-    question: "What are the advantages of PVC trunking?",
-    answer:
-      "PVC trunking offers easy cable management, corrosion resistance, durability, lightweight construction, electrical insulation, and a clean professional appearance for wiring installations.",
-  },
-  {
-    question: "What materials can be processed using this plant?",
-    answer:
-      "The plant is designed to process PVC compounds, profile-grade PVC materials, and high-calcium formulations used in trunking and cable management systems.",
-  },
-  {
-    question: "What is the benefit of the Conical Twin Screw Extruder?",
-    answer:
-      "The Conical Twin Screw Extruder provides efficient plasticization, high output rates, low power consumption, excellent material fusion, and reliable long-term performance.",
-  },
-  {
-    question: "Can the machine handle high calcium PVC formulations?",
-    answer:
-      "Yes. The system is specifically designed to process high-calcium PVC formulations while maintaining product quality, dimensional accuracy, and production stability.",
-  },
-  {
-    question: "How does the Die Head improve product quality?",
-    answer:
-      "The forged alloy steel die head ensures uniform material flow, better profile formation, dimensional consistency, and long operational life.",
-  },
-  {
-    question: "What is the role of the Spray Bath?",
-    answer:
-      "The Spray Bath provides intensive cooling and accurate profile sizing, ensuring dimensional stability, smooth surface finish, and consistent product quality.",
-  },
-  {
-    question: "How does the Pneumatic Haul Off improve production?",
-    answer:
-      "The Pneumatic Haul Off provides smooth and synchronized pulling of trunking profiles, preventing deformation and ensuring stable production speeds.",
-  },
-  {
-    question: "What is the purpose of the Automatic Cutting Unit?",
-    answer:
-      "The Automatic Cutting Unit delivers precise profile cutting with minimal wastage, improving production efficiency and finished product consistency.",
-  },
-  {
-    question: "Which industries use PVC trunking products?",
-    answer:
-      "PVC trunking products are widely used in electrical contracting, telecommunications, commercial construction, industrial facilities, data centers, and infrastructure projects.",
-  },
-  {
-    question: "Is the machine suitable for continuous production?",
-    answer:
-      "Yes. HPMC Twin Screw PVC Trunking Plants are designed for continuous operation with stable output, reliable performance, and minimal downtime.",
-  },
-  {
-    question: "Does HPMC provide installation and technical support?",
-    answer:
-      "Yes. HPMC provides installation, commissioning, operator training, technical assistance, spare parts support, and complete after-sales services.",
+      "Hindustan Plastics and Machine Corporation is one of the best PVC Trunking Machine manufacturers in India, offering advanced Twin Screw extrusion plants with high productivity, energy efficiency, and reliable long-term performance.",
   },
   {
     question:
-      "Why choose HPMC Twin Screw Plants for PVC Trunking Manufacturing?",
+      "Who is the top PVC Trunking Extrusion Machine manufacturer in India?",
     answer:
-      "HPMC Twin Screw PVC Trunking Plants offer advanced extrusion technology, superior profile quality, energy-efficient operation, high production efficiency, reliable performance, and long service life.",
+      "Hindustan Plastics and Machine Corporation manufactures precision-engineered PVC Trunking Extrusion Machines trusted by electrical product manufacturers across India and international markets.",
+  },
+  {
+    question: "What are the advantages of a Twin Screw PVC Trunking Plant?",
+    answer:
+      "The machine offers superior PVC plasticization, excellent mixing, stable extrusion, smooth surface finish, accurate profile dimensions, low power consumption, and high production efficiency.",
+  },
+  {
+    question:
+      "Why is a Conical Twin Screw Extruder preferred for PVC trunking manufacturing?",
+    answer:
+      "A Conical Twin Screw Extruder provides better PVC fusion, excellent filler dispersion, stable melt pressure, and consistent profile quality, making it ideal for PVC trunking production.",
+  },
+  {
+    question: "Can the machine process high-calcium PVC formulations?",
+    answer:
+      "Yes. The Twin Screw Plant efficiently processes high-calcium PVC compounds while maintaining product strength, dimensional stability, and excellent surface finish.",
+  },
+  {
+    question: "Can customized PVC trunking profiles be manufactured?",
+    answer:
+      "Yes. Customized extrusion dies can be developed to manufacture different trunking sizes, cable ducts, wiring channels, and customer-specific PVC profiles.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Production capacity depends on the selected machine model, trunking size, PVC formulation, and extrusion configuration. Customized production solutions are available.",
+  },
+  {
+    question: "How does the Twin Screw Plant improve PVC trunking quality?",
+    answer:
+      "Efficient material fusion, stable extrusion pressure, accurate cooling, and precision calibration produce PVC trunking with smooth surfaces, excellent strength, and consistent dimensions.",
+  },
+  {
+    question: "Which industries use PVC Trunking Extrusion Plants?",
+    answer:
+      "Electrical product manufacturers, cable management companies, telecom infrastructure providers, commercial construction firms, industrial projects, and panel board manufacturers widely use PVC Trunking Plants.",
+  },
+  {
+    question: "Can the machine manufacture electrical cable trunking?",
+    answer:
+      "Yes. The machine is specifically designed for manufacturing electrical cable trunking used in residential, commercial, and industrial electrical installations.",
+  },
+  {
+    question: "Can the machine manufacture PVC wiring ducts?",
+    answer:
+      "Yes. The extrusion line produces PVC wiring ducts and cable channels for control panels, electrical cabinets, automation systems, and building wiring.",
+  },
+  {
+    question: "Can the machine manufacture communication cable ducts?",
+    answer:
+      "Yes. The plant manufactures communication cable ducts used for networking, fiber optic cables, data centers, and telecommunication infrastructure.",
+  },
+  {
+    question:
+      "Is the Twin Screw PVC Trunking Plant suitable for continuous production?",
+    answer:
+      "Yes. The machine is engineered for continuous industrial production with stable output, minimal downtime, and reliable long-term performance.",
+  },
+  {
+    question: "Is the PVC Trunking Extrusion Machine energy efficient?",
+    answer:
+      "Yes. Optimized screw geometry, efficient drive systems, and advanced extrusion technology help reduce power consumption while maintaining high productivity.",
+  },
+  {
+    question: "Can the PVC Trunking Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, profile dies, calibration systems, automation, and downstream equipment according to customer requirements.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC trunking manufacturing business?",
+    answer:
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a PVC trunking and cable management products manufacturing business.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for PVC Trunking Plants?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered PVC Trunking Plants with advanced extrusion technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best PVC Trunking Machine manufacturers in India?",
+    answer:
+      "With decades of expertise in plastic extrusion machinery, innovative engineering, premium manufacturing standards, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers across India and worldwide.",
+  },
+  {
+    question:
+      "Can the machine manufacture export-quality PVC trunking products?",
+    answer:
+      "Yes. The machine is capable of producing premium-quality PVC trunking and wiring duct products suitable for domestic as well as international markets.",
+  },
+  {
+    question:
+      "How can I get the best price for a Twin Screw PVC Trunking Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your trunking profile design, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a Twin Screw PVC Trunking Plant in India?",
+    answer:
+      "The price of a Twin Screw PVC Trunking Plant depends on the machine model, trunking profile size, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best PVC Trunking Extrusion Machine?",
+    answer:
+      "The ideal PVC Trunking Extrusion Machine depends on your product dimensions, production capacity, PVC formulation, automation requirements, and future expansion plans.",
+  },
+  {
+    question: "Which is the best PVC Trunking Making Machine in India?",
+    answer:
+      "Twin Screw PVC Trunking Plants from Hindustan Plastics and Machine Corporation are designed for excellent product quality, high productivity, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the Twin Screw PVC Trunking Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized profile dies, calibration systems, spray baths, haul-off units, cutting systems, stacking units, and PLC automation based on production requirements.",
+  },
+  {
+    question: "Can one machine manufacture different PVC trunking sizes?",
+    answer:
+      "Yes. By changing the extrusion die and calibration tooling, the same machine can manufacture multiple PVC trunking sizes and cable duct profiles.",
+  },
+  {
+    question:
+      "How much electricity does a PVC Trunking Extrusion Machine consume?",
+    answer:
+      "Power consumption depends on the machine model, trunking dimensions, production output, and operating conditions. The machine is engineered for energy-efficient operation.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen allows operators to monitor production, adjust machine parameters, manage alarms, and improve production efficiency.",
+  },
+  {
+    question: "Can production recipes be saved?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different PVC trunking sizes, reducing setup time and ensuring consistent quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating and cooling zones provide accurate temperature control for efficient PVC processing and stable extrusion.",
+  },
+  {
+    question: "Can recycled PVC materials be processed?",
+    answer:
+      "Yes. Depending on the formulation and application, the machine can process recycled PVC blends along with virgin PVC compounds.",
+  },
+  {
+    question: "How often does the PVC Trunking Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance, lubrication, inspection of screw and barrel, gearbox, heaters, cooling systems, and electrical components ensures reliable long-term performance.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection and maintenance, reducing downtime and maintenance costs.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe machine operation, efficient production, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting, preventive maintenance, spare parts assistance, and production optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live demonstrations and technical consultations can be arranged to help customers evaluate machine performance before making a purchase decision.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied PVC compounds can be conducted to verify machine performance and finished trunking quality.",
+  },
+  {
+    question:
+      "Can the PVC Trunking Plant be integrated into an existing production line?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material feeding systems, printing units, packaging equipment, and downstream handling systems.",
+  },
+  {
+    question: "Can the machine manufacture PVC trunking with different colors?",
+    answer:
+      "Yes. By using suitable masterbatches and PVC formulations, the machine can manufacture PVC trunking in various colors based on customer requirements.",
+  },
+  {
+    question:
+      "Can the machine manufacture heavy-duty industrial cable trunking?",
+    answer:
+      "Yes. The extrusion line can produce heavy-duty PVC trunking profiles designed for industrial cable management and electrical installations.",
+  },
+  {
+    question:
+      "Can the machine manufacture PVC wiring ducts for electrical panels?",
+    answer:
+      "Yes. The machine is widely used to manufacture PVC wiring ducts for electrical control panels, switchboards, automation systems, and distribution panels.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best PVC Trunking Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable PVC trunking production systems.",
+  },
+  {
+    question: "Can the PVC Trunking Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with automation, customized tooling, additional downstream equipment, and higher-capacity components as production requirements increase.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Twin Screw PVC Trunking Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your trunking dimensions, production capacity, and application requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Twin Screw PVC Trunking Plant process different PVC formulations?",
+    answer:
+      "Yes. The machine is designed to process rigid PVC compounds, high-calcium PVC formulations, profile-grade PVC materials, recycled PVC blends, and customized PVC compounds for different cable management applications.",
+  },
+  {
+    question:
+      "Can the machine manufacture mini, medium, and heavy-duty PVC trunking?",
+    answer:
+      "Yes. By changing the extrusion die and calibration tooling, the machine can manufacture mini, medium, and heavy-duty PVC trunking in various dimensions.",
+  },
+  {
+    question: "Can the machine manufacture slotted wiring ducts?",
+    answer:
+      "Yes. The Twin Screw PVC Trunking Plant can manufacture slotted wiring ducts widely used in electrical control panels and industrial automation systems.",
+  },
+  {
+    question: "Can the machine manufacture PVC raceways for cable management?",
+    answer:
+      "Yes. The extrusion line is suitable for manufacturing PVC raceways used for protecting and organizing electrical, networking, and communication cables.",
+  },
+  {
+    question:
+      "Can the Twin Screw PVC Trunking Plant manufacture products that meet international quality standards?",
+    answer:
+      "Yes. With suitable tooling, quality PVC compounds, and controlled processing, the machine can manufacture PVC trunking products that comply with applicable national and international standards.",
+  },
+  {
+    question:
+      "How does the Twin Screw PVC Trunking Plant improve product quality?",
+    answer:
+      "Efficient plasticization, stable extrusion pressure, precise temperature control, and accurate calibration produce PVC trunking with smooth surfaces, excellent strength, and consistent dimensions.",
+  },
+  {
+    question:
+      "Can PVC trunking manufactured on this machine be used in residential and commercial buildings?",
+    answer:
+      "Yes. The machine manufactures PVC trunking widely used in homes, apartments, offices, shopping malls, hospitals, schools, hotels, factories, and commercial buildings.",
+  },
+  {
+    question: "Can this machine reduce PVC trunking manufacturing costs?",
+    answer:
+      "Yes. High production efficiency, energy-saving operation, reduced material wastage, and stable processing help lower the overall manufacturing cost of PVC trunking.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a Twin Screw PVC Trunking Plant?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question: "Can the PVC Trunking Plant be upgraded in the future?",
+    answer:
+      "Yes. The machine can be upgraded with new profile dies, PLC automation, calibration equipment, downstream machinery, and higher-capacity components as production requirements increase.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture PVC Trunking Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Twin Screw PVC Trunking Plants in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export PVC Trunking Machines worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports PVC Trunking Plants and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The PVC Trunking Plant can be integrated into existing manufacturing facilities with customized layouts and compatible downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, and machine optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize machine settings, PVC formulations, extrusion parameters, and overall production efficiency to maximize output and product quality.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied PVC compounds to evaluate machine performance, production output, and finished trunking quality.",
+  },
+  {
+    question: "Is the Twin Screw PVC Trunking Plant environmentally friendly?",
+    answer:
+      "Yes. The machine uses energy-efficient technology that helps reduce power consumption, optimize raw material utilization, and minimize production waste.",
+  },
+  {
+    question: "Which industries benefit from Twin Screw PVC Trunking Plants?",
+    answer:
+      "Electrical product manufacturers, panel builders, telecom companies, infrastructure developers, construction companies, automation industries, data centers, and cable management system manufacturers benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture PVC trunking for smart buildings and industrial automation projects?",
+    answer:
+      "Yes. The machine is ideal for manufacturing PVC trunking used in smart buildings, industrial automation, commercial complexes, IT infrastructure, hospitals, educational institutions, and modern construction projects.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best PVC Trunking Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable PVC trunking production systems.",
+  },
+  {
+    question:
+      "Who is the top PVC Trunking Extrusion Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance PVC Trunking Extrusion Machines with excellent productivity, energy efficiency, and consistent product quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your PVC Trunking Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the Twin Screw PVC Trunking Plant one of the best solutions for PVC cable trunking manufacturing?",
+    answer:
+      "Its superior PVC plasticization, stable extrusion process, excellent dimensional accuracy, energy-efficient operation, and reliable industrial performance make it an ideal solution for manufacturing premium-quality PVC trunking, cable ducts, and wiring channels.",
   },
 ];
 
@@ -190,7 +523,7 @@ export default function TwinScrewPlantForPVCTrunking() {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;

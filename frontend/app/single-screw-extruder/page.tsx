@@ -32,64 +32,404 @@ const faqData = [
   {
     question: "What is a Single Screw Extruder?",
     answer:
-      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and shape polymer materials into products such as PVC pipes, profiles, sheets, and granules. It is widely used for continuous extrusion applications.",
+      "A Single Screw Extruder is a plastic processing machine used to melt, mix, and extrude thermoplastic materials into pipes, profiles, sheets, granules, and other plastic products with consistent quality and high production efficiency.",
+  },
+  {
+    question: "How does a Single Screw Extruder work?",
+    answer:
+      "The machine feeds plastic raw material through a rotating screw, melts it inside a heated barrel, builds pressure, and pushes the molten polymer through a precision die to manufacture high-quality plastic products.",
+  },
+  {
+    question: "Which materials can be processed using a Single Screw Extruder?",
+    answer:
+      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, PE, and several other thermoplastic materials depending on the application and extrusion setup.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Single Screw Extruder?",
+      "Which products can be manufactured using a Single Screw Extruder?",
     answer:
-      "The machine can process PVC, HDPE, LDPE, LLDPE, PP, and other thermoplastic materials depending on the application and extrusion setup.",
+      "A Single Screw Extruder can manufacture PVC pipes, HDPE pipes, LLDPE pipes, plastic profiles, irrigation pipes, conduit pipes, cable ducts, granules, rods, and customized extrusion products.",
   },
   {
-    question: "What is the output capacity of the Single Screw Extruder?",
+    question: "Which industries use Single Screw Extruders?",
     answer:
-      "The HPMC Single Screw Extruder offers production capacities of up to 450 Kg/hr, depending on the machine model, material type, and processing conditions.",
+      "Single Screw Extruders are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, plastic profile manufacturing, and packaging industries.",
   },
   {
-    question: "Which industries use Single Screw Extrusion Machines?",
+    question: "Which is the best Single Screw Extruder manufacturer in India?",
     answer:
-      "These machines are widely used in water supply, agriculture, irrigation, construction, infrastructure, cable protection, industrial piping, and plastic profile manufacturing industries.",
+      "Hindustan Plastics and Machine Corporation is one of the best Single Screw Extruder manufacturers in India, offering advanced extrusion technology, high productivity, energy efficiency, and reliable machine performance.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "Who is the top Single Screw Extruder manufacturer in India?",
     answer:
-      "The extrusion line can manufacture PVC pipes ranging from 16 mm to 200 mm in diameter depending on the selected machine model and tooling.",
+      "Hindustan Plastics and Machine Corporation manufactures high-performance Single Screw Extruders trusted by customers across India and international markets.",
   },
   {
-    question: "What are the advantages of Barrier Design Screw Technology?",
+    question: "What are the advantages of a Single Screw Extruder?",
     answer:
-      "Barrier Design Screw Technology improves melt homogeneity, enhances plasticization, reduces energy consumption, increases output, and delivers better product quality.",
+      "The machine offers excellent plasticization, high production output, energy-efficient operation, stable melt quality, easy maintenance, and reliable long-term industrial performance.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question: "Why should manufacturers invest in a Single Screw Extruder?",
     answer:
-      "Yes. The HPMC Single Screw Extruder is designed for continuous and stable production with high efficiency, low downtime, and consistent product quality.",
+      "A Single Screw Extruder enables manufacturers to produce premium-quality plastic products with consistent output, low operating costs, excellent efficiency, and high production reliability.",
+  },
+  {
+    question: "What production capacity does the Single Screw Extruder offer?",
+    answer:
+      "Depending on the machine model and processed material, production output can reach up to 450 kg/hr while maintaining consistent melt quality and dimensional accuracy.",
+  },
+  {
+    question: "Which machine models are available?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers HPMC 65, HPMC 75, HPMC 90, and HPMC 100 Single Screw Extruders for different production capacities and applications.",
+  },
+  {
+    question: "What pipe sizes can be manufactured using this machine?",
+    answer:
+      "The Single Screw Extruder can manufacture PVC pipes ranging from 16 mm to 200 mm depending on the selected machine model and extrusion tooling.",
+  },
+  {
+    question: "Can customized extrusion dies be provided?",
+    answer:
+      "Yes. Customized dies can be designed for different pipe diameters, profiles, wall thicknesses, and specialized extrusion applications.",
   },
   {
     question:
-      "Can the machine be customized according to production requirements?",
+      "Which industries benefit from Single Screw Extrusion technology?",
     answer:
-      "Yes. Machine configurations, screw designs, die heads, cooling systems, haul-off units, and cutting systems can be customized based on customer requirements.",
+      "Plastic pipe manufacturers, profile manufacturers, cable duct producers, irrigation companies, infrastructure projects, construction industries, and polymer processing industries benefit from Single Screw Extruders.",
   },
   {
-    question: "How energy efficient is the HPMC Single Screw Extruder?",
+    question: "Can the machine manufacture PVC pipes?",
     answer:
-      "The machine is engineered with optimized heating zones, efficient drives, and advanced screw technology to minimize power consumption while maintaining high output.",
+      "Yes. The Single Screw Extruder is widely used for manufacturing high-quality PVC pipes for water supply, agriculture, drainage, and industrial applications.",
   },
   {
-    question: "Does HPMC provide installation and training support?",
+    question: "Can the machine manufacture HDPE and LLDPE pipes?",
     answer:
-      "Yes. HPMC provides installation assistance, commissioning, operator training, technical support, spare parts, and after-sales services.",
+      "Yes. Suitable screw configurations and tooling allow the machine to process HDPE, LLDPE, LDPE, and other thermoplastics for pipe manufacturing.",
   },
   {
-    question: "What maintenance is required for a Single Screw Extruder?",
+    question: "What is Barrier Design Screw Technology?",
     answer:
-      "Routine maintenance includes checking heaters, gearbox lubrication, screw and barrel wear, cooling systems, electrical components, and regular cleaning of extrusion parts.",
+      "Barrier Design Screw Technology improves plastic melting efficiency, provides better melt homogeneity, increases production output, reduces energy consumption, and enhances finished product quality.",
   },
   {
-    question: "Why choose HPMC Single Screw Extruders?",
+    question: "Is the Single Screw Extruder energy efficient?",
     answer:
-      "HPMC Single Screw Extruders offer reliable performance, excellent melt quality, high production efficiency, low maintenance requirements, and long machine life backed by industry expertise.",
+      "Yes. Optimized screw geometry, efficient heating systems, and advanced drive technology reduce electricity consumption while maintaining high production performance.",
+  },
+  {
+    question: "Can the Single Screw Extruder operate continuously?",
+    answer:
+      "Yes. The machine is engineered for continuous industrial production with stable output, consistent processing, and minimum downtime.",
+  },
+  {
+    question: "Can the Single Screw Extruder be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized screw designs, barrel configurations, dies, cooling systems, haul-off units, cutting systems, and PLC automation according to customer requirements.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a plastic extrusion business?",
+    answer:
+      "Yes. The Single Screw Extruder is an excellent investment for entrepreneurs and manufacturers planning to establish or expand plastic extrusion production.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for a Single Screw Extruder?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered extrusion machines with advanced technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Single Screw Extruder manufacturers in India?",
+    answer:
+      "With decades of extrusion expertise, precision engineering, premium manufacturing standards, innovative screw technology, and reliable after-sales support, Hindustan Plastics and Machine Corporation is trusted by customers worldwide.",
+  },
+  {
+    question:
+      "Can the Single Screw Extruder manufacture different plastic products using one machine?",
+    answer:
+      "Yes. By changing dies, tooling, and processing parameters, the machine can manufacture various plastic products including pipes, profiles, rods, and customized extrusion products.",
+  },
+  {
+    question: "How can I get the best price for a Single Screw Extruder?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required material, product type, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a Single Screw Extruder in India?",
+    answer:
+      "The price of a Single Screw Extruder depends on the machine model, screw diameter, production capacity, material compatibility, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best Single Screw Extruder?",
+    answer:
+      "The ideal Single Screw Extruder depends on the raw material, product type, production capacity, screw diameter, L/D ratio, automation requirements, and future production expansion.",
+  },
+  {
+    question: "Which is the best Single Screw Extrusion Machine in India?",
+    answer:
+      "Single Screw Extruders from Hindustan Plastics and Machine Corporation are engineered for high productivity, excellent melt quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the Single Screw Extruder be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized screw designs, barrels, extrusion dies, cooling systems, haul-off units, cutting systems, PLC automation, and complete turnkey extrusion solutions.",
+  },
+  {
+    question: "Can one Single Screw Extruder manufacture different products?",
+    answer:
+      "Yes. By changing the die head, tooling, and processing parameters, one machine can manufacture various plastic pipes, profiles, rods, and customized extrusion products.",
+  },
+  {
+    question: "How much electricity does a Single Screw Extruder consume?",
+    answer:
+      "Power consumption depends on the machine model, screw size, production capacity, processed material, and operating conditions. The machine is designed for energy-efficient production.",
+  },
+  {
+    question: "Does the Single Screw Extruder support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen enables operators to monitor production, control machine parameters, store recipes, and improve manufacturing efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall machine settings for different products, reducing setup time and ensuring consistent product quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for stable plastic processing and premium-quality extrusion.",
+  },
+  {
+    question: "Can recycled plastic materials be processed?",
+    answer:
+      "Yes. Depending on the application, the Single Screw Extruder can process recycled PVC, PE, PP, HDPE, LLDPE, and other thermoplastic materials while maintaining reliable performance.",
+  },
+  {
+    question: "How often does the Single Screw Extruder require maintenance?",
+    answer:
+      "Routine preventive maintenance includes checking the screw and barrel, gearbox, heaters, cooling systems, lubrication points, electrical components, and drive systems.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for convenient inspection and maintenance, helping reduce downtime and improve long-term operational efficiency.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe machine operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question:
+      "Are genuine spare parts available for the Single Screw Extruder?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts supply, and production optimization support.",
+  },
+  {
+    question:
+      "Can I request a live demonstration of the Single Screw Extruder?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance, production capacity, melt quality, and finished product quality.",
+  },
+  {
+    question:
+      "Can the Single Screw Extruder be integrated into an existing manufacturing facility?",
+    answer:
+      "Yes. The extrusion system can be integrated with existing material handling systems, downstream equipment, cooling systems, haul-off units, cutting systems, and automation.",
+  },
+  {
+    question: "Can the machine manufacture plastic profiles?",
+    answer:
+      "Yes. The Single Screw Extruder can manufacture plastic profiles used in doors, windows, cable ducts, furniture, construction, and industrial applications.",
+  },
+  {
+    question: "Can the machine manufacture plastic granules and rods?",
+    answer:
+      "Yes. With suitable dies and downstream equipment, the machine can manufacture plastic rods, granules, and various customized extrusion products.",
+  },
+  {
+    question:
+      "What makes Barrier Design Screw Technology better than a conventional screw?",
+    answer:
+      "Barrier Design Screw Technology provides better melting efficiency, improved plasticization, higher output, reduced power consumption, superior melt homogeneity, and excellent finished product quality.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Single Screw Extruder manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced screw technology, customized machine solutions, and dependable after-sales support to deliver reliable extrusion systems.",
+  },
+  {
+    question:
+      "Can the Single Screw Extruder support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity screws, PLC automation, advanced drives, additional downstream equipment, and customized tooling as production requirements increase.",
+  },
+  {
+    question: "How can I get the best quotation for a Single Screw Extruder?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required material, product type, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Single Screw Extruder process different thermoplastic materials?",
+    answer:
+      "Yes. The Single Screw Extruder is designed to process PVC, HDPE, LDPE, LLDPE, PP, PE, and other thermoplastic materials with suitable screw configurations and processing parameters.",
+  },
+  {
+    question: "Can the machine manufacture different pipe sizes?",
+    answer:
+      "Yes. By changing the extrusion die and sizing system, the machine can manufacture pipes in different diameters and wall thicknesses according to production requirements.",
+  },
+  {
+    question: "Can the machine manufacture plastic profiles and rods?",
+    answer:
+      "Yes. The Single Screw Extruder can manufacture plastic profiles, rods, cable ducts, construction profiles, furniture profiles, and other customized extrusion products.",
+  },
+  {
+    question: "Can the machine manufacture industrial plastic products?",
+    answer:
+      "Yes. The extrusion system is suitable for manufacturing industrial plastic products used in construction, infrastructure, agriculture, cable protection, packaging, and engineering applications.",
+  },
+  {
+    question:
+      "Can the Single Screw Extruder manufacture products that meet international quality standards?",
+    answer:
+      "Yes. With quality raw materials, precision extrusion tooling, and controlled processing parameters, the machine can manufacture plastic products that comply with applicable national and international quality standards.",
+  },
+  {
+    question: "How does the Single Screw Extruder improve product quality?",
+    answer:
+      "Optimized screw geometry, stable melt pressure, accurate temperature control, superior plasticization, and precision extrusion technology ensure excellent surface finish, dimensional accuracy, and consistent product quality.",
+  },
+  {
+    question:
+      "Can products manufactured on this machine be used in residential and industrial applications?",
+    answer:
+      "Yes. Products manufactured using the Single Screw Extruder are widely used in residential construction, commercial buildings, agriculture, water supply, cable protection, infrastructure, and industrial applications.",
+  },
+  {
+    question: "Can this machine reduce plastic product manufacturing costs?",
+    answer:
+      "Yes. High production efficiency, energy-saving operation, optimized raw material utilization, and reduced production waste help lower the overall manufacturing cost.",
+  },
+  {
+    question: "What is the expected lifespan of a Single Screw Extruder?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation and continuous production.",
+  },
+  {
+    question: "Can the Single Screw Extruder be upgraded in the future?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity screws, PLC automation, advanced drive systems, additional downstream equipment, and customized tooling as production requirements grow.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture Single Screw Extruders in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Single Screw Extruders in India using precision engineering, premium-quality components, and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export Single Screw Extruders worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports Single Screw Extruders and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The Single Screw Extruder can be integrated into existing production facilities with customized layouts and compatible upstream and downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, machine optimization, and operational support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize raw material formulations, machine settings, extrusion parameters, and production efficiency to maximize output and improve finished product quality.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required genuine spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied raw materials to evaluate machine performance, production capacity, and finished product quality.",
+  },
+  {
+    question: "Is the Single Screw Extruder environmentally friendly?",
+    answer:
+      "Yes. The machine uses energy-efficient technology, supports optimized raw material utilization, and can process suitable recyclable thermoplastic materials, helping reduce manufacturing waste.",
+  },
+  {
+    question: "Which industries benefit from Single Screw Extruders?",
+    answer:
+      "Plastic pipe manufacturers, profile manufacturers, packaging companies, cable protection industries, agriculture, construction, infrastructure, automotive suppliers, and polymer processing industries benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture products for water supply and infrastructure projects?",
+    answer:
+      "Yes. The Single Screw Extruder is suitable for manufacturing pipes and extrusion products used in water supply systems, irrigation, drainage, cable protection, infrastructure, and industrial applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best Single Screw Extruder manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable extrusion systems.",
+  },
+  {
+    question: "Who is the top Single Screw Extruder manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance Single Screw Extruders with excellent productivity, energy efficiency, and consistent processing quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your Single Screw Extruder supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the Single Screw Extruder one of the best solutions for plastic extrusion manufacturing?",
+    answer:
+      "Its advanced Barrier Design Screw Technology, stable extrusion process, energy-efficient operation, excellent melt quality, high production capacity, and reliable industrial performance make it an ideal solution for manufacturing premium-quality plastic extrusion products.",
   },
 ];
 
@@ -327,7 +667,7 @@ export default function SingleScrewExtruder() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;

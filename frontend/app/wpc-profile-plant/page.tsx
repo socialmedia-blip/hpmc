@@ -44,72 +44,409 @@ const specifications = [
 
 const faqData = [
   {
-    question: "What is a Wood Plastic Composite (WPC) Profile Extrusion Line?",
+    question: "What is a WPC Profile Extrusion Line?",
     answer:
-      "A Wood Plastic Composite (WPC) Profile Extrusion Line is a specialized manufacturing system designed to produce WPC profiles by combining wood fiber or wood flour with thermoplastic materials. It is widely used to manufacture durable, eco-friendly, and weather-resistant products.",
+      "A WPC Profile Extrusion Line is an advanced manufacturing system designed to produce Wood Plastic Composite (WPC) profiles by combining wood flour with thermoplastic materials such as PVC, PE, or PP. It produces durable, eco-friendly, and weather-resistant profiles for construction and furniture applications.",
+  },
+  {
+    question: "How does a WPC Profile Extrusion Line work?",
+    answer:
+      "The extrusion line mixes wood flour, plastic resin, and additives, melts the material inside the extruder, and shapes it through a precision die. The profile is then calibrated, cooled, hauled off, and cut into finished WPC products.",
+  },
+  {
+    question: "Which materials can be processed using a WPC Profile Plant?",
+    answer:
+      "The machine can process wood flour, wood fiber, PVC, PE, PP, calcium carbonate, stabilizers, lubricants, pigments, and other additives used in Wood Plastic Composite manufacturing.",
   },
   {
     question:
-      "What materials can be processed on the HPMC WPC Profile Extrusion Line?",
+      "Which products can be manufactured using a WPC Profile Extrusion Machine?",
     answer:
-      "The HPMC WPC Profile Extrusion Line can process PVC, PE, PP, wood flour, wood fiber, calcium carbonate, additives, and other composite materials used in WPC profile production.",
+      "The machine manufactures WPC decking boards, wall panels, fencing profiles, door frames, window frames, ceiling panels, furniture components, decorative trims, railings, pergolas, and customized WPC profiles.",
   },
   {
-    question: "What products can be manufactured using this extrusion line?",
+    question: "What are WPC profiles used for?",
     answer:
-      "The machine is suitable for producing WPC decking boards, wall panels, fencing, door frames, window profiles, ceiling panels, decorative profiles, furniture components, and various custom WPC products.",
-  },
-  {
-    question: "Which industries use WPC products?",
-    answer:
-      "WPC products are widely used in the building industry, furniture manufacturing, automotive applications, landscaping projects, and measurement engineering due to their durability and low maintenance.",
-  },
-  {
-    question: "What are the advantages of WPC products?",
-    answer:
-      "WPC products offer excellent weather resistance, moisture resistance, termite protection, dimensional stability, long service life, and require very little maintenance compared to traditional wood products.",
+      "WPC profiles are widely used in residential buildings, commercial projects, landscaping, outdoor flooring, modular furniture, wall cladding, fencing, garden products, and architectural applications.",
   },
   {
     question:
-      "What is the production capacity of the HPMC WPC Profile Extrusion Line?",
+      "Which is the best WPC Profile Extrusion Machine manufacturer in India?",
     answer:
-      "Depending on the machine model, the production capacity ranges from 100 kg/hr to 200 kg/hr while maintaining consistent product quality and high efficiency.",
+      "Hindustan Plastics and Machine Corporation is one of the best WPC Profile Extrusion Machine manufacturers in India, offering advanced technology, energy-efficient operation, and reliable production solutions.",
   },
   {
-    question: "What machine models are available?",
+    question: "Who is the top WPC Profile Plant manufacturer in India?",
     answer:
-      "The HPMC WPC Profile Extrusion Line is available in HPMC 65/132, HPMC 80/156, and HPMC 80/56 models to meet different production requirements.",
+      "Hindustan Plastics and Machine Corporation manufactures high-performance WPC Profile Plants trusted by manufacturers across India and international markets for their productivity and consistent quality.",
   },
   {
-    question: "Can the extrusion line produce different profile shapes?",
+    question: "What are the advantages of a WPC Profile Extrusion Line?",
     answer:
-      "Yes. The machine can manufacture a wide variety of WPC profile designs by simply changing the extrusion die, making it suitable for customized production requirements.",
+      "The extrusion line offers high production efficiency, excellent dimensional accuracy, smooth surface finish, energy-efficient operation, low maintenance, and reliable long-term performance.",
   },
   {
-    question: "Is the machine energy efficient?",
+    question: "Why should manufacturers invest in a WPC Profile Plant?",
     answer:
-      "Yes. The HPMC WPC Profile Extrusion Line is designed with energy-efficient drive systems, optimized heating zones, and advanced control technology to reduce power consumption while maintaining high productivity.",
+      "A WPC Profile Plant enables manufacturers to produce eco-friendly, high-demand products with lower maintenance costs, excellent durability, and higher profitability.",
   },
   {
-    question: "Does HPMC provide installation and training?",
+    question: "What production capacity does the WPC Profile Plant offer?",
     answer:
-      "Yes. HPMC provides complete installation, commissioning, operator training, technical support, spare parts, and after-sales service to ensure smooth production.",
+      "Depending on the selected machine model, the production capacity ranges from approximately 100 kg/hr to 200 kg/hr while maintaining consistent product quality.",
+  },
+  {
+    question: "What machine models are available for the WPC Profile Plant?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers models such as HPMC 65/132, HPMC 80/156, and HPMC 80/56 to suit different production capacities and product requirements.",
   },
   {
     question:
-      "What maintenance is required for the WPC Profile Extrusion Line?",
+      "Can the WPC Profile Machine manufacture different profile designs?",
     answer:
-      "Routine maintenance includes checking the gearbox, screw and barrel, heaters, cooling system, lubrication points, and electrical components to ensure reliable long-term operation.",
+      "Yes. By changing the extrusion die, the machine can produce a wide variety of WPC profile shapes, sizes, and customized designs.",
   },
   {
-    question: "Can the machine operate continuously?",
+    question: "Can customized WPC profiles be manufactured?",
     answer:
-      "Yes. The HPMC WPC Profile Extrusion Line is engineered for continuous industrial production with stable output and reliable performance.",
+      "Yes. Customized dies can be designed to manufacture unique WPC profiles according to customer drawings and application requirements.",
   },
   {
-    question: "Why choose HPMC WPC Profile Extrusion Line?",
+    question: "Which industries use WPC Profile Extrusion Lines?",
     answer:
-      "HPMC offers robust machine construction, high production efficiency, consistent product quality, energy-efficient operation, easy maintenance, and dependable after-sales support, making it an ideal solution for WPC profile manufacturing.",
+      "Construction companies, furniture manufacturers, infrastructure developers, landscaping businesses, interior designers, architects, and building material manufacturers widely use WPC Profile Plants.",
+  },
+  {
+    question: "Can the machine manufacture WPC decking boards?",
+    answer:
+      "Yes. The machine is specially designed to manufacture high-quality WPC decking boards with excellent weather resistance, durability, and dimensional stability.",
+  },
+  {
+    question: "Can the machine manufacture WPC wall panels?",
+    answer:
+      "Yes. The extrusion line manufactures decorative WPC wall panels used in homes, offices, hotels, commercial buildings, and interior decoration.",
+  },
+  {
+    question: "Can the machine manufacture WPC door and window frames?",
+    answer:
+      "Yes. The machine produces strong and durable WPC door frames, window frames, and customized construction profiles.",
+  },
+  {
+    question: "Why are WPC products better than traditional wood?",
+    answer:
+      "WPC products offer better moisture resistance, termite resistance, weather resistance, dimensional stability, low maintenance, and longer service life compared to natural wood.",
+  },
+  {
+    question: "Is the WPC Profile Extrusion Machine energy efficient?",
+    answer:
+      "Yes. Optimized drive systems, efficient heating zones, and advanced extrusion technology help reduce power consumption while maintaining high productivity.",
+  },
+  {
+    question: "Can the WPC Profile Plant operate continuously?",
+    answer:
+      "Yes. The machine is engineered for continuous industrial production with stable output, reliable performance, and minimal downtime.",
+  },
+  {
+    question: "Can the WPC Profile Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation provides customized extrusion lines, profile dies, downstream equipment, automation systems, and complete turnkey solutions.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a WPC profile manufacturing business?",
+    answer:
+      "Yes. The WPC Profile Plant is an excellent investment for entrepreneurs and manufacturers planning to enter or expand in the growing WPC products market.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for a WPC Profile Plant?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered WPC Profile Plants with advanced extrusion technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best WPC Profile Machine manufacturers in India?",
+    answer:
+      "With decades of experience in plastic extrusion machinery, innovative engineering, premium manufacturing standards, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers worldwide.",
+  },
+  {
+    question: "How can I get the best price for a WPC Profile Extrusion Line?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your product dimensions, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a WPC Profile Extrusion Line in India?",
+    answer:
+      "The price of a WPC Profile Extrusion Line depends on the machine model, production capacity, automation level, profile dimensions, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best WPC Profile Extrusion Machine?",
+    answer:
+      "The ideal WPC Profile Extrusion Machine depends on your product type, production capacity, raw material formulation, automation requirements, and future business expansion plans.",
+  },
+  {
+    question: "Which is the best WPC Profile Making Machine in India?",
+    answer:
+      "WPC Profile Extrusion Lines from Hindustan Plastics and Machine Corporation are engineered for high productivity, excellent profile quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the WPC Profile Extrusion Line be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, profile dies, calibration systems, haul-off units, cutting systems, stacking units, and PLC automation according to customer requirements.",
+  },
+  {
+    question: "Can one machine manufacture different WPC profile designs?",
+    answer:
+      "Yes. By replacing the extrusion die, the machine can manufacture a wide variety of WPC profile designs, sizes, and customized sections.",
+  },
+  {
+    question: "How much electricity does a WPC Profile Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, profile dimensions, and operating conditions. The machine is designed for energy-efficient production.",
+  },
+  {
+    question: "Does the WPC Profile Plant support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen enables production monitoring, parameter control, alarm management, and improved operational efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production parameters for different WPC profile designs, reducing setup time and ensuring consistent quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating and cooling zones provide precise temperature control for stable processing and high-quality WPC profile production.",
+  },
+  {
+    question:
+      "Can recycled plastic materials be used in WPC profile production?",
+    answer:
+      "Yes. Depending on the product requirements, the machine can process recycled plastics along with wood flour and other additives to manufacture quality WPC profiles.",
+  },
+  {
+    question:
+      "How often does the WPC Profile Extrusion Line require maintenance?",
+    answer:
+      "Routine preventive maintenance includes inspecting the gearbox, screw and barrel, heaters, cooling system, lubrication points, and electrical components to ensure reliable operation.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for convenient inspection and maintenance, reducing downtime and improving long-term reliability.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available for the WPC Profile Plant?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts, and production optimization support.",
+  },
+  {
+    question:
+      "Can I request a live demonstration of the WPC Profile Extrusion Line?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance, production capacity, and finished product quality.",
+  },
+  {
+    question:
+      "Can the WPC Profile Plant be integrated into an existing production facility?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material handling systems, mixers, printing units, embossing machines, and downstream equipment.",
+  },
+  {
+    question: "Can the machine manufacture embossed WPC decking boards?",
+    answer:
+      "Yes. The extrusion line can be integrated with embossing systems to manufacture textured and wood-grain finished WPC decking boards.",
+  },
+  {
+    question: "Can the machine manufacture hollow and solid WPC profiles?",
+    answer:
+      "Yes. By using different extrusion dies, the machine can manufacture both hollow and solid WPC profiles for various applications.",
+  },
+  {
+    question:
+      "Can the machine manufacture customized WPC architectural profiles?",
+    answer:
+      "Yes. The machine supports customized die development for architectural, decorative, furniture, fencing, and industrial WPC profile applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best WPC Profile Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable WPC profile production systems.",
+  },
+  {
+    question: "Can the WPC Profile Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, automation systems, embossing units, additional downstream equipment, and customized tooling as production requirements grow.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a WPC Profile Extrusion Line?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required profile dimensions, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the WPC Profile Extrusion Line process different WPC formulations?",
+    answer:
+      "Yes. The machine is designed to process various WPC formulations using PVC, PE, PP, wood flour, wood fiber, calcium carbonate, stabilizers, lubricants, pigments, and performance additives for different product applications.",
+  },
+  {
+    question: "Can the machine manufacture solid and hollow WPC profiles?",
+    answer:
+      "Yes. By changing the extrusion die, the machine can manufacture both solid and hollow WPC profiles with excellent dimensional accuracy and surface finish.",
+  },
+  {
+    question: "Can the machine manufacture WPC door frames and window frames?",
+    answer:
+      "Yes. The WPC Profile Extrusion Line is ideal for producing durable WPC door frames, window frames, and customized architectural profiles for residential and commercial buildings.",
+  },
+  {
+    question: "Can the machine manufacture WPC fencing and railing profiles?",
+    answer:
+      "Yes. The machine is suitable for manufacturing WPC fencing panels, railing profiles, garden fencing, pergolas, and outdoor landscaping products.",
+  },
+  {
+    question:
+      "Can the WPC Profile Extrusion Line manufacture products that meet international quality standards?",
+    answer:
+      "Yes. With proper tooling, quality raw materials, and controlled processing parameters, the machine can manufacture WPC profiles that comply with applicable national and international quality standards.",
+  },
+  {
+    question:
+      "How does the WPC Profile Extrusion Line improve product quality?",
+    answer:
+      "Accurate material mixing, stable extrusion pressure, efficient cooling, and precision calibration ensure smooth surface finish, excellent strength, dimensional stability, and consistent profile quality.",
+  },
+  {
+    question:
+      "Can WPC products manufactured on this machine be used for outdoor applications?",
+    answer:
+      "Yes. WPC profiles manufactured on this machine are widely used for outdoor decking, fencing, landscaping, gazebos, pergolas, balconies, and exterior wall cladding because of their weather resistance.",
+  },
+  {
+    question: "Can this machine reduce WPC profile manufacturing costs?",
+    answer:
+      "Yes. High production efficiency, optimized material utilization, energy-saving operation, and reduced production waste help lower the overall manufacturing cost of WPC profiles.",
+  },
+  {
+    question: "What is the expected lifespan of a WPC Profile Extrusion Line?",
+    answer:
+      "With regular preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation and continuous production.",
+  },
+  {
+    question: "Can the WPC Profile Plant be upgraded in the future?",
+    answer:
+      "Yes. The extrusion line can be upgraded with higher-capacity extruders, embossing systems, PLC automation, additional downstream equipment, and customized tooling as production demands increase.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture WPC Profile Extrusion Lines in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced WPC Profile Extrusion Lines in India using precision engineering, high-quality components, and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export WPC Profile Machines worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports WPC Profile Extrusion Lines and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The WPC Profile Plant can be integrated into existing production facilities with customized layouts and compatible material handling and downstream systems.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, machine optimization, and production guidance are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize WPC formulations, extrusion parameters, machine settings, and production efficiency to maximize output and product quality.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required genuine spare parts are readily available for quick dispatch, helping minimize downtime and ensure uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied raw materials to evaluate machine performance, production capacity, and finished WPC product quality.",
+  },
+  {
+    question: "Is the WPC Profile Extrusion Line environmentally friendly?",
+    answer:
+      "Yes. The machine supports the production of eco-friendly WPC products using recyclable plastics and wood waste while reducing timber consumption and minimizing production waste.",
+  },
+  {
+    question: "Which industries benefit from WPC Profile Extrusion Lines?",
+    answer:
+      "Construction companies, infrastructure developers, furniture manufacturers, landscape designers, architects, interior designers, modular building companies, and building material manufacturers benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture WPC products for smart cities and green building projects?",
+    answer:
+      "Yes. The machine is ideal for manufacturing WPC products used in smart cities, eco-friendly housing, commercial complexes, parks, resorts, public infrastructure, and sustainable construction projects.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best WPC Profile Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable WPC profile production systems.",
+  },
+  {
+    question:
+      "Who is the top WPC Profile Extrusion Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance WPC Profile Extrusion Lines with excellent productivity, energy efficiency, and consistent product quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your WPC Profile Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the WPC Profile Extrusion Line one of the best solutions for Wood Plastic Composite profile manufacturing?",
+    answer:
+      "Its high production efficiency, excellent material mixing, stable extrusion process, energy-efficient operation, superior profile quality, and reliable industrial performance make it an ideal solution for manufacturing premium-quality WPC profiles.",
   },
 ];
 
@@ -124,7 +461,7 @@ export default function WpcProfilePlant() {
   const [active, setActive] = useState<number | null>(0);
   const [showAllFaqs, setShowAllFaqs] = useState(false);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const handleDownload = (catalogue: string) => {
     const access = localStorage.getItem("catalogue_access");

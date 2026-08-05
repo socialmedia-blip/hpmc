@@ -267,78 +267,405 @@ const faqData = [
   {
     question: "What is a High Speed HDPE Pipe Plant?",
     answer:
-      "A High Speed HDPE Pipe Plant is an advanced extrusion system designed for manufacturing HDPE pipes with high productivity, excellent dimensional accuracy, and consistent product quality for industrial, infrastructure, and utility applications.",
+      "A High Speed HDPE Pipe Plant is an advanced extrusion system designed to manufacture HDPE pipes with high production output, precise dimensions, and excellent pipe quality for industrial and infrastructure applications.",
   },
   {
-    question: "What materials can be processed using this plant?",
+    question: "How does a High Speed HDPE Pipe Plant work?",
     answer:
-      "The plant is primarily designed for processing HDPE (High Density Polyethylene) materials used in water supply, gas distribution, telecom ducting, irrigation, and industrial piping applications.",
+      "The plant melts HDPE raw material using a high-performance single screw extruder, followed by a spiral die head, vacuum sizing tank, cooling system, haul-off unit, and cutting machine to produce high-quality HDPE pipes.",
   },
   {
     question:
-      "What is the production capacity of the High Speed HDPE Pipe Plant?",
+      "Which materials can be processed using a High Speed HDPE Pipe Plant?",
     answer:
-      "Depending on the selected model, the plant can achieve output capacities ranging from 550 Kg/hr to 600 Kg/hr while maintaining stable production and superior pipe quality.",
+      "The machine is designed to process HDPE (High Density Polyethylene) materials used for water supply, gas distribution, irrigation, telecom ducting, sewage systems, and industrial piping.",
   },
   {
-    question: "Which machine models are available?",
+    question: "Which products can be manufactured using this machine?",
     answer:
-      "HPMC offers High Speed HDPE Pipe Plants in HPMC 45G, HPMC 65G, HPMC 75G, and HPMC 90G configurations to meet different production requirements and pipe sizes.",
+      "The machine manufactures HDPE water pipes, gas pipes, irrigation pipes, telecom ducts, sewer pipes, industrial pressure pipes, conduit pipes, and infrastructure piping systems.",
   },
   {
-    question: "What pipe sizes can be produced?",
+    question: "What are HDPE pipes used for?",
     answer:
-      "The plant is capable of producing HDPE pipes ranging from small utility pipes to large diameter pipes up to 630 mm depending on the machine model and tooling configuration.",
+      "HDPE pipes are widely used for drinking water supply, gas distribution, agricultural irrigation, telecom cable protection, sewage systems, mining operations, chemical transportation, and industrial applications.",
+  },
+  {
+    question:
+      "Which is the best High Speed HDPE Pipe Plant manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is one of the best High Speed HDPE Pipe Plant manufacturers in India, offering precision-engineered extrusion lines with high productivity, energy efficiency, and long service life.",
+  },
+  {
+    question:
+      "Who is the top HDPE Pipe Extrusion Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is a trusted HDPE Pipe Extrusion Machine manufacturer known for advanced technology, robust machine construction, and dependable after-sales support.",
+  },
+  {
+    question: "What are the advantages of a High Speed HDPE Pipe Plant?",
+    answer:
+      "The machine delivers higher production output, excellent dimensional accuracy, lower energy consumption, stable wall thickness, reliable operation, and superior pipe quality.",
+  },
+  {
+    question: "Why should manufacturers choose a High Speed HDPE Pipe Plant?",
+    answer:
+      "High-speed production, lower manufacturing costs, improved productivity, reduced downtime, and consistent pipe quality make it an excellent investment for HDPE pipe manufacturers.",
+  },
+  {
+    question: "What pipe sizes can be manufactured?",
+    answer:
+      "Depending on the selected model and tooling configuration, the plant can manufacture HDPE pipes ranging from 16 mm to 630 mm.",
+  },
+  {
+    question:
+      "What is the maximum output capacity of the High Speed HDPE Pipe Plant?",
+    answer:
+      "Depending on the machine model, the High Speed HDPE Pipe Plant can deliver production capacities up to approximately 600 Kg/hr.",
   },
   {
     question: "What is the advantage of the Spiral Type Die Head?",
     answer:
-      "The Spiral Type Die Head ensures uniform material flow, stable wall thickness, better melt distribution, and superior pipe quality even at high production speeds.",
+      "The Spiral Type Die Head provides uniform melt flow, excellent wall thickness control, homogeneous plasticization, and superior pipe quality even at high production speeds.",
   },
   {
-    question: "How does the PLC Control System improve production?",
+    question: "How does the Barrier-Type Screw improve production?",
     answer:
-      "The PLC-based control system provides real-time process monitoring, easy parameter adjustment, automated control functions, and improved production efficiency.",
+      "The barrier-type mixing screw improves plasticization, increases material output, ensures consistent melt quality, and reduces material slippage during extrusion.",
   },
   {
-    question: "What are the benefits of the Barrier-Type Screw Design?",
+    question: "Why is the PLC Control System important?",
     answer:
-      "The barrier-type screw improves plasticization efficiency, enhances material mixing, increases output capacity, and ensures consistent melt quality throughout production.",
+      "The PLC Control System provides real-time process monitoring, precise parameter control, production data management, and simplified machine operation.",
   },
   {
-    question: "What industries use HDPE pipes manufactured by this plant?",
+    question: "How does the Vacuum Sizing Tank improve pipe quality?",
     answer:
-      "HDPE pipes produced by this plant are widely used in water supply networks, gas distribution systems, agricultural irrigation, telecom ducting, sewage systems, mining operations, and industrial fluid transportation.",
+      "The vacuum sizing tank maintains accurate pipe diameter, excellent roundness, stable calibration, and efficient cooling for superior finished pipe quality.",
   },
   {
-    question: "How does the Vacuum Tank improve pipe quality?",
+    question: "What is the function of the Multiple Arm Haul-Off Unit?",
     answer:
-      "The vacuum sizing tank ensures accurate pipe dimensions, excellent roundness, stable calibration, and efficient cooling, resulting in high-quality finished products.",
+      "The Multiple Arm Haul-Off provides smooth traction, stable pulling force, and maintains pipe roundness without deformation during high-speed production.",
   },
   {
-    question: "What is the purpose of the Multiple Arm Haul-Off Unit?",
+    question: "Why is the Planetary Cutting Saw used?",
     answer:
-      "The haul-off unit provides smooth traction and stable pipe pulling while maintaining pipe roundness and preventing deformation during production.",
+      "The Planetary Cutting Saw delivers smooth, accurate, burr-free pipe cutting while maintaining production speed and excellent cut quality.",
   },
   {
-    question: "Does the machine support continuous production?",
+    question: "Can the machine operate continuously?",
     answer:
-      "Yes. The High Speed HDPE Pipe Plant is engineered for continuous operation with reliable performance, high output efficiency, and minimal downtime.",
+      "Yes. The High Speed HDPE Pipe Plant is designed for continuous industrial operation with reliable performance and minimal downtime.",
   },
   {
-    question: "Is the machine energy efficient?",
+    question: "Is the High Speed HDPE Pipe Plant energy efficient?",
     answer:
-      "Yes. The plant is designed with optimized drive systems, advanced screw technology, and efficient process controls to reduce energy consumption while maximizing productivity.",
+      "Yes. Advanced screw technology, efficient drive systems, and optimized process control help reduce power consumption while maximizing production output.",
   },
   {
-    question: "Does HPMC provide installation and after-sales support?",
+    question: "Can the HDPE Pipe Plant be customized?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and comprehensive after-sales service.",
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, die heads, haul-off units, automation systems, and downstream equipment based on customer requirements.",
   },
   {
-    question: "Why choose HPMC High Speed HDPE Pipe Plants?",
+    question: "Which industries use HDPE Pipe Plants?",
     answer:
-      "HPMC High Speed HDPE Pipe Plants offer high production capacity, advanced extrusion technology, excellent pipe quality, energy-efficient operation, robust construction, and long-term reliability for demanding industrial applications.",
+      "Water supply companies, gas distribution networks, irrigation projects, telecom infrastructure, mining companies, construction firms, municipalities, and industrial manufacturers widely use HDPE Pipe Plants.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting an HDPE pipe manufacturing business?",
+    answer:
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand an HDPE pipe manufacturing business.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for HDPE Pipe Plants?",
+    answer:
+      "Hindustan Plastics and Machine Corporation provides precision-engineered HDPE Pipe Plants with advanced extrusion technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best HDPE Pipe Machine manufacturers in India?",
+    answer:
+      "With decades of experience in plastic extrusion machinery, innovative engineering, premium manufacturing standards, and excellent after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers across India and international markets.",
+  },
+  {
+    question: "How can I get the best price for a High Speed HDPE Pipe Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a High Speed HDPE Pipe Plant in India?",
+    answer:
+      "The price of a High Speed HDPE Pipe Plant depends on the machine model, pipe diameter range, production capacity, automation level, and optional equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best HDPE Pipe Plant?",
+    answer:
+      "The ideal HDPE Pipe Plant depends on your required pipe diameter, production capacity, raw material grade, automation requirements, and future expansion plans.",
+  },
+  {
+    question: "Which is the best HDPE Pipe Extrusion Machine in India?",
+    answer:
+      "High Speed HDPE Pipe Plants from Hindustan Plastics and Machine Corporation are designed for maximum productivity, excellent pipe quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the High Speed HDPE Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, die heads, vacuum tanks, haul-off units, cutting systems, coilers, and PLC automation based on production requirements.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Different machine models are available to support small, medium, and high-capacity HDPE pipe manufacturing with outputs up to approximately 600 Kg/hr.",
+  },
+  {
+    question: "How much electricity does a High Speed HDPE Pipe Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, pipe size, output capacity, and production conditions. The machine is designed for energy-efficient operation.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. A PLC-based control system with a large LCD interface allows operators to monitor production, adjust parameters, manage alarms, and improve process accuracy.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system can store production parameters for different HDPE pipe sizes, reducing setup time and improving production consistency.",
+  },
+  {
+    question: "How does the Spiral Type Die Head improve production?",
+    answer:
+      "The Spiral Type Die Head ensures balanced melt distribution, stable wall thickness, homogeneous plasticization, and smooth extrusion even at high production speeds.",
+  },
+  {
+    question: "Why is the Barrier-Type Mixing Screw important?",
+    answer:
+      "The Barrier-Type Mixing Screw improves melting efficiency, enhances material mixing, increases production output, and delivers uniform HDPE melt quality.",
+  },
+  {
+    question: "Can different HDPE pipe diameters be produced on one machine?",
+    answer:
+      "Yes. By changing the die head, calibration sleeves, and related tooling, the machine can manufacture different HDPE pipe sizes within its operating range.",
+  },
+  {
+    question: "How often does the HDPE Pipe Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance, lubrication, inspection of the screw and barrel, gearbox, vacuum systems, and electrical components helps ensure reliable long-term operation.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection and maintenance, helping reduce downtime and maintenance costs.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Professional operator training is provided to ensure safe machine operation, efficient production, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting, preventive maintenance, spare parts assistance, and production optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live demonstrations and technical consultations can be arranged to help customers evaluate machine performance before making a purchase decision.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied HDPE raw materials can be conducted to verify machine performance, output, and finished pipe quality.",
+  },
+  {
+    question:
+      "Can the High Speed HDPE Pipe Plant be integrated into an existing production line?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing downstream equipment, pipe handling systems, printing units, coilers, and storage systems.",
+  },
+  {
+    question:
+      "Can the machine manufacture HDPE pipes for drinking water applications?",
+    answer:
+      "Yes. The machine manufactures HDPE pipes widely used in potable water supply systems when processed with suitable HDPE grades.",
+  },
+  {
+    question: "Can the machine manufacture HDPE gas pipes?",
+    answer:
+      "Yes. With the appropriate raw material and tooling, the machine produces HDPE pipes suitable for gas distribution networks.",
+  },
+  {
+    question: "Can the High Speed HDPE Pipe Plant manufacture telecom ducts?",
+    answer:
+      "Yes. The extrusion line is widely used for manufacturing HDPE telecom ducts and cable protection pipes for communication infrastructure.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best High Speed HDPE Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable HDPE pipe production systems.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a High Speed HDPE Pipe Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe diameter, production capacity, raw material specifications, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the High Speed HDPE Pipe Plant process different HDPE grades?",
+    answer:
+      "Yes. The machine is designed to process various HDPE grades suitable for water supply, gas distribution, irrigation, telecom ducts, sewer systems, and industrial piping applications.",
+  },
+  {
+    question: "Can the machine manufacture PE80 and PE100 HDPE pipes?",
+    answer:
+      "Yes. With suitable raw materials and processing parameters, the High Speed HDPE Pipe Plant can manufacture PE80 and PE100 HDPE pipes for pressure applications.",
+  },
+  {
+    question:
+      "Can the machine manufacture HDPE pipes for drinking water projects?",
+    answer:
+      "Yes. The machine produces HDPE pipes used in potable water supply systems when processed with approved HDPE raw materials.",
+  },
+  {
+    question: "Can the machine manufacture HDPE pipes for gas distribution?",
+    answer:
+      "Yes. The extrusion line is suitable for producing HDPE gas pipes using the appropriate material grades and production parameters.",
+  },
+  {
+    question:
+      "Can the High Speed HDPE Pipe Plant manufacture pipes that comply with international standards?",
+    answer:
+      "Yes. With proper tooling, quality raw materials, and process control, the machine can manufacture HDPE pipes that meet applicable national and international standards.",
+  },
+  {
+    question: "How does the High Speed HDPE Pipe Plant improve pipe quality?",
+    answer:
+      "The Spiral Type Die Head, Barrier-Type Mixing Screw, precise temperature control, and advanced vacuum calibration system ensure smooth surfaces, uniform wall thickness, and excellent dimensional accuracy.",
+  },
+  {
+    question:
+      "Can HDPE pipes produced on this machine be used in infrastructure projects?",
+    answer:
+      "Yes. The machine manufactures HDPE pipes suitable for water supply networks, irrigation systems, gas pipelines, sewage projects, telecom infrastructure, mining, and industrial applications.",
+  },
+  {
+    question: "Can this machine reduce HDPE pipe manufacturing costs?",
+    answer:
+      "Yes. High-speed production, optimized energy consumption, reduced material waste, and automated process control help lower the overall manufacturing cost per pipe.",
+  },
+  {
+    question: "What is the expected lifespan of a High Speed HDPE Pipe Plant?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question: "Can the High Speed HDPE Pipe Plant be upgraded in the future?",
+    answer:
+      "Yes. Automation systems, die heads, vacuum tanks, haul-off units, cutting systems, and downstream equipment can be upgraded as production requirements increase.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture High Speed HDPE Pipe Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced High Speed HDPE Pipe Plants in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export HDPE Pipe Plants worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports High Speed HDPE Pipe Plants and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The High Speed HDPE Pipe Plant can be integrated into existing manufacturing facilities with customized layouts and compatible downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, and machine optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts assist customers in optimizing machine settings, HDPE processing parameters, production efficiency, and overall extrusion performance.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied HDPE raw materials to evaluate machine performance, production output, and finished pipe quality.",
+  },
+  {
+    question: "Is the High Speed HDPE Pipe Plant environmentally friendly?",
+    answer:
+      "Yes. The machine uses energy-efficient technology that helps reduce power consumption, optimize raw material utilization, and minimize production waste.",
+  },
+  {
+    question: "Which industries benefit from High Speed HDPE Pipe Plants?",
+    answer:
+      "Water utilities, gas distribution companies, irrigation projects, telecom infrastructure providers, municipalities, construction companies, mining industries, and industrial pipe manufacturers benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture HDPE pipes for smart city and infrastructure projects?",
+    answer:
+      "Yes. The machine is ideal for manufacturing HDPE pipes used in smart cities, urban water supply systems, industrial parks, highways, airports, irrigation projects, and large-scale infrastructure developments.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best High Speed HDPE Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable HDPE pipe production systems.",
+  },
+  {
+    question:
+      "Who is the top High Speed HDPE Pipe Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance HDPE Pipe Plants with excellent productivity, energy efficiency, and consistent pipe quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your HDPE Pipe Plant supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the High Speed HDPE Pipe Plant one of the best solutions for HDPE pipe manufacturing?",
+    answer:
+      "Its high-speed extrusion capability, superior melt distribution, energy-efficient operation, consistent pipe quality, and reliable industrial performance make it an ideal solution for manufacturers looking to maximize productivity and profitability.",
   },
 ];
 
@@ -355,7 +682,7 @@ export default function HighSpeedHDPEPipePlant() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;

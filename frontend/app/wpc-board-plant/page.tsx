@@ -44,72 +44,396 @@ const specifications = [
 
 const faqData = [
   {
-    question: "What is a Wood Plastic Composite (WPC) Profile Extrusion Line?",
+    question: "What is a WPC Board Plant?",
     answer:
-      "A Wood Plastic Composite (WPC) Profile Extrusion Line is a specialized manufacturing system designed to produce WPC profiles by combining wood fiber or wood flour with thermoplastic materials. It is widely used to manufacture durable, eco-friendly, and weather-resistant products.",
+      "A WPC Board Plant is an advanced extrusion system designed to manufacture Wood Plastic Composite (WPC) boards by combining wood flour with thermoplastic materials. It produces durable, eco-friendly, moisture-resistant, and weather-resistant boards for construction and furniture applications.",
+  },
+  {
+    question: "How does a WPC Board Extrusion Line work?",
+    answer:
+      "The extrusion line mixes wood flour, plastic resin, and additives, melts the material through the extruder, and forms it into WPC boards using a precision die. The boards are then calibrated, cooled, hauled off, and cut into finished products.",
+  },
+  {
+    question: "Which materials can be processed using a WPC Board Plant?",
+    answer:
+      "The machine can process PVC, PE, PP, wood flour, wood fiber, calcium carbonate, stabilizers, lubricants, pigments, and other additives used in Wood Plastic Composite board manufacturing.",
   },
   {
     question:
-      "What materials can be processed on the HPMC WPC Profile Extrusion Line?",
+      "Which products can be manufactured using a WPC Board Extrusion Machine?",
     answer:
-      "The HPMC WPC Profile Extrusion Line can process PVC, PE, PP, wood flour, wood fiber, calcium carbonate, additives, and other composite materials used in WPC profile production.",
+      "The machine manufactures WPC boards, furniture boards, wall cladding panels, partition boards, ceiling boards, decorative boards, modular furniture panels, and customized Wood Plastic Composite sheets.",
   },
   {
-    question: "What products can be manufactured using this extrusion line?",
+    question: "What are WPC boards used for?",
     answer:
-      "The machine is suitable for producing WPC decking boards, wall panels, fencing, door frames, window profiles, ceiling panels, decorative profiles, furniture components, and various custom WPC products.",
+      "WPC boards are widely used for modular furniture, kitchen cabinets, wardrobes, wall cladding, ceilings, partitions, office interiors, commercial buildings, hotels, hospitals, and residential construction.",
   },
   {
-    question: "Which industries use WPC products?",
+    question: "Which is the best WPC Board Machine manufacturer in India?",
     answer:
-      "WPC products are widely used in the building industry, furniture manufacturing, automotive applications, landscaping projects, and measurement engineering due to their durability and low maintenance.",
+      "Hindustan Plastics and Machine Corporation is one of the best WPC Board Machine manufacturers in India, offering advanced extrusion technology, high productivity, and reliable long-term performance.",
   },
   {
-    question: "What are the advantages of WPC products?",
+    question: "Who is the top WPC Board Plant manufacturer in India?",
     answer:
-      "WPC products offer excellent weather resistance, moisture resistance, termite protection, dimensional stability, long service life, and require very little maintenance compared to traditional wood products.",
+      "Hindustan Plastics and Machine Corporation manufactures high-performance WPC Board Plants trusted by manufacturers across India and international markets.",
   },
   {
-    question:
-      "What is the production capacity of the HPMC WPC Profile Extrusion Line?",
+    question: "What are the advantages of a WPC Board Plant?",
     answer:
-      "Depending on the machine model, the production capacity ranges from 100 kg/hr to 200 kg/hr while maintaining consistent product quality and high efficiency.",
+      "The machine offers high production efficiency, excellent board quality, smooth surface finish, dimensional stability, energy-efficient operation, and low maintenance.",
   },
   {
-    question: "What machine models are available?",
+    question: "Why should manufacturers invest in a WPC Board Plant?",
     answer:
-      "The HPMC WPC Profile Extrusion Line is available in HPMC 65/132, HPMC 80/156, and HPMC 80/56 models to meet different production requirements.",
+      "A WPC Board Plant enables manufacturers to produce eco-friendly, high-demand boards that offer excellent durability, low maintenance, and strong market demand in the construction and furniture industries.",
   },
   {
-    question: "Can the extrusion line produce different profile shapes?",
+    question: "What production capacity does the WPC Board Plant offer?",
     answer:
-      "Yes. The machine can manufacture a wide variety of WPC profile designs by simply changing the extrusion die, making it suitable for customized production requirements.",
+      "Depending on the selected machine model, the production capacity ranges from approximately 100 kg/hr to 200 kg/hr while maintaining excellent board quality.",
   },
   {
-    question: "Is the machine energy efficient?",
+    question: "What machine models are available for the WPC Board Plant?",
     answer:
-      "Yes. The HPMC WPC Profile Extrusion Line is designed with energy-efficient drive systems, optimized heating zones, and advanced control technology to reduce power consumption while maintaining high productivity.",
-  },
-  {
-    question: "Does HPMC provide installation and training?",
-    answer:
-      "Yes. HPMC provides complete installation, commissioning, operator training, technical support, spare parts, and after-sales service to ensure smooth production.",
+      "Hindustan Plastics and Machine Corporation offers HPMC 65/132, HPMC 80/156, and HPMC 80/56 models to meet different production requirements.",
   },
   {
     question:
-      "What maintenance is required for the WPC Profile Extrusion Line?",
+      "Can the WPC Board Machine manufacture different board thicknesses?",
     answer:
-      "Routine maintenance includes checking the gearbox, screw and barrel, heaters, cooling system, lubrication points, and electrical components to ensure reliable long-term operation.",
+      "Yes. By changing the extrusion die and calibration system, the machine can manufacture WPC boards in various thicknesses, widths, and specifications.",
   },
   {
-    question: "Can the machine operate continuously?",
+    question: "Can customized WPC boards be manufactured?",
     answer:
-      "Yes. The HPMC WPC Profile Extrusion Line is engineered for continuous industrial production with stable output and reliable performance.",
+      "Yes. Customized dies can be developed to manufacture WPC boards according to customer drawings and application requirements.",
   },
   {
-    question: "Why choose HPMC WPC Profile Extrusion Line?",
+    question: "Which industries use WPC Board Extrusion Lines?",
     answer:
-      "HPMC offers robust machine construction, high production efficiency, consistent product quality, energy-efficient operation, easy maintenance, and dependable after-sales support, making it an ideal solution for WPC profile manufacturing.",
+      "Furniture manufacturers, construction companies, interior designers, modular kitchen manufacturers, architects, infrastructure developers, and building material manufacturers widely use WPC Board Plants.",
+  },
+  {
+    question: "Can the machine manufacture WPC furniture boards?",
+    answer:
+      "Yes. The machine is specially designed for manufacturing WPC furniture boards used for wardrobes, modular kitchens, office furniture, cabinets, and interior applications.",
+  },
+  {
+    question: "Can the machine manufacture WPC wall cladding panels?",
+    answer:
+      "Yes. The extrusion line produces decorative WPC wall cladding panels for residential, commercial, and hospitality projects.",
+  },
+  {
+    question: "Can the machine manufacture WPC partition boards?",
+    answer:
+      "Yes. The machine manufactures WPC partition boards used in offices, commercial buildings, schools, hospitals, and modular construction.",
+  },
+  {
+    question: "Why are WPC boards better than plywood and MDF?",
+    answer:
+      "WPC boards are moisture-resistant, termite-proof, weather-resistant, dimensionally stable, eco-friendly, and require significantly less maintenance than plywood or MDF.",
+  },
+  {
+    question: "Is the WPC Board Extrusion Machine energy efficient?",
+    answer:
+      "Yes. Optimized heating systems, energy-efficient drives, and advanced extrusion technology help reduce electricity consumption while maintaining high productivity.",
+  },
+  {
+    question: "Can the WPC Board Plant operate continuously?",
+    answer:
+      "Yes. The machine is engineered for continuous industrial production with stable output, reliable performance, and minimal downtime.",
+  },
+  {
+    question: "Can the WPC Board Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, board dies, calibration systems, downstream equipment, automation, and turnkey production solutions.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a WPC board manufacturing business?",
+    answer:
+      "Yes. The WPC Board Plant is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a WPC board manufacturing business.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for a WPC Board Plant?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered WPC Board Plants with advanced extrusion technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best WPC Board Machine manufacturers in India?",
+    answer:
+      "With decades of experience in plastic extrusion machinery, innovative engineering, premium manufacturing standards, and reliable after-sales support, Hindustan Plastics and Machine Corporation is trusted by customers worldwide.",
+  },
+  {
+    question: "How can I get the best price for a WPC Board Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your board dimensions, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a WPC Board Plant in India?",
+    answer:
+      "The price of a WPC Board Plant depends on the machine model, board dimensions, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best WPC Board Extrusion Machine?",
+    answer:
+      "The ideal WPC Board Extrusion Machine depends on your board size, thickness, production capacity, raw material formulation, automation requirements, and future expansion plans.",
+  },
+  {
+    question: "Which is the best WPC Board Making Machine in India?",
+    answer:
+      "WPC Board Plants from Hindustan Plastics and Machine Corporation are engineered for high productivity, excellent board quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the WPC Board Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized board dies, calibration systems, cooling tables, haul-off units, cutting systems, stacking systems, and PLC automation according to customer requirements.",
+  },
+  {
+    question: "Can one machine manufacture different WPC board sizes?",
+    answer:
+      "Yes. By changing the extrusion die and calibration system, the same machine can manufacture WPC boards in different widths, thicknesses, and customized dimensions.",
+  },
+  {
+    question: "How much electricity does a WPC Board Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, board dimensions, and operating conditions. The machine is designed for energy-efficient manufacturing.",
+  },
+  {
+    question: "Does the WPC Board Plant support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen allows operators to monitor production, control machine parameters, manage alarms, and improve manufacturing efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different WPC board specifications, reducing setup time and ensuring consistent quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating and cooling zones provide accurate temperature control for stable WPC processing and premium-quality board production.",
+  },
+  {
+    question:
+      "Can recycled plastic materials be used for WPC board manufacturing?",
+    answer:
+      "Yes. Depending on the product requirements, the machine can process recycled plastics along with wood flour and additives to manufacture high-quality WPC boards.",
+  },
+  {
+    question: "How often does the WPC Board Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance includes inspecting the gearbox, screw and barrel, heaters, cooling system, lubrication points, and electrical components to ensure reliable long-term operation.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection and maintenance, helping reduce downtime and improve operational efficiency.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available for the WPC Board Plant?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts, and production optimization support.",
+  },
+  {
+    question: "Can I request a live demonstration of the WPC Board Plant?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance, production capacity, and finished WPC board quality.",
+  },
+  {
+    question:
+      "Can the WPC Board Plant be integrated into an existing manufacturing facility?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material handling systems, embossing units, sanding machines, cutting equipment, and downstream automation.",
+  },
+  {
+    question: "Can the machine manufacture embossed WPC boards?",
+    answer:
+      "Yes. The WPC Board Plant can be integrated with embossing systems to manufacture textured and wood-grain finish WPC boards for premium applications.",
+  },
+  {
+    question: "Can the machine manufacture high-density WPC boards?",
+    answer:
+      "Yes. The extrusion line can manufacture both standard-density and high-density WPC boards depending on the raw material formulation and production requirements.",
+  },
+  {
+    question: "Can the machine manufacture waterproof WPC boards?",
+    answer:
+      "Yes. WPC boards produced on this machine offer excellent moisture resistance, making them suitable for waterproof furniture and interior applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best WPC Board Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable WPC board production systems.",
+  },
+  {
+    question: "Can the WPC Board Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, automation systems, embossing units, additional downstream equipment, and customized tooling as production requirements grow.",
+  },
+  {
+    question: "How can I get the best quotation for a WPC Board Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required board dimensions, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a WPC Board Plant in India?",
+    answer:
+      "The price of a WPC Board Plant depends on the machine model, board dimensions, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best WPC Board Extrusion Machine?",
+    answer:
+      "The ideal WPC Board Extrusion Machine depends on your board size, thickness, production capacity, raw material formulation, automation requirements, and future expansion plans.",
+  },
+  {
+    question: "Which is the best WPC Board Making Machine in India?",
+    answer:
+      "WPC Board Plants from Hindustan Plastics and Machine Corporation are engineered for high productivity, excellent board quality, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the WPC Board Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized board dies, calibration systems, cooling tables, haul-off units, cutting systems, stacking systems, and PLC automation according to customer requirements.",
+  },
+  {
+    question: "Can one machine manufacture different WPC board sizes?",
+    answer:
+      "Yes. By changing the extrusion die and calibration system, the same machine can manufacture WPC boards in different widths, thicknesses, and customized dimensions.",
+  },
+  {
+    question: "How much electricity does a WPC Board Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, board dimensions, and operating conditions. The machine is designed for energy-efficient manufacturing.",
+  },
+  {
+    question: "Does the WPC Board Plant support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen allows operators to monitor production, control machine parameters, manage alarms, and improve manufacturing efficiency.",
+  },
+  {
+    question: "Can production recipes be saved in the PLC system?",
+    answer:
+      "Yes. The PLC system allows operators to save and recall production settings for different WPC board specifications, reducing setup time and ensuring consistent quality.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating and cooling zones provide accurate temperature control for stable WPC processing and premium-quality board production.",
+  },
+  {
+    question:
+      "Can recycled plastic materials be used for WPC board manufacturing?",
+    answer:
+      "Yes. Depending on the product requirements, the machine can process recycled plastics along with wood flour and additives to manufacture high-quality WPC boards.",
+  },
+  {
+    question: "How often does the WPC Board Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance includes inspecting the gearbox, screw and barrel, heaters, cooling system, lubrication points, and electrical components to ensure reliable long-term operation.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection and maintenance, helping reduce downtime and improve operational efficiency.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe operation, maximum productivity, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available for the WPC Board Plant?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting assistance, preventive maintenance services, spare parts, and production optimization support.",
+  },
+  {
+    question: "Can I request a live demonstration of the WPC Board Plant?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance, production capacity, and finished WPC board quality.",
+  },
+  {
+    question:
+      "Can the WPC Board Plant be integrated into an existing manufacturing facility?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing material handling systems, embossing units, sanding machines, cutting equipment, and downstream automation.",
+  },
+  {
+    question: "Can the machine manufacture embossed WPC boards?",
+    answer:
+      "Yes. The WPC Board Plant can be integrated with embossing systems to manufacture textured and wood-grain finish WPC boards for premium applications.",
+  },
+  {
+    question: "Can the machine manufacture high-density WPC boards?",
+    answer:
+      "Yes. The extrusion line can manufacture both standard-density and high-density WPC boards depending on the raw material formulation and production requirements.",
+  },
+  {
+    question: "Can the machine manufacture waterproof WPC boards?",
+    answer:
+      "Yes. WPC boards produced on this machine offer excellent moisture resistance, making them suitable for waterproof furniture and interior applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best WPC Board Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable WPC board production systems.",
+  },
+  {
+    question: "Can the WPC Board Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with higher-capacity extruders, automation systems, embossing units, additional downstream equipment, and customized tooling as production requirements grow.",
+  },
+  {
+    question: "How can I get the best quotation for a WPC Board Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required board dimensions, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
   },
 ];
 
@@ -124,7 +448,7 @@ export default function WpcProfilePlant() {
   const [active, setActive] = useState<number | null>(0);
   const [showAllFaqs, setShowAllFaqs] = useState(false);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const handleDownload = (catalogue: string) => {
     const access = localStorage.getItem("catalogue_access");

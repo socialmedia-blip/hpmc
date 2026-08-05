@@ -29,77 +29,405 @@ const faqData = [
   {
     question: "What is a Single Screw Plant for PPR Pipe?",
     answer:
-      "A Single Screw Plant for PPR Pipe is an advanced extrusion system designed for manufacturing high-quality PPR-C pipes used in hot and cold water distribution systems, plumbing networks, and industrial piping applications.",
+      "A Single Screw Plant for PPR Pipe is an advanced extrusion system designed to manufacture high-quality PPR-C pipes for hot and cold water supply, plumbing systems, and industrial piping applications.",
   },
   {
-    question: "What is PPR pipe used for?",
+    question: "How does a PPR Pipe Extrusion Plant work?",
     answer:
-      "PPR pipes are widely used in hot and cold water supply systems, residential plumbing, commercial buildings, hospitals, industrial fluid transportation, and compressed air applications.",
+      "The plant melts PPR raw material using a precision single screw extruder, followed by vacuum calibration, cooling, haul-off, and cutting systems to manufacture high-quality PPR pipes.",
   },
   {
-    question: "What are the advantages of PPR pipes?",
+    question: "Which materials can be processed using a PPR Pipe Plant?",
     answer:
-      "PPR pipes offer excellent corrosion resistance, high temperature resistance, leak-proof joints, low thermal conductivity, lightweight construction, and a service life of more than 50 years.",
+      "The machine is specially designed for processing PPR-C (Polypropylene Random Copolymer) raw materials used in plumbing, water supply, heating, and industrial piping applications.",
   },
   {
-    question: "What pipe sizes can be produced with this extrusion line?",
+    question: "Which products can be manufactured using a PPR Pipe Plant?",
     answer:
-      "The HPMC PPR Pipe Plant can manufacture PPR pipes ranging from 16 mm to 160 mm depending on the selected machine model and tooling configuration.",
+      "The machine manufactures PPR hot water pipes, cold water pipes, plumbing pipes, industrial fluid pipes, compressed air pipes, and building water distribution systems.",
+  },
+  {
+    question: "What are PPR pipes used for?",
+    answer:
+      "PPR pipes are widely used in residential plumbing, commercial buildings, hospitals, hotels, schools, industrial water supply systems, and hot and cold water distribution networks.",
+  },
+  {
+    question: "Which is the best PPR Pipe Plant manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is one of the best PPR Pipe Plant manufacturers in India, offering advanced extrusion technology, reliable performance, and energy-efficient pipe production solutions.",
+  },
+  {
+    question:
+      "Who is the top PPR Pipe Extrusion Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation manufactures precision-engineered PPR Pipe Extrusion Machines with consistent output, superior pipe quality, and dependable after-sales support.",
+  },
+  {
+    question: "What are the advantages of a PPR Pipe Extrusion Plant?",
+    answer:
+      "The machine delivers excellent pipe quality, stable production, energy-efficient operation, precise dimensions, smooth surface finish, and long-term reliability.",
+  },
+  {
+    question: "Why should manufacturers choose a PPR Pipe Plant?",
+    answer:
+      "A PPR Pipe Plant offers high productivity, consistent pipe quality, lower operating costs, and reliable performance, making it ideal for modern pipe manufacturing businesses.",
+  },
+  {
+    question: "What pipe sizes can be manufactured?",
+    answer:
+      "Depending on the selected machine model and tooling, the plant can manufacture PPR pipes ranging from 16 mm to 160 mm.",
   },
   {
     question: "What is the production capacity of the PPR Pipe Plant?",
     answer:
-      "Depending on the machine model, production capacities range from 90 Kg/hr to 160 Kg/hr while maintaining consistent pipe quality and dimensional accuracy.",
+      "Depending on the selected machine model, production capacities range from approximately 90 kg/hr to 160 kg/hr while maintaining excellent dimensional accuracy.",
   },
   {
-    question: "Which machine models are available?",
+    question: "Why is a Single Screw Extruder used for PPR pipe manufacturing?",
     answer:
-      "HPMC offers PPR Pipe Extrusion Lines in multiple configurations suitable for different pipe diameters, production capacities, and customer requirements.",
+      "A Single Screw Extruder provides efficient melting, uniform plasticization, stable material flow, and consistent production of premium-quality PPR pipes.",
   },
   {
-    question: "Why is a Single Screw Extruder used for PPR pipe production?",
+    question: "What are the benefits of PPR-C pipes?",
     answer:
-      "Single Screw Extruders provide stable melting, uniform material flow, efficient plasticization, and reliable processing of PPR raw materials, ensuring high-quality pipe production.",
+      "PPR-C pipes offer corrosion resistance, high temperature resistance, leak-proof joints, lightweight construction, long service life, and excellent chemical resistance.",
   },
   {
-    question: "What temperature can PPR pipes withstand?",
+    question: "How are PPR pipes joined together?",
     answer:
-      "PPR pipes can typically withstand operating temperatures up to 95°C, making them ideal for hot water distribution and heating applications.",
+      "PPR pipes are joined using heat fusion welding, creating strong, leak-proof, and permanent joints without the need for adhesives.",
   },
   {
-    question: "How are PPR pipe joints connected?",
+    question: "Can the machine manufacture hot and cold water PPR pipes?",
     answer:
-      "PPR pipes are connected using heat fusion welding technology, creating leak-proof and highly durable joints without the need for adhesives or solvents.",
+      "Yes. The extrusion line is specifically designed to manufacture PPR pipes suitable for both hot and cold water supply systems.",
   },
   {
-    question: "What is the expected lifespan of PPR pipes?",
+    question: "Can the machine operate continuously?",
     answer:
-      "Under normal operating conditions, high-quality PPR pipes can provide a service life of over 50 years while maintaining excellent performance.",
+      "Yes. The Single Screw PPR Pipe Plant is designed for continuous industrial production with stable operation and minimal downtime.",
   },
   {
-    question: "How does the vacuum sizing tank improve pipe quality?",
+    question: "Is the PPR Pipe Plant energy efficient?",
     answer:
-      "The vacuum sizing tank ensures precise pipe dimensions, accurate roundness, smooth surface finish, and stable cooling during the extrusion process.",
+      "Yes. Optimized screw design, efficient heating systems, and modern drive technology help reduce power consumption while maintaining high productivity.",
   },
   {
-    question: "Are PPR pipes resistant to corrosion and chemicals?",
+    question: "Can the PPR Pipe Plant be customized?",
     answer:
-      "Yes. PPR pipes are highly resistant to corrosion, scale formation, and a wide range of chemicals, making them suitable for long-term water and industrial applications.",
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, automation systems, die heads, downstream equipment, and machine layouts based on customer requirements.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question: "Which industries use PPR Pipe Plants?",
     answer:
-      "Yes. The HPMC PPR Pipe Plant is designed for continuous operation with reliable performance, stable output, and minimal downtime.",
+      "Plumbing manufacturers, construction companies, infrastructure developers, industrial pipe manufacturers, hospitals, commercial projects, and water supply companies use PPR Pipe Plants.",
   },
   {
-    question: "Does HPMC provide installation and after-sales support?",
+    question:
+      "Is this machine suitable for starting a PPR pipe manufacturing business?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, technical assistance, spare parts support, and comprehensive after-sales services.",
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a profitable PPR pipe manufacturing business.",
   },
   {
-    question: "Why choose HPMC PPR Pipe Plants?",
+    question: "How long do PPR pipes last?",
     answer:
-      "HPMC PPR Pipe Plants offer reliable extrusion performance, energy-efficient operation, excellent pipe quality, long service life, and complete technical support for modern pipe manufacturing facilities.",
+      "High-quality PPR pipes manufactured with proper raw materials and processing can provide a service life of more than 50 years under recommended operating conditions.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for PPR Pipe Plants?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered PPR Pipe Plants with advanced extrusion technology, robust construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the top PPR Pipe Machine manufacturers in India?",
+    answer:
+      "With decades of experience in plastic extrusion machinery, innovative engineering, premium manufacturing standards, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers across India and international markets.",
+  },
+  {
+    question: "Can the machine manufacture export-quality PPR pipes?",
+    answer:
+      "Yes. The machine is capable of producing consistent, high-quality PPR pipes suitable for both domestic and international markets.",
+  },
+  {
+    question: "How can I get the best price for a PPR Pipe Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a PPR Pipe Plant in India?",
+    answer:
+      "The price of a PPR Pipe Plant depends on the machine model, pipe diameter range, production capacity, automation level, and optional equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best PPR Pipe Extrusion Machine?",
+    answer:
+      "The ideal PPR Pipe Extrusion Machine depends on your required pipe sizes, production capacity, automation preferences, raw material grade, and future expansion plans.",
+  },
+  {
+    question: "Which is the best PPR Pipe Making Machine in India?",
+    answer:
+      "Single Screw PPR Pipe Plants from Hindustan Plastics and Machine Corporation are engineered for high productivity, energy efficiency, precise pipe dimensions, and reliable long-term performance.",
+  },
+  {
+    question: "Can the PPR Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, die heads, vacuum tanks, cooling systems, haul-off units, cutting machines, and PLC automation options.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Different machine models are available with production capacities ranging from approximately 90 kg/hr to 160 kg/hr depending on the pipe size and selected configuration.",
+  },
+  {
+    question: "How much electricity does a PPR Pipe Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production capacity, pipe diameter, and operating conditions. The machine is designed for energy-efficient production.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen is available for process monitoring, parameter control, alarm management, and production optimization.",
+  },
+  {
+    question: "Can production recipes be saved?",
+    answer:
+      "Yes. Operators can save and recall production settings for different pipe sizes, improving consistency and reducing machine setup time.",
+  },
+  {
+    question: "Does the machine provide automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones maintain precise temperature control for uniform melting and high-quality PPR pipe production.",
+  },
+  {
+    question:
+      "Can different PPR pipe diameters be manufactured on one machine?",
+    answer:
+      "Yes. By changing dies, calibration sleeves, and related tooling, the machine can manufacture multiple PPR pipe sizes within its operating range.",
+  },
+  {
+    question: "How often does the PPR Pipe Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance, lubrication, inspection of the screw and barrel, gearbox, cooling systems, and electrical components help ensure reliable long-term operation.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection and maintenance, reducing downtime and ensuring dependable production.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced service engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Professional operator training is provided to ensure safe operation, efficient production, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical support, troubleshooting, preventive maintenance, spare parts assistance, and production optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live demonstrations and technical consultations can be arranged to help customers evaluate machine performance before making a purchase decision.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied PPR raw materials can be conducted to verify machine performance, output, and finished pipe quality.",
+  },
+  {
+    question:
+      "Can the PPR Pipe Plant be integrated into an existing production line?",
+    answer:
+      "Yes. The extrusion line can be integrated with existing downstream equipment, printing units, coilers, stacking systems, and pipe handling equipment.",
+  },
+  {
+    question:
+      "Can the machine manufacture PPR pipes for drinking water applications?",
+    answer:
+      "Yes. The machine produces PPR pipes widely used for potable water supply systems when processed with quality PPR-C raw materials.",
+  },
+  {
+    question:
+      "Can the machine manufacture PPR pipes for industrial fluid transfer?",
+    answer:
+      "Yes. The extrusion line manufactures PPR pipes suitable for industrial fluid transportation, compressed air systems, and chemical applications.",
+  },
+  {
+    question:
+      "Can the machine produce PPR pipes for residential and commercial plumbing?",
+    answer:
+      "Yes. The machine is ideal for manufacturing PPR plumbing pipes used in homes, apartments, hotels, hospitals, offices, and commercial buildings.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best PPR Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable PPR pipe production systems.",
+  },
+  {
+    question: "Can the PPR Pipe Plant support future production expansion?",
+    answer:
+      "Yes. The machine can be upgraded with automation, additional downstream equipment, and customized tooling to meet growing production requirements.",
+  },
+  {
+    question: "How can I get the best quotation for a PPR Pipe Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Single Screw PPR Pipe Plant process different grades of PPR raw material?",
+    answer:
+      "Yes. The machine is designed to process various grades of PPR-C raw materials used for hot water, cold water, plumbing, and industrial piping applications.",
+  },
+  {
+    question:
+      "Can the machine manufacture PN10, PN16, PN20, and PN25 PPR pipes?",
+    answer:
+      "Yes. With suitable tooling and processing parameters, the machine can manufacture different pressure-rated PPR pipes such as PN10, PN16, PN20, and PN25.",
+  },
+  {
+    question: "Can the machine manufacture food-grade PPR pipes?",
+    answer:
+      "Yes. Using certified food-grade PPR raw materials, the extrusion line can manufacture pipes suitable for potable water and drinking water distribution systems.",
+  },
+  {
+    question:
+      "Can the PPR Pipe Plant manufacture pipes for industrial applications?",
+    answer:
+      "Yes. The machine manufactures PPR pipes used in chemical processing, industrial water supply, compressed air systems, and fluid transportation.",
+  },
+  {
+    question:
+      "Can the machine manufacture PPR pipes that meet international standards?",
+    answer:
+      "Yes. With proper tooling, quality raw materials, and controlled processing, the machine can manufacture PPR pipes that comply with applicable national and international standards.",
+  },
+  {
+    question: "How does the Single Screw PPR Pipe Plant improve pipe quality?",
+    answer:
+      "Efficient plasticization, precise temperature control, stable extrusion pressure, and accurate vacuum calibration produce PPR pipes with smooth surfaces, excellent strength, and consistent dimensions.",
+  },
+  {
+    question:
+      "Can PPR pipes manufactured on this machine be used in residential and commercial projects?",
+    answer:
+      "Yes. The machine produces PPR pipes widely used in homes, apartments, hotels, hospitals, schools, office buildings, shopping malls, and commercial plumbing systems.",
+  },
+  {
+    question: "Can this machine reduce PPR pipe manufacturing costs?",
+    answer:
+      "Yes. Energy-efficient operation, stable production, optimized material usage, and reduced wastage help lower the overall manufacturing cost per pipe.",
+  },
+  {
+    question: "What is the expected lifespan of a Single Screw PPR Pipe Plant?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question: "Can the PPR Pipe Plant be upgraded in the future?",
+    answer:
+      "Yes. Automation systems, die heads, vacuum tanks, haul-off units, cutting systems, and downstream equipment can be upgraded as production requirements grow.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture PPR Pipe Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Single Screw PPR Pipe Plants in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export PPR Pipe Plants worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports PPR Pipe Plants and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The PPR Pipe Plant can be integrated into existing production facilities with customized layouts and compatible downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, and machine optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts assist customers in optimizing machine settings, PPR processing parameters, production efficiency, and overall extrusion performance.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied PPR raw materials to evaluate machine performance, production output, and finished pipe quality.",
+  },
+  {
+    question: "Is the Single Screw PPR Pipe Plant environmentally friendly?",
+    answer:
+      "Yes. The machine uses energy-efficient technology that helps reduce power consumption, optimize raw material utilization, and minimize production waste.",
+  },
+  {
+    question: "Which industries benefit from Single Screw PPR Pipe Plants?",
+    answer:
+      "Plumbing manufacturers, construction companies, infrastructure developers, hospitals, hotels, commercial builders, industrial facilities, and water supply projects benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture PPR pipes for green building and smart city projects?",
+    answer:
+      "Yes. The machine is ideal for manufacturing PPR pipes used in green buildings, smart cities, commercial complexes, residential projects, hospitals, educational institutions, and modern infrastructure developments.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best PPR Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable PPR pipe production systems.",
+  },
+  {
+    question:
+      "Who is the top PPR Pipe Extrusion Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance PPR Pipe Plants with excellent productivity, energy efficiency, and consistent pipe quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your PPR Pipe Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the Single Screw PPR Pipe Plant one of the best solutions for PPR pipe manufacturing?",
+    answer:
+      "Its stable extrusion process, energy-efficient operation, precise pipe dimensions, excellent surface finish, reliable performance, and low operating costs make it an ideal solution for manufacturing premium-quality PPR pipes.",
   },
 ];
 
@@ -187,7 +515,7 @@ export default function PPRPipeExtruder() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 10);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;
