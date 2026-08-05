@@ -11,7 +11,6 @@ import {
   Search,
   Settings,
   ShieldCheck,
-  Wrench,
 } from "lucide-react";
 import CTA from "../components/CTA";
 import FloatingContact from "../components/FloatingButton";
@@ -46,7 +45,7 @@ const categories = [
   },
 ];
 
-const faqItems = [
+const baseFaqItems = [
   {
     category: "about-hpmc",
     question: "Who is HPMC?",
@@ -319,6 +318,224 @@ const faqItems = [
   },
 ];
 
+type SeoFaqCategory =
+  | "about-hpmc"
+  | "extrusion-machines"
+  | "technical-production"
+  | "service-support";
+
+const aboutSeoKeywords = [
+  "best plastic extrusion machine manufacturer in India",
+  "top plastic extrusion machinery company",
+  "best PVC pipe plant manufacturer",
+  "top HDPE pipe extrusion line supplier",
+  "best twin screw extruder manufacturer",
+  "top single screw extruder manufacturer",
+  "best plastic recycling plant manufacturer",
+  "top PVC compounding plant supplier",
+  "best cable extrusion machine manufacturer",
+  "top turnkey extrusion plant manufacturer",
+  "best CPVC pipe plant manufacturer",
+  "top PPR pipe plant supplier",
+  "best PVC conduit pipe machine manufacturer",
+  "top plastic pipe machine manufacturer",
+  "best extrusion machinery exporter from India",
+  "top industrial extrusion machine supplier",
+  "best custom extrusion machine manufacturer",
+  "top polymer processing machinery company",
+  "best plastic machinery brand for startups",
+  "top extrusion machine company for MSME",
+  "best manufacturer for high-output extrusion lines",
+  "top manufacturer for pipe extrusion projects",
+  "best extrusion partner for plant expansion",
+  "top Indian plastic machinery manufacturer",
+  "best supplier for complete extrusion line",
+  "top manufacturer for profile extrusion machines",
+  "best manufacturer for agriculture pipe plants",
+  "top manufacturer for construction pipe machines",
+  "best manufacturer for water supply pipe plants",
+  "top supplier for electrical conduit machines",
+  "best value extrusion machine company",
+  "top extrusion machinery company with service support",
+  "best extrusion machine company with spare parts",
+  "top extrusion machinery company for export quality",
+  "best company for extrusion factory setup",
+  "top manufacturer for customized plastic plants",
+  "best extrusion machine quotation provider",
+  "top company for plastic processing consultation",
+  "best manufacturer for long-term extrusion investment",
+  "top plastic machinery company with 50 years experience",
+  "best extrusion machinery company for reliable production",
+  "top extrusion machine manufacturer near industrial buyers",
+];
+
+const extrusionSeoKeywords = [
+  "best PVC pipe extrusion machine",
+  "top HDPE pipe making machine",
+  "best CPVC pipe extrusion line",
+  "top PPR pipe manufacturing machine",
+  "best PVC conduit pipe plant",
+  "top twin screw extruder for PVC",
+  "best single screw extruder for HDPE",
+  "top plastic recycling pelletizing plant",
+  "best co-rotating twin screw extruder",
+  "top color masterbatch extruder",
+  "best filler masterbatch machine",
+  "top PVC compounding machine",
+  "best cable coating extrusion line",
+  "top wire insulation machine",
+  "best PVC profile extrusion line",
+  "top PVC trunking machine",
+  "best plastic pelletizing machine",
+  "top engineering plastic compounding extruder",
+  "best glass fibre compounding machine",
+  "top high filler compound extruder",
+  "best multi-layer pipe extrusion line",
+  "top drip irrigation pipe machine",
+  "best flexible PVC pipe machine",
+  "top rigid PVC pipe plant",
+  "best large diameter pipe extrusion line",
+  "top small diameter pipe machine",
+  "best automatic pipe cutting extrusion line",
+  "top low power consumption extruder",
+  "best continuous production extrusion line",
+  "top LDPE LLDPE extrusion machine",
+  "best recycled HDPE extrusion machine",
+  "top recycled PP granule machine",
+  "best plastic sheet extrusion machine",
+  "top pipe coiler extrusion line",
+  "best vacuum calibration pipe line",
+  "top high-speed pipe extrusion machine",
+  "best turnkey plastic pipe plant",
+  "top extrusion line for industrial plastic products",
+];
+
+const technicalSeoKeywords = [
+  "best screw design for plastic extrusion",
+  "top extrusion output improvement tips",
+  "best PVC extrusion temperature setting",
+  "top HDPE pipe extrusion parameters",
+  "best way to improve pipe surface finish",
+  "top reasons for extrusion output variation",
+  "best wall thickness control in pipe extrusion",
+  "top extrusion quality checks",
+  "best preventive maintenance schedule",
+  "top causes of screw and barrel wear",
+  "best motor power selection for extruder",
+  "top PLC controls for extrusion machines",
+  "best cooling method for pipe extrusion",
+  "top causes of pipe ovality",
+  "best way to improve plasticization",
+  "top materials requiring drying before extrusion",
+  "best recycled plastic processing method",
+  "top causes of bubbles in extrusion",
+  "best extrusion die design practices",
+  "top line speed control factors",
+  "best way to reduce power consumption",
+  "top PVC pipe extrusion defects",
+  "best troubleshooting for unstable output",
+  "top masterbatch dispersion factors",
+  "best feeder for powder additives",
+  "top data required before buying extruder",
+  "best melt pressure control method",
+  "top safety practices for extrusion operators",
+  "best extrusion startup procedure",
+  "top extrusion shutdown steps",
+  "best pellet quality improvement method",
+  "top compounding quality factors",
+  "best way to avoid material degradation",
+  "top gauges for extrusion line monitoring",
+  "best raw material storage practice",
+  "top automation features for extrusion production",
+  "best technical support after installation",
+  "top extrusion process optimization methods",
+];
+
+const serviceSeoKeywords = [
+  "best extrusion machine installation support",
+  "top after-sales service for plastic machinery",
+  "best extrusion machine quotation support",
+  "top spare parts support for extrusion lines",
+  "best technical support for extrusion troubleshooting",
+  "top operator training for extrusion machines",
+  "best preventive maintenance support",
+  "top old extrusion machine upgrade service",
+  "best service enquiry process for extrusion machines",
+  "top international customer support",
+  "best annual maintenance spare planning",
+  "top extrusion plant expansion support",
+  "best machine demo before purchase",
+  "top factory visit support",
+  "best commissioning trial support",
+  "top twin screw extruder spare parts support",
+  "best single screw extruder spare parts support",
+  "top downtime reduction support",
+  "best emergency breakdown guidance",
+  "top extrusion process optimization support",
+  "best site visit request support",
+  "top machine documentation support",
+  "best machine relocation support",
+  "top new product development support",
+  "best sales support for plastic machinery",
+  "top budget-based machine selection support",
+  "best raw material trial guidance",
+  "top extrusion performance audit support",
+  "best die head troubleshooting support",
+  "top automatic cutter service support",
+  "best haul-off service support",
+  "top genuine extrusion spare ordering support",
+  "best PVC pipe plant service support",
+  "top HDPE pipe plant service support",
+  "best recycling plant service support",
+  "top long-term extrusion service plan",
+  "best remote support for extrusion machines",
+  "top spare parts supplier support for HPMC machines",
+];
+
+const createSeoFaqs = (category: SeoFaqCategory, keywords: string[]) =>
+  keywords.map((keyword) => {
+    const label = keyword.charAt(0).toUpperCase() + keyword.slice(1);
+
+    if (category === "about-hpmc") {
+      return {
+        category,
+        question: `Why is HPMC searched as the ${keyword}?`,
+        answer: `HPMC is relevant for searches around ${keyword} because the company manufactures plastic extrusion machinery in India with application guidance, customized line configuration, installation support, spare parts assistance, and long-term service for pipe, profile, compounding, recycling, and cable extrusion projects.`,
+      };
+    }
+
+    if (category === "extrusion-machines") {
+      return {
+        category,
+        question: `What should I know about the ${keyword}?`,
+        answer: `${label} selection depends on raw material, required output, product size, automation level, tooling, cooling, downstream equipment, power consumption, factory layout, and after-sales support. HPMC helps customers choose the right extrusion machine configuration for practical production needs.`,
+      };
+    }
+
+    if (category === "technical-production") {
+      return {
+        category,
+        question: `What is the ${keyword}?`,
+        answer: `${label} depends on material behavior, screw design, temperature profile, die condition, line speed, cooling efficiency, operator skill, and maintenance. HPMC guides customers with technical extrusion knowledge to improve output, product quality, and machine reliability.`,
+      };
+    }
+
+    return {
+      category,
+      question: `Does HPMC provide ${keyword}?`,
+      answer: `Yes. HPMC supports customers with ${keyword} through technical discussion, machine details review, spare parts coordination, troubleshooting guidance, maintenance planning, installation or commissioning assistance, and practical after-sales service for extrusion machinery.`,
+    };
+  });
+
+const seoFaqItems = [
+  ...createSeoFaqs("about-hpmc", aboutSeoKeywords),
+  ...createSeoFaqs("extrusion-machines", extrusionSeoKeywords),
+  ...createSeoFaqs("technical-production", technicalSeoKeywords),
+  ...createSeoFaqs("service-support", serviceSeoKeywords),
+];
+
+const faqItems = [...baseFaqItems, ...seoFaqItems];
+
 const categoryStats = [
   { value: "50+", label: "Years Experience" },
   { value: "1000+", label: "Installations" },
@@ -331,7 +548,7 @@ export default function Faq() {
   const [openPopup2, setOpenPopup2] = useState(false);
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
-  const [query, setQuery] = useState("");
+  const [query] = useState("");
 
   const filteredFaqs = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -562,9 +779,6 @@ export default function Faq() {
                 <div className="divide-y divide-[var(--border)]">
                   {filteredFaqs.map((faq, index) => {
                     const isOpen = activeFaq === index;
-                    const category = categories.find(
-                      (item) => item.id === faq.category,
-                    );
 
                     return (
                       <div
