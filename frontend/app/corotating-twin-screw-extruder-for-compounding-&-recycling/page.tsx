@@ -60,79 +60,253 @@ const faqData = [
   {
     question: "What is a Co-Rotating Twin Screw Extruder?",
     answer:
-      "A Co-Rotating Twin Screw Extruder is an advanced polymer processing machine designed for compounding, masterbatch production, recycling, filler modification, and engineering plastic processing with superior mixing and dispersion performance.",
+      "A Co-Rotating Twin Screw Extruder is an advanced plastic processing machine used for polymer compounding, masterbatch production, recycling, filler modification and engineering plastic manufacturing.",
+  },
+  {
+    question: "How does a Co-Rotating Twin Screw Extruder work?",
+    answer:
+      "Two screws rotate in the same direction to melt, mix, compound and convey polymer materials efficiently while ensuring excellent dispersion and homogeneous output.",
   },
   {
     question:
-      "What applications are suitable for a Co-Rotating Twin Screw Extruder?",
+      "What is the difference between a single screw extruder and a twin screw extruder?",
     answer:
-      "The machine is widely used for direct compounding, PVC cable compounds, masterbatch production, polymer blending, recycling, film and sheet extrusion, injection molding compounds, and engineering plastic formulations.",
+      "Single screw extruders are mainly used for extrusion, whereas co-rotating twin screw extruders provide superior mixing, compounding, filler dispersion and material homogenization.",
   },
   {
-    question: "What materials can be processed using this extruder?",
+    question: "What is a Co-Rotating Twin Screw Extruder used for?",
     answer:
-      "The system can process PVC, PP, PE, ABS, PA, PC, engineering plastics, masterbatches, recycled materials, filler compounds, and glass fiber reinforced formulations.",
+      "It is widely used for plastic compounding, color masterbatch, additive masterbatch, engineering plastics, recycling, PVC cable compounds and biodegradable plastic processing.",
   },
   {
-    question: "What is the production capacity of the Twin Screw Extruder?",
+    question: "Which materials can be processed in a twin screw extruder?",
     answer:
-      "Depending on the selected model, production capacities range from 2 Kg/hr to 1000 Kg/hr, making it suitable for laboratory, pilot, and large-scale industrial production.",
+      "It can process PP, PE, ABS, PVC, PA, PC, PET, EVA, TPU, TPE, engineering plastics, recycled polymers and many specialty compounds.",
   },
   {
-    question:
-      "Why is a Co-Rotating Twin Screw Extruder preferred for compounding?",
+    question: "Can recycled plastic be processed in this machine?",
     answer:
-      "Co-rotating twin screws provide excellent distributive and dispersive mixing, superior additive dispersion, better filler distribution, and highly consistent compound quality.",
+      "Yes. The machine is designed for recycling applications and efficiently converts recycled plastic into high-quality reusable pellets.",
   },
   {
-    question: "Can the machine process high filler formulations?",
+    question: "Can this machine produce color masterbatch?",
     answer:
-      "Yes. The extruder supports high filler loading applications, including talc-filled compounds with loading levels up to 80% while maintaining processing stability.",
+      "Yes. It offers excellent pigment dispersion, making it ideal for manufacturing high-quality color masterbatches.",
   },
   {
-    question: "Can glass fiber reinforced compounds be produced?",
+    question: "Can additive masterbatch be manufactured?",
     answer:
-      "Yes. The system can process glass fiber reinforced compounds with loading levels up to 50%, ensuring excellent dispersion and mechanical performance.",
+      "Yes. The machine can manufacture UV, anti-static, flame-retardant, anti-block, antioxidant and other additive masterbatches.",
   },
   {
-    question: "What are the advantages of modular screw design?",
+    question: "Can engineering plastics be compounded?",
     answer:
-      "The modular screw design allows flexible screw configurations, optimized processing, improved mixing efficiency, and customization for different materials and applications.",
-  },
-  {
-    question: "Is the machine suitable for recycling applications?",
-    answer:
-      "Yes. The Co-Rotating Twin Screw Extruder is widely used for plastic recycling, material recovery, granulation, and reprocessing of polymer waste into reusable compounds.",
-  },
-  {
-    question: "Can the machine be used for masterbatch production?",
-    answer:
-      "Yes. It is ideal for color masterbatches, additive masterbatches, filler masterbatches, and specialty compound manufacturing requiring precise dispersion.",
-  },
-  {
-    question: "How does the gearbox system improve reliability?",
-    answer:
-      "The heavy-duty gearbox ensures stable torque transmission, smooth operation, high load capacity, and reliable long-term performance in demanding production environments.",
+      "Yes. The machine is suitable for processing engineering plastics requiring excellent mixing and precise temperature control.",
   },
   {
     question: "What industries use Co-Rotating Twin Screw Extruders?",
     answer:
-      "These extruders are widely used in plastics processing, automotive, cable manufacturing, packaging, construction materials, polymer compounding, recycling, and engineering plastics industries.",
+      "Automotive, packaging, electrical, cable, construction, consumer goods, medical, polymer compounding and recycling industries widely use these machines.",
+  },
+  {
+    question: "What is the production capacity of a twin screw extruder?",
+    answer:
+      "Depending on the model, production capacity ranges from approximately 2 kg/hr to 1000 kg/hr.",
+  },
+  {
+    question:
+      "What is the price of a Co-Rotating Twin Screw Extruder in India?",
+    answer:
+      "The price depends on screw diameter, output capacity, automation level and application. Contact HPMC for a customized quotation.",
+  },
+  {
+    question: "How do I choose the right twin screw extruder?",
+    answer:
+      "The right machine depends on your material, production capacity, filler loading, end product and automation requirements.",
+  },
+  {
+    question: "What screw sizes are available?",
+    answer:
+      "HPMC offers multiple screw diameters suitable for laboratory, pilot and large-scale industrial production.",
+  },
+  {
+    question: "Can this machine process biodegradable plastics?",
+    answer:
+      "Yes. Many biodegradable and bio-based polymers can be processed efficiently.",
+  },
+  {
+    question: "Can glass fiber reinforced compounds be produced?",
+    answer:
+      "Yes. The extruder provides excellent glass fiber dispersion for reinforced engineering compounds.",
+  },
+  {
+    question: "Can high filler compounds be manufactured?",
+    answer:
+      "Yes. The machine supports high filler loading while maintaining stable processing and excellent dispersion.",
+  },
+  {
+    question: "How much electricity does a twin screw extruder consume?",
+    answer:
+      "Power consumption depends on machine size, motor rating, material type and production capacity.",
   },
   {
     question: "Is the machine energy efficient?",
     answer:
-      "Yes. Advanced screw geometry, optimized drive systems, and efficient processing technology help reduce power consumption while maximizing output and productivity.",
+      "Yes. Optimized screw design and efficient drive systems reduce power consumption while maximizing output.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "Does the machine provide uniform mixing?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, process optimization support, spare parts supply, and comprehensive after-sales service.",
+      "Yes. The co-rotating screw configuration delivers superior distributive and dispersive mixing.",
   },
   {
-    question: "Why choose HPMC Co-Rotating Twin Screw Extruders?",
+    question: "What type of pelletizing system is available?",
     answer:
-      "HPMC Co-Rotating Twin Screw Extruders offer superior mixing performance, high production efficiency, excellent compound quality, flexible processing capabilities, energy-efficient operation, and long machine life.",
+      "The machine supports strand pelletizing, water ring pelletizing, underwater pelletizing and die-face cutting.",
+  },
+  {
+    question: "Is PLC automation available?",
+    answer:
+      "Yes. PLC with touchscreen HMI is available for easy monitoring and process control.",
+  },
+  {
+    question: "Can recipes be saved in the control system?",
+    answer:
+      "Yes. Production recipes can be stored and recalled for consistent manufacturing.",
+  },
+  {
+    question: "Does the machine include vacuum degassing?",
+    answer:
+      "Yes. Vacuum degassing removes moisture and volatile gases to improve product quality.",
+  },
+  {
+    question: "Can liquid additives be injected?",
+    answer:
+      "Yes. Optional liquid injection systems can be integrated into the extrusion process.",
+  },
+  {
+    question: "Can side feeders be installed?",
+    answer:
+      "Yes. Side feeders allow accurate feeding of fillers, fibers and additives.",
+  },
+  {
+    question: "What type of heating system is used?",
+    answer:
+      "Efficient electric heating zones provide accurate temperature control for stable polymer processing.",
+  },
+  {
+    question: "How many heating zones does the machine have?",
+    answer:
+      "The number of heating zones depends on the machine model and customer requirements.",
+  },
+  {
+    question: "Is continuous production possible?",
+    answer:
+      "Yes. The machine is designed for continuous industrial production with consistent output quality.",
+  },
+  {
+    question: "Can the machine operate 24 hours a day?",
+    answer:
+      "Yes. With proper maintenance, it is designed for reliable 24/7 production.",
+  },
+  {
+    question: "How often does the machine require maintenance?",
+    answer:
+      "Routine preventive maintenance helps maximize performance and machine life.",
+  },
+  {
+    question: "Is screw maintenance easy?",
+    answer:
+      "Yes. Modular screw elements can be replaced individually, reducing downtime.",
+  },
+  {
+    question: "Can screw configurations be customized?",
+    answer:
+      "Yes. Screw elements can be configured according to specific materials and applications.",
+  },
+  {
+    question: "What safety features are included?",
+    answer:
+      "Emergency stop systems, overload protection, temperature monitoring and operator safety features are provided.",
+  },
+  {
+    question: "Can mineral-filled compounds be processed?",
+    answer:
+      "Yes. The machine processes calcium carbonate, talc, barium sulfate and similar fillers efficiently.",
+  },
+  {
+    question: "Can flame-retardant compounds be produced?",
+    answer:
+      "Yes. The machine ensures excellent dispersion of flame-retardant additives.",
+  },
+  {
+    question: "Can PVC compounds be manufactured?",
+    answer:
+      "Yes. The extruder is widely used for PVC cable compounds and specialty PVC formulations.",
+  },
+  {
+    question: "Can laboratory trials be performed?",
+    answer:
+      "Yes. Smaller models are suitable for research, testing and product development.",
+  },
+  {
+    question: "Does HPMC provide installation services?",
+    answer:
+      "Yes. HPMC provides installation, commissioning and machine setup support.",
+  },
+  {
+    question: "Does HPMC provide operator training?",
+    answer: "Yes. Complete operator training is provided during commissioning.",
+  },
+  {
+    question: "Are spare parts available?",
+    answer:
+      "Yes. Genuine spare parts are readily available to minimize downtime.",
+  },
+  {
+    question: "Does HPMC provide after-sales service?",
+    answer:
+      "Yes. HPMC offers technical support, maintenance services and spare parts assistance.",
+  },
+  {
+    question: "Can the machine be customized?",
+    answer:
+      "Yes. Machine configuration can be customized according to production requirements.",
+  },
+  {
+    question: "Does HPMC export twin screw extruders?",
+    answer:
+      "Yes. HPMC supplies extrusion machinery to domestic and international customers.",
+  },
+  {
+    question: "How long does machine installation take?",
+    answer:
+      "Installation time depends on machine size and site readiness, but is typically completed within a few days.",
+  },
+  {
+    question: "What makes HPMC Twin Screw Extruders different?",
+    answer:
+      "HPMC machines offer robust construction, efficient mixing, modular screw design, energy-efficient operation and reliable after-sales support.",
+  },
+  {
+    question: "How can I request a quotation?",
+    answer:
+      "Contact HPMC with your material type, production capacity and application to receive a customized quotation.",
+  },
+  {
+    question: "Can I request a machine demonstration?",
+    answer:
+      "Yes. HPMC provides product demonstrations and technical consultations upon request.",
+  },
+  {
+    question: "Which twin screw extruder is best for plastic compounding?",
+    answer:
+      "The ideal machine depends on your material, required output, filler percentage and production objectives. HPMC experts can recommend the most suitable model.",
+  },
+  {
+    question: "Why choose HPMC for twin screw extrusion solutions?",
+    answer:
+      "HPMC combines decades of manufacturing experience, advanced engineering, reliable machinery, customized solutions and comprehensive after-sales support.",
   },
 ];
 
@@ -147,7 +321,11 @@ export default function CorotatingTwinScrewExtruder() {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+
+  const [visibleFaqCount, setVisibleFaqCount] = useState(5);
+  const displayedFaqs = faqData.slice(0, visibleFaqCount);
+  const hasMoreFaqs = visibleFaqCount < faqData.length;
+  const nextFaqCount = Math.min(10, faqData.length - visibleFaqCount);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;
@@ -662,37 +840,37 @@ export default function CorotatingTwinScrewExtruder() {
                     <div
                       key={index}
                       className="
-                  transition-all
-                  duration-300
-                  hover:bg-[var(--muted)]
-                "
+                                  transition-all
+                                  duration-300
+                                  hover:bg-[var(--muted)]
+                                "
                     >
                       <button
                         onClick={() => setActive(isOpen ? null : index)}
                         className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    gap-5
-                    px-5
-                    py-5
-                    sm:px-7
-                    sm:py-6
-                    text-left
-                  "
+                                    w-full
+                                    flex
+                                    items-center
+                                    justify-between
+                                    gap-5
+                                    px-5
+                                    py-5
+                                    sm:px-7
+                                    sm:py-6
+                                    text-left
+                                  "
                       >
                         <div className="flex items-start gap-4">
                           <span
                             className={`
-                          mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold
-                          transition-all duration-300
-                          ${
-                            isOpen
-                              ? "bg-[var(--primary)] text-white"
-                              : "bg-[var(--primary)]/10 text-[var(--primary)]"
-                          }
-                        `}
+                                          mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold
+                                          transition-all duration-300
+                                          ${
+                                            isOpen
+                                              ? "bg-[var(--primary)] text-white"
+                                              : "bg-[var(--primary)]/10 text-[var(--primary)]"
+                                          }
+                                        `}
                           >
                             {String(index + 1).padStart(2, "0")}
                           </span>
@@ -704,13 +882,13 @@ export default function CorotatingTwinScrewExtruder() {
 
                         <div
                           className={`
-                      w-10 h-10 rounded-full shrink-0
-                      flex items-center justify-center
-                      border border-[var(--border)]
-                      bg-white
-                      transition-all duration-300
-                      ${isOpen ? "rotate-180 border-[var(--primary)] text-[var(--primary)]" : "text-[var(--text-secondary)]"}
-                    `}
+                                      w-10 h-10 rounded-full shrink-0
+                                      flex items-center justify-center
+                                      border border-[var(--border)]
+                                      bg-white
+                                      transition-all duration-300
+                                      ${isOpen ? "rotate-180 border-[var(--primary)] text-[var(--primary)]" : "text-[var(--text-secondary)]"}
+                                    `}
                         >
                           <ChevronDown size={20} />
                         </div>
@@ -718,12 +896,12 @@ export default function CorotatingTwinScrewExtruder() {
 
                       <div
                         className={`
-                    grid
-                    transition-all
-                    duration-500
-                    ease-in-out
-                    ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
-                  `}
+                                    grid
+                                    transition-all
+                                    duration-500
+                                    ease-in-out
+                                    ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
+                                  `}
                       >
                         <div className="overflow-hidden">
                           <div className="px-5 pb-6 pl-[72px] pr-7 text-[var(--text-secondary)] leading-8 sm:px-7 sm:pl-20">
@@ -738,46 +916,44 @@ export default function CorotatingTwinScrewExtruder() {
             </div>
           </div>
 
-          {faqData.length > 5 && (
+          {hasMoreFaqs && (
             <div className="flex justify-center mt-10">
               <button
-                onClick={() => setShowAllFaqs(!showAllFaqs)}
+                onClick={() =>
+                  setVisibleFaqCount((currentCount) =>
+                    Math.min(currentCount + 10, faqData.length),
+                  )
+                }
                 className="
-                  group
-                  inline-flex
-                  items-center
-                  gap-4
-                  rounded-full
-                  border
-                  border-[var(--primary)]/25
-                  bg-white
-                  px-5
-                  py-3
-                  text-[var(--text-primary)]
-                  shadow-[0_18px_45px_rgba(11,18,32,0.08)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:border-[var(--primary)]
-                  hover:shadow-[0_22px_55px_rgba(101,188,79,0.18)]
-      "
+                                  group
+                                  inline-flex
+                                  items-center
+                                  gap-4
+                                  rounded-full
+                                  border
+                                  border-[var(--primary)]/25
+                                  bg-white
+                                  px-5
+                                  py-3
+                                  text-[var(--text-primary)]
+                                  shadow-[0_18px_45px_rgba(11,18,32,0.08)]
+                                  transition-all
+                                  duration-300
+                                  hover:-translate-y-1
+                                  hover:border-[var(--primary)]
+                                  hover:shadow-[0_22px_55px_rgba(101,188,79,0.18)]
+                      "
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary)] text-white transition-transform duration-300 group-hover:scale-105">
-                  {showAllFaqs ? (
-                    <ChevronDown size={20} className="rotate-180" />
-                  ) : (
-                    <ArrowRight size={20} />
-                  )}
+                  <ArrowRight size={20} />
                 </span>
 
                 <span className="text-left">
                   <span className="block text-xs font-semibold uppercase tracking-[2px] text-[var(--primary)]">
-                    {showAllFaqs ? "Collapse List" : "Explore More"}
+                    Explore More
                   </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    {showAllFaqs
-                      ? "Show fewer questions"
-                      : `View ${faqData.length - displayedFaqs.length} more FAQs`}
+                    View next {nextFaqCount} FAQs
                   </span>
                 </span>
               </button>

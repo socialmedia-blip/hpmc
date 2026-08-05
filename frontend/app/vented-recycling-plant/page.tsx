@@ -29,78 +29,382 @@ const faqData = [
   {
     question: "What is a Vented Recycling Plant?",
     answer:
-      "A Vented Recycling Plant is a specialized plastic recycling system equipped with venting technology that removes moisture, volatile gases, and contaminants during processing to produce high-quality recycled plastic pellets.",
+      "A Vented Recycling Plant is a plastic recycling system that uses a vented extruder to remove moisture, gases, and volatile contaminants while converting plastic waste into high-quality reusable pellets.",
+  },
+  {
+    question: "How does a Vented Recycling Plant work?",
+    answer:
+      "The plant melts plastic waste, removes moisture and trapped gases through a venting system, filters impurities, and converts the molten polymer into uniform recycled plastic pellets.",
+  },
+  {
+    question: "Why is venting important in plastic recycling?",
+    answer:
+      "Venting removes moisture, air, volatile compounds, and contaminants from molten plastic, improving pellet quality, surface finish, and processing stability.",
+  },
+  {
+    question: "What is devolatilization in plastic extrusion?",
+    answer:
+      "Devolatilization is the process of removing moisture, solvents, gases, and volatile substances from molten polymers during extrusion to produce cleaner, higher-quality recycled plastic.",
+  },
+  {
+    question: "Which plastic materials can be recycled using this plant?",
+    answer:
+      "The plant processes PP, HDPE, LDPE, LLDPE, HIPS, ABS, PS, PMMA, PA, PC, and many engineering plastics.",
+  },
+  {
+    question: "Can the machine recycle post-consumer plastic waste?",
+    answer:
+      "Yes. It is suitable for recycling post-consumer and post-industrial plastic waste into reusable plastic granules.",
+  },
+  {
+    question: "Can the plant recycle plastic film waste?",
+    answer:
+      "Yes. It efficiently processes LDPE film, LLDPE film, agricultural film, and industrial plastic film after proper preparation.",
+  },
+  {
+    question: "Can rigid plastic waste be recycled?",
+    answer:
+      "Yes. The machine is suitable for rigid plastics such as HDPE containers, PP crates, ABS components, and engineering plastic scrap.",
+  },
+  {
+    question: "What are recycled plastic pellets used for?",
+    answer:
+      "Recycled plastic pellets are used in injection molding, pipe manufacturing, blown film, sheet extrusion, household products, automotive components, and packaging.",
+  },
+  {
+    question: "What is a Plastic Pelletizing Plant?",
+    answer:
+      "A Plastic Pelletizing Plant converts molten recycled plastic into uniform plastic pellets that can be reused as raw material in various manufacturing processes.",
   },
   {
     question:
-      "What materials can be processed using the Vented Recycling Plant?",
+      "What is the difference between a Recycling Plant and a Pelletizing Plant?",
     answer:
-      "The plant can process PP, PE, LDPE, HDPE, HIPS, PS, ABS, PMMA, PC, PA, and various engineering plastics, including both virgin and recycled materials.",
+      "A recycling plant includes washing, shredding, drying, extrusion, and pelletizing, while a pelletizing plant mainly converts molten plastic into reusable pellets.",
   },
   {
-    question: "What is the purpose of venting in plastic recycling?",
+    question: "What are the advantages of a Vented Extruder?",
     answer:
-      "The venting system removes moisture, trapped air, volatile compounds, and contaminants from molten plastic, improving melt quality, pellet strength, and final product consistency.",
+      "A vented extruder improves melt quality, removes moisture, reduces bubbles, increases productivity, and produces better-quality recycled plastic pellets.",
   },
   {
-    question: "What is devolatilization in plastic processing?",
+    question: "Can contaminated plastic be processed?",
     answer:
-      "Devolatilization is the process of removing unwanted gases, moisture, solvents, and volatile substances from molten polymers during extrusion to improve material quality and processing performance.",
+      "Yes. The venting system and hydraulic screen changer help remove contaminants, although proper washing before recycling is recommended.",
   },
   {
-    question: "What is the production capacity of the Vented Recycling Plant?",
+    question: "Can engineering plastics be recycled?",
     answer:
-      "Depending on the machine model, production capacities range from 80 Kg/hr to 500 Kg/hr, making it suitable for both medium and large-scale recycling operations.",
+      "Yes. Engineering plastics such as ABS, PMMA, PA, and PC can be processed with efficient degassing and stable extrusion.",
   },
   {
-    question: "What are the advantages of a vented extruder?",
+    question: "What production capacity is available?",
     answer:
-      "Vented extruders provide superior degassing, better plasticization, improved melt quality, reduced defects, higher productivity, and lower processing costs compared to standard extrusion systems.",
-  },
-  {
-    question: "Can the machine process recycled plastic waste?",
-    answer:
-      "Yes. The plant is specifically designed for processing reclaimed plastic materials and post-industrial plastic waste while maintaining excellent product quality.",
-  },
-  {
-    question: "What is a Plastic Palletizing Plant?",
-    answer:
-      "A Plastic Palletizing Plant converts molten recycled plastic into uniform pellets or granules that can be reused as raw material for manufacturing plastic products.",
-  },
-  {
-    question: "How does the hydraulic screen changer improve performance?",
-    answer:
-      "The hydraulic screen changer continuously filters impurities from molten plastic without interrupting production, ensuring cleaner material and higher-quality recycled pellets.",
+      "Depending on the machine model, production capacities range from approximately 80 kg/hr to 500 kg/hr.",
   },
   {
     question: "Which industries use recycled plastic pellets?",
     answer:
-      "Recycled plastic pellets are widely used in packaging, automotive parts, household products, construction materials, pipes, sheets, injection molding, and extrusion applications.",
+      "Packaging, automotive, construction, furniture, agriculture, consumer goods, pipe manufacturing, and injection molding industries widely use recycled plastic pellets.",
   },
   {
-    question: "Can the plant process engineering plastics?",
+    question: "Can the machine process virgin and recycled materials together?",
     answer:
-      "Yes. The system is designed to process engineering plastics such as ABS, PMMA, PC, PA, and other specialty polymers requiring efficient degassing and stable processing conditions.",
+      "Yes. Virgin and recycled polymers can be blended according to production requirements and material compatibility.",
   },
   {
-    question: "How energy efficient is the Vented Recycling Plant?",
+    question: "How does a hydraulic screen changer work?",
     answer:
-      "The machine is designed with optimized screw geometry, advanced heating systems, and efficient drive technology to maximize output while minimizing energy consumption.",
+      "The hydraulic screen changer continuously filters impurities from molten plastic without stopping production, improving product quality and reducing downtime.",
+  },
+  {
+    question: "What types of impurities can be removed during recycling?",
+    answer:
+      "The recycling process helps remove moisture, gases, dust, paper particles, labels, fine contaminants, and other unwanted materials through filtration and venting.",
+  },
+  {
+    question: "Can colored plastic waste be recycled?",
+    answer:
+      "Yes. Colored plastic scrap can be recycled into reusable pellets suitable for various industrial applications.",
   },
   {
     question: "Is the machine suitable for continuous production?",
     answer:
-      "Yes. HPMC Vented Recycling Plants are engineered for continuous operation with stable performance, reliable processing, and minimal downtime.",
+      "Yes. The Vented Recycling Plant is designed for continuous industrial operation with stable output and consistent pellet quality.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "Does the machine improve recycled plastic quality?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, technical assistance, spare parts support, and complete after-sales service.",
+      "Yes. Efficient degassing, melt filtration, and optimized screw design significantly improve recycled plastic quality.",
+  },
+  {
+    question: "Can moisture-rich plastic materials be processed?",
+    answer:
+      "Yes. The venting section removes residual moisture during processing, improving melt consistency and pellet quality.",
+  },
+  {
+    question:
+      "What makes vented recycling technology better than standard extrusion?",
+    answer:
+      "Vented recycling technology removes gases and moisture during processing, resulting in cleaner pellets, fewer defects, and improved processing efficiency.",
   },
   {
     question: "Why choose HPMC Vented Recycling Plants?",
     answer:
-      "HPMC Vented Recycling Plants offer advanced venting technology, excellent degassing performance, superior plasticization, high-quality pellet production, energy efficiency, and long-term operational reliability.",
+      "HPMC Vented Recycling Plants combine advanced venting technology, efficient degassing, high-quality pellet production, energy-efficient operation, robust construction, and dependable after-sales support.",
+  },
+  {
+    question: "What is the price of a Vented Recycling Plant in India?",
+    answer:
+      "The price depends on production capacity, screw diameter, motor power, automation level, and customization requirements. Contact HPMC for a customized quotation.",
+  },
+  {
+    question: "How do I choose the right Vented Recycling Plant?",
+    answer:
+      "The right machine depends on the type of plastic waste, required output capacity, contamination level, pellet quality, and future production requirements.",
+  },
+  {
+    question: "Which plastic recycling machine is best for PP and PE waste?",
+    answer:
+      "A Vented Recycling Plant is one of the best solutions for recycling PP, HDPE, LDPE, and LLDPE because it effectively removes moisture and volatile gases during processing.",
+  },
+  {
+    question: "Can the Vented Recycling Plant be customized?",
+    answer:
+      "Yes. HPMC offers customized screw designs, feeding systems, pelletizing units, automation options, and filtration systems based on customer requirements.",
+  },
+  {
+    question: "What screw sizes are available?",
+    answer:
+      "Multiple screw diameters are available to suit medium and high-capacity plastic recycling operations.",
+  },
+  {
+    question: "How much electricity does a Vented Recycling Plant consume?",
+    answer:
+      "Power consumption depends on the machine model, motor capacity, production rate, and material being processed.",
+  },
+  {
+    question: "Is the machine energy efficient?",
+    answer:
+      "Yes. Advanced screw geometry and optimized heating systems maximize output while minimizing energy consumption.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. HPMC Vented Recycling Plants are designed for continuous industrial production with stable performance and minimal downtime.",
+  },
+  {
+    question: "Does the machine include PLC automation?",
+    answer:
+      "Yes. PLC-based automation with an HMI touchscreen is available for easy operation, monitoring, and production management.",
+  },
+  {
+    question: "Can processing parameters be saved?",
+    answer:
+      "Yes. Operators can store and recall production settings to ensure consistent product quality and faster setup.",
+  },
+  {
+    question: "Does the machine have automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide precise temperature control throughout the recycling process.",
+  },
+  {
+    question: "Can different screen changer options be installed?",
+    answer:
+      "Yes. Hydraulic screen changers and other filtration systems can be configured according to the recycling application.",
+  },
+  {
+    question: "Can the machine recycle mixed plastic materials?",
+    answer:
+      "It can process compatible plastic materials, but proper material segregation is recommended for the best recycling performance.",
+  },
+  {
+    question: "Which pelletizing systems are available?",
+    answer:
+      "The plant supports strand pelletizing, water-ring pelletizing, die-face pelletizing, and customized pelletizing solutions.",
+  },
+  {
+    question: "Can vacuum venting be added to the machine?",
+    answer:
+      "Yes. Optional vacuum venting systems can further improve moisture removal and devolatilization performance.",
+  },
+  {
+    question: "How often should the recycling plant be serviced?",
+    answer:
+      "Routine preventive maintenance based on operating hours helps maintain consistent performance and extend machine life.",
+  },
+  {
+    question: "Is screw maintenance easy?",
+    answer:
+      "Yes. The screw assembly is designed for convenient maintenance, reducing downtime during servicing.",
+  },
+  {
+    question: "Does HPMC provide installation services?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, machine testing, and startup assistance.",
+  },
+  {
+    question: "Is operator training provided?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe operation and maximum production efficiency.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. HPMC supplies genuine spare parts to ensure reliable machine performance and minimize downtime.",
+  },
+  {
+    question: "Does HPMC provide after-sales support?",
+    answer:
+      "Yes. HPMC offers technical support, maintenance services, troubleshooting, spare parts, and process optimization.",
+  },
+  {
+    question: "Can I request a machine demonstration?",
+    answer:
+      "Yes. Product demonstrations and technical consultations can be arranged to help customers evaluate machine performance.",
+  },
+  {
+    question: "Can production trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production using customer materials can be conducted to verify machine performance and pellet quality.",
+  },
+  {
+    question:
+      "Can the recycling plant be integrated into an existing recycling line?",
+    answer:
+      "Yes. HPMC machines can be integrated with shredders, washing plants, dryers, conveyors, and downstream pelletizing systems.",
+  },
+  {
+    question: "How can I get a quotation for a Vented Recycling Plant?",
+    answer:
+      "Simply contact HPMC with your material type, production capacity, and recycling requirements to receive a customized quotation.",
+  },
+  {
+    question:
+      "Can the Vented Recycling Plant process moisture-rich plastic waste?",
+    answer:
+      "Yes. The venting system efficiently removes residual moisture from molten plastic, producing high-quality recycled pellets.",
+  },
+  {
+    question: "Can the machine recycle printed plastic film?",
+    answer:
+      "Yes. Printed plastic films can be recycled after proper washing and preparation, depending on contamination levels.",
+  },
+  {
+    question: "Can multilayer plastic waste be processed?",
+    answer:
+      "Compatible multilayer plastic materials can be recycled after evaluation of their composition and processing characteristics.",
+  },
+  {
+    question: "What makes vented extrusion better than standard extrusion?",
+    answer:
+      "Vented extrusion removes trapped gases and moisture during processing, resulting in stronger pellets, fewer defects, and improved product quality.",
+  },
+  {
+    question: "Does the machine improve melt quality?",
+    answer:
+      "Yes. Efficient degassing and optimized screw design produce a cleaner, more homogeneous polymer melt.",
+  },
+  {
+    question: "Can recycled pellets be used for injection molding?",
+    answer:
+      "Yes. High-quality recycled pellets can be used in injection molding, depending on the polymer type and application.",
+  },
+  {
+    question: "Can recycled pellets be used for extrusion applications?",
+    answer:
+      "Yes. The recycled pellets are suitable for pipe extrusion, sheet extrusion, profile extrusion, and other compatible applications.",
+  },
+  {
+    question: "Can the machine reduce material wastage?",
+    answer:
+      "Yes. Efficient processing and continuous filtration help minimize material loss and improve raw material utilization.",
+  },
+  {
+    question: "Does the recycling plant reduce production costs?",
+    answer:
+      "Yes. Recycling plastic waste reduces raw material costs while improving manufacturing efficiency and sustainability.",
+  },
+  {
+    question: "What is the expected lifespan of the recycling plant?",
+    answer:
+      "With proper maintenance and genuine spare parts, HPMC recycling plants provide reliable performance for many years.",
+  },
+  {
+    question: "Can the machine be upgraded in the future?",
+    answer:
+      "Yes. Automation systems, pelletizing units, feeding systems, and filtration equipment can be upgraded as production requirements grow.",
+  },
+  {
+    question: "Does HPMC manufacture Vented Recycling Plants in India?",
+    answer:
+      "Yes. HPMC designs and manufactures high-performance Vented Recycling Plants in India for domestic and international customers.",
+  },
+  {
+    question: "Does HPMC export recycling plants worldwide?",
+    answer:
+      "Yes. HPMC exports plastic recycling plants and extrusion machinery to customers across various international markets.",
+  },
+  {
+    question: "Can the recycling plant be installed in an existing factory?",
+    answer:
+      "Yes. HPMC customizes plant layouts to integrate smoothly into existing recycling and manufacturing facilities.",
+  },
+  {
+    question: "Is online technical support available?",
+    answer:
+      "Yes. HPMC provides remote technical assistance, troubleshooting, and process optimization support.",
+  },
+  {
+    question: "Does HPMC help optimize recycling processes?",
+    answer:
+      "Yes. HPMC engineers assist customers with machine setup, process optimization, and production efficiency improvements.",
+  },
+  {
+    question: "How quickly can spare parts be delivered?",
+    answer:
+      "Standard spare parts are generally available for prompt dispatch to reduce production downtime.",
+  },
+  {
+    question: "Can I visit the HPMC manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to schedule a factory visit to inspect manufacturing facilities and discuss project requirements.",
+  },
+  {
+    question: "Can recycling trials be conducted using my plastic waste?",
+    answer:
+      "Yes. HPMC can conduct production trials using customer-supplied plastic materials to evaluate machine performance.",
+  },
+  {
+    question: "Is the recycling plant environmentally friendly?",
+    answer:
+      "Yes. Recycling plastic waste helps reduce landfill disposal, conserve resources, and support sustainable manufacturing practices.",
+  },
+  {
+    question: "Can the machine help reduce carbon footprint?",
+    answer:
+      "Yes. By converting plastic waste into reusable raw material, the recycling plant contributes to reducing environmental impact.",
+  },
+  {
+    question: "What certifications can HPMC machines support?",
+    answer:
+      "HPMC manufactures machinery following strict quality standards. Certification availability depends on customer and regional requirements.",
+  },
+  {
+    question: "Which industries benefit most from recycled plastic pellets?",
+    answer:
+      "Packaging, automotive, construction, agriculture, furniture, consumer products, and plastic processing industries widely use recycled pellets.",
+  },
+  {
+    question:
+      "Why should I choose HPMC over other plastic recycling machine manufacturers?",
+    answer:
+      "HPMC offers robust engineering, efficient venting technology, customized recycling solutions, dependable after-sales support, and decades of experience in plastic processing machinery.",
+  },
+  {
+    question: "Why choose HPMC Vented Recycling Plants?",
+    answer:
+      "HPMC Vented Recycling Plants deliver efficient degassing, superior pellet quality, reliable continuous production, energy-efficient operation, customized machine configurations, and comprehensive technical support for modern plastic recycling applications.",
   },
 ];
 
@@ -160,7 +464,10 @@ export default function TwoStageRecyclingPlant() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const [visibleFaqCount, setVisibleFaqCount] = useState(5);
+  const displayedFaqs = faqData.slice(0, visibleFaqCount);
+  const hasMoreFaqs = visibleFaqCount < faqData.length;
+  const nextFaqCount = Math.min(10, faqData.length - visibleFaqCount);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;
@@ -677,37 +984,37 @@ export default function TwoStageRecyclingPlant() {
                     <div
                       key={index}
                       className="
-                        transition-all
-                        duration-300
-                        hover:bg-[var(--muted)]
-                      "
+                                                 transition-all
+                                                 duration-300
+                                                 hover:bg-[var(--muted)]
+                                               "
                     >
                       <button
                         onClick={() => setActive(isOpen ? null : index)}
                         className="
-                          w-full
-                          flex
-                          items-center
-                          justify-between
-                          gap-5
-                          px-5
-                          py-5
-                          sm:px-7
-                          sm:py-6
-                          text-left
-                        "
+                                                   w-full
+                                                   flex
+                                                   items-center
+                                                   justify-between
+                                                   gap-5
+                                                   px-5
+                                                   py-5
+                                                   sm:px-7
+                                                   sm:py-6
+                                                   text-left
+                                                 "
                       >
                         <div className="flex items-start gap-4">
                           <span
                             className={`
-                                mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold
-                                transition-all duration-300
-                                ${
-                                  isOpen
-                                    ? "bg-[var(--primary)] text-white"
-                                    : "bg-[var(--primary)]/10 text-[var(--primary)]"
-                                }
-                              `}
+                                                         mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold
+                                                         transition-all duration-300
+                                                         ${
+                                                           isOpen
+                                                             ? "bg-[var(--primary)] text-white"
+                                                             : "bg-[var(--primary)]/10 text-[var(--primary)]"
+                                                         }
+                                                       `}
                           >
                             {String(index + 1).padStart(2, "0")}
                           </span>
@@ -719,13 +1026,13 @@ export default function TwoStageRecyclingPlant() {
 
                         <div
                           className={`
-                            w-10 h-10 rounded-full shrink-0
-                            flex items-center justify-center
-                            border border-[var(--border)]
-                            bg-white
-                            transition-all duration-300
-                            ${isOpen ? "rotate-180 border-[var(--primary)] text-[var(--primary)]" : "text-[var(--text-secondary)]"}
-                          `}
+                                                     w-10 h-10 rounded-full shrink-0
+                                                     flex items-center justify-center
+                                                     border border-[var(--border)]
+                                                     bg-white
+                                                     transition-all duration-300
+                                                     ${isOpen ? "rotate-180 border-[var(--primary)] text-[var(--primary)]" : "text-[var(--text-secondary)]"}
+                                                   `}
                         >
                           <ChevronDown size={20} />
                         </div>
@@ -733,12 +1040,12 @@ export default function TwoStageRecyclingPlant() {
 
                       <div
                         className={`
-                          grid
-                          transition-all
-                          duration-500
-                          ease-in-out
-                          ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
-                        `}
+                                                   grid
+                                                   transition-all
+                                                   duration-500
+                                                   ease-in-out
+                                                   ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
+                                                 `}
                       >
                         <div className="overflow-hidden">
                           <div className="px-5 pb-6 pl-[72px] pr-7 text-[var(--text-secondary)] leading-8 sm:px-7 sm:pl-20">
@@ -753,46 +1060,44 @@ export default function TwoStageRecyclingPlant() {
             </div>
           </div>
 
-          {faqData.length > 5 && (
+          {hasMoreFaqs && (
             <div className="flex justify-center mt-10">
               <button
-                onClick={() => setShowAllFaqs(!showAllFaqs)}
+                onClick={() =>
+                  setVisibleFaqCount((currentCount) =>
+                    Math.min(currentCount + 10, faqData.length),
+                  )
+                }
                 className="
-                        group
-                        inline-flex
-                        items-center
-                        gap-4
-                        rounded-full
-                        border
-                        border-[var(--primary)]/25
-                        bg-white
-                        px-5
-                        py-3
-                        text-[var(--text-primary)]
-                        shadow-[0_18px_45px_rgba(11,18,32,0.08)]
-                        transition-all
-                        duration-300
-                        hover:-translate-y-1
-                        hover:border-[var(--primary)]
-                        hover:shadow-[0_22px_55px_rgba(101,188,79,0.18)]
-            "
+                                                 group
+                                                 inline-flex
+                                                 items-center
+                                                 gap-4
+                                                 rounded-full
+                                                 border
+                                                 border-[var(--primary)]/25
+                                                 bg-white
+                                                 px-5
+                                                 py-3
+                                                 text-[var(--text-primary)]
+                                                 shadow-[0_18px_45px_rgba(11,18,32,0.08)]
+                                                 transition-all
+                                                 duration-300
+                                                 hover:-translate-y-1
+                                                 hover:border-[var(--primary)]
+                                                 hover:shadow-[0_22px_55px_rgba(101,188,79,0.18)]
+                                     "
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary)] text-white transition-transform duration-300 group-hover:scale-105">
-                  {showAllFaqs ? (
-                    <ChevronDown size={20} className="rotate-180" />
-                  ) : (
-                    <ArrowRight size={20} />
-                  )}
+                  <ArrowRight size={20} />
                 </span>
 
                 <span className="text-left">
                   <span className="block text-xs font-semibold uppercase tracking-[2px] text-[var(--primary)]">
-                    {showAllFaqs ? "Collapse List" : "Explore More"}
+                    Explore More
                   </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    {showAllFaqs
-                      ? "Show fewer questions"
-                      : `View ${faqData.length - displayedFaqs.length} more FAQs`}
+                    View next {nextFaqCount} FAQs
                   </span>
                 </span>
               </button>

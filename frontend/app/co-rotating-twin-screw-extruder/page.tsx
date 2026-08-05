@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 
-import Link from "next/link";
-
 import { useRef, useState, type MouseEvent } from "react";
 import CTA from "../components/CTA";
 import FloatingContact from "../components/FloatingButton";
@@ -12,15 +10,11 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import {
   Play,
-  Pause,
   ChevronDown,
   Sparkles,
   HelpCircle,
   ArrowRight,
 } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
@@ -28,7 +22,7 @@ const galleryImages = [
   "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling2.jpg",
 ];
 
-const faqData = [
+const baseFaqData = [
   {
     question: "What is a Co-rotating Twin Screw Extruder?",
     answer:
@@ -107,10 +101,245 @@ const faqData = [
       "HPMC machines deliver excellent mixing efficiency, high throughput, modular screw design, energy-efficient operation, reliable performance, and outstanding after-sales support, making them ideal for demanding polymer compounding applications.",
   },
 ];
+const extraFaqData = [
+  {
+    question:
+      "How is a co-rotating twin screw extruder different from a counter-rotating twin screw extruder?",
+    answer:
+      "A co-rotating twin screw extruder is preferred for plastic compounding, masterbatch, filler loading, engineering plastic, and recycling applications because both screws rotate in the same direction and create strong mixing and self-wiping action. Counter-rotating twin screw extruders are commonly used for PVC pipe and profile extrusion.",
+  },
+  {
+    question:
+      "Is the HPMC Co-rotating Twin Screw Extruder suitable for color masterbatch production?",
+    answer:
+      "Yes. It provides excellent pigment dispersion, uniform melt mixing, stable output, and consistent granule quality for PE, PP, ABS, PS, PET, and engineering plastic color masterbatch formulations.",
+  },
+  {
+    question: "Can this machine be used for filler masterbatch manufacturing?",
+    answer:
+      "Yes. It is widely used for filler masterbatch with calcium carbonate, talc, barium sulphate, mica, and other mineral fillers, depending on polymer base, filler percentage, and final application.",
+  },
+  {
+    question:
+      "What type of pelletizing system can be supplied with the extruder?",
+    answer:
+      "The line can be configured with strand pelletizing, water-ring pelletizing, die-face pelletizing, or underwater pelletizing based on material behavior, output requirement, pellet quality, and production process.",
+  },
+  {
+    question:
+      "Can the extruder process recycled plastic granules and reprocessed material?",
+    answer:
+      "Yes. It can process recycled PP, PE, ABS, HIPS, PC, PA, and other thermoplastics with additives, fillers, stabilizers, and compatibilizers to improve material consistency.",
+  },
+  {
+    question: "Is vacuum venting available for moisture and volatile removal?",
+    answer:
+      "Yes. Vacuum venting can remove moisture, trapped air, monomers, and volatile gases during compounding, helping improve pellet quality, melt stability, and final product performance.",
+  },
+  {
+    question: "What does L/D ratio mean in a twin screw extruder?",
+    answer:
+      "L/D ratio means screw length divided by screw diameter. A higher L/D ratio provides more processing zones for feeding, melting, mixing, venting, and pressure build-up.",
+  },
+  {
+    question: "Which L/D ratio is best for polymer compounding?",
+    answer:
+      "The best L/D ratio depends on material and formulation. HPMC offers L/D ratios from 32 to 48 for masterbatch, high filler compounds, engineering plastics, recycling, and reinforced compounds.",
+  },
+  {
+    question: "Can the machine produce engineering plastic compounds?",
+    answer:
+      "Yes. It can produce PA, PC, ABS, PBT, PET, PPO, PPS, TPE, TPU, and polymer blend compounds with additives, flame retardants, glass fibre, impact modifiers, and mineral fillers.",
+  },
+  {
+    question: "Can flame retardant compounds be processed?",
+    answer:
+      "Yes. Flame retardant polymer compounds can be processed with the correct screw design, feeding system, temperature profile, and venting arrangement based on the resin and additive package.",
+  },
+  {
+    question: "Can biodegradable plastic compounds be made on this machine?",
+    answer:
+      "Yes. It can be configured for biodegradable plastic compounding with PLA, PBAT, starch-based blends, and compostable polymer formulations when heat-sensitive processing is required.",
+  },
+  {
+    question: "Can TPE, TPU, and elastomer compounds be processed?",
+    answer:
+      "Yes. HPMC Co-rotating Twin Screw Extruders can process TPE, TPU, TPR, and elastomer compounds with plasticizers, fillers, colors, and performance additives.",
+  },
+  {
+    question: "What is the benefit of modular screw elements?",
+    answer:
+      "Modular screw elements allow conveying, kneading, mixing, reverse, and venting sections to be arranged according to the formulation, improving flexibility, dispersion, and process control.",
+  },
+  {
+    question: "Can the barrel sections be customized?",
+    answer:
+      "Yes. Barrel sections can be configured for main feeding, side feeding, liquid dosing, venting, vacuum venting, mixing, and metering for different compounding requirements.",
+  },
+  {
+    question: "What is side feeding in a twin screw extruder?",
+    answer:
+      "Side feeding introduces fillers, glass fibre, additives, or heat-sensitive materials after the polymer has melted. It supports higher loading levels and better process flexibility.",
+  },
+  {
+    question: "Can liquid additives be dosed into the extruder?",
+    answer:
+      "Yes. Liquid dosing systems can be integrated for oils, plasticizers, processing aids, coupling agents, and other liquid additives depending on dosing accuracy requirements.",
+  },
+  {
+    question: "What feeding systems are available?",
+    answer:
+      "The line can be supplied with volumetric feeders, gravimetric feeders, twin screw feeders, side feeders, liquid dosing systems, and material handling accessories.",
+  },
+  {
+    question: "Can the machine handle powder, granules, flakes, and fibre?",
+    answer:
+      "Yes. With suitable feeding and screw configuration, it can process polymer granules, powder, regrind, flakes, mineral fillers, additives, pigments, and glass fibre.",
+  },
+  {
+    question: "How does the extruder improve additive dispersion?",
+    answer:
+      "The intermeshing co-rotating screw design creates controlled shear and repeated material splitting and recombination, improving pigment, filler, stabilizer, and modifier dispersion.",
+  },
+  {
+    question: "Can the machine reduce batch-to-batch variation?",
+    answer:
+      "Yes. Proper feeder selection, screw configuration, temperature control, and process settings improve consistency in melt quality, filler dispersion, color shade, and pellet size.",
+  },
+  {
+    question: "What controls are provided with the machine?",
+    answer:
+      "HPMC can provide PLC-based controls, touch screen HMI, temperature controllers, drive controls, feeder controls, safety interlocks, and optional automation features.",
+  },
+  {
+    question: "Is PLC automation available?",
+    answer:
+      "Yes. PLC automation and HMI control can support recipe management, temperature monitoring, motor load display, alarm handling, and operator-friendly machine operation.",
+  },
+  {
+    question:
+      "Can the extruder be connected with upstream and downstream equipment?",
+    answer:
+      "Yes. It can be integrated with mixers, feeders, material loaders, cooling tanks, air knives, pelletizers, classifiers, pellet cooling systems, storage silos, and packing systems.",
+  },
+  {
+    question: "What utilities are required to install the machine?",
+    answer:
+      "Utility requirements depend on the model and line configuration. Common needs include electrical power, cooling water, compressed air, vacuum, material handling space, and proper ventilation.",
+  },
+  {
+    question:
+      "How much space is required for a co-rotating twin screw extrusion line?",
+    answer:
+      "Floor space depends on screw diameter, feeder layout, pelletizing system, cooling arrangement, and automation level. HPMC can help plan the line layout for the factory.",
+  },
+  {
+    question: "Can HPMC help select the right screw diameter?",
+    answer:
+      "Yes. HPMC recommends screw diameter based on target output, material type, filler loading, formulation complexity, pelletizing method, budget, and future capacity requirement.",
+  },
+  {
+    question: "Which model is suitable for small batch compounding?",
+    answer:
+      "For lower output and development-scale production, smaller models such as HPMC 50 may be suitable depending on material, formulation, trial need, and output expectation.",
+  },
+  {
+    question: "Which model is suitable for high-output production?",
+    answer:
+      "For large-scale masterbatch, filler compound, and recycling applications, larger models such as HPMC 72 or HPMC 92 may be suitable depending on required kg/hr output.",
+  },
+  {
+    question: "Can the machine be used for PVC compounding?",
+    answer:
+      "Yes. It can be configured for selected PVC compounding applications such as soft PVC compounds, cable grade PVC compounds, and additive-rich formulations.",
+  },
+  {
+    question:
+      "Can the co-rotating twin screw extruder make cable grade compounds?",
+    answer:
+      "Yes. It can be used for cable grade PVC, PE, and other polymer compounds where additive mixing, color dispersion, plasticizer distribution, and stable pellet quality are important.",
+  },
+  {
+    question: "Can the extruder process glass fibre without fibre damage?",
+    answer:
+      "The screw configuration and side feeding position can support good fibre dispersion while helping control excessive fibre breakage, depending on glass fibre percentage and required properties.",
+  },
+  {
+    question: "How is screw and barrel wear controlled?",
+    answer:
+      "Wear is managed through suitable metallurgy, screw element selection, barrel liner options, correct filler feeding, optimized speed, and preventive maintenance.",
+  },
+  {
+    question: "What safety features are included?",
+    answer:
+      "Safety features may include emergency stop, drive protection, motor overload protection, temperature alarms, pressure monitoring, guards, interlocks, and electrical panel safety.",
+  },
+  {
+    question: "Can pressure and melt temperature be monitored?",
+    answer:
+      "Yes. Melt pressure and melt temperature monitoring can be provided to help operators maintain stable processing, protect downstream equipment, and improve compound quality.",
+  },
+  {
+    question: "How long does installation and commissioning take?",
+    answer:
+      "Installation and commissioning time depends on machine size, line configuration, utility readiness, material availability, and trial requirements. HPMC guides startup activities.",
+  },
+  {
+    question:
+      "Does HPMC support material trials before finalizing the machine?",
+    answer:
+      "Customers can discuss material trials or technical evaluation with HPMC to understand process feasibility, output range, pellet quality, screw configuration, and suitable line setup.",
+  },
+  {
+    question: "Can the machine be customized for Indian and export markets?",
+    answer:
+      "Yes. HPMC can customize lines for Indian and international customers with suitable electrical standards, documentation, automation, spare parts planning, and shipment requirements.",
+  },
+  {
+    question: "What information is needed to request a quotation?",
+    answer:
+      "Share raw material, filler or additive percentage, required output in kg/hr, final application, pelletizing preference, automation needs, available utilities, and factory location.",
+  },
+  {
+    question:
+      "How can I choose between strand pelletizing and water-ring pelletizing?",
+    answer:
+      "Strand pelletizing suits many engineering plastic and masterbatch applications. Water-ring pelletizing suits materials that cut well at the die face. Selection depends on polymer, viscosity, and throughput.",
+  },
+  {
+    question: "Can HPMC provide spare screw elements and barrel parts?",
+    answer:
+      "Yes. HPMC provides spare screw elements, barrel sections, heaters, thermocouples, gearbox support, electrical parts, feeder components, pelletizer parts, and other critical spares.",
+  },
+  {
+    question: "What are common signs that screw elements need inspection?",
+    answer:
+      "Common signs include reduced output, higher motor load, poor mixing, inconsistent pellet quality, pressure instability, unusual noise, temperature variation, or visible wear during maintenance.",
+  },
+  {
+    question: "Can the line be upgraded later for higher automation?",
+    answer:
+      "Yes. Depending on the original configuration, upgrades may include gravimetric feeding, improved controls, additional side feeders, vacuum systems, pellet handling, and data monitoring.",
+  },
+  {
+    question:
+      "Why is HPMC considered a co-rotating twin screw extruder manufacturer in India?",
+    answer:
+      "HPMC manufactures plastic extrusion machinery in India and supplies co-rotating twin screw systems for compounding, masterbatch, filler compound, cable compound, engineering plastic, and recycling applications.",
+  },
+  {
+    question:
+      "How do I contact HPMC for a co-rotating twin screw extruder enquiry?",
+    answer:
+      "You can contact HPMC through the enquiry form, request a demo, request a quotation, or share your material, output capacity, formulation, and application details with the technical team.",
+  },
+];
+
+const faqData = [...baseFaqData, ...extraFaqData];
 export default function CorotatingTwinScrewExtruder() {
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopup2, setOpenPopup2] = useState(false);
-  const [catalogueToDownload, setCatalogueToDownload] = useState("");
+  const [, setCatalogueToDownload] = useState("");
   const [activeImage, setActiveImage] = useState(0);
   const [isZooming, setIsZooming] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
@@ -119,9 +348,24 @@ export default function CorotatingTwinScrewExtruder() {
   const [playing, setPlaying] = useState(false);
 
   const [active, setActive] = useState<number | null>(0);
-  const [showAllFaqs, setShowAllFaqs] = useState(false);
+  const [visibleFaqCount, setVisibleFaqCount] = useState(5);
 
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const displayedFaqs = faqData.slice(0, visibleFaqCount);
+  const hasMoreFaqs = visibleFaqCount < faqData.length;
+  const nextFaqCount = Math.min(10, faqData.length - visibleFaqCount);
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
 
   const handleDownload = (catalogue: string) => {
     const access = localStorage.getItem("catalogue_access");
@@ -174,6 +418,10 @@ export default function CorotatingTwinScrewExtruder() {
       <link
         rel="canonical"
         href="https://hindustanplastics.com/co-rotating-twin-screw-extruder"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <Navbar />
 
@@ -755,10 +1003,14 @@ export default function CorotatingTwinScrewExtruder() {
             </div>
           </div>
 
-          {faqData.length > 5 && (
+          {hasMoreFaqs && (
             <div className="flex justify-center mt-10">
               <button
-                onClick={() => setShowAllFaqs(!showAllFaqs)}
+                onClick={() =>
+                  setVisibleFaqCount((currentCount) =>
+                    Math.min(currentCount + 10, faqData.length),
+                  )
+                }
                 className="
                         group
                         inline-flex
@@ -780,21 +1032,15 @@ export default function CorotatingTwinScrewExtruder() {
             "
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary)] text-white transition-transform duration-300 group-hover:scale-105">
-                  {showAllFaqs ? (
-                    <ChevronDown size={20} className="rotate-180" />
-                  ) : (
-                    <ArrowRight size={20} />
-                  )}
+                  <ArrowRight size={20} />
                 </span>
 
                 <span className="text-left">
                   <span className="block text-xs font-semibold uppercase tracking-[2px] text-[var(--primary)]">
-                    {showAllFaqs ? "Collapse List" : "Explore More"}
+                    Explore More
                   </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    {showAllFaqs
-                      ? "Show fewer questions"
-                      : `View ${faqData.length - displayedFaqs.length} more FAQs`}
+                    View next {nextFaqCount} FAQs
                   </span>
                 </span>
               </button>

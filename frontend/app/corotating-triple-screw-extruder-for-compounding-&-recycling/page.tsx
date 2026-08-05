@@ -64,77 +64,382 @@ const faqData = [
   {
     question: "What is a Co-Rotating Triple Screw Extruder?",
     answer:
-      "A Co-Rotating Triple Screw Extruder is a high-performance polymer processing machine designed for compounding, masterbatch production, recycling, and high-filler formulations requiring exceptional mixing, plasticization, and throughput.",
+      "A Co-Rotating Triple Screw Extruder is an advanced polymer processing machine designed for high-performance compounding, masterbatch production, engineering plastics, recycling, and high-filler applications with superior mixing efficiency.",
   },
   {
-    question: "What applications are suitable for a Triple Screw Extruder?",
+    question: "How does a Triple Screw Extruder work?",
     answer:
-      "The machine is widely used for direct compounding, PVC cable compounds, masterbatch production, engineering plastics, polymer alloys, film and sheet extrusion compounds, injection molding compounds, and recycling applications.",
+      "Three co-rotating screws work together to melt, mix, plasticize, and convey polymer materials, providing better dispersion, higher throughput, and improved product consistency than conventional extrusion systems.",
   },
   {
-    question: "What materials can be processed using this extruder?",
+    question:
+      "What is the difference between a Twin Screw Extruder and a Triple Screw Extruder?",
     answer:
-      "The system can process PVC, PP, PE, ABS, PA, PC, engineering plastics, recycled polymers, filler compounds, masterbatches, and specialty polymer formulations.",
+      "A Triple Screw Extruder offers higher mixing efficiency, improved filler dispersion, greater output, enhanced plasticization, and better process stability compared to a conventional Twin Screw Extruder.",
   },
   {
-    question: "What is the production capacity of the Triple Screw Extruder?",
+    question: "Why choose a Triple Screw Extruder over a Twin Screw Extruder?",
     answer:
-      "Depending on the machine model, production capacities range from 2 Kg/hr to 1500 Kg/hr, making it suitable for laboratory development, pilot production, and large-scale industrial manufacturing.",
+      "Triple Screw technology provides superior mixing, higher productivity, improved material dispersion, reduced processing time, and better performance for demanding compounding applications.",
   },
   {
-    question: "What are the advantages of Triple Screw Technology?",
+    question: "What is a Triple Screw Extruder used for?",
     answer:
-      "Triple Screw Technology provides superior distributive mixing, enhanced dispersive mixing, higher throughput, better plasticization, improved filler dispersion, and greater process efficiency compared to conventional extrusion systems.",
+      "It is used for polymer compounding, engineering plastics, masterbatch production, filler modification, recycling, PVC compounds, polymer alloys, and specialty plastic formulations.",
   },
   {
-    question: "Can the machine process high filler formulations?",
+    question: "Which materials can be processed in a Triple Screw Extruder?",
     answer:
-      "Yes. The Triple Screw Extruder is specifically designed for high-filler compounding applications, ensuring excellent dispersion, stable processing, and consistent product quality.",
+      "The machine processes PP, PE, ABS, PVC, PET, PA, PC, EVA, TPE, TPU, engineering plastics, recycled polymers, biodegradable plastics, and specialty compounds.",
   },
   {
-    question: "Is the machine suitable for masterbatch production?",
+    question: "Can recycled plastic be processed in a Triple Screw Extruder?",
     answer:
-      "Yes. The system is ideal for color masterbatches, additive masterbatches, filler masterbatches, and specialty compounds requiring precise dispersion and mixing.",
+      "Yes. It efficiently processes recycled plastics into high-quality pellets while maintaining excellent dispersion and material consistency.",
   },
   {
-    question: "Can the machine process engineering plastics?",
+    question: "Can the machine manufacture color masterbatch?",
     answer:
-      "Yes. The extruder is widely used for engineering plastic compounding, polymer modification, reinforced compounds, and advanced material formulations.",
+      "Yes. Triple Screw Extruders provide outstanding pigment dispersion for producing premium-quality color masterbatches.",
   },
   {
-    question: "What are polymer alloys and composite applications?",
+    question: "Can additive masterbatch be produced?",
     answer:
-      "Polymer alloys combine multiple polymers to improve performance characteristics, while composite applications include materials reinforced with fillers, fibers, or additives to achieve specific mechanical and thermal properties.",
+      "Yes. It is suitable for UV, antioxidant, anti-static, flame-retardant, anti-block, and other additive masterbatches.",
   },
   {
-    question: "Can the Triple Screw Extruder process wood fiber composites?",
+    question: "Can engineering plastics be compounded?",
     answer:
-      "Yes. The machine is suitable for manufacturing wood-plastic composites (WPC), fiber-reinforced compounds, and other composite material formulations.",
+      "Yes. The machine is specifically designed for engineering plastic compounding with excellent mixing and temperature control.",
   },
   {
-    question: "How does the modular screw design improve performance?",
+    question:
+      "Is the Triple Screw Extruder suitable for high-filler applications?",
     answer:
-      "The modular screw configuration allows customized processing setups, optimized mixing zones, improved flexibility, and adaptation for different materials and production requirements.",
+      "Yes. It is specially engineered for high-filler compounds while maintaining excellent dispersion and processing stability.",
   },
   {
-    question: "What is the role of the Die Face Cutter and Vibratory Sieve?",
+    question: "Can calcium carbonate filled compounds be produced?",
     answer:
-      "The Die Face Cutter produces uniform pellets while the Vibratory Sieve removes irregular particles, ensuring consistent pellet size and high-quality finished compounds.",
+      "Yes. The machine easily processes calcium carbonate-filled compounds with high filler loading.",
+  },
+  {
+    question: "Can talc-filled compounds be manufactured?",
+    answer:
+      "Yes. Triple Screw technology provides excellent talc dispersion for high-quality compounded materials.",
+  },
+  {
+    question: "Can glass fiber reinforced compounds be produced?",
+    answer:
+      "Yes. It offers superior glass fiber dispersion, resulting in stronger engineering plastic compounds.",
+  },
+  {
+    question: "Can wood plastic composites (WPC) be processed?",
+    answer:
+      "Yes. Triple Screw Extruders are suitable for manufacturing wood-plastic composites and fiber-reinforced materials.",
+  },
+  {
+    question: "Can biodegradable plastics be processed?",
+    answer:
+      "Yes. The machine supports various biodegradable and bio-based polymer formulations.",
   },
   {
     question: "Which industries use Triple Screw Extruders?",
     answer:
-      "These machines are widely used in plastics processing, automotive, cable manufacturing, packaging, construction materials, polymer compounding, recycling, and engineering plastics industries.",
+      "Automotive, cable, packaging, construction, consumer goods, recycling, engineering plastics, medical, and polymer compounding industries widely use Triple Screw Extruders.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "What is the production capacity of a Triple Screw Extruder?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, process optimization support, spare parts supply, and comprehensive after-sales service.",
+      "Depending on the machine model, production capacity ranges from laboratory-scale output to approximately 1500 kg/hr.",
   },
   {
-    question: "Why choose HPMC Co-Rotating Triple Screw Extruders?",
+    question: "What are the advantages of Triple Screw Technology?",
     answer:
-      "HPMC Triple Screw Extruders offer exceptional mixing performance, high production capacity, superior compound quality, flexible processing capabilities, energy-efficient operation, and reliable long-term performance.",
+      "It provides higher throughput, excellent distributive mixing, better dispersive mixing, improved filler distribution, energy efficiency, and consistent compound quality.",
+  },
+  {
+    question: "Can the machine process polymer alloys?",
+    answer:
+      "Yes. It is ideal for manufacturing polymer alloys requiring excellent compatibility and homogeneous blending.",
+  },
+  {
+    question: "Is this machine suitable for PVC compounds?",
+    answer:
+      "Yes. It is widely used for PVC cable compounds and specialty PVC formulations.",
+  },
+  {
+    question: "Can flame-retardant compounds be manufactured?",
+    answer:
+      "Yes. Triple Screw Extruders provide excellent dispersion of flame-retardant additives throughout the polymer.",
+  },
+  {
+    question: "Can mineral-filled compounds be processed?",
+    answer:
+      "Yes. Materials containing calcium carbonate, talc, barium sulfate, and other mineral fillers can be processed efficiently.",
+  },
+  {
+    question: "Can this machine produce engineering compounds?",
+    answer:
+      "Yes. It is ideal for reinforced engineering compounds used in automotive, electrical, and industrial applications.",
+  },
+  {
+    question: "Is a Triple Screw Extruder suitable for continuous production?",
+    answer:
+      "Yes. The machine is designed for continuous industrial production with consistent quality and stable performance.",
+  },
+  {
+    question:
+      "What is the price of a Co-Rotating Triple Screw Extruder in India?",
+    answer:
+      "The price depends on the machine model, output capacity, screw diameter, automation level, and customization requirements. Contact HPMC for a customized quotation.",
+  },
+  {
+    question: "How do I choose the right Triple Screw Extruder?",
+    answer:
+      "The right model depends on your raw material, production capacity, filler percentage, end application, and required output. HPMC experts can help you select the best machine.",
+  },
+  {
+    question: "Which industries benefit most from Triple Screw Extruders?",
+    answer:
+      "Triple Screw Extruders are widely used in automotive, packaging, electrical, cable, medical, construction, engineering plastics, recycling, and masterbatch manufacturing industries.",
+  },
+  {
+    question: "Can the machine be customized for specific applications?",
+    answer:
+      "Yes. HPMC offers customized screw configurations, feeding systems, pelletizing options, and automation features based on customer requirements.",
+  },
+  {
+    question: "What screw diameters are available?",
+    answer:
+      "HPMC manufactures Triple Screw Extruders in multiple screw diameters suitable for laboratory, pilot-scale, and high-volume industrial production.",
+  },
+  {
+    question: "What output capacity can I expect from a Triple Screw Extruder?",
+    answer:
+      "Output capacity varies by model and material but can range from a few kilograms per hour up to approximately 1500 kg/hr.",
+  },
+  {
+    question: "How much power does a Triple Screw Extruder consume?",
+    answer:
+      "Power consumption depends on the machine size, motor capacity, material type, processing temperature, and production rate.",
+  },
+  {
+    question: "Is the machine energy efficient?",
+    answer:
+      "Yes. Triple Screw technology improves material mixing efficiency, reducing energy consumption while increasing production output.",
+  },
+  {
+    question: "Is PLC automation available?",
+    answer:
+      "Yes. PLC-based automation with a user-friendly HMI touchscreen is available for easy machine operation and monitoring.",
+  },
+  {
+    question: "Can processing recipes be stored in the control system?",
+    answer:
+      "Yes. Operators can save and recall production recipes for consistent product quality and faster machine setup.",
+  },
+  {
+    question: "Does the machine include automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones with precise temperature control ensure stable polymer processing and consistent product quality.",
+  },
+  {
+    question: "Is vacuum degassing available?",
+    answer:
+      "Yes. Optional vacuum degassing removes moisture, gases, and volatile substances from the polymer melt.",
+  },
+  {
+    question: "Can liquid additives be injected during processing?",
+    answer:
+      "Yes. Liquid injection systems can be integrated for oils, plasticizers, and specialty additives.",
+  },
+  {
+    question: "Can side feeders be installed?",
+    answer:
+      "Yes. Side feeders are available for accurate feeding of fillers, fibers, pigments, and additives.",
+  },
+  {
+    question: "Which pelletizing systems are supported?",
+    answer:
+      "The machine supports strand pelletizing, die-face pelletizing, water-ring pelletizing, and underwater pelletizing systems.",
+  },
+  {
+    question: "What type of gearbox is used?",
+    answer:
+      "HPMC uses heavy-duty, high-torque gearboxes designed for continuous industrial operation and long service life.",
+  },
+  {
+    question: "Is screw maintenance easy?",
+    answer:
+      "Yes. The modular screw design allows individual screw elements to be replaced, reducing maintenance costs and downtime.",
+  },
+  {
+    question: "How often should the machine be maintained?",
+    answer:
+      "Routine preventive maintenance based on operating hours helps maximize machine life and maintain optimum production efficiency.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. Triple Screw Extruders are designed for continuous 24/7 industrial production with reliable performance.",
+  },
+  {
+    question: "Does HPMC provide installation services?",
+    answer:
+      "Yes. HPMC provides installation, commissioning, machine testing, and startup assistance.",
+  },
+  {
+    question: "Is operator training included?",
+    answer:
+      "Yes. HPMC provides operator training to ensure safe operation, proper maintenance, and maximum machine performance.",
+  },
+  {
+    question: "Are spare parts easily available?",
+    answer:
+      "Yes. Genuine HPMC spare parts are readily available to minimize production downtime.",
+  },
+  {
+    question: "Does HPMC provide after-sales support?",
+    answer:
+      "Yes. HPMC offers comprehensive after-sales service including technical support, maintenance assistance, spare parts, and process optimization.",
+  },
+  {
+    question: "Can I request a machine demonstration?",
+    answer:
+      "Yes. HPMC offers product demonstrations and technical consultations to help customers understand machine performance and capabilities.",
+  },
+  {
+    question: "How can I get a quotation for a Triple Screw Extruder?",
+    answer:
+      "Simply contact HPMC with your production requirements, material details, and desired output capacity to receive a customized quotation.",
+  },
+  {
+    question:
+      "Can the Triple Screw Extruder process high-temperature engineering plastics?",
+    answer:
+      "Yes. It is designed to process high-temperature engineering plastics with precise temperature control and excellent melt homogeneity.",
+  },
+  {
+    question: "Can reinforced plastic compounds be manufactured?",
+    answer:
+      "Yes. The machine efficiently processes glass fiber, mineral-filled, and reinforced engineering plastic compounds.",
+  },
+  {
+    question: "What makes Triple Screw technology more efficient?",
+    answer:
+      "The additional screw improves material conveying, distributive mixing, dispersive mixing, and throughput, resulting in higher production efficiency.",
+  },
+  {
+    question: "Can this machine reduce production costs?",
+    answer:
+      "Yes. Higher throughput, improved mixing efficiency, lower material wastage, and reduced energy consumption help lower overall production costs.",
+  },
+  {
+    question: "Does the machine improve product quality?",
+    answer:
+      "Yes. Uniform mixing and precise process control ensure consistent pellet quality, color dispersion, and mechanical properties.",
+  },
+  {
+    question:
+      "Can the machine process multiple materials without major modifications?",
+    answer:
+      "Yes. Modular screw configurations allow the machine to process a wide variety of polymers and formulations with minimal setup changes.",
+  },
+  {
+    question: "Is the screw configuration customizable?",
+    answer:
+      "Yes. Screw elements can be configured according to the polymer type, filler percentage, throughput, and final product requirements.",
+  },
+  {
+    question: "What is the expected lifespan of a Triple Screw Extruder?",
+    answer:
+      "With proper maintenance and genuine spare parts, HPMC Triple Screw Extruders provide reliable performance for many years of continuous industrial use.",
+  },
+  {
+    question: "Does HPMC manufacture Triple Screw Extruders in India?",
+    answer:
+      "Yes. HPMC designs and manufactures high-performance Triple Screw Extruders in India for domestic and international customers.",
+  },
+  {
+    question: "Does HPMC export Triple Screw Extruders worldwide?",
+    answer:
+      "Yes. HPMC supplies extrusion machinery to customers across multiple international markets with complete installation and technical support.",
+  },
+  {
+    question: "Can the machine be integrated into an existing production line?",
+    answer:
+      "Yes. HPMC can customize the machine for seamless integration with existing feeding, pelletizing, and downstream equipment.",
+  },
+  {
+    question: "Is online technical support available?",
+    answer:
+      "Yes. HPMC provides online troubleshooting, technical consultation, and process optimization support whenever required.",
+  },
+  {
+    question: "Does HPMC help with process optimization?",
+    answer:
+      "Yes. Our technical experts assist customers in optimizing formulations, machine settings, and production efficiency.",
+  },
+  {
+    question: "How quickly can spare parts be supplied?",
+    answer:
+      "Most standard spare parts are readily available to minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question: "What certifications does HPMC machinery comply with?",
+    answer:
+      "HPMC manufactures extrusion machinery following stringent quality standards and industry best practices. Specific certifications are available on request.",
+  },
+  {
+    question: "Can the machine be upgraded in the future?",
+    answer:
+      "Yes. Many automation features, feeding systems, pelletizing systems, and screw configurations can be upgraded based on future production needs.",
+  },
+  {
+    question: "Is this machine suitable for large-scale manufacturing plants?",
+    answer:
+      "Yes. Triple Screw Extruders are designed for high-output continuous production in large industrial manufacturing facilities.",
+  },
+  {
+    question: "Can the machine produce consistent pellet sizes?",
+    answer:
+      "Yes. Combined with suitable pelletizing systems, the machine delivers uniform pellet size and excellent product consistency.",
+  },
+  {
+    question: "How does Triple Screw technology improve filler dispersion?",
+    answer:
+      "The additional screw creates more effective mixing zones, resulting in superior filler distribution and improved compound performance.",
+  },
+  {
+    question: "Can the machine process difficult-to-mix materials?",
+    answer:
+      "Yes. Triple Screw Extruders are particularly effective for challenging formulations requiring intensive mixing and dispersion.",
+  },
+  {
+    question: "Why is HPMC a trusted Triple Screw Extruder manufacturer?",
+    answer:
+      "HPMC combines advanced engineering, robust machine construction, customized solutions, and reliable after-sales support backed by decades of industry experience.",
+  },
+  {
+    question: "What information is required to select the right machine?",
+    answer:
+      "Material type, desired output capacity, filler loading, end application, pelletizing method, and automation requirements help determine the most suitable machine.",
+  },
+  {
+    question: "Can I schedule a factory visit before purchasing?",
+    answer:
+      "Yes. Customers are welcome to schedule a factory visit to inspect manufacturing facilities and discuss project requirements with HPMC experts.",
+  },
+  {
+    question: "Can production trials be conducted before purchase?",
+    answer:
+      "Yes. Trial runs can be arranged for selected applications to evaluate machine performance with your specific material.",
+  },
+  {
+    question: "Why should I choose an HPMC Co-Rotating Triple Screw Extruder?",
+    answer:
+      "HPMC Triple Screw Extruders deliver superior mixing, higher productivity, excellent filler dispersion, customized configurations, energy-efficient operation, dependable after-sales support, and long-term manufacturing reliability for demanding polymer processing applications.",
   },
 ];
 
@@ -149,7 +454,10 @@ export default function CorotatingTripleScrewExtruder() {
   const [showAllFaqs, setShowAllFaqs] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const displayedFaqs = showAllFaqs ? faqData : faqData.slice(0, 5);
+  const [visibleFaqCount, setVisibleFaqCount] = useState(5);
+  const displayedFaqs = faqData.slice(0, visibleFaqCount);
+  const hasMoreFaqs = visibleFaqCount < faqData.length;
+  const nextFaqCount = Math.min(10, faqData.length - visibleFaqCount);
 
   const toggleVideo = async () => {
     if (!videoRef.current) return;
@@ -656,37 +964,37 @@ export default function CorotatingTripleScrewExtruder() {
                     <div
                       key={index}
                       className="
-                  transition-all
-                  duration-300
-                  hover:bg-[var(--muted)]
-                "
+                                        transition-all
+                                        duration-300
+                                        hover:bg-[var(--muted)]
+                                      "
                     >
                       <button
                         onClick={() => setActive(isOpen ? null : index)}
                         className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    gap-5
-                    px-5
-                    py-5
-                    sm:px-7
-                    sm:py-6
-                    text-left
-                  "
+                                          w-full
+                                          flex
+                                          items-center
+                                          justify-between
+                                          gap-5
+                                          px-5
+                                          py-5
+                                          sm:px-7
+                                          sm:py-6
+                                          text-left
+                                        "
                       >
                         <div className="flex items-start gap-4">
                           <span
                             className={`
-                          mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold
-                          transition-all duration-300
-                          ${
-                            isOpen
-                              ? "bg-[var(--primary)] text-white"
-                              : "bg-[var(--primary)]/10 text-[var(--primary)]"
-                          }
-                        `}
+                                                mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold
+                                                transition-all duration-300
+                                                ${
+                                                  isOpen
+                                                    ? "bg-[var(--primary)] text-white"
+                                                    : "bg-[var(--primary)]/10 text-[var(--primary)]"
+                                                }
+                                              `}
                           >
                             {String(index + 1).padStart(2, "0")}
                           </span>
@@ -698,13 +1006,13 @@ export default function CorotatingTripleScrewExtruder() {
 
                         <div
                           className={`
-                      w-10 h-10 rounded-full shrink-0
-                      flex items-center justify-center
-                      border border-[var(--border)]
-                      bg-white
-                      transition-all duration-300
-                      ${isOpen ? "rotate-180 border-[var(--primary)] text-[var(--primary)]" : "text-[var(--text-secondary)]"}
-                    `}
+                                            w-10 h-10 rounded-full shrink-0
+                                            flex items-center justify-center
+                                            border border-[var(--border)]
+                                            bg-white
+                                            transition-all duration-300
+                                            ${isOpen ? "rotate-180 border-[var(--primary)] text-[var(--primary)]" : "text-[var(--text-secondary)]"}
+                                          `}
                         >
                           <ChevronDown size={20} />
                         </div>
@@ -712,12 +1020,12 @@ export default function CorotatingTripleScrewExtruder() {
 
                       <div
                         className={`
-                    grid
-                    transition-all
-                    duration-500
-                    ease-in-out
-                    ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
-                  `}
+                                          grid
+                                          transition-all
+                                          duration-500
+                                          ease-in-out
+                                          ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
+                                        `}
                       >
                         <div className="overflow-hidden">
                           <div className="px-5 pb-6 pl-[72px] pr-7 text-[var(--text-secondary)] leading-8 sm:px-7 sm:pl-20">
@@ -732,46 +1040,44 @@ export default function CorotatingTripleScrewExtruder() {
             </div>
           </div>
 
-          {faqData.length > 5 && (
+          {hasMoreFaqs && (
             <div className="flex justify-center mt-10">
               <button
-                onClick={() => setShowAllFaqs(!showAllFaqs)}
+                onClick={() =>
+                  setVisibleFaqCount((currentCount) =>
+                    Math.min(currentCount + 10, faqData.length),
+                  )
+                }
                 className="
-                  group
-                  inline-flex
-                  items-center
-                  gap-4
-                  rounded-full
-                  border
-                  border-[var(--primary)]/25
-                  bg-white
-                  px-5
-                  py-3
-                  text-[var(--text-primary)]
-                  shadow-[0_18px_45px_rgba(11,18,32,0.08)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:border-[var(--primary)]
-                  hover:shadow-[0_22px_55px_rgba(101,188,79,0.18)]
-      "
+                                        group
+                                        inline-flex
+                                        items-center
+                                        gap-4
+                                        rounded-full
+                                        border
+                                        border-[var(--primary)]/25
+                                        bg-white
+                                        px-5
+                                        py-3
+                                        text-[var(--text-primary)]
+                                        shadow-[0_18px_45px_rgba(11,18,32,0.08)]
+                                        transition-all
+                                        duration-300
+                                        hover:-translate-y-1
+                                        hover:border-[var(--primary)]
+                                        hover:shadow-[0_22px_55px_rgba(101,188,79,0.18)]
+                            "
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--primary)] text-white transition-transform duration-300 group-hover:scale-105">
-                  {showAllFaqs ? (
-                    <ChevronDown size={20} className="rotate-180" />
-                  ) : (
-                    <ArrowRight size={20} />
-                  )}
+                  <ArrowRight size={20} />
                 </span>
 
                 <span className="text-left">
                   <span className="block text-xs font-semibold uppercase tracking-[2px] text-[var(--primary)]">
-                    {showAllFaqs ? "Collapse List" : "Explore More"}
+                    Explore More
                   </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    {showAllFaqs
-                      ? "Show fewer questions"
-                      : `View ${faqData.length - displayedFaqs.length} more FAQs`}
+                    View next {nextFaqCount} FAQs
                   </span>
                 </span>
               </button>
