@@ -29,79 +29,413 @@ const faqData = [
   {
     question: "What is a Twin Screw Extruder for PVC Compounding?",
     answer:
-      "A Twin Screw Extruder for PVC Compounding is an advanced processing system used for blending PVC resin, additives, stabilizers, fillers, and modifiers to produce high-quality PVC compounds with consistent properties.",
+      "A Twin Screw Extruder for PVC Compounding is an advanced plastic processing machine used to blend PVC resin, stabilizers, fillers, additives, and modifiers into high-quality PVC compounds with consistent properties.",
+  },
+  {
+    question: "How does a PVC Compounding Extruder work?",
+    answer:
+      "The machine melts, mixes, disperses, and homogenizes PVC raw materials using twin screws before converting the compound into uniform pellets for downstream plastic manufacturing.",
   },
   {
     question:
-      "What materials can be processed using the PVC Compounding Extruder?",
+      "Which materials can be processed using a PVC Compounding Extruder?",
     answer:
-      "The machine can process PVC compounds, polymer blends, engineering plastics, masterbatches, filler-loaded formulations, and reinforced materials such as glass fiber compounds.",
-  },
-  {
-    question: "What are the main applications of PVC Compounding Extruders?",
-    answer:
-      "These extruders are widely used for PVC pipe compounds, cable compounds, profile compounds, fitting compounds, masterbatch production, polymer blending, and specialty plastic formulations.",
+      "The machine processes PVC resin, polymer blends, engineering plastics, masterbatches, calcium carbonate-filled compounds, additives, stabilizers, and reinforced plastic compounds.",
   },
   {
     question:
-      "What is the production capacity of the PVC Compounding Extruder?",
+      "Which products can be manufactured using a PVC Compounding Extruder?",
     answer:
-      "Depending on the model selected, production capacities range from 150 Kg/hr to 350 Kg/hr, ensuring efficient and reliable compound production.",
+      "It is widely used for manufacturing PVC compounds for pipes, cable insulation, profiles, fittings, sheets, footwear, medical products, and engineering plastic applications.",
   },
   {
-    question: "Which machine models are available?",
+    question: "What is PVC compounding?",
     answer:
-      "HPMC offers PVC Compounding Extruders in HPMC 51/105, HPMC 65/132, and HPMC 80/156 configurations to meet various production requirements.",
+      "PVC compounding is the process of mixing PVC resin with additives, stabilizers, lubricants, pigments, fillers, and modifiers to produce customized PVC compounds with specific performance characteristics.",
+  },
+  {
+    question:
+      "Which is the best PVC Compounding Extruder manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation manufactures advanced Twin Screw PVC Compounding Extruders engineered for high productivity, excellent mixing, energy efficiency, and long-term industrial performance.",
+  },
+  {
+    question: "Who is the best PVC Compounding Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is a trusted manufacturer of PVC Compounding Extruders, offering customized solutions, precision engineering, and dependable after-sales support.",
+  },
+  {
+    question:
+      "What are the advantages of a Twin Screw PVC Compounding Extruder?",
+    answer:
+      "The machine provides excellent mixing, uniform additive dispersion, stable processing, higher output, energy-efficient operation, and consistent pellet quality.",
   },
   {
     question: "Why is a Twin Screw Extruder preferred for PVC compounding?",
     answer:
-      "Twin Screw Extruders provide superior mixing, better additive dispersion, excellent filler distribution, improved temperature control, and consistent compound quality compared to conventional systems.",
+      "Twin Screw Extruders provide superior mixing, better filler distribution, improved additive dispersion, precise temperature control, and excellent compound consistency compared to conventional extrusion systems.",
   },
   {
-    question: "Can the machine process high-filler PVC formulations?",
+    question: "Which industries use PVC Compounding Extruders?",
     answer:
-      "Yes. The system is specifically designed to handle high-filler PVC formulations while maintaining excellent dispersion, processing stability, and product quality.",
+      "Pipe manufacturing, cable production, automotive, construction, electrical products, footwear, medical plastics, packaging, and polymer processing industries extensively use PVC Compounding Extruders.",
   },
   {
-    question: "Is the machine suitable for polymer blending applications?",
+    question: "Can the machine process high-filler PVC compounds?",
     answer:
-      "Yes. The extruder is ideal for polymer blending, filler modification, additive incorporation, and customized compound manufacturing processes.",
+      "Yes. The machine is designed to process high-filler PVC formulations while maintaining excellent dispersion, stable extrusion, and superior compound quality.",
   },
   {
-    question: "Can glass fiber reinforced compounds be produced?",
+    question: "Can engineering plastics be processed?",
     answer:
-      "Yes. The machine supports glass fiber reinforcement and engineering polymer compounding while ensuring uniform distribution and minimal fiber damage.",
+      "Yes. The Twin Screw Extruder can process several engineering plastics and customized polymer blends for industrial applications.",
   },
   {
-    question: "What is the role of pellet production in PVC compounding?",
+    question: "Can polymer blending be performed on this machine?",
     answer:
-      "Pellet production converts compounded material into uniform granules that are easier to store, transport, and process in downstream manufacturing applications.",
+      "Yes. The machine is ideal for polymer blending, additive incorporation, filler modification, and customized compound manufacturing.",
   },
   {
-    question: "How energy efficient is the PVC Compounding Extruder?",
+    question: "Can glass fiber reinforced compounds be manufactured?",
     answer:
-      "The machine is designed with optimized screw geometry, efficient drive systems, and advanced process controls to maximize productivity while minimizing energy consumption.",
+      "Yes. The machine supports glass fiber reinforcement while maintaining uniform distribution and minimizing fiber damage during processing.",
   },
   {
-    question: "What industries use PVC Compounding Extruders?",
+    question: "What are the benefits of pellet production?",
     answer:
-      "These machines are widely used in pipe manufacturing, cable production, profile extrusion, automotive components, construction materials, electrical products, and polymer processing industries.",
+      "Pellet production creates uniform PVC granules that are easier to store, transport, feed into downstream machines, and maintain consistent product quality.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "What production capacities are available?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and comprehensive after-sales services.",
+      "Depending on the selected model, production capacities range from approximately 150 kg/hr to 350 kg/hr, making the machine suitable for medium and high-volume production.",
   },
   {
-    question: "What maintenance is required for a PVC Compounding Extruder?",
+    question: "How does the machine improve PVC compound quality?",
     answer:
-      "Routine maintenance includes inspection of screw elements, barrel sections, heating systems, gearbox lubrication, electrical components, and regular cleaning of processing parts.",
+      "Efficient plasticizing, homogeneous mixing, accurate temperature control, and stable screw design ensure consistent PVC compound quality and uniform pellet production.",
   },
   {
-    question: "Why choose HPMC Twin Screw Extruders for PVC Compounding?",
+    question:
+      "Is the PVC Compounding Extruder suitable for continuous production?",
     answer:
-      "HPMC Twin Screw Extruders deliver excellent mixing performance, high production efficiency, reliable operation, superior compound quality, energy-efficient processing, and long service life.",
+      "Yes. The machine is designed for continuous industrial operation with reliable performance, stable output, and minimal downtime.",
+  },
+  {
+    question: "Is the machine energy efficient?",
+    answer:
+      "Yes. Optimized screw geometry, efficient drive systems, and advanced process control help reduce energy consumption while maintaining high productivity.",
+  },
+  {
+    question: "Can the PVC Compounding Extruder be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized screw configurations, feeding systems, pelletizing options, automation, and machine layouts based on customer requirements.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC compounding business?",
+    answer:
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a PVC compound manufacturing business.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for PVC Compounding Extruders?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered PVC Compounding Extruders with advanced technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the top PVC Compounding Machine manufacturers in India?",
+    answer:
+      "With decades of expertise in plastic extrusion machinery, innovative engineering, quality manufacturing, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers across India and international markets.",
+  },
+  {
+    question:
+      "Can the machine manufacture PVC compounds for cable applications?",
+    answer:
+      "Yes. The machine is widely used for producing PVC cable compounds with excellent dispersion, flexibility, and electrical insulation properties.",
+  },
+  {
+    question: "How can I get the best price for a PVC Compounding Extruder?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your production capacity, raw material details, and application requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question: "What is the price of a PVC Compounding Extruder in India?",
+    answer:
+      "The price of a PVC Compounding Extruder depends on the machine model, production capacity, screw configuration, automation level, and pelletizing system. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best PVC Compounding Machine?",
+    answer:
+      "The ideal machine depends on production capacity, PVC formulation, filler percentage, pelletizing requirements, automation level, and future expansion plans.",
+  },
+  {
+    question: "Which is the best PVC Compounding Machine in India?",
+    answer:
+      "Twin Screw PVC Compounding Extruders from Hindustan Plastics and Machine Corporation are engineered for high productivity, superior mixing, energy efficiency, and consistent compound quality.",
+  },
+  {
+    question: "Can the PVC Compounding Extruder be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized screw designs, feeding systems, pelletizing units, automation options, and complete compounding lines based on customer requirements.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Different machine models are available for medium and high-volume PVC compounding with production capacities based on the selected model and material formulation.",
+  },
+  {
+    question: "How much electricity does a PVC Compounding Machine consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, formulation, and operating conditions. The machine is designed for energy-efficient production.",
+  },
+  {
+    question: "Is the PVC Compounding Extruder energy efficient?",
+    answer:
+      "Yes. Optimized screw geometry, efficient drive systems, and advanced process controls help reduce energy consumption while maximizing production output.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. The PVC Compounding Extruder is designed for continuous industrial production with stable operation, reliable performance, and consistent compound quality.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen is available for production monitoring, process control, alarm management, and easy machine operation.",
+  },
+  {
+    question: "Can production recipes be saved?",
+    answer:
+      "Yes. Operators can save and recall processing parameters for different PVC formulations, helping improve consistency and reduce setup time.",
+  },
+  {
+    question: "Does the machine have automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for uniform melting, efficient mixing, and high-quality PVC compounds.",
+  },
+  {
+    question: "Can different PVC formulations be processed on one machine?",
+    answer:
+      "Yes. By adjusting screw configuration and processing parameters, the machine can process various PVC compounds and customized formulations.",
+  },
+  {
+    question:
+      "How often does the PVC Compounding Extruder require maintenance?",
+    answer:
+      "Routine preventive maintenance, lubrication, inspection of screw elements, barrel sections, gearbox, and electrical systems help maximize machine life and production efficiency.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The modular screw and barrel design allows convenient inspection, maintenance, and replacement of wear components.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced service engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Professional operator training is provided to ensure safe operation, efficient production, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable performance and minimize production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical assistance, troubleshooting, preventive maintenance, spare parts support, and production optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance and compound quality.",
+  },
+  {
+    question:
+      "Can the PVC Compounding Extruder be integrated into an existing production line?",
+    answer:
+      "Yes. The machine can be integrated with existing feeding systems, pelletizers, cooling systems, storage units, and downstream processing equipment.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC compound manufacturing business?",
+    answer:
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a PVC compound manufacturing business.",
+  },
+  {
+    question:
+      "Can the machine manufacture PVC compounds for different industries?",
+    answer:
+      "Yes. The machine produces PVC compounds for pipes, cables, profiles, fittings, footwear, automotive parts, construction materials, and engineering plastic applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best PVC Compounding Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced compounding technology, customized machine solutions, and dependable after-sales support to deliver reliable PVC compounding systems.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a PVC Compounding Extruder?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your production capacity, raw material details, formulation requirements, and application to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Twin Screw PVC Compounding Extruder process recycled PVC materials?",
+    answer:
+      "Yes. The machine can process compatible recycled PVC materials along with virgin PVC resin, depending on the required formulation and end-use application.",
+  },
+  {
+    question:
+      "Can different PVC formulations be processed on the same machine?",
+    answer:
+      "Yes. By changing screw configurations and processing parameters, the machine can efficiently process rigid PVC, flexible PVC, and customized PVC compound formulations.",
+  },
+  {
+    question: "Can the machine manufacture PVC cable compounds?",
+    answer:
+      "Yes. The Twin Screw Extruder is widely used for producing PVC cable compounds with excellent dispersion, flexibility, and electrical insulation properties.",
+  },
+  {
+    question: "Can the machine produce PVC compounds for pipe manufacturing?",
+    answer:
+      "Yes. The machine manufactures high-quality PVC compounds used in PVC pipes, fittings, conduit pipes, profiles, and other extrusion products.",
+  },
+  {
+    question:
+      "Can the PVC Compounding Extruder manufacture medical-grade PVC compounds?",
+    answer:
+      "Yes. With suitable formulations and processing conditions, the machine can produce PVC compounds for medical and healthcare applications where applicable standards are met.",
+  },
+  {
+    question:
+      "How does the Twin Screw PVC Compounding Extruder improve compound quality?",
+    answer:
+      "Efficient mixing, homogeneous additive dispersion, accurate temperature control, and stable extrusion help produce uniform PVC compounds with consistent physical and mechanical properties.",
+  },
+  {
+    question:
+      "Can PVC compounds produced on this machine be used in different industries?",
+    answer:
+      "Yes. The compounds are widely used in pipe manufacturing, cable insulation, automotive components, construction products, footwear, packaging, medical products, and engineering plastic applications.",
+  },
+  {
+    question: "Can this machine reduce PVC compound manufacturing costs?",
+    answer:
+      "Yes. High production efficiency, optimized energy consumption, reduced material wastage, and stable processing help lower the overall cost of PVC compound production.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a Twin Screw PVC Compounding Extruder?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question: "Can the PVC Compounding Extruder be upgraded in the future?",
+    answer:
+      "Yes. Screw elements, feeding systems, pelletizing units, automation controls, and downstream equipment can be upgraded to meet future production requirements.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture PVC Compounding Extruders in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Twin Screw PVC Compounding Extruders in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export PVC Compounding Machines worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports PVC Compounding Extruders and plastic processing machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The PVC Compounding Extruder can be integrated into existing production facilities with customized layouts and compatible upstream and downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, machine guidance, and production optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize machine settings, PVC formulations, additive ratios, production efficiency, and overall compounding performance.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied raw materials to evaluate machine performance, mixing quality, and pellet output.",
+  },
+  {
+    question:
+      "Is the Twin Screw PVC Compounding Extruder environmentally friendly?",
+    answer:
+      "Yes. The machine is designed with energy-efficient technology that helps reduce power consumption, optimize raw material utilization, and minimize production waste.",
+  },
+  {
+    question:
+      "Which industries benefit from Twin Screw PVC Compounding Extruders?",
+    answer:
+      "PVC pipe manufacturers, cable manufacturers, profile producers, automotive suppliers, construction companies, footwear manufacturers, packaging industries, and engineering plastic processors benefit from this machine.",
+  },
+  {
+    question:
+      "Can this machine manufacture PVC compounds for export-quality products?",
+    answer:
+      "Yes. The machine is designed to produce consistent, high-quality PVC compounds suitable for manufacturers serving domestic and international markets.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best PVC Compounding Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable PVC compounding systems.",
+  },
+  {
+    question:
+      "Who is the top Twin Screw PVC Compounding Extruder manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance PVC Compounding Extruders with excellent productivity, energy efficiency, and consistent compound quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your PVC Compounding Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced compounding technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the Twin Screw PVC Compounding Extruder one of the best solutions for PVC compound manufacturing?",
+    answer:
+      "Its superior mixing capability, homogeneous additive dispersion, energy-efficient operation, flexible processing options, and reliable industrial performance make it an ideal solution for manufacturing premium-quality PVC compounds.",
   },
 ];
 

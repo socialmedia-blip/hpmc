@@ -158,87 +158,406 @@ const specifications = [
 
 const faqData = [
   {
-    question: "What is a Conical Twin Screw Plant For CPVC Dual Pipe?",
+    question: "What is a Conical Twin Screw Plant for CPVC Dual Pipe?",
     answer:
-      "A Conical Twin Screw Plant For CPVC Dual Pipe is an advanced plastic processing machine equipped with two intermeshing screws that provide superior mixing, compounding, plasticization, and material dispersion for a wide range of polymers and additives.",
+      "A Conical Twin Screw Plant for CPVC Dual Pipe is an advanced extrusion system designed to manufacture two CPVC pipes simultaneously with high productivity, excellent dimensional accuracy, and superior pipe quality.",
+  },
+  {
+    question: "How does a CPVC Dual Pipe Extrusion Plant work?",
+    answer:
+      "The plant uses a Conical Twin Screw Extruder, dual pipe die head, vacuum sizing tank, spray cooling system, haul-off unit, and cutting machine to produce two CPVC pipes simultaneously.",
+  },
+  {
+    question: "Which materials can be processed using a CPVC Dual Pipe Plant?",
+    answer:
+      "The machine is specially designed for processing CPVC compounds used in hot and cold water plumbing systems, industrial piping, and pressure pipe applications.",
+  },
+  {
+    question: "Which products can be manufactured using this machine?",
+    answer:
+      "The plant manufactures CPVC plumbing pipes, hot water pipes, cold water pipes, industrial pressure pipes, chemical transfer pipes, and fire sprinkler pipes.",
+  },
+  {
+    question: "What are CPVC Dual Pipes used for?",
+    answer:
+      "CPVC pipes produced on this machine are widely used for residential plumbing, commercial buildings, hospitals, hotels, industrial plants, fire protection systems, and chemical processing applications.",
+  },
+  {
+    question: "Which is the best CPVC Dual Pipe Plant manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation manufactures advanced Conical Twin Screw CPVC Dual Pipe Plants with precision engineering, energy-efficient operation, and reliable industrial performance.",
+  },
+  {
+    question: "Who is the best CPVC Dual Pipe Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is a trusted manufacturer of CPVC Dual Pipe extrusion plants, offering customized solutions, modern technology, and dependable after-sales support.",
+  },
+  {
+    question: "What are the advantages of a CPVC Dual Pipe Plant?",
+    answer:
+      "The machine increases production capacity, reduces manufacturing costs per pipe, lowers energy consumption, improves machine utilization, and delivers consistent pipe quality.",
+  },
+  {
+    question: "Why should manufacturers choose a Dual Pipe CPVC Plant?",
+    answer:
+      "Producing two CPVC pipes simultaneously increases output, improves productivity, reduces operating costs, and maximizes return on investment.",
+  },
+  {
+    question: "What pipe sizes can be manufactured?",
+    answer:
+      "Depending on the selected machine model and tooling, the plant can manufacture CPVC pipes ranging from approximately 20 mm to 150 mm for various plumbing and industrial applications.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Conical Twin Screw Plant For CPVC Dual Pipe?",
+      "Can two different pipe diameters be manufactured simultaneously?",
     answer:
-      "The HPMC Conical Twin Screw Plant For CPVC Dual Pipe can process PVC compounds, masterbatches, engineering plastics, filled polymers, recycled materials, WPC compounds, and various thermoplastic formulations.",
+      "Yes. With suitable tooling, the machine can produce two different CPVC pipe diameters simultaneously while maintaining excellent dimensional accuracy.",
+  },
+  {
+    question: "What is the advantage of the Dual Pipe Die Head?",
+    answer:
+      "The Dual Pipe Die Head provides balanced material flow, uniform melt distribution, stable pressure, and consistent quality across both pipes.",
+  },
+  {
+    question: "What are the benefits of Barrier Screw technology?",
+    answer:
+      "Barrier Screw technology improves plasticizing efficiency, melt homogeneity, production stability, output, and overall pipe quality while reducing material degradation.",
+  },
+  {
+    question: "Why is a bi-metallic screw and barrel important?",
+    answer:
+      "A bi-metallic screw and barrel provide superior wear resistance, longer service life, stable processing performance, and reduced maintenance costs.",
+  },
+  {
+    question: "Can the machine process high-performance CPVC compounds?",
+    answer:
+      "Yes. The Conical Twin Screw Plant is designed to process premium CPVC compounds used in demanding plumbing and industrial piping applications.",
+  },
+  {
+    question: "Which industries use CPVC Dual Pipe Plants?",
+    answer:
+      "Construction, plumbing, infrastructure, chemical processing, water treatment, fire protection, and plastic pipe manufacturing industries widely use these extrusion plants.",
+  },
+  {
+    question: "What is the production capacity of a CPVC Dual Pipe Plant?",
+    answer:
+      "Production capacity depends on the selected machine model, pipe size, and material formulation, with models capable of delivering outputs up to 450 kg/hr.",
+  },
+  {
+    question: "How does the machine improve CPVC pipe quality?",
+    answer:
+      "Accurate temperature control, efficient plasticizing, balanced melt flow, and stable extrusion produce CPVC pipes with smooth surfaces, excellent strength, and consistent dimensions.",
+  },
+  {
+    question: "Is the CPVC Dual Pipe Plant suitable for continuous production?",
+    answer:
+      "Yes. The machine is designed for continuous industrial operation with reliable performance, stable output, and minimal downtime.",
+  },
+  {
+    question: "Is the machine energy efficient?",
+    answer:
+      "Yes. Producing two pipes simultaneously improves energy efficiency per pipe while maximizing production output and reducing operating costs.",
+  },
+  {
+    question: "Can the CPVC Dual Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized machine configurations, automation systems, downstream equipment, and tooling based on customer production requirements.",
   },
   {
     question:
-      "What are the main applications of a Conical Twin Screw Plant For CPVC Dual Pipe?",
+      "Is this machine suitable for starting a CPVC pipe manufacturing business?",
     answer:
-      "Conical Twin Screw Plant For CPVC Dual Pipes are widely used for PVC compounding, masterbatch production, polymer blending, filler incorporation, plastic recycling, cable compounds, and engineering plastic processing.",
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a profitable CPVC pipe manufacturing business.",
   },
   {
     question:
-      "What is the production capacity of the Conical Twin Screw Plant For CPVC Dual Pipe?",
+      "Why choose Hindustan Plastics and Machine Corporation for CPVC Dual Pipe Plants?",
     answer:
-      "Production capacity varies depending on the model and material being processed. HPMC Conical Twin Screw Plant For CPVC Dual Pipes are designed to deliver high throughput with consistent product quality and efficient energy utilization.",
+      "Hindustan Plastics and Machine Corporation provides precision-engineered extrusion machinery, advanced technology, durable machine construction, customized solutions, and dependable technical support.",
   },
   {
     question:
-      "Why is a Conical Twin Screw Plant For CPVC Dual Pipe preferred for compounding?",
+      "Why is Hindustan Plastics and Machine Corporation one of the top CPVC Pipe Machine manufacturers in India?",
     answer:
-      "The co-rotating twin screw design provides superior distributive and dispersive mixing, ensuring uniform additive distribution, excellent melt quality, and consistent compound properties.",
+      "With decades of expertise in plastic extrusion machinery, innovative engineering, robust manufacturing standards, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers across India and international markets.",
   },
   {
-    question: "Can the machine handle high filler loading applications?",
+    question: "How can I get the best price for a CPVC Dual Pipe Plant?",
     answer:
-      "Yes. HPMC Conical Twin Screw Plant For CPVC Dual Pipes are engineered to process formulations with high filler loading, including calcium carbonate, talc, glass fiber, and other reinforcing materials.",
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project details to receive a customized quotation and expert machine recommendation.",
   },
   {
-    question: "What are the advantages of co-rotating twin screw technology?",
+    question: "What is the price of a CPVC Dual Pipe Plant in India?",
     answer:
-      "Co-rotating twin screw technology offers better mixing efficiency, improved material dispersion, higher output rates, reduced processing time, and excellent process stability compared to conventional systems.",
+      "The price of a CPVC Dual Pipe Plant depends on the machine model, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
   },
   {
-    question: "Is the screw configuration customizable?",
+    question: "How do I choose the best CPVC Dual Pipe Plant?",
     answer:
-      "Yes. The modular screw design allows customization of screw elements and configurations to meet specific processing requirements and material formulations.",
+      "The ideal machine depends on pipe diameter, production capacity, automation requirements, CPVC formulation, and future production expansion.",
+  },
+  {
+    question: "Which is the best CPVC Dual Pipe Making Machine in India?",
+    answer:
+      "Conical Twin Screw CPVC Dual Pipe Plants from Hindustan Plastics and Machine Corporation are engineered for high productivity, energy efficiency, and reliable industrial performance.",
+  },
+  {
+    question: "Can the CPVC Dual Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized extrusion lines, die heads, cooling systems, haul-off units, cutting machines, and PLC automation options.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Multiple machine models are available to support small, medium, and high-capacity CPVC pipe manufacturing with outputs based on pipe size and production requirements.",
+  },
+  {
+    question: "How much electricity does a CPVC Dual Pipe Machine consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, pipe diameter, and operating conditions. Dual pipe production improves energy efficiency per pipe.",
+  },
+  {
+    question: "Is the CPVC Dual Pipe Plant energy efficient?",
+    answer:
+      "Yes. Producing two pipes simultaneously helps reduce energy consumption per pipe while increasing overall production efficiency.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. The CPVC Dual Pipe Plant is designed for continuous industrial production with stable operation, reliable performance, and consistent output.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen is available for production monitoring, recipe management, process control, and alarm handling.",
+  },
+  {
+    question: "Can production recipes be saved?",
+    answer:
+      "Yes. Operators can save and recall production parameters for different pipe sizes, helping improve production consistency and reduce setup time.",
+  },
+  {
+    question: "Does the machine have automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide precise temperature control for uniform CPVC melting and excellent pipe quality.",
   },
   {
     question:
-      "Can the Conical Twin Screw Plant For CPVC Dual Pipe be used for plastic recycling?",
+      "Can different CPVC pipe diameters be manufactured using one machine?",
     answer:
-      "Yes. The machine is highly suitable for recycling applications, enabling efficient reprocessing, homogenization, filtration, and pelletizing of recycled plastic materials.",
+      "Yes. By changing dies, calibration sleeves, and related tooling, the machine can manufacture different pipe diameters within its operating range.",
+  },
+  {
+    question: "How often does the CPVC Dual Pipe Plant require maintenance?",
+    answer:
+      "Routine preventive maintenance, lubrication, inspection of screw and barrel components, and electrical system checks help ensure reliable long-term operation.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for easy inspection and replacement of wear components, minimizing maintenance time and production downtime.",
   },
   {
     question:
-      "How energy efficient is the HPMC Conical Twin Screw Plant For CPVC Dual Pipe?",
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
     answer:
-      "The machine is designed with optimized drive systems, advanced temperature control, and efficient screw geometry to maximize productivity while minimizing energy consumption.",
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced service engineers.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "Is operator training included with the machine?",
     answer:
-      "Yes. HPMC offers complete installation, commissioning, operator training, technical assistance, spare parts support, and after-sales service to ensure smooth operation.",
+      "Yes. Comprehensive operator training is provided to ensure safe machine operation, efficient production, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimum downtime.",
   },
   {
     question:
-      "Which industries use Conical Twin Screw Plant For CPVC Dual Pipes?",
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
     answer:
-      "Conical Twin Screw Plant For CPVC Dual Pipes are widely used in plastics processing, automotive, packaging, cable manufacturing, construction materials, polymer compounding, masterbatch production, and recycling industries.",
+      "Yes. Customers receive technical support, preventive maintenance, troubleshooting, spare parts assistance, and production optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
   },
   {
     question:
-      "What maintenance is required for a Conical Twin Screw Plant For CPVC Dual Pipe?",
+      "Can production trials be conducted before purchasing the machine?",
     answer:
-      "Routine maintenance includes inspection of screw elements, barrel segments, gearbox lubrication, heating and cooling systems, electrical components, and regular cleaning to maintain optimal performance.",
+      "Yes. Trial production using customer-supplied CPVC compounds can be conducted to verify machine performance and finished pipe quality.",
   },
   {
-    question: "Can the machine process glass fiber reinforced compounds?",
+    question:
+      "Can the CPVC Dual Pipe Plant be integrated into an existing production line?",
     answer:
-      "Yes. HPMC Conical Twin Screw Plant For CPVC Dual Pipes are designed to process glass fiber reinforced compounds while ensuring proper fiber dispersion and minimal fiber breakage.",
+      "Yes. The extrusion line can be integrated with existing downstream equipment, vacuum tanks, spray baths, haul-off units, cutting machines, and pipe collection systems.",
   },
   {
-    question: "Why choose HPMC Conical Twin Screw Plant For CPVC Dual Pipes?",
+    question:
+      "Is this machine suitable for starting a CPVC pipe manufacturing business?",
     answer:
-      "HPMC Conical Twin Screw Plant For CPVC Dual Pipes deliver superior mixing performance, high productivity, excellent process flexibility, energy efficiency, reliable operation, and long service life for demanding compounding applications.",
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a profitable CPVC pipe manufacturing business.",
+  },
+  {
+    question:
+      "Can the machine manufacture CPVC pipes for plumbing and industrial applications?",
+    answer:
+      "Yes. The machine produces CPVC pipes suitable for residential plumbing, commercial buildings, industrial piping, hot and cold water systems, and fire protection applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best CPVC Dual Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable CPVC pipe manufacturing systems.",
+  },
+  {
+    question: "How can I get the best quotation for a CPVC Dual Pipe Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your required pipe sizes, production capacity, and project requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Conical Twin Screw Plant process different CPVC formulations?",
+    answer:
+      "Yes. The machine is designed to process a wide range of CPVC compounds used for plumbing systems, industrial piping, pressure applications, and hot and cold water distribution.",
+  },
+  {
+    question: "Can the machine manufacture hot and cold water CPVC pipes?",
+    answer:
+      "Yes. The extrusion line is specifically designed for manufacturing CPVC pipes used in hot and cold water plumbing systems with consistent quality.",
+  },
+  {
+    question:
+      "Can industrial CPVC pressure pipes be manufactured using this machine?",
+    answer:
+      "Yes. The CPVC Dual Pipe Plant is suitable for manufacturing industrial pressure pipes used in chemical processing, water treatment, and industrial fluid handling systems.",
+  },
+  {
+    question: "Can the machine manufacture CPVC fire sprinkler pipes?",
+    answer:
+      "Yes. With the appropriate CPVC compound and tooling, the machine can manufacture CPVC pipes for fire sprinkler systems and fire protection applications.",
+  },
+  {
+    question:
+      "Can the CPVC Dual Pipe Plant manufacture ASTM or other standard pipes?",
+    answer:
+      "Yes. Using suitable tooling, quality raw materials, and proper process control, the machine can manufacture CPVC pipes that comply with applicable national and international standards.",
+  },
+  {
+    question: "How does the CPVC Dual Pipe Plant improve pipe quality?",
+    answer:
+      "Balanced material flow, efficient plasticizing, precise temperature control, and stable extrusion pressure produce CPVC pipes with smooth surfaces, excellent strength, and consistent dimensions.",
+  },
+  {
+    question:
+      "Can CPVC pipes manufactured on this machine be used in commercial and industrial projects?",
+    answer:
+      "Yes. The machine produces CPVC pipes suitable for residential buildings, commercial complexes, hospitals, hotels, industrial plants, and infrastructure projects.",
+  },
+  {
+    question: "Can this machine reduce CPVC pipe manufacturing costs?",
+    answer:
+      "Yes. Dual-pipe production increases productivity, reduces energy consumption per pipe, minimizes material wastage, and lowers the overall manufacturing cost.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a Conical Twin Screw CPVC Dual Pipe Plant?",
+    answer:
+      "With regular preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question: "Can the CPVC Dual Pipe Plant be upgraded in the future?",
+    answer:
+      "Yes. Automation systems, die heads, downstream equipment, calibration units, and control systems can be upgraded as production requirements grow.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture CPVC Dual Pipe Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Conical Twin Screw CPVC Dual Pipe Plants in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export CPVC Dual Pipe Plants worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports CPVC Dual Pipe Plants and plastic extrusion machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The CPVC Dual Pipe Plant can be integrated into existing production facilities with customized layouts and compatible downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, and machine optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize machine settings, CPVC formulations, production efficiency, and overall extrusion performance.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied CPVC compounds to evaluate machine performance, production output, and finished pipe quality.",
+  },
+  {
+    question:
+      "Is the Conical Twin Screw CPVC Dual Pipe Plant environmentally friendly?",
+    answer:
+      "Yes. The machine is designed with energy-efficient technology that helps reduce power consumption, optimize raw material usage, and support sustainable manufacturing.",
+  },
+  {
+    question: "Which industries benefit from CPVC Dual Pipe Plants?",
+    answer:
+      "Plumbing manufacturers, construction companies, fire protection contractors, chemical processing industries, water treatment plants, infrastructure developers, and industrial pipe manufacturers benefit from this extrusion system.",
+  },
+  {
+    question:
+      "Can this machine manufacture CPVC pipes for green building and infrastructure projects?",
+    answer:
+      "Yes. The machine is suitable for manufacturing CPVC pipes used in green buildings, smart cities, commercial projects, hospitals, hotels, industrial plants, and modern infrastructure developments.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best CPVC Dual Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, precision engineering, advanced manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable CPVC pipe production systems.",
+  },
+  {
+    question: "Who is the top CPVC Dual Pipe Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance CPVC Dual Pipe extrusion lines with excellent productivity, energy efficiency, and consistent product quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your CPVC Dual Pipe Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the Conical Twin Screw Plant for CPVC Dual Pipe one of the best solutions for high-volume CPVC pipe manufacturing?",
+    answer:
+      "Its dual-pipe production capability, superior plasticizing, stable extrusion process, energy-efficient operation, and consistent pipe quality make it an ideal solution for manufacturers seeking higher productivity and lower production costs.",
   },
 ];
 

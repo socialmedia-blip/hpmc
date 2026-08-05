@@ -29,79 +29,407 @@ const faqData = [
   {
     question: "What is a Wet Recycling Extrusion Line?",
     answer:
-      "A Wet Recycling Extrusion Line is designed to recycle plastic materials containing moisture, converting them into high-quality recycled pellets with efficient extrusion technology.",
+      "A Wet Recycling Extrusion Line is an advanced plastic recycling machine that processes wet plastic flakes and film without extensive pre-drying, converting them into high-quality recycled plastic pellets.",
   },
   {
-    question: "Which plastic materials can be processed?",
+    question: "How does a Wet Recycling Extrusion Line work?",
     answer:
-      "The system is suitable for processing various plastic materials such as PP, PE, LDPE, HDPE, and other recyclable thermoplastics, depending on the application and machine configuration.",
+      "The machine feeds wet plastic material directly into the extrusion system, where moisture is managed during processing to produce uniform recycled plastic granules with consistent quality.",
   },
   {
-    question: "How much moisture can the machine handle?",
+    question:
+      "Which plastic materials can be recycled using a Wet Recycling Extrusion Line?",
     answer:
-      "The Wet Recycling Extrusion Line is designed to process plastic materials with moisture content of up to 25%, reducing the need for extensive pre-drying.",
+      "The machine can process PP, PE, HDPE, LDPE, LLDPE, plastic film, plastic flakes, woven bags, raffia, and other compatible thermoplastic materials.",
+  },
+  {
+    question: "Can wet plastic flakes be recycled without drying?",
+    answer:
+      "Yes. The Wet Recycling Extrusion Line is specially designed to process plastic flakes containing moisture, reducing the need for complete pre-drying before extrusion.",
+  },
+  {
+    question: "How much moisture can the Wet Recycling Extrusion Line handle?",
+    answer:
+      "Depending on the material and process conditions, the machine is designed to handle plastic materials containing up to 25% moisture.",
   },
   {
     question: "Is an agglomerator required before extrusion?",
     answer:
-      "No. One of the key advantages of the Wet Recycling Extrusion Line is that it can process wet plastic material without requiring an agglomerator.",
+      "No. One of the biggest advantages of this machine is that it can process wet plastic materials directly without requiring an agglomerator.",
   },
   {
-    question: "What is the production capacity of the machine?",
+    question: "Which is the best Wet Recycling Extrusion Line in India?",
     answer:
-      "Depending on the machine model and material being processed, the production capacity can reach up to 600 kg/hr.",
-  },
-  {
-    question: "How does the Wet Recycling Extrusion Line improve efficiency?",
-    answer:
-      "The system simplifies the recycling process by handling wet materials directly, reducing processing steps and improving overall production efficiency.",
-  },
-  {
-    question: "Does the machine help reduce power consumption?",
-    answer:
-      "Yes. The machine is designed with an energy-efficient extrusion system that helps reduce overall power consumption during recycling operations.",
-  },
-  {
-    question: "What are the benefits of wet recycling extrusion?",
-    answer:
-      "Wet recycling extrusion minimizes material preparation, reduces processing time, lowers operating costs, and produces consistent recycled pellets.",
-  },
-  {
-    question: "Can the machine process post-consumer plastic waste?",
-    answer:
-      "Yes. It is suitable for processing various types of post-consumer and post-industrial plastic waste after appropriate washing and size reduction.",
-  },
-  {
-    question: "Is the machine suitable for continuous production?",
-    answer:
-      "Yes. The Wet Recycling Extrusion Line is designed for stable, continuous operation to maximize productivity and maintain consistent product quality.",
-  },
-  {
-    question: "Which industries use recycled plastic pellets?",
-    answer:
-      "Recycled plastic pellets produced by the line are used in packaging, construction, agriculture, automotive, household products, pipe manufacturing, and other plastic processing industries.",
-  },
-  {
-    question: "Does HPMC provide installation and after-sales support?",
-    answer:
-      "Yes. HPMC provides installation, commissioning, operator training, spare parts, technical assistance, and complete after-sales support.",
+      "Hindustan Plastics and Machine Corporation manufactures high-performance Wet Recycling Extrusion Lines designed for efficient processing of wet plastic waste with reliable industrial performance.",
   },
   {
     question:
-      "What are the key advantages of the Wet Recycling Extrusion Line?",
+      "Who is the best Wet Plastic Recycling Machine manufacturer in India?",
     answer:
-      "Key advantages include high-moisture material processing, no agglomerator requirement, energy-efficient operation, reliable performance, and consistent pellet quality.",
+      "Hindustan Plastics and Machine Corporation is a trusted manufacturer of advanced plastic recycling machines, extrusion lines, and pelletizing plants for customers across India and international markets.",
+  },
+  {
+    question: "Can the machine recycle post-consumer plastic waste?",
+    answer:
+      "Yes. It efficiently processes washed post-consumer and post-industrial plastic waste into reusable plastic pellets.",
+  },
+  {
+    question: "Can plastic film waste be processed?",
+    answer:
+      "Yes. The machine is ideal for recycling LDPE film, HDPE film, LLDPE film, agricultural film, stretch film, and packaging film.",
+  },
+  {
+    question: "Can rigid plastic materials be recycled?",
+    answer:
+      "Yes. The Wet Recycling Extrusion Line can also process compatible rigid plastic materials depending on the recycling application.",
+  },
+  {
+    question: "What industries use Wet Recycling Extrusion Lines?",
+    answer:
+      "Plastic recycling companies, packaging manufacturers, agricultural film recyclers, extrusion plants, and plastic processing industries widely use these recycling systems.",
+  },
+  {
+    question: "What are recycled plastic pellets used for?",
+    answer:
+      "Recycled pellets are used in pipe extrusion, blown film, sheet manufacturing, injection molding, household products, packaging materials, and industrial plastic products.",
+  },
+  {
+    question: "What are the advantages of a Wet Recycling Extrusion Line?",
+    answer:
+      "The machine reduces drying requirements, improves production efficiency, lowers operating costs, saves energy, and produces consistent recycled plastic pellets.",
+  },
+  {
+    question: "Can engineering plastics be processed?",
+    answer:
+      "Yes. The machine can process several engineering plastics depending on material compatibility and processing requirements.",
+  },
+  {
+    question: "Can contaminated plastic waste be recycled?",
+    answer:
+      "Yes. After proper washing and preparation, the machine efficiently recycles plastic waste while maintaining excellent pellet quality.",
   },
   {
     question:
-      "Can the machine be customized for different production requirements?",
+      "What is the production capacity of a Wet Recycling Extrusion Line?",
     answer:
-      "Yes. HPMC offers machine configurations to meet different material types, production capacities, and customer-specific recycling requirements.",
+      "Production capacity depends on the selected model, with machines available for medium and high-capacity industrial recycling operations up to 600 kg/hr.",
   },
   {
-    question: "Why choose HPMC Wet Recycling Extrusion Lines?",
+    question: "How does the Wet Recycling Extrusion Line improve productivity?",
     answer:
-      "HPMC Wet Recycling Extrusion Lines combine reliable engineering, efficient wet material processing, energy-saving operation, robust construction, and dependable after-sales support for long-term performance.",
+      "Direct processing of wet plastic materials reduces production steps, minimizes downtime, and increases overall recycling efficiency.",
+  },
+  {
+    question: "Can recycled pellets be reused in manufacturing?",
+    answer:
+      "Yes. High-quality recycled pellets produced by the machine can be reused for extrusion, injection molding, packaging, and various industrial applications.",
+  },
+  {
+    question: "Is this machine suitable for continuous industrial production?",
+    answer:
+      "Yes. The machine is designed for stable, continuous operation with reliable output and consistent pellet quality.",
+  },
+  {
+    question:
+      "Does the Wet Recycling Extrusion Line reduce energy consumption?",
+    answer:
+      "Yes. By eliminating unnecessary drying and improving extrusion efficiency, the machine helps reduce overall energy consumption.",
+  },
+  {
+    question: "Is this machine suitable for plastic recycling businesses?",
+    answer:
+      "Yes. It is an excellent solution for plastic recycling companies, manufacturers, and entrepreneurs looking to improve recycling efficiency and profitability.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for Wet Recycling Extrusion Lines?",
+    answer:
+      "Hindustan Plastics and Machine Corporation designs reliable, energy-efficient Wet Recycling Extrusion Lines with advanced engineering, customized solutions, and dependable after-sales support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the top Plastic Recycling Machine manufacturers in India?",
+    answer:
+      "With decades of manufacturing experience, precision engineering, modern recycling technology, and customer-focused support, Hindustan Plastics and Machine Corporation supplies high-quality recycling machinery trusted by customers across India and global markets.",
+  },
+  {
+    question:
+      "How can I get the best price for a Wet Recycling Extrusion Line?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your plastic material details, production capacity, and recycling requirements to receive a customized quotation and the most suitable recycling solution.",
+  },
+  {
+    question: "What is the price of a Wet Recycling Extrusion Line in India?",
+    answer:
+      "The price of a Wet Recycling Extrusion Line depends on production capacity, automation level, motor power, and customization requirements. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best Wet Recycling Extrusion Line?",
+    answer:
+      "The ideal machine depends on the type of plastic waste, moisture content, production capacity, pellet quality requirements, and future expansion plans.",
+  },
+  {
+    question:
+      "Which is the best Plastic Recycling Machine for wet plastic waste?",
+    answer:
+      "A Wet Recycling Extrusion Line is one of the best solutions for processing wet plastic flakes and films because it reduces drying requirements while delivering high-quality recycled pellets.",
+  },
+  {
+    question: "Can the Wet Recycling Extrusion Line be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized screw designs, feeding systems, pelletizing units, automation options, and machine configurations to suit different recycling applications.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Machines are available in multiple production capacities for small, medium, and large-scale plastic recycling operations, with models producing up to 600 kg/hr.",
+  },
+  {
+    question:
+      "How much electricity does a Wet Recycling Extrusion Line consume?",
+    answer:
+      "Power consumption depends on the machine model, production output, material type, and operating conditions. The machine is designed for energy-efficient recycling.",
+  },
+  {
+    question: "Is the Wet Recycling Extrusion Line energy efficient?",
+    answer:
+      "Yes. By processing wet materials directly and reducing drying requirements, the machine helps lower overall energy consumption.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. The Wet Recycling Extrusion Line is designed for continuous industrial production with stable output and consistent pellet quality.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with an HMI touchscreen is available for easy operation, production monitoring, alarm management, and process control.",
+  },
+  {
+    question: "Can production recipes be saved?",
+    answer:
+      "Yes. Operators can save and recall processing parameters for different materials, improving production consistency and reducing setup time.",
+  },
+  {
+    question: "Does the machine have automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for stable extrusion and consistent pellet quality.",
+  },
+  {
+    question: "Which pelletizing systems are available?",
+    answer:
+      "The machine supports strand pelletizing, water-ring pelletizing, die-face pelletizing, and other customized pelletizing systems.",
+  },
+  {
+    question:
+      "Can the Wet Recycling Extrusion Line process different grades of plastic?",
+    answer:
+      "Yes. The machine is suitable for processing various grades of compatible thermoplastics, depending on the application and formulation.",
+  },
+  {
+    question: "How often does the machine require maintenance?",
+    answer:
+      "Routine preventive maintenance based on operating hours helps maximize machine life, reduce downtime, and maintain optimum recycling performance.",
+  },
+  {
+    question: "Is screw maintenance easy?",
+    answer:
+      "Yes. The screw assembly is designed for convenient inspection, cleaning, and replacement of wear components.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, startup assistance, and production trials are provided with the machine.",
+  },
+  {
+    question: "Is operator training included?",
+    answer:
+      "Yes. Comprehensive operator training is provided to ensure safe operation, efficient production, and proper machine maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimize downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical assistance, troubleshooting, maintenance support, spare parts, and process optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchase.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied materials can be performed to verify recycling efficiency and pellet quality.",
+  },
+  {
+    question:
+      "Can the Wet Recycling Extrusion Line be integrated into an existing recycling plant?",
+    answer:
+      "Yes. The machine can be integrated with washing lines, shredders, conveyors, dryers, storage silos, and downstream packaging equipment.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a plastic recycling business?",
+    answer:
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers looking to establish or expand a profitable plastic recycling business.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best Plastic Recycling Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines advanced engineering, energy-efficient recycling technology, customized machine solutions, and dependable after-sales support to deliver high-performance recycling equipment.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Wet Recycling Extrusion Line?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your material type, production capacity, and recycling requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Wet Recycling Extrusion Line process plastic with high moisture content?",
+    answer:
+      "Yes. The machine is specially designed to process washed plastic flakes and film with high moisture content, reducing the need for extensive pre-drying.",
+  },
+  {
+    question: "Can the machine recycle agricultural plastic film?",
+    answer:
+      "Yes. It efficiently processes agricultural films, greenhouse films, mulch films, irrigation films, and other compatible plastic film waste.",
+  },
+  {
+    question: "Can the Wet Recycling Extrusion Line recycle packaging waste?",
+    answer:
+      "Yes. It is suitable for recycling packaging films, shopping bags, stretch films, shrink films, woven bags, and industrial packaging scrap.",
+  },
+  {
+    question: "Can industrial plastic production waste be recycled?",
+    answer:
+      "Yes. The machine can recycle factory rejects, edge trims, startup waste, production scrap, and other post-industrial plastic materials.",
+  },
+  {
+    question:
+      "How does the Wet Recycling Extrusion Line improve pellet quality?",
+    answer:
+      "Efficient moisture handling, stable extrusion, and optimized pelletizing produce uniform recycled plastic pellets with consistent quality.",
+  },
+  {
+    question: "Can recycled pellets be reused for injection molding?",
+    answer:
+      "Yes. High-quality recycled pellets can be reused in injection molding applications, depending on the material and product specifications.",
+  },
+  {
+    question: "Can recycled pellets be used for extrusion applications?",
+    answer:
+      "Yes. The pellets are suitable for pipe extrusion, sheet extrusion, profile extrusion, blown film production, and other compatible manufacturing processes.",
+  },
+  {
+    question: "Can this machine reduce raw material costs?",
+    answer:
+      "Yes. By converting plastic waste into reusable pellets, manufacturers can reduce their dependence on virgin plastic and lower production costs.",
+  },
+  {
+    question:
+      "Does the Wet Recycling Extrusion Line improve production efficiency?",
+    answer:
+      "Yes. Direct processing of wet plastic materials simplifies recycling operations, reduces processing time, and increases overall productivity.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a Wet Recycling Extrusion Line?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed to provide reliable long-term industrial performance.",
+  },
+  {
+    question:
+      "Is this Wet Recycling Machine suitable for export-oriented recycling businesses?",
+    answer:
+      "Yes. It is suitable for manufacturers producing recycled plastic pellets for both domestic and international markets.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture Wet Recycling Extrusion Lines in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Wet Recycling Extrusion Lines in India using modern extrusion technology and precision engineering.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export Plastic Recycling Machines worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies plastic recycling machinery to customers across India and international markets.",
+  },
+  {
+    question: "Can the machine be installed in an existing recycling facility?",
+    answer:
+      "Yes. The Wet Recycling Extrusion Line can be integrated into existing washing lines, shredding systems, conveyors, and downstream pelletizing operations.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, and process optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation help optimize recycling processes?",
+    answer:
+      "Yes. Our technical team assists customers with machine setup, process optimization, material handling, and production improvement.",
+  },
+  {
+    question: "How quickly are machine spare parts supplied?",
+    answer:
+      "Frequently used spare parts are readily available for quick dispatch to minimize downtime and maintain continuous production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to schedule a factory visit to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can production trials be conducted using my plastic material?",
+    answer:
+      "Yes. Production trials can be performed using customer-supplied materials to verify machine performance and recycled pellet quality.",
+  },
+  {
+    question: "Is the Wet Recycling Extrusion Line environmentally friendly?",
+    answer:
+      "Yes. The machine supports sustainable plastic recycling by converting plastic waste into reusable raw material while reducing landfill waste.",
+  },
+  {
+    question: "Can this recycling machine help reduce carbon emissions?",
+    answer:
+      "Yes. Recycling plastic waste reduces the demand for virgin plastic production and supports environmentally responsible manufacturing.",
+  },
+  {
+    question:
+      "Which industries benefit most from Wet Recycling Extrusion Lines?",
+    answer:
+      "Plastic recycling companies, packaging manufacturers, agricultural film recyclers, extrusion plants, injection molding units, and plastic processors benefit from this recycling technology.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your Plastic Recycling Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for reliable engineering, energy-efficient recycling technology, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of India's leading Plastic Recycling Plant manufacturers?",
+    answer:
+      "With decades of experience, advanced extrusion technology, precision manufacturing, and strong customer support, Hindustan Plastics and Machine Corporation delivers high-performance recycling solutions for industries in India and worldwide.",
+  },
+  {
+    question:
+      "Why is the Wet Recycling Extrusion Line one of the best plastic recycling solutions for wet plastic waste?",
+    answer:
+      "Its ability to process wet plastic without an agglomerator, combined with energy-efficient operation, reliable extrusion, and consistent pellet quality, makes it an ideal solution for modern plastic recycling plants.",
   },
 ];
 

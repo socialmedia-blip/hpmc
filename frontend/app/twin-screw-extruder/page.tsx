@@ -264,80 +264,406 @@ const specifications = [
 
 const faqData = [
   {
-    question: "What is a Twin Screw Extruder?",
+    question: "What is a Conical Twin Screw Extruder?",
     answer:
-      "A Twin Screw Extruder is an advanced plastic processing machine equipped with two intermeshing screws that provide superior mixing, compounding, plasticization, and material dispersion for a wide range of polymers and additives.",
+      "A Conical Twin Screw Extruder is a high-performance plastic processing machine specially designed for manufacturing PVC pipes, profiles, conduits, and other rigid PVC products with excellent plasticizing efficiency and consistent output.",
+  },
+  {
+    question: "How does a Conical Twin Screw Extruder work?",
+    answer:
+      "The machine uses two conical intermeshing screws that efficiently melt, mix, compress, and convey PVC material through the die to produce high-quality pipes with excellent dimensional accuracy.",
   },
   {
     question:
-      "What materials can be processed using the HPMC Twin Screw Extruder?",
+      "Which materials can be processed using a Conical Twin Screw Extruder?",
     answer:
-      "The HPMC Twin Screw Extruder can process PVC compounds, masterbatches, engineering plastics, filled polymers, recycled materials, WPC compounds, and various thermoplastic formulations.",
+      "The machine is primarily designed for rigid PVC compounds and can process PVC raw materials used in pipe, conduit, profile, and other extrusion applications.",
   },
   {
-    question: "What are the main applications of a Twin Screw Extruder?",
+    question: "What is a PVC Pipe Plant?",
     answer:
-      "Twin Screw Extruders are widely used for PVC compounding, masterbatch production, polymer blending, filler incorporation, plastic recycling, cable compounds, and engineering plastic processing.",
+      "A PVC Pipe Plant is a complete extrusion system that includes a Conical Twin Screw Extruder, vacuum sizing tank, cooling system, haul-off unit, cutting machine, and pipe stacking system for manufacturing PVC pipes.",
   },
   {
-    question: "What is the production capacity of the Twin Screw Extruder?",
+    question:
+      "Which products can be manufactured using a Conical Twin Screw Extruder?",
     answer:
-      "Production capacity varies depending on the model and material being processed. HPMC Twin Screw Extruders are designed to deliver high throughput with consistent product quality and efficient energy utilization.",
+      "The machine is widely used for manufacturing PVC water pipes, agricultural pipes, conduit pipes, plumbing pipes, electrical conduits, casing pipes, and industrial PVC pipe products.",
   },
   {
-    question: "Why is a Twin Screw Extruder preferred for compounding?",
+    question:
+      "Which is the best Conical Twin Screw Extruder manufacturer in India?",
     answer:
-      "The co-rotating twin screw design provides superior distributive and dispersive mixing, ensuring uniform additive distribution, excellent melt quality, and consistent compound properties.",
+      "Hindustan Plastics and Machine Corporation manufactures high-performance Conical Twin Screw Extruders engineered for superior PVC processing, energy efficiency, and reliable long-term industrial production.",
   },
   {
-    question: "Can the machine handle high filler loading applications?",
+    question: "Who is the best PVC Pipe Plant manufacturer in India?",
     answer:
-      "Yes. HPMC Twin Screw Extruders are engineered to process formulations with high filler loading, including calcium carbonate, talc, glass fiber, and other reinforcing materials.",
+      "Hindustan Plastics and Machine Corporation is a trusted manufacturer of PVC Pipe Plants, offering advanced extrusion technology, customized solutions, and dependable after-sales support.",
   },
   {
-    question: "What are the advantages of co-rotating twin screw technology?",
+    question: "What are the advantages of a Conical Twin Screw Extruder?",
     answer:
-      "Co-rotating twin screw technology offers better mixing efficiency, improved material dispersion, higher output rates, reduced processing time, and excellent process stability compared to conventional systems.",
+      "It provides superior plasticizing, excellent mixing, higher output, stable extrusion, lower energy consumption, and consistent PVC pipe quality.",
   },
   {
-    question: "Is the screw configuration customizable?",
+    question:
+      "Why is a Conical Twin Screw Extruder preferred for PVC pipe manufacturing?",
     answer:
-      "Yes. The modular screw design allows customization of screw elements and configurations to meet specific processing requirements and material formulations.",
+      "Its conical screw design generates high torque and excellent material compression, making it ideal for processing rigid PVC compounds efficiently.",
   },
   {
-    question: "Can the Twin Screw Extruder be used for plastic recycling?",
+    question: "What pipe sizes can be manufactured using this machine?",
     answer:
-      "Yes. The machine is highly suitable for recycling applications, enabling efficient reprocessing, homogenization, filtration, and pelletizing of recycled plastic materials.",
+      "Depending on the selected model and downstream equipment, the machine can manufacture PVC pipes in various diameters for plumbing, agriculture, drainage, and industrial applications.",
   },
   {
-    question: "How energy efficient is the HPMC Twin Screw Extruder?",
+    question: "Can the machine produce pressure pipes?",
     answer:
-      "The machine is designed with optimized drive systems, advanced temperature control, and efficient screw geometry to maximize productivity while minimizing energy consumption.",
+      "Yes. The Conical Twin Screw Extruder is suitable for manufacturing pressure pipes used in water supply, irrigation, and industrial piping systems.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "Can electrical conduit pipes be manufactured?",
     answer:
-      "Yes. HPMC offers complete installation, commissioning, operator training, technical assistance, spare parts support, and after-sales service to ensure smooth operation.",
+      "Yes. The machine is widely used for manufacturing PVC electrical conduit pipes with smooth surface finish and consistent dimensions.",
   },
   {
-    question: "Which industries use Twin Screw Extruders?",
+    question: "What industries use Conical Twin Screw Extruders?",
     answer:
-      "Twin Screw Extruders are widely used in plastics processing, automotive, packaging, cable manufacturing, construction materials, polymer compounding, masterbatch production, and recycling industries.",
+      "Construction, agriculture, infrastructure, plumbing, electrical, irrigation, and plastic processing industries extensively use these extrusion machines.",
   },
   {
-    question: "What maintenance is required for a Twin Screw Extruder?",
+    question: "What makes the Barrier Screw design beneficial?",
     answer:
-      "Routine maintenance includes inspection of screw elements, barrel segments, gearbox lubrication, heating and cooling systems, electrical components, and regular cleaning to maintain optimal performance.",
+      "Barrier Screw technology improves melt homogeneity, enhances plasticizing efficiency, reduces material degradation, and delivers superior PVC pipe quality.",
   },
   {
-    question: "Can the machine process glass fiber reinforced compounds?",
+    question: "Why is a bi-metallic screw and barrel important?",
     answer:
-      "Yes. HPMC Twin Screw Extruders are designed to process glass fiber reinforced compounds while ensuring proper fiber dispersion and minimal fiber breakage.",
+      "A bi-metallic screw and barrel provide excellent wear resistance, longer service life, improved processing stability, and reduced maintenance costs.",
   },
   {
-    question: "Why choose HPMC Twin Screw Extruders?",
+    question: "Can recycled PVC material be processed?",
     answer:
-      "HPMC Twin Screw Extruders deliver superior mixing performance, high productivity, excellent process flexibility, energy efficiency, reliable operation, and long service life for demanding compounding applications.",
+      "Yes. Depending on the formulation and material quality, compatible recycled PVC can be blended with virgin material for various extrusion applications.",
+  },
+  {
+    question:
+      "What is the production capacity of a Conical Twin Screw Extruder?",
+    answer:
+      "Production capacity depends on the selected model, raw material, and pipe size, with machines capable of delivering high-output industrial production.",
+  },
+  {
+    question: "How does the machine improve PVC pipe quality?",
+    answer:
+      "Uniform melting, stable pressure, efficient plasticizing, and precise temperature control help produce smooth, dimensionally accurate PVC pipes.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. The Conical Twin Screw Extruder is designed for continuous industrial production with reliable performance and consistent output.",
+  },
+  {
+    question: "Is the machine energy efficient?",
+    answer:
+      "Yes. Optimized screw geometry, efficient drive systems, and advanced heating control help reduce energy consumption while maintaining high productivity.",
+  },
+  {
+    question: "Can the PVC Pipe Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized PVC Pipe Plants based on pipe diameter, production capacity, automation level, and customer requirements.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC pipe manufacturing business?",
+    answer:
+      "Yes. It is an ideal solution for entrepreneurs and manufacturers looking to establish or expand a PVC pipe production business with reliable and efficient machinery.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for PVC Pipe Plants?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered PVC Pipe Plants with advanced extrusion technology, durable components, energy-efficient operation, and comprehensive technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the top PVC Pipe Machine manufacturers in India?",
+    answer:
+      "With decades of expertise in plastic extrusion machinery, innovative engineering, and dependable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers across India and international markets.",
+  },
+  {
+    question: "How can I get the best price for a Conical Twin Screw Extruder?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your pipe size, production capacity, and project requirements to receive a customized quotation and the most suitable machine recommendation.",
+  },
+  {
+    question: "What is the price of a Conical Twin Screw Extruder in India?",
+    answer:
+      "The price of a Conical Twin Screw Extruder depends on the machine model, production capacity, automation level, and downstream equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best PVC Pipe Plant for my business?",
+    answer:
+      "The right PVC Pipe Plant depends on the required pipe diameter, production capacity, raw material, automation level, and future expansion plans.",
+  },
+  {
+    question: "Which is the best PVC Pipe Making Machine in India?",
+    answer:
+      "A Conical Twin Screw Extruder from Hindustan Plastics and Machine Corporation is an excellent choice for manufacturing high-quality PVC pipes with reliable performance, energy efficiency, and consistent output.",
+  },
+  {
+    question: "Can the Conical Twin Screw Extruder be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized machine configurations, screw designs, downstream equipment, and automation options to meet specific production requirements.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Multiple machine models are available to suit small, medium, and large-scale PVC pipe manufacturing with different output capacities.",
+  },
+  {
+    question: "How much electricity does a PVC Pipe Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, pipe diameter, and operating conditions. The machines are designed for energy-efficient production.",
+  },
+  {
+    question: "Is the Conical Twin Screw Extruder energy efficient?",
+    answer:
+      "Yes. Advanced screw geometry, optimized heating zones, and efficient drive systems help reduce energy consumption while maintaining high production output.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. The Conical Twin Screw Extruder is designed for continuous industrial production with stable operation and consistent pipe quality.",
+  },
+  {
+    question: "Does the PVC Pipe Plant include PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen is available for easy operation, production monitoring, alarm management, and process control.",
+  },
+  {
+    question: "Can production parameters be saved?",
+    answer:
+      "Yes. Operators can store and recall processing recipes, reducing setup time and ensuring consistent PVC pipe production.",
+  },
+  {
+    question: "Does the machine have automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for uniform melting, improved plasticizing, and superior pipe quality.",
+  },
+  {
+    question:
+      "Can different pipe sizes be manufactured using the same machine?",
+    answer:
+      "Yes. By changing dies, calibration sleeves, and related tooling, the machine can produce different PVC pipe sizes within its specified range.",
+  },
+  {
+    question: "How often does the machine require maintenance?",
+    answer:
+      "Routine preventive maintenance, lubrication, and periodic inspection of wear parts help maximize machine life and production efficiency.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for convenient maintenance, allowing easy inspection and replacement of wear components when required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, production trials, and startup assistance are provided by experienced engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Professional operator training is provided to ensure safe operation, efficient production, and proper machine maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and minimize production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical assistance, maintenance support, spare parts, troubleshooting, and process optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchase.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer materials can be performed to verify machine performance, pipe quality, and production output.",
+  },
+  {
+    question:
+      "Can the PVC Pipe Plant be integrated into an existing production line?",
+    answer:
+      "Yes. The Conical Twin Screw Extruder can be integrated with existing downstream equipment, calibration tanks, haul-off units, cutting machines, and pipe stacking systems.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC pipe manufacturing business?",
+    answer:
+      "Yes. It is an ideal investment for entrepreneurs and manufacturers planning to establish or expand a profitable PVC pipe manufacturing business.",
+  },
+  {
+    question: "Can the machine manufacture PVC pipes for different industries?",
+    answer:
+      "Yes. It is suitable for producing pipes used in water supply, irrigation, drainage, electrical conduit, plumbing, and industrial applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best PVC Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, durable machine construction, advanced extrusion technology, and dependable after-sales support to deliver reliable PVC pipe production solutions.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Conical Twin Screw Extruder?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your pipe size, production capacity, and project requirements to receive a customized quotation and expert guidance.",
+  },
+  {
+    question:
+      "Can the Conical Twin Screw Extruder process recycled PVC material?",
+    answer:
+      "Yes. The machine can process compatible recycled PVC blends along with virgin material, depending on the product specifications and formulation.",
+  },
+  {
+    question:
+      "Can different PVC formulations be processed on the same machine?",
+    answer:
+      "Yes. By adjusting processing parameters and tooling, the machine can handle various rigid PVC formulations for different pipe applications.",
+  },
+  {
+    question: "Can the machine manufacture UPVC pipes?",
+    answer:
+      "Yes. The Conical Twin Screw Extruder is ideal for manufacturing UPVC pipes used in plumbing, agriculture, drainage, and water supply applications.",
+  },
+  {
+    question: "Can CPVC pipes be manufactured using this machine?",
+    answer:
+      "Depending on the machine configuration and processing requirements, compatible CPVC pipe formulations can also be processed.",
+  },
+  {
+    question: "Can the PVC Pipe Plant produce agricultural irrigation pipes?",
+    answer:
+      "Yes. The machine is widely used for manufacturing agricultural irrigation pipes with excellent dimensional accuracy and long service life.",
+  },
+  {
+    question: "Can the machine manufacture plumbing pipes?",
+    answer:
+      "Yes. It is suitable for manufacturing PVC plumbing pipes used in residential, commercial, and industrial water distribution systems.",
+  },
+  {
+    question: "Can the machine manufacture electrical conduit pipes?",
+    answer:
+      "Yes. The extrusion line produces smooth, durable PVC electrical conduit pipes for cable protection and electrical installations.",
+  },
+  {
+    question: "How does the Conical Twin Screw Extruder improve pipe quality?",
+    answer:
+      "Uniform plasticizing, stable melt pressure, precise temperature control, and efficient screw design help produce PVC pipes with smooth surfaces and consistent wall thickness.",
+  },
+  {
+    question: "Can this machine reduce manufacturing costs?",
+    answer:
+      "Yes. Energy-efficient operation, higher production output, lower material wastage, and reliable performance help reduce the overall cost of PVC pipe production.",
+  },
+  {
+    question: "What is the expected lifespan of a Conical Twin Screw Extruder?",
+    answer:
+      "With regular maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question: "Can the PVC Pipe Plant be upgraded in the future?",
+    answer:
+      "Yes. Automation systems, downstream equipment, dies, calibration units, and control systems can be upgraded as production requirements increase.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture Conical Twin Screw Extruders in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation designs and manufactures advanced Conical Twin Screw Extruders in India using precision engineering and modern manufacturing technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export PVC Pipe Plants worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies PVC Pipe Plants and extrusion machinery to customers across India and international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The PVC Pipe Plant can be integrated into existing production facilities with customized layouts and compatible downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, machine guidance, and process optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize machine settings, material processing, production efficiency, and overall extrusion performance.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required spare parts are readily available for quick dispatch to minimize production downtime.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine production, quality control processes, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial runs can be arranged using customer materials to evaluate machine performance, production output, and finished pipe quality.",
+  },
+  {
+    question: "Is the PVC Pipe Plant environmentally friendly?",
+    answer:
+      "Yes. The machine is designed with energy-efficient technology that helps reduce power consumption, material waste, and overall manufacturing costs.",
+  },
+  {
+    question: "Which industries use Conical Twin Screw Extruders?",
+    answer:
+      "Construction, infrastructure, agriculture, plumbing, electrical, irrigation, chemical processing, and plastic manufacturing industries widely use these extrusion machines.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best PVC Pipe Plant manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is known for precision-engineered extrusion machinery, advanced PVC processing technology, customized solutions, reliable after-sales support, and decades of manufacturing expertise.",
+  },
+  {
+    question:
+      "Who is the top Conical Twin Screw Extruder manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized by customers for delivering high-performance Conical Twin Screw Extruders with excellent productivity, energy efficiency, and dependable technical support.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your PVC Pipe Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized PVC Pipe Plant solutions, timely service support, and long-term reliability.",
+  },
+  {
+    question:
+      "Why is the Conical Twin Screw Extruder one of the best machines for PVC pipe manufacturing?",
+    answer:
+      "Its high-torque conical screw design, efficient plasticizing, stable extrusion process, low energy consumption, and consistent pipe quality make it one of the preferred solutions for modern PVC pipe manufacturing.",
   },
 ];
 

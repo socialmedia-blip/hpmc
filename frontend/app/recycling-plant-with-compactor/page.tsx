@@ -32,79 +32,402 @@ const faqData = [
   {
     question: "What is a Recycling Plant with Compactor?",
     answer:
-      "A Recycling Plant with Compactor is an advanced plastic recycling system that combines compaction, extrusion, filtration, and pelletizing technologies to convert plastic waste into high-quality reusable granules.",
+      "A Recycling Plant with Compactor is an advanced plastic recycling machine that combines compaction, extrusion, filtration, and pelletizing to convert plastic waste into high-quality reusable plastic granules.",
   },
   {
-    question: "What is the function of the compactor unit?",
+    question: "How does a Recycling Plant with Compactor work?",
     answer:
-      "The compactor pre-processes plastic waste by cutting, densifying, drying, and homogenizing materials before extrusion, improving feeding efficiency and recycling performance.",
+      "The compactor cuts, dries, densifies, and preheats plastic waste before feeding it into the extruder, producing consistent recycled plastic pellets with higher productivity.",
   },
   {
-    question: "Which materials can be processed with this recycling plant?",
+    question: "Why is a Compactor used in a Plastic Recycling Plant?",
     answer:
-      "The system can process LDPE, HDPE, LLDPE, PP, ABS, Polycarbonate, and various engineering plastics used in packaging, automotive, consumer, and industrial applications.",
-  },
-  {
-    question:
-      "What are the benefits of using a compactor in plastic recycling?",
-    answer:
-      "A compactor improves material feeding, reduces moisture content, increases bulk density, enhances extrusion stability, and helps produce higher-quality recycled pellets.",
+      "The compactor improves feeding efficiency, reduces moisture, increases material density, and delivers stable extrusion for superior pellet quality.",
   },
   {
     question:
-      "What is the production capacity of the Recycling Plant with Compactor?",
+      "Which plastic materials can be recycled using a Recycling Plant with Compactor?",
     answer:
-      "Production capacity depends on the selected model and material type. The system is designed for high-efficiency recycling operations with consistent output and excellent pellet quality.",
+      "The machine can recycle LDPE, HDPE, LLDPE, PP, ABS, Polycarbonate, BOPP film, woven bags, raffia, industrial plastic scrap, and many engineering plastics.",
   },
   {
-    question: "Can the machine process printed films and plastic scraps?",
+    question: "What are the advantages of a Recycling Plant with Compactor?",
     answer:
-      "Yes. The compactor system is suitable for processing printed films, plastic scraps, industrial waste, post-consumer plastics, and other lightweight materials.",
+      "It offers higher production efficiency, lower power consumption, improved pellet quality, better material feeding, and reduced processing costs.",
   },
   {
-    question: "What is a Plastic Pelletizing Plant?",
+    question: "Which is the best Recycling Plant with Compactor in India?",
     answer:
-      "A Plastic Pelletizing Plant converts recycled molten plastic into uniform granules or pellets that can be reused as raw materials in plastic manufacturing processes.",
+      "Hindustan Plastic and Machine Corporation manufactures high-performance Recycling Plants with Compactor designed for efficient plastic waste recycling, reliable operation, and long-term industrial use.",
   },
   {
-    question: "How does the recycling process improve sustainability?",
+    question:
+      "Who is the best Plastic Recycling Machine manufacturer in India?",
     answer:
-      "Plastic recycling reduces landfill waste, conserves raw materials, lowers production costs, minimizes environmental impact, and supports sustainable manufacturing practices.",
+      "Hindustan Plastic and Machine Corporation is recognized for manufacturing advanced plastic recycling plants, pelletizing machines, and extrusion systems for a wide range of plastic recycling applications.",
   },
   {
-    question: "Which industries use recycled plastic granules?",
+    question: "Can this Recycling Plant recycle plastic film waste?",
     answer:
-      "Recycled granules are widely used in packaging, automotive components, household products, pipes, containers, injection molding, blow molding, and extrusion industries.",
+      "Yes. It efficiently processes LDPE film, LLDPE film, agricultural film, stretch film, shopping bags, and industrial packaging film.",
   },
   {
-    question: "Can the plant process engineering plastics?",
+    question: "Can rigid plastic waste be recycled?",
     answer:
-      "Yes. The machine is capable of processing engineering plastics such as ABS, Polycarbonate, and other specialty polymers while maintaining excellent material quality.",
+      "Yes. The machine is suitable for recycling HDPE drums, PP crates, ABS components, injection molded products, and rigid industrial plastic waste.",
   },
   {
-    question: "How does the filtration system improve pellet quality?",
+    question: "Can printed plastic film be recycled?",
     answer:
-      "The filtration system removes contaminants, dust, paper particles, and impurities from molten plastic, ensuring cleaner and more consistent recycled pellets.",
+      "Yes. Printed plastic film and laminated film can be recycled after proper washing and preparation.",
+  },
+  {
+    question: "What industries use Recycling Plants with Compactor?",
+    answer:
+      "Packaging, automotive, agriculture, furniture, consumer goods, injection molding, extrusion, and plastic recycling industries widely use these recycling plants.",
+  },
+  {
+    question: "What are recycled plastic granules used for?",
+    answer:
+      "Recycled granules are widely used in pipe manufacturing, blown film, sheet extrusion, injection molding, household products, packaging materials, and industrial plastic products.",
+  },
+  {
+    question: "Can engineering plastics be recycled?",
+    answer:
+      "Yes. Engineering plastics such as ABS, Polycarbonate, HIPS, and compatible industrial polymers can be recycled efficiently.",
+  },
+  {
+    question: "Can the machine recycle post-consumer plastic waste?",
+    answer:
+      "Yes. It is designed to process post-consumer plastic waste as well as post-industrial plastic scrap after proper washing and sorting.",
+  },
+  {
+    question: "Can contaminated plastic waste be recycled?",
+    answer:
+      "Yes. The hydraulic screen changer removes impurities from molten plastic, helping produce cleaner recycled pellets.",
+  },
+  {
+    question:
+      "What is the production capacity of a Recycling Plant with Compactor?",
+    answer:
+      "Production capacity depends on the selected model and application, with machines available for medium and high-capacity industrial recycling operations.",
+  },
+  {
+    question: "How does the compactor improve recycling efficiency?",
+    answer:
+      "The compactor reduces material volume, removes moisture, improves feeding consistency, and increases extrusion stability for higher output.",
+  },
+  {
+    question:
+      "What makes a Recycling Plant with Compactor better than a standard recycling machine?",
+    answer:
+      "Integrated compaction improves material handling, increases productivity, reduces downtime, and delivers superior pellet quality compared to conventional recycling systems.",
+  },
+  {
+    question: "Can recycled pellets be reused in manufacturing?",
+    answer:
+      "Yes. High-quality recycled pellets can be reused for injection molding, extrusion, pipe manufacturing, packaging products, and other industrial applications.",
+  },
+  {
+    question: "Is the Recycling Plant suitable for continuous production?",
+    answer:
+      "Yes. It is designed for continuous industrial operation with stable output, reliable performance, and consistent pellet quality.",
+  },
+  {
+    question: "Does the machine improve recycled plastic quality?",
+    answer:
+      "Yes. Advanced compaction, filtration, and extrusion technology produce cleaner, denser, and more uniform recycled plastic granules.",
+  },
+  {
+    question:
+      "Is this machine suitable for commercial plastic recycling businesses?",
+    answer:
+      "Yes. It is ideal for commercial recycling companies, plastic manufacturers, and industrial processing units looking for high-output recycling solutions.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastic and Machine Corporation for Plastic Recycling Machines?",
+    answer:
+      "Hindustan Plastic and Machine Corporation designs high-performance recycling plants with advanced engineering, energy-efficient technology, customized solutions, and dependable after-sales support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastic and Machine Corporation one of the top Plastic Recycling Machine manufacturers in India?",
+    answer:
+      "With decades of manufacturing experience, advanced extrusion technology, precision engineering, and reliable customer support, Hindustan Plastic and Machine Corporation delivers efficient recycling solutions trusted by customers across India and international markets.",
+  },
+  {
+    question:
+      "How can I get the best price for a Recycling Plant with Compactor?",
+    answer:
+      "Contact Hindustan Plastic and Machine Corporation with your material type, production capacity, and recycling requirements to receive a customized quotation and the most suitable machine recommendation.",
+  },
+  {
+    question: "What is the price of a Recycling Plant with Compactor in India?",
+    answer:
+      "The price of a Recycling Plant with Compactor depends on production capacity, motor power, automation level, and customization requirements. Contact Hindustan Plastic and Machine Corporation for a customized quotation.",
+  },
+  {
+    question:
+      "How do I choose the best Plastic Recycling Machine for my business?",
+    answer:
+      "Choose a recycling machine based on the type of plastic waste, hourly production capacity, pellet quality requirements, available space, and future production goals.",
+  },
+  {
+    question: "Which is the best Plastic Pelletizing Machine in India?",
+    answer:
+      "A Recycling Plant with Compactor is among the best plastic pelletizing solutions for processing film waste, rigid plastics, and industrial scrap with high productivity and consistent pellet quality.",
+  },
+  {
+    question: "Can the Recycling Plant with Compactor be customized?",
+    answer:
+      "Yes. Hindustan Plastic and Machine Corporation offers customized machine configurations, screw designs, pelletizing systems, filtration units, and automation features to match specific recycling applications.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Machines are available in multiple production capacities to suit small, medium, and large-scale plastic recycling businesses.",
+  },
+  {
+    question: "How much electricity does a Plastic Recycling Plant consume?",
+    answer:
+      "Power consumption depends on machine size, production output, raw material type, and operating conditions.",
   },
   {
     question: "Is the Recycling Plant with Compactor energy efficient?",
     answer:
-      "Yes. The plant is designed with optimized compaction and extrusion technology to maximize productivity while minimizing energy consumption and operating costs.",
+      "Yes. Advanced compaction technology, optimized screw design, and efficient heating systems help reduce power consumption while increasing production.",
   },
   {
-    question: "Is the machine suitable for continuous production?",
+    question: "Can the machine run continuously for industrial production?",
     answer:
-      "Yes. HPMC Recycling Plants with Compactor are engineered for continuous operation with reliable performance, stable output, and minimal downtime.",
+      "Yes. The machine is designed for continuous heavy-duty operation with stable output, reliable performance, and minimal downtime.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "Does the machine support PLC automation?",
     answer:
-      "Yes. HPMC provides installation, commissioning, operator training, spare parts support, technical assistance, and comprehensive after-sales services.",
+      "Yes. PLC-based automation with HMI touchscreen enables easy machine operation, production monitoring, alarm management, and parameter control.",
   },
   {
-    question: "Why choose HPMC Recycling Plants with Compactor?",
+    question: "Can production settings be saved?",
     answer:
-      "HPMC Recycling Plants with Compactor offer efficient material handling, superior pellet quality, reliable operation, energy-efficient processing, and long-term durability for modern recycling facilities.",
+      "Yes. Operators can save and recall machine recipes for different plastic materials, improving production consistency and reducing setup time.",
+  },
+  {
+    question: "Does the machine have automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones with precise temperature control ensure consistent melting and superior recycled pellet quality.",
+  },
+  {
+    question: "Which pelletizing systems are available?",
+    answer:
+      "The machine supports water-ring pelletizing, strand pelletizing, die-face pelletizing, and customized pelletizing systems depending on production requirements.",
+  },
+  {
+    question: "Does the Recycling Plant include a hydraulic screen changer?",
+    answer:
+      "Yes. A hydraulic screen changer continuously removes contaminants from molten plastic without interrupting production.",
+  },
+  {
+    question: "Can vacuum degassing be added?",
+    answer:
+      "Yes. Optional vacuum degassing systems can be integrated for better moisture removal and improved recycled material quality.",
+  },
+  {
+    question: "How often does the machine require maintenance?",
+    answer:
+      "Routine preventive maintenance based on operating hours helps maximize machine life, reduce downtime, and maintain high production efficiency.",
+  },
+  {
+    question: "Is screw maintenance simple?",
+    answer:
+      "Yes. The modular screw design allows easy inspection, cleaning, and replacement of wear components.",
+  },
+  {
+    question:
+      "Does Hindustan Plastic and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, machine testing, and production startup support are provided.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Professional operator training is provided to ensure safe machine operation, maintenance, and maximum production efficiency.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastic and Machine Corporation supplies genuine spare parts to maintain machine reliability and minimize production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastic and Machine Corporation provide after-sales service?",
+    answer:
+      "Yes. Customers receive technical support, preventive maintenance, troubleshooting, spare parts assistance, and process optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live machine demonstrations and technical consultations can be arranged to help customers evaluate recycling performance.",
+  },
+  {
+    question:
+      "Can production trials be performed before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer materials can be conducted to verify pellet quality and machine performance.",
+  },
+  {
+    question:
+      "Can the Recycling Plant with Compactor be integrated into an existing recycling line?",
+    answer:
+      "Yes. The machine can be integrated with shredders, washing plants, dryers, conveyors, silos, and downstream packaging equipment.",
+  },
+  {
+    question:
+      "Is this Recycling Plant suitable for starting a plastic recycling business?",
+    answer:
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers looking to establish or expand a profitable plastic recycling business.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Recycling Plant with Compactor?",
+    answer:
+      "Contact Hindustan Plastic and Machine Corporation with your plastic material details, expected production capacity, and business requirements to receive a customized quotation.",
+  },
+  {
+    question:
+      "Can the Recycling Plant with Compactor process wet plastic waste?",
+    answer:
+      "Yes. The integrated compactor helps reduce residual moisture before extrusion, improving feeding efficiency and recycled pellet quality.",
+  },
+  {
+    question: "Can multilayer plastic films be recycled?",
+    answer:
+      "Compatible multilayer plastic films can be recycled after evaluating their material composition and processing characteristics.",
+  },
+  {
+    question: "Can industrial plastic scrap be recycled using this machine?",
+    answer:
+      "Yes. The Recycling Plant with Compactor is ideal for processing industrial plastic scrap, production rejects, edge trims, and factory waste.",
+  },
+  {
+    question: "Can the machine recycle packaging film waste?",
+    answer:
+      "Yes. It efficiently recycles packaging films, shrink films, stretch films, woven bags, raffia, and BOPP materials after proper preparation.",
+  },
+  {
+    question: "How does the compactor improve pellet quality?",
+    answer:
+      "The compactor densifies and preheats the material before extrusion, ensuring uniform feeding, stable melting, and high-quality recycled pellets.",
+  },
+  {
+    question: "Can recycled pellets be used for injection molding?",
+    answer:
+      "Yes. Recycled pellets produced by the machine are suitable for injection molding applications, depending on the material and product requirements.",
+  },
+  {
+    question: "Can recycled pellets be used for extrusion applications?",
+    answer:
+      "Yes. The pellets can be reused in pipe extrusion, sheet extrusion, profile extrusion, blown film, and other compatible manufacturing processes.",
+  },
+  {
+    question: "Can this machine help reduce raw material costs?",
+    answer:
+      "Yes. Recycling plastic waste into reusable granules significantly reduces dependence on virgin polymers and lowers production costs.",
+  },
+  {
+    question: "Does the Recycling Plant improve production efficiency?",
+    answer:
+      "Yes. Continuous operation, efficient compaction, stable extrusion, and consistent pellet production improve overall manufacturing efficiency.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a Recycling Plant with Compactor?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial performance.",
+  },
+  {
+    question:
+      "Is this Plastic Recycling Machine suitable for export-oriented manufacturing?",
+    answer:
+      "Yes. The machine is suitable for manufacturers supplying recycled plastic granules to domestic and international markets.",
+  },
+  {
+    question:
+      "Does Hindustan Plastic and Machine Corporation manufacture Recycling Plants in India?",
+    answer:
+      "Yes. Hindustan Plastic and Machine Corporation manufactures advanced Recycling Plants with Compactor in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastic and Machine Corporation export Plastic Recycling Machines?",
+    answer:
+      "Yes. Hindustan Plastic and Machine Corporation supplies plastic recycling machinery to customers across India and international markets.",
+  },
+  {
+    question: "Can the Recycling Plant be installed in an existing factory?",
+    answer:
+      "Yes. The machine can be integrated into existing recycling and manufacturing facilities with customized layouts and material handling systems.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, and process optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastic and Machine Corporation help optimize recycling processes?",
+    answer:
+      "Yes. Our technical experts assist customers with machine settings, material processing, and production optimization to achieve better efficiency.",
+  },
+  {
+    question: "How quickly are spare parts delivered?",
+    answer:
+      "Common spare parts are readily available for quick dispatch to reduce production downtime and maintain uninterrupted operation.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastic and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to schedule a factory visit to inspect machine manufacturing, quality control, and discuss project requirements with our technical team.",
+  },
+  {
+    question: "Can production trials be conducted using my plastic waste?",
+    answer:
+      "Yes. Production trials can be conducted using customer-supplied materials to evaluate machine performance and pellet quality.",
+  },
+  {
+    question: "Is the Recycling Plant with Compactor environmentally friendly?",
+    answer:
+      "Yes. The machine supports sustainable manufacturing by converting plastic waste into reusable raw materials and reducing landfill disposal.",
+  },
+  {
+    question: "Can this machine help reduce carbon emissions?",
+    answer:
+      "Yes. Recycling plastic waste reduces the demand for virgin plastic production and contributes to more sustainable manufacturing practices.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastic and Machine Corporation considered one of the best Plastic Recycling Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastic and Machine Corporation combines decades of manufacturing expertise, advanced recycling technology, customized machine solutions, reliable after-sales support, and precision engineering to deliver high-performance recycling equipment.",
+  },
+  {
+    question: "Which industries benefit from Recycling Plants with Compactor?",
+    answer:
+      "Plastic recycling companies, packaging manufacturers, automotive suppliers, extrusion plants, injection molding units, and industrial plastic processors benefit from these recycling systems.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastic and Machine Corporation as your Plastic Recycling Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastic and Machine Corporation for advanced technology, robust machine construction, customized solutions, dependable service support, and efficient recycling systems designed for long-term industrial performance.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastic and Machine Corporation one of India's leading Recycling Plant manufacturers?",
+    answer:
+      "With decades of experience, innovative engineering, energy-efficient machinery, and comprehensive customer support, Hindustan Plastic and Machine Corporation has become a trusted manufacturer of plastic recycling plants for customers in India and worldwide.",
   },
 ];
 

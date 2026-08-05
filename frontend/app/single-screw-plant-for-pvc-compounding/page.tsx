@@ -30,68 +30,416 @@ const faqData = [
   {
     question: "What is a Single Screw Plant for PVC Compounding?",
     answer:
-      "A Single Screw Plant for PVC Compounding is an extrusion system designed to manufacture high-quality rigid and soft PVC compounds with excellent mixing, plasticization, and consistent output for various industrial applications.",
+      "A Single Screw Plant for PVC Compounding is an advanced extrusion system designed to manufacture rigid and soft PVC compounds with excellent plasticization, uniform mixing, and consistent pellet quality for industrial applications.",
+  },
+  {
+    question: "How does a Single Screw PVC Compounding Plant work?",
+    answer:
+      "The machine melts, plasticizes, and mixes PVC resin with fillers, stabilizers, lubricants, pigments, and additives before producing high-quality PVC compounds for downstream manufacturing.",
   },
   {
     question:
-      "What materials can be processed using the HPMC PVC Compounding Plant?",
+      "Which materials can be processed using a Single Screw PVC Compounding Plant?",
     answer:
-      "The HPMC PVC Compounding Plant is suitable for processing rigid PVC, soft PVC, PVC compounds with calcium carbonate (CaCO₃), additives, stabilizers, plasticizers, and other PVC formulations.",
+      "The machine processes rigid PVC, soft PVC, PVC compounds with calcium carbonate, stabilizers, plasticizers, lubricants, pigments, and customized PVC formulations.",
   },
   {
-    question: "What is the production capacity of the PVC Compounding Plant?",
+    question:
+      "Which products can be manufactured using this PVC Compounding Plant?",
     answer:
-      "Depending on the machine model, the HPMC PVC Compounding Plant offers production capacities ranging from 100 kg/hr to 225 kg/hr while ensuring excellent compound quality and process stability.",
+      "The plant manufactures PVC compounds for pipes, profiles, cable insulation, moulding applications, construction products, industrial components, and consumer goods.",
   },
   {
-    question: "Which machine models are available?",
+    question: "What is PVC compounding?",
     answer:
-      "The HPMC Single Screw PVC Compounding Plant is available in HPMC 90, HPMC 100, and HPMC 120 models to meet different production requirements.",
+      "PVC compounding is the process of blending PVC resin with additives, fillers, stabilizers, lubricants, and pigments to produce customized PVC compounds with specific physical and mechanical properties.",
   },
   {
-    question: "What are the applications of PVC compounds?",
+    question:
+      "Which is the best Single Screw PVC Compounding Plant manufacturer in India?",
     answer:
-      "PVC compounds produced by this plant are widely used in medical products, food packaging, industrial components, building and construction materials, consumer goods, and institutional applications.",
+      "Hindustan Plastics and Machine Corporation manufactures advanced Single Screw PVC Compounding Plants with precision engineering, energy-efficient operation, and reliable long-term industrial performance.",
+  },
+  {
+    question: "Who is the best PVC Compounding Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is a trusted manufacturer of PVC Compounding Machines, offering customized solutions, modern extrusion technology, and dependable after-sales support.",
+  },
+  {
+    question:
+      "What are the advantages of a Single Screw PVC Compounding Plant?",
+    answer:
+      "The machine offers excellent plasticization, stable processing, consistent output, low maintenance, energy-efficient operation, and reliable PVC compound quality.",
+  },
+  {
+    question: "Why choose a Single Screw Plant for PVC compounding?",
+    answer:
+      "Single Screw PVC Compounding Plants provide reliable processing, simple operation, lower maintenance costs, and excellent production efficiency for a wide range of PVC formulations.",
   },
   {
     question: "Can the machine process high-filler PVC compounds?",
     answer:
-      "Yes. The HPMC PVC Compounding Plant can process PVC compounds with high filler loading up to 100 PHR CaCO₃, making it ideal for PVC profile applications.",
+      "Yes. The machine efficiently processes PVC compounds containing up to 100 PHR calcium carbonate while maintaining stable extrusion and consistent quality.",
   },
   {
-    question: "Can the plant produce soft PVC compounds?",
+    question: "Can soft PVC compounds be manufactured on this machine?",
     answer:
-      "Yes. The machine is suitable for manufacturing soft PVC compounds used in cable insulation, moulding applications, and other flexible PVC products.",
+      "Yes. The machine is suitable for producing soft PVC compounds used in cable insulation, moulding applications, and flexible PVC products.",
   },
   {
-    question: "What are the benefits of the HPMC PVC Compounding Plant?",
+    question: "Can rigid PVC compounds be manufactured?",
     answer:
-      "The plant provides excellent plasticization, uniform mixing, stable extrusion, energy-efficient operation, reliable performance, and consistent compound quality for continuous production.",
+      "Yes. The machine produces high-quality rigid PVC compounds used in pipe manufacturing, profiles, fittings, and construction products.",
   },
   {
-    question: "Is the machine suitable for continuous industrial production?",
+    question: "Which industries use Single Screw PVC Compounding Plants?",
     answer:
-      "Yes. The HPMC PVC Compounding Plant is engineered for continuous operation with high productivity, low downtime, and dependable long-term performance.",
+      "Pipe manufacturers, cable producers, profile manufacturers, construction companies, packaging industries, consumer goods manufacturers, and plastic processors widely use these machines.",
   },
   {
-    question: "How energy efficient is the PVC Compounding Plant?",
+    question: "What is the maximum production capacity of the machine?",
     answer:
-      "The machine incorporates optimized screw geometry, efficient heating systems, and reliable drive technology to maximize productivity while minimizing power consumption.",
+      "Depending on the selected model, the machine offers production capacities up to approximately 225 kg/hr while maintaining excellent compound quality.",
   },
   {
-    question: "Does HPMC provide installation and technical support?",
+    question: "How does the machine improve PVC compound quality?",
     answer:
-      "Yes. HPMC provides complete installation, commissioning, operator training, technical assistance, spare parts, and comprehensive after-sales support for all PVC compounding plants.",
+      "Efficient plasticization, accurate temperature control, stable screw design, and uniform mixing help produce PVC compounds with consistent quality and excellent processing characteristics.",
   },
   {
-    question: "What maintenance is required for the PVC Compounding Plant?",
+    question:
+      "Is the Single Screw PVC Compounding Plant suitable for continuous production?",
     answer:
-      "Routine maintenance includes inspection of the screw and barrel, gearbox lubrication, heaters, cooling systems, electrical components, and regular cleaning to ensure consistent machine performance.",
+      "Yes. The machine is designed for continuous industrial operation with reliable performance, stable output, and minimal downtime.",
   },
   {
-    question: "Why choose HPMC Single Screw PVC Compounding Plants?",
+    question: "Is the machine energy efficient?",
     answer:
-      "HPMC PVC Compounding Plants are known for robust construction, high production efficiency, consistent compound quality, low maintenance, energy-efficient operation, and reliable after-sales support.",
+      "Yes. Optimized screw geometry, efficient heating systems, and reliable drive technology help reduce power consumption while maintaining high production efficiency.",
+  },
+  {
+    question: "Can the PVC Compounding Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized machine configurations, automation systems, feeding units, and downstream equipment based on production requirements.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC compound manufacturing business?",
+    answer:
+      "Yes. It is an excellent investment for entrepreneurs and manufacturers planning to establish or expand a PVC compound manufacturing business.",
+  },
+  {
+    question:
+      "Can the machine manufacture PVC compounds for cable applications?",
+    answer:
+      "Yes. The machine produces PVC cable compounds with excellent dispersion, flexibility, and electrical insulation properties.",
+  },
+  {
+    question: "Can the machine manufacture PVC profile compounds?",
+    answer:
+      "Yes. The plant is widely used for manufacturing PVC profile compounds with high filler loading and consistent processing performance.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation for Single Screw PVC Compounding Plants?",
+    answer:
+      "Hindustan Plastics and Machine Corporation offers precision-engineered PVC Compounding Plants with advanced technology, durable construction, customized solutions, and dependable technical support.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the top PVC Compounding Machine manufacturers in India?",
+    answer:
+      "With decades of expertise in plastic extrusion machinery, innovative engineering, robust manufacturing standards, and reliable after-sales service, Hindustan Plastics and Machine Corporation is trusted by customers across India and international markets.",
+  },
+  {
+    question: "Can this machine manufacture export-quality PVC compounds?",
+    answer:
+      "Yes. The machine is designed to produce consistent, high-quality PVC compounds suitable for manufacturers serving both domestic and international markets.",
+  },
+  {
+    question:
+      "How can I get the best price for a Single Screw PVC Compounding Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your production capacity, PVC formulation, and application requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "What is the price of a Single Screw PVC Compounding Plant in India?",
+    answer:
+      "The price of a Single Screw PVC Compounding Plant depends on the machine model, production capacity, automation level, and optional equipment. Contact Hindustan Plastics and Machine Corporation for a customized quotation.",
+  },
+  {
+    question: "How do I choose the best PVC Compounding Plant?",
+    answer:
+      "The right machine depends on your required production capacity, PVC formulation, filler percentage, automation requirements, and future production expansion.",
+  },
+  {
+    question:
+      "Which is the best Single Screw PVC Compounding Machine in India?",
+    answer:
+      "Single Screw PVC Compounding Plants from Hindustan Plastics and Machine Corporation are engineered for stable production, energy efficiency, reliable performance, and consistent compound quality.",
+  },
+  {
+    question: "Can the Single Screw PVC Compounding Plant be customized?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation offers customized machine configurations, feeding systems, automation options, pelletizing solutions, and complete production lines.",
+  },
+  {
+    question: "What production capacities are available?",
+    answer:
+      "Different machine models are available for small, medium, and high-capacity PVC compound production depending on customer requirements.",
+  },
+  {
+    question:
+      "How much electricity does a Single Screw PVC Compounding Plant consume?",
+    answer:
+      "Power consumption depends on the selected machine model, production output, formulation, and operating conditions. The machine is designed for energy-efficient operation.",
+  },
+  {
+    question: "Is the Single Screw PVC Compounding Plant energy efficient?",
+    answer:
+      "Yes. Optimized screw design, efficient heating systems, and reliable drive technology help reduce power consumption while maintaining high productivity.",
+  },
+  {
+    question: "Can the machine operate continuously?",
+    answer:
+      "Yes. The Single Screw PVC Compounding Plant is designed for continuous industrial production with stable operation and consistent compound quality.",
+  },
+  {
+    question: "Does the machine support PLC automation?",
+    answer:
+      "Yes. PLC-based automation with HMI touchscreen can be provided for easy machine operation, production monitoring, and process control.",
+  },
+  {
+    question: "Can production recipes be saved?",
+    answer:
+      "Yes. Automated control systems allow operators to save and recall processing parameters for different PVC formulations.",
+  },
+  {
+    question: "Does the machine have automatic temperature control?",
+    answer:
+      "Yes. Multiple heating zones provide accurate temperature control for uniform plasticization and consistent PVC compound quality.",
+  },
+  {
+    question: "Can different PVC formulations be processed using one machine?",
+    answer:
+      "Yes. The machine can process various rigid and soft PVC formulations by adjusting processing parameters according to production requirements.",
+  },
+  {
+    question: "How often does the PVC Compounding Plant require maintenance?",
+    answer:
+      "Routine maintenance includes lubrication, inspection of screw and barrel, heaters, gearbox, cooling systems, and electrical components to ensure reliable operation.",
+  },
+  {
+    question: "Is screw and barrel maintenance easy?",
+    answer:
+      "Yes. The machine is designed for convenient inspection and replacement of wear components, helping minimize maintenance downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide installation services?",
+    answer:
+      "Yes. Complete installation, commissioning, startup assistance, and machine testing are provided by experienced technical engineers.",
+  },
+  {
+    question: "Is operator training included with the machine?",
+    answer:
+      "Yes. Professional operator training is provided to ensure safe operation, efficient production, and proper preventive maintenance.",
+  },
+  {
+    question: "Are genuine spare parts available?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation supplies genuine spare parts to ensure reliable machine performance and reduced production downtime.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide after-sales support?",
+    answer:
+      "Yes. Customers receive technical assistance, troubleshooting, preventive maintenance, spare parts support, and process optimization services.",
+  },
+  {
+    question: "Can I request a live machine demonstration?",
+    answer:
+      "Yes. Live demonstrations and technical consultations can be arranged to help customers evaluate machine performance before purchasing.",
+  },
+  {
+    question:
+      "Can production trials be conducted before purchasing the machine?",
+    answer:
+      "Yes. Production trials using customer-supplied raw materials can be conducted to verify machine performance and finished compound quality.",
+  },
+  {
+    question:
+      "Can the Single Screw PVC Compounding Plant be integrated into an existing production line?",
+    answer:
+      "Yes. The machine can be integrated with existing mixers, feeders, pelletizers, cooling systems, storage units, and downstream processing equipment.",
+  },
+  {
+    question:
+      "Is this machine suitable for starting a PVC compound manufacturing business?",
+    answer:
+      "Yes. It is an ideal investment for entrepreneurs and manufacturers planning to establish or expand a PVC compound manufacturing business.",
+  },
+  {
+    question:
+      "Can the machine manufacture PVC compounds for multiple industries?",
+    answer:
+      "Yes. The machine produces PVC compounds used in pipes, cable insulation, profiles, moulding products, construction materials, consumer goods, and industrial applications.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation one of the best PVC Compounding Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines precision engineering, advanced extrusion technology, customized machine solutions, and dependable after-sales support to deliver reliable PVC compounding systems.",
+  },
+  {
+    question:
+      "How can I get the best quotation for a Single Screw PVC Compounding Plant?",
+    answer:
+      "Contact Hindustan Plastics and Machine Corporation with your production capacity, formulation details, and application requirements to receive a customized quotation and expert machine recommendation.",
+  },
+  {
+    question:
+      "Can the Single Screw PVC Compounding Plant process recycled PVC materials?",
+    answer:
+      "Yes. The machine can process compatible recycled PVC materials along with virgin PVC resin, depending on the required formulation and end-use application.",
+  },
+  {
+    question:
+      "Can different PVC formulations be processed on the same machine?",
+    answer:
+      "Yes. The machine can process rigid PVC, soft PVC, cable compounds, profile compounds, and customized PVC formulations by adjusting processing parameters.",
+  },
+  {
+    question: "Can the machine manufacture PVC cable compounds?",
+    answer:
+      "Yes. The Single Screw PVC Compounding Plant is widely used for producing PVC cable compounds with excellent flexibility, dispersion, and electrical insulation properties.",
+  },
+  {
+    question: "Can the machine produce PVC profile compounds?",
+    answer:
+      "Yes. The machine manufactures PVC profile compounds with high filler loading, making them suitable for window profiles, doors, panels, and construction applications.",
+  },
+  {
+    question: "Can the machine manufacture medical-grade PVC compounds?",
+    answer:
+      "Yes. With suitable formulations and controlled processing conditions, the machine can produce PVC compounds for medical and healthcare applications where applicable standards are met.",
+  },
+  {
+    question:
+      "How does the Single Screw PVC Compounding Plant improve compound quality?",
+    answer:
+      "Efficient plasticization, stable extrusion, accurate temperature control, and uniform mixing help produce consistent PVC compounds with excellent processing characteristics.",
+  },
+  {
+    question:
+      "Can PVC compounds produced on this machine be used in different industries?",
+    answer:
+      "Yes. The compounds are widely used in pipe manufacturing, cable insulation, PVC profiles, moulded products, construction materials, packaging, consumer goods, and industrial applications.",
+  },
+  {
+    question: "Can this machine reduce PVC compound manufacturing costs?",
+    answer:
+      "Yes. Energy-efficient operation, reduced material wastage, reliable production, and stable processing help lower the overall manufacturing cost of PVC compounds.",
+  },
+  {
+    question:
+      "What is the expected lifespan of a Single Screw PVC Compounding Plant?",
+    answer:
+      "With proper preventive maintenance and genuine spare parts, the machine is designed for reliable long-term industrial operation.",
+  },
+  {
+    question:
+      "Can the Single Screw PVC Compounding Plant be upgraded in the future?",
+    answer:
+      "Yes. Feeding systems, automation controls, pelletizing equipment, and downstream processing units can be upgraded as production requirements increase.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation manufacture Single Screw PVC Compounding Plants in India?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation manufactures advanced Single Screw PVC Compounding Plants in India using precision engineering and modern extrusion technology.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation export PVC Compounding Plants worldwide?",
+    answer:
+      "Yes. Hindustan Plastics and Machine Corporation exports Single Screw PVC Compounding Plants and plastic processing machinery to customers across India, Asia, Africa, the Middle East, Europe, and other international markets.",
+  },
+  {
+    question:
+      "Can the machine be installed in an existing manufacturing facility?",
+    answer:
+      "Yes. The PVC Compounding Plant can be integrated into existing production facilities with customized layouts and compatible upstream and downstream equipment.",
+  },
+  {
+    question: "Is online technical support available after installation?",
+    answer:
+      "Yes. Remote technical assistance, troubleshooting, production guidance, and machine optimization support are available whenever required.",
+  },
+  {
+    question:
+      "Does Hindustan Plastics and Machine Corporation provide process optimization support?",
+    answer:
+      "Yes. Our technical experts help optimize machine settings, PVC formulations, additive ratios, production efficiency, and overall compounding performance.",
+  },
+  {
+    question: "How quickly are spare parts available?",
+    answer:
+      "Frequently required spare parts are readily available for quick dispatch, helping minimize downtime and maintain uninterrupted production.",
+  },
+  {
+    question:
+      "Can I visit the Hindustan Plastics and Machine Corporation manufacturing facility?",
+    answer:
+      "Yes. Customers are welcome to visit our manufacturing facility to inspect machine manufacturing, quality testing, and discuss project requirements with our engineering team.",
+  },
+  {
+    question: "Can machine trials be conducted before purchase?",
+    answer:
+      "Yes. Trial production can be arranged using customer-supplied PVC formulations to evaluate machine performance, compound quality, and production output.",
+  },
+  {
+    question:
+      "Is the Single Screw PVC Compounding Plant environmentally friendly?",
+    answer:
+      "Yes. The machine is designed with energy-efficient technology that helps reduce power consumption, optimize raw material utilization, and minimize production waste.",
+  },
+  {
+    question:
+      "Which industries benefit from Single Screw PVC Compounding Plants?",
+    answer:
+      "PVC pipe manufacturers, cable manufacturers, profile producers, construction companies, packaging industries, consumer goods manufacturers, and plastic processors benefit from this compounding system.",
+  },
+  {
+    question:
+      "Can this machine manufacture PVC compounds for export-quality products?",
+    answer:
+      "Yes. The machine is designed to produce consistent, high-quality PVC compounds suitable for manufacturers serving domestic as well as international markets.",
+  },
+  {
+    question:
+      "Why is Hindustan Plastics and Machine Corporation considered one of the best Single Screw PVC Compounding Machine manufacturers in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation combines decades of extrusion expertise, advanced engineering, precision manufacturing, customized machine solutions, and dependable after-sales support to deliver reliable PVC compounding systems.",
+  },
+  {
+    question:
+      "Who is the top Single Screw PVC Compounding Machine manufacturer in India?",
+    answer:
+      "Hindustan Plastics and Machine Corporation is recognized for manufacturing high-performance Single Screw PVC Compounding Plants with excellent productivity, energy efficiency, and consistent compound quality.",
+  },
+  {
+    question:
+      "Why choose Hindustan Plastics and Machine Corporation as your Single Screw PVC Compounding Machine supplier?",
+    answer:
+      "Customers choose Hindustan Plastics and Machine Corporation for robust machine construction, advanced extrusion technology, customized production solutions, responsive technical support, and long-term operational reliability.",
+  },
+  {
+    question:
+      "Why is the Single Screw PVC Compounding Plant one of the best solutions for PVC compound manufacturing?",
+    answer:
+      "Its reliable plasticization, stable processing, energy-efficient operation, consistent compound quality, low maintenance requirements, and dependable industrial performance make it an excellent solution for manufacturing premium-quality PVC compounds.",
   },
 ];
 
