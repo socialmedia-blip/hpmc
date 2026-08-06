@@ -492,7 +492,7 @@ const serviceSupportMenu = [
 
 const contactMenu = [
   {
-    name: "Lets Connect",
+    name: "Let's Connect",
     link: "/get-in-touch",
   },
   {
