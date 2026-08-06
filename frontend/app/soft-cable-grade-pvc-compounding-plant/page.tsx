@@ -1073,11 +1073,8 @@ export default function SoftCableGradePVC() {
                 </span>
 
                 <span className="text-left">
-                  <span className="block text-xs font-semibold uppercase tracking-[2px] text-[var(--primary)]">
-                    Explore More
-                  </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    View next {nextFaqCount} FAQs
+                    {showAllFaqs ? "View less FAQs" : `View more FAQs`}
                   </span>
                 </span>
               </button>

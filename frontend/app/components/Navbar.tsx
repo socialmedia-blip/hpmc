@@ -492,39 +492,28 @@ const serviceSupportMenu = [
 
 const contactMenu = [
   {
-    title: "Contact Us",
-    children: [
-      {
-        name: "Get In Touch",
-        link: "/get-in-touch",
-      },
-      {
-        name: "Schedule a Site Visit",
-        link: "/schedule-a-site-visit",
-      },
-      {
-        name: "Become An Agent",
-        link: "/become-an-agent",
-      },
-      {
-        name: "Vendor Registration",
-        link: "/vendor-registration",
-      },
-    ],
+    name: "Get In Touch",
+    link: "/get-in-touch",
   },
-
   {
-    title: "Careers",
-    children: [
-      {
-        name: "Current Openings",
-        link: "/current-openings",
-      },
-      {
-        name: "Submit Resume",
-        link: "/submit-resume",
-      },
-    ],
+    name: "Schedule a Site Visit",
+    link: "/schedule-a-site-visit",
+  },
+  {
+    name: "Become An Agent",
+    link: "/become-an-agent",
+  },
+  {
+    name: "Vendor Registration",
+    link: "/vendor-registration",
+  },
+  {
+    name: "Current Openings",
+    link: "/current-openings",
+  },
+  {
+    name: "Submit Resume",
+    link: "/submit-resume",
   },
 ];
 
@@ -571,9 +560,8 @@ export default function Navbar() {
   const isProductActive = productsData.some((category) =>
     category.children.some((product) => pathname === product.link),
   );
-  const isContactActive = contactMenu.some((category) =>
-    category.children.some((contact) => pathname === contact.link),
-  );
+
+  const isContactActive = contactMenu.some((item) => pathname === item.link);
 
   useEffect(() => {
     const googleTranslateElementInit = () => {
@@ -648,7 +636,6 @@ export default function Navbar() {
                   }`}
                 >
                   Company
-                  <ChevronDown size={16} />
                 </button>
 
                 {isCompanyActive && (
@@ -688,7 +675,6 @@ export default function Navbar() {
                   }`}
                 >
                   Products
-                  <ChevronDown size={16} />
                 </button>
 
                 {isProductActive && (
@@ -706,7 +692,6 @@ export default function Navbar() {
                   }`}
                 >
                   Support
-                  <ChevronDown size={16} />
                 </button>
 
                 {isServiceActive && (
@@ -760,11 +745,7 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* CONTACT */}
-              <div
-                className="relative group h-full flex items-center"
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+              <div className="relative group h-full flex items-center">
                 <button
                   className={`flex items-center gap-1 text-[14px] uppercase font-semibold tracking-wide transition h-full ${
                     isContactActive
@@ -772,50 +753,26 @@ export default function Navbar() {
                       : "text-[var(--text-primary)] hover:text-[var(--primary)]"
                   }`}
                 >
-                  {" "}
                   Contact
-                  <ChevronDown size={16} />
                 </button>
 
                 {isContactActive && (
                   <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--primary)] rounded-full" />
                 )}
 
-                {/* DROPDOWN */}
-                <div className="absolute top-full left-0 mt-0 w-[200px] bg-[var(--card)] shadow-[var(--shadow-primary)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-[var(--border)]">
-                  {contactMenu.map((item, index) => (
-                    <div
-                      key={index}
-                      className="relative"
-                      onMouseEnter={() => setActiveDropdown(index)}
+                <div className="absolute top-full left-0 w-[240px] bg-[var(--card)] shadow-[var(--shadow-primary)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-[var(--border)]">
+                  {contactMenu.map((item) => (
+                    <Link
+                      key={item.link}
+                      href={item.link}
+                      className={`block px-4 py-1 transition ${
+                        pathname === item.link
+                          ? "bg-[var(--muted)] text-[var(--primary)]"
+                          : "hover:bg-[var(--muted)] text-[var(--text-secondary)]"
+                      }`}
                     >
-                      {/* LEFT */}
-                      <div className="flex items-center justify-between px-4 py-1 hover:bg-[var(--muted)] cursor-pointer transition">
-                        <span className="text-[var(--text-secondary)] font-medium">
-                          {item.title}
-                        </span>
-
-                        <ChevronRight
-                          size={16}
-                          className="text-[var(--text-secondary)]"
-                        />
-                      </div>
-
-                      {/* RIGHT */}
-                      {activeDropdown === index && (
-                        <div className="absolute left-full top-0 w-[200px] bg-[var(--card)] shadow-[var(--shadow-primary)] border border-[var(--border)]">
-                          {item.children.map((child, i) => (
-                            <Link
-                              href={child.link}
-                              key={i}
-                              className="block px-4 py-1 hover:bg-[var(--muted)] hover:text-[var(--primary)] transition text-[var(--text-secondary)]"
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -1063,42 +1020,20 @@ export default function Navbar() {
                 </div>
               </button>
 
-              {/* DROPDOWN */}
               {mobileContact && (
-                <div className="pb-4 pl-3 max-h-[400px] overflow-y-auto">
-                  {contactMenu.map((item, index) => (
-                    <div key={index} className="mb-3 pb-3">
-                      <button
-                        onClick={() =>
-                          setOpenMobileCategory(
-                            openMobileCategory === index ? null : index,
-                          )
-                        }
-                        className="w-full flex items-center justify-between text-left"
-                      >
-                        <span className="font-medium text-[var(--text-primary)]">
-                          {item.title}
-                        </span>
-
-                        <div className="w-5 h-5 flex items-center justify-center text-sm">
-                          {openMobileCategory === index ? "-" : "+"}
-                        </div>
-                      </button>
-
-                      {openMobileCategory === index && (
-                        <div className="mt-3 pl-4 flex flex-col gap-3">
-                          {item.children.map((child, i) => (
-                            <Link
-                              href={child.link}
-                              key={i}
-                              className="text-sm text-[var(--text-secondary)] hover:text-[var(--primary)] transition"
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                <div className="pl-4 pb-4 flex flex-col gap-3">
+                  {contactMenu.map((item) => (
+                    <Link
+                      key={item.link}
+                      href={item.link}
+                      className={`text-sm transition ${
+                        pathname === item.link
+                          ? "text-[var(--primary)] font-semibold"
+                          : "text-[var(--text-secondary)]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               )}

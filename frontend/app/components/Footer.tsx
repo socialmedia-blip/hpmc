@@ -522,7 +522,7 @@ export default function Footer() {
               {/* Center */}
               <p className="text-sm text-gray-400 text-center">
                 Crafted with <span className="text-red-500">❤</span> by{" "}
-                <span className="font-semibold text-lime-400">
+                <span className="font-semibold text-[var(--primary)] hover:text-[var(--primary-dark)] transition">
                   Bigwig Media
                 </span>
               </p>

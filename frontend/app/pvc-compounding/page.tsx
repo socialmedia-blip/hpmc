@@ -1388,13 +1388,8 @@ export default function PVCCompounding() {
                 </span>
 
                 <span className="text-left">
-                  <span className="block text-xs font-semibold uppercase tracking-[2px] text-[var(--primary)]">
-                    {showAllFaqs ? "Collapse List" : "Explore More"}
-                  </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    {showAllFaqs
-                      ? "Show fewer questions"
-                      : `View ${faqData.length - displayedFaqs.length} more FAQs`}
+                    {showAllFaqs ? "View less FAQs" : `View more FAQs`}
                   </span>
                 </span>
               </button>

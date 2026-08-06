@@ -1097,7 +1097,7 @@ export default function TwoStageRecyclingPlant() {
                     Explore More
                   </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    View next {nextFaqCount} FAQs
+                    View more FAQs
                   </span>
                 </span>
               </button>

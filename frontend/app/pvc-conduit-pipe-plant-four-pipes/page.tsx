@@ -1081,89 +1081,6 @@ export default function PvcConduitPipePlantFourPipes() {
         </div>
       </section>
 
-      {/* <section className="py-16 bg-[var(--background)] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        
-          <div className="text-center mb-14">
-            <span className="text-[var(--primary)] uppercase tracking-[4px] text-sm font-semibold">
-              Applications
-            </span>
-
-            <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)]">
-              Products Manufactured Using Our
-              <span className="text-[var(--primary)]"> PVC Pipe Plant</span>
-            </h2>
-
-            <p className="mt-5 max-w-3xl mx-auto text-[var(--text-secondary)] leading-8">
-              HPMC Single Screw Extruders are widely used for manufacturing a
-              variety of PVC pipes and profiles for infrastructure, agriculture,
-              construction, and industrial applications.
-            </p>
-          </div>
-
-    
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={24}
-            slidesPerView={1.2}
-            loop={true}
-            speed={4000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-            }}
-            className="applications-swiper"
-          >
-            {applications.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="
-              group
-              relative
-              h-[320px]
-              rounded-[20px]
-              overflow-hidden
-              cursor-pointer
-            "
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="
-                object-cover
-                transition-all
-                duration-700
-                group-hover:scale-110
-              "
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-
-                  <div className="absolute bottom-0 p-6">
-                    <h3 className="text-white text-2xl font-bold">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-white/80 mt-3 leading-6">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section> */}
-
       {/* <section className="py-16 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
          
@@ -1482,13 +1399,8 @@ export default function PvcConduitPipePlantFourPipes() {
                 </span>
 
                 <span className="text-left">
-                  <span className="block text-xs font-semibold uppercase tracking-[2px] text-[var(--primary)]">
-                    {showAllFaqs ? "Collapse List" : "Explore More"}
-                  </span>
                   <span className="block text-sm font-bold sm:text-base">
-                    {showAllFaqs
-                      ? "Show fewer questions"
-                      : `View ${faqData.length - displayedFaqs.length} more FAQs`}
+                    {showAllFaqs ? "View less FAQs" : `View more FAQs`}
                   </span>
                 </span>
               </button>
