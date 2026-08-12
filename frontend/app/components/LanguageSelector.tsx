@@ -80,20 +80,54 @@ export default function LanguageSelector() {
 
   const changeLanguage = (selectedLang: string) => {
     setLang(selectedLang);
+
+    // Save selected language
     localStorage.setItem("lang", selectedLang);
 
+    const hostname = window.location.hostname;
+    const rootDomain = hostname.startsWith("www.")
+      ? hostname.substring(4)
+      : hostname;
+
     if (selectedLang === "en") {
-      document.cookie =
-        "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
-      window.location.hash = "";
-      window.location.reload();
+      // IMPORTANT:
+      // Don't delete googtrans.
+      // Set it explicitly back to English.
+
+      document.cookie = `googtrans=/en/en; path=/;`;
+
+      document.cookie = `googtrans=/en/en; path=/; domain=${hostname};`;
+
+      document.cookie = `googtrans=/en/en; path=/; domain=.${rootDomain};`;
+
+      // Remove translation hash
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search,
+      );
+
+      // Reload after cookie update
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
+
       return;
     }
 
-    document.cookie = `googtrans=/en/${selectedLang};path=/`;
-    window.location.hash = `#googtrans=en/${selectedLang}`;
+    // Hindi, Bengali, etc.
+    document.cookie = `googtrans=/en/${selectedLang}; path=/;`;
 
-    setTimeout(() => window.location.reload(), 300);
+    document.cookie = `googtrans=/en/${selectedLang}; path=/; domain=${hostname};`;
+
+    document.cookie = `googtrans=/en/${selectedLang}; path=/; domain=.${rootDomain};`;
+
+    // Set Google Translate hash
+    window.location.hash = `googtrans=en/${selectedLang}`;
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
   };
 
   return (
