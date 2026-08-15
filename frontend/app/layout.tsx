@@ -28,7 +28,7 @@ export default function RootLayout({
         {/* Google Site Verification */}
         <meta
           name="google-site-verification"
-          content="b50Oc6qn1AhJ9Aoa5WqwwwHyedbZLrerXM9UesmF5EI"
+          content="FOymmDGJr2UeCZGpok67wcb-H2z6S_HT-HoRCLZVmJQ"
         />
       </head>
       <body className="min-h-full flex flex-col">
