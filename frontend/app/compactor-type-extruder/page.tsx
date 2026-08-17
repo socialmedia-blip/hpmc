@@ -74,7 +74,7 @@ export default function CompactorTypeExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/compactor-type-extruder"
+        href="https://www.hindustanplastics.com/compactor-type-extruder"
       />
       <Navbar />
 

@@ -519,7 +519,7 @@ export default function TwoStageRecyclingPlant() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/vented-recycling-plant"
+        href="https://www.hindustanplastics.com/vented-recycling-plant"
       />
       <Navbar />
 

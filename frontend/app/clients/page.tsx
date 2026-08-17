@@ -52,7 +52,7 @@ export default function Clients() {
         content="Explore the trusted clients and industries served by HPMC with reliable plastic extrusion machines across India and international markets."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/clients" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/clients" />
       <Navbar />
 
       {/* CLIENT LOGO WALL */}

@@ -228,7 +228,7 @@ export default function SingleScrewPlantForGardenPipe() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/single-screw-plant-for-garden-pipe"
+        href="https://www.hindustanplastics.com/single-screw-plant-for-garden-pipe"
       />
       <Navbar />
 

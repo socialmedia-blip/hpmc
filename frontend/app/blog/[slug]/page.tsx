@@ -57,13 +57,13 @@ export async function generateMetadata({
     title: blog.title,
     description: blog.excerpt,
     alternates: {
-      canonical: `https://hindustanplastics.com/blog/${blog.slug}`,
+      canonical: `https://www.hindustanplastics.com/blog/${blog.slug}`,
     },
     openGraph: {
       title: blog.title,
       description: blog.excerpt,
       type: "article",
-      url: `https://www.khalsapropertydealers.com/blog/${blog.slug}`,
+      url: `https://www.hindustanplastics.com/blog/${blog.slug}`,
       images: [{ url: blog.coverImage }],
       siteName: "HPMC",
       locale: "en_IN",

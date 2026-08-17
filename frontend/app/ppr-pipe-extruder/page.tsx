@@ -567,7 +567,7 @@ export default function PPRPipeExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/ppr-pipe-extruder"
+        href="https://www.hindustanplastics.com/ppr-pipe-extruder"
       />
       <Navbar />
 

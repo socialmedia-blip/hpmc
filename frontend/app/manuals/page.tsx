@@ -23,7 +23,7 @@ export default function Manuals() {
         content="Access machine manuals and technical documentation for HPMC extrusion equipment and plastic processing systems."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/manuals" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/manuals" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

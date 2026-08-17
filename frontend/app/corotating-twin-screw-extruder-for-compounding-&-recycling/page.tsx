@@ -379,7 +379,7 @@ export default function CorotatingTwinScrewExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/co-rotating-twin-screw-extruder-for-compounding-&-recycling"
+        href="https://www.hindustanplastics.com/co-rotating-twin-screw-extruder-for-compounding-&-recycling"
       />
       <Navbar />
 

@@ -26,7 +26,7 @@ export default function TechnicalAssistance() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/technical-assistance"
+        href="https://www.hindustanplastics.com/technical-assistance"
       />
       <Navbar />
 

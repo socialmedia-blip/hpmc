@@ -25,7 +25,7 @@ export default function RequestDemo() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/schedule-site-visit"
+        href="https://www.hindustanplastics.com/schedule-site-visit"
       />
       <Navbar />
       <div className="mt-24">

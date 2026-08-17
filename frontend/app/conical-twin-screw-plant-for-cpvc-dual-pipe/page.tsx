@@ -608,7 +608,7 @@ export default function TwinScrewExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/conical-twin-screw-plant-cpvc-dual-pipe"
+        href="https://www.hindustanplastics.com/conical-twin-screw-plant-cpvc-dual-pipe"
       />
       <Navbar />
 

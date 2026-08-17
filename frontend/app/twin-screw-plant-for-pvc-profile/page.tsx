@@ -506,7 +506,7 @@ export default function TwinScrewPlantForPvcProfile() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/twin-screw-plant-for-pvc-profile"
+        href="https://www.hindustanplastics.com/twin-screw-plant-for-pvc-profile"
       />
       <Navbar />
 

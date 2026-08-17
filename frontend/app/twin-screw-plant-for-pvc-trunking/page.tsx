@@ -575,7 +575,7 @@ export default function TwinScrewPlantForPVCTrunking() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/twin-screw-plant-pvc-trunking"
+        href="https://www.hindustanplastics.com/twin-screw-plant-pvc-trunking"
       />
       <Navbar />
 

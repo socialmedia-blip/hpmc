@@ -719,7 +719,7 @@ export default function SingleScrewExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/single-screw-extruder"
+        href="https://www.hindustanplastics.com/single-screw-extruder"
       />
       <Navbar />
 

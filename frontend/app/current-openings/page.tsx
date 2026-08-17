@@ -50,7 +50,7 @@ export default function CurrentOpening() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/current-openings"
+        href="https://www.hindustanplastics.com/current-openings"
       />
       <Navbar />
 

@@ -41,7 +41,7 @@ export default function CSR() {
         content="Learn about HPMC's Corporate Social Responsibility initiatives supporting sustainability, community development, and environmental responsibility."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/csr" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/csr" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

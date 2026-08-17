@@ -687,7 +687,7 @@ export default function SingleScrewPlantForPvcProfile() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/single-screw-plant-for-pvc-profile"
+        href="https://www.hindustanplastics.com/single-screw-plant-for-pvc-profile"
       />
       <Navbar />
 

@@ -588,7 +588,7 @@ export default function Faq() {
         content="Find answers to frequently asked questions about HPMC, plastic extrusion machinery, installation, maintenance, and technical support."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/faq" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/faq" />
       <Navbar />
 
       <script

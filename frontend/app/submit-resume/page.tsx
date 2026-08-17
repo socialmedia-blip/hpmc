@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Submit your resume to HPMC and explore rewarding career opportunities in engineering, manufacturing, and corporate roles.",
 
   alternates: {
-    canonical: "https://hindustanplastics.com/submit-resume",
+    canonical: "https://www.hindustanplastics.com/submit-resume",
   },
 };
 

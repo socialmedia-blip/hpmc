@@ -522,7 +522,7 @@ export default function SingleScrewPlantPvcCompounding() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/soft-pvc-garden-pipe-extrusion-line"
+        href="https://www.hindustanplastics.com/soft-pvc-garden-pipe-extrusion-line"
       />
       <Navbar />
 

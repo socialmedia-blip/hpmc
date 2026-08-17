@@ -511,7 +511,7 @@ export default function PPRPipeExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/two-stage-recycling-plant"
+        href="https://www.hindustanplastics.com/two-stage-recycling-plant"
       />
       <Navbar />
 

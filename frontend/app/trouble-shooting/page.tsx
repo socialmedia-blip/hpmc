@@ -25,7 +25,7 @@ export default function TroubleShooting() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/trouble-shooting"
+        href="https://www.hindustanplastics.com/trouble-shooting"
       />
       <Navbar />
 

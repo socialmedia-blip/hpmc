@@ -61,7 +61,10 @@ export default function OurJourney() {
         content="Explore HPMC's journey of innovation, growth, engineering excellence, and leadership in plastic extrusion machinery manufacturing."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/our-journey" />
+      <link
+        rel="canonical"
+        href="https://www.hindustanplastics.com/our-journey"
+      />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

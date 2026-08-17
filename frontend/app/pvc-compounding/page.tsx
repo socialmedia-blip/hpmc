@@ -643,7 +643,7 @@ export default function PVCCompounding() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/pvc-compounding"
+        href="https://www.hindustanplastics.com/pvc-compounding"
       />
       <Navbar />
 

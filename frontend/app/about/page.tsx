@@ -54,7 +54,7 @@ export default function About() {
         content="Learn about HPMC, a trusted manufacturer of plastic extrusion machinery in India with decades of expertise, innovation, quality, and customer satisfaction."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/about" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/about" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

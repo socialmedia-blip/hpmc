@@ -87,7 +87,7 @@ export default function AwardsRecognition() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/awards-recognition"
+        href="https://www.hindustanplastics.com/awards-recognition"
       />
       <Navbar />
 

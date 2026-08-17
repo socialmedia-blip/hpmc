@@ -702,7 +702,7 @@ export default function PvcConduitPipePlantFourPipes() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/pvc-conduit-pipe-plant-four-pipes"
+        href="https://www.hindustanplastics.com/pvc-conduit-pipe-plant-four-pipes"
       />
       <Navbar />
 

@@ -508,7 +508,7 @@ export default function SoftCableGradePVC() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/soft-cable-grade-pvc-compounding-plant"
+        href="https://www.hindustanplastics.com/soft-cable-grade-pvc-compounding-plant"
       />
       <Navbar />
 

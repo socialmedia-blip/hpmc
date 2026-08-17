@@ -31,7 +31,7 @@ export default function VisionMission() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/vision-mission"
+        href="https://www.hindustanplastics.com/vision-mission"
       />
       <Navbar />
 
