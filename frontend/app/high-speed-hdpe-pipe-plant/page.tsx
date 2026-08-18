@@ -734,7 +734,7 @@ export default function HighSpeedHDPEPipePlant() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/high-speed-hdpe-pipe-plant"
+        href="https://www.hindustanplastics.com/high-speed-hdpe-pipe-plant"
       />
       <Navbar />
 

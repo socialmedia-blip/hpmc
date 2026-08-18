@@ -25,7 +25,7 @@ export default function ExtrusionHints() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/extrusion-hints"
+        href="https://www.hindustanplastics.com/extrusion-hints"
       />
       <Navbar />
 

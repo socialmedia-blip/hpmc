@@ -107,7 +107,7 @@ export default function VendorRegistration() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/vendor-registration"
+        href="https://www.hindustanplastics.com/vendor-registration"
       />
       <Navbar />
 

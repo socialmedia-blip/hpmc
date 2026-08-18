@@ -516,7 +516,7 @@ export default function SingleScrewPlantPvcCompounding() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/single-screw-plant-for-pvc-compounding"
+        href="https://www.hindustanplastics.com/single-screw-plant-for-pvc-compounding"
       />
       <Navbar />
 

@@ -56,7 +56,7 @@ export default function ManufacturingFacility() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/manufacturing-facility"
+        href="https://www.hindustanplastics.com/manufacturing-facility"
       />
       <Navbar />
 

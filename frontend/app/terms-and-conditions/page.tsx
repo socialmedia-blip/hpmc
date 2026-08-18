@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Read the Terms & Conditions of Hindustan Plastics & Machine Corporation (HPMC) governing the use of our website, products, services, and business interactions.",
 
   alternates: {
-    canonical: "https://hindustanplastics.com/terms-and-conditions",
+    canonical: "https://www.hindustanplastics.com/terms-and-conditions",
   },
 
   openGraph: {

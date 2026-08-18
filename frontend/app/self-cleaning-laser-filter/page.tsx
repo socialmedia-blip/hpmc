@@ -208,7 +208,7 @@ export default function SelfCleaningLaserFilter() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/self-cleaning-laser-filter"
+        href="https://www.hindustanplastics.com/self-cleaning-laser-filter"
       />
       <Navbar />
 

@@ -733,7 +733,7 @@ export default function TwinScrewExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/twin-screw-extruder"
+        href="https://www.hindustanplastics.com/twin-screw-extruder"
       />
       <Navbar />
 

@@ -511,7 +511,7 @@ export default function CorotatingTripleScrewExtruder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/co-rotating-triple-screw-extruder-for-compounding-&-recycling"
+        href="https://www.hindustanplastics.com/co-rotating-triple-screw-extruder-for-compounding-&-recycling"
       />
       <Navbar />
 

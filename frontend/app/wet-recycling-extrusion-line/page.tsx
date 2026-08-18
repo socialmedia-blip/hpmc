@@ -498,7 +498,7 @@ export default function TwoStageRecyclingPlant() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/wet-recycling-extrusion-line"
+        href="https://www.hindustanplastics.com/wet-recycling-extrusion-line"
       />
       <Navbar />
 

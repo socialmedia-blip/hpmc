@@ -541,7 +541,7 @@ export default function RecyclingPlantWithCompactor() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/recycling-plant-with-compactor"
+        href="https://www.hindustanplastics.com/recycling-plant-with-compactor"
       />
       <Navbar />
 

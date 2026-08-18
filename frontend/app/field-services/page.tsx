@@ -25,7 +25,7 @@ export default function FieldServices() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/field-services"
+        href="https://www.hindustanplastics.com/field-services"
       />
       <Navbar />
 

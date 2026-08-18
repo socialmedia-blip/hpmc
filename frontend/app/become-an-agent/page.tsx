@@ -96,7 +96,7 @@ export default function BecomeAgent() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/become-an-agent"
+        href="https://www.hindustanplastics.com/become-an-agent"
       />
       <Navbar />
 

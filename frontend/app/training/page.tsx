@@ -23,7 +23,7 @@ export default function Training() {
         content="Professional operator training programs for HPMC plastic extrusion machinery to maximize productivity and performance."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/training" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/training" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">

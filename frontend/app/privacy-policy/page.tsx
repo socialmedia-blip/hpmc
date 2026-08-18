@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Read the HPMC Privacy Policy to understand how Hindustan Plastics & Machine Corporation collects, uses, stores, and protects the personal information of website visitors, customers, vendors, agents, and job applicants.",
 
   alternates: {
-    canonical: "https://hindustanplastics.com/privacy-policy",
+    canonical: "https://www.hindustanplastics.com/privacy-policy",
   },
 
   openGraph: {

@@ -750,7 +750,7 @@ export default function HighSpeedTwoLayerCablePlant() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/high-speed-two-layer-cable-plant"
+        href="https://www.hindustanplastics.com/high-speed-two-layer-cable-plant"
       />
       <Navbar />
 

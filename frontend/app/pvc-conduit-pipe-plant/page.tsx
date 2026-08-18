@@ -610,7 +610,7 @@ export default function PvcConduitPipePlant() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/pvc-conduit-pipe-plant"
+        href="https://www.hindustanplastics.com/pvc-conduit-pipe-plant"
       />
       <Navbar />
 

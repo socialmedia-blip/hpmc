@@ -123,7 +123,7 @@ export default function BlogPage() {
         content="Read blogs on plastic extrusion technology, recycling, compounding, machine maintenance, and industry insights."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/blog" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/blog" />
       <Navbar />
 
       {/* HERO */}

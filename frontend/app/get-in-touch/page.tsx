@@ -29,7 +29,7 @@ const Contact = () => {
 
         <link
           rel="canonical"
-          href="https://hindustanplastics.com/get-in-touch"
+          href="https://www.hindustanplastics.com/get-in-touch"
         />
         <Navbar />
 

@@ -544,7 +544,7 @@ export default function LldpePipePlante() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/lldpe-pipe-plant"
+        href="https://www.hindustanplastics.com/lldpe-pipe-plant"
       />
       <Navbar />
 

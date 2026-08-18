@@ -497,7 +497,7 @@ export default function WpcProfilePlant() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/wpc-profile-plant"
+        href="https://www.hindustanplastics.com/wpc-profile-plant"
       />
       <Navbar />
 

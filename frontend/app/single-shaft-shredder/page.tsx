@@ -228,7 +228,7 @@ export default function SingleShaftShredder() {
 
       <link
         rel="canonical"
-        href="https://hindustanplastics.com/single-shaft-shredder"
+        href="https://www.hindustanplastics.com/single-shaft-shredder"
       />
       <Navbar />
 

@@ -78,7 +78,7 @@ export default function Gallery() {
         content="Browse HPMC's gallery featuring plastic extrusion machines, manufacturing facilities, installations, and events."
       />
 
-      <link rel="canonical" href="https://hindustanplastics.com/gallery" />
+      <link rel="canonical" href="https://www.hindustanplastics.com/gallery" />
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
