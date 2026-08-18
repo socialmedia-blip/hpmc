@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CheckCircle2, Loader2, Send, ShieldCheck } from "lucide-react";
+import { Loader2, Send, ShieldCheck } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type LandingLeadFormProps = {
   product: string;
@@ -23,6 +24,7 @@ export default function LandingLeadForm({
   product,
   className = "",
 }: LandingLeadFormProps) {
+  const router = useRouter();
   const [values, setValues] = useState(initialValues);
   const [step, setStep] = useState<FormStep>("form");
   const [otp, setOtp] = useState("");
@@ -103,7 +105,7 @@ export default function LandingLeadForm({
 
       setValues(initialValues);
       setOtp("");
-      setStep("success");
+      router.push("/thank-you");
     } catch (verificationError) {
       setError(
         verificationError instanceof Error
@@ -114,30 +116,6 @@ export default function LandingLeadForm({
       setLoading(false);
     }
   };
-
-  if (step === "success") {
-    return (
-      <div
-        className={`flex min-h-[390px] flex-col items-center justify-center rounded-3xl bg-[var(--card)] p-8 text-center shadow-2xl shadow-slate-950/10 ${className}`}
-      >
-        <CheckCircle2 className="h-14 w-14 text-[#65BC4F]" />
-        <h2 className="mt-5 text-2xl font-bold text-[var(--text-primary)]">
-          Thank you for your enquiry
-        </h2>
-        <p className="mt-3 max-w-sm leading-7 text-[var(--text-secondary)]">
-          Your email is verified and your enquiry has been sent to our extrusion
-          specialists.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStep("form")}
-          className="mt-7 font-semibold text-[#438f32] underline underline-offset-4"
-        >
-          Submit another enquiry
-        </button>
-      </div>
-    );
-  }
 
   if (step === "otp") {
     return (

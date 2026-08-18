@@ -11,6 +11,7 @@ import LandingLeadForm from "../../components/LandingLeadForm";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
 import Image from "next/image";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Co-Rotating Twin Screw Extruder | HPMC",
@@ -91,6 +92,31 @@ export default function CoRotatingTwinScrewLandingPage() {
   return (
     <>
       <LandingNavbar />
+      <Script id="landing-phone-conversion-config" strategy="afterInteractive">
+        {`
+          gtag('config', 'AW-18372765916/O7I5COS2pOMcENzR6LhE', {
+            'phone_conversion_number': '9560596392'
+          });
+        `}
+      </Script>
+      <Script id="landing-click-to-call-conversion" strategy="afterInteractive">
+        {`
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18372765916/6XCdCOq2pOMcENzR6LhE',
+              'value': 1.0,
+              'currency': 'INR',
+              'event_callback': callback
+            });
+            return false;
+          }
+        `}
+      </Script>
       <main className="overflow-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
         <section className="relative isolate overflow-hidden bg-[var(--landing-soft-bg)]">
           <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[radial-gradient(circle_at_72%_42%,rgba(101,188,79,0.2),transparent_34%)]" />

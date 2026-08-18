@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Script from "next/script";
 import {
   ArrowRight,
   Award,
@@ -122,7 +123,32 @@ export default function ConicalTwinScrewExtrusionLine() {
   return (
     <>
       <LandingNavbar />
+      <Script id="landing-phone-conversion-config" strategy="afterInteractive">
+        {`
+          gtag('config', 'AW-18372765916/O7I5COS2pOMcENzR6LhE', {
+            'phone_conversion_number': '9560596392'
+          });
+        `}
+      </Script>
+      <Script id="landing-click-to-call-conversion" strategy="afterInteractive">
+        {`
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18372765916/6XCdCOq2pOMcENzR6LhE',
+              'value': 1.0,
+              'currency': 'INR',
+              'event_callback': callback
+            });
+            return false;
+          }
 
+        `}
+      </Script>
       <main className="overflow-hidden ">
         {/* =========================================================
             HERO
