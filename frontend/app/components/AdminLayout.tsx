@@ -190,7 +190,8 @@ export default function AdminLayout({
     .map((section) => ({
       ...section,
       items: section.items.filter(
-        (item) => item.to === "/admin" || settings?.modules?.[item.key] !== false,
+        (item) =>
+          item.to === "/admin" || settings?.modules?.[item.key] !== false,
       ),
     }))
     .filter((section) => section.items.length > 0);
@@ -201,10 +202,20 @@ export default function AdminLayout({
   };
 
   return (
-    <div className="h-screen flex flex-col lg:flex-row overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
-      {" "}
+    <div className="h-screen flex flex-col lg:flex-row bg-[var(--background)] text-[var(--foreground)]">
       {/* MOBILE TOP BAR */}
-      <div className="lg:hidden text-[var(--text-primary)] flex items-center justify-between px-5 py-4 shadow-sm border-b border-[var(--border)]">
+      <div
+        className="
+    lg:hidden
+    fixed top-0 left-0 right-0 z-[60]
+    flex items-center justify-between
+    px-5 py-3
+    bg-[var(--background)]
+    border-b border-[var(--border)]
+    shadow-sm
+    pt-[calc(0.75rem+env(safe-area-inset-top))]
+  "
+      >
         <div className="flex items-center gap-2">
           <Image
             src={logoUrl}
@@ -220,8 +231,17 @@ export default function AdminLayout({
         </div>
 
         <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="text-[var(--text)] text-2xl"
+          type="button"
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
+          className="
+      flex h-10 w-10
+      items-center justify-center
+      rounded-lg
+      text-[var(--text)]
+      text-2xl
+      active:bg-[var(--muted)]
+    "
+          aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -229,7 +249,7 @@ export default function AdminLayout({
       {/* MOBILE SIDEBAR */}
       <div
         className={`
-          fixed top-0 left-0 h-full z-50
+          fixed top-0 left-0 h-full z-[70]
           w-3/4 sm:w-2/5
           bg-[var(--card)]
           border-r border-[var(--border)]
@@ -432,10 +452,17 @@ export default function AdminLayout({
       {/* MAIN CONTENT */}
       <main
         className="
-    flex-1 lg:ml-60
+    flex-1
+    lg:ml-60
     overflow-y-auto
     min-h-screen
-    p-5 sm:p-8
+    px-5
+    pb-5
+    pt-20
+    sm:px-8
+    sm:pb-8
+    sm:pt-20
+    lg:pt-8
     bg-[var(--background)]
     text-[var(--text-primary)]
   "
