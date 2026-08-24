@@ -155,12 +155,8 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
   const { leadForm, loading: leadFormLoading } = useLeadFormSettings();
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
-  const [otpLoading, setOtpLoading] = useState(false);
-  const [otp, setOtp] = useState("");
   const [serverError, setServerError] = useState("");
-  const [currentStep, setCurrentStep] = useState<"form" | "otp" | "success">(
-    "form",
-  );
+  const [currentStep, setCurrentStep] = useState<"form" | "success">("form");
 
   const [formData, setFormData] = useState<FormDataType>({
     name: "",
@@ -283,7 +279,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
       setServerError("");
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/lead/send-otp`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/lead/`,
         {
           method: "POST",
           headers: {
@@ -303,67 +299,11 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       const data = await response.json();
 
-      if (data.alreadyRegistered) {
-        onSuccess?.();
-        setServerError(data.message || "Email already registered.");
-        return;
-      }
-
       if (!response.ok) {
-        throw new Error(data.message || "OTP verification failed");
-      }
-
-      // save user verification
-      localStorage.setItem(
-        "catalogue_access",
-        JSON.stringify({
-          email: formData.email,
-          verified: true,
-        }),
-      );
-
-      setCurrentStep("otp");
-
-      onSuccess?.();
-    } catch (error: unknown) {
-      setServerError(getErrorMessage(error, "Failed to send OTP"));
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleVerifyOtp = async () => {
-    if (!otp.trim()) {
-      setServerError("Please enter OTP");
-      return;
-    }
-
-    try {
-      setOtpLoading(true);
-      setServerError("");
-
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/lead/verify-otp`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            otp,
-          }),
-        },
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "OTP verification failed");
+        throw new Error(data.message || "Failed to submit enquiry");
       }
 
       setCurrentStep("success");
-
       onSuccess?.();
 
       setTimeout(() => {
@@ -381,11 +321,10 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
 
       setSelectedServices([]);
       setCustomFieldValues({});
-      setOtp("");
     } catch (error: unknown) {
-      setServerError(getErrorMessage(error, "OTP verification failed"));
+      setServerError(getErrorMessage(error, "Failed to submit enquiry"));
     } finally {
-      setOtpLoading(false);
+      setLoading(false);
     }
   };
 
@@ -515,27 +454,6 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                 borderColor: "var(--border)",
               }}
             >
-              {/* Progress */}
-              <div className="mb-6 flex justify-center">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] text-white">
-                    1
-                  </div>
-
-                  <div className="h-[2px] w-12 bg-[var(--border)]" />
-
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--background)]">
-                    2
-                  </div>
-
-                  <div className="h-[2px] w-12 bg-[var(--border)]" />
-
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--background)]">
-                    ✓
-                  </div>
-                </div>
-              </div>
-
               {/* Header */}
               <div className="mb-6 text-center">
                 <span className="rounded-full bg-[var(--primary)]/10 px-4 py-2 text-sm font-medium text-[var(--primary)]">
@@ -763,7 +681,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                 {loading ? (
                   <div className="flex items-center justify-center gap-3">
                     <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                    Sending OTP...
+                    Sending...
                   </div>
                 ) : (
                   "Request Consultation"
@@ -771,71 +689,6 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
               </button>
             </form>
           </>
-        )}
-
-        {/* STEP 2 */}
-        {currentStep === "otp" && (
-          <div className="flex min-h-[500px] flex-col items-center justify-center text-center">
-            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[var(--primary)]/10">
-              📧
-            </div>
-
-            <span className="rounded-full bg-[var(--primary)]/10 px-4 py-2 text-sm font-medium text-[var(--primary)]">
-              Step 2 of 2
-            </span>
-
-            <h2 className="mt-6 text-3xl font-bold text-[var(--text-primary)]">
-              Verify Your Email
-            </h2>
-
-            <p className="mt-3 max-w-md text-[var(--text-secondary)]">
-              We have sent a verification code to
-            </p>
-
-            <p className="mt-1 font-semibold text-[var(--primary)]">
-              {formData.email}
-            </p>
-
-            <input
-              type="text"
-              maxLength={6}
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              placeholder="000000"
-              className="
-      mt-8
-      w-full
-      max-w-md
-      rounded-2xl
-      border
-      p-5
-      text-center
-      text-4xl
-      font-bold
-      tracking-[12px]
-      outline-none
-      "
-              style={inputStyle}
-            />
-
-            <button
-              type="button"
-              onClick={handleVerifyOtp}
-              disabled={otpLoading}
-              className="
-      mt-6
-      w-full
-      max-w-md
-      rounded-2xl
-      bg-green-600
-      py-4
-      font-semibold
-      text-white
-      "
-            >
-              {otpLoading ? "Verifying..." : "Verify OTP"}
-            </button>
-          </div>
         )}
 
         {currentStep === "success" && (

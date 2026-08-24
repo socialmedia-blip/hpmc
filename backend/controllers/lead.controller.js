@@ -296,7 +296,7 @@ exports.createLead = async (req, res) => {
         <td style="padding:40px 35px;color:#333333;">
 
           <h2 style="margin:0 0 18px;font-size:28px;color:#111827;">
-            Hello ${record.data.name},
+            Hello ${name},
           </h2>
 
           <p style="margin:0 0 18px;font-size:16px;line-height:1.8;color:#4b5563;">
@@ -391,22 +391,22 @@ exports.createLead = async (req, res) => {
 
             <tr style="background:#f9fafb;">
               <td style="font-weight:bold;width:180px;border:1px solid #e5e7eb;">Name</td>
-              <td style="border:1px solid #e5e7eb;">${record.data.name}</td>
+              <td style="border:1px solid #e5e7eb;">${name}</td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;border:1px solid #e5e7eb;">Email</td>
-              <td style="border:1px solid #e5e7eb;">${record.data.email}</td>
+              <td style="border:1px solid #e5e7eb;">${email}</td>
             </tr>
 
             <tr style="background:#f9fafb;">
               <td style="font-weight:bold;border:1px solid #e5e7eb;">Phone</td>
-              <td style="border:1px solid #e5e7eb;">${record.data.phone}</td>
+              <td style="border:1px solid #e5e7eb;">${phone}</td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;border:1px solid #e5e7eb;">Message</td>
-              <td style="border:1px solid #e5e7eb;">${record.data.message || "-"}</td>
+              <td style="border:1px solid #e5e7eb;">${message || "-"}</td>
             </tr>
 
           </table>
@@ -414,7 +414,8 @@ exports.createLead = async (req, res) => {
       </tr>
 
       ${
-        record.data.customFields && Object.keys(record.data.customFields).length
+        customFieldsResult.values &&
+        Object.keys(customFieldsResult.values).length
           ? `
       <!-- Custom Fields -->
       <tr>
@@ -424,7 +425,7 @@ exports.createLead = async (req, res) => {
           </h3>
 
           <table width="100%" cellpadding="12" cellspacing="0" style="border-collapse:collapse;font-size:15px;">
-            ${Object.entries(record.data.customFields)
+            ${Object.entries(customFieldsResult.values)
               .map(
                 ([key, value], index) => `
               <tr style="background:${index % 2 === 0 ? "#f9fafb" : "#ffffff"};">

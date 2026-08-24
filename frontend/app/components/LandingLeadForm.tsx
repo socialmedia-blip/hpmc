@@ -18,16 +18,12 @@ const initialValues = {
   website: "",
 };
 
-type FormStep = "form" | "otp" | "success";
-
 export default function LandingLeadForm({
   product,
   className = "",
 }: LandingLeadFormProps) {
   const router = useRouter();
   const [values, setValues] = useState(initialValues);
-  const [step, setStep] = useState<FormStep>("form");
-  const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -35,17 +31,19 @@ export default function LandingLeadForm({
     setValues((current) => ({ ...current, [field]: value }));
   };
 
-  const requestOtp = async (event?: FormEvent<HTMLFormElement>) => {
-    event?.preventDefault();
+  const submitEnquiry = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setLoading(true);
     setError("");
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/landing-leads/send-otp`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/landing-leads`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
             name: values.name,
             email: values.email,
@@ -59,142 +57,29 @@ export default function LandingLeadForm({
           }),
         },
       );
+
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data.message || "Unable to send the verification code.",
-        );
+        throw new Error(data.message || "Unable to submit your enquiry.");
       }
-      setOtp("");
-      setStep("otp");
+
+      setValues(initialValues);
+      router.push("/thank-you");
     } catch (submissionError) {
       setError(
         submissionError instanceof Error
           ? submissionError.message
-          : "Unable to send the verification code. Please try again.",
+          : "Unable to submit your enquiry. Please try again.",
       );
     } finally {
       setLoading(false);
     }
   };
-
-  const verifyOtp = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setLoading(true);
-    setError("");
-
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/landing-leads/verify-otp`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: values.email,
-            otp,
-            landingPage: window.location.pathname,
-          }),
-        },
-      );
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Unable to verify the code.");
-      }
-
-      setValues(initialValues);
-      setOtp("");
-      router.push("/thank-you");
-    } catch (verificationError) {
-      setError(
-        verificationError instanceof Error
-          ? verificationError.message
-          : "Unable to verify the code. Please try again.",
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (step === "otp") {
-    return (
-      <form
-        onSubmit={verifyOtp}
-        className={`rounded-3xl bg-[var(--card)] p-5 shadow-2xl shadow-slate-950/10 sm:p-7 ${className}`}
-      >
-        <div className="mb-6">
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#65BC4F]/15 text-[#438f32]">
-            <ShieldCheck className="h-6 w-6" />
-          </span>
-          <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-[#579f42]">
-            Verify your email
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-[var(--text-primary)]">
-            Enter your verification code
-          </h2>
-          <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
-            We sent a 6-digit code to <strong>{values.email}</strong>. Your
-            enquiry will be saved after verification.
-          </p>
-        </div>
-
-        <label className="block text-sm font-semibold text-[var(--text-primary)]">
-          Verification code
-          <input
-            required
-            inputMode="numeric"
-            autoComplete="one-time-code"
-            pattern="[0-9]{6}"
-            maxLength={6}
-            value={otp}
-            onChange={(event) => setOtp(event.target.value.replace(/\D/g, ""))}
-            placeholder="000000"
-            className="mt-2 block w-full rounded-xl border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-center text-xl font-bold tracking-[0.35em] text-[var(--text-primary)] outline-none transition placeholder:tracking-normal placeholder:text-[var(--text-light)] focus:border-[#65BC4F] focus:ring-4 focus:ring-[#65BC4F]/10"
-          />
-        </label>
-
-        {error && <ErrorMessage message={error} />}
-
-        <button
-          disabled={loading || otp.length !== 6}
-          type="submit"
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-5 py-3.5 font-bold text-white transition hover:bg-[#4fa23a] disabled:cursor-not-allowed disabled:opacity-70"
-        >
-          {loading ? (
-            <Loader2 className="h-5 w-5 animate-spin" />
-          ) : (
-            <ShieldCheck className="h-5 w-5" />
-          )}
-          {loading ? "Verifying…" : "Verify and submit enquiry"}
-        </button>
-        <div className="mt-4 flex items-center justify-between gap-3 text-sm">
-          <button
-            type="button"
-            onClick={() => {
-              setStep("form");
-              setError("");
-            }}
-            className="font-semibold text-[var(--text-secondary)] transition hover:text-[#438f32]"
-          >
-            Change email
-          </button>
-          <button
-            type="button"
-            disabled={loading}
-            onClick={() => requestOtp()}
-            className="font-semibold text-[#438f32] underline underline-offset-4 disabled:opacity-60"
-          >
-            Resend code
-          </button>
-        </div>
-      </form>
-    );
-  }
 
   return (
     <form
-      onSubmit={requestOtp}
+      onSubmit={submitEnquiry}
       className={`rounded-3xl bg-[var(--card)] p-5 shadow-2xl shadow-slate-950/10 sm:p-7 ${className}`}
     >
       <div className="mb-6">
@@ -205,8 +90,8 @@ export default function LandingLeadForm({
           Talk to an extrusion expert
         </h2>
         <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
-          Tell us about your material and output requirements. We will verify
-          your email before saving the enquiry.
+          Tell us about your material and output requirements. Submit your
+          enquiry and our team will get back to you shortly.
         </p>
       </div>
 
@@ -276,7 +161,7 @@ export default function LandingLeadForm({
         ) : (
           <Send className="h-4 w-4" />
         )}
-        {loading ? "Sending code…" : "Submit"}
+        {loading ? "Submitting…" : "Submit"}
       </button>
       <p className="mt-3 text-center text-xs leading-5 text-[var(--text-light)]">
         By continuing, you agree to be contacted by HPMC about this enquiry.
