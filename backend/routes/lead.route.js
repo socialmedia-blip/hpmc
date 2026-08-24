@@ -52,6 +52,7 @@ const uploadLeadFile = (req, res, next) => {
   });
 };
 
+router.post("/leads", createLead);
 router.post("/send-otp", sendOTP);
 router.post("/verify-otp", verifyOTP);
 router.post("/import", uploadLeadFile, importLeads);

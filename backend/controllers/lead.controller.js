@@ -185,6 +185,298 @@ const readWorkbookRows = (file) => {
   });
 };
 
+exports.createLead = async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      phone,
+      message,
+      customFields,
+      source,
+      landingPage,
+      activityMessage,
+      website,
+      ...extraLeadFields
+    } = req.body;
+
+    // Honeypot
+    if (website) {
+      return res.status(400).json({
+        success: false,
+        message: "Unable to process this enquiry.",
+      });
+    }
+
+    // Basic validation
+    if (!name || !email || !phone || !message) {
+      return res.status(400).json({
+        success: false,
+        message: "Name, email, phone and message are required",
+      });
+    }
+
+    const normalizedEmail = email.trim().toLowerCase();
+
+    // Custom fields
+    const settings = await Settings.findOne();
+
+    const customFieldConfig = settings?.leadForm?.customFields || [];
+
+    const customFieldsResult = normalizeLeadCustomFieldValues(
+      customFieldConfig,
+      {
+        ...extraLeadFields,
+        ...(customFields && typeof customFields === "object"
+          ? customFields
+          : {}),
+      },
+    );
+
+    if (!customFieldsResult.valid) {
+      return res.status(400).json({
+        success: false,
+        message: customFieldsResult.message,
+      });
+    }
+
+    // Create lead directly
+    const newLead = new Lead({
+      name: name.trim(),
+      email: normalizedEmail,
+      phone: phone.trim(),
+      message: message.trim(),
+
+      customFields: customFieldsResult.values,
+
+      source: source?.trim() || "Website",
+      landingPage: landingPage?.trim() || "",
+
+      activityLog: [
+        {
+          type: "created",
+          message:
+            activityMessage?.trim() || "Lead created from website inquiry",
+        },
+      ],
+
+      // If this field exists in your model
+      verified: false,
+    });
+
+    await newLead.save();
+
+    // Send confirmation email to user
+    await sendEmail({
+      to: email,
+      subject: "Thank You for Contacting HPMC",
+      html: `
+  <div style="margin:0;padding:40px 20px;background:#f4f7f9;font-family:Arial,Helvetica,sans-serif;">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
+
+      <!-- Header -->
+      <tr>
+        <td align="center" style="background:#ffffff;padding:35px 20px 20px;">
+          <img
+            src="https://res.cloudinary.com/fkvbncim/image/upload/v1782899294/hpmc/images/hp-logo.png"
+            alt="HPMC"
+            width="170"
+            style="display:block;margin:auto;"
+          />
+        </td>
+      </tr>
+
+      <!-- Brand Line -->
+      <tr>
+        <td style="height:5px;background:#65BC4F;"></td>
+      </tr>
+
+      <!-- Content -->
+      <tr>
+        <td style="padding:40px 35px;color:#333333;">
+
+          <h2 style="margin:0 0 18px;font-size:28px;color:#111827;">
+            Hello ${record.data.name},
+          </h2>
+
+          <p style="margin:0 0 18px;font-size:16px;line-height:1.8;color:#4b5563;">
+            Thank you for contacting
+            <strong>Hindustan Plastics & Machine Corporation (HPMC)</strong>.
+            We have successfully received your enquiry.
+          </p>
+
+          <div style="
+            background:#f3fdf1;
+            border-left:4px solid #65BC4F;
+            padding:18px 20px;
+            border-radius:8px;
+            margin:30px 0;
+          ">
+            <p style="margin:0;font-size:16px;color:#111827;">
+              ✅ <strong>Your request has been submitted successfully.</strong>
+            </p>
+          </div>
+
+          <p style="margin:0 0 18px;font-size:16px;line-height:1.8;color:#4b5563;">
+            Our sales and technical team will review your enquiry and get in touch with you as soon as possible.
+          </p>
+
+          <p style="margin:0 0 30px;font-size:16px;line-height:1.8;color:#4b5563;">
+            We appreciate your interest in HPMC and look forward to assisting you with the right plastic extrusion machinery solution.
+          </p>
+
+          <hr style="border:none;border-top:1px solid #e5e7eb;margin:35px 0;">
+
+          <p style="margin:0;font-size:13px;color:#6b7280;line-height:1.8;">
+            This is an automated confirmation email. Please do not reply.<br>
+            <strong>Hindustan Plastics & Machine Corporation (HPMC)</strong><br>
+            Engineering Excellence Since 1972
+          </p>
+
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td align="center" style="background:#111827;padding:18px;color:#ffffff;font-size:13px;">
+          © ${new Date().getFullYear()} HPMC. All Rights Reserved.
+        </td>
+      </tr>
+
+    </table>
+  </div>
+  `,
+    });
+
+    // Send notification to admin
+    await sendEmail({
+      to: "admin@hindustanplastics.com",
+      subject: "🔔 New Lead Received - HPMC",
+      html: `
+  <div style="margin:0;padding:40px 20px;background:#f4f7f9;font-family:Arial,Helvetica,sans-serif;">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" style="max-width:700px;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
+
+      <!-- Header -->
+      <tr>
+        <td align="center" style="padding:30px 20px;background:#ffffff;">
+          <img
+            src="https://res.cloudinary.com/fkvbncim/image/upload/v1782899294/hpmc/images/hp-logo.png"
+            alt="HPMC"
+            width="170"
+            style="display:block;"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="height:5px;background:#65BC4F;"></td>
+      </tr>
+
+      <!-- Title -->
+      <tr>
+        <td style="padding:35px 35px 15px;">
+          <h2 style="margin:0;color:#111827;font-size:28px;">
+            🔔 New Lead Received
+          </h2>
+          <p style="margin:10px 0 0;color:#6b7280;font-size:15px;">
+            A new enquiry has been submitted through the HPMC website.
+          </p>
+        </td>
+      </tr>
+
+      <!-- Lead Details -->
+      <tr>
+        <td style="padding:0 35px 20px;">
+          <table width="100%" cellpadding="12" cellspacing="0" style="border-collapse:collapse;font-size:15px;">
+
+            <tr style="background:#f9fafb;">
+              <td style="font-weight:bold;width:180px;border:1px solid #e5e7eb;">Name</td>
+              <td style="border:1px solid #e5e7eb;">${record.data.name}</td>
+            </tr>
+
+            <tr>
+              <td style="font-weight:bold;border:1px solid #e5e7eb;">Email</td>
+              <td style="border:1px solid #e5e7eb;">${record.data.email}</td>
+            </tr>
+
+            <tr style="background:#f9fafb;">
+              <td style="font-weight:bold;border:1px solid #e5e7eb;">Phone</td>
+              <td style="border:1px solid #e5e7eb;">${record.data.phone}</td>
+            </tr>
+
+            <tr>
+              <td style="font-weight:bold;border:1px solid #e5e7eb;">Message</td>
+              <td style="border:1px solid #e5e7eb;">${record.data.message || "-"}</td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+
+      ${
+        record.data.customFields && Object.keys(record.data.customFields).length
+          ? `
+      <!-- Custom Fields -->
+      <tr>
+        <td style="padding:0 35px 30px;">
+          <h3 style="margin:0 0 15px;color:#111827;">
+            Additional Information
+          </h3>
+
+          <table width="100%" cellpadding="12" cellspacing="0" style="border-collapse:collapse;font-size:15px;">
+            ${Object.entries(record.data.customFields)
+              .map(
+                ([key, value], index) => `
+              <tr style="background:${index % 2 === 0 ? "#f9fafb" : "#ffffff"};">
+                <td style="font-weight:bold;width:180px;border:1px solid #e5e7eb;text-transform:capitalize;">
+                  ${key.replace(/([A-Z])/g, " $1")}
+                </td>
+                <td style="border:1px solid #e5e7eb;">
+                  ${Array.isArray(value) ? value.join(", ") : value || "-"}
+                </td>
+              </tr>
+            `,
+              )
+              .join("")}
+          </table>
+        </td>
+      </tr>
+      `
+          : ""
+      }
+
+      <!-- Footer -->
+      <tr>
+        <td style="background:#111827;padding:20px;text-align:center;color:#ffffff;font-size:13px;">
+          <strong>Hindustan Plastics & Machine Corporation (HPMC)</strong><br>
+          Website Lead Notification<br><br>
+          Received on: ${new Date().toLocaleString("en-IN", {
+            dateStyle: "medium",
+            timeStyle: "short",
+          })}
+        </td>
+      </tr>
+
+    </table>
+  </div>
+  `,
+    });
+
+    return res.status(201).json({
+      success: true,
+      message: "Lead submitted successfully.",
+      lead: newLead,
+    });
+  } catch (error) {
+    console.error("Create Lead Error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Server error while creating lead",
+    });
+  }
+};
+
 /* ============================
    SEND OTP
 =============================== */

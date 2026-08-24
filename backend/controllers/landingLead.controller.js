@@ -22,6 +22,156 @@ const escapeHtml = (value) =>
       ],
   );
 
+exports.createLandingLead = async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      phone,
+      companyName,
+      message,
+      product,
+      landingPage,
+      source,
+      website,
+    } = req.body;
+
+    // Honeypot
+    if (website) {
+      return res.status(400).json({
+        success: false,
+        message: "Unable to process this enquiry.",
+      });
+    }
+
+    const normalizedEmail = normalizeEmail(email);
+    const trimmedLandingPage = String(landingPage || "").trim();
+
+    // Required fields
+    if (
+      !name?.trim() ||
+      !normalizedEmail ||
+      !phone?.trim() ||
+      !message?.trim() ||
+      !product?.trim() ||
+      !trimmedLandingPage
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Please complete all required enquiry details.",
+      });
+    }
+
+    // Email validation
+    if (!isValidEmail(normalizedEmail)) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide a valid email address.",
+      });
+    }
+
+    // Create lead directly
+    const lead = await LandingLead.create({
+      name: name.trim(),
+      email: normalizedEmail,
+      phone: phone.trim(),
+      companyName: String(companyName || "").trim(),
+      message: message.trim(),
+      product: product.trim(),
+      landingPage: trimmedLandingPage,
+      source: String(source || "Landing page").trim(),
+    });
+
+    // Send emails
+    try {
+      await Promise.all([
+        // Confirmation email to user
+        sendEmail({
+          to: lead.email,
+          subject: "Thank you for contacting HPMC",
+          html: `
+            <div style="font-family:Arial,Helvetica,sans-serif;padding:32px;color:#111827;">
+              <h2>Thank you, ${escapeHtml(lead.name)}.</h2>
+
+              <p>
+                Your enquiry for
+                <strong>${escapeHtml(lead.product)}</strong>
+                has been received.
+                Our team will contact you shortly.
+              </p>
+            </div>
+          `,
+        }),
+
+        // Notification email to admin
+        sendEmail({
+          to: process.env.LANDING_LEADS_EMAIL || "admin@hindustanplastics.com",
+
+          subject: `New landing page enquiry: ${lead.product}`,
+
+          html: `
+            <div style="font-family:Arial,Helvetica,sans-serif;padding:24px;color:#111827;">
+              <h2>New Google Ads landing-page enquiry</h2>
+
+              <p>
+                <strong>Product:</strong>
+                ${escapeHtml(lead.product)}
+              </p>
+
+              <p>
+                <strong>Name:</strong>
+                ${escapeHtml(lead.name)}
+              </p>
+
+              <p>
+                <strong>Email:</strong>
+                ${escapeHtml(lead.email)}
+              </p>
+
+              <p>
+                <strong>Phone:</strong>
+                ${escapeHtml(lead.phone)}
+              </p>
+
+              <p>
+                <strong>Company:</strong>
+                ${escapeHtml(lead.companyName || "-")}
+              </p>
+
+              <p>
+                <strong>Landing page:</strong>
+                ${escapeHtml(lead.landingPage)}
+              </p>
+
+              <p>
+                <strong>Message:</strong>
+                ${escapeHtml(lead.message)}
+              </p>
+            </div>
+          `,
+        }),
+      ]);
+    } catch (emailError) {
+      // Lead is already saved.
+      // Keep it available even if email delivery fails.
+      console.error("Landing lead email delivery error:", emailError);
+    }
+
+    return res.status(201).json({
+      success: true,
+      message: "Enquiry submitted successfully.",
+      leadId: lead._id,
+    });
+  } catch (error) {
+    console.error("Create landing lead error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Unable to submit your enquiry. Please try again.",
+    });
+  }
+};
+
 exports.sendLandingOtp = async (req, res) => {
   try {
     const {
@@ -141,16 +291,16 @@ exports.verifyLandingOtp = async (req, res) => {
 
     try {
       await Promise.all([
-      sendEmail({
-        to: lead.email,
-        subject: "Thank you for contacting HPMC",
-        html: `<div style="font-family:Arial,Helvetica,sans-serif;padding:32px;color:#111827;"><h2>Thank you, ${escapeHtml(lead.name)}.</h2><p>Your enquiry for ${escapeHtml(lead.product)} has been received. Our team will contact you shortly.</p></div>`,
-      }),
-      sendEmail({
-        to: process.env.LANDING_LEADS_EMAIL || "admin@hindustanplastics.com",
-        subject: `New landing page enquiry: ${lead.product}`,
-        html: `<div style="font-family:Arial,Helvetica,sans-serif;padding:24px;color:#111827;"><h2>New Google Ads landing-page enquiry</h2><p><strong>Product:</strong> ${escapeHtml(lead.product)}</p><p><strong>Name:</strong> ${escapeHtml(lead.name)}</p><p><strong>Email:</strong> ${escapeHtml(lead.email)}</p><p><strong>Phone:</strong> ${escapeHtml(lead.phone)}</p><p><strong>Company:</strong> ${escapeHtml(lead.companyName || "-")}</p><p><strong>Landing page:</strong> ${escapeHtml(lead.landingPage)}</p><p><strong>Message:</strong> ${escapeHtml(lead.message)}</p></div>`,
-      }),
+        sendEmail({
+          to: lead.email,
+          subject: "Thank you for contacting HPMC",
+          html: `<div style="font-family:Arial,Helvetica,sans-serif;padding:32px;color:#111827;"><h2>Thank you, ${escapeHtml(lead.name)}.</h2><p>Your enquiry for ${escapeHtml(lead.product)} has been received. Our team will contact you shortly.</p></div>`,
+        }),
+        sendEmail({
+          to: process.env.LANDING_LEADS_EMAIL || "admin@hindustanplastics.com",
+          subject: `New landing page enquiry: ${lead.product}`,
+          html: `<div style="font-family:Arial,Helvetica,sans-serif;padding:24px;color:#111827;"><h2>New Google Ads landing-page enquiry</h2><p><strong>Product:</strong> ${escapeHtml(lead.product)}</p><p><strong>Name:</strong> ${escapeHtml(lead.name)}</p><p><strong>Email:</strong> ${escapeHtml(lead.email)}</p><p><strong>Phone:</strong> ${escapeHtml(lead.phone)}</p><p><strong>Company:</strong> ${escapeHtml(lead.companyName || "-")}</p><p><strong>Landing page:</strong> ${escapeHtml(lead.landingPage)}</p><p><strong>Message:</strong> ${escapeHtml(lead.message)}</p></div>`,
+        }),
       ]);
     } catch (emailError) {
       // The verified lead is already saved. Keep it available to the sales team
@@ -174,7 +324,9 @@ exports.getLandingLeads = async (_req, res) => {
     return res.status(200).json({ success: true, data: leads });
   } catch (error) {
     console.error("Get landing leads error:", error);
-    return res.status(500).json({ success: false, message: "Unable to load leads." });
+    return res
+      .status(500)
+      .json({ success: false, message: "Unable to load leads." });
   }
 };
 
@@ -182,11 +334,15 @@ exports.deleteLandingLead = async (req, res) => {
   try {
     const lead = await LandingLead.findByIdAndDelete(req.params.id);
     if (!lead) {
-      return res.status(404).json({ success: false, message: "Lead not found." });
+      return res
+        .status(404)
+        .json({ success: false, message: "Lead not found." });
     }
     return res.status(200).json({ success: true, message: "Lead deleted." });
   } catch (error) {
     console.error("Delete landing lead error:", error);
-    return res.status(500).json({ success: false, message: "Unable to delete lead." });
+    return res
+      .status(500)
+      .json({ success: false, message: "Unable to delete lead." });
   }
 };

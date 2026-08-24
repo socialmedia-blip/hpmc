@@ -8,6 +8,7 @@ const {
 
 const router = express.Router();
 
+router.post("/", createLandingLead);
 router.post("/send-otp", sendLandingOtp);
 router.post("/verify-otp", verifyLandingOtp);
 router.get("/", getLandingLeads);
