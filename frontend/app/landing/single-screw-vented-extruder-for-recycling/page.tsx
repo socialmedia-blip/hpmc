@@ -24,7 +24,7 @@ import {
   Wrench,
 } from "lucide-react";
 
-import LandingLeadForm from "../../components/LandingLeadForm";
+import LandingContactActions from "../../components/LandingContactActions";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
 
@@ -224,7 +224,7 @@ export default function ConicalTwinScrewExtrusionLine() {
               {/* CTA */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#quick-enquiry"
+                  href="#enquire"
                   className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-7 py-4 text-sm font-bold text-white shadow-[0_12px_30px_rgba(101,188,79,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#55a940] hover:shadow-[0_16px_35px_rgba(101,188,79,0.32)] sm:text-base"
                 >
                   Discuss Your Requirement
@@ -271,11 +271,18 @@ export default function ConicalTwinScrewExtrusionLine() {
                 </div>
               </div>
             </div>
-            <div id="quick-enquiry" className="w-full">
-              <LandingLeadForm
-                product={productName}
-                className="mx-auto w-full max-w-xl border border-white/70 bg-white/95"
-              />
+            <div className="w-full rounded-3xl border border-slate-200 bg-white/95 p-7 shadow-2xl shadow-slate-950/10 sm:p-9">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#579f42]">
+                Talk to an extrusion expert
+              </p>
+              <h2 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
+                Discuss your {productName.toLowerCase()} requirement.
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
+                Share your material condition and target output directly with
+                the HPMC team.
+              </p>
+              <LandingContactActions className="mt-7" />
             </div>
           </div>
 
@@ -1337,35 +1344,6 @@ export default function ConicalTwinScrewExtrusionLine() {
                 ))}
               </div>
 
-              {/* =====================================================
-          REQUIREMENT TIP
-      ===================================================== */}
-              <div className="mt-7 overflow-hidden rounded-2xl border border-[var(--primary)]/25 bg-[var(--card)] shadow-sm">
-                <div className="flex">
-                  {/* Green Accent */}
-                  <div className="w-1 shrink-0 bg-[var(--primary)]" />
-
-                  <div className="flex gap-4 p-5 sm:p-6">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--primary)]/10">
-                      <Lightbulb className="h-5 w-5 text-[var(--primary)]" />
-                    </div>
-
-                    <div>
-                      <p className="text-sm font-bold text-[var(--text-primary)] sm:text-base">
-                        Help us recommend the right configuration
-                      </p>
-
-                      <p className="mt-2 text-sm leading-7 text-[var(--text-secondary)]">
-                        Mention the type of plastic material you want to
-                        reprocess, its condition, your current recycling process
-                        and expected production capacity for a more relevant
-                        machine recommendation.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* Trust */}
               <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-[var(--text-secondary)] sm:text-sm">
                 <div className="flex items-center gap-2">
@@ -1382,16 +1360,55 @@ export default function ConicalTwinScrewExtrusionLine() {
               </div>
             </div>
 
-            {/* =====================================================
-        FORM
-    ===================================================== */}
-            <div className="relative">
-              {/* Form Glow */}
-              <div className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-[var(--primary)]/10 blur-3xl" />
+            <div className="relative lg:sticky lg:top-28">
+              <div className="absolute -inset-5 rounded-[2rem] bg-[var(--primary)]/10 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--primary)]/25 bg-[var(--card)] shadow-[var(--shadow-primary)]">
+                <div className="h-1.5 bg-[var(--primary)]" />
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--primary)]/10">
+                      <Lightbulb className="h-6 w-6 text-[var(--primary)]" />
+                    </div>
+                    <span className="rounded-full bg-[var(--primary)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+                      Quick tip
+                    </span>
+                  </div>
 
-              {/* Form Wrapper */}
-              <div className="relative">
-                <LandingLeadForm product={productName} />
+                  <h3 className="mt-6 text-2xl font-bold leading-tight text-[var(--text-primary)] sm:text-3xl">
+                    Help us recommend the right configuration
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
+                    The more we know about your recycling process, the more
+                    precise our machine recommendation can be.
+                  </p>
+
+                  <div className="mt-6 space-y-3">
+                    {[
+                      "Plastic material and condition",
+                      "Current recycling process",
+                      "Expected production capacity",
+                    ].map((item, index) => (
+                      <div
+                        key={item}
+                        className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--muted)] px-3 py-3"
+                      >
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-xs font-bold text-white">
+                          {index + 1}
+                        </span>
+                        <span className="text-sm font-semibold text-[var(--text-primary)]">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-7 border-t border-[var(--border)] pt-6">
+                    <p className="text-sm font-semibold text-[var(--text-primary)]">
+                      Ready to improve your recycling line?
+                    </p>
+                    <LandingContactActions className="mt-4" prominent />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

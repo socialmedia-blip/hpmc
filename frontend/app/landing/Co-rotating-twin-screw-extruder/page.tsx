@@ -7,7 +7,7 @@ import {
   Layers3,
   Settings2,
 } from "lucide-react";
-import LandingLeadForm from "../../components/LandingLeadForm";
+import LandingContactActions from "../../components/LandingContactActions";
 import LandingNavbar from "../../components/LandingNavbar";
 import LandingFooter from "../../components/LandingFooter";
 import Image from "next/image";
@@ -138,7 +138,7 @@ export default function CoRotatingTwinScrewLandingPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#quick-enquiry"
+                  href="#enquire"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#65BC4F] px-6 py-3.5 font-bold text-white transition hover:bg-[#4fa23a]"
                 >
                   Get a custom solution <ArrowRight className="h-4 w-4" />
@@ -171,11 +171,18 @@ export default function CoRotatingTwinScrewLandingPage() {
               </div>
             </div>
 
-            <div id="quick-enquiry" className="w-full">
-              <LandingLeadForm
-                product={productName}
-                className="relative mx-auto w-full max-w-xl border border-white/70"
-              />
+            <div className="w-full rounded-3xl border border-[var(--border)] bg-[var(--card)] p-7 shadow-2xl shadow-slate-950/10 sm:p-9">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#579f42]">
+                Talk to an extrusion expert
+              </p>
+              <h2 className="mt-2 text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
+                Discuss your {productName.toLowerCase()} requirement.
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
+                Share your material, fillers and target output directly with the
+                HPMC team.
+              </p>
+              <LandingContactActions className="mt-7" />
             </div>
           </div>
         </section>
@@ -445,7 +452,7 @@ export default function CoRotatingTwinScrewLandingPage() {
                 </li>
               </ul>
             </div>
-            <LandingLeadForm product={productName} />
+            <LandingContactActions className="mt-8 lg:mt-0" />
           </div>
         </section>
       </main>

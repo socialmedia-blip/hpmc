@@ -1,9 +1,6 @@
 import Image from "next/image";
-import { Mail, MessageCircle, Phone } from "lucide-react";
-
-const whatsappMessage = encodeURIComponent(
-  "Hello HPMC Team, I’m interested in your extrusion solutions and would like to discuss my requirements. Please assist me with more details.",
-);
+import { Mail } from "lucide-react";
+import LandingContactActions from "./LandingContactActions";
 
 export default function LandingFooter() {
   return (
@@ -23,19 +20,7 @@ export default function LandingFooter() {
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          {/* Call */}
-          <a
-            href="tel:+919560596392"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur transition-all duration-300 hover:border-[#83d86e] hover:bg-[#83d86e]/10 hover:text-[#83d86e]"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#83d86e]/15 text-[#83d86e] transition group-hover:bg-[#83d86e] group-hover:text-white">
-              <Phone className="h-5 w-5" />
-            </span>
-            <div className="flex flex-col leading-tight">
-              <span className="text-xs text-slate-400">Call Us</span>
-              <span>+91 95605 96392</span>
-            </div>
-          </a>
+          <LandingContactActions />
 
           {/* Email */}
           <a

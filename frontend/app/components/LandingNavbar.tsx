@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Phone } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import ThemeToggle from "./Theme-toggle";
-
-const whatsappMessage = encodeURIComponent(
-  "Hello HPMC Team, I’m interested in your extrusion solutions and would like to discuss my requirements. Please assist me with more details.",
-);
+import LandingContactActions from "./LandingContactActions";
 
 export default function LandingNavbar() {
   return (
@@ -48,16 +44,7 @@ export default function LandingNavbar() {
           {/* Theme */}
           <ThemeToggle />
 
-          {/* Contact CTA */}
-          <a
-            href="tel:+919560596392"
-            className="group inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-sm font-bold text-white transition"
-          >
-            <Phone className="h-4 w-4" />
-
-            <span className="sm:hidden">CALL US</span>
-            <span className="hidden sm:inline">CALL: +91 95605 96392</span>
-          </a>
+          <LandingContactActions compact />
         </div>
       </div>
     </header>
