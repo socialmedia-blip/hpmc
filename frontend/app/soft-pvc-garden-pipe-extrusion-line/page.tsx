@@ -528,24 +528,24 @@ export default function SingleScrewPlantPvcCompounding() {
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/herosection/sseHero.png')",
-          }}
+        <img
+          src="/herosection/soft-pvc-garden-pipe-extrusion-line.webp"
+          alt="HPMC soft PVC garden pipe extrusion line"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
+        {/* OVERLAY */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -584,6 +584,7 @@ export default function SingleScrewPlantPvcCompounding() {
           </div>
         </div>
       </section>
+
       <section className="py-20 bg-[var(--background)]">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <span className="text-[var(--primary)] uppercase tracking-[3px] font-semibold text-sm">

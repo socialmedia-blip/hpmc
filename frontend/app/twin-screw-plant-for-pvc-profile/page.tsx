@@ -511,26 +511,25 @@ export default function TwinScrewPlantForPvcProfile() {
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/herosection/pvc-profile.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/herosection/twin-screw-plant-for-pvc-profile.webp"
+          alt="HPMC twin screw extrusion plant for PVC profile"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
-        {/* OVERLAY */}
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -540,6 +539,7 @@ export default function TwinScrewPlantForPvcProfile() {
               Twin Screw Plant
               <span className="text-[#65BC4F]"> For PVC Profile</span>
             </h1>
+
             <p className="mt-6 text-gray-700 text-sm md:text-base leading-7 max-w-[500px]">
               We manufacture and export Twin Screw Plants for PVC Profile
               production, along with Plastic Extruders, PVC Pipe Plants, HDPE
@@ -602,7 +602,7 @@ export default function TwinScrewPlantForPvcProfile() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="Twin Screw Plant for PVC Profile"
                   fill
                   className="
               object-contain

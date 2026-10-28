@@ -550,11 +550,10 @@ export default function LldpePipePlante() {
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/herosection/sseHero.png')",
-          }}
+        <img
+          src="/herosection/lldpe-pipe-plant.webp"
+          alt="HPMC LLDPE pipe plant "
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
         {/* OVERLAY */}
@@ -563,12 +562,12 @@ export default function LldpePipePlante() {
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -586,6 +585,7 @@ export default function LldpePipePlante() {
               processing machinery. Our systems are designed for reliable
               performance, efficient production, and long service life.
             </p>
+
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mt-8">
               <button
@@ -637,7 +637,7 @@ export default function LldpePipePlante() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="LLDPE Pipe Plant"
                   fill
                   className="
               object-contain

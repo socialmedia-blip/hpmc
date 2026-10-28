@@ -756,11 +756,10 @@ export default function HighSpeedTwoLayerCablePlant() {
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/herosection/twolayer.png')",
-          }}
+        <img
+          src="/herosection/high-speed-two-layer-cable-plant.webp"
+          alt="HPMC high-speed two-layer cable plant"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
         {/* OVERLAY */}
@@ -769,12 +768,12 @@ export default function HighSpeedTwoLayerCablePlant() {
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -848,7 +847,7 @@ export default function HighSpeedTwoLayerCablePlant() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="High Speed Two Layer Cable Plant"
                   fill
                   className="
               object-contain

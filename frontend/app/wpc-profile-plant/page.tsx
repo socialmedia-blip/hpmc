@@ -503,11 +503,10 @@ export default function WpcProfilePlant() {
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/herosection/wpcHero.png')",
-          }}
+        <img
+          src="/herosection/wpc-profile-plant.webp"
+          alt="HPMC WPC profile extrusion plant"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
         {/* OVERLAY */}
@@ -516,12 +515,12 @@ export default function WpcProfilePlant() {
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -586,7 +585,7 @@ export default function WpcProfilePlant() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="WPC Profile Plant"
                   fill
                   className="
               object-contain

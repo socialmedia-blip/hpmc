@@ -725,11 +725,10 @@ export default function SingleScrewExtruder() {
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/heroSection/sseHero.png')",
-          }}
+        <img
+          src="/heroSection/single-screw-extruder.webp"
+          alt="HPMC single screw extruder "
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
         {/* OVERLAY */}
@@ -738,12 +737,12 @@ export default function SingleScrewExtruder() {
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
