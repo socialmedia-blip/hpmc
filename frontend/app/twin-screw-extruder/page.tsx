@@ -740,7 +740,7 @@ export default function TwinScrewExtruder() {
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image with Alt Tag */}
         <img
-          src="/heroSection/conical-twin-screw-extruder.webp"
+          src="/herosection/conical-twin-screw-extruder.webp"
           alt="HPMC conical twin screw extruder"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

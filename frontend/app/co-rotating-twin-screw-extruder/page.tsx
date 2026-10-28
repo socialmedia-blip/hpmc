@@ -525,7 +525,7 @@ engineering plastics. Compare machine specifications and request a quotation."
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image with Alt Tag */}
         <img
-          src="/heroSection/co-rotating-twin-screw-extruder.webp"
+          src="/herosection/co-rotating-twin-screw-extruder.webp"
           alt="HPMC co-rotating twin screw extruder"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

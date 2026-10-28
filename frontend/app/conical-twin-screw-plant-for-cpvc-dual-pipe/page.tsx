@@ -615,7 +615,7 @@ export default function TwinScrewExtruder() {
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image with Alt Tag */}
         <img
-          src="/heroSection/conical-twin-screw-plant-for-cpvc-dual-pipe.webp"
+          src="/herosection/conical-twin-screw-plant-for-cpvc-dual-pipe.webp"
           alt="HPMC conical twin screw extrusion plant for CPVC dual pipe"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

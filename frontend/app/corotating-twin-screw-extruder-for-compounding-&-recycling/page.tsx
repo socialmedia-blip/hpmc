@@ -479,7 +479,7 @@ recycling. Compare machine models and request a quotation."
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image with Alt Tag */}
         <img
-          src="/heroSection/corotating-twin-screw-extruder-for-compounding-&-recycling.webp"
+          src="/herosection/corotating-twin-screw-extruder-for-compounding-&-recycling.webp"
           alt="HPMC co-rotating twin screw extruder for compounding and recycling"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

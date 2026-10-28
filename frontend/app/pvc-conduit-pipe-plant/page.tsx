@@ -617,7 +617,7 @@ export default function PvcConduitPipePlant() {
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image with Alt Tag */}
         <img
-          src="/heroSection/pvc-conduit-pipe-plant.webp"
+          src="/herosection/pvc-conduit-pipe-plant.webp"
           alt="HPMC PVC conduit pipe plant"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

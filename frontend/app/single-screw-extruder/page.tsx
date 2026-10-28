@@ -726,7 +726,7 @@ export default function SingleScrewExtruder() {
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image */}
         <img
-          src="/heroSection/single-screw-extruder.webp"
+          src="/herosection/single-screw-extruder.webp"
           alt="HPMC single screw extruder "
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

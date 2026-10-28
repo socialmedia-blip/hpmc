@@ -548,7 +548,7 @@ export default function RecyclingPlantWithCompactor() {
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
         {/* Background Image with Alt Tag */}
         <img
-          src="/heroSection/recycling-plant-with-compactor.webp"
+          src="/herosection/recycling-plant-with-compactor.webp"
           alt="HPMC plastic recycling plant with compactor"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
