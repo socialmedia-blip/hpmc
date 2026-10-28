@@ -19,7 +19,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/corotating-twin-screw-extruder-for-compounding-recycling2.jpg",
+  "/products/co-rotating twing screw extruder/corotating-twin-screw-extruder-for-compounding-recycling-engineering-plastic/co-rotating-twin-screw-extruder.webp",
 ];
 
 const baseFaqData = [
@@ -367,6 +367,42 @@ export default function CorotatingTwinScrewExtruder() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.hindustanplastics.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Co-Rotating Twin Screw Extruder",
+        item: "https://www.hindustanplastics.com/co-rotating-twin-screw-extruder",
+      },
+    ],
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.hindustanplastics.com/#organization",
+    name: "Hindustan Plastics & Machinery Corporation",
+    url: "https://www.hindustanplastics.com/",
+    telephone: "+91 95605 96392",
+    email: "info@hindustanplastics.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "DSIDC Complex, 5 & 6, Industrial Area, Nangloi",
+      addressLocality: "Delhi",
+      postalCode: "110083",
+      addressCountry: "IN",
+    },
+  };
+
   const handleDownload = (catalogue: string) => {
     const access = localStorage.getItem("catalogue_access");
 
@@ -408,43 +444,104 @@ export default function CorotatingTwinScrewExtruder() {
 
   return (
     <div>
-      <title>Co-Rotating Twin Screw Extruder | HPMC</title>
+      <title>Co-Rotating Twin Screw Extruder Manufacturer | HPMC</title>
 
       <meta
         name="description"
-        content="Advanced co-rotating twin screw extruders for plastic compounding, masterbatch production, and engineering polymers."
+        content="Explore HPMC co-rotating twin screw extruders for polymer compounding, masterbatch production and
+engineering plastics. Compare machine specifications and request a quotation."
       />
 
       <link
         rel="canonical"
         href="https://www.hindustanplastics.com/co-rotating-twin-screw-extruder"
       />
+
+      <meta name="robots" content="index, follow" />
+
+      {/* Open Graph Meta Tags */}
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:site_name"
+        content="Hindustan Plastics & Machinery Corporation"
+      />
+      <meta
+        property="og:title"
+        content="Co-Rotating Twin Screw Extruder Manufacturer | HPMC"
+      />
+      <meta
+        property="og:description"
+        content="Explore HPMC co-rotating twin screw extruders for polymer compounding, masterbatch production and engineering plastics. Compare machine specifications and request a quotation."
+      />
+      <meta
+        property="og:url"
+        content="https://www.hindustanplastics.com/co-rotating-twin-screw-extruder"
+      />
+      <meta
+        property="og:image"
+        content="https://www.hindustanplastics.com/heroSection/co-rotating.png"
+      />
+      <meta
+        property="og:image:alt"
+        content="HPMC co-rotating twin screw extruder for polymer compounding"
+      />
+
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="Co-Rotating Twin Screw Extruder Manufacturer | HPMC"
+      />
+      <meta
+        name="twitter:description"
+        content="Explore HPMC co-rotating twin screw extruders for polymer compounding, masterbatch production and engineering plastics. Compare machine specifications and request a quotation."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.hindustanplastics.com/heroSection/co-rotating.png"
+      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/heroSection/co-rotating.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/heroSection/co-rotating-twin-screw-extruder.webp"
+          alt="HPMC co-rotating twin screw extruder"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -488,11 +585,7 @@ export default function CorotatingTwinScrewExtruder() {
           </span>
 
           <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-            Plastic Recycling Plant -
-            <span className="text-[var(--primary)]">
-              {" "}
-              Co-Rotating Twin Screw Extruder
-            </span>
+            Industrial Co-Rotating Twin Screw Extruder for Polymer Compounding
           </h2>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* PRODUCT GALLERY */}
@@ -516,7 +609,7 @@ export default function CorotatingTwinScrewExtruder() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="co-rotating twin screw extruder"
                   fill
                   className="
               object-contain
@@ -585,21 +678,34 @@ export default function CorotatingTwinScrewExtruder() {
             {/* CONTENT */}
             <div>
               <p className="mt-8 text-[var(--text-secondary)] leading-8">
-                HPMC Co-rotating Twin Screw Extruders are engineered for
-                high-performance polymer compounding, delivering superior
-                mixing, excellent dispersion, and consistent melt quality. The
-                advanced screw design ensures efficient processing while
-                maintaining high productivity and reliable operation for
-                demanding industrial applications.
+                HPMC's co-rotating twin screw extruders are designed for polymer
+                compounding, masterbatch manufacturing and the processing of
+                engineering plastics. Two screws rotate in the same direction to
+                convey, mix and homogenize polymer materials, helping
+                manufacturers achieve consistent compound quality when the
+                machine is configured for the required formulation.
               </p>
 
               <p className="mt-5 text-[var(--text-secondary)] leading-8">
-                Designed for masterbatch production, engineering plastics,
-                recycled materials, and high filler formulations, the extruder
-                can process polymers with up to <strong>80% talc</strong> and{" "}
-                <strong>50% glass fibre</strong> in a single process. Its
-                modular configuration provides excellent flexibility for a wide
-                range of compounding requirements.
+                These extrusion systems can be configured for applications such
+                as colour and filler masterbatch production, glass fibre
+                reinforced compounds, selected recycled polymers and other
+                polymer blends. Screw configuration, feeding arrangements,
+                temperature control and processing conditions should be selected
+                according to the raw material and desired output.
+              </p>
+
+              <p className="mt-5 text-[var(--text-secondary)] leading-8">
+                HPMC offers different machine models to support a range of
+                production requirements. Compare screw diameter, screw speed,
+                main motor power, L/D ratio and rated output to identify a
+                suitable configuration for your application.
+              </p>
+
+              <p className="mt-5 text-[var(--text-secondary)] leading-8">
+                Planning a compounding line? Contact HPMC to discuss your
+                material, target throughput, filler content and production
+                requirements and request a machine recommendation.
               </p>
 
               {/* Highlights */}

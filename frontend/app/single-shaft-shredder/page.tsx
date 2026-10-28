@@ -233,25 +233,25 @@ export default function SingleShaftShredder() {
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/home-hero1.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/single-shaft-shredder.webp"
+          alt="HPMC single shaft shredder"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -316,7 +316,7 @@ export default function SingleShaftShredder() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="Single Shaft Shredder"
                   fill
                   className="
               object-contain

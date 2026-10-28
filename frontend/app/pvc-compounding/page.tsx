@@ -648,32 +648,31 @@ export default function PVCCompounding() {
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/herosection/pvc-compounding.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/herosection/Conical-Twin Screw-Plant-for-PVC-Compounding.webp"
+          alt="HPMC Conical-Twin Screw-Plant-for-PVC-Compounding"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
-        {/* OVERLAY */}
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
         <div className="relative z-10 h-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center">
           <div className="max-w-[520px] pt-24 lg:pt-0">
-            <h1 className="text-[32px] sm:text-[42px] md:text-[54px]  leading-[1.05] font-bold text-[#0B1220]">
+            <h1 className="text-[32px] sm:text-[42px] md:text-[54px] leading-[1.05] font-bold text-[#0B1220]">
               Twin Screw Extruder
               <span className="text-[#65BC4F]"> For PVC Compounding</span>
             </h1>
@@ -739,7 +738,7 @@ export default function PVCCompounding() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="Conical-Twin Screw-Plant-for-PVC-Compounding"
                   fill
                   className="
               object-contain

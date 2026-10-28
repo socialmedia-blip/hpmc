@@ -28,14 +28,14 @@ export default function CTA() {
               </div>
               {/* TEXT */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] ">
-                  Have a project in mind?
+                <h2 className="text-2xl  font-bold text-[var(--foreground)] ">
+                  Discuss Your Requirements with Our Experts
                 </h2>
 
-                <p className="mt-2 text-[15px] md:text-base text-white/80  leading-7 max-w-[520px]">
-                  Looking for reliable plastic extrusion machinery? Our experts
-                  are ready to help you find the right solution for your
-                  manufacturing needs.
+                <p className="mt-2 text-[15px] md:text-base text-white/80  leading-6 max-w-[520px]">
+                  Tell HPMC about your material, required output and compounding
+                  application. The team can review your requirements and advise
+                  on an appropriate machine configuration.
                 </p>
               </div>
             </div>

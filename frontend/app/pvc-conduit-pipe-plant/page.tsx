@@ -615,26 +615,25 @@ export default function PvcConduitPipePlant() {
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/heroSection/tsehero.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/heroSection/pvc-conduit-pipe-plant.webp"
+          alt="HPMC PVC conduit pipe plant"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
-        {/* OVERLAY */}
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -709,7 +708,7 @@ export default function PvcConduitPipePlant() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="PVC Conduit Pipe Plant"
                   fill
                   className="
               object-contain

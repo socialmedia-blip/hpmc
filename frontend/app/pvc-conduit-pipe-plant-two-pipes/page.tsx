@@ -727,26 +727,25 @@ export default function PvcConduitPipePlantTwoPipes() {
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/heroSection/tsehero.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/heroSection/pvc-conduit-pipe-plant-two-pipes.webp"
+          alt="HPMC PVC conduit pipe plant with dual pipe extrusion "
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
-        {/* OVERLAY */}
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -758,12 +757,11 @@ export default function PvcConduitPipePlantTwoPipes() {
             </h1>
 
             <p className="mt-6 text-gray-700 text-sm md:text-base leading-7 max-w-[500px]">
-              {" "}
               HPMC PVC Conduit Pipe Plant (Two Pipes) is a high-efficiency
               Conical Twin Screw Extruder designed to produce twin PVC pipes of
               different diameters simultaneously from a single mould. Built from
               high-grade steel, it delivers reliable performance with output
-              capacities up to 150 Kg/hr.{" "}
+              capacities up to 150 Kg/hr.
             </p>
 
             {/* Buttons */}
@@ -820,7 +818,7 @@ export default function PvcConduitPipePlantTwoPipes() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="PVC Conduit Pipe Plant (Two Pipes) - HPMC"
                   fill
                   className="
               object-contain

@@ -24,7 +24,9 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
-const galleryImages = ["/products/co-rotating-twin-screw-extruder.png"];
+const galleryImages = [
+  "/products/corotating-twin-screw-extruder-for-compounding-&-recycling.webp",
+];
 
 const specifications = [
   {
@@ -374,37 +376,126 @@ export default function CorotatingTwinScrewExtruder() {
 
       <meta
         name="description"
-        content="Co-rotating twin screw extruders designed for plastic compounding and recycling with high performance and consistency."
+        content="Explore HPMC co-rotating twin screw extruders for polymer compounding, masterbatch production and plastic
+recycling. Compare machine models and request a quotation."
       />
 
       <link
         rel="canonical"
         href="https://www.hindustanplastics.com/co-rotating-twin-screw-extruder-for-compounding-&-recycling"
       />
+      <meta name="robots" content="index, follow" />
+
+      {/* Open Graph Meta Tags */}
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:site_name"
+        content="Hindustan Plastics & Machinery Corporation"
+      />
+      <meta
+        property="og:title"
+        content="Co-Rotating Twin Screw Extruder for Compounding & Recycling | HPMC"
+      />
+      <meta
+        property="og:description"
+        content="Explore HPMC co-rotating twin screw extruders for polymer compounding, masterbatch production and plastic recycling. Compare machine models and request a quotation."
+      />
+      <meta
+        property="og:url"
+        content="https://www.hindustanplastics.com/co-rotating-twin-screw-extruder-for-compounding-%26-recycling"
+      />
+      <meta
+        property="og:image"
+        content="https://www.hindustanplastics.com/products/co-rotating-twin-screw-extruder.png"
+      />
+      <meta
+        property="og:image:alt"
+        content="HPMC co-rotating twin screw extruder for compounding and recycling"
+      />
+
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="Co-Rotating Twin Screw Extruder for Compounding & Recycling | HPMC"
+      />
+      <meta
+        name="twitter:description"
+        content="Explore HPMC co-rotating twin screw extruders for polymer compounding, masterbatch production and plastic recycling. Compare machine models and request a quotation."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.hindustanplastics.com/products/co-rotating-twin-screw-extruder.png"
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.hindustanplastics.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Co-Rotating Twin Screw Extruder for Compounding & Recycling",
+                item: "https://www.hindustanplastics.com/corotating-twin-screw-extruder-for-compounding-&-recycling",
+              },
+            ],
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://www.hindustanplastics.com/#organization",
+            name: "Hindustan Plastics & Machinery Corporation",
+            url: "https://www.hindustanplastics.com/",
+            telephone: "+91 95605 96392",
+            email: "info@hindustanplastics.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "DSIDC Complex, 5 & 6, Industrial Area, Nangloi",
+              addressLocality: "Delhi",
+              postalCode: "110083",
+              addressCountry: "IN",
+            },
+          }),
+        }}
+      />
+
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('/heroSection/co-rotating-twin-screw-extruder.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/heroSection/corotating-twin-screw-extruder-for-compounding-&-recycling.webp"
+          alt="HPMC co-rotating twin screw extruder for compounding and recycling"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
-        {/* OVERLAY */}
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -450,43 +541,23 @@ export default function CorotatingTwinScrewExtruder() {
           </span>
 
           <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-            Co-Rotating Twin Screw Extruder -
-            <span className="text-[var(--primary)]">
-              {" "}
-              For Compounding & Recycling
-            </span>
+            Co-Rotating Twin Screw Extruder for Compounding & Recycling
           </h2>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          <div className="grid lg:grid-cols-2 gap-16 items-start mt-8">
             {/* PRODUCT GALLERY */}
             <div>
-              {/* Main Image */}
               <div
                 onMouseEnter={() => setIsZooming(true)}
                 onMouseLeave={() => setIsZooming(false)}
                 onMouseMove={handleImageZoom}
-                className="
-            relative
-            h-[520px]
-            rounded-[32px]
-            bg-[var(--card)]
-            border
-            border-[var(--border)]
-            shadow-[var(--shadow-primary)]
-            group
-            cursor-zoom-in
-          "
+                className="relative h-[520px] rounded-[32px] bg-[var(--card)] border border-[var(--border)] shadow-[var(--shadow-primary)] group cursor-zoom-in"
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="HPMC co-rotating twin screw extruder for compounding and recycling"
                   fill
-                  className="
-              object-contain
-              p-8
-              transition-all
-              duration-700
-              
-            "
+                  className="object-contain p-8 transition-all duration-700"
                 />
 
                 {isZooming && (
@@ -512,30 +583,21 @@ export default function CorotatingTwinScrewExtruder() {
                 )}
               </div>
 
-              {/* Thumbnails */}
+              {/* THUMBNAILS */}
               <div className="grid grid-cols-4 gap-4 mt-5">
                 {galleryImages.map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveImage(index)}
-                    className={`
-                relative
-                h-24
-                rounded-2xl
-                overflow-hidden
-                border-2
-                transition-all
-                duration-300
-                ${
-                  activeImage === index
-                    ? "border-[var(--primary)] scale-105"
-                    : "border-[var(--border)] hover:border-[var(--primary)]"
-                }
-              `}
+                    className={`relative h-24 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
+                      activeImage === index
+                        ? "border-[var(--primary)] scale-105"
+                        : "border-[var(--border)] hover:border-[var(--primary)]"
+                    }`}
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt={`Co-rotating twin screw extruder view ${index + 1}`}
                       fill
                       className="object-cover"
                     />
@@ -544,93 +606,40 @@ export default function CorotatingTwinScrewExtruder() {
               </div>
             </div>
 
-            {/* CONTENT */}
-            <div>
-              {/* CONTENT */}
-              <div>
-                <p className="mt-8 text-[var(--text-secondary)] leading-8">
-                  HPMC Co-Rotating Twin Screw Extruders provide efficient
-                  compounding, masterbatch production, recycling, and polymer
-                  processing with superior mixing and plasticization
-                  performance.
-                </p>
+            {/* PRODUCT CONTENT */}
+            <div className="text-[var(--text-secondary)] leading-8">
+              <p>
+                HPMC co-rotating twin screw extruders are designed for polymer
+                compounding, masterbatch production and selected plastic
+                recycling applications. The two screws rotate in the same
+                direction to convey, mix and homogenize polymer materials,
+                supporting consistent processing when the machine is configured
+                for the required formulation.
+              </p>
 
-                <p className="mt-5 text-[var(--text-secondary)] leading-8">
-                  Their modular design supports high filler loading, glass fiber
-                  reinforcement, and versatile material processing across
-                  various industrial applications.
-                </p>
+              <p className="mt-5">
+                The modular screw design can support different compounding
+                requirements, including filler modification, glass fibre
+                reinforcement and polymer blends. Applications may include
+                direct compounding, PVC cable-grade compounds, film and sheet
+                extrusion, injection molding, compression molding and recycling,
+                depending on the selected configuration.
+              </p>
 
-                {/* Application & Features Grid */}
-                <div className="grid md:grid-cols-2 gap-5 mt-10">
-                  <div className="rounded-2xl border border-[var(--border)] p-6 bg-[var(--card)]">
-                    <h3 className="text-lg font-semibold text-[var(--primary)]">
-                      Applications
-                    </h3>
+              <p className="mt-5">
+                HPMC offers machine models from 20 to 92, with listed output
+                capacities ranging from 2–10 kg/h to 600–1,000 kg/h across the
+                model range. Actual throughput depends on the material,
+                formulation, filler loading and processing conditions. Review
+                the specifications below and contact HPMC to confirm the right
+                configuration for your application.
+              </p>
 
-                    <ul className="mt-4 space-y-2 text-sm text-[var(--text-secondary)]">
-                      <li>• Direct Compounding</li>
-                      <li>• PVC Cable Grade Compounds</li>
-                      <li>• Inline Compounding</li>
-                      <li>• Film & Sheet Extrusion</li>
-                      <li>• Compression Molding</li>
-                      <li>• Injection Molding</li>
-                      <li>• Recycling Applications</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-2xl border border-[var(--border)] p-6 bg-[var(--card)]">
-                    <h3 className="text-lg font-semibold text-[var(--primary)]">
-                      Key Features
-                    </h3>
-
-                    <ul className="mt-4 space-y-2 text-sm text-[var(--text-secondary)]">
-                      <li>• Excellent Homogeneity</li>
-                      <li>• Superior Plasticization</li>
-                      <li>• Filling Modification</li>
-                      <li>• Recovery & Granulation</li>
-                      <li>• Modular Screw Design</li>
-                      <li>• Reliable Gearbox System</li>
-                      <li>• Die Face Cutter & Sieve</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-2xl border border-[var(--border)] p-6 bg-[var(--card)]">
-                    <h3 className="text-lg font-semibold text-[var(--primary)]">
-                      Benefits
-                    </h3>
-
-                    <ul className="mt-4 space-y-2 text-sm text-[var(--text-secondary)]">
-                      <li>• High Production Efficiency</li>
-                      <li>• Lower Power Consumption</li>
-                      <li>• Up to 80% Talc Loading</li>
-                      <li>• Up to 50% Glass Fiber</li>
-                      <li>• Supports Multiple Feeders</li>
-                      <li>• Smooth Material Feeding</li>
-                      <li>• Versatile Material Processing</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Buttons */}
+              {/* BUTTONS */}
               <div className="flex flex-wrap gap-4 mt-10">
                 <button
                   onClick={() => handleDownload("/catalogue.pdf")}
-                  className="
-        bg-[var(--primary)]
-        hover:opacity-90
-        text-white
-        font-semibold
-        px-7
-        py-4
-        rounded-xl
-        transition-all
-        duration-300
-        flex
-        items-center
-        gap-3
-      "
+                  className="bg-[var(--primary)] hover:opacity-90 text-white font-semibold px-7 py-4 rounded-xl transition-all duration-300 flex items-center gap-3"
                 >
                   Download Catalogue
                   <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
@@ -640,20 +649,7 @@ export default function CorotatingTwinScrewExtruder() {
 
                 <button
                   onClick={() => setOpenPopup2(true)}
-                  className="
-        border
-        border-[var(--border)]
-        hover:border-[var(--primary)]
-        hover:bg-[var(--primary)]
-        hover:text-white
-        text-[var(--text-primary)]
-        px-7
-        py-4
-        rounded-xl
-        font-semibold
-        transition-all
-        duration-300
-      "
+                  className="border border-[var(--border)] hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white text-[var(--text-primary)] px-7 py-4 rounded-xl font-semibold transition-all duration-300"
                 >
                   Request Quote
                 </button>

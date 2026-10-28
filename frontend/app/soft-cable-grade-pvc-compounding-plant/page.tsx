@@ -25,7 +25,7 @@ import "swiper/css";
 import DemoPopup from "../components/PopupDemo";
 
 const galleryImages = [
-  "/products/co-rotating-twin-screw-extruder.png",
+  "/products/soft-cable-grade-pvc-compounding-plant.webp",
   "/products/co-rotating twing screw extruder/soft cable pvc/ELECTRICALPANEL-CO-ROTATING-TWIN-SCREW-EXTRUDER.jpg",
 ];
 
@@ -513,27 +513,25 @@ export default function SoftCableGradePVC() {
       <Navbar />
 
       <section className="relative w-full min-h-[650px] lg:h-screen overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('/herosection/co-rotating-twin-screw-extruder.png')",
-          }}
+        {/* Background Image with Alt Tag */}
+        <img
+          src="/herosection/soft-cable-grade-pvc-compounding-plant.webp"
+          alt="HPMC soft cable grade PVC compounding plant "
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
-        {/* OVERLAY */}
+        {/* Desktop Overlay */}
         <div className="absolute inset-0 hidden lg:block bg-white/10" />
 
         {/* Mobile Overlay */}
         <div
           className="
-    absolute inset-0 lg:hidden
-    bg-gradient-to-r
-    from-white/95
-    via-white/90
-    to-white/40
-  "
+      absolute inset-0 lg:hidden
+      bg-gradient-to-r
+      from-white/95
+      via-white/90
+      to-white/40
+    "
         />
 
         {/* Content */}
@@ -606,7 +604,7 @@ export default function SoftCableGradePVC() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="Single Screw Extruder"
+                  alt="HPMC soft cable grade PVC compounding plant"
                   fill
                   className="
               object-contain
