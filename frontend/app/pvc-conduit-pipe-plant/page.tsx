@@ -765,7 +765,7 @@ export default function PvcConduitPipePlant() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="PVC Conduit Pipe Plant"
                       fill
                       className="object-cover"
                     />

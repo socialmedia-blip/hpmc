@@ -720,7 +720,7 @@ export default function PPRPipeExtruder() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Single Screw Plant for PPR Pipe"
                       fill
                       className="object-cover"
                     />

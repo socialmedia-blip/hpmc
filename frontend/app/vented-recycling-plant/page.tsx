@@ -672,7 +672,7 @@ export default function TwoStageRecyclingPlant() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Vented recycling plant"
                       fill
                       className="object-cover"
                     />

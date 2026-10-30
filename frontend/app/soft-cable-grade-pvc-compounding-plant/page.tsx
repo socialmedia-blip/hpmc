@@ -661,7 +661,7 @@ export default function SoftCableGradePVC() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="HPMC soft cable grade PVC compounding plant"
                       fill
                       className="object-cover"
                     />

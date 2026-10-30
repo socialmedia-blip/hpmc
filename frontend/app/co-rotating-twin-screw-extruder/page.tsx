@@ -666,7 +666,7 @@ engineering plastics. Compare machine specifications and request a quotation."
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="co-rotating twin screw extruder"
                       fill
                       className="object-cover"
                     />

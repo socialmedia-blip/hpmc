@@ -597,7 +597,7 @@ recycling. Compare machine models and request a quotation."
                   >
                     <Image
                       src={img}
-                      alt={`Co-rotating twin screw extruder view ${index + 1}`}
+                      alt="HPMC co-rotating twin screw extruder for compounding and recycling"
                       fill
                       className="object-cover"
                     />

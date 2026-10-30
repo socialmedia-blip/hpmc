@@ -728,7 +728,7 @@ export default function TwinScrewPlantForPVCTrunking() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Twin screw plant for PVC trunking"
                       fill
                       className="object-cover"
                     />

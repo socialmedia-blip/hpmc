@@ -887,7 +887,7 @@ export default function TwinScrewExtruder() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Conical Twin Screw Extruder"
                       fill
                       className="object-cover"
                     />

@@ -669,7 +669,7 @@ export default function SingleScrewPlantPvcCompounding() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Soft PVC Garden Pipe Extrusion Line"
                       fill
                       className="object-cover"
                     />

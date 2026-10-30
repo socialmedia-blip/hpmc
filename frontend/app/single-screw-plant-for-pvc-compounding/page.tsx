@@ -661,7 +661,7 @@ export default function SingleScrewPlantPvcCompounding() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Single Screw Plant for PVC Compounding"
                       fill
                       className="object-cover"
                     />

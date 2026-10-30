@@ -853,7 +853,7 @@ export default function PvcConduitPipePlantFourPipes() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="HPMC PVC Conduit Pipe Plant (Four Pipes)"
                       fill
                       className="object-cover"
                     />

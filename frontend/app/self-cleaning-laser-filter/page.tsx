@@ -353,7 +353,7 @@ export default function SelfCleaningLaserFilter() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Self Cleaning Laser Filter"
                       fill
                       className="object-cover"
                     />

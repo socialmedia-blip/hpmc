@@ -841,7 +841,7 @@ export default function SingleScrewPlantForPvcProfile() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Single Screw Plant for PVC Profile"
                       fill
                       className="object-cover"
                     />

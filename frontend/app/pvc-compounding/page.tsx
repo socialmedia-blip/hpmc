@@ -795,7 +795,7 @@ export default function PVCCompounding() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Conical-Twin Screw-Plant-for-PVC-Compounding"
                       fill
                       className="object-cover"
                     />

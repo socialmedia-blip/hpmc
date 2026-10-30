@@ -664,7 +664,7 @@ export default function PPRPipeExtruder() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Two Stage Recycling Plant"
                       fill
                       className="object-cover"
                     />

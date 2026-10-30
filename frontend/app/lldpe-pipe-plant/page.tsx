@@ -694,7 +694,7 @@ export default function LldpePipePlante() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="LLDPE Pipe Plant"
                       fill
                       className="object-cover"
                     />

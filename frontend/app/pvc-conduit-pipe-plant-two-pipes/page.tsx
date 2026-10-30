@@ -818,7 +818,7 @@ export default function PvcConduitPipePlantTwoPipes() {
               >
                 <Image
                   src={galleryImages[activeImage]}
-                  alt="PVC Conduit Pipe Plant (Two Pipes) - HPMC"
+                  alt="PVC Conduit Pipe Plant (Two Pipes)"
                   fill
                   className="
               object-contain
@@ -875,7 +875,7 @@ export default function PvcConduitPipePlantTwoPipes() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="PVC Conduit Pipe Plant (Two Pipes)"
                       fill
                       className="object-cover"
                     />

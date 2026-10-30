@@ -871,7 +871,7 @@ export default function SingleScrewExtruder() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Single Screw Extruder"
                       fill
                       className="object-cover"
                     />

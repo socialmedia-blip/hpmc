@@ -887,7 +887,7 @@ export default function HighSpeedHDPEPipePlant() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="High Speed HDPE Pipe Plant"
                       fill
                       className="object-cover"
                     />

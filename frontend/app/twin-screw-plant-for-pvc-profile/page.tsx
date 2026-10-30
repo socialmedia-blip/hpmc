@@ -659,7 +659,7 @@ export default function TwinScrewPlantForPvcProfile() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Twin Screw Plant for PVC Profile"
                       fill
                       className="object-cover"
                     />

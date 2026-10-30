@@ -641,7 +641,7 @@ export default function TwoStageRecyclingPlant() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Wet Recycling Extrusion Line"
                       fill
                       className="object-cover"
                     />

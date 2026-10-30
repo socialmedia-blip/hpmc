@@ -642,7 +642,7 @@ export default function WpcProfilePlant() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="WPC Profile Plant"
                       fill
                       className="object-cover"
                     />

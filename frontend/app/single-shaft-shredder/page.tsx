@@ -373,7 +373,7 @@ export default function SingleShaftShredder() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Single Shaft Shredder"
                       fill
                       className="object-cover"
                     />

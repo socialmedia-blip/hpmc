@@ -796,7 +796,7 @@ export default function TwinScrewPlantForCpvcPipe() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Twin Screw Plant for CPVC Pipe"
                       fill
                       className="object-cover"
                     />

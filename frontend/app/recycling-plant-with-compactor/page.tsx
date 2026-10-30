@@ -692,7 +692,7 @@ export default function RecyclingPlantWithCompactor() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Recycling Plant with Compactor"
                       fill
                       className="object-cover"
                     />

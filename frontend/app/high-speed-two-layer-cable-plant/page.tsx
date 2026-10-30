@@ -904,7 +904,7 @@ export default function HighSpeedTwoLayerCablePlant() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="High Speed Two Layer Cable Plant"
                       fill
                       className="object-cover"
                     />

@@ -763,7 +763,7 @@ export default function TwinScrewExtruder() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="Conical Twin Screw Plant For CPVC Dual Pipe"
                       fill
                       className="object-cover"
                     />

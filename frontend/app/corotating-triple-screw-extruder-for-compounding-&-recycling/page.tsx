@@ -665,7 +665,7 @@ export default function CorotatingTripleScrewExtruder() {
                   >
                     <Image
                       src={img}
-                      alt={`View ${index + 1}`}
+                      alt="co-rotating triple screw extruder for compounding & recycling"
                       fill
                       className="object-cover"
                     />
