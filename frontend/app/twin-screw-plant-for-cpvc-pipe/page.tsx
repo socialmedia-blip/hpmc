@@ -642,7 +642,7 @@ export default function TwinScrewPlantForCpvcPipe() {
 
       <link
         rel="canonical"
-        href="https://www.hindustanplastics.com/twin-screw-plant-cpvc-pipe"
+        href="https://www.hindustanplastics.com/twin-screw-plant-for-cpvc-pipe"
       />
       <Navbar />
 
